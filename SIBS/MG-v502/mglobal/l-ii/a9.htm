@@ -1,0 +1,1542 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="_self">
+<script>top.captulos.location='indicea.htm#A';</script>
+
+<title>A.9 GESTÃO DE CARTÕES</title>
+</head>
+
+<body>
+
+<h1>A.9 GESTÃO DE CARTÕES </h1>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.9.1">A.9.1</a> SITUAÇÃO DO CARTÃO</h2>
+
+<p><br>
+A situação de um cartão, ou seja, a condição que possibilita (ou não) a realização
+de operações, pode mudar durante a sua vida: 
+
+<ul>
+  <li>por problemas na utilização do cartão pelo cliente (ex.: perda/roubo);</li>
+  <li>por desígnio do Emissor (através do envio de ficheiros ou mensagens em <em>Real-Time</em>);</li>
+  <li>como resultado de processos automáticos intrínsecos ao Sistema MB;</li>
+  <li >por acção do serviço do SIDF que realiza a monitorização da rede;</li>
+  <li class="a" >na sequência da correcta validação do PIN aquando da sua
+    primeira utilização (ver <a href="#A.9.1.5">A.9.1.5</a>)</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.9.1.1">A.9.1.1</a> ESTADOS INICIAIS DE UM CARTÃO</h3>
+
+<h6><br>
+POR ACTIVAR (<a name="0D">0D</a>)</h6>
+
+<p>Um cartão assume este estado após a sua produção lógica, se aquele foi
+caracterizado para apenas ser utilizado após o titular comunicar a sua boa recepção ao
+Emissor. </p>
+
+<p>Deste modo, todas as operações feitas na Rede MB com um cartão nesta situação são
+rejeitadas (sem captura), até o Emissor enviar uma alteração da situação do cartão,
+no ficheiro de Alteração da Situação de Cartão (<a href="../l-iii/easc.htm">EASC</a>),
+ou através da mensagem <a href="../../MSG/msg/h315v03.htm">H315</a> para passar a Normal (<a href="a9.htm#02">02</a>) ou a Anulado (<a href="a9.htm#09">09</a>).
+</p>
+
+<p class="a">De modo a facilitar a operativa dos Emissores, a SIBS desenvolveu
+um novo serviço em que a alteração de situação resulta da correcta validação
+do PIN (exclusivamente em CA-MB) na 1ª utilização do cartão. O estado é
+alterado centralmente de Por Activar (0D) para Normal (<a href="a9.htm#02">02</a>).&nbsp;
+</p>
+
+<p>No entanto, estes cartões podem efectuar operações em portagens e/ou em situações
+de <a href="a1.htm#A.1.1.4">Serviço Reduzido</a> do sistema, não sendo abrangidas pelo
+termo de responsabilidade da SIBS (capítulo<a href="../l-i/e2.htm#E.2.4"> E.2.4</a> do
+Livro I). Deste modo, no momento da produção lógica, o Emissor deve colocar os saldos
+de cartão a zeros, enviando a respectiva alteração ao mesmo tempo que indica a
+alteração de situação para Normal (<a href="a9.htm#02">02</a>).</p>
+
+<p>A gestão do estado Por Activar (0D) para
+cartões com <em>chip</em> EMV apresenta particularidades adicionais que devem ser
+consideradas, pelo que se recomenda a leitura do capítulo <a href="a3.htm#A.3.2">A.3.2</a>.
+</p>
+
+<h6><br>
+NORMAL (<a name="02">02</a>)</h6>
+
+<p>A situação Normal (02) corresponde àquela em que todas as operações e serviços
+posicionados pelo seu Emissor estão disponíveis. </p>
+
+<h6><br>
+POR PERSONALIZAR (<a name="03">03</a>)</h6>
+
+<p>Se o Emissor quiser produzir cartões não personalizados, estes assumem o estado
+inicial Por Personalizar (03), no período entre a sua emissão e o processamento pela
+SIBS do ficheiro de Dados dos Titulares (<a href="../l-iii/ednpepcg.htm">EDNP</a>),
+enviado pelo Emissor com os dados da conta dos respectivos titulares. </p>
+
+<p>Enquanto o cartão estiver na situação Por Personalizar (03), ou seja, sem conta
+associada, este pode efectuar todas as operações disponíveis (por exemplo:
+Levantamento, Alteração de PIN), excepto aquelas que implicam obrigatoriamente a sua
+indicação (por exemplo, Consulta de Saldos, Consulta de Movimentos) e os registos ou
+mensagens enviadas ao Emissor apresentam o número de conta a zeros. </p>
+
+<p style="page-break-before: always" >A tabela seguinte discrimina as operações possíveis para os
+cartões nesta situação: </p>
+
+<div align="center">
+  <center>
+  <table border="1" cellspacing="0" cellpadding="2" width="359">
+    <tr>
+      <th width="63" >Código</th>
+      <th width="286" >Operação</th>
+    </tr>
+    <tr>
+      <td  width="63" ><a href="a6.htm#001">001</a></td>
+      <td  class="esq" width="286">Levantamento</td>
+    </tr>
+    <tr>
+      <td  width="63" ><a href="a6.htm#005">005</a></td>
+      <td  class="esq" width="286">Alteração de PIN</td>
+    </tr>
+    <tr >
+      <td nowrap  width="63" ><a href="a6.htm#006">006</a><br>
+        <a href="a6.htm#036">036</a></td>
+      <td  class="esq" width="286">Aviso de depósito em
+        numerário e<br>
+        Depósito em numerário confirmado</td>
+    </tr>
+    <tr >
+      <td  width="63" ><a href="a6.htm#007">007</a></td>
+      <td  class="esq" width="286">Aviso de depósito em
+        valores</td>
+    </tr>
+    <tr >
+      <td  width="63" ><a href="a6.htm#009">009</a></td>
+      <td nowrap  class="esq" width="286">Pagamentos de
+        serviços/compras (MB)</td>
+    </tr>
+    <tr >
+      <td  width="63" ><a href="a6.htm#010">010</a></td>
+      <td  class="esq" width="286">Compra (MB)</td>
+    </tr>
+    <tr >
+      <td  width="63" ><a href="a6.htm#015">015</a></td>
+      <td  class="esq" width="286">Compra (outras
+        vertentes)</td>
+    </tr>
+    <tr>
+      <td  width="63" ><a href="a6.htm#017">017</a></td>
+      <td  class="esq" width="286">Autorização (outras
+        vertentes)</td>
+    </tr>
+    <tr>
+      <td  width="63" ><a href="a6.htm#022">022</a></td>
+      <td  class="esq" width="286">Serviço Especial bancário</td>
+    </tr>
+    <tr>
+      <td  width="63" ><a href="a6.htm#025">025</a></td>
+      <td  class="esq" width="286">Compra <i> outdoor</i> (MB)</td>
+    </tr>
+    <tr>
+      <td  width="63" ><a href="a6.htm#026">026</a></td>
+      <td  class="esq" width="286">Compra <i> outdoor</i> (outras
+        vertentes)</td>
+    </tr>
+    <tr>
+      <td  width="63" ><a href="a6.htm#031">031</a></td>
+      <td  class="esq" width="286">Levantamento a crédito</td>
+    </tr>
+    <tr>
+      <td  width="63" ><a href="a6.htm#032">032</a></td>
+      <td  class="esq" width="286">Depósito (em agência
+        bancária)</td>
+    </tr>
+    <tr>
+      <td  width="63" ><a href="a6.htm#034">034</a></td>
+      <td  class="esq" width="286">Adiantamento de
+        dinheiro (MB)</td>
+    </tr>
+    <tr >
+      <td  width="63" ><a href="a6.htm#038">038</a></td>
+      <td  class="esq" width="286">Pagamento de
+        letra/recibo</td>
+    </tr>
+    <tr >
+      <td  width="63" ><a href="a6.htm#039">039</a></td>
+      <td nowrap  class="esq" width="286">Adiantamento de
+        dinheiro (outras vertentes)</td>
+    </tr>
+    <tr>
+      <td nowrap  width="63" ><a href="a6.htm#043">043<br>
+        </a><a href="a6.htm#046">046</a></td>
+      <td  class="esq" width="286">Carregamento de PMB<br>
+        Consulta a PMB</td>
+    </tr>
+    <tr>
+      <td  width="63" ><a href="a6.htm#0P0">0P0</a></td>
+      <td nowrap  class="esq" width="286">Pagamentos de
+        serviços/compras (outras marcas)</td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p><br>
+Logo que a SIBS processar o registo de personalização recebido via ficheiro <a href="../l-iii/ednpepcg.htm">EDNP</a>,
+ou via mensagem <a href="../../MSG/msg/h015.htm">H015</a>, a
+situação do cartão é colocada em Normal (<a href="a9.htm#02">02</a>).
+ </p>
+
+<p>Alternativamente, o Emissor pode comandar que o estado do cartão Por Personalizar (03)
+passe para Anulado (<a href="a9.htm#09">09</a>), caso não pretenda fazer uso do mesmo. </p>
+
+<p>&nbsp;
+</p>
+
+<h3><a name="A.9.1.2">A.9.1.2</a> ESTADOS INTERMÉDIOS DE UM CARTÃO</h3>
+
+<h6><br>
+CAPTURADO A DEVOLVER (<a name="05">05</a>)</h6>
+
+<p>A devolução do cartão ao cliente pela agência bancária pressupõe: 
+
+<ul>
+  <li>a verificação da identidade do cliente; </li>
+  <li>a realização de um fecho contabilístico ao CA onde o cartão foi capturado.</li>
+</ul>
+
+<p>O estado Capturado a Devolver (<a href="#05">05</a>) é assumido
+automaticamente quando: 
+
+<ul >
+  <li>o estado prévio do cartão era Capturado a Devolver Após Fecho CA (0E) e</li>
+  <li>não existindo entretanto qualquer tentativa de utilização, é efectuado o fecho de
+    período contabilístico do CA no qual foi capturado o cartão</li>
+</ul>
+
+<p>Após devolução do cartão ao cliente, a passagem à situação Normal (<a href="#02">02</a>) é efectuada no momento da realização de uma nova operação em CA,
+se o cliente inserir correctamente o PIN na primeira utilização num CA Multibanco após
+a sua captura. </p>
+
+<p>Assim, garantida a realização do fecho contabilístico ao CA previamente à
+devolução do cartão ao cliente, a passagem de &quot;Capturado Por Tentativas PIN
+Falhadas&quot; para Normal é feita automaticamente pelo sistema.</p>
+
+<h6><br>
+LISTA NEGRA (<a name="06">06</a>)</h6>
+
+<p>A colocação de um cartão em Lista Negra actua imediatamente sobre a informação
+existente no Sistema Multibanco, impedindo a sua utilização em qualquer ponto de
+serviço da Rede MB, após o correcto processamento desta informação. </p>
+
+<p>A inserção de um cartão em Lista Negra é comunicada das seguintes formas: 
+
+<ul>
+  <li>envio do ficheiro de Alteração de Situação de Cartão (<a href="../l-iii/easc.htm">EASC</a>)
+    pelo Emissor;</li>
+  <li>envio de mensagem em tempo real a partir do Terminal de Serviços SIBS instalado no
+    Emissor;</li>
+  <li >envio de ficheiro para Alteração de Situação de Cartão pelo
+    SAOS;</li>
+  <li>através do Terminal da SIBS, como resultado da actuação da Gestão da Rede ou Operação com
+    base num pedido telefónico do cliente, por fax ou telex expedido pelo
+    Emissor.</li>
+</ul>
+
+<p>A informação da comunicação de Lista Negra deve ser transmitida sempre pelo
+ficheiro <a href="../l-iii/easc.htm">EASC</a>, enquanto que as restantes alternativas
+apresentadas devem ser usadas apenas quando existe urgência porque: 
+
+<ul>
+  <li>o utilizador indicou que o código secreto se encontra junto do cartão; ou</li>
+  <li>é possível validar as operações do cartão através de assinatura.</li>
+</ul>
+
+<p>A SIBS classifica como &quot;Lista Negra Urgente&quot; todas as informações recebidas
+pelo Terminal de Serviços SIBS e pelo Terminal da SIBS (Gestão da Rede),
+aplicando um tarifário mais gravoso apenas no caso das inserções que implicam um custo
+administrativo para a SIBS (via Terminal da SIBS). </p>
+
+<p>Em resultado de uma alteração de situação de cartão, e nos
+casos em que a alteração não é informada através de ficheiro <a href="../l-iii/easc.htm">EASC</a>
+ou enviada directamente do CPD do Emissor, este recebe os correspondentes <a href="../l-iii/cln.htm#= 2">registos
+do tipo 2</a> no ficheiro CLN5. O Emissor pode ainda receber uma mensagem em
+tempo real (<a href="../l-iii/116x316x.htm">3161</a>) quando um cartão é
+inserido na Lista Negra Urgente, ou quando a inserção for realizada pelo SAOS,
+se indicar que pretende processar a operação 'Alteração de Situação de
+Cartão / Comunicação de Inclusão de Cartão em Lista Negra Urgente' (072) na
+caracterização do CPD. </p>
+
+<p>O Emissor, ou o SAOS no caso de inserções por si efectuadas, são as únicas entidades que podem retirar um cartão da Lista Negra, através do
+envio de ficheiro <a href="../l-iii/easc.htm">EASC</a>, mensagem <em>Host-to-Host</em>
+(<a href="../../MSG/msg/h315v03.htm">H315</a>, versão 03) ou da funcionalidade de
+Alteração de Situação de Cartão existente no Terminal de Serviços SIBS. </p>
+
+<p>Note-se que a colocação e retirada de cartões na Lista Negra é
+objecto de envio para os representantes nacionais e internacionais, em função
+das instruções recebidas do Emissor no ficheiro <a href="../l-iii/easc.htm">EASC</a>
+e/ou via Terminal de Serviços SIBS ou, na sua ausência, cumpre-se o que
+estiver especificado na Caracterização do BIN.&nbsp;</p>
+
+<h6><br>
+LISTA CINZENTA (<a name="07">07</a>)</h6>
+
+<p>A colocação de um cartão em Lista Cinzenta é uma funcionalidade disponível na Rede
+MB, com origem nos Sistemas de Pagamento Internacionais (e na Unicre), que corresponde a
+uma situação menos gravosa que a LN, em que o cartão fica apenas inibido de
+transaccionar. </p>
+
+<p>No entanto, um cartão em Lista Cinzenta pode ser utilizado no pagamento de portagens e
+no serviço reduzido em CA e pode efectuar as seguintes operações: 
+
+<ul>
+  <li>consulta de saldos e movimentos</li>
+  <li>pedido de livro de cheques</li>
+  <li>alteração de PIN.</li>
+</ul>
+
+<p>A inserção de um cartão em Lista Cinzenta é comunicada das seguintes formas: 
+
+<ul >
+  <li>envio do ficheiro de Alteração de Situação de Cartão (<a href="../l-iii/easc.htm">EASC</a>),
+    pelo Emissor ou pelo SAOS;</li>
+  <li>envio de mensagem em tempo real a partir do Terminal de Serviços SIBS, instalado no
+    Emissor ou no SAOS.</li>
+</ul>
+
+<p>Em resultado de uma alteração de situação de cartão, e nos casos em que
+a alteração não é informada através de ficheiro <a href="../l-iii/easc.htm">EASC</a>
+ou enviada directamente do CPD do Emissor, este recebe os correspondentes <a href="../l-iii/cln.htm#= 2">registos do tipo 2</a> no ficheiro CLN5.
+Nestas situações, ou quando a inserção em Lista Cinzenta for realizada pelo
+SAOS, o Emissor pode adicionalmente receber uma mensagem em tempo real (<a href="../l-iii/116x316x.htm">3161</a>),
+se indicar que pretende processar a operação 'Alteração de Situação de
+Cartão / Comunicação de Inclusão de Cartão em Lista Negra Urgente' (072) na
+Caracterização do CPD.</p>
+
+<p>Por outro lado, e de acordo com o decidido relativamente à operativa do
+Sistema Interbancário de Detecção de Fraude, podem existir alterações de situação
+que resultam de acções do serviço que realiza a monitorização da rede
+(SAOS). Estes podem
+colocar cartões em lista cinzenta por delegação do Emissor, através do terminal de
+serviços ou de um ficheiro <a href="../l-iii/easc.htm">EASC</a> próprio para esse fim.
+Os cartões colocados em Lista Cinzenta pelo serviço do SIDF, e apenas estes, podem ser
+colocados novamente em situação normal por este serviço. Em ambos os casos o Emissor é
+informado das respectivas ocorrências de acordo com o referido no parágrafo anterior.</p>
+
+<p>A colocação e retirada de cartões na Lista Cinzenta é objecto de envio para os
+representantes nacionais e internacionais, em função das instruções recebidas do
+Emissor no ficheiro <a href="../l-iii/easc.htm">EASC</a> e/ou via Terminal de Serviços
+SIBS ou, na sua ausência, cumpre-se o que estiver especificado na Caracterização do BIN. </p>
+
+<h6><br>
+CAPTURADO A NÃO DEVOLVER (<a name="08">08</a>)</h6>
+
+<p>Um cartão pode ser capturado num CA por várias razões: 
+
+<ul>
+  <li>por ordem do Emissor (segundo os seus critérios internos), através do Código de
+    Resposta (<a href="../../Campos/campos1.htm#012" target="explicac">012</a>) presente nas
+    mensagens <em>Real-Time</em>;</li>
+  <li >porque o PIN é inserido incorrectamente após a devolução de um
+    cartão na situação Capturado a Devolver (<a href="a9.htm#05">05</a>)
+    por tentativas de PIN excedidas;</li>
+  <li>porque o cartão se encontra na situação Capturado a Não Devolver (08), Anulado (<a href="a9.htm#09">09</a>) ou Lista Negra (<a href="#06">06</a>);
+    isto ocorre normalmente quando o Emissor ainda não ordenou à SIBS para repor a
+    situação do cartão para Normal (<a href="a9.htm#02">02</a>);</li>
+  <li >porque o cartão utilizado provocou a anomalia &quot;<em>Time out</em> na
+    recolha de notas&quot; duas vezes consecutivas.</li>
+</ul>
+
+<p>Enquanto a situação for Capturado a Não Devolver, o cartão fica inibido até o que
+Emissor analise a razão que levou à captura e altere a situação, enviando um ficheiro
+de Alteração de Situação de Cartão (<a href="../l-iii/easc.htm">EASC</a>). </p>
+
+<p>Por vezes, há situações que são impossíveis de ser ultrapassadas, por exemplo,
+quando o CCD está errado, não é possível tornar o cartão disponível para novos usos,
+pois pode tratar-se de um cartão fraudulento que foi incorrectamente gravado. </p>
+
+<h6><br>
+CAPTURADO E EM LISTA NEGRA (<a name="0A">0A</a>)</h6>
+
+<p>O Sistema Multibanco captura um cartão e altera-lhe automaticamente a situação para
+Capturado e em Lista Negra quando este é utilizado na rede de Caixas Automáticos MB e se
+verifica uma das seguintes situações: 
+
+<ul >
+  <li>porque está em Lista Negra (<a href="#06">06</a>);</li>
+  <li>porque o <em>Crypto Check Digit</em>  (CCD) está errado, isto é, o dígito
+    de validação dos dados da pista magnética do cartão está incorrecto;</li>
+  <li>porque o cartão que se apresentou na rede não tem correspondência na
+    base de dados de cartões da SIBS;</li>
+  <li>por incoerência entre os dados da pista três e os dados da base de dados
+    dos cartões;</li>
+  <li>o cartão já não existe na base de dados de cartões;</li>
+  <li >a sua situação é Capturado a Devolver Após Fecho de CA (<a href="#0E">0E</a>).</li>
+</ul>
+
+<p>O cartão é imediatamente inserido em Lista Negra pelo Sistema Multibanco
+(excepto quando parte dessa situação). </p>
+
+<p>O Emissor é tarifado pela inserção e manutenção em Lista Negra. </p>
+
+<p style="page-break-before: always">O Emissor é a única entidade que pode retirar um cartão da situação de
+Capturado e em Lista Negra (0A), colocando o cartão novamente na situação de Anulado (<a href="#09">09</a>).</p>
+
+<h6><br>
+ANULADO E EM LISTA NEGRA (<a name="0B">0B</a>)</h6>
+
+<p>O Sistema Multibanco altera automaticamente a situação de um cartão para Anulado e
+em Lista Negra quando: 
+
+<ul>
+  <li>este é utilizado na rede em operações de TPA ou em serviço reduzido e a sua situação é Anulado (<a href="a9.htm#09">09</a>),
+    ou</li>
+  <li>o cartão já não existe na base de
+    dados de cartões.</li>
+</ul>
+
+<p>O cartão é imediatamente inserido em Lista Negra pelo Sistema Multibanco. </p>
+
+<p>O Emissor é tarifado pela inserção e manutenção em Lista Negra. </p>
+
+<p>O Emissor é a única entidade que pode retirar um cartão da situação de
+Anulado e em Lista Negra (0B), colocando o cartão novamente na situação de Anulado (<a href="#09">09</a>).</p>
+
+<h6 ><br>
+CAPTURADO A DEVOLVER APÓS FECHO DO CA (<a name="0E">0E</a>)</h6>
+
+<p>Esta situação ocorre quando o cliente: 
+
+<ul>
+  <li>se esquece de recolher o cartão, depois de terminar o período de espera posterior à
+    sua expulsão do CA, ou </li>
+  <li>se engana três vezes consecutivas a inserir o código secreto num CA. </li>
+</ul>
+
+<p>A SIBS valida o código secreto introduzido pelo cliente em todas as operações do
+serviço onde aquele é requerido. </p>
+
+<p>O cartão é sempre devolvido ao cliente até à terceira inserção errada e
+consecutiva do código secreto (PIN); nessa altura, o cartão fica inibido e,
+especificamente nas operações em CAs, o sistema comporta-se conforme as indicações do
+Emissor: 
+
+<ul>
+  <li>Captura o cartão, que fica na situação de Capturado a Devolver Após Fecho CA (0E);</li>
+  <li>Expulsa o cartão, mas este deixa de estar válido para quaisquer operações
+    electrónicas, devendo ser atribuído novo cartão ao seu utilizador.</li>
+</ul>
+
+<p>Sempre que um cliente introduzir uma vez o código secreto correcto, aquele volta a ter
+as três tentativas de PIN em futuras operações. </p>
+
+<p>Ao realizar-se um fecho contabilístico do CA no qual o cartão foi
+capturado, previamente a uma nova utilização deste na rede de CAs, o estado do cartão
+evolui automaticamente para Capturado a Devolver (<a href="#05">05</a>).</p>
+
+<p>Se o cartão for devolvido e utilizado pelo cliente previamente à
+realização do fecho de período contabilístico do CA, o estado do cartão evolui para
+Capturado e em Lista Negra (<a href="#0A">0A</a>).</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.9.1.3">A.9.1.3</a> ESTADO FINAL DE UM CARTÃO</h3>
+
+<h6><br>
+ANULADO (<a name="09">09</a>)</h6>
+
+<p>O Emissor é a única entidade que pode atribuir este estado a um cartão e tal ocorre
+sempre que este é devolvido pelo cliente, ou seja, pressupõe-se que o plástico não
+volta a aparecer na Rede MB. Deste modo, os cartões que forem informados como anulados
+são retirados da base de dados de cartões activos da SIBS. </p>
+
+<p>Se o Emissor não tem na sua posse um cartão para o qual pretende impedir a
+realização de transacções, deve colocá-lo na situação de Lista Negra (<a href="#06">06</a>).
+A colocação na situação de Anulado (<a href="#09">09</a>) não assegura este
+objectivo.</p>
+
+<p>O reaparecimento na rede de um cartão em situação de Anulado (<a href="#09">09</a>)
+é considerado como uma grave ocorrência. De acordo com o terminal em que se utiliza o
+cartão, implica as seguintes acções: 
+
+<ul >
+  <li>se o Terminal é de um serviço de Baixo Valor - a utilização do cartão em estado
+    Anulado implica a inserção na Lista Negra de Baixo Valor. A inserção em Lista Negra de
+    Baixo Valor não actualiza a Lista Negra geral do Sistema Multibanco (inconsistências
+    pontuais no processamento local destes terminais não traduzem necessariamente uma
+    utilização indevida de um cartão). O estado do cartão permanece como Anulado (<a href="#09">09</a>);</li>
+</ul>
+
+<ul >
+  <li>se o Terminal não é de um serviço de Baixo Valor - a tentativa de utilização do
+    cartão implica a inserção imediata nas Listas Negras dos vários subsistemas de
+    terminais que asseguram o funcionamento do serviço reduzido (inclui inserção na Lista
+    Negra de Baixo Valor). A situação do cartão é alterada para Anulado e em Lista Negra (<a href="a9.htm#0B">0B</a>). </li>
+</ul>
+
+<p>Na eventualidade do Emissor fazer um uso incorrecto deste estado, a SIBS não assume
+quaisquer responsabilidades, por exemplo, as utilizações em portagens e/ou em serviço
+reduzido por cartões que se encontrem neste estado são da responsabilidade do Emissor. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.9.1.4">A.9.1.4</a> EVOLUÇÃO
+DE ESTADOS (RESUMO)</h3>
+
+<p><br>
+</p>
+
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr>
+    <td class="fundo" width="10%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fundo" width="80%"></td>
+        <td width="20%" class="fundo"><span class="tahoma"><strong>PARA&nbsp; </strong></td>
+      </tr>
+      <tr>
+        <td class="fundoesq" width="80%"><span class="tahoma">&nbsp; <strong>DE</strong></td>
+        <td width="20%" class="fundoesq">&nbsp; </td>
+      </tr>
+    </table>
+    </td>
+    <td class="tahoma">(<a href="a9.htm#02">02</a>)</td>
+    <td class="tahoma">(<a href="a9.htm#03">03</a>)</td>
+    <td class="tahoma">(<a href="a9.htm#05">05</a>)</td>
+    <td class="tahoma">(<a href="a9.htm#06">06</a>)</td>
+    <td class="tahoma">(<a href="a9.htm#07">07</a>)</td>
+    <td class="tahoma">(<a href="a9.htm#08">08</a>)</td>
+    <td class="tahoma">(<a href="a9.htm#09">09</a>)</td>
+    <td class="tahoma">(<a href="a9.htm#0A">0A</a>)</td>
+    <td class="tahoma">(<a href="a9.htm#0B">0B</a>)</td>
+    <td class="tahoma">(<a href="a9.htm#0D">0D</a>)</td>
+    <td class="tahoma">(<a href="#0E">0E</a>)</td>
+  </tr>
+  <tr>
+    <td width="10%" class="tahoesq">&nbsp;(<a href="a9.htm#02">02</a>) Normal</td>
+    <td class="fundo">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">w</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="wingding">w</td>
+  </tr>
+  <tr>
+    <td width="10%" class="tahoesq">&nbsp;(<a href="a9.htm#03">03</a>) Por Personalizar</td>
+    <td class="wingding">ü</td>
+    <td class="fundo">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">w</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="wingding">w</td>
+  </tr>
+  <tr>
+    <td width="10%" class="tahoesq">&nbsp;(<a href="a9.htm#05">05</a>) Capturado a Devolver</td>
+    <td class="wingding">w</td>
+    <td class="wingding">w</td>
+    <td class="fundo">&nbsp;</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">w</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="10%" class="tahoesq">&nbsp;(<a href="a9.htm#06">06</a>) Lista Negra</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td>&nbsp;</td>
+    <td class="fundo"><span class="wingding">ü</span><span class="oito">(a)</span></td>
+    <td class="wingding">ü</td>
+    <td class="wingding">&nbsp;</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">w</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="10%" class="tahoesq">&nbsp;(<a href="a9.htm#07">07</a>) Lista Cinzenta</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td>&nbsp;</td>
+    <td class="wingding">ü</td>
+    <td class="fundo"><span class="wingding">ü</span><span class="oito">(a)</span></td>
+    <td>&nbsp;</td>
+    <td class="wingding">ü</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="10%" class="tahoesq">&nbsp;(<a href="a9.htm#08">08</a>) Capturado a não
+    devolver</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td>&nbsp;</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td class="fundo">&nbsp;</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">w</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="10%" class="tahoesq">&nbsp;(<a href="a9.htm#09">09</a>) Anulado</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="fundo">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="wingding">w</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="10%" class="tahoesq" nowrap>&nbsp;(<a href="a9.htm#0A">0A</a>) Capturado e em
+    Lista Negra</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="wingding">ü</td>
+    <td class="fundo"><span class="wingding">ü</span><span class="oito">(a)</span></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="10%" class="tahoesq">&nbsp;(<a href="a9.htm#0B">0B</a>) Anulado e em Lista
+    Negra</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="wingding">ü</td>
+    <td>&nbsp;</td>
+    <td class="fundo">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="10%" class="tahoesq">&nbsp;(<a href="a9.htm#0D">0D</a>) Por Activar</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td>&nbsp;</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="fundo">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="10%" class="tahoesq">&nbsp;(<a href="#0E">0E</a>) Capturado a Devolver Após<br>
+    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fecho de CA</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="wingding">w</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">w</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="fundo">&nbsp;</td>
+  </tr>
+</table>
+
+<p class="oito">(a) Para alteração de dados no Sistema de
+Pagamento/Representante.</p>
+
+<p class="oito">Legenda:<br>
+&quot;<span class="wingding">ü</span>&quot; - evolução de estados que pode ser solicitada pelo Emissor ou
+efectuada em nome deste (ex.: pelo SAOS)<br>
+&quot;<span class="wingding">w</span>&quot; - evolução de estados automática (efectuada pelo Sistema MB)</p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always" class="a">
+<a name="A.9.1.5">A.9.1.5</a> ACTIVAÇÃO DE CARTÕES NA REDE MB</h3>
+
+<h5 class="a"><br>
+<a name="A.9.1.5.1">A.9.1.5.1</a> ENQUADRAMENTO</h5>
+
+<p class="a">O circuito de expedição de cartões e de cartas de PIN entre Bancos e seus clientes tem sido objecto de ataque na forma de intersecção, dando lugar a fraudes em todo o mundo. Em Portugal, a situação com a intersecção de cartões bancários antes da chegada às mãos dos legítimos titulares, é passível de gerar percas com alguma expressão.</p>
+
+<p class="a">Esta situação foi analisada pelo comité interno (Comité de Segurança) da SIBS responsável pelas componentes de Segurança dos serviços prestados pela empresa, do que resultou um conjunto de recomendações oportunamente apresentadas e endossadas pelo Conselho de Administração da SIBS.&nbsp;</p>
+<p class="a">Apresenta-se de seguida um resumo da situação analisada, as recomendações aprovadas, bem como a descrição de um novo serviço de activação de cartões para os Emissores que o desejem.</p>
+
+<h5 class="a"><br>
+<a name="A.9.1.5.2">A.9.1.5.2</a> SITUAÇÃO EM TERMOS DE EMISSÃO/ACTIVAÇÃO</h5>
+
+<p class="a"><br>
+<b>As possibilidades de fraude</b></p>
+
+<p class="a">Num cenário de distribuição de cartões por canais não seguros, se existir a apropriação do cartão (mesmo sem PIN associado) há a possibilidade de serem levadas a cabo transacções ilegítimas do seguinte tipo:</p>
+
+<ul class="a">
+  <li>
+    Em TPAs em Portugal com autenticação por assinatura (cartões de crédito);</li>
+  <li>
+    Em TPAs no estrangeiro com autenticação por assinatura (cartões de débito e crédito);</li>
+  <li>
+   Utilização de telefones públicos (ambiente baixo valor);</li>
+  <li>
+    Pagamento em auto-estradas (ambiente baixo valor).</li>
+</ul>
+<p class="a"><br>
+<b>Caracterização da emissão de cartões em 2004</b></p>
+
+<p class="a">Os cartões emitidos pelos Emissores Portugueses encontram-se, na maior parte dos casos, explicitamente ACTIVOS desde o momento da sua produção. Apenas cerca de
+<b> 20%</b> dos cartões emitidos em 2004, foram entregues no estado de INACTIVO aos respectivos clientes. Actualmente, a activação é um procedimento definido e controlado exclusivamente pelo Emissor.</p>
+
+<p class="a">A emissão de cartões bancários no estado INACTIVO, contribui decisivamente para a redução da fraude de apropriação ilegítima de cartão e posterior utilização em serviços onde o PIN não é necessário. Quando a intersecção se verifica no par PIN/cartão o risco agrava-se significativamente.</p>
+
+<p class="center"><img border="0" src="imagens2/a9-2.gif" alt="a9-2.gif" width="573" height="170"></p>
+
+<p style="page-break-before: always" class="a"><br>
+<b>Serviço de PINs cifrados na SIBS</b></p>
+
+<p class="a">A SIBS disponibiliza o serviço de guarda de PINs, para que os Emissores no momento de substituição/renovação de cartões ofereçam aos seus clientes um novo plástico com o mesmo PIN do cartão a expirar (ou a substituir). A maioria dos Emissores (que correspondem à esmagadora maioria de cartões emitidos) aderiu ao serviço de guarda de PINs cifrados na SIBS.</p>
+
+<p class="a">A utilização do serviço de PINs cifrados na SIBS, potencia que as renovações sejam feitas sem que qualquer segredo seja enviado por canais não seguros, evitando-se assim a fraude com a apropriação do par PIN/cartão.</p>
+
+<p class="a"><br>
+<b>Serviço de cartas de PIN “isoladas”</b></p>
+
+<p class="a">A SIBS disponibiliza complementarmente um serviço aos Emissores que permite a emissão de PINs (cartas e guarda do PIN em ficheiro) sem a correspondente (imediata) associação a um cartão.</p>
+
+<p class="a">Este serviço permite a entrega de cartas de PIN aos potenciais clientes de um qualquer produto
+(ex.: campanha de lançamento, abertura de conta, etc.) e a realização da produção do plástico apenas aquando da efectiva necessidade do mesmo.</p>
+
+<p class="a">Tipicamente as cartas de PIN são entregues presencialmente aos clientes, sendo os cartões produzidos e entregues posteriormente, o que permite distribuir PINs e cartões em momentos diferidos e por distintos canais.</p>
+
+<h5 class="a"><br>
+<a name="A.9.1.5.3">A.9.1.5.3</a> RECOMENDAÇÕES DO COMITÉ DE SEGURANÇA</h5>
+
+<p class="a"><br>
+<b>Recomendação 1 – Emissão dos cartões na situação POR ACTIVAR</b></p>
+
+<p class="tahomaa"><b>Descritivo</b></p>
+
+<p class="a">A fraude resultante de ataque aos canais de distribuição de correspondência, é a da apropriação do cartão e posterior utilização. Para evitar este ataque, existe a possibilidade de emissão, por defeito, de cartões com inibição de funcionamento
+- Estado Por Activar (<a href="a9.htm#0D">0D</a>).&nbsp;</p>
+<p class="tahomaa"><b>Vantagens</b></p>
+
+<ul class="a">
+  <li>
+    Evita (quase na totalidade) a fraude resultante da intercepção de cartões (apenas utilizáveis em portagens na 1ª vez).</li>
+</ul>
+<p class="tahomaa"><b>Desvantagens</b></p>
+
+<ul class="a">
+  <li>
+    Obriga a um processo de activação do cartão.</li>
+</ul>
+<p class="a"><br>
+<b>Recomendação 2 – Reutilização de PIN - Utilização do serviço de PIN fixo por
+defeito</b></p>
+
+<p class="tahomaa"><b>Descritivo</b></p>
+
+<p class="a">Reutilização dos PINs nas renovações (ou substituições) de cartões, evitando-se o envio de cartas de PIN através de canais não seguros.</p>
+
+<p style="page-break-before: always" class="tahomaa"><b>Vantagens</b></p>
+<ul class="a">
+  <li>
+    Redução da exposição à fraude resultante da intercepção do par PIN/cartão (i.e. fraude fica limitada exclusivamente a transacções sem PIN);</li>
+  <li>
+    Redução de custos para o Emissor pelo não envio de cartas de PIN.</li>
+</ul>
+<p class="tahomaa"><b>Desvantagens</b></p>
+<ul class="a">
+  <li>
+    Sem desvantagens significativas.</li>
+</ul>
+<p class="a"><br>
+<b>Recomendação 3 – Alargar canais disponíveis para Activação de Cartões</b></p>
+<p class="a">O Comité de Segurança avaliou diversas possibilidades de activação de cartões e avaliou positivamente a mudança do estado daqueles instrumentos de pagamento (assumindo que foram produzidos na situação
+Por Activar (<a href="a9.htm#0D">0D</a>)) através de:</p>
+<ul class="a">
+  <li>
+    1 - Activação em CA-MB com PIN (disponível no final de Setembro 2005)</li>
+  <li>
+    2 - Activação através de canais internos dos Emissores (já disponível)&nbsp;</li>
+</ul>
+<h5 class="a"><br>
+<a name="A.9.1.5.4">A.9.1.5.4</a> ACTIVAÇÃO DE CARTÕES</h5>
+<p class="a"><br>
+<b>Activação em CA-MB com PIN</b></p>
+<p class="tahomaa"><b>Descritivo</b></p>
+<p class="a">	Activação resulta da correcta validação do PIN (exclusivamente em CA-MB) na 1ª utilização do cartão. O estado é alterado centralmente de
+Por Activar (<a href="a9.htm#0D">0D</a>) para Normal (<a href="a9.htm#02">02</a>).</p>
+<p class="tahomaa"><b>Vantagens</b></p>
+<ul class="a">
+  <li>
+    Processo transparente para o titular;</li>
+  <li>
+    Sem alterações do SW dos terminais, apenas na aplicação central;</li>
+  <li>
+    100% eficaz para emissões sem carta de PIN (PIN só conhecido do titular).</li>
+</ul>
+<p class="tahomaa"><b> Desvantagens</b></p>
+<ul class="a">
+  <li>
+    Os utilizadores têm de ser informados que o cartão só é activado depois de uma 1ª inserção correcta de PIN em CA;</li>
+  <li>
+    Não é 100% eficaz para emissões com carta de PIN (embora os Emissores tenham procedimentos de distribuição diferenciados).</li>
+</ul>
+<p class="a"><br>
+<b>Activação em canais dos Emissores</b></p>
+<p class="tahomaa"><b>Descritivo</b></p>
+<p class="a">	Os Bancos emitem os cartões no estado Por Activar (<a href="a9.htm#0D">0D</a>)
+e assumem a responsabilidade pela sua activação, através de processos desenhados internamente. A mudança de estado para
+Normal (<a href="a9.htm#02">02</a>) é comunicada à SIBS pelas formas habituais.&nbsp;</p>
+<p class="tahomaa"><b>Vantagens</b></p>
+<ul class="a">
+  <li>
+    Julgadas pelos Bancos (opção que é já hoje largamente utilizada).</li>
+</ul>
+<p class="tahomaa"><b>Desvantagens</b></p>
+<ul class="a">
+  <li>
+    Desconhecidas.</li>
+</ul>
+<p class="a"><br>
+A alteração de situação de cartão, independentemente do processo utilizado, caso não tenha tido origem directa no
+Emissor (i.e. activação em CA), dá origem aos processos habituais de informação ao
+Emissor (i.e. msg. <a href="../l-iii/116x316x.htm">3161</a> CODTRN 072 e envio de registo no ficheiro
+<a href="../l-iii/cln.htm">MCLN5</a>).&nbsp;</p>
+<p class="a">Desencadeia ainda o correspondente registo para integração nos processos de facturação e correspondente auditoria (Ficheiro
+<a href="../l-iii/efac.htm">MEFAC</a>).&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.9.2">A.9.2</a> ALTERAÇÕES À SITUAÇÃO DO CARTÃO</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.9.2.1">A.9.2.1</a> ALTERAÇÕES EFECTUADAS PELO EMISSOR</h3>
+
+<p><br>
+O Emissor dispõe de três formas de alterar a situação de um cartão: 
+
+<ul>
+  <li>enviando um ficheiro Alteração de Situação de Cartão <a href="../l-iii/easc.htm">EASC</a>
+    para a SIBS;</li>
+  <li>utilizando o serviço <a href="i3.htm#I.3.3">Gestão de Cartões Bancários e Cartões
+    PMB</a> do Terminal de Serviços SIBS; ou</li>
+  <li>enviando uma <a href="../l-iii/d4.htm#D.4.2.3">mensagem</a> da sessão Emissor-SIBS em
+    tempo real.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h6><a name="1">FICHEIRO</a> ALTERAÇÃO DE SITUAÇÃO
+DE CARTÃO (<a href="../l-iii/easc.htm">EASC</a>)</h6>
+
+<p><br>
+O Emissor pode enviar à SIBS um ficheiro em que o registo de detalhe contém a
+identificação do cartão e a nova situação (campo <a href="../../Campos/campos2.htm#144" target="explicac">144</a>) que o cartão deve passar a
+ter. </p>
+
+<p>Através deste processo, os Emissores que possuem cartões com marca internacional
+podem determinar quais as acções que pretendem junto do Sistema de Pagamento. Neste
+caso, o Emissor pode informar dados diferentes dos indicados a nível da <a href="i3.htm#I.3.16">Caracterização do BIN</a>:</p>
+
+<p><br>
+No caso dos cartões de Sistemas de Pagamentos Internacionais (SPI):</p>
+
+<table border="0" cellpadding="0" cellspacing="0" width="530">
+  <tr>
+    <td width="125" class="esq">(<a href="../../Campos/campos3.htm#279" target="explicac">279</a>)
+    VISCA -----------</td>
+    <td width="402" class="esq">Acção a tomar pelo SPI perante o cartão;</td>
+  </tr>
+  <tr>
+    <td width="125" class="esq">(<a href="../../Campos/campos3.htm#288" target="explicac">288</a>)
+    LSTINT ---------</td>
+    <td width="402" class="esq">Se pretende a inclusão do cartão na Lista para Comerciantes;</td>
+  </tr>
+  <tr>
+    <td width="125" class="esq">(<a href="../../Campos/campos3.htm#286" target="explicac">286</a>)
+    VISA-CRB -----</td>
+    <td width="402" class="esq">Regiões do SPI a informar, no caso da opção anterior ser
+    positiva;</td>
+  </tr>
+  <tr>
+    <td width="125" class="esq">(<a href="../../Campos/campos3.htm#287" target="explicac">287</a>)
+    DTLIMCBR ----</td>
+    <td width="402" class="esq">Data limite em que a informação deve permanecer no SPI.</td>
+  </tr>
+</table>
+
+<p><br>
+Para a informação na Unicre, deve indicar:</p>
+
+<table border="0" cellpadding="0" cellspacing="0" width="561">
+  <tr>
+    <td width="125" class="esq">(<a href="../../Campos/campos3.htm#279" target="explicac">279</a>)
+    VISCA -----------</td>
+    <td width="402" class="esq">Acção a tomar pelo SPI perante o cartão;</td>
+  </tr>
+  <tr>
+    <td width="125" class="esq">(<a href="../../Campos/campos3.htm#287" target="explicac">287</a>)
+    DTLIMCBR ----</td>
+    <td width="402" class="esq">Data limite em que a informação deve permanecer no
+      SPI;</td>
+  </tr>
+  <tr>
+    <td width="125" class="esq">(<a href="../../Campos/campos4.htm#289" target="explicac">289</a>)
+    LSTUNI ---------</td>
+    <td width="432" class="esq">Se pretende que a informação seja incluída na listagem para
+    os comerciantes nacionais.</td>
+  </tr>
+</table>
+
+<p>As definições presentes na Caracterização do BIN são utilizadas apenas
+para as alterações de estado que não resultam da acção directa do Emissor.</p>
+
+<p>Após a recepção do ficheiro na SIBS, é enviada uma mensagem em tempo real para o
+sistema da Unicre e para o respectivo Sistema de Pagamento Internacional. Paralelamente, os mesmos dados são repetidos num ficheiro de
+fim-de-dia para a Unicre.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.9.2.2">A.9.2.2</a> COMUNICAÇÃO AO EMISSOR DE ALTERAÇÕES DE SITUAÇÃO</h3>
+
+<p><br>
+Sempre que existam eventos no Sistema Multibanco que provoquem a alteração da situação
+de um cartão, a SIBS informa o sistema do Emissor de duas formas: 
+
+<ul>
+  <li>na sessão RT (SIBS - Emissor); </li>
+  <li>no ficheiro Capturas e Lista Negra (<a href="../l-iii/cln.htm">MCLN5</a>).</li>
+</ul>
+
+<h6><br>
+Mensagens <em>Real-Time</em></h6>
+
+<ul>
+  <li>Comunicação de captura de cartão (<a href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=071) (CODMSG=<a href="../l-iii/116x316x.htm">3161</a>) </li>
+  <li>Alteração de Situação de Cartão / Comunicação de Inclusão de Cartão em Lista
+    Negra Urgente (<a href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=072) (CODMSG=<a href="../l-iii/116x316x.htm">3161</a>) </li>
+</ul>
+
+<p>A primeira é incluída na sessão RT do Emissor, logo que a SIBS responde ao CA,
+ordenando a captura do cartão. <br>
+A segunda é enviada quando a inserção em Lista Negra é efectuada através do Terminal
+SIBS (Gestão de Rede), Unicre ou pelo serviço do SIDF (SAOS). </p>
+
+<p>&nbsp;</p>
+
+<h6><a name="2">FICHEIRO</a> CAPTURAS E LISTA NEGRA
+(MCLN5)</h6>
+
+<p><br>
+No ficheiro <a href="../l-iii/cln.htm">MCLN5</a>, existem dois tipos de registo
+destinados aos Emissores: 
+
+<ul>
+  <li><a href="../l-iii/cln.htm#= 1">Tipo 1</a> - comunicação de captura de cartão;</li>
+  <li><a href="../l-iii/cln.htm#= 2">Tipo 2</a> - comunicação alteração de situação de
+    cartão / inclusão em Lista Negra Urgente.</li>
+</ul>
+
+<p><br>
+Existem ainda registos específicos para informar as capturas aos
+Bancos de apoio de CA, e para informar as capturas e alterações de situação
+aos <i>Acquirers.</i></p>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.9.3">A.9.3</a> CARTÕES CAPTURADOS </h2>
+
+<p><br>
+No <a href="../l-iii/cln.htm#= 1">tipo de registo 1</a> do ficheiro MCLN5, informa-se: 
+
+<ul>
+  <li>a identificação do cartão; </li>
+  <li>o local de captura, com a identificação do CA e o distrito/concelho onde se localiza.
+    Esta informação é importante pois pode haver acordos entre Emissores para a entrega de
+    cartões capturados, a nível das regiões, evitando que todos sejam remetidos ao serviço
+    central;</li>
+  <li>o motivo de captura e a nova situação do cartão. Deve ser decidido se a razão de
+    captura exige a análise cuidada dos dados do cartão ou se pode simplesmente posicionar a
+    situação do cartão como Normal (<a href="a9.htm#02">02</a>). </li>
+</ul>
+
+<p><br>
+A produção de cartões combinados (cartões bancários com PMB) tem algumas
+implicações no processo de captura: 
+
+<ul>
+  <li>O CA onde o cartão é capturado inclui o número do cartão na listagem especial de
+    cartões com PMB capturados onde apresenta o &quot;saldo disponível&quot; do cartão no
+    momento de captura. </li>
+  <li>O Emissor é informado do saldo disponível que existia naquele momento, no <a href="../l-iii/cln.htm#= 1">registo</a> do ficheiro MCLN5.</li>
+</ul>
+
+<p style="page-break-before: always">Esta informação serve para o Emissor poder prestar informação aos seus clientes e
+também para controlar a recepção do cartão e a devolução do mesmo ao seu cliente. </p>
+
+<h6><br>
+NO CASO DO MOTIVO DA CAPTURA (<a href="../../Campos/campos2.htm#160" target="explicac">160</a>)
+SER:</h6>
+
+<ul>
+  <li><strong>Lista Negra(1) e Ordem de captura do Emissor (8); <br>
+    </strong>O cartão deve ser recolhido e destruído ou arquivado conforme regulamentação
+    da auditoria do Emissor. No caso de já não haver razão para LN ou inibição, o cartão
+    deve ser colocado como Normal (<a href="a9.htm#02">02</a>), antes de ser remetido para a
+    agência. <br>
+    <br>
+  </li>
+  <li><strong>Excedidas 3 tentativas de PIN (2); <br>
+    </strong>O cliente deve aguardar a recepção do plástico, que é enviado ao balcão
+    emissor, caso não exista nenhuma comunicação de roubo ou de perda do cartão. <br>
+    <br>
+  </li>
+  <li><strong>Cartão expirado (3); <br>
+    </strong>Depois da recepção do cartão pelo Emissor este deve ser destruído. <br>
+    <br>
+  </li>
+  <li><strong>CCD inválido (4) e Ataques contra o sistema
+    (5); <br>
+    </strong>O cartão deve ser recebido pelo Emissor e depois contactada a SIBS para análise
+    e diagnóstico das situações. O cartão <strong>não deve</strong> ser devolvido ao
+    cliente. <br>
+    <br>
+  </li>
+  <li><strong>Esquecimento (6) e Avaria de CA (7); <br>
+    </strong>O cartão deve ser enviado para a agência emissora ou actuar junto da agência
+    onde o cartão foi capturado, dando autorização para a sua entrega, no caso do cliente o
+    solicitar. O cartão mantém-se em situação Normal (<a href="a9.htm#02">02</a>). </li>
+</ul>
+
+<p><br>
+O ficheiro <a href="../l-iii/cln.htm">MCLN5</a> deve ser processado para servir de base
+ao funcionamento de um serviço central do Emissor que controla a recepção dos cartões
+das outras I.C.. </p>
+
+<p><br>
+No anexo <a href="b_a4.htm">B.AX.4</a> apresenta-se uma lista dos serviços responsáveis
+pelo controlo de cartões capturados de cada Emissor nacional, por forma a facilitar
+eventuais contactos entre os Emissores. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.9.3.1">A.9.3.1</a> CARTÕES EM LISTA NEGRA URGENTE</h3>
+
+<p><br>
+No r<a href="../l-iii/cln.htm#= 2">egisto de tipo 2</a> do ficheiro MCLN5, enviam-se os
+elementos recolhidos aquando da inserção de um cartão em Lista Negra: 
+
+<ul>
+  <li>identificação do cartão; </li>
+  <li>origem da inserção; </li>
+  <li>identificação atribuída ao pedido. </li>
+</ul>
+
+<p>Os clientes titulares de cartões devem ser informados de que a notificação de perda
+ou roubo de cartão deve ser transmitida o mais depressa possível ao seu Emissor. <br>
+Só no caso de cartão perdido com código secreto ou cartões com utilização de
+assinatura e fora do horário bancário, devem informar rápida e directamente a SIBS. </p>
+
+<p>Nota-se que os Emissores utilizam esta última forma de comunicação dos seus balcões
+para a SIBS, mas este processo deve ser utilizado apenas em situações de <em>backup</em>
+do CPU do Emissor e não como procedimento habitual. Só são aceites informações
+escritas (fax) cujo formato seja idêntico ao definido no Formulário para Inserção de
+Cartão em Lista Negra Urgente (<a href="a_a8.pdf">A.AX.8</a>). </p>
+
+<p>Quando o cliente contacta a SIBS deve informar dados que permitam identificar o seu
+cartão: 
+
+<ul>
+  <li>número de cartão</li>
+  <li>número de conta associada ao cartão</li>
+  <li>nome do portador do cartão</li>
+</ul>
+
+<p><br>
+Habitualmente o número do cartão não é conhecido e só através da indicação do
+número da conta é possível identificar o cartão. No caso do nome do cliente não
+coincidir, a SIBS pode não incluir o cartão em Lista Negra. <br>
+No fim da inserção, o Sistema Multibanco devolve uma senha. Esta é comunicada ao
+cliente que a deve transmitir ao seu Banco no dia útil seguinte. <br>
+A responsabilidade da SIBS inicia-se com a data/hora da inserção desta informação,
+campo (<a href="../../Campos/campos2.htm#105" target="explicac">105</a>) da mensagem
+<a href="../l-iii/116x316x.htm">3161</a>. </p>
+
+<p>No caso da informação vir da Unicre, tratam-se de situações de utilizadores
+possuidores de cartões Visa, ou MasterCard, que contactam a Unicre. Neste caso a Unicre
+introduz os dados no seu terminal e a informação chega à SIBS em RT. <br>
+O número da senha não é preenchido e a data/hora é a da actualização dos dados na
+SIBS. <br>
+No caso da informação vir do estrangeiro, é tratada do mesmo modo. <br>
+No caso do Emissor estar em RT, é enviada uma mensagem <a href="../l-iii/116x316x.htm">3161</a>.
+</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.9.3.2">A.9.3.2</a> PROCEDIMENTOS DO EMISSOR DE CARTÃO COMBINADO CAPTURADO</h3>
+
+<p><br>
+Um cartão combinado pode ser capturado em CA, quer nas operações em que actua como
+cartão bancário, quer nas circunstâncias do seu PMB estar a ser carregado por outro
+cartão bancário. </p>
+
+<p>Em qualquer das situações, o comportamento de captura do CA é idêntico ao descrito
+em <a href="a9.htm#A.9.3">A.9.3</a>. </p>
+
+<p>O Emissor recebe um <a href="../l-iii/cln.htm#= 3">registo de tipo 3</a> no ficheiro
+MCLN5&nbsp; e pode registar a informação relativa ao saldo do PMB (<a href="../../Campos/campos5.htm#435" target="explicac">435</a>). </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.9.4">A.9.4</a> ALTERAÇÃO DE DADOS </h2>
+
+<p><br>
+Durante a vida do cartão, pode surgir a necessidade de actualizar alguns dos seus dados
+resultantes de: 
+
+<ul>
+  <li>alterações económicas que justificam alteração de saldos; </li>
+  <li>alterações das características do cliente que justifiquem aumentar ou diminuir
+    saldos; </li>
+  <li>aumentar ou diminuir restrições impostas à conta associada ao cartão; </li>
+  <li>associação de mais serviços ao cartão. </li>
+</ul>
+
+<p>Este tipo de modificação efectua-se através do uso do ficheiro Gestão de Cartões e
+Contas (<a href="../l-iii/egcc.htm">EGCC</a>). </p>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="A.9.4.1">A.9.4.1</a> ASSOCIAÇÃO OU ABATE DE SEGUNDA CONTA
+ASSOCIADA AO CARTÃO</h3>
+
+<p><br>
+O ficheiro <a href="../l-iii/egcc.htm">EGCC</a> pode ser utilizado para associação de
+uma segunda conta ao cartão, através do código de gestão (01). Junto com o código
+devem ser transmitidos todos os dados que caracterizam a conta: 
+
+<ul>
+  <li>número de conta; </li>
+  <li>agência emissora; </li>
+  <li>restrições da conta. </li>
+</ul>
+
+<p>O limite mensal e dia de renovação só devem ser posicionados caso o Emissor utilize
+o cenário de <a href="a1.htm#A.1.1.2">saldo de conta</a> com o conceito de limite mensal.
+<br>
+No caso de o Emissor pretender retirar a ligação do cartão à segunda conta, deve
+enviar o código de gestão (02) associado à identificação da mesma. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.9.4.2">A.9.4.2</a> ALTERAÇÃO DO SALDO DE CARTÃO</h3>
+
+<p><br>
+Para alterar o saldo de cartão posicionado para levantamentos (<a href="../../Campos/campos2.htm#154" target="explicac">154</a>) MONTP3 ou código do <em>plafond</em>
+a que está associado o Saldo Geral do cartão, o Emissor deve enviar um registo de tipo 1
+do ficheiro com o código de gestão 05. Nesse registo deve indicar os novos valores para
+o cartão.</p>
+
+<p>A alteração ao saldo de cartão para levantamentos (<a href="../../Campos/campos2.htm#154" target="explicac">154</a>) MONTP3 implica a
+actualização do valor deste elemento no sistema central da SIBS e uma posterior
+reescrita da Pista 3 do cartão em Caixa Automático, quando tal for possível</p>
+
+<p>A regravação da Pista 3 física do
+cartão só é efectuada se este não for EMV e se a tarja for de baixa coercividade:</p>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="502">
+  <tr>
+    <td WIDTH="217" COLSPAN="2" ROWSPAN="2">&nbsp;</td>
+    <td WIDTH="273" COLSPAN="2" ><strong>Tecnologia do cartão</strong></td>
+  </tr>
+  <tr>
+    <td WIDTH="139" >Apenas com tarja magnética</td>
+    <td WIDTH="128" class="mid">Com <em>chip</em> EMV</td>
+  </tr>
+  <tr>
+    <td WIDTH="43" ROWSPAN="2" class="mid"><strong>Pistas</strong></td>
+    <td WIDTH="168" class="mid">Alta coercividade (Hi-Co)</td>
+    <td WIDTH="139" >Cenário A<br>
+    NÃO regrava P3</td>
+    <td WIDTH="128" >Cenário B<br>
+    NÃO regrava P3</td>
+  </tr>
+  <tr>
+    <td WIDTH="168" class="mid">Baixa coercividade</td>
+    <td WIDTH="139" ><strong>Cenário C<br>
+    REGRAVA</strong></td>
+    <td WIDTH="128" >Cenário D<br>
+    NÃO regrava P3</td>
+  </tr>
+</table>
+</center></div>
+
+<p><br>
+Para os cartões cuja tecnologia impossibilita a reescrita da Pista 3 nos Caixas
+Automáticos da Rede Multibanco, a decisão das transacções que tenham em consideração
+o Saldo de Cartão é efectuada com base nos montantes guardados centralmente (consulte
+capítulo <a href="a1.htm#A.1.1.3">A.1.1.3</a>).</p>
+
+<p>A determinação da tecnologia do cartão e subsequente validação da
+possibilidade de actualização da Pista 3 é efectuada pelo próprio terminal, após
+verificação do valor do indicador de tecnologia da tarja gravado na Pista 3, no momento
+da emissão do cartão (consulte anexo <a href="a_a9.htm">A.AX.9</a> - Descrição das
+Pistas Magnéticas).</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.9.4.3">A.9.4.3</a> ALTERAÇÃO DA DURAÇÃO DO PERÍODO DO SALDO DE CARTÃO</h3>
+
+<p><br>
+Para alterar a duração do período (<a href="../../Campos/campos2.htm#124" target="explicac">124</a>) a que se refere o saldo de cartão deve também ser usado o
+código de gestão (05). Por ex.: passar de diário para semanal, ou de semanal para
+mensal, etc.. Devido à complexidade desta alteração, a SIBS deve ser contactada
+previamente. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.9.4.4">A.9.4.4</a> ALTERAÇÃO DE RESTRIÇÕES ASSOCIADAS À CONTA </h3>
+
+<p>&nbsp;<br>
+O tipo de restrições de uma conta podem ser alteradas pela utilização do código de
+gestão (06). Assim, um cartão pode ser emitido com a conta posicionada para todos os
+serviços e o seu Emissor pretender alterar esse âmbito após a emissão, para que o
+utilizador só possa ter acesso a operações que creditem a conta (ex.: depósitos). </p>
+
+<p><br>
+</p>
+
+<p style="page-break-before: always" class="center"><strong>OPERAÇÕES DISPONÍVEIS POR RESTRIÇÕES DE CONTAS</strong></p>
+
+<table border="1" cellspacing="0" cellpadding="4" width="100%">
+  <tr>
+    <td class="oito">&nbsp;</td>
+    <th colspan="5" class="oito" nowrap>Restrições Conta<br>
+    (2º dígito do campo (<a href="../../Campos/campos2.htm#133" target="explicac">133</a>)
+    TCRU, enviado pelo Emissor nos ficheiros <a href="../l-iii/eecb.htm">EECB</a> ou <a href="../l-iii/egcc.htm">EGCC</a>)</th>
+  </tr>
+  <tr>
+    <th class="oito" width="30%">Operações disponíveis <br>
+    (se posicionadas para o BIN)</th>
+    <td class="oitomid" width="14%">Sem Restrições<br>
+    (0)</td>
+    <td class="oitomid" width="15%">Débitos Interditos<br>
+    (1)</td>
+    <td class="oitomid" width="16%">Créditos Interditos<br>
+    (2)</td>
+    <td class="oitomid" width="13%">Só Créditos<br>
+    (3)</td>
+    <td class="oitomid" width="12%">Só Débitos<br>
+    (8)</td>
+  </tr>
+  <tr>
+    <td class="oitoesq"><em><strong>Operações com débito ao cliente</strong></em><br>
+    <br>
+    Ex: levantamentos, compras, transferências, pagamentos de serviços, serviços especiais
+    (com valor contabilístico)</td>
+    <td class="oitomid" width="14%">Disponíveis</td>
+    <td class="oitomid" width="15%">Não <br>
+    Disponíveis</td>
+    <td class="oitomid" width="16%">Disponíveis</td>
+    <td class="oitomid" width="13%">Não <br>
+    Disponíveis</td>
+    <td class="oitomid" width="12%">Disponíveis</td>
+  </tr>
+  <tr>
+    <td class="oitoesq"><em><strong>Operações com crédito ao cliente</strong></em><br>
+    <br>
+    Ex: depósitos em numerário/valores, devoluções</td>
+    <td class="oitomid" width="14%">Disponíveis</td>
+    <td class="oitomid" width="15%">Disponíveis</td>
+    <td class="oitomid" width="16%">Não <br>
+    Disponíveis</td>
+    <td class="oitomid" width="13%">Disponíveis</td>
+    <td class="oitomid" width="12%">Não <br>
+    Disponíveis</td>
+  </tr>
+  <tr>
+    <td class="oitoesq"><em><strong>Outras Operações</strong></em><br>
+    <br>
+    Ex: consultas, serviços especiais (sem valor contabilístico)</td>
+    <td class="oitomid" width="14%">Disponíveis</td>
+    <td class="oitomid" width="15%">Disponíveis</td>
+    <td class="oitomid" width="16%">Disponíveis</td>
+    <td class="oitomid" width="13%">Não <br>
+    Disponíveis</td>
+    <td class="oitomid" width="12%">Não <br>
+    Disponíveis</td>
+  </tr>
+</table>
+
+<p><br>
+A alteração às restrições de uma conta pode ser efectuada alternativamente através
+do código de gestão (18), implementado em Março de 2004.</p>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="A.9.4.5">A.9.4.5</a> ALTERAÇÃO DO NÚMERO DA PRIMEIRA CONTA </h3>
+
+<p><br>
+Para possibilitar aos Emissores uma maior flexibilidade no processo de migração para o
+euro, foi criado o código de gestão (10) para o efeito. </p>
+
+<p>Neste código de gestão (10) do <a href="../l-iii/egcc.htm">EGCC</a> devem
+ser informados todos os campos que caracterizam uma conta. Porém, este registo tem como
+único objectivo e função possibilitar ao Emissor a alteração do número da primeira
+conta associada a um cartão. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.9.4.6">A.9.4.6</a> ALTERAÇÃO DE ELEMENTOS DE UMA CONTA </h3>
+
+<p><br>
+O Emissor pode utilizar código de gestão (18) para alterar os elementos que caracterizam
+uma conta associada ao cartão: 
+
+<ul >
+  <li>Código de agência;</li>
+  <li>Restrições de conta;</li>
+  <li>Limite mensal e dia de renovação desse limite.</li>
+</ul>
+
+<p>Para alteração destes elementos, o Emissor indica no código de gestão
+(18) qual a conta a alterar. Esta pode ser a primeira ou segunda conta do cartão.</p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always" ><a name="A.9.4.7">A.9.4.7</a> ALTERAÇÃO DE PARÂMETROS DE RISCO PARA
+TRANSACÇÕES <em>OFFLINE</em> (CARTÕES EMV) </h3>
+
+<p><br>
+Através dos códigos de gestão (11) e (12), de utilização restrita a cartões EMV, os
+Emissores podem efectuar alterações aos valores dos elementos utilizados na decisão de
+transacções efectuadas em cenário de <em>Offline</em>, nomeadamente: 
+
+<ul >
+  <li>Factor de conversão para a segunda moeda (quando exista) de uma aplicação contida no <em>chip</em>;</li>
+  <li>Limites autorizados para transacções <em>offline</em>, em quantidade e valor.</li>
+</ul>
+
+<p>A actualização destes elementos EMV no cartão não é imediata. Com o
+processamento do código de gestão enviado pelo Emissor, é preparado um ou vários <em>scripts</em>
+para envio de dados ao cartão, para actualização dos elementos contidos no <em>chip</em>.
+Estes <em>scripts</em> são enviados ao cartão no momento em que o cliente efectue uma
+transacção em <em>online</em> com a SIBS, utilizando a Aplicação EMV contida no
+cartão que se pretende actualizar. Assim, o cartão pode efectuar transacções <em>offline</em>
+com base nos parâmetros anteriores até que seja possível efectuar a actualização dos
+mesmos.</p>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="A.9.4.8">A.9.4.8</a> GESTÃO DE
+FUNCIONALIDADES ADICIONAIS À COMPRA (CARTÕES EMV) </h3>
+
+<p><br>
+Para possibilitar uma gestão da disponibilidade para cada cartão e aspectos operativos
+das diferentes funcionalidades adicionais às compras realizadas com cartões EMV, o
+Emissor tem disponível via ficheiro <a href="../l-iii/egcc.htm">EGCC</a> um conjunto de
+códigos de gestão:</p>
+
+<p><br>
+
+<ul >
+  <li><strong>Compra com pagamento fraccionado (Linha de Crédito)</strong></li>
+</ul>
+
+<blockquote>
+  <p>Através do código de gestão (13), o Emissor pode eliminar ou associar uma
+  linha de crédito a uma aplicação contida no cartão. Esta acção implica uma
+  actualização dos elementos contidos no <em>chip</em> do cartão. Com o processamento do
+  código de gestão enviado pelo Emissor, é preparado um <em>script</em> para
+  actualização de dados, que é enviado ao cartão no momento em que o cliente efectue uma
+  transacção em <em>online</em> com a SIBS. </p>
+  <p>Adicionalmente, o Emissor pode utilizar o código de gestão (17) para gerir
+  o valor de Saldo para Compras com Pagamento Fraccionado, quando pretenda utilizar este
+  cenário de decisão. Este saldo é gerido centralmente e não é enviado ao cartão.</p>
+</blockquote>
+
+<p><br>
+
+<ul >
+  <li><strong>Compra com rebate de pontos (Fidelização)</strong></li>
+</ul>
+
+<blockquote>
+  <p>Utilizando o código de gestão (14), o Emissor pode eliminar ou associar um
+  programa de Fidelização ao cartão. Esta acção implica uma actualização dos dados no
+  <em>chip</em>. À semelhança do código de gestão (13), também neste caso estes dados
+  são actualizados apenas após realização de transacção em <em>online</em> com a SIBS.</p>
+  <p>O Emissor tem ainda à disposição o código de gestão (16) para efectuar a
+  gestão de quaisquer elementos referentes a vales virtuais de pontos.</p>
+</blockquote>
+
+<p><br>
+
+<ul >
+  <li><strong>Compra com Detalhe (Programa de Emissor)</strong></li>
+</ul>
+
+<blockquote>
+  <p>O código de gestão (15) permite ao Emissor associar um programa específico
+  ao cartão. Também neste caso é necessário actualizar dados contidos no <em>chip</em>,
+  o que se efectua por intermédio de <em>script</em> enviado ao cartão numa transacção
+  em <em>online</em> com a SIBS realizada após o processamento do registo do <a href="../l-iii/egcc.htm">EGCC</a> recebido do Emissor.</p>
+</blockquote>
+
+  <p><br>
+</p>
+
+<p style="page-break-before: always">
+Note-se que existem situações em que um único registo de alteração enviado
+pelo Emissor pode ter impacto nos elementos de várias aplicações EMV contidas
+no <i>chip</i>. Por hipótese, o Emissor pode indicar que pretende
+disponibilizar a funcionalidade &quot;Compra com Rebate de Pontos (Fidelização)&quot;
+para várias aplicações existentes no cartão (através do código de gestão
+(14)). Contudo, o processamento de <i>scripts</i> é efectuado apenas para a
+aplicação EMV que estiver a ser utilizada, não sendo possível efectuar a
+actualização simultânea das diferentes aplicações contidas no <i>chip</i>
+do cartão. </p>
+
+<p><br>
+Para mais informações sobre as funcionalidades adicionais deve ser consultado o
+capítulo <a href="a7.htm">A.7</a>. </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.9.5">A.9.5</a> VALIDADE DO CARTÃO </h2>
+
+<p><br>
+O período de vida de um cartão depende da forma como a sua data de expiração é
+definida na produção de cartões: 
+
+<ul>
+  <li>A data de expiração do cartão é gravada apenas nas pistas magnéticas (por exemplo,
+    os cartões Multibanco); ou</li>
+  <li>A data de expiração do cartão é gravada nas pistas magnéticas e no plástico, ou
+    seja, a data é visível para o cliente (por exemplo, os cartões pertencentes aos
+    Sistemas de Pagamento Internacionais).</li>
+</ul>
+
+<p><br>
+</p>
+
+<h6>CARTÕES COM A DATA GRAVADA NO PLÁSTICO</h6>
+
+<p>Quando um cartão tem a data de expiração gravada no plástico (ex: cartões
+pertencentes aos Sistemas de Pagamento Internacional), o seu período de utilização
+termina quando aquela é atingida e o Emissor necessita emitir novos cartões para os
+clientes. </p>
+
+<p>No dia seguinte à sua expiração, a SIBS envia o ficheiro Cartões Renovados ou
+Expirados (sem renovação) (<a href="../l-iii/ecre.htm">ECRE</a>) com a identificação
+dos cartões que expiraram (Ver <a href="a9.htm#figura">figura</a>). </p>
+
+<p><br>
+</p>
+
+<h6>CARTÕES SEM A DATA GRAVADA NO PLÁSTICO</h6>
+
+<p>O período de utilização de um cartão pode ser prolongado através da sua
+renovação automática. Este procedimento é possível apenas quando se verifiquem em
+simultâneo as seguintes condições: 
+
+<ul>
+  <li>o cartão não tem uma marca pertencente a um Sistema de Pagamento Internacional;</li>
+  <li>o cartão não tem a data de expiração gravada no plástico;</li>
+  <li >o cartão não tem pistas magnéticas de alta coercividade;</li>
+  <li >o Emissor não utiliza o cenário 3 de estrutura de base de dados de cartões,
+    em que a data de expiração corresponde a uma parte da chave que identifica o cartão,
+    pelo que não pode ser alterada (consulte capítulo <a href="a2.htm#A.2.5">A.2.5</a>).</li>
+</ul>
+
+<p>Quando o procedimento de renovação automática não é possível, a
+renovação é exclusivamente da responsabilidade do Emissor.</p>
+
+<p>A renovação automática posiciona uma nova data de expiração (dois anos mais tarde
+que a data anterior) na base de dados de cartões, que é actualizada a nível da pista
+magnética do cartão quando o cliente efectua uma operação num CA da Rede MB. O mesmo cartão pode ser automaticamente renovado por duas vezes, expirando
+obrigatoriamente na data de expiração determinada no momento da segunda renovação.</p>
+
+<p>No mês anterior à data de expiração, a SIBS posiciona os cartões para renovação
+automática desde que estes verifiquem as seguintes condições: 
+
+<ul>
+  <li>Encontra-se numa situação que permita utilizar a Rede MB, ou seja Normal (<a href="a9.htm#02">02</a>), Por
+    Personalizar (<a href="a9.htm#03">03</a>) ou Capturado a Devolver&nbsp;(<a href="a9.htm#05">05</a>);</li>
+  <li>Não atingiu o limite das renovações;</li>
+  <li>Realizou (pelos menos) uma operação nos últimos seis meses; e</li>
+  <li>Não apresenta o indicador &#145;pista 3 danificada&#146; posicionado, que é activado
+    quando um CA não consegue ler a pista 3 do cartão (tornando arriscado prolongar a vida
+    de um cartão que só realiza operações com base na pista 2).</li>
+</ul>
+
+<p>Relativamente aos cartões que não reúnem as duas últimas condições atrás
+indicadas, a SIBS envia um ficheiro Cartões Sem Renovação Automática (<a href="../l-iii/esra.htm">ESRA</a>) para que o Emissor avalie se devem (ou não) ser
+renovados. </p>
+
+<p>Se o Emissor decidir que, dos cartões enviados no ficheiro <a href="../l-iii/esra.htm">ESRA</a>,
+existem alguns que devem ser renovados, deve indicá-los através do ficheiro
+Revalidação de Cartões (<a href="../l-iii/ercm.htm">ERCM</a>) antes do início do mês
+de expiração (ver <a href="a9.htm#figura">figura</a>). </p>
+
+<p>A renovação é realizada um mês antes da data de expiração dos cartões porque: 
+
+<ul>
+  <li>é necessário dar tempo aos utilizadores para acederem ao Sistema MB e assim
+    desencadearem o processo de actualização das pistas magnéticas do cartão;</li>
+  <li>a partir do momento em que a data de expiração é atingida e se não existe
+    indicação de renovação, os CAs capturam os cartões, privando os clientes deste
+    serviço.</li>
+</ul>
+
+<p >No dia seguinte à sua expiração, a SIBS envia o ficheiro Cartões Renovados ou
+Expirados (sem renovação) (<a href="../l-iii/ecre.htm">ECRE</a>), com a identificação
+dos cartões que expiraram, dos que foram renovados automaticamente e dos que foram
+renovados a pedido do Emissor, ou seja, aqueles que foram informados no ficheiro <a href="../l-iii/ercm.htm">ERCM</a> (Ver <a name="figura">figura</a>).</p>
+
+<p class="center"><br>
+<img src="imagens2/a9-1.gif" alt="a9-1.gif" width="380" height="440"></p>
+
+<p class="dta"><br>
+<a href="a8.htm">Anterior</a></p>
+</body>
+</html>

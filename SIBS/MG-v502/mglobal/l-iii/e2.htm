@@ -1,0 +1,523 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+
+<title>E.2 FICHEIROS R... A CARTÕES</title>
+</head>
+
+<body>
+
+<h1>E.2 FICHEIROS RELATIVOS A CARTÕES</h1>
+
+<p>&nbsp;</p>
+
+<p>Um Emissor de cartões com o Serviço MB deve ter o seu Sistema de
+Informação preparado para emitir e tratar o conjunto de ficheiros descritos neste
+capítulo, correspondentes ao tipo de serviço que pretende implementar.</p>
+
+<p>A emissão da maior parte dos ficheiros é da iniciativa do Emissor, nas
+datas e horas mais convenientes para a sua actividade.</p>
+
+<p>O envio dos ficheiros pelo Emissor deve ser feito por transmissão
+electrónica, admitindo-se a entrega por suporte físico apenas a título excepcional.<a
+NAME="HEADER"></p>
+
+<p></a>Os ficheiros incluídos neste capítulo estão distribuídos por três
+grupos lógicos: 
+
+<ol>
+  <li><p>Ficheiros regularmente enviados à SIBS por Emissores participantes no
+    Sistema Multibanco;</p>
+  </li>
+</ol>
+
+<ol  start="2">
+  <li>Ficheiros regularmente enviados pela SIBS aos emissores participantes no sistema
+    Multibanco, quer se tratem de ficheiros de retorno (para informação ao Emissor do
+    resultado dos processamentos efectuados sobre os ficheiros recebidos) ou de ficheiros
+    sistematicamente enviados pela SIBS (ex.: ficheiros <a href="ecre.htm">MECRE</a> e <a
+    href="esra.htm">MESRA</a>);</li>
+</ol>
+
+<ol  start="3">
+  <li>Ficheiros de utilização pontual ou destinados a funcionalidades específicas.</li>
+</ol>
+
+<p><br>
+No último grupo, incluem-se ficheiros com objectivos diferenciados, nomeadamente: 
+
+<ul >
+  <li>informar o Emissor dos cartões por si emitidos existentes nas bases de dados de
+    cartões da SIBS (<a href="tcar.htm">TCAR</a>), por forma a possibilitar uma eventual
+    consolidação da informação residente no sistema do Emissor;</li>
+</ul>
+
+<ul >
+  <li>possibilitar a migração de cartões entre centros de processamento de dados (<a
+    href="tcpd.htm">TCPD</a>);</li>
+</ul>
+
+<ul >
+  <li>permitir a emissão de cartões não bancários (<a href="edacdacb.htm">EDAC</a>/<a
+    href="edacdacb.htm#RACB">ERAC</a> e <a href="imgbmimg.htm">MIMG</a>/<a
+    href="imgbmimg.htm#RIMB">RIMG</a>);</li>
+</ul>
+
+<ul >
+  <li>efectuar o carregamento de clientes e cartões Euroshell (<a href="pcli.htm">MPCLI</a>, <a
+    href="pcrt.htm">MPCRT</a>, <a href="eccs.htm">MECCS</a>);</li>
+</ul>
+
+<ul >
+  <li>possibilitar a gestão de Lista Negra para o serviço de baixo valor e outros serviços
+    relacionados com cartões não existentes em ficheiro positivo de cartões na SIBS (<a
+    href="ecln.htm">MECLN</a>/<a href="erln.htm">MERLN</a>)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="370"></td>
+    <td width="90" class="oito">Designação para<br>
+    <em>file transfer *</em></td>
+    <td width="90" class="oito">Comprimento <br>
+    do registo</td>
+  </tr>
+  <tr>
+    <td width="370" class="esq10"><strong>Ficheiro enviados pelo Emissor para a SIBS</strong></td>
+    <td width="90" class="oito"></td>
+    <td width="90" class="oito"></td>
+  </tr>
+  <tr>
+    <td width="370" class="esq" colspan="3">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="370" class="esq10">&nbsp; &#150;&nbsp; EMISSÃO DE CARTÕES</td>
+    <td width="90" class="dez"><a href="eecb.htm">MEECB</a></td>
+    <td width="90" class="dez">409</td>
+  </tr>
+  <tr>
+    <td width="370" class="esq10">&nbsp; &#150;&nbsp; DADOS DOS TITULARES DE CARTÕES</td>
+    <td width="90" class="dez"><a href="ednpepcg.htm" target="main">MEDNP</a></td>
+    <td width="90" class="dez">164</td>
+  </tr>
+  <tr>
+    <td width="370" class="esq10">&nbsp; &#150;&nbsp; PERSONALIZAÇÃO DE CARTÕES</td>
+    <td width="90" class="dez"><a href="ednpepcg.htm" target="main">MEPCG</a></td>
+    <td width="90" class="dez">348</td>
+  </tr>
+  <tr>
+    <td width="370" class="esq10">&nbsp; &#150;&nbsp; GESTÃO DE CARTÕES E CONTAS</td>
+    <td width="90" class="dez"><a href="egcc.htm">MEGCC</a></td>
+    <td width="90" class="dez">55</td>
+  </tr>
+  <tr>
+    <td width="370" class="esq10">&nbsp; &#150;&nbsp; ALTERAÇÃO DE SITUAÇÃO DE CARTÃO</td>
+    <td width="90" class="dez"><a href="easc.htm">MEASC</a></td>
+    <td width="90" class="dez">46</td>
+  </tr>
+  <tr>
+    <td width="370" class="esq10">&nbsp; &#150;&nbsp; REVALIDAÇÃO DE CARTÕES</td>
+    <td width="90" class="dez"><a href="ercm.htm">MERCM</a></td>
+    <td width="90" class="dez">141</td>
+  </tr>
+  <tr>
+    <td width="370" class="esq10">&nbsp; &#150;&nbsp; DADOS ADICIONAIS DE CARTÕES (cartões
+    bancários)</td>
+    <td width="90" class="dez"><a href="edacdacb.htm">MDACB</a></td>
+    <td width="90" class="dez">240</td>
+  </tr>
+  <tr>
+    <td width="370" class="esq10">&nbsp; &#150;&nbsp; IMAGENS DE CARTÕES (cartões
+    bancários)</td>
+    <td width="90" class="dez"><a href="imgbmimg.htm">MIMGB</a></td>
+    <td width="90" class="dez">512</td>
+  </tr>
+  <tr>
+    <td width="370" class="esq10">&nbsp; &#150;&nbsp; EMISSÃO DE CARTÕES INTERNACIONAIS</td>
+    <td width="90" class="dez"><a href="ecbieeri.htm">MECBI</a></td>
+    <td width="90" class="dez">348</td>
+  </tr>
+</table>
+
+<p class="oito">* Constituída pelos campos (<a href="../../Campos/campos2.htm#101"
+target="explicac">101</a>) APLIC e (<a href="../../Campos/campos2.htm#102"
+target="explicac">102</a>) FICH.</p>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="410"></td>
+    <td width="90" class="oito">Designação para<br>
+    <em>file transfer *</em></td>
+    <td width="90" class="oito">Comprimento <br>
+    do registo</td>
+  </tr>
+  <tr>
+    <td width="410" class="esq10"><strong>Ficheiros expedidos pela SIBS</strong></td>
+    <td width="90" class="oito"></td>
+    <td width="90" class="oito"></td>
+  </tr>
+  <tr>
+    <td width="410" class="esq" colspan="3">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="410" class="esq10">&nbsp; &#150;&nbsp; CONFIRMAÇÃO DE CARTÕES </td>
+    <td width="90" class="dez"><a href="eccf.htm">MECCF</a></td>
+    <td width="90" class="dez">66</td>
+  </tr>
+  <tr>
+    <td width="410" class="esq10">&nbsp; &#150;&nbsp; EMISSÃO LÓGICA DE CARTÕES</td>
+    <td width="90" class="dez"><a href="eelc.htm">MEELC</a></td>
+    <td width="90" class="dez">138</td>
+  </tr>
+  <tr>
+    <td width="410" class="esq10">&nbsp; &#150;&nbsp; PERSONALIZAÇÃO DE CARTÕES EMV</td>
+    <td width="90" class="dez"><a href="pemv.htm">MPEMV</a></td>
+    <td width="90" class="dez">1268</td>
+  </tr>
+  <tr>
+    <td width="410" class="esq10">&nbsp; &#150;&nbsp; FICHEIRO DE ERROS CARTÃO</td>
+    <td width="90" class="dez"><a href="eerr.htm">MEERR</a></td>
+    <td width="90" class="dez">316</td>
+  </tr>
+  <tr>
+    <td width="410" class="esq10">&nbsp; &#150;&nbsp; CARTÕES RENOVADOS OU EXPIRADOS S/
+    RENOVAÇÃO</td>
+    <td width="90" class="dez"><a href="ecre.htm">MECRE</a></td>
+    <td width="90" class="dez">72</td>
+  </tr>
+  <tr>
+    <td width="410" class="esq10">&nbsp; &#150;&nbsp; CARTÕES SEM RENOVAÇÃO AUTOMÁTICA</td>
+    <td width="90" class="dez"><a href="esra.htm">MESRA</a></td>
+    <td width="90" class="dez">54</td>
+  </tr>
+  <tr>
+    <td class="esq10">&nbsp; &#150;&nbsp; ERROS DE DADOS ADICIONAIS DE CARTÕES
+    (cartões bancários)</td>
+    <td width="90" class="dez"><a href="edacdacb.htm#RACB">MRACB</a></td>
+    <td width="90" class="dez">260</td>
+  </tr>
+  <tr>
+    <td class="esq10">&nbsp; &#150;&nbsp; ERROS DE IMAGENS DE CARTÕES (cartões bancários)</td>
+    <td width="90" class="dez"><a href="imgbmimg.htm#RIMB">MRIMG</a></td>
+    <td width="90" class="dez">260</td>
+  </tr>
+  <tr>
+    <td width="410" class="esq10">&nbsp; &#150;&nbsp; ERROS DE CARTÕES INTERNACIONAIS</td>
+    <td width="90" class="dez"><a href="ecbieeri.htm#EERI">MEERI</a></td>
+    <td width="90" class="dez">316</td>
+  </tr>
+</table>
+
+<p class="oito">* Constituída pelos campos (<a href="../../Campos/campos2.htm#101"
+target="explicac">101</a>) APLIC e (<a href="../../Campos/campos2.htm#102"
+target="explicac">102</a>) FICH.</p>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td></td>
+    <td width="90" class="oito">Designação para<br>
+    <em>file transfer *</em></td>
+    <td width="90" class="oito">Comprimento <br>
+    do registo</td>
+  </tr>
+  <tr>
+    <td class="esq10"><strong>Ficheiros para funcionalidades específicas</strong></td>
+    <td width="90" class="oito"></td>
+    <td width="90" class="oito"></td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="3">&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq10">&nbsp; &#150;&nbsp; CARTÕES CARREGADOS NA SIBS</td>
+    <td width="90" class="dez"><a href="tcar.htm">TCAR</a></td>
+    <td width="90" class="dez">110</td>
+  </tr>
+  <tr>
+    <td class="esq10">&nbsp; &#150;&nbsp; MIGRAÇÃO DE CARTÕES DE CPD</td>
+    <td width="90" class="dez"><a href="tcpd.htm">TCPD</a></td>
+    <td width="90" class="dez">25</td>
+  </tr>
+  <tr>
+    <td class="esq10">&nbsp; &#150;&nbsp; ERROS DE MIGRAÇÃO DE CARTÕES DE CPD</td>
+    <td width="90" class="dez"><a href="tcpd.htm#ERROS">TCPD</a></td>
+    <td width="90" class="dez">25</td>
+  </tr>
+  <tr>
+    <td class="esq10">&nbsp; &#150;&nbsp; DADOS ADICIONAIS DE CARTÕES (cartões não
+    bancários)</td>
+    <td width="90" class="dez"><a href="edacdacb.htm">EDAC</a></td>
+    <td width="90" class="dez">240</td>
+  </tr>
+  <tr>
+    <td class="esq10" nowrap>&nbsp; &#150;&nbsp; ERROS DADOS ADICIONAIS DE CARTÕES&nbsp;
+    (cartões não bancários)</td>
+    <td width="90" class="dez"><a href="edacdacb.htm#RACB">ERAC</a></td>
+    <td width="90" class="dez">260</td>
+  </tr>
+  <tr>
+    <td class="esq10">&nbsp; &#150;&nbsp; IMAGENS DE CARTÕES&nbsp; (cartões não
+    bancários)</td>
+    <td width="90" class="dez"><a href="imgbmimg.htm">MIMG</a></td>
+    <td width="90" class="dez">512</td>
+  </tr>
+  <tr>
+    <td class="esq10">&nbsp; &#150;&nbsp; ERROS DE IMAGENS DE CARTÕES&nbsp; (cartões não
+    bancários)</td>
+    <td width="90" class="dez"><a href="imgbmimg.htm#RIMB">RIMG</a></td>
+    <td width="90" class="dez">260</td>
+  </tr>
+  <tr>
+    <td class="esq10">&nbsp; &#150;&nbsp; INSERÇÃO E ALTERAÇÃO DE DADOS DE CLIENTES</td>
+    <td width="90" class="dez"><a href="pcli.htm">MPCLI</a></td>
+    <td width="90" class="dez">185</td>
+  </tr>
+  <tr>
+    <td class="esq10">&nbsp; &#150;&nbsp; PRODUÇÃO E RENOVAÇÃO DE CARTÕES</td>
+    <td width="90" class="dez"><a href="pcrt.htm">MPCRT</a></td>
+    <td width="90" class="dez">116</td>
+  </tr>
+  <tr>
+    <td class="esq10">&nbsp; &#150;&nbsp; ERROS DE CLIENTES E CARTÕES SHELL</td>
+    <td width="90" class="dez"><a href="eccs.htm">MECCS</a></td>
+    <td width="90" class="dez">211</td>
+  </tr>
+  <tr>
+    <td class="esq10">&nbsp; &#150;&nbsp; LISTA NEGRA</td>
+    <td width="90" class="dez"><a href="ecln.htm">MECLN</a></td>
+    <td width="90" class="dez">45</td>
+  </tr>
+  <tr>
+    <td class="esq10">&nbsp; &#150;&nbsp; ERROS DE LISTA NEGRA</td>
+    <td width="90" class="dez"><a href="erln.htm">MERLN</a></td>
+    <td width="90" class="dez">144</td>
+  </tr>
+</table>
+
+<p class="oito">* Constituída pelos campos (<a href="../../Campos/campos2.htm#101"
+target="explicac">101</a>) APLIC e (<a href="../../Campos/campos2.htm#102"
+target="explicac">102</a>) FICH.</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always"><strong><em>HEADER</em> DOS FICHEIROS (a)</strong></p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <th width="160">Nome do Campo</th>
+    <th width="45">Comp.</th>
+    <th width="45">Pos.</th>
+    <th width="45">Rep.</th>
+    <th width="70">Nº Campo</th>
+    <th width="200">Obs. </th>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#111">111</a></td>
+    <td width="200" class="esq">= '0'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">APLIC</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">A</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#101">101</a></td>
+    <td width="200" class="esq">= 'M'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">3</td>
+    <td width="45">A</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#102">102</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VERFICH</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos1.htm#064">064</a></td>
+    <td width="200" class="esq">(b)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200" class="esq">Preenchido</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">13</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#104">104</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos1.htm#061">061</a></td>
+    <td width="200" class="esq">= AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos1.htm#062">062</a></td>
+    <td width="200" class="esq">= AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATAVALOR</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">36</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#110">110</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODMOEDA</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">44</td>
+    <td width="45">N</td>
+    <td width="70"><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td width="200" class="esq">= '978'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODPAIS</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">47</td>
+    <td width="45" >N</td>
+    <td width="70"><a href="../../Campos/campos3.htm#226" target="explicac">226</a></td>
+    <td width="200" class="esq">(c)</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td nowrap class="esq">(a) - &nbsp; </td>
+    <td class="esq">O <em>header</em> indicado não é aplicável a todos os ficheiros
+    relativos a cartões. Quando o <em>header</em> a considerar for distinto, o mesmo é
+    apresentado na descrição do próprio ficheiro. </td>
+  </tr>
+  <tr>
+    <td class="esq">(b) -&nbsp;</td>
+    <td class="esq">Indicada na descrição de cada ficheiro. Nos registos de detalhe onde
+    não esteja indicada a versão, considera-se como '00'.</td>
+  </tr>
+  <tr>
+    <td class="esq">(c) -&nbsp;</td>
+    <td class="esq">Preenchido apenas no caso dos ficheiros <a href="eerr.htm">MEERR</a> 
+      e <a href="ecbieeri.htm">MECBI</a> (campo
+    <a HREF="../../Campos/campos2.htm#102">FICH</a>).</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><strong><a name="TRAILER"><em>TRAILER</em></a> DOS FICHEIROS (a)</strong></p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <th width="160">Nome do Campo </th>
+    <th width="45">Comp.</th>
+    <th width="45">Pos.</th>
+    <th width="45">Rep.</th>
+    <th width="70">Nº Campo </th>
+    <th width="200">Obs.</th>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#111">111</a></td>
+    <td width="200" class="esq">= '9'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTREG </td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#107">107</a></td>
+    <td width="200" class="esq">Preenchido</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTDEB </td>
+    <td class="dta" width="45">16</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#108">108</a></td>
+    <td width="200" class="esq">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTCRED </td>
+    <td class="dta" width="45">16</td>
+    <td class="dta" width="45">26</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#109">109</a></td>
+    <td width="200" class="esq">= zeros</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td nowrap class="esq">(a) - &nbsp; </td>
+    <td class="esq">O <em>trailer </em>indicado não é aplicável a todos os ficheiros
+    relativos a cartões. Quando o <em>trailer</em> a considerar for distinto, o mesmo é
+    apresentado na descrição do próprio ficheiro. </td>
+  </tr>
+</table>
+
+<p><br>
+<strong>Nota:<br>
+</strong>Se a dimensão do registo de detalhe for inferior a 49 bytes (dimensão do <em>HEADER</em>),
+inclui-se um campo de <em>Filler</em> até atingir aquele valor. <br>
+No caso da dimensão do registo de detalhe ser maior ou igual a 49 bytes, a dimensão do <em>HEADER</em>
+e do <em>TRAILER</em> é ajustada até esse valor através de um campo <em>filler</em> de
+dimensão adequada.</p>
+
+<p class="dta"><br>
+<a target="main" href="e1.htm">Anterior</a>/<a target="main" href="e3.htm">Seguinte</a></p>
+</body>
+</html>

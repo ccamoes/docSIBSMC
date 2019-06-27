@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>X-H - COMISSÕES</title>
+<script>top.captulos.location='indicex.htm#X';</script>
+
+</head>
+
+<body>
+
+<h2>H - COMISSÕES</h2>
+
+<p>&nbsp;</p>
+
+<p>Neste grupo do tarifário englobam-se diversas comissões e taxas cobradas pela SIBS.
+Apresentam-se aqui algumas rubricas que são passíveis de aplicação ao Banco
+enquanto Entidade de Apoio de Entidades de Pagamento.</p>
+
+<p>&nbsp;<br>
+</p>
+
+<h3><a name="H7">H7</a> - SERVIÇO ESPECIAL</h3>
+
+<p><br>
+<strong><a name="H79">H79</a> - Tarifa mensal por Serviço Especial Personalizado<br>
+<a name="H7A">H7A</a> - Tarifa mensal por Entidade activa do Pagamento Serviços/Compras<br>
+<a name="H7B">H7B</a> - Tarifa mensal por Serviço Especial Parametrizável<br>
+<a name="H7X">H7X</a> - Tarifa por operação de Serviço Especial Bancário<br>
+<a name="H7Y">H7Y</a> - SE Personalizado - Tarifa de <em>Real-Time</em> <br>
+<a name="H7Z">H7Z</a> - Serviços Especiais Personalizados</strong></p>
+
+<p>Estas rubricas são referentes à utilização dos serviços de pagamentos (Pagamento
+de Serviços/Compras, Serviços Especiais) disponibilizados na Rede MB e aplicam-se ao
+Banco de Apoio da Entidade. </p>
+
+<p class="a"><br>
+<b>Forma de controlo</b></p>
+<p class="a">O Banco é a entidade responsável pela contratação e negociação
+das entidades de pagamentos a quem presta serviços. A SIBS informa no ficheiro
+MELPS, <a href="../l-iii/elps.htm#= 3">registo tipo 3</a>, todas as Entidades de
+Pagamentos matriculadas no Sistema Multibanco, com a indicação do
+correspondente Banco de Apoio caso este coincida com o destinatário da informação.</p>
+
+<p>&nbsp;<br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong> </p>
+
+<p>O registo tipo 4 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#408">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#327">327</a>) identificação do
+    comerciante (7)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#468">468</a>) identificação da
+    Entidade (5)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2">
+  <tr>
+    <td class="fundoesq" width="620"><em>MEFAC &#150; Exemplo da rubrica H79, H7A, H7B</em></td>
+  </tr>
+  <tr>
+    <td class="esq" width="620"><pre class="tahoma">
+…
+3H7 SERVIÇO
+4H79AAAAMMDDCCCCCCCEEEEE    MENS.S.ESP.PERSON. 0000000000200000000000000100000000002000D
+4H7AAAAAMMDDCCCCCCCEEEEE    MENS. PAG.SERV./COMPRA 0000000000010000000000000100000000000100D
+4H7BAAAAMMDDCCCCCCCEEEEE    MENS.S.ESP.PARAM. 0000000000100000000000000100000000001000D
+4H7ZAAAAMMDD                         SERV. ESPEC. PERSONAL. 000000000062000000000054530000000338086D
+…
+6H70000000009999D
+7H  0000000009999D
+…</pre>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span> <br>
+    Para efeitos de apresentação e por uma questão prática mantém-se o layout anterior nas
+    tabelas auxiliares. </em></td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="x2.htm">Anterior</a></p>
+</body>
+</html>

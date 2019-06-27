@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>X-R - REEMBOLSO DE PORTES DE CORREIO</title>
+<script>top.captulos.location='indicex.htm#X';</script>
+</head>
+
+<body>
+
+<h2>R - REEMBOLSO DE PORTES DE CORREIO</h2>
+
+<p>&nbsp;</p>
+
+<p>Esta rubrica é referente aos portes pagos pela SIBS aos CTT relativos a expedições
+efectuadas em nome do Banco. Os valores das tarifas deste grupo R são actualizáveis na
+medida das alterações do tarifário dos CTT. </p>
+
+<p>&nbsp;</p>
+
+<h3><br>
+R1 - CORREIO NORMAL</h3>
+
+<p><br>
+<strong>R11 - Expedição (até 20 gr) <br>
+R12 - Expedição (de 21 a 50 gr)<br>
+R13 - Expedição (de 51 a 100 gr)<br>
+R14 - Expedição (de 101 a 500 gr)<br>
+R15 - Expedição (de 501 gr a 2 Kg)</strong></p>
+
+<p>&nbsp;</p>
+
+<h3><br>
+R2 - CORREIO AZUL</h3>
+
+<p><br>
+</p>
+
+<p><strong>R21 - Expedição (até 20 gr) <br>
+R22 - Expedição (de 21 a 50 gr)<br>
+R23 - Expedição (de 51 a 100 gr)<br>
+R24 - Expedição (de 101 a 500 gr)<br>
+R25 - Expedição (de 501 gr a 2 Kg)</strong></p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Os reembolsos das expedições realizadas pela SIBS para membros que não possuem
+avença própria com os CTT, são referentes à expedição de extractos comerciante, pelo
+que estas têm correspondência com a rubrica <a href="x-i.htm">I</a>. Assim, deve ser
+utilizada a mesma forma de controlo aplicada nessa rubrica: o ficheiro de terminais de
+modo a identificar os terminais que têm o serviço de extracto posicionado. </p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#327">327</a>) identificação do
+    comerciante (7) </li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#328">328</a>) identificação do
+    estabelecimento (4) </li>
+  <li>(<a target="explicac" href="../../Campos/campos1.htm#006">006</a>) identificação do
+    terminal (10) </li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<blockquote>
+</blockquote>
+
+<p>&nbsp;<br>
+</p>
+
+<table style="page-break-before: always" BORDER="1" CELLSPACING="0" CELLPADDING="2"
+WIDTH="568">
+  <tr>
+    <td class="fundoesq" width="558"><em>MEFAC &#150; Exemplo da rubrica R</em></td>
+  </tr>
+  <tr>
+    <td class="esq" width="558"><pre class="tahoma">…
+2R  REEMBOLSO PORTES CORR.
+3R1 CORREIO NORMAL
+4R1120020201MEPIN2002013100100653990 EXPEDICAO (ATE 20 GR.)000000000028000000000000030000000000084D
+…
+4R1120020201MEPIN2002013170000653990 EXPEDICAO (ATE 20 GR.)000000000028000000000001320000000003696D
+4R1120020228MEDAC2002021300100786998 EXPEDICAO (ATE 20 GR.)000000000028000000000006030000000016884D
+…
+4R1120020228MEDAC2002021500100786998 EXPEDICAO (ATE 20 GR.)000000000028000000000001390000000003892D
+4R1120020228MEECB2002020207600576992 EXPEDICAO (ATE 20 GR.)000000000028000000000000010000000000028D
+…
+4R1120020228MEECB2002020600200728987 EXPEDICAO (ATE 20 GR.)000000000028000000000003460000000009688D
+4R1120020228000034500560000120997    EXPEDICAO (ATE 20 GR.)000000000028000000000000010000000000028D
+…
+4R1120020228000309800280000403109    EXPEDICAO (ATE 20 GR.)000000000028000000000000010000000000028D
+6R1 0000005190853D
+7R  0000000005190853D
+…</pre>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span> <br>
+    Para efeitos de apresentação e por uma questão prática mantém-se o layout anterior nas
+    tabelas auxiliares. </em></td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="x2.htm">Anterior</a></p>
+</body>
+</html>

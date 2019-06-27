@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>X-A - LIGAÇÃO CENTRAL</title>
+<script>top.captulos.location='indicex.htm#X';</script>
+</head>
+
+<body>
+
+<h2>A - LIGAÇÃO CENTRAL</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="A1">A1</a> -&nbsp; BANCOS </h3>
+
+<p><br>
+<strong><a name="A11">A11</a> - CPU conectado em <em>real-time</em><br>
+A12 - CPU não conectado em <em>real-time</em></strong></p>
+
+<p><br>
+Enquanto Emissor de Cartões, o Banco pode ter vários Centros de Processamento de Dados
+(CPDs). Serão considerados os CPDs que, durante o mês considerado, se encontrem
+conectados à SIBS através de sessões <em>real-time</em>. </p>
+
+<p>Os CPDs que não se encontrem conectados em <em>real-time</em>, serão facturados de
+acordo com o definido na rubrica <a href="x-a.htm#A4">A4</a> - <strong>Encargos de
+Processamento de Cartões</strong>, que depende do número de cartões existentes, no
+final do mês a que respeita a facturação. Por exemplo, os Bancos que utilizem
+simultaneamente um CPD com <em>real-time</em> e outro sem <em>real-time</em>, serão
+facturados na rubrica <strong>A1</strong>, pelo primeiro, e na rubrica <a
+href="x-a.htm#A4">A4</a>, pelo segundo. </p>
+
+<p><br>
+<strong>Forma de controlo</strong></p>
+
+<p>Administrativa. Existem documentos de suporte para indicar o número de CPDs que a IC
+possui e o respectivo modo de funcionamento (<a href="i3.htm#I.3.16">Caracterização de
+CPD</a>).</p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>Esta rubrica apresenta-se detalhada no tipo de registo 4 com os seguintes campos: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a href="../../Campos/campos2.htm#104" target="explicac">104</a>) identificação CPD
+    (1)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica A1</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">…
+2A  CONEXAO CPU
+3A1 BANCOS
+4A11200202281                        CPU CONECTADO REALTIME000000100000000000000000010000000100000D
+…
+4A11200202284                        CPU CONECTADO REALTIME000000100000000000000000010000000100000D
+
+6A1 0000000200000D
+7A  0000000000200000D
+…</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><a name="A4">A4</a> - PROCESSAMENTO DE CARTÕES DE
+BANCOS SEM <em>REAL-TIME</em> </h3>
+
+<p><br>
+<strong>A41 - Menos de 5.000 cartões<br>
+A42 - De 5.001 a 10.000 <br>
+A43 - De 10.001 a 20.000 <br>
+A44 - Mais de 20.000 </strong></p>
+
+<p><br>
+Caso o Banco Emissor de cartões possua, no final do mês em causa, um ou mais CPDs não
+conectados à SIBS em <em>real-time</em>, estes são facturados de acordo com esta
+rubrica. O escalão a aplicar é em função do número de cartões existentes na base de
+dados da SIBS, sendo a respectiva tarifa incidente sobre a totalidade dos cartões
+correspondentes. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>A partir do Ficheiro de Cartões Existentes (<a href="../l-iii/ecst.htm">MECST</a>)
+produzido mensalmente, o Banco pode validar o número total de cartões considerado na
+facturação da SIBS. </p>
+
+<p>Este total encontra-se indicado no registo Tipo 9 (<em>trailer</em>) do ficheiro (campo
+<a href="../../Campos/campos4.htm#386" target="explicac">386</a> - TOTALCAR). </p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>Esta rubrica apresenta-se detalhada no tipo de registo 4 com os seguintes campos: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica A4</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">…
+2A  CONEXAO CPU
+3A1 BANCOS
+4A112002022899991                    CPU CONECTADO REALTIME000000100000000000000000010000000100000D
+6A1 0000000100000D
+3A4 PROCESSAM. DE CARTOES
+4A4420020228                         ESC.4 - SUP.20000 CART000000000002500000005134030000001283508D
+6A4 0000001283508D
+7A  0000000001383508D
+…</pre>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span> <br>
+    Para efeitos de apresentação e por uma questão prática mantém-se o layout anterior nas
+    tabelas auxiliares. </em></td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="x2.htm">Anterior</a></p>
+
+</body>
+</html>

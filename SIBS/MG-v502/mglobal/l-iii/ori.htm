@@ -1,0 +1,1344 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>ORIGENS (ORI5)</title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO:&nbsp; ORIGENS</td>
+        <td class="fichdta">&quot;FICH&quot; = ORI5 </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Enviar ao Banco de Apoio de cada CA da Rede Multibanco: 
+
+<ul>
+  <li>As importâncias distribuídas no período, por utilizadores nacionais e estrangeiros;</li>
+  <li>Os depósitos em numerário confirmados; </li>
+  <li>As tarifas interbancárias recebidas dos emissores nacionais e as comissões
+    internacionais;</li>
+  <li>As rubricas aplicáveis do Tarifário da SIBS;</li>
+  <li>As regularizações de operações de supervisão dos CA com falhas ou sobras e
+    confirmadas pela SIBS. </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído por:</p>
+
+<p><br>
+
+<ul>
+  <li><strong>Um registo de <em>Header</em> &quot;TIPREG=0&quot;</strong></li>
+</ul>
+
+<p><br>
+
+<ul>
+  <li><strong>Registos de Detalhe &quot;TIPREG=1&quot; </strong></li>
+</ul>
+
+<blockquote>
+  <p>Indicam a importância entregue no período contabilístico local por cada CA apoiado. <br>
+  No caso de haver depósitos em numerário confirmados, estas importâncias são incluídas
+  no campo (<a href="../../Campos/camp2200.htm#2237">2237</a>) IMPDEP-E.</p>
+  <p><br>
+  </p>
+</blockquote>
+
+<ul>
+  <li><strong>Registos de Detalhe &quot;TIPREG=2&quot;</strong></li>
+</ul>
+
+<blockquote>
+  <p>O registo de detalhe (TIPREG=2) apresenta os dados dos totais de depósitos
+  com validação efectuados no período do CA a que diz respeito o registo. </p>
+  <p><br>
+  </p>
+</blockquote>
+
+<ul>
+  <li><strong>Registos de Detalhe &quot;TIPREG=3&quot;</strong></li>
+</ul>
+
+<blockquote>
+  <p>O registo de detalhe (TIPREG=3) apresenta o número e os tarifários aplicáveis às
+  operações efectuadas no período do CA a que diz respeito o registo. O registo inclui
+  informação contabilística (tarifários interbancários) e informativa (tarifário
+  SIBS). É enviado um TIPREG=3 por cada TIPREG=1.</p>
+  <p>O Banco de Apoio pode considerar que foi encerrado um determinado fecho contabilístico
+  local, quando já recebeu, para esse fecho, um TIPREG=1 (e o correspondente TIPREG=3) com
+  o campo (<a href="../../Campos/campos4.htm#314">314</a>) NACINT=2 e o campo (<a
+  href="../../Campos/campos4.htm#301">301</a>) DTHSUPERV diferente de zeros.</p>
+  <p><br>
+  </p>
+</blockquote>
+
+<ul>
+  <li><strong>Registos de Detalhe &quot;TIPREG=4&quot;</strong></li>
+</ul>
+
+<blockquote>
+  <p>Este registo de detalhe é inserido apenas quando há regularizações para o CA.
+  Apresenta a importância a regularizar com a Agência, a débito ou a crédito segundo a
+  informação recebida, por ter havido falta ou sobra de notas num Fecho de Supervisão
+  anterior. O registo informa, no campo (<a href="../../Campos/camp2300.htm#2395">2395</a>) IMPORTREG-E, o montante regularizado.</p>
+
+  <p><br>
+  </p>
+
+</blockquote>
+
+<ul>
+  <li><strong>Registos de Detalhe &quot;TIPREG=6&quot;</strong></li>
+</ul>
+
+<blockquote>
+  <p ALIGN="JUSTIFY">Este tipo de registo é opcional sendo enviado unicamente para os
+  Bancos de Apoio de CAs que o solicitem. Destina-se a informar o Banco de Apoio dos
+  montantes dos carregamentos efectuados no CA, discriminados por cacifo, de forma a
+  possibilitar a implementação de aplicações de controlo contabilístico. São registos
+  meramente informativos, dado que os carregamentos de notas não têm valor contabilístico
+  na Compensação MB. Os dados informados no registo são os introduzidos localmente no CA,
+  sendo da exclusiva responsabilidade da entidade, designada pelo Banco de Apoio, que
+  efectuou a operação (supervisor da Agência, empresa de transporte de valores, etc). </p>
+  <p><br>
+  </p>
+</blockquote>
+
+<ul>
+  <li><strong>Um registo de <em>Trailer</em> &quot;TIPREG=9&quot;</strong></li>
+</ul>
+
+<blockquote>
+  <p>O registo de <em>trailer</em> (TIPREG=9) apresenta o total de registos de detalhe e a
+  importância a débito e crédito que vai contribuir para o saldo contabilístico do Banco
+  nessa sessão de Compensação.</p>
+</blockquote>
+
+<p><br>
+É sempre emitido um único ficheiro por Banco de Apoio.</p>
+
+  <p><br>
+O registo é de comprimento fixo com 163 bytes.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ORDENAÇÃO</u></h6>
+
+<p><br>
+O ficheiro é enviado ordenado por:<br>
+<br>
+</p>
+
+<blockquote>
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="100" class="esq10">AGATM</td>
+      <td class="esq10">(campo <a href="../../Campos/campos2.htm#178">178</a>)</td>
+    </tr>
+    <tr>
+      <td width="100" class="esq10">IDPERLOCAL </td>
+      <td class="esq10">(campo <a href="../../Campos/campos2.htm#118">118</a>)</td>
+    </tr>
+    <tr>
+      <td width="100" class="esq10">TIPREG</td>
+      <td class="esq10">(campo <a href="../../Campos/campos2.htm#111">111</a>)</td>
+    </tr>
+  </table>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">ORI5 - TIPO DE
+REGISTO <a name="= 1">= 1</a> (TOTAIS DE LEVANTAMENTOS)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '1'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">AGATM </td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#178">178</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDPERLOCAL </td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#118">118</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DTHSUPERV </td>
+    <td class="dta" width="45">12</td>
+    <td class="dta" width="45">11</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#301">301</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NACINT </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#314">314</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IMPDEP-E </td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2200.htm#2237">2237</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">35</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IMPORTLEV-E </td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">36</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2396">2396</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">47</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LEVINT </td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">48</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2200.htm#2295">2295</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">59</td>
+    <td width="45" >A</td>
+    <td width="85" ><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTAL</td>
+    <td class="dta" width="45">&nbsp;59</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p style="page-break-before: always"><br>
+Considerando que na Compensação das operações internacionais as importâncias só são
+debitadas aos <em>Acquirers</em> com dois dias de data valor, após transmissão da
+informação, a SIBS só credita o Banco de Apoio do CA na sessão correspondente.</p>
+
+<p>
+Assim, temos:</p>
+
+<p>São sempre produzidos pelo menos dois registos (TIPREG=1) por cada período
+contabilístico de cada CA. O campo (<a href="../../Campos/campos4.htm#314">314</a>)
+NACINT indica se os valores informados no campo (<a
+href="../../Campos/camp2300.htm#2396">2396</a>) IMPORTLEV-E correspondem
+a totais da Compensação de clientes nacionais ou internacionais.</p>
+
+<p>Nos registos com o campo (<a href="../../Campos/campos4.htm#314">314</a>) NACINT=1,
+são enviados os totais das operações feitas por clientes nacionais, englobando os
+movimentos dos clientes do Banco que apoia logisticamente o CA, bem como aqueles feitos
+por clientes de outros Bancos nacionais.</p>
+
+<p>Nos registos com o campo (<a href="../../Campos/campos4.htm#314">314</a>) NACINT=2,
+são enviados os totais de levantamentos das operações feitas por clientes estrangeiros
+e de cartões <em>not-on-us</em>. Este registo é enviado na data-valor a que respeita o
+crédito feito pelo Sistema de Pagamento Internacional, isto é, normalmente dois dias
+úteis mais tarde.</p>
+
+<p>O campo (<a href="../../Campos/campos4.htm#301">301</a>) DTHSUPERV só é preenchido
+quando já foi feito o fecho local do CA, isto é, marcando a conclusão da Compensação
+desse período local.</p>
+
+<p>No caso do campo (<a href="../../Campos/campos4.htm#301">301</a>) DTHSUPERV estar a
+zeros, então o montante indicado é parcial, correspondendo a período local não
+encerrado ou a existência ainda de importâncias das internacionais por compensar.</p>
+
+<p>De modo a facilitar a função de gestão de tesouraria, incluem-se
+diariamente neste tipo de registo os totais relativos às operações de levantamento
+feitas por clientes estrangeiros ou de cartões <em>not-on-us</em>, campos (<a href="../../Campos/camp2200.htm#2295">2295</a>) LEVINT e (<a
+href="../../Campos/campos4.htm#314">314</a>) NACINT=2, relativos à sessão de
+compensação em causa, independentemente da data valor que o movimento tenha.</p>
+
+<p>As operações de depósito em numerário, depois de confirmadas, afectam
+contabilisticamente o Banco de Apoio do CA. Estas importâncias estão preenchidas no
+campo (<a href="../../Campos/camp2200.htm#2237">2237</a>) IMPDEP-E.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">ORI5 - TIPO DE REGISTO <a name="= 2">=
+2</a> (TOTAIS DE DEPÓSITOS COM VALIDAÇÃO)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">Nº Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '2' </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">AGATM </td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#178">178</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDPERLOCAL </td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">8</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#118">118</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DTHSUPERV </td>
+    <td class="dta" width="45">12</td>
+    <td class="dta" width="45">11</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#301">301</a></td>
+    <td width="200" class="esq">= '0'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NACINT </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">23</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#314">314</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">IMPDEP-E </td>
+    <td class="dtamid" width="45">11</td>
+    <td class="dtamid" width="45">24</td>
+    <td width="45" class="mid">N</td>
+    <td width="85" class="mid"><a href="../../Campos/camp2200.htm#2237">2237</a></td>
+    <td width="200" class="esq">Importância dos depósito (em numerário). Total das notas
+    de categoria 3 e 4.&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">SINAL </td>
+    <td class="dtamid" width="45">1</td>
+    <td class="dtamid" width="45">35</td>
+    <td width="45" class="mid">A</td>
+    <td width="85" class="mid"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200" class="esq">= 'D' (este movimento é um débito para o BAT)&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMOCORR</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">36</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#428">428</a></td>
+    <td width="200" class="esq">= 18 (3 categ. x 6 denominações)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CATNOTAS *</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">38</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2355">2355</a></td>
+    <td class="esq" width="200">= '2', '3', '4' </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DENOMIN-E *</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">56</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2349">2349</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMNOTDEP *</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">110</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2352">2352</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTAL </td>
+    <td class="dta" width="45">163</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+Inclui-se neste tipo de registo a informação correspondente ao débito das operações
+de depósito de numerário com validação relativo às notas de categoria 3 e 4
+depositadas no CA-MB.</p>
+
+<p>Estas operações de depósito com validação afectam contabilisticamente o
+Banco de Apoio do CA. As importâncias são preenchidas no campo (<a
+href="../../Campos/camp2200.htm#2237">2237</a>) IMPDEP-E.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">ORI5 - TIPO DE
+REGISTO <a name="= 3">= 3</a> (TARIFAS)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">Nº Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '3' </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">AGATM </td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#178">178</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDPERLOCAL</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#118">118</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DTHSUPERV </td>
+    <td class="dta" width="45">12</td>
+    <td class="dta" width="45">11</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#301">301</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NACINT </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#314">314</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARINT-E (1) </td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2301">2301</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMOPTARI-E (1) </td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">30</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2330">2330</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VALTARINT (1) </td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">37</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#304">304</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">46</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARINT-E (2) </td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">47</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2301">2301</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMOPTARI-E (2) </td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">53</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2330">2330</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VALTARINT (2) </td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">60</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#304">304</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">69</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARINT-E (3) </td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">70</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2301">2301</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMOPTARI-E (3) </td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">76</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2330">2330</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VALTARINT (3) </td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">83</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#304">304</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">92</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARSIBS-E (1) </td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">93</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2300">2300</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMOPTARS-E (1) </td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">99</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2331">2331</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARSIBS-E (2) </td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">106</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2300">2300</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMOPTARS-E (2) </td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">112</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2331">2331</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARSIBS-E (3) </td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">119</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2300">2300</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMOPTARS-E (3) </td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">125</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2331">2331</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPOCA</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">132</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#148">148</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTAL </td>
+    <td class="dta" width="45">132</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+Cada TIPREG=1 ou TIPREG=2 corresponde a um TIPREG=3. Nos casos em que o período
+contabilístico tem operações internacionais, os registos só são incluídos quando é
+atingida a adequada data valor.</p>
+
+<p>Cada campo (<a href="../../Campos/camp2300.htm#2330">2330</a>) NUMOPTARI-E indica o
+número de operações a que se aplica a rubrica do tarifário interbancário indicada no
+campo (<a href="../../Campos/camp2300.htm#2301">2301</a>) TARINT-E que o precede.
+Analogamente, cada campo (<a href="../../Campos/camp2300.htm#2331">2331</a>) NUMOPTARS-E
+indica o número de operações a que se aplica a rubrica do tarifário da SIBS indicada
+no campo (<a href="../../Campos/camp2300.htm#2300">2300</a>) TARSIBS-E que o precede.</p>
+
+<p>Os campos (<a href="../../Campos/campos4.htm#304">304</a>) VALTARINT apresentam os
+valores dos tarifários interbancários.</p>
+
+<p>Os campos (<a href="../../Campos/camp2300.htm#2300">2300</a>) TARSIBS-E indicam as
+rubricas do tarifário SIBS aplicadas. </p>
+
+<p><br>
+As ocorrências relativas aos campos (<a href="../../Campos/camp2300.htm#2301">2301</a>)
+TARINT-E correspondem, por exemplo, a: 
+
+<ul>
+  <li>Levantamentos efectuados por clientes de outros Bancos que não o do CA (<a
+    href="../l-ii/x-o.htm#O21" target="main">O21</a>)</li>
+  <li>Outras operações efectuadas por clientes de outros Bancos que não o do CA (<a
+    href="../l-ii/x-o.htm#O22" target="main">O22</a>)</li>
+  <li>Operações efectuadas por clientes <em>not-on-us</em> (internacionais) (T41)</li>
+  <li>Levantamentos efectuados por cartões <em>co-branded</em> (<a target="main"
+    href="../l-ii/x-o.htm#OAB">OAB</a>)</li>
+</ul>
+
+<p><br>
+As ocorrências relativas aos campos (<a href="../../Campos/camp2300.htm#2300">2300</a>)
+TARSIBS-E correspondem, por exemplo, a: 
+
+<ul>
+  <li>Operações efectuadas por clientes <em>not-on-us</em> (internacionais) (<a
+    href="../l-ii/x-g.htm#G1" target="main">G1</a>)</li>
+</ul>
+
+    <p>&nbsp;</p>
+
+<p class="tipreg">ORI5 - TIPO DE REGISTO <a name="= 4">= 4</a>
+(REGULARIZAÇÕES)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">Nº Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '4' </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">AGATM </td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#178">178</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDPLOC-O </td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#315">315</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DTHSUPERV </td>
+    <td class="dta" width="45">12</td>
+    <td class="dta" width="45">11</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#301">301</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IMPCREDE-O-E </td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2394">2394</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IMPORTREG-E </td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">34</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2395">2395</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">SINAL </td>
+    <td class="dtamid" width="45">1</td>
+    <td class="dtamid" width="45">45</td>
+    <td width="45" class="mid">A</td>
+    <td width="85" class="mid"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td  width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">REGOPERCA</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">46</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2353">2353</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDOCUMENT </td>
+    <td class="dta" width="45">10</td>
+    <td class="dta" width="45">47</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#243">243</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTAL </td>
+    <td class="dta" width="45">56</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+É incluído um TIPREG=4 sempre que um pedido de regularização proveniente de um Banco
+com CA, tiver sido analisado pelo serviço de regularizações da SIBS, e se tiver
+concluído que o Banco deve ser creditado pela importância em falta, ou debitado pela
+sobra que indicou. A inclusão do registo só se deve realizar depois desta confirmação
+ter sido expedida pela aplicação do Terminal de Regularizações que está instalada no
+serviço competente do Banco e (ou) da SIBS.</p>
+
+<p>Sempre que um Banco apresenta uma Reclamação de um CA, apresenta a identificação do
+Caixa Automático (<a href="../../Campos/campos2.htm#178">178</a>), o período local a que
+respeita a falha (<a href="../../Campos/campos4.htm#315">315</a>) e a importância que
+faltou ou que sobrou (<a href="../../Campos/camp2300.htm#2395">2395</a>).
+</p>
+
+<p>A SIBS efectua a análise à situação, quer sob o ponto de vista técnico quanto ao
+funcionamento do CA, quer tentando a associação com outra reclamação correspondente ao
+mesmo CA. Quando esta operação estiver concluída envia um documento (ou uma mensagem)
+para o Terminal de Serviços, do serviço do Banco responsável pelo controlo das
+reclamações com a identificação incluída no campo (<a
+href="../../Campos/campos3.htm#243">243</a>). Nessa noite será enviado um TIPREG= 4 com a
+importância a regularizar (<a href="../../Campos/camp2300.htm#2395">2395</a>).</p>
+
+<p>O registo é também utilizado para regularizar a comissão creditada ao Banco, por um
+levantamento feito com cartão internacional, quando esta é regularizada pelo facto de
+ter sido estornado total ou parcialmente. <br>
+Neste caso, a SIBS envia um registo para a correcção da parte da importância em falta,
+e outro registo para corrigir a comissão, que pode ocorrer em dias diferentes. Neste
+último registo, os campos (<a href="../../Campos/campos4.htm#301">301</a>) DTHSUPERV e (<a href="../../Campos/camp2300.htm#2394">2394</a>) IMPCREDE-O-E,
+são preenchidos a zeros.</p>
+
+<p>Este tipo de registo destina-se também ao processamento das regularizações
+a crédito, relativas à validação de notas suspeitas dos depósitos com validação em
+operação de supervisão. Incluem-se também as regularizações a débito, relativas às
+notas suspeitas que o Banco de Portugal após a correspondente validação considerou como
+boas.</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">ORI5 - TIPO DE
+REGISTO <a name="= 6">= 6</a> (INFORMAÇÃO SOBRE CARREGAMENTOS)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">Nº Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '6' </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">AGATM </td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#178">178</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDPERLOCAL </td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#118">118</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DTHSUPERV</td>
+    <td class="dta" width="45">12</td>
+    <td class="dta" width="45">11</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#301">301</a></td>
+    <td class="esq" width="200">Data/hora do carregamento</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPCARREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos7.htm#690">690</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMOCORR</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">27</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#428">428</a></td>
+    <td class="esq" width="200">01 a 04 (*)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMNOTAS *</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">29</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1000.htm#1057">1057</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DENOMIN-E *</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">34</td>
+    <td width="45" >N</td>
+    <td width="85" ><a href="../../Campos/camp2300.htm#2349">2349</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTAL </td>
+    <td class="dta" width="45">57</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">(no máximo)</td>
+  </tr>
+</table>
+
+<p><br>
+(*) Indica o número de ocorrências preenchidas do conjunto dos dois campos seguintes.</p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+
+<p></font>Este tipo de registo é incluído apenas nos ficheiros destinados a Bancos que o
+tenham solicitado. Os Bancos devem informar a SIBS, formalmente, desta intenção e da
+data de início do serviço.</p>
+
+<p>O registo inclui a informação relativa ao carregamento realizado no CA, indicando
+para cada cacifo, o número de notas carregadas (campo <a
+href="../../Campos/camp1000.htm#1057">1057</a>) e o seu respectivo valor facial (campo <a
+href="../../Campos/camp2300.htm#2349">2349</a>) em euros (ex.: 5 euros = 005, 20 euros =
+020).</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tiprega">ORI5 - TIPO DE
+REGISTO <a name="= 7">= 7</a> (TOTAIS DE EMISSÃO DE CHEQUES)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160"><span class="a">Nome do Campo</span> </td>
+    <td class="fundoa" width="45">Comp. </td>
+    <td class="fundoa" width="45">Pos. </td>
+    <td class="fundoa" width="45">Rep. </td>
+    <td class="fundoa" width="85">Nº Campo </td>
+    <td class="fundoa" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">TIPREG </td>
+    <td class="dtaa" width="45">1</td>
+    <td class="dtaa" width="45">1</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esqa" width="200">= '7' </td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">AGATM </td>
+    <td class="dtaa" width="45">6</td>
+    <td class="dtaa" width="45">2</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#178">178</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">IDPERLOCAL </td>
+    <td class="dtaa" width="45">3</td>
+    <td class="dtaa" width="45">8</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#118">118</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">DTHSUPERV</td>
+    <td class="dtaa" width="45">12</td>
+    <td class="dtaa" width="45">11</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#301">301</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">QT-CHEQ-EMI</td>
+    <td class="dtaa" width="45">4</td>
+    <td class="dtaa" width="45">23</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2961">2961</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">QT-CHEQ-ERR</td>
+    <td class="dtaa" width="45">3</td>
+    <td class="dtaa" width="45">&nbsp;27</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2962">2962</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">QT-CHEQ-REJ</td>
+    <td class="dtaa" width="45">3</td>
+    <td class="dtaa" width="45">&nbsp;30</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2963">2963</a></td>
+    <td width="200">&nbsp;</td>
+    
+  </tr>
+  <tr>
+    <td class="esqa" width="160">QT-CHEQ-TST</td>
+    <td class="dtaa" width="45">2</td>
+    <td class="dtaa" width="45">&nbsp;33</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2964">2964</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">CARR-CHEQ-EMI</td>
+    <td class="dtaa" width="45">4</td>
+    <td class="dtaa" width="45">&nbsp;35</td>
+    <td width="45" class="a" >N</td>
+    <td width="85" ><a href="../../Campos/camp2900.htm#2965">2965</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">CARR-CHEQ-ERR </td>
+    <td class="dtaa" width="45">3</td>
+    <td class="dtaa" width="45">&nbsp;39</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2966">2966</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">CARR-CHEQ-REJ </td>
+    <td class="dtaa" width="45">3</td>
+    <td class="dtaa" width="45">&nbsp;42</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2967">2967</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">CARR-CHEQ-TST </td>
+    <td class="dtaa" width="45">2</td>
+    <td class="dtaa" width="45">&nbsp;45</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2968">2968</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">INDSUPCHEQ </td>
+    <td class="dtaa" width="45">1</td>
+    <td class="dtaa" width="45">&nbsp;47</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2800.htm#2832">2832</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">NUM-INI-CIF </td>
+    <td class="dtaa" width="45">10</td>
+    <td class="dtaa" width="45">&nbsp;48</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2969">2969</a></td>
+    <td width="200" class="esqa">Cacifo 1</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">NUM-FIM-CIF </td>
+    <td class="dtaa" width="45">10</td>
+    <td class="dtaa" width="45">&nbsp;58</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2970">2970</a></td>
+    <td width="200" class="esqa">Cacifo 1</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">INDSUPCHEQ </td>
+    <td class="dtaa" width="45">1</td>
+    <td class="dtaa" width="45">68&nbsp;</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2800.htm#2832">2832</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">NUM-INI-CIF </td>
+    <td class="dtaa" width="45">10</td>
+    <td class="dtaa" width="45">69&nbsp;</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2969">2969</a></td>
+    <td width="200" class="esqa">Cacifo 2</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">NUM-FIM-CIF </td>
+    <td class="dtaa" width="45">10</td>
+    <td class="dtaa" width="45">79&nbsp;</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2970">2970</a></td>
+    <td width="200" class="esqa">Cacifo 2</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">INDSUPCHEQ </td>
+    <td class="dtaa" width="45">1</td>
+    <td class="dtaa" width="45">89&nbsp;</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2800.htm#2832">2832</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">NUM-INI-CIF </td>
+    <td class="dtaa" width="45">10</td>
+    <td class="dtaa" width="45">90&nbsp;</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2969">2969</a></td>
+    <td width="200" class="esqa">Cacifo 3</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">NUM-FIM-CIF </td>
+    <td class="dtaa" width="45">10</td>
+    <td class="dtaa" width="45">100&nbsp;</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2970">2970</a></td>
+    <td width="200" class="esqa">Cacifo 3</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">INDSUPCHEQ </td>
+    <td class="dtaa" width="45">1</td>
+    <td class="dtaa" width="45">110&nbsp;</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2800.htm#2832">2832</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">NUM-INI-CIF </td>
+    <td class="dtaa" width="45">10</td>
+    <td class="dtaa" width="45">111&nbsp;</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2969">2969</a></td>
+    <td width="200" class="esqa">Cacifo 4</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">NUM-FIM-CIF </td>
+    <td class="dtaa" width="45">10</td>
+    <td class="dtaa" width="45">121&nbsp;</td>
+    <td width="45" class="a">N</td>
+    <td width="85"><a href="../../Campos/camp2900.htm#2970">2970</a></td>
+    <td width="200" class="esqa">Cacifo 4</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">TOTAL </td>
+    <td class="dtaa" width="45">130</td>
+    <td class="dtaa" width="45">&nbsp;</td>
+    <td width="45" class="a">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p class="a"><br>
+Inclui-se neste tipo de registo a informação correspondente aos totais de cheques utilizados na operação de emissão de cheques e informação para gestão de
+<i> stocks</i> de cheques.<br>
+Estas operações de emissão de cheques não afectam contabilisticamente o Banco de Apoio do CA, excepto no caso de existência de tarifário interbancário (cenário a implementar em momento posterior).</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="cor"><strong>AFECTAÇÃO CONTABILÍSTICA DO FICHEIRO ORIGENS</strong></p>
+
+<p><br>
+Os campos indicados na tabela abaixo para cada tipo de registo, totalizam para os campos
+de total de débitos (<a href="../../Campos/campos2.htm#108">108</a>) TOTDEB ou total de
+créditos (<a href="../../Campos/campos2.htm#109">109</a>) TOTCRED, do <em>trailer</em> do
+ficheiro, dependendo do correspondente campo sinal ter posicionado &#145;D&#146; ou
+&#145;C&#146;, respectivamente.</p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="1" cellpadding="2" cellspacing="0"
+width="550">
+  <tr>
+    <th  width="25%">TIPREG=1 </th>
+    <th  width="25%">TIPREG=2 </th>
+    <th  width="25%">TIPREG=3 </th>
+    <th  width="25%">TIPREG=4 </th>
+  </tr>
+  <tr>
+    <td width="25%"><table border="0" cellpadding="0" cellspacing="0" width="95%">
+      <tr>
+        <td class="esq">...</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td class="esq">IMPDEP-E</td>
+        <td class="dta"><a href="../../Campos/camp2200.htm#2237">2237</a></td>
+      </tr>
+      <tr>
+        <td class="esq">SINAL </td>
+        <td class="dta"><a href="../../Campos/campos4.htm#318">318</a></td>
+      </tr>
+      <tr>
+        <td class="esq">IMPORTLEV-E</td>
+        <td class="dta"><a href="../../Campos/camp2300.htm#2396">2396</a></td>
+      </tr>
+      <tr>
+        <td class="esq">SINAL</td>
+        <td class="dta"><a href="../../Campos/campos4.htm#318">318</a></td>
+      </tr>
+      <tr>
+        <td class="esq">...</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+    </table>
+    </td>
+    <td width="25%"><table border="0" cellpadding="0" cellspacing="0" width="95%">
+      <tr>
+        <td class="esq">...</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td class="esq">IMPDEP-E</td>
+        <td class="dta"><a href="../../Campos/camp2200.htm#2237">2237</a></td>
+      </tr>
+      <tr>
+        <td class="esq">SINAL </td>
+        <td class="dta"><a href="../../Campos/campos4.htm#318">318</a></td>
+      </tr>
+      <tr>
+        <td class="esq">...</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+    </table>
+    </td>
+    <td width="25%"><table border="0" cellpadding="0" cellspacing="0" width="95%">
+      <tr>
+        <td class="esq">...</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td class="esq">VALTARINT (1)</td>
+        <td><a href="../../Campos/campos4.htm#304">304</a></td>
+      </tr>
+      <tr>
+        <td class="esq">SINAL </td>
+        <td><a href="../../Campos/campos4.htm#318">318</a></td>
+      </tr>
+      <tr>
+        <td class="esq">VALTARINT (2)</td>
+        <td><a href="../../Campos/campos4.htm#304">304</a></td>
+      </tr>
+      <tr>
+        <td class="esq">SINAL </td>
+        <td><a href="../../Campos/campos4.htm#318">318</a></td>
+      </tr>
+      <tr>
+        <td class="esq">VALTARINT (3)</td>
+        <td><a href="../../Campos/campos4.htm#304">304</a></td>
+      </tr>
+      <tr>
+        <td class="esq">SINAL </td>
+        <td><a href="../../Campos/campos4.htm#318">318</a></td>
+      </tr>
+      <tr>
+        <td class="esq">...</td>
+        <td></td>
+      </tr>
+    </table>
+    </td>
+    <td width="25%"><table border="0" cellpadding="0" cellspacing="0" width="95%">
+      <tr>
+        <td class="esq">...</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td class="esq">IMPORTREG-E</td>
+        <td class="dta"><a href="../../Campos/camp2300.htm#2395">2395</a></td>
+      </tr>
+      <tr>
+        <td class="esq">SINAL</td>
+        <td class="dta"><a href="../../Campos/campos4.htm#318">318</a></td>
+      </tr>
+      <tr>
+        <td class="esq">...</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+</body>
+</html>

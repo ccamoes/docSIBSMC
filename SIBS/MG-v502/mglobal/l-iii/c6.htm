@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>C.6 PROCEDIMENTOS PARA ENVIO E RECEPÇÃO DE FICHEIROS E CONSULTAS</title>
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicec.htm#C';</script>
+</head>
+
+<body>
+
+<h1>C.6 PROCEDIMENTOS PARA ENVIO E RECEPÇÃO DE FICHEIROS E CONSULTAS</h1>
+
+<p>&nbsp;</p>
+
+<p>Passamos agora a definir as sequências de operações e comandos para o envio de um ou
+mais ficheiros, recepções e consultas ao directório, tentando abranger todas as
+situações típicas. </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.6.1">C.6.1</a> ENVIO POR INICIATIVA DO EMISSOR </h2>
+
+<p><br>
+Envio normal de um ficheiro, da máquina &quot;A&quot; para a máquina &quot;B&quot;, num
+cenário em que a máquina &quot;A&quot; abriu a sessão: </p>
+
+<p><br>
+<img src="imagens3/c6-1.gif" alt="c6-1.gif" WIDTH="535" HEIGHT="354"></p>
+
+<p><br>
+A resposta ao <em>Open</em> indica, neste caso, que o ficheiro é aberto no início,
+número de mensagens já recebidas = 0 . Este parâmetro vai distinguir as situações de
+início normal, das situações de restart de um ficheiro já enviado parcialmente.</p>
+
+<p>No comando <em>Write</em>, entenda-se bloco = mensagem, independentemente de ela
+transportar apenas um ou mais registos.</p>
+
+<table border="0" cellspacing="0" width="100%" cellpadding="0">
+  <tr>
+    <td class="esq10">*&nbsp; </td>
+    <td class="esq10">O comando Data_Ack pertence ao nível de sessão e é transparente para
+    o nível FT. A sua apresentação aqui destina-se apenas a ilustrar o funcionamento deste
+    mecanismo durante a sessão.</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="C.6.2">C.6.2</a> ENVIO POR INICIATIVA DO
+RECEPTOR (Pedido de recepção)</h2>
+
+<p><br>
+A máquina &quot;A&quot; pede à máquina &quot;B&quot; que lhe envie um ficheiro
+específico:</p>
+
+<p><br>
+<img src="imagens3/c6-2.gif" alt="c6-2.gif" WIDTH="536" HEIGHT="279"></p>
+
+<p>Dizemos neste caso que o &quot;<em>Invite</em>&quot; é específico, pelo que só dá
+origem à emissão do ficheiro especificado, caso ele exista. </p>
+
+<p>Adiante veremos a situação de &quot;<em>Invite</em>&quot; genérico, em que a
+máquina &quot;A&quot; pode pedir a recepção de todos os ficheiros que a máquina B tem
+para lhe enviar.</p>
+
+<p><br>
+Apresenta-se também a situação em que a máquina &quot;B&quot; não tem o ficheiro
+pretendido:</p>
+
+<p><br>
+<img src="imagens3/c6-3.gif" alt="c6-3.gif" WIDTH="536" HEIGHT="80"></p>
+
+<p style="page-break-before: always">A máquina &quot;A&quot; pode em seguida efectuar
+qualquer outra operação.</p>
+
+<p>A máquina &quot;A&quot; pede à máquina &quot;B&quot; que lhe envie todos os
+ficheiros que tiver disponíveis para aquela:</p>
+
+<p><img src="imagens3/c6-4.gif" alt="c6-4.gif" WIDTH="566" HEIGHT="557"></p>
+
+<p>Depois de enviados todos os ficheiros, a máquina &quot;B&quot; conclui a operação
+com a resposta ao &quot;<em>Invite</em>&quot;, devolvendo assim o controlo à máquina
+&quot;A&quot;.</p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="C.6.3">C.6.3</a> REINÍCIO DE UMA
+TRANSFERÊNCIA </h2>
+
+<p><br>
+Interrupção e <em>Restart</em> numa transferência da máquina &quot;A&quot; para a
+&quot;B&quot;:</p>
+
+<p><br>
+<img src="imagens3/c6-5.gif" alt="c6-5.gif" WIDTH="534" HEIGHT="423"></p>
+
+<p>Caso a transferência tivesse começado com um &quot;<em>Invite</em>&quot; da máquina
+&quot;B&quot;, então o <em>restart</em> seria iniciado também com um &quot;<em>Invite</em>&quot;,
+da mesma máquina, seguido do <em>Open</em> da máquina &quot;A&quot;.</p>
+
+<p>A interrupção pode acontecer por <em>timeout</em> na recepção de uma mensagem
+esperada, em qualquer dos interlocutores, por envio de um <em>Abort</em> de uma das
+máquinas ou por problema no circuito que provoque o <em>Abort</em> de ambos os lados.</p>
+
+<p><br>
+Apresenta-se ainda a situação em que a interrupção acontece na fase de <em>Close</em>.
+</p>
+
+<p><br>
+<img src="imagens3/c6-6.gif" alt="c6-6.gif" WIDTH="573" HEIGHT="186"></p>
+
+<h2 style="page-break-before: always"><br>
+<a name="C.6.4">C.6.4</a> CONSULTA AO DIRECTÓRIO </h2>
+
+<p><br>
+Esta operação é opcional, pelo que pode ser omitida a sua implementação, devendo
+neste caso ser devolvida uma resposta negativa, uma vez que o comando seja recebido.</p>
+
+<p>O comando DIR destina-se a consultar o directório de ficheiros da máquina
+&quot;B&quot;, a partir da máquina &quot;A&quot;.</p>
+
+<p><br>
+<img src="imagens3/c6-7.gif" alt="c6-7.gif" WIDTH="535" HEIGHT="189"></p>
+
+<p>A informação contida em cada RDir, são várias ocorrências de File_Information
+(File_id + File_size + File_record_size) até ao limite de 20 por mensagem.</p>
+
+<p>A resposta ao comando DIR pode ser constituída por várias mensagens, tantas quantas
+as necessárias para enviar toda a informação pedida. A última leva essa indicação
+explícita.</p>
+
+<p>Este comando pode ser enviado pela máquina que tem o controlo da sessão, durante o '<em>file
+selection regime</em>'.</p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="C.6.5">C.6.5</a> COMANDO ABORT</h2>
+
+<p><br>
+O <em>Abort</em> é um comando de sessão que pode ser enviado por qualquer das máquinas
+que detecte um problema, quer de transmissão, quer interno.</p>
+
+<p>Provoca o <em>Abort</em> da operação em curso e da sessão, e no caso dos cenários B
+e C, o <em>Clear</em> do circuito X.25.</p>
+
+<p><br>
+<img src="imagens3/c6-8.gif" alt="c6-8.gif" WIDTH="499" HEIGHT="250"></p>
+
+<p>Depois de um <em>Abort</em>, e logo que resolvido o problema que o causou, a sessão
+tem que ser novamente aberta para iniciar ou reiniciar qualquer operação. </p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="C.6.6">C.6.6</a> PROCEDIMENTOS NAS
+SITUAÇÕES MAIS TÍPICAS DE ERRO NAS RESPOSTAS ESPERADAS</h2>
+
+<p><br>
+Apresentam-se no quadro seguinte as situações possíveis de recepção dos diversos
+comandos, após o envio de um outro, apontando-se a acção a executar em cada uma das
+hipóteses. </p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td width="13%">&nbsp;</td>
+    <th colspan="6" width="87%" class="times11">Recebido</th>
+  </tr>
+  <tr>
+    <th width="13%" class="times11">Enviado</th>
+    <td width="15%" class="times11">Open</td>
+    <td width="15%" class="times11">Write</td>
+    <td width="15%" class="times11">Close</td>
+    <td width="15%" class="times11">Invite</td>
+    <td width="15%" class="times11">Dir</td>
+    <td width="14%" class="times11">Abort</td>
+  </tr>
+  <tr>
+    <td width="13%" class="times11">Open</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="14%" class="times11">RAbort</td>
+  </tr>
+  <tr>
+    <td width="13%" class="times11">Write</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="14%" class="times11">RAbort</td>
+  </tr>
+  <tr>
+    <td width="13%" class="times11">Close</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="14%" class="times11">RAbort</td>
+  </tr>
+  <tr>
+    <td width="13%" class="times11">Invite</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="14%" class="times11">RAbort</td>
+  </tr>
+  <tr>
+    <td width="13%" class="times11">Dir</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="15%" class="times11">Abort</td>
+    <td width="14%" class="times11">RAbort</td>
+  </tr>
+  <tr>
+    <td width="13%" class="times11">Abort</td>
+    <td width="15%" class="times11">---</td>
+    <td width="15%" class="times11">---</td>
+    <td width="15%" class="times11">---</td>
+    <td width="15%" class="times11">---</td>
+    <td width="15%" class="times11">---</td>
+    <td width="14%" class="times11">---</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td align="left" width="14%" checked="false">&nbsp;</td>
+    <th width="70%" class="times11" align="center" colspan="5">Recebido</th>
+    <td width="14%" class="times11">&nbsp;</td>
+  </tr>
+  <tr>
+    <th align="left" width="14%" class="times11">Enviado</th>
+    <td width="14%" class="times11">ROpen</td>
+    <td width="14%" class="times11">RClose</td>
+    <td width="14%" class="times11">RInvite</td>
+    <td width="14%" class="times11">RDir</td>
+    <td width="14%" class="times11">RAbort</td>
+    <td width="14%" class="times11">Timeout</td>
+  </tr>
+  <tr>
+    <td width="14%" class="times11">Open</td>
+    <td width="14%" class="times11">Ok</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">---</td>
+    <td width="14%" class="times11">RAbort</td>
+  </tr>
+  <tr>
+    <td width="14%" class="times11">Write</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">---</td>
+    <td width="14%" class="times11">RAbort</td>
+  </tr>
+  <tr>
+    <td width="14%" class="times11">Close</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">Ok</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">---</td>
+    <td width="14%" class="times11">RAbort</td>
+  </tr>
+  <tr>
+    <td width="14%" class="times11">Invite</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">Ok</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">---</td>
+    <td width="14%" class="times11">RAbort</td>
+  </tr>
+  <tr>
+    <td width="14%" class="times11">Dir</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">Ok</td>
+    <td width="14%" class="times11">---</td>
+    <td width="14%" class="times11">RAbort</td>
+  </tr>
+  <tr>
+    <td width="14%" class="times11">Abort</td>
+    <td width="14%" class="times11">---</td>
+    <td width="14%" class="times11">---</td>
+    <td width="14%" class="times11">---</td>
+    <td width="14%" class="times11">---</td>
+    <td width="14%" class="times11">---</td>
+    <td width="14%" class="times11">---</td>
+  </tr>
+</table>
+
+<p><br>
+A acção traduz-se no envio do comando ou resposta indicado, ou simples paragem do
+processo quando não há comando a enviar.</p>
+
+<p>Ok - significa que a resposta está correcta e que se pode prosseguir a operação.<br>
+</p>
+
+<p><em>Timeout</em> aconselhados para os vários comandos :</p>
+
+<blockquote>
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td class="dez" width="49">Open</td>
+      <td class="esq10" width="10">-</td>
+      <td class="dta10">60</td>
+      <td class="esq10">&nbsp;segundos</td>
+    </tr>
+    <tr>
+      <td class="dez" width="49">Write</td>
+      <td class="esq10" width="10">-</td>
+      <td class="dta10">40</td>
+      <td class="esq10">&nbsp;&nbsp;&nbsp;&nbsp; &quot;</td>
+    </tr>
+    <tr>
+      <td class="dez" width="49">Close</td>
+      <td class="esq10" width="10">-</td>
+      <td class="dta10">60</td>
+      <td class="esq10">&nbsp;&nbsp;&nbsp;&nbsp; &quot; </td>
+    </tr>
+    <tr>
+      <td class="dez" width="49">Invite</td>
+      <td class="esq10" width="10">-</td>
+      <td class="dta10">&nbsp;120</td>
+      <td class="esq10">&nbsp;&nbsp;&nbsp;&nbsp; &quot; </td>
+    </tr>
+    <tr>
+      <td class="dez" width="49">Dir</td>
+      <td class="esq10" width="10">-</td>
+      <td class="dta10">&nbsp;120</td>
+      <td class="esq10">&nbsp;&nbsp;&nbsp;&nbsp; &quot; </td>
+    </tr>
+    <tr>
+      <td class="dez" width="49">Abort </td>
+      <td class="esq10" width="10">-</td>
+      <td class="dta10">60</td>
+      <td class="esq10">&nbsp;&nbsp;&nbsp;&nbsp; &quot;&nbsp;&nbsp;&nbsp;&nbsp; (para efeito de <em>clear</em>
+      do circuito nos cenários B e C) </td>
+    </tr>
+  </table>
+</blockquote>
+
+<p class="dta"><br>
+<a href="c5.htm">Anterior</a>/<a href="c7.htm">Seguinte</a></p>
+</body>
+</html>

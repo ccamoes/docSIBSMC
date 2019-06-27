@@ -1,0 +1,2230 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos 1700 (1700-1799)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.</td>
+    <td class="fundo">REP.</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="1700" name="1700">1700</a></td>
+    <td class="esq"><u>DATA DE INÍCIO DO CONTRATO</u> <p>Apresenta a data de início de
+    contrato ou acordo de representação.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DT-INI-CONTR</td>
+  </tr>
+  <tr>
+    <td><a id="1701" name="1701">1701</a></td>
+    <td class="esq"><u>DATA DE FIM DO CONTRATO</u> <p>Apresenta a data de fim de contrato ou
+    acordo de representação.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DT-FIM-CONTR</td>
+  </tr>
+  <tr>
+    <td><a id="1702" name="1702">1702</a></td>
+    <td class="esq"><u>CÓDIGO DE EXCLUSÃO</u> <p>Apresenta o estado do comerciante face à
+    aplicação SIDF:</p>
+    <p>&nbsp;&nbsp; 1 - Vermelho<br>
+    &nbsp;&nbsp; 2 - Amarelo<br>
+    &nbsp;&nbsp; 3 - Verde</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD-EXCL</td>
+  </tr>
+  <tr>
+    <td><a id="1703" name="1703">1703</a></td>
+    <td class="esq"><u>DATA DO CÓDIGO DE EXCLUSÃO</u> </td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DT-COD-EXCL</td>
+  </tr>
+  <tr>
+    <td><a id="1704" name="1704">1704</a></td>
+    <td class="esq"><u>RESPOSTA AO PEDIDO ALTERAÇÃO CÓDIGO EXCLUSÃO</u> <p>Valores
+    possíveis:<br>
+    &nbsp;&nbsp; 00 - Aprovado<br>
+    &nbsp;&nbsp; 05 - Não aprovado, motivos vários<br>
+    &nbsp;&nbsp; 06 - Erro aplicacional<br>
+    &nbsp;&nbsp; 14 - Comerciante inexistente<br>
+    &nbsp;&nbsp; 54 - Acordo cancelado<br>
+    &nbsp;&nbsp; 99 - Timeout</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>R-ALT-COD-EXCL</td>
+  </tr>
+  <tr>
+    <td><a id="1705" name="1705">1705</a></td>
+    <td class="esq"><u>NÚMERO DO PROCESSO DE INVESTIGAÇÃO</u> </td>
+    <td class="dta">7</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NUM-PROC-INV</td>
+  </tr>
+  <tr>
+    <td><a id="1706" name="1706">1706</a></td>
+    <td class="esq"><u>TIPO DE ACESSO</u> <p>Código correspondente à selecção efectuada
+    pelo cliente no terminal.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp;&nbsp;1 - por identificação do movimento (Nº Cheque)<br />
+    &nbsp;&nbsp;&nbsp;2 - por montante<br />
+    &nbsp;&nbsp;&nbsp;9 - todos os disponíveis</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1707" name="1707">1707</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO&nbsp; ACESSO</u> <p>Campo preenchido com a
+    identificação da operação, em função do valor indicado no Campo Tipo de Acesso.<br>
+    Pode incluir o Número do Cheque (encostado à direita) ou o Montante (com duas decimais)</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1708" name="1708">1708</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO&nbsp; ACESSO</u> <p>Número do cheque a pesquisar.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td nowrap>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1709" name="1709">1709</a></td>
+    <td class="esq"><u>APLICAÇÃO (NOVO CÓDIGO EXPANDIDO)</u> <p>Código utilizado nas
+    mensagens e nos registos de detalhe correspondentes a cada operação e que indica ao
+    Banco qual o subsistema transaccional em que esta se realizou. Corresponde à versão
+    expandida do campo <a href="campos4.htm#312">312</a>.</p>
+    <p>Valores possíveis para o Centro de Processamento de Dados de Lisboa:<br>
+    &nbsp;&nbsp; 01 - QUE <br>
+    &nbsp;&nbsp; 02 - POS1 <br>
+    &nbsp;&nbsp; 03 - INT. <br>
+    &nbsp;&nbsp; 04 - BX. V. <br>
+    &nbsp;&nbsp; 05 - ATM-OLO 1 <br>
+    &nbsp;&nbsp; 06 - PMB <br>
+    &nbsp;&nbsp; 07 - ATM-OLO 2<br>
+    &nbsp;&nbsp; 08 - POS2<br>
+    &nbsp;&nbsp; 0A - Registos Batch<br>
+    &nbsp;&nbsp; 0C - SIDF</p>
+    <p>Valores possíveis para o Centro de Processamento de Dados de Viseu:<br>
+    &nbsp;&nbsp; 51 - QUE <br>
+    &nbsp;&nbsp; 52 - POS1 <br>
+    &nbsp;&nbsp; 53 - INT. <br>
+    &nbsp;&nbsp; 54 - BX. V. <br>
+    &nbsp;&nbsp; 55 - ATM-OLO 1 <br>
+    &nbsp;&nbsp; 56 - PMB <br>
+    &nbsp;&nbsp; 57 - ATM-OLO 2<br>
+    &nbsp;&nbsp; 58 - POS2<br>
+    &nbsp;&nbsp; 5A - Registos Batch <br>
+    &nbsp;&nbsp; 5C - SIDF
+    <p>Este campo poderá não estar preenchido (espaços) em registos gerados
+    na Compensação Multibanco, resultantes do apuramento de valores agregados,
+    para os quais não é criado um registo no ficheiro de log da SIBS.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>APLIC_N</td>
+  </tr>
+  <tr>
+    <td><a id="1710" name="1710">1710</a></td>
+    <td class="esq"><u>CÓDIGO DE RESPOSTA A PEDIDOS DE AUTORIZAÇÃO</u> <p>Campo que informa
+    a resposta a um pedido de autorização de um Sistema de Pagamento.</p>
+    <p>Valores possíveis, dependentes do valor do campo SISTPAG (<a href="campos3.htm#222">222</a>):</p>
+    <table border="0" cellspacing="0" width="100%" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">Se SISTPAG = &quot;C&quot; (Visa)</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp;&nbsp;000 -&nbsp;</td>
+        <td class="esq">Aceite</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 001 -</td>
+        <td class="esq">Refer to card Issuer</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 004 -</td>
+        <td class="esq">Pick up card</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 005 -</td>
+        <td class="esq">Do not honor</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 007 -</td>
+        <td class="esq">Pick up card, special condition (other than lost/stolen card)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 012 -</td>
+        <td class="esq">Invalid transaction</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 014 -</td>
+        <td class="esq">Invalid account number (no such number)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 015&nbsp; </td>
+        <td class="esq">No such issuer</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 041 -</td>
+        <td class="esq">Pick up card (lost card)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 043 -</td>
+        <td class="esq">Pick up card (stolen card)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 051 -</td>
+        <td class="esq">Insufficient funds</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 054 -</td>
+        <td class="esq">Expired card</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 055 -</td>
+        <td class="esq">Incorrect Pin</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 057 -</td>
+        <td class="esq">Transaction not permitted to cardholder</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 062 -</td>
+        <td class="esq">Restricted Card</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 076 -</td>
+        <td class="esq">Unable to locate previous message (no match on Retrieval Reference number)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 077 -</td>
+        <td class="esq">Previous message located for a repeat or reversal data are inconsistent
+        with original message</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 091 -</td>
+        <td class="esq">Issuer unavailable or switch inoperative</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 096 -</td>
+        <td class="esq">System malfunction</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 0N0 -</td>
+        <td class="esq">Force Stand In (STIP)</td>
+      </tr>
+      <tr>
+        <td class="esq" colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td class="esq" colspan="2">Se SISTPAG = &quot;A&quot; (MasterCard)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 003 -</td>
+        <td class="esq">Invalid Merchand</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 004 -</td>
+        <td class="esq">Pick Up</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 005 -</td>
+        <td class="esq">Do not Honour</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 006 -</td>
+        <td class="esq">Error</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 014 -</td>
+        <td class="esq">Invalid Card Number</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 041 -</td>
+        <td class="esq">Lost Card</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 043 -</td>
+        <td class="esq">Stolen Card</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 051 -</td>
+        <td class="esq">Not Sufficient funds</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 054 -</td>
+        <td class="esq">Expired Card</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 055 -</td>
+        <td class="esq">Incorrect PIN</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 057 -</td>
+        <td class="esq">Transaction not permitted to cardholder</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 061 -</td>
+        <td class="esq">Exceeds withdrawal amount limit</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 062 -</td>
+        <td class="esq">Restricted Card</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 075 -</td>
+        <td class="esq">Allowable number of PIN tries exceeded</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 094 -</td>
+        <td class="esq">Duplicate transmission</td>
+      </tr>
+      <tr>
+        <td class="esq" colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td class="esq" colspan="2">Se SISTPAG = &quot;3&quot; (AMEX)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp; 100 -</td>
+        <td class="esq">Deny</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 101 -</td>
+        <td class="esq">Expired Card</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 106 -</td>
+        <td class="esq">Pin Tries Exceeded</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 107 -</td>
+        <td class="esq">Please Call Issuer</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 110 -</td>
+        <td class="esq">Invalid Amount</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 111 -</td>
+        <td class="esq">Invalid Account</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 117 -</td>
+        <td class="esq">Incorrect PIN</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 121 -</td>
+        <td class="esq">Limit Exceeded</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 200 -</td>
+        <td class="esq">Deny-Pick up Card</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 290 -</td>
+        <td class="esq">Refuse, Retain card</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 902 -</td>
+        <td class="esq">Invalid Transaction</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODRESPAUT</td>
+  </tr>
+  <tr>
+    <td><a id="1711" name="1711">1711</a></td>
+    <td class="esq"><u>INDICADOR DE ACTUALIZAÇÃO</u> <p>Informa o conjunto de dados a
+    actualizar, no processamento do ficheiro <a href="../mglobal/l-iii/etsceets.htm"
+    target="main">METSC</a>. </p>
+    <p>Pode assumir os seguintes valores:<br>
+    &nbsp;&nbsp; 1 - Actualização do tipo de serviço<br>
+    &nbsp;&nbsp; 2 - Actualização de dados da TSC<br>
+    &nbsp;&nbsp; 3 - Actualização de tipo de serviço e dados da TSC</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDACTTSC</td>
+  </tr>
+  <tr>
+    <td><a id="1712" name="1712">1712</a></td>
+    <td class="esq"><u>CÓDIGO DE ERRO</u> <p>Indica o erro registado no processamento dum
+    ficheiro <a href="../mglobal/l-iii/etsceets.htm" target="main">METSC</a> recepcionado pela
+    SIBS. </p>
+    <p>Pode assumir os seguintes valores:<br>
+    &nbsp;&nbsp; R01 - Número de comerciante não numérico<br>
+    &nbsp;&nbsp; R02 - Número de comerciante inválido <br>
+    &nbsp;&nbsp; R03 - Número de estabelecimento não numérico <br>
+    &nbsp;&nbsp; R04 - Número de estabelecimento inválido <br>
+    &nbsp;&nbsp; R05 - Indicador de actualização não numérico <br>
+    &nbsp;&nbsp; R06 - Indicador de actualização inválido <br>
+    &nbsp;&nbsp; R07 - Tipo de serviço não numérico <br>
+    &nbsp;&nbsp; R08 - Tipo de serviço inválido <br>
+    &nbsp;&nbsp; R09 - TSC Multibanco (%) não numérico <br>
+    &nbsp;&nbsp; R10 - TSC Euros (valor mínimo) não numérico<br>
+    &nbsp;&nbsp; R11 - TSC Euros (valor máximo) não numérico<br>
+    &nbsp;&nbsp; R12 - TSC Euros (taxa fixa) não numérico <br>
+    &nbsp;&nbsp; R13 - Proprietário do estabelecimento diferente do Banco<br>
+    &nbsp;&nbsp; R14 - Não existe acordo MB<br>
+    &nbsp;&nbsp; R15 - Tipo de registo inválido<br>
+    <br>
+    &nbsp;&nbsp; F01 - Número de registos (registo de <em>trailer</em>) não numérico <br>
+    &nbsp;&nbsp; F02 - Número de registos (registo de <em>trailer</em>) igual a zero <br>
+    &nbsp;&nbsp; F03 - Número de registos (registo de <em>trailer</em>) incorrecto</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODERRTSC</td>
+  </tr>
+  <tr>
+    <td><a id="1713" name="1713">1713</a></td>
+    <td class="esq"><u>EMV - DADOS DESCRICIONÁRIOS DE RID</u><p>Dados específicos da
+    aplicação (Emissor ou Acquirer).</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMV-DESC-DATA</td>
+  </tr>
+  <tr>
+    <td><a id="1714" name="1714">1714</a></td>
+    <td class="esq"><u>EMV - COMPRIMENTO DE AID</u> <p>Campo que apresenta um comprimento em
+    número de caracteres, utilizado para determinação do valor a considerar para o campo
+    &quot;AID (Application Identifier)&quot;.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>EMV-AID-LGT</td>
+  </tr>
+  <tr>
+    <td><a id="1715" name="1715">1715</a></td>
+    <td class="esq"><u>EMV - SUFIXO DE AID (&quot;Application Identifier&quot;)</u> <p>Este
+    campo permite diferenciar duas aplicações que possuem o mesmo AID (identificador de uma
+    Aplicação EMV), possibilitando por exemplo a distinção entre duas vertentes distintas
+    de uma aplicação &quot;débito&quot; e &quot;crédito&quot;.<br>
+    O conceito de &quot;Sufixo de AID&quot; só é aplicável para o Sistema de Pagamento
+    Internacional Visa.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; - qualquer valor entre &#145;01&#146; e &#145;99&#146;, indicado pelo
+    Emissor.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>EMV-AID-SUF</td>
+  </tr>
+  <tr>
+    <td><a id="1716" name="1716">1716</a></td>
+    <td class="esq"><u>EMV - APLICAÇÃO A POSICIONAR NO CARTÃO (PADRÃO EMV)</u> <p>Identificação
+    do Padrão EMV (parâmetros previamente definidos) correspondente a uma determinada
+    Aplicação EMV a posicionar no cartão.<br>
+    Esta identificação é sequencial por código de Emissor.</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">Este campo pode assumir os seguintes valores:</td>
+      </tr>
+      <tr>
+        <td class="dta">001 -&nbsp;</td>
+        <td class="esq">valor reservado para identificação do Padrão EMV em que é
+        parametrizada a Aplicação Multibanco</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>002 a 989 -&nbsp;</td>
+        <td class="esq">valores disponíveis para utilização pelos Emissores</td>
+      </tr>
+      <tr>
+        <td class="esq">990 a 999 -&nbsp;</td>
+        <td class="esq">(valores de utilização reservada)</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>EMV-PADRAO</td>
+  </tr>
+  <tr>
+    <td><a id="1717" name="1717">1717</a></td>
+    <td class="esq"><u>EMV - PREFERRED NAME</u> <p>Campo para apresentação ao cliente nos
+    terminais que suportem este elemento, em substituição do &quot;Application Label&quot;.
+    Permite uma maior facilidade de identificação da Aplicação EMV que será utilizada
+    durante a realização da transacção.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMV-PREFNAME</td>
+  </tr>
+  <tr>
+    <td><a id="1718" name="1718">1718</a></td>
+    <td class="esq"><u>EMV - PREFERRED NAME - PREFIXO (DESCRITIVO PARCIAL)</u> <p>Campo
+    utilizado para formar os primeiros bytes do campo &quot;EMV - Preferred Name&quot;.
+    Corresponde a um descritivo parcial pré-definido, que se obtém a partir das primeiras
+    posições do campo &quot;Application Label&quot;.</td>
+    <td class="dta">10</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMV-PNAME-PREF</td>
+  </tr>
+  <tr>
+    <td><a id="1719" name="1719">1719</a></td>
+    <td class="esq"><u>EMV - PREFERRED NAME - COMPRIMENTO DO PREFIXO</u> <p>Este elemento
+    define o comprimento que deve ser considerado para leitura parcial do campo &quot;EMV -
+    Preferred Name - Prefixo&quot;. O seu valor determina o preenchimento das primeiras
+    posições do campo &quot;EMV - Preferred Name&quot;.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>EMV-PNAME-COMP</td>
+  </tr>
+  <tr>
+    <td><a id="1720" name="1720">1720</a></td>
+    <td class="esq"><u>EMV - PREFERRED NAME - TEXTO DO EMISSOR</u> <p>Os emissores podem
+    determinar uma mnemónica correspondente ao valor para este campo. Este texto será
+    utilizado em conjunção com o valor do campo &quot;EMV - Preferred Name - Prefixo&quot;
+    para formar o conteúdo do campo &quot;Application Preferred Name&quot;.</td>
+    <td class="dta">6</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMV-PNAME-TEXT</td>
+  </tr>
+  <tr>
+    <td><a id="1721" name="1721">1721</a></td>
+    <td class="esq"><u>EMV - LINGUAGENS SUPORTADAS</u> &nbsp; <p>&quot;Language
+    Preference&quot;<br>
+    Lista das linguagens utilizáveis nos terminais EMV, para diálogo com o portador.<br>
+    Cada linguagem é representada por 2 caracteres alfanuméricos, de acordo com a norma ISO
+    639.<br>
+    Considera-se que as duas primeiras posições deste campo serão sempre preenchidas com
+    &quot;PT&quot; (português)</p>
+    <p>Campo E124 das especificações POS. Tag &#145;5F2D&#146;.</td>
+    <td class="dta">2 ou 4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMV-LINGUAGEM</td>
+  </tr>
+  <tr>
+    <td><a id="1722" name="1722">1722</a></td>
+    <td class="esq"><u>EMV - INDICADOR GEOGRÁFICO</u> &nbsp; <p>&quot;Geographic
+    Indicator&quot;<br>
+    Elemento que permite restringir o âmbito geográfico de utilização do cartão.</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2" class="esq">Valores possíveis (em representação hexadecimal):</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 40 - </td>
+        <td class="esq">válido apenas para transacções internacionais</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 80 - </td>
+        <td class="esq">válido apenas para transacções domésticas </td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; C0 -&nbsp;</td>
+        <td class="esq">válido para transacções internacionais e para transacções domésticas</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMV-INDGEOGRAF</td>
+  </tr>
+  <tr>
+    <td><a id="1723" name="1723">1723</a></td>
+    <td class="esq"><u>EMV - RESTRIÇÕES DE UTILIZAÇÃO</u> (&quot;Application Usage Control
+    (AUC)&quot;) <p>Campo que possibilita a validação de um conjunto de restrições de
+    serviço do cartão, especificadas pelo emissor.<br>
+    Este campo tem 2 bytes de comprimento e um preenchimento de tipo <em>bitmap</em>. </p>
+    <p>Os valores possíveis dependem do valor posicionado para cada bit:</p>
+    <div align="center"><center><table border="0" cellspacing="0" width="99%" cellpadding="0">
+      <tr>
+        <td class="esq"><u>Byte 1</u></td>
+        <td class="esq" colspan="2">Valor</td>
+      </tr>
+      <tr>
+        <td class="esq">Bit 8</td>
+        <td class="esq" nowrap>1 =&nbsp;</td>
+        <td class="esq">válido para levantamentos (&quot;cash transactions&quot;) domésticos</td>
+      </tr>
+      <tr>
+        <td class="esq">Bit 7</td>
+        <td class="esq" nowrap>1 =&nbsp;</td>
+        <td class="esq">válido para levantamentos (&quot;cash transactions&quot;) internacionais</td>
+      </tr>
+      <tr>
+        <td class="esq">Bit 6</td>
+        <td class="esq" nowrap>1 =&nbsp;</td>
+        <td class="esq">válido para transacções de bens domésticas</td>
+      </tr>
+      <tr>
+        <td class="esq">Bit 5</td>
+        <td class="esq" nowrap>1 =&nbsp;</td>
+        <td class="esq">válido para transacções de bens internacionais</td>
+      </tr>
+      <tr>
+        <td class="esq">Bit 4</td>
+        <td class="esq" nowrap>1 =&nbsp;</td>
+        <td class="esq">válido para transacções de serviços domésticas</td>
+      </tr>
+      <tr>
+        <td class="esq">Bit 3</td>
+        <td class="esq" nowrap>1 =&nbsp;</td>
+        <td class="esq">válido para transacções de serviços internacionais</td>
+      </tr>
+      <tr>
+        <td class="esq">Bit 2</td>
+        <td class="esq" nowrap>1 =&nbsp;</td>
+        <td class="esq">válido em ATMs</td>
+      </tr>
+      <tr>
+        <td class="esq">Bit 1</td>
+        <td class="esq" nowrap>1 =&nbsp;</td>
+        <td class="esq">válido nos restantes terminais (diferentes de ATM)</td>
+      </tr>
+      <tr>
+        <td class="esq"><u>Byte 2</u></td>
+        <td class="esq"></td>
+        <td class="esq"></td>
+      </tr>
+      <tr>
+        <td class="esq">Bit 8</td>
+        <td class="esq" nowrap>1 =&nbsp;</td>
+        <td class="esq">válido para adiantamentos (&quot;Cashback&quot;) domésticos</td>
+      </tr>
+      <tr>
+        <td class="esq">Bit 7</td>
+        <td class="esq" nowrap>1 =&nbsp;</td>
+        <td class="esq">válido para adiantamentos (&quot;Cashback&quot;) internacionais</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>Bits 6-1&nbsp;&nbsp;&nbsp;</td>
+        <td class="esq" nowrap colspan="2">RFU (000000)</td>
+      </tr>
+    </table>
+    </center></div></td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMV-RESTUTILIZ</td>
+  </tr>
+  <tr>
+    <td><a id="1724" name="1724">1724</a></td>
+    <td class="esq"><u>EMV - CÓDIGO DE SEGUNDA MOEDA</u> &nbsp; <p>&quot;Secondary
+    Application Currency Code&quot;<br>
+    Campo que permite uma validação adicional dos montantes de transacções <em>offline</em>
+    realizados na segunda moeda.<br>
+    O código de segunda moeda é representado por 3 caracteres numéricos, de acordo com a
+    norma ISO 4217.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>EMV-SEGMOEDA</td>
+  </tr>
+  <tr>
+    <td><a id="1725" name="1725">1725</a></td>
+    <td class="esq"><u>EMV - FACTOR DE CONVERSÃO</u> <p>&quot;Currency Conversion
+    Factor&quot;<br>
+    Valor decimal utilizado para conversão de valores da segunda moeda para a moeda principal
+    da Aplicação EMV (o euro).<br>
+    O factor de conversão é actualizado apenas por indicação do emissor. Pode ser
+    actualizado em qualquer momento da vida útil do cartão (via ficheiro <a target="main"
+    href="../mglobal/l-iii/egcc.htm">EGCC</a>).</p>
+    <p>Este campo de 8 dígitos é composto pela seguinte estrutura:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1º dígito - número de casas decimais<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2º dígito - separador; sempre preenchido a zero<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3º a 8º dígitos - factor de conversão</p>
+    <p>Ex: conversão aproximada da Libra Inglesa - 50156421 <br>
+    (1 Libra = 1,56421 EUR) </td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td nowrap>EMV-FACTORCONV</td>
+  </tr>
+  <tr>
+    <td><a id="1726" name="1726">1726</a></td>
+    <td class="esq"><u>EMV - QUANTIA MÁXIMA ACUMULADA, PARA TRANSACÇÕES OFFLINE - LOWER</u>
+    <p>Campo que define um valor máximo para transacções <em>offline</em>, quer estas se
+    efectuem no código de moeda da aplicação EMV (transacções nacionais) ou numa moeda
+    secundária, quando esta existe.<br>
+    Quando ultrapassado este limite, tenta-se decidir a transacção <em>online</em>. Se tal
+    não for possível, a transacção pode ser realizada <em>offline</em>.<br>
+    Nos cartões nacionais, o valor deste campo determina o valor dos seguintes elementos EMV:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">VISA:</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; &nbsp; </td>
+        <td class="esq">Cumulative Total Transaction Amount Limit (TAG &quot;9F54&quot;) (*)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+        <td class="esq">Cumulative Total Transaction Amount Limit - Dual Currency (TAG
+        &quot;9F75&quot;) (*)</td>
+      </tr>
+      <tr>
+        <td class="esq" colspan="2">MASTERCARD:</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; &nbsp; </td>
+        <td class="esq">Lower Cumulative Offline Transaction Amount (TAG &quot;00CA&quot;) (*)</td>
+      </tr>
+      <tr>
+        <td class="esq" colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td class="esq">(*)</td>
+        <td class="esq">Elemento com 12 posições de comprimento no ficheiro de personalização
+        de cartões EMV (<a target="main" href="../mglobal/l-iii/pemv.htm">PEMV</a>).</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>4 int.<br>
+    2 dec.<p>Valor em euros</td>
+    <td>OFFLINEVAL-LOW</td>
+  </tr>
+  <tr>
+    <td><a id="1727" name="1727">1727</a></td>
+    <td class="esq"><u>EMV - QUANTIA MÁXIMA ACUMULADA, PARA TRANSACÇÕES OFFLINE - UPPER</u>
+    <p>Campo que define um valor máximo para transacções <em>offline</em>, quer estas se
+    efectuem no código de moeda da aplicação EMV (transacções nacionais) ou numa moeda
+    secundária, quando esta existe.<br>
+    Quando ultrapassado este limite, a transacção tem que ir <em>online</em>. A
+    impossibilidade de decisão online implica a recusa da transacção.<br>
+    Este elemento existe apenas nos cartões que suportam a norma VIS 1.4.0 (Visa) ou a norma
+    MChip/4 (MasterCard), ou versões superiores<br>
+    Nos cartões nacionais, o valor deste campo determina o valor dos seguintes elementos EMV:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">VISA</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+        <td class="esq">Cumulative Total Transaction Amount Upper Limit (TAG &quot;9F5C&quot;) (*)</td>
+      </tr>
+      <tr>
+        <td class="esq" colspan="2">MASTERCARD:</td>
+      </tr>
+      <tr>
+        <td class="esq"></td>
+        <td class="esq">Upper Cumulative Offline Transaction Amount (TAG &quot;00CB&quot;) (*)</td>
+      </tr>
+      <tr>
+        <td class="esq" colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td class="esq">(*)</td>
+        <td class="esq">Elemento com 12 posições de comprimento no ficheiro de personalização
+        de cartões EMV (<a target="main" href="../mglobal/l-iii/pemv.htm">PEMV</a>).</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>4 int.<br>
+    2 dec.<p>Valor em euros</td>
+    <td>OFFLINEVAL-UP</td>
+  </tr>
+  <tr>
+    <td><a id="1728" name="1728">1728</a></td>
+    <td class="esq"><u>EMV - NÚMERO MÁXIMO PERMITIDO PARA TRANSACÇÕES OFFLINE CONSECUTIVAS
+    INTERNACIONAIS (MOEDA)</u> &nbsp; <p>&quot;Consec. Transaction Limit (International)&quot;<br>
+    Aplicável a transacções realizadas com código de moeda diferente do código de moeda
+    da aplicação EMV.<br>
+    No ficheiro de personalização de cartões EMV (<a target="main"
+    href="../mglobal/l-iii/pemv.htm">PEMV</a>), este campo é apresentado em notação
+    hexadecimal (2 posições de comprimento).</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>OFFLINE-MOEDA</td>
+  </tr>
+  <tr>
+    <td><a id="1729" name="1729">1729</a></td>
+    <td class="esq"><u>EMV - NÚMERO MÁXIMO PERMITIDO PARA TRANSACÇÕES OFFLINE CONSECUTIVAS
+    INTERNACIONAIS (PAÍS)</u> &nbsp; <p>&quot;Consec. Transaction Limit
+    (International-Country)&quot;<br>
+    Aplicável a transacções realizadas com código de país diferente do código de país
+    da aplicação EMV.<br>
+    No ficheiro de personalização de cartões EMV (<a target="main"
+    href="../mglobal/l-iii/pemv.htm">PEMV</a>), este campo é apresentado em notação
+    hexadecimal (2 posições de comprimento).</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>OFFLINE-PAIS</td>
+  </tr>
+  <tr>
+    <td><a id="1730" name="1730">1730</a></td>
+    <td class="esq"><u>EMV - LOWER CONSECUTIVE OFFLINE LIMIT</u> <p>Número máximo permitido
+    para transacções consecutivas <em>offline</em> quando o terminal tem a possibilidade de
+    efectuar a transacção <em>online</em>.<br>
+    No ficheiro de personalização de cartões EMV (<a target="main"
+    href="../mglobal/l-iii/pemv.htm">PEMV</a>), este campo é apresentado em notação
+    hexadecimal (2 posições de comprimento).</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>OFFLINE-LOWER</td>
+  </tr>
+  <tr>
+    <td><a id="1731" name="1731">1731</a></td>
+    <td class="esq"><u>EMV - UPPER CONSECUTIVE OFFLINE LIMIT</u> <p>Número máximo permitido
+    para transacções consecutivas <em>offline</em> em terminais sem capacidade <em>online</em>.<br>
+    No ficheiro de personalização de cartões EMV (<a target="main"
+    href="../mglobal/l-iii/pemv.htm">PEMV</a>), este campo é apresentado em notação
+    hexadecimal (2 posições de comprimento).</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>OFFLINE-UPPER</td>
+  </tr>
+  <tr>
+    <td><a id="1732" name="1732">1732</a></td>
+    <td class="esq"><u>EMV - CVM - LIMITE PARA PIN OFFLINE</u> <p>A este campo corresponde um
+    método adicional de Verificação do Portador (CVM).<br>
+    Como elemento adicional de gestão de risco, o emissor pode parametrizar um valor abaixo
+    do qual permite a utilização do método de verificação &quot;PIN <em>Offline</em>&quot;.<br>
+    Esta restrição é aplicável apenas quando o terminal suporta PIN <em>offline</em>.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>4 int.<br>
+    2 dec.<p>Valor em euros</td>
+    <td>PINOFF-VALOR</td>
+  </tr>
+  <tr>
+    <td><a id="1733" name="1733">1733</a></td>
+    <td class="esq"><u>EMV - CVM LIST - IDENTIFICADOR</u> <p>Este campo identifica uma
+    &quot;Lista de métodos de verificação do portador (CVM LIST)&quot;. </p>
+    <p>Os valores possíveis são função das alternativas pré-definidas de listas de CVM
+    apresentadas nos <a href="../mglobal/l-ii/i_a1e.doc" target="main">formulários</a> de
+    &quot;Padrão EMV&quot;:</p>
+    <p>&nbsp;&nbsp;&nbsp;01 - Aplicar lista de CVM de produtos &quot;de Crédito&quot;<br>
+    &nbsp;&nbsp;&nbsp;02 - Aplicar lista de CVM de produtos &quot;de Débito&quot;<br>
+    &nbsp;&nbsp;&nbsp;03 - Aplicar lista de CVM do produto Multibanco</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CVM-LIST-ID</td>
+  </tr>
+  <tr>
+    <td><a id="1734" name="1734">1734</a></td>
+    <td class="esq"><u>EMV - APLICAÇÃO COM LINHA DE CRÉDITO (PADRÃO EMV)</u> <p>Identificação
+    do Padrão EMV correspondente a uma Aplicação EMV que permite a utilização de uma
+    Linha de Crédito nas compras em Terminais de Pagamento Automático.<br>
+    Este campo é parametrizado no momento da Produção lógica dos cartões (via ficheiro <a
+    target="main" href="../mglobal/l-iii/eecb.htm">EECB</a>). O seu valor é alterável
+    posteriormente via <a target="main" href="../mglobal/l-iii/egcc.htm">EGCC</a>. </p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">O campo pode assumir os seguintes valores:</td>
+      </tr>
+      <tr>
+        <td class="dta">&nbsp;&nbsp;&nbsp; 000 -&nbsp;&nbsp; </td>
+        <td class="esq">nenhuma das aplicações a posicionar no cartão permite efectuar compras
+        a prestações</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>001 a 989 -&nbsp;&nbsp; </td>
+        <td class="esq">código do Padrão EMV da Aplicação existente no cartão</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>990 a 999 -&nbsp; </td>
+        <td class="esq">(valores de utilização reservada)</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>LINHACRE-APLIC</td>
+  </tr>
+  <tr>
+    <td><a id="1735" name="1735">1735</a></td>
+    <td class="esq"><u>EMV - LINHA DE CRÉDITO - CARACTERIZAÇÃO</u> <p>Este campo pode
+    assumir valores entre 1 e 9, com correspondência directa para tabela parametrizada ao
+    nível do BIN. Esta tabela inclui registos compostos pelos seguintes campos:</p>
+    <p>&nbsp;&nbsp;- Montante mínimo (Compra)<br>
+    &nbsp; - Número máximo de Prestações<br>
+    &nbsp; - Valor mínimo (Prestação)</p>
+    <p>No <a target="main" href="../mglobal/l-iii/egcc.htm">EGCC</a>,&nbsp; quando seja
+    identificado um Padrão EMV correspondente a uma Aplicação que suporta a funcionalidade
+    &quot;Linha de Crédito&quot;, este campo pode assumir também o valor &quot;0&quot;
+    (zero). Neste caso, o emissor tem que posicionar valores individualmente para os campos
+    referidos acima.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>LINHACRE-ID</td>
+  </tr>
+  <tr>
+    <td><a id="1736" name="1736">1736</a></td>
+    <td class="esq"><u>EMV - LINHA DE CRÉDITO - MONTANTE MÍNIMO</u> <p>Indica um valor
+    mínimo em euros abaixo do qual não se possibilita a utilização da Linha de Crédito
+    para a transacção em causa.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>6 int.;<br>
+    em euros</td>
+    <td>LINHACRE-VMIN</td>
+  </tr>
+  <tr>
+    <td><a id="1737" name="1737">1737</a></td>
+    <td class="esq"><u>EMV - LINHA DE CRÉDITO - NÚMERO PRESTAÇÕES</u> <p>Este campo pode
+    assumir valores entre 0 e 99, em função das parametrizações efectuadas pelos
+    emissores. Corresponde ao número máximo de prestações que um cliente pode escolher ao
+    efectuar uma compra com pagamento fraccionado.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>LINHACRE-PREST</td>
+  </tr>
+  <tr>
+    <td><a id="1738" name="1738">1738</a></td>
+    <td class="esq"><u>EMV - LINHA DE CRÉDITO - VALOR MÍNIMO DA PRESTAÇÃO</u> <p>Este
+    campo refere-se a um valor mínimo em euros para a prestação, sendo esta calculada
+    através da divisão do montante da transacção por um número de prestações indicado. <br>
+    Se o valor calculado para a prestação estiver abaixo deste mínimo, não se possibilita
+    a utilização da Linha de Crédito para a transacção em causa.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>6 int.;<br>
+    em euros.</td>
+    <td>LINHACRE-VPRES</td>
+  </tr>
+  <tr>
+    <td><a id="1739" name="1739">1739</a></td>
+    <td class="esq"><u>EMV - LINHA DE CRÉDITO - ID DE TEXTO PARA O PINPAD</u> <p>O valor
+    deste campo está indexado a um texto a apresentar ao cliente no <em>pinpad</em>.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 1 - texto: &quot;Em quantas prestações?&quot;<br>
+    &nbsp;&nbsp; 2 a 5 - reservado</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>LINHACRE-IDTEX</td>
+  </tr>
+  <tr>
+    <td><a id="1740" name="1740">1740</a></td>
+    <td class="esq"><u>EMV - LINHA DE CRÉDITO - TEXTO PARA O PINPAD</u> <p>Este elemento pode
+    ser utilizado em operações EMV realizadas em POS. Corresponde a um texto a apresentar ao
+    cliente no <em>pinpad</em>, para solicitação de um <em>input</em> adicional.<br>
+    As primeiras 16 posições correspondem ao texto a apresentar na primeira linha do <em>pinpad</em>;
+    as últimas 14 posições correspondem a um texto a apresentar na segunda linha do <em>pinpad</em>.</td>
+    <td class="dta">30</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>LINHACRE-TEXTO</td>
+  </tr>
+  <tr>
+    <td><a id="1741" name="1741">1741</a></td>
+    <td class="esq"><u>EMV - APLICAÇÃO COM PROGRAMA DE FIDELIZAÇÃO (PADRÃO EMV)</u> <p>Identificação
+    do Padrão EMV correspondente a uma Aplicação EMV que possui um programa de
+    fidelização.</p>
+    <table border="0" cellspacing="0" width="100%" cellpadding="0" class="esq">
+      <tr>
+        <td class="esq" colspan="2">Este campo pode assumir os seguintes valores:</td>
+      </tr>
+      <tr>
+        <td class="dta">&nbsp;&nbsp; 000 -&nbsp;&nbsp; &nbsp;</td>
+        <td class="esq">nenhuma das aplicações a posicionar no cartão tem associado um programa
+        de fidelização.</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;001 a 989 -&nbsp;</td>
+        <td class="esq">código do Padrão EMV da Aplicação existente no cartão. </td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;990 a 998 -&nbsp; &nbsp;</td>
+        <td class="esq">(valores de utilização reservada)</td>
+      </tr>
+      <tr>
+        <td class="dta">999 -&nbsp;&nbsp;&nbsp; </td>
+        <td class="esq">todas as Aplicações EMV de pagamento existentes no cartão estão
+        associadas a um programa de fidelização.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FIDELIZ-APLIC</td>
+  </tr>
+  <tr>
+    <td><a id="1742" name="1742">1742</a></td>
+    <td class="esq"><u>EMV - IDENTIFICAÇÃO DO PROGRAMA DE FIDELIZAÇÃO</u> <p>Código
+    numérico que identifica inequivocamente um programa de Fidelização.</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" colspan="2"><p>Este campo pode assumir os seguintes
+            valores:</td>
+        </tr>
+        <tr>
+          <td class="dta" nowrap>&nbsp;&nbsp; 00000&nbsp; -&nbsp;&nbsp;&nbsp;</td>
+          <td class="esq">não existe ou não se pretende disponibilizar um
+            programa de Fidelização;</td>
+        </tr>
+        <tr>
+          <td class="dta" nowrap>&nbsp;&nbsp; 10000&nbsp; -&nbsp;&nbsp;&nbsp;</td>
+          <td class="esq">código atribuído a programa de Fidelização
+            genérico;</td>
+        </tr>
+        <tr>
+          <td class="dta" nowrap>10001 a 19999&nbsp; -&nbsp;&nbsp;&nbsp;</td>
+          <td class="esq">código atribuído a um programa de Fidelização do
+            Emissor.</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FIDELIZACAO-ID</td>
+  </tr>
+  <tr>
+    <td><a id="1743" name="1743">1743</a></td>
+    <td class="esq"><u>EMV - APLICAÇÃO ASSOCIADA A PROGRAMA (PADRÃO EMV)</u> <p>Identificação
+    do Padrão EMV correspondente a uma Aplicação EMV que acede a um programa negociado
+    entre o Emissor e um qualquer comerciante.</p>
+    <table border="0" cellspacing="0" width="100%" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">Este campo pode assumir os seguintes valores:</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap>&nbsp;&nbsp; 000&nbsp; -&nbsp; &nbsp;</td>
+        <td class="esq">nenhuma das aplicações a posicionar no cartão tem associado um
+        programa.</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>001 a 989&nbsp; -&nbsp; &nbsp;</td>
+        <td class="esq">código do Padrão EMV da Aplicação existente no cartão.</td>
+      </tr>
+      <tr>
+        <td class="esq">990 a 998&nbsp; -&nbsp;&nbsp; </td>
+        <td class="esq">(valores de utilização reservada).</td>
+      </tr>
+      <tr>
+        <td class="dta">999&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; </td>
+        <td class="esq">todas as Aplicações EMV de pagamento existentes no cartão estão
+        associadas a um programa Emissor</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PROGEMI-APLIC</td>
+  </tr>
+  <tr>
+    <td><a id="1744" name="1744">1744</a></td>
+    <td class="esq"><u>EMV - IDENTIFICAÇÃO DO PROGRAMA DO EMISSOR</u> 
+      <p>Código numérico
+    que identifica inequivocamente um programa negociado entre o Emissor e um qualquer
+    comerciante.</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td colspan="2" class="esq">Este campo pode assumir os seguintes valores:</td>
+        </tr>
+        <tr>
+          <td class="dta" nowrap>00000&nbsp; -&nbsp;&nbsp;&nbsp;</td>
+          <td class="esq">não existe ou não se&nbsp; pretende disponibilizar
+            um programa de Emissor;</td>
+        </tr>
+        <tr>
+          <td class="dta" nowrap>30000 a 59999&nbsp; -&nbsp;&nbsp;&nbsp;</td>
+          <td class="esq">código atribuído a um programa particular do
+            Emissor.</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PROGEMISSOR-ID</td>
+  </tr>
+  <tr>
+    <td><a id="1745" name="1745">1745</a></td>
+    <td class="esq"><u>EMV - INDICADOR DE SELECÇÃO PARCIAL DE AID</u> <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 00 - Selecção Parcial não autorizada<br>
+    &nbsp;&nbsp; 01 - Selecção Parcial não autorizada</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>SELECTPARCIAL</td>
+  </tr>
+  <tr>
+    <td><a id="1746" name="1746">1746</a></td>
+    <td class="esq"><u>EMV - VERSÃO DE APLICAÇÃO</u><p>&quot;Application Version Number
+    (AVN)&quot;<br>
+    Versão de uma Aplicação EMV, indicada por um Sistema de Pagamento.</td>
+    <td class="dta">4</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>VERSAOAPLIC</td>
+  </tr>
+  <tr>
+    <td><a id="1747" name="1747">1747</a></td>
+    <td class="esq"><u>APLICAÇÃO PDD DA MENSAGEM ORIGEM (NOVO CÓDIGO EXPANDIDO)</u> <p>Campo
+    que, numa mensagem ou registo correspondente a uma anulação, indica qual o código do
+    processo transaccional da transacção a anular pelo Banco (valor do campo <a href="#1709">1709</a>
+    da transacção a anular). <br>
+    Preenchido na transacção original quando esta corresponde ao segundo tempo de uma
+    operação a dois tempos, com o valor presente no registo de &quot;Autorização&quot;
+    (CODTRN=012), caso tenha sido possível efectuar o respectivo emparelhamento.<br>
+    Corresponde à versão expandida do campo <a href="campos4.htm#322">322</a>.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>APLIC_N-O</td>
+  </tr>
+  <tr>
+    <td><a id="1748" name="1748">1748</a></td>
+    <td class="esq"><u>CHAVE DE CIFRA - KS PIN</u> <p>Chave 3DES de transporte de PINs de
+    cartão (chave utilizada para cifra de PINs).<br>
+    Por cada emissão é gerada uma chave KS PIN.</td>
+    <td class="dta">32</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>KEY-KSPIN</td>
+  </tr>
+  <tr>
+    <td><a id="1749" name="1749">1749</a></td>
+    <td class="esq"><u>CHAVE DE CIFRA - KS KEY</u> <p>Chave 3DES de transporte de chaves de
+    cartão (chave utilizada para cifra de chaves 3DES de cartão).<br>
+    Por cada emissão é gerada uma chave KS KEY.</td>
+    <td class="dta">32</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>KEY-KSKEY</td>
+  </tr>
+  <tr>
+    <td><a id="1750" name="1750">1750</a></td>
+    <td class="esq"><u>CHAVE DE CIFRA - KS CIF</u> <p>Chave 3DES de transporte de dados
+    críticos do cartão (chave utilizada para cifra de dados considerados sensíveis).<br>
+    Por cada emissão é gerada uma chave KS CIF.</td>
+    <td class="dta">32</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>KEY-KSCIF</td>
+  </tr>
+  <tr>
+    <td><a id="1751" name="1751">1751</a></td>
+    <td class="esq"><u>EMV - REFERENCE PIN</u> <p>PIN colocado nos cartões-<em>chip</em> EMV
+    para possibilitar a validação de PIN <em>Offline.<br>
+    </em>Quando as listas de métodos de verificação do portador (campo <a href="#1784">1784</a>)
+    de todas as aplicações existentes num cartão EMV não incluem o método PIN <em>Offline,
+    </em>o campo &quot;EMV - Reference PIN&quot; não é colocado no cartão.</td>
+    <td class="dta">16</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>REF-PIN</td>
+  </tr>
+  <tr>
+    <td><a id="1752" name="1752">1752</a></td>
+    <td class="esq"><u>EMV - CVV3/CVC3</u> <p>&quot;Card Validation Value 3&quot; <br>
+    Trata-se de um valor que é colocado no <em>chip</em> de cartões EMV, para validação da
+    imagem da Pista 2 (&quot;Track 2 Equivalent Data&quot;). <br>
+    É utilizado como elemento de segurança no processamento de transacções realizadas com
+    utilização do <em>chip</em>.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CVV3-CVC3</td>
+  </tr>
+  <tr>
+    <td><a id="1753" name="1753">1753</a></td>
+    <td class="esq"><u>EMV - APPLICATION FILE LOCATOR (AFL)</u> <p>Indica a localização no <em>chip</em>
+    (SFIs &#150; &quot;Short File Identifier&quot; e &quot;records&quot;) dos AEFs
+    (&quot;Application Elementary Files&quot;), os quais contêm elementos de dados para a
+    Aplicação existente no cartão EMV, para leitura pelo Terminal.<br>
+    Este campo indica também a localização no <em>chip</em> dos elementos de dados
+    estáticos utilizados no cálculo do campo (<a href="#1760">1760</a>) SIGNED STATIC
+    APPLICATION DATA (SSAD). Os elementos referidos são indicados no documento &quot;<a
+    href="../mglobal/l-ii/a_a5.pdf" target="main">Parametrizações Genéricas EMV</a>&quot;.<br>
+    Para os cartões nacionais, o AFL é composto por 3 entradas (ficheiros). O primeiro e
+    terceiro ficheiro indicados no AFL têm que ser actualizáveis. O segundo ficheiro é
+    sempre e apenas de leitura (&quot;read only&quot;).<br>
+    <br>
+    As funcionalidades adicionais definidas pelos emissores nacionais são colocadas
+    obrigatoriamente no terceiro ficheiro informado no AFL, de acordo com a seguinte
+    estrutura:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq"><em>1º record do 3º ficheiro do AFL</em> - Elementos (TAGs)
+        proprietários, pela seguinte ordem:</td>
+      </tr>
+    </table>
+    <table border="0" cellspacing="0" width="228">
+      <tr>
+        <td class="esq" width="77"></td>
+        <td class="esq" width="115">CONTASASSOC</td>
+        <td class="esq" width="127">(campo <a href="#1767">1767</a>)</td>
+      </tr>
+      <tr>
+        <td class="esq" width="77"></td>
+        <td class="esq" width="115">EMV-TCRU </td>
+        <td class="esq" width="127">(campo <a href="#1768">1768</a>)</td>
+      </tr>
+      <tr>
+        <td class="esq" width="77"></td>
+        <td class="esq" width="115">EMV-SEQPAN</td>
+        <td class="esq" width="127">(campo <a href="#1769">1769</a>)</td>
+      </tr>
+      <tr>
+        <td class="esq" width="77"></td>
+        <td class="esq" width="115">EMV-IDCLIENTE</td>
+        <td class="esq" width="127">(campo <a href="#1770">1770</a>)</td>
+      </tr>
+    </table>
+    <p><em>2º record do 3º ficheiro do AFL</em> - Funcionalidade &quot;Linha de
+    Crédito&quot; (Prestações)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Elemento:&nbsp;&nbsp;&nbsp;&nbsp; LINHACRE
+    (campo <a href="#1773">1773</a>)</p>
+    <p><em>3º record do 3º ficheiro do AFL</em> - Funcionalidade &quot;Fidelização&quot;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Elemento:&nbsp;&nbsp;&nbsp;&nbsp; FIDELIZAÇÃO
+    (campo <a href="#1774">1774</a>)</p>
+    <p><em>4º record do 3º ficheiro do AFL</em> - Funcionalidade &quot;Programa do
+    Emissor&quot; (Compra com Detalhe)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Elemento:&nbsp;&nbsp;&nbsp;&nbsp; PROGEMISSOR
+    (campo <a href="#1775">1775</a>)</td>
+    <td class="dta">24</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>AFL</td>
+  </tr>
+  <tr>
+    <td><a id="1754" name="1754">1754</a></td>
+    <td class="esq"><u>EMV - DATA DE ACTIVAÇÃO DA APLICAÇÃO</u> <p>&quot;Application
+    Effective Date&quot;<br>
+    Data a partir da qual a Aplicação EMV pode ser utilizada. <br>
+    O valor deste campo é determinado pelo momento da emissão lógica do cartão.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>YYMMDD</td>
+    <td>DATAACTIVA</td>
+  </tr>
+  <tr>
+    <td><a id="1755" name="1755">1755</a></td>
+    <td class="esq"><u>CERTIFICATION AUTHORITY PUBLIC KEY INDEX (PKI)</u> <p>Identifica a
+    chave pública da &quot;Certification Authority&quot;, a utilizar pelo Terminal no
+    processo de Autenticação de Dados Offline (&quot;Offline Data Authentication&quot;).<br>
+    Este campo é composto por dois componentes:</p>
+    <p><em>Posições 1-2</em> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#145;01&#146;</p>
+    <p><em>Posições 3-4</em> - preenchidas com um valor para o campo</td>
+    <td class="dta">4</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>KEY-PKI</td>
+  </tr>
+  <tr>
+    <td><a id="1756" name="1756">1756</a></td>
+    <td class="esq"><u>CERTIFICADO DA CHAVE PÚBLICA DO EMISSOR</u> <p>&quot;Issuer PK
+    Certificate&quot;<br>
+    Certificado utilizado pelo Terminal no processo de Autenticação de Dados <em>Offline</em>
+    (&quot;Offline Data Authentication&quot;).<br>
+    Este campo é composto por dois componentes:</p>
+    <p><em>Posições 1-4</em> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes</p>
+    <blockquote>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; &#146;8180&#146; (1024 bits)<br>
+      &nbsp;&nbsp; &#146;8190&#146; (1152 bits)</p>
+    </blockquote>
+    <p><em>Posições 3 e seguintes</em> - preenchidas com um valor para o campo</p>
+    <p>O comprimento total do campo depende do comprimento das chaves utilizadas:<br>
+    &nbsp;&nbsp; - 260 (representação H) se chaves são de 1024 bits<br>
+    &nbsp;&nbsp; - 292 (representação H) se chaves são de 1152 bits</td>
+    <td class="dta">260<br>
+    ou<br>
+    292</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>ISS-CERTIF</td>
+  </tr>
+  <tr>
+    <td><a id="1757" name="1757">1757</a></td>
+    <td class="esq"><u>EXPOENTE DA CHAVE PÚBLICA DO EMISSOR</u> <p>&quot;Issuer PK
+    Exponent&quot;<br>
+    Expoente utilizado pelo Terminal no processo de Autenticação de Dados Offline
+    (&quot;Offline Data Authentication&quot;).<br>
+    Este campo é composto por dois componentes:</p>
+    <p><em>Posições 1-2</em> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#145;01&#146;</p>
+    <p><em>Posições 3-4</em> - preenchidas com um valor para o campo</td>
+    <td class="dta">4</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>ISS-EXPONE</td>
+  </tr>
+  <tr>
+    <td><a id="1758" name="1758">1758</a></td>
+    <td class="esq"><u>REMANESCENTE DA CHAVE PÚBLICA DO EMISSOR</u> <p>&quot;Issuer PK
+    Remainder&quot;<br>
+    Campo opcional. Estará presente no cartão EMV quando existam dados complementares que
+    não foram incluídos no certificado de chave pública do emissor.<br>
+    Este elemento é utilizado pelo Terminal no processo de Autenticação de Dados Offline
+    (&quot;Offline Data Authentication&quot;).<br>
+    Este campo é composto por dois componentes:</p>
+    <p><em>Posições 1-2</em> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#145;14&#146;</p>
+    <p><em>Posições 3-42</em> - preenchidas com um valor para o campo</td>
+    <td class="dta">42</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>ISS-REMAIN</td>
+  </tr>
+  <tr>
+    <td><a id="1759" name="1759">1759</a></td>
+    <td class="esq"><u>EMV - LISTA DE ELEMENTOS PARA AUTENTICAÇÃO ESTÁTICA</u> <p>&quot;Static
+    Data Authentication Tag List (SDA TAG LIST)&quot;<br>
+    Apresenta uma lista de elementos utilizados para cálculo do campo &quot;SIGNED STATIC
+    APPLICATION DATA (SSAD)&quot;.<br>
+    Este campo é composto por dois componentes:</p>
+    <p><em>Posições 1-2</em> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#145;01&#146;</p>
+    <p><em>Posições 3-4</em> - preenchidas com um valor para o campo; sempre preenchidas com
+    &#145;82&#146;</td>
+    <td class="dta">4</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>SDA-TAGLIST</td>
+  </tr>
+  <tr>
+    <td><a id="1760" name="1760">1760</a></td>
+    <td class="esq"><u>EMV - SIGNED STATIC APPLICATION DATA (SSAD)</u> <p>Campo calculado
+    sobre os dados estáticos indicados através dos campos &quot;APPLICATION FILE LOCATOR
+    (AFL)&quot; e &quot;STATIC DATA AUTHENTICATION TAG LIST (SDA TAG LIST)&quot;.<br>
+    Este campo é composto por dois componentes:</p>
+    <p>As primeiras posições indicam o comprimento, em bytes, dos dados a considerar. As
+    posições ocupadas para indicar o comprimento poderão ser duas ou quatro, em função
+    das chaves utilizadas:</p>
+    <blockquote>
+      <p>- <em>2 posições</em>, se as chaves são de 896 bits; sempre preenchidas com o valor
+      &#145;70&#146;<br>
+      - <em>4 posições</em>, se as chaves são de 1024 bits; sempre preenchidas com valor
+      &#145;8180&#146;</p>
+    </blockquote>
+    <p>As posições seguintes são preenchidas com um valor para o campo.</p>
+    <p>O comprimento total do campo depende do comprimento das chaves utilizadas:<br>
+    &nbsp;&nbsp; - 226 (representação H) se chaves são de 896 bits<br>
+    &nbsp;&nbsp; - 260 (representação H) se chaves são de 1024 bits</td>
+    <td class="dta">226<br>
+    ou<br>
+    260<br>
+    ou<br>
+    292</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>SSAD</td>
+  </tr>
+  <tr>
+    <td><a id="1761" name="1761">1761</a></td>
+    <td class="esq"><u>EMV - INDICADOR DE PRESENÇA &#150; ELEMENTOS DE GESTÃO DE RISCO</u> <p>Este
+    campo é utilizado no bloco de dados &quot;ELEMENTOS DE GESTÃO DE RISCO&quot; do ficheiro
+    <a target="main" href="../mglobal/l-iii/pemv.htm">PEMV</a>.<br>
+    Cada posição deste campo indica a existência de um elemento de dados de &quot;Gestão
+    de Risco&quot;:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" nowrap><em>Pos.&nbsp;&nbsp; 1</em> - </td>
+        <td class="esq">Lower Consecutive Offline Limit (LCOL)</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap><em>Pos.&nbsp;&nbsp; 2 </em>-</td>
+        <td class="esq">Upper Consecutive Offline Limit (UCOL)</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap><em>Pos.&nbsp;&nbsp; 3</em> - </td>
+        <td class="esq">Consecutive Transaction Limit (International)</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap><em>Pos.&nbsp;&nbsp; 4</em> - </td>
+        <td class="esq">Consecutive Transaction Limit (International-Country)</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap><em>Pos.&nbsp;&nbsp; 5</em> -</td>
+        <td class="esq">Cumulative Total Transaction Amount Limit</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap><em>Pos.&nbsp;&nbsp; 6</em> -</td>
+        <td class="esq">Cumulative Total Transaction Amount Limit - Dual Currency</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap><em>Pos.&nbsp;&nbsp; 7</em> - </td>
+        <td class="esq">Currency Conversion Factor</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap><em>Pos.&nbsp;&nbsp; 8</em> -</td>
+        <td class="esq">Cumul. Total Transaction Amount Upper Limit</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap><em>Pos.&nbsp;&nbsp; 9</em> -</td>
+        <td class="esq">Lower Cumulative Offline Transaction Amount</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap><em>Pos. 10</em> -</td>
+        <td class="esq">Upper Cumulative Offline Transaction Amount</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap><em>Pos. 11</em> -</td>
+        <td class="esq">Currency Conversion Table</td>
+      </tr>
+    </table>
+    <p>Alguns valores possíveis para este indicador:<br>
+    &nbsp;&nbsp;&nbsp; &#145;11111110000&#146;<br>
+    &nbsp;&nbsp;&nbsp; &#145;11111111000&#146;<br>
+    &nbsp; &nbsp; &#145;11000000111&#146;</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND-GRISCO</td>
+  </tr>
+  <tr>
+    <td><a id="1762" name="1762">1762</a></td>
+    <td class="esq"><u>UNIQUE DEA KEY (UDK A) / (UDK B)</u> <p>Chave 3DES residente no
+    cartão, utilizada para geração do criptograma devolvido pelo cartão a validar
+    centralmente.<br>
+    Esta chave também é utilizada para validação do criptograma gerado centralmente e
+    devolvido para o cartão.</td>
+    <td class="dta">16</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>KEY-UDK</td>
+  </tr>
+  <tr>
+    <td><a id="1763" name="1763">1763</a></td>
+    <td class="esq"><u>DATA ENCIPHERMENT DEA KEY (UDK ENC A) / (UDK ENC B)</u> <p>Chave 3DES
+    residente no cartão, utilizada nos comandos de <em>script</em> enviados após a emissão.<br>
+    Esta chave é utilizada apenas quando se pretende que o envio de dados seja efectuado de
+    forma cifrada (aplicável por exemplo nas situações de actualização de PIN no
+    cartão). </td>
+    <td class="dta">16</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>KEY-UDKDATA</td>
+  </tr>
+  <tr>
+    <td><a id="1764" name="1764">1764</a></td>
+    <td class="esq"><u>MESSAGE AUTHENTICATION CODE DEA KEY (UDK MAC A) / (UDK MAC B)</u> <p>Chave
+    3DES residente no cartão, utilizada nos comandos de <em>script</em> enviados após a
+    emissão.</td>
+    <td class="dta">16</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>KEY-UDKMAC</td>
+  </tr>
+  <tr>
+    <td><a id="1765" name="1765">1765</a></td>
+    <td class="esq"><u>EMV - VERSÃO DE CRIPTOGRAMA</u> <p>&quot;Cryptogram Version Number
+    (CVN)&quot;<br>
+    Identifica uma versão à qual está associado um conjunto de dados e uma forma de
+    cálculo do criptograma gerado por um cartão EMV.</td>
+    <td class="dta">2</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>CVN-CRIPTOG</td>
+  </tr>
+  <tr>
+    <td><a id="1766" name="1766">1766</a></td>
+    <td class="esq"><u>DERIVATION KEY INDEX (DKI)</u> <p>Índice das chaves 3DES derivadas de
+    uma chave mestra.<br>
+    Este índice é enviado para o cartão. Permite identificar a relação entre a chave
+    mestra e a chave de cartão (chave derivada). </td>
+    <td class="dta">2</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>KEY-DKI</td>
+  </tr>
+  <tr>
+    <td><a id="1767" name="1767">1767</a></td>
+    <td class="esq"><u>EMV - CONTAS ASSOCIADAS</u> <p>Este campo é um elemento proprietário
+    SIBS, para utilização nas transacções efectuadas com cartões EMV em Caixas
+    Automáticos da Rede Multibanco.<br>
+    O campo existe (opcionalmente) no cartão com a finalidade de indicar o conjunto de
+    códigos das Contas que estão associados ao cartão. Se este elemento não existir no
+    cartão, considera-se que o cartão tem apenas uma Conta Associada.<br>
+    O cartão pode ter associadas de 1 a 8 contas.<br>
+    Este campo é composto por três componentes:</p>
+    <p><em>Posições 1-4</em> - identificação (TAG) do campo; sempre preenchidas com
+    &#145;DF27&#146;</p>
+    <p><em>Posições 5-6</em> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes</p>
+    <p><em>Posições 7 e seguinte</em> &#150; preenchidas com os códigos de contas
+    associadas (2 posições por cada código de conta)</p>
+    <p>O valor deste campo é actualizável após a personalização física do cartão,
+    através de <em>scripts</em>.</td>
+    <td class="dta">22</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>CONTASASSOC</td>
+  </tr>
+  <tr>
+    <td><a id="1768" name="1768">1768</a></td>
+    <td class="esq"><u>EMV - RESTRIÇÃO OPERAÇÕES CARTÃO</u> <p>Este campo é um elemento
+    proprietário SIBS, para utilização nas transacções efectuadas com cartões EMV em
+    Caixas Automáticos da Rede Multibanco.<br>
+    O campo existe (opcionalmente) no cartão, para permitir restringir o conjunto de
+    operações autorizadas no CA.<br>
+    Este campo é composto por três componentes:</p>
+    <p><em>Posições 1-4</em> - identificação (TAG) do campo; sempre preenchidas com
+    &#145;DF28&#146;</p>
+    <p><em>Posições 5-6</em> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes</p>
+    <p><em>Posições 7-38</em> - preenchidas com um valor para o campo</p>
+    <p>As últimas posições (valor do campo) reflectem o conjunto de operações autorizadas
+    para o cartão, definidas através de um bitmap de 128 bits. Uma posição preenchida com
+    valor &#145;1&#146; significa que a respectiva operação é autorizada para aquele
+    cartão. <br>
+    Cada posição do bitmap corresponde a uma operação:<br>
+    &nbsp;&nbsp; 1: Levantamento<br>
+    &nbsp;&nbsp; 2: Levantamento a Crédito<br>
+    &nbsp;&nbsp; 3: Consulta de Saldos<br>
+    &nbsp;&nbsp; 4: Consulta de Movimentos<br>
+    &nbsp;&nbsp; 5: Pagamento de Serviços<br>
+    &nbsp;&nbsp; 6: Cobrança de Efeitos<br>
+    &nbsp;&nbsp; 7: Depósito em Numerário<br>
+    &nbsp;&nbsp; 8: Depósito de Valores<br>
+    &nbsp;&nbsp; 9: Transferência Interbancária<br>
+    &nbsp;&nbsp; 10: Transferência entre Contas<br>
+    &nbsp;&nbsp; 11: Alteração de PIN<br>
+    &nbsp;&nbsp; 12: Carregamento PMB<br>
+    &nbsp;&nbsp; 13: Descarga PMB<br>
+    &nbsp;&nbsp; 14: Consulta PMB<br>
+    &nbsp;&nbsp; 15: Depósito PMB<br>
+    &nbsp;&nbsp; 16-128: Operações de Serviços Especiais</p>
+    <p>O valor deste campo é actualizável após a personalização física do cartão,
+    através de <em>scripts</em>.</td>
+    <td class="dta">38</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>EMV-TCRU</td>
+  </tr>
+  <tr>
+    <td><a id="1769" name="1769">1769</a></td>
+    <td class="esq"><u>EMV - SUPORTE FUNCIONALIDADES SEQPAN</u> <p>Este campo é um elemento
+    proprietário SIBS, para utilização nas transacções efectuadas com cartões EMV na
+    Rede Multibanco.<br>
+    O campo destina-se a suportar, nos cartões EMV, as funcionalidades associadas ao Elemento
+    SEQPAN já existentes nos cartões com pista magnética.<br>
+    Este campo é composto por três componentes:</p>
+    <p><em>Posições 1-4</em> - identificação (TAG) do campo; sempre preenchidas com
+    &#145;DF47&#146;</p>
+    <p><em>Posições 5-6</em> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#146;01&#146;</p>
+    <p><em>Posições 7-8</em> - preenchidas com um valor para o campo</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2" class="esq">Valores possíveis para as duas últimas posições:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 00 -&nbsp; </td>
+        <td class="esq">Não existe informação</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 01 -</td>
+        <td class="esq">Cartão Normal Cliente Bancário</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 02 -</td>
+        <td class="esq">Cartão Serviço Universal, acesso ATM+POS p/ Cartões Empresa</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 03 -</td>
+        <td class="esq">Cartão Serviço Pagamento Automático, acesso POS p/ Cartões Empresa</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 04 -</td>
+        <td class="esq">Cartão Serviço ATM, acesso ATM p/ Cartões Empresa</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 05 - </td>
+        <td class="esq">Cartão Serviço Sector, acesso POS pertencentes a estabelecimentos do
+        mesmo sector de actividade (62071 Gasolineiros, 71161 Portagens)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 06 - </td>
+        <td class="esq">Cartão Serviço Comerciante, acesso POS pertencentes a estabelecimentos
+        de um Comerciante específico</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 07 -</td>
+        <td class="esq">Cartão Serviço Terminal, acesso Terminal de Acesso ao MB para Serviços
+        proprietários do Banco</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 08 - </td>
+        <td class="esq">Cartão Rede Privada</td>
+      </tr>
+    </table>
+    <p>O valor deste campo é actualizável após a personalização física do cartão,
+    através de <em>scripts</em>.</td>
+    <td class="dta">8</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>EMV-SEQPAN</td>
+  </tr>
+  <tr>
+    <td><a id="1770" name="1770">1770</a></td>
+    <td class="esq"><u>EMV - IDENTIFICAÇÃO CLIENTE</u> <p>Este campo é um elemento
+    proprietário SIBS, para utilização nas transacções efectuadas com cartões EMV na
+    Rede Multibanco.<br>
+    O campo possibilita uma melhor identificação do cliente.<br>
+    Este campo é composto por três componentes:</p>
+    <p><em>Posições 1-4</em> - identificação (TAG) do campo; sempre preenchidas com
+    &#145;DF49&#146;</p>
+    <p><em>Posições 5-6</em> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#146;16&#146;</p>
+    <p><em>Posições 7-32</em> - preenchidas com o valor dos campos:<br>
+    &nbsp;&nbsp; 1 byte - Sexo (campo <a href="campos2.htm#140">140</a>)<br>
+    &nbsp;&nbsp; 4 bytes - Data de Nascimento (campo <a href="campos3.htm#271">271</a>)<br>
+    &nbsp;&nbsp; 4 bytes - Código de Actividade (campo <a href="campos2.htm#175">175</a>)<br>
+    &nbsp;&nbsp; 4 bytes - (reservado para uso futuro;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    preenchidas com &#146;00000000&#146;)</td>
+    <td class="dta">32</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>EMV-IDCLIENTE</td>
+  </tr>
+  <tr>
+    <td><a id="1771" name="1771">1771</a></td>
+    <td class="esq"><u>EMV - INIBIÇÃO DE APLICAÇÃO DE UMA TAXA CLIENTE</u> <p>&quot;Client
+    Fee Inhibition&quot;<br>
+    Este campo é um elemento proprietário SIBS, para utilização nas transacções
+    efectuadas com cartões EMV na Rede Multibanco.<br>
+    O campo existe (opcionalmente) no cartão para indicar a aplicabilidade de uma taxa
+    cliente. Deverá fazer parte do conteúdo da tag &quot;BF0C&quot; - FCI Issuer
+    Discretionary Data presente na resposta à selecção da aplicação<br>
+    Este campo é composto por três componentes:</p>
+    <p><em>Posições 1-4 </em>- identificação (TAG) do campo; sempre preenchidas com
+    &#145;DF40&#146;</p>
+    <p><em>Posições 5-6</em> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#146;01&#146;</p>
+    <p><em>Posições 7-8</em> - preenchidas com um valor para o campo:</p>
+    <p>Valores possíveis para as duas últimas posições:<br>
+    &nbsp;&nbsp; 01 - Taxa Gasolineira NÃO aplicável.<br>
+    &nbsp;&nbsp; 00 - Taxa Gasolineira aplicável.</td>
+    <td class="dta">8</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>INIB-TXCLIENTE</td>
+  </tr>
+  <tr>
+    <td><a id="1772" name="1772">1772</a></td>
+    <td class="esq"><u>EMV - CÓDIGO (PROPRIETÁRIO) DE PAÍS DO EMISSOR</u> <p>&quot;Proprietary
+    Issuer Country Code&quot;<br>
+    Este campo é um elemento proprietário SIBS, para utilização nas transacções
+    efectuadas com cartões EMV na Rede Multibanco. Deverá fazer parte do conteúdo da tag
+    &quot;BF0C&quot; - FCI Issuer Discretionary Data presente na resposta à selecção da
+    aplicação.<br>
+    É interpretado em conjunto com o campo <a href="#1771">1771</a>, para determinar a
+    aplicabilidade de uma Taxa Cliente. </p>
+    <p>Este campo é composto por três componentes:</p>
+    <p><em>Posições 1-4</em> - identificação (TAG) do campo; sempre preenchidas com
+    &#145;DF48&#146;</p>
+    <p><em>Posições 5-6</em> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#146;02&#146;</p>
+    <p><em>Posições 7-10</em> - sempre preenchidas com &#145;0620&#146;</td>
+    <td class="dta">10</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>ISS-PAIS</td>
+  </tr>
+  <tr>
+    <td><a id="1773" name="1773">1773</a></td>
+    <td class="esq"><u>EMV - FUNCIONALIDADE LINHA DE CRÉDITO</u> &nbsp; <p>Este campo é um
+    elemento proprietário SIBS, para utilização nas transacções efectuadas com cartões
+    EMV na Rede Multibanco.<br>
+    Permite implementar, associada à respectiva aplicação EMV, a Funcionalidade Linha de
+    Crédito, possibilitando que a compra se efectua a Prestações, se a Transacção de
+    compra reunir todos os requisitos necessários.<br>
+    Este campo é composto por três componentes:&nbsp;</p>
+    <p><em>Posições 1-4</em> - identificação (TAG) do campo; sempre preenchidas com
+    &#145;DF44&#146;&nbsp;</p>
+    <p><em>Posições 5-6</em> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#146;40&#146;&nbsp;</p>
+    <p><em>Posições 7-80</em> - preenchidas com o valor do campos:<br>
+    &nbsp;&nbsp; 1 byte - Indicador de Funcionalidade Linha de Crédito:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    00 - Desactivada<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    01 - Activada<br>
+    &nbsp;&nbsp; 4 bytes - Montante Mínimo Aplicável&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    (corresponde ao campo <a href="#1736">1736</a>)<br>
+    &nbsp;&nbsp; 1 byte -&nbsp;&nbsp; Nº Máximo de Prestações&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp; (corresponde ao campo <a href="#1737">1737</a>)<br>
+    &nbsp;&nbsp; 4 bytes -&nbsp;&nbsp; Valor Mínimo para a Prestação&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp; (corresponde ao campo <a href="#1738">1738</a>)<br>
+    &nbsp;&nbsp; 30 bytes - Texto a apresentar nas duas linhas do Pinpad&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    (&quot;Em quantas&quot; / &quot;prestações?&quot;)</p>
+    <p>O valor deste campo é actualizável após a personalização física do cartão,
+    através de <em>scripts</em>.&nbsp;</td>
+    <td class="dta">86</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>LINHACRE</td>
+  </tr>
+  <tr>
+    <td><a id="1774" name="1774">1774</a></td>
+    <td class="esq"><u>EMV - FUNCIONALIDADE FIDELIZAÇÃO</u> &nbsp; <p>Este campo é um
+    elemento proprietário SIBS, para utilização nas transacções efectuadas com cartões
+    EMV na Rede Multibanco.<br>
+    Permite implementar, associada à respectiva aplicação EMV, a Funcionalidade
+    Fidelização.<br>
+    Este campo é composto por três componentes:</p>
+    <p><em>Posições 1-4</em> - identificação (TAG) do campo; sempre preenchidas com
+    &#145;DF45&#146;</p>
+    <p><em>Posições 5-6</em> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#146;04&#146;</p>
+    <p><em>Posições 7-22</em> - preenchidas com o valor do campos:<br>
+    &nbsp;&nbsp; 1 byte - Indicador de Funcionalidade Fidelização:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    00 - Desactivada<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    01 - Activada<br>
+    &nbsp;&nbsp; 2 bytes - Identificador do Programa de Fidelização&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    (corresponde ao campo <a href="#1742">1742</a>)<br>
+    &nbsp;&nbsp; 1 byte - Indicador de Rebate de Pontos:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    00 - Rebate Desactivado<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    01 - Rebate Activado<br>
+    &nbsp;&nbsp; 30 bytes - Texto a apresentar nas duas linhas do Pinpad&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    (&quot;Quer utilizar&quot; / &quot;os pontos?&quot;)</p>
+    <p>O valor deste campo é actualizável após a personalização física do cartão,
+    através de <em>scripts</em>.</td>
+    <td class="dta">74</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>FIDELIZACAO</td>
+  </tr>
+  <tr>
+    <td><a id="1775" name="1775">1775</a></td>
+    <td class="esq"><u>EMV - FUNCIONALIDADE PROGRAMA DE EMISSOR</u>&nbsp; <p>Este campo é um
+    elemento proprietário SIBS, para utilização nas transacções efectuadas com cartões
+    EMV na Rede Multibanco.<br>
+    Permite implementar, associada à respectiva aplicação EMV, a Funcionalidade Programa de
+    Emissor (ex: Compra com Detalhe).<br>
+    Este campo é composto por três componentes:</p>
+    <p><i>Posições 1-4</i> - identificação (TAG) do campo; sempre preenchidas com
+    &#145;DF46&#146;</p>
+    <p><i>Posições 5-6</i> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#146;03&#146;</p>
+    <p><i>Posições 7-12</i> - preenchidas com o valor do campos:<br>
+    &nbsp;&nbsp; 1 byte - Indicador de Funcionalidade Programa de Emissor<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    00 - Desactivada<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    01 - Activada<br>
+    &nbsp;&nbsp; 2 bytes - Identificador do Programa de Emissor (corresponde ao campo <a
+    href="#1744">1744</a>)</p>
+    <p>O valor deste campo é actualizável após a personalização física do cartão,
+    através de <em>scripts</em>.</td>
+    <td class="dta">12</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>PROGEMISSOR</td>
+  </tr>
+  <tr>
+    <td><a id="1776" name="1776">1776</a></td>
+    <td class="esq"><u>CERTIFICADO DA CHAVE PÚBLICA DE CARTÃO</u>&nbsp; <p>&quot;ICC PK
+    Certificate&quot;<br>
+    Certificado a utilizar pelo Terminal no processo de Autenticação de Dados Offline
+    (&quot;Offline Data Authentication&quot;).<br>
+    Só existe em cartões que suportam DDA (&quot;Dynamic Data Authentication&quot;).<br>
+    Este campo é composto por dois componentes:</p>
+    <p>As primeiras posições indicam o comprimento, em bytes, dos dados a considerar. As
+    posições ocupadas para indicar o comprimento poderão ser duas ou quatro, em função
+    das chaves utilizadas:</p>
+    <blockquote>
+      <p>- <i>2 posições</i>, se as chaves são de 896 bits; sempre preenchidas com o valor
+      &#145;70&#146;<br>
+      - <i>4 posições</i>, se as chaves são de 1024 bits; sempre preenchidas com valor
+      &#145;8180&#146;<br>
+      - <i>4 posições</i>, se as chaves são de 1152 bits; sempre preenchidas com valor
+      &#145;8190&#146;</p>
+    </blockquote>
+    <p>As posições seguintes são preenchidas com um valor para o campo.</p>
+    <p>O comprimento total do campo depende do comprimento das chaves utilizadas:<br>
+    &nbsp; - 226 (representação H) se chaves são de 896 bits<br>
+    &nbsp; - 260 (representação H) se chaves são de 1024 bits<br>
+    &nbsp; - 292 (representação H) se chaves são de 1152 bits</td>
+    <td class="dta">226<br>
+    ou<br>
+    260<br>
+    ou<br>
+    292</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>ICC-CERTIF</td>
+  </tr>
+  <tr>
+    <td><a id="1777" name="1777">1777</a></td>
+    <td class="esq"><u>EXPOENTE DA CHAVE PÚBLICA DE CARTÃO</u>&nbsp; <p>&quot;ICC PK
+    Exponent&quot;<br>
+    Expoente a utilizar pelo Terminal no processo de Autenticação de Dados Offline
+    (&quot;Offline Data Authentication&quot;).<br>
+    Só existe em cartões que suportam DDA (&quot;Dynamic Data Authentication&quot;).<br>
+    Este campo é composto por dois componentes:</p>
+    <p><i>Posições 1-2</i> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#146;01&#146;</p>
+    <p><i>Posições 3-4</i> - preenchidas com um valor para o campo</td>
+    <td class="dta">4</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>ICC-EXPONE</td>
+  </tr>
+  <tr>
+    <td><a id="1778" name="1778">1778</a></td>
+    <td class="esq"><u>REMANESCENTE DA CHAVE PÚBLICA DE CARTÃO</u>&nbsp; <p>&quot;ICC PK
+    Remainder&quot;<br>
+    Campo opcional. Estará presente no cartão EMV quando existam dados complementares que
+    não foram incluídos no certificado de chave pública de cartão.<br>
+    Só existe em cartões que suportam DDA (&quot;Dynamic Data Authentication&quot;).<br>
+    Este campo é composto por dois componentes:</p>
+    <p><i>Posições 1-2</i> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#145;14&#146;</p>
+    <p><i>Posições 3-42</i> - preenchidas com um valor para o campo</td>
+    <td class="dta">42</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>ICC-REMAIN</td>
+  </tr>
+  <tr>
+    <td><a name="1779">1779</a></td>
+    <td class="esq"><u>ICC PIN ENCIPHERMENT PK CERTIFICATE</u>&nbsp; <p>Certificado da chave
+    pública de cartão a utilizar pelo Terminal no processo de Autenticação de Dados
+    Offline (&quot;Offline Data Authentication&quot;).<br>
+    Só existe em cartões que suportam DDA (&quot;Dynamic Data Authentication&quot;) e é
+    utilizado especificamente nos processos de cifra de PIN.<br>
+    Este campo é composto por dois componentes: </p>
+    <p>As primeiras posições indicam o comprimento, em bytes, dos dados a considerar. As
+    posições ocupadas para indicar o comprimento poderão ser duas ou quatro, em função
+    das chaves utilizadas:</p>
+    <blockquote>
+      <p>- <i>2 posições</i>, se as chaves são de 896 bits; sempre preenchidas com o valor
+      &#145;70&#146;<br>
+      - <i>4 posições</i>, se as chaves são de 1024 bits; sempre preenchidas com valor
+      &#145;8180&#146;<br>
+      - <i>4 posições</i>, se as chaves são de 1152 bits; sempre preenchidas com valor
+      &#145;8190&#146;</p>
+    </blockquote>
+    <p>As posições seguintes são preenchidas com um valor para o campo.</p>
+    <p>O comprimento total do campo depende do comprimento das chaves utilizadas:<br>
+    &nbsp;&nbsp; - 226 (representação H) se chaves são de 896 bits<br>
+    &nbsp;&nbsp; - 260 (representação H) se chaves são de 1024 bits<br>
+    &nbsp;&nbsp; - 292 (representação H) se chaves são de 1152 bits</td>
+    <td class="dta">226<br>
+    ou<br>
+    260<br>
+    ou<br>
+    292</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>ICC-PIN-CERTIF</td>
+  </tr>
+  <tr>
+    <td><a name="1780">1780</a></td>
+    <td class="esq"><u>ICC PIN ENCIPHERMENT PK EXPONENT</u>&nbsp; <p>Expoente da chave
+    pública de cartão a utilizar pelo Terminal no processo de Autenticação de Dados
+    Offline (&quot;Offline Data Authentication&quot;).<br>
+    Só existe em cartões que suportam DDA (&quot;Dynamic Data Authentication&quot;) e é
+    utilizado especificamente nos processos de cifra de PIN.<br>
+    Este campo é composto por dois componentes:</p>
+    <p><i>Posições 1-2</i> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#146;01&#146;</p>
+    <p><i>Posições 3-4</i> - preenchidas com um valor para o campo</td>
+    <td class="dta">4</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>ICC-PIN-EXPONE</td>
+  </tr>
+  <tr>
+    <td><a name="1781">1781</a></td>
+    <td class="esq"><u>ICC PIN ENCIPHERMENT PK REMAINDER</u>&nbsp; <p>Campo opcional. Estará
+    presente no cartão EMV quando existam dados complementares que não foram incluídos no
+    certificado de chave pública de cartão.<br>
+    Só existe em cartões que suportam DDA (&quot;Dynamic Data Authentication&quot;) e é
+    utilizado especificamente nos processos de cifra de PIN.<br>
+    Este campo é composto por dois componentes:</p>
+    <p><i>Posições 1-2</i> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes; sempre preenchidas com &#145;14&#146;</p>
+    <p><i>Posições 3-42</i> - preenchidas com um valor para o campo</td>
+    <td class="dta">42</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>ICC-PIN-REMAIN</td>
+  </tr>
+  <tr>
+    <td><a name="1782">1782</a></td>
+    <td class="esq"><u>ICC PRIVATE KEY (DDA)</u>&nbsp; <p>Chave de cartão utilizada nos
+    processos de autenticação dinâmica (&quot;Dynamic Data Authentication&quot;).<br>
+    Só existe em cartões que suportam DDA (&quot;Dynamic Data Authentication&quot;).<br>
+    Este campo é composto por dois componentes:</p>
+    <p>As primeiras posições indicam o comprimento, em bytes, dos dados a considerar. As
+    posições ocupadas para indicar o comprimento poderão ser duas ou quatro, em função
+    das chaves utilizadas:</p>
+    <blockquote>
+      <p>- <i>2 posições</i>, se as chaves são de 896 bits; sempre preenchidas com o valor
+      &#145;70&#146;<br>
+      - <i>4 posições</i>, se as chaves são de 1024 bits; sempre preenchidas com valor
+      &#145;8180&#146;<br>
+      - <i>4 posições</i>, se as chaves são de 1152 bits; sempre preenchidas com valor
+      &#145;8190&#146;</p>
+    </blockquote>
+    <p>As posições seguintes são preenchidas com um valor para o campo.</p>
+    <p>O comprimento total do campo depende do comprimento das chaves utilizadas:<br>
+    &nbsp;&nbsp; - 226 (representação H) se chaves são de 896 bits<br>
+    &nbsp;&nbsp; - 260 (representação H) se chaves são de 1024 bits<br>
+    &nbsp;&nbsp; - 292 (representação H) se chaves são de 1152 bits</td>
+    <td class="dta">226<br>
+    ou<br>
+    260<br>
+    ou<br>
+    292</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>ICCKEY-DDA</td>
+  </tr>
+  <tr>
+    <td><a name="1783">1783</a></td>
+    <td class="esq"><u>ICC PRIVATE KEY (ICC PIN ENCIPHERMENT)</u>&nbsp; <p>Chave de cartão
+    utilizada nos processos de autenticação dinâmica (&quot;Dynamic Data
+    Authentication&quot;).<br>
+    Só existe em cartões que suportam DDA (&quot;Dynamic data Authentication&quot;) e é
+    utilizada especificamente nos processos de cifra de PIN.<br>
+    Este campo é composto por dois componentes:</p>
+    <p>As primeiras posições indicam o comprimento, em bytes, dos dados a considerar. As
+    posições ocupadas para indicar o comprimento poderão ser duas ou quatro, em função
+    das chaves utilizadas:</p>
+    <blockquote>
+      <p>- <i>2 posições</i>, se as chaves são de 896 bits; sempre preenchidas com o valor
+      &#145;70&#146;<br>
+      - <i>4 posições</i>, se as chaves são de 1024 bits; sempre preenchidas com valor
+      &#145;8180&#146;<br>
+      - <i>4 posições</i>, se as chaves são de 1152 bits; sempre preenchidas com valor
+      &#145;8190&#146;</p>
+    </blockquote>
+    <p>As posições seguintes são preenchidas com um valor para o campo.</p>
+    <p>O comprimento total do campo depende do comprimento das chaves utilizadas:<br>
+    &nbsp;&nbsp; - 226 (representação H) se chaves são de 896 bits<br>
+    &nbsp;&nbsp; - 260 (representação H) se chaves são de 1024 bits<br>
+    &nbsp;&nbsp; - 292 (representação H) se chaves são de 1152 bits</td>
+    <td class="dta">226<br>
+    ou<br>
+    260<br>
+    ou<br>
+    292</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>ICCKEY-DDAPIN</td>
+  </tr>
+  <tr>
+    <td><a name="1784">1784</a></td>
+    <td class="esq"><u>EMV - LISTA DE MÉTODOS DE VERIFICAÇÃO DO PORTADOR</u>&nbsp; <p>&quot;Cardholder
+    Verification Method List (CVM LIST)&quot;<br>
+    Identifica os métodos de verificação do portador do cartão que são suportados pela
+    Aplicação EMV.<br>
+    O emissor determina a CVM List aplicável na caracterização do produto (BIN/Extensão).<br>
+    Este campo é composto por dois componentes:</p>
+    <p><i>Posições 1-2</i> - indicam o comprimento, em bytes, dos dados a considerar,
+    indicados nas posições seguintes</p>
+    <p><i>Posições 3-38</i> - preenchidas com um valor para o campo</td>
+    <td class="dta">var.</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>CVMLIST</td>
+  </tr>
+  <tr>
+    <td><a name="1785">1785</a></td>
+    <td class="esq"><u>EMV - TABELA DE CÂMBIOS</u>&nbsp; <p>&quot;Currency Conversion
+    Table&quot;<br>
+    Elemento proprietário da MasterCard que apresenta valores decimais utilizados para
+    conversão de valores para a moeda principal da Aplicação EMV (o EURO).<br>
+    Este campo define a possibilidade de parametrização de várias moedas secundárias
+    (máximo de 5) que são reconhecidas pela Aplicação no cartão. No entanto, nos cartões
+    nacionais, apenas se possibilita a definição da primeira destas ocorrências.<br>
+    O factor de conversão é actualizado apenas por indicação do emissor. Poderá ser
+    actualizado em qualquer momento da vida útil do cartão (via ficheiro <a
+    href="../mglobal/l-iii/egcc.htm" target="main">EGCC</a>)</td>
+    <td class="dta">10</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>MC-CAMBIOS</td>
+  </tr>
+  <tr>
+    <td><a name="1786">1786</a></td>
+    <td class="esq"><u>EMV - PARÂMETROS DE FALLBACK</u><p>Campo que apresenta regras de <em>Fallback</em>
+    para a pista magnética.<br>
+    Estes parâmetros são determinados pelo emissor na caracterização do produto
+    (BIN/Extensão). São aplicáveis apenas para transacções com cartões nacionais
+    realizadas na rede MB.<br>
+    Este campo é composto por três componentes:</p>
+    <p><i>Posições 1</i> - indica se o emissor pretende autorizar o <em>Fallback </em>nos
+    seus cartões.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Valores possíveis:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <i>0 - Fallback</i> para pista não autorizado<br>
+    &nbsp;&nbsp; <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1
+    - Fallback</i> para pista&nbsp; autorizado</p>
+    <p><i>Posições 2-3</i>-&#150; número máximo de operações consecutivas com recurso a <i>Fallback;
+    </i>peenchidas com zeros quando o <i>Fallback </i>não é autorizado;</p>
+    <p><i>Posições 4-9</i> - montante máximo permitido para cada transacção decidida em <i>Fallback
+    </i>(valor expresso em euros, com duas casas decimais); preenchidas com zeros quando o <i>Fallback
+    </i>não é autorizado.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FALLBACK</td>
+  </tr>
+  <tr>
+    <td><a name="1787">1787</a></td>
+    <td class="esq"><u>EXTENSÃO DA CONTA CRÉDITO</u> <p>Corresponde às quatro posições da
+    direita no caso de contas crédito (campo <a href="campos1.htm#085">085</a>) geridas pelo
+    Banco, informadas no Ficheiro <a target="main" href="../mglobal/l-iii/escd.htm">ESCD</a>.
+    Este campo identifica a extensão da conta crédito (ex: número empregado em produtos
+    empresa). O valor poderá ser zero se esse conceito não for usado.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>EXT_CONTACR</td>
+  </tr>
+  <tr>
+    <td><a name="1788">1788</a></td>
+    <td class="esq"><u>TEXTO DO BANCO</u> <p>Texto enviado pelo Banco, à SIBS, na mensagem de
+    resposta do SE Associação Telemóvel a Cartão D+.</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="1789">1789</a></td>
+    <td class="esq"><u>INDICADOR DE SERVIÇO TB</u> <p>Indica o Serviço de Terminal Bancário
+    que está a ser utilizado na realização da transacção.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 0 - Serviço de Reclamações Nacionais<br>
+    &nbsp;&nbsp; 1 - Serviço de Reclamações no Estrangeiro</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND_SER_TB</td>
+  </tr>
+  <tr>
+    <td><a name="1790">1790</a></td>
+    <td class="esq"><u>VERSÃO FICHEIRO ECRÃS</u><p>Campo indicador da versão de ficheiro de
+    ecrãs existente no Caixa Automático da Rede Multibanco.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="1791">1791</a></td>
+    <td class="esq"><u>CÓDIGO DE DEVOLUÇÃO</u> <p>Código de devolução de uma
+    Transferência a Crédito, de acordo com a seguinte tabela:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td nowrap>&nbsp; 07 -&nbsp;</td>
+        <td class="esq">Operação já efectuada por outros meios de pagamento</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 08 -&nbsp;</td>
+        <td class="esq">Operação duplicada</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 09 -&nbsp;</td>
+        <td class="esq">Operação que não diz respeito ao Cliente</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 15 -&nbsp;</td>
+        <td class="esq">Conta Destinatária inexistente</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 16 -&nbsp;</td>
+        <td class="esq">Conta Destinatária não movimentável</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 18 -&nbsp;</td>
+        <td class="esq">Destinatário não identificado</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 21 -&nbsp;</td>
+        <td class="esq">Operação não permitida para a Conta Destinatária em causa</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODDEV</td>
+  </tr>
+  <tr>
+    <td><a name="1792">1792</a></td>
+    <td class="esq"><u>INDICADOR DE ENVIO DE FICHEIRO A ENTIDADE</u> <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 0 - Um ficheiro<br>
+    &nbsp;&nbsp; 1 - Três ficheiros<br>
+    &nbsp;&nbsp; 2 - Não recebe</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ENV_FICH</td>
+  </tr>
+  <tr>
+    <td><a name="1793">1793</a></td>
+    <td class="esq"><u>FAX</u> <p>Número de fax do cliente.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FAX</td>
+  </tr>
+  <tr>
+    <td><a name="1794">1794</a></td>
+    <td class="esq"><u>ENDEREÇO E-MAIL</u> <p>Endereço de e-mail do cliente.</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMAIL</td>
+  </tr>
+  <tr>
+    <td><a name="1795">1795</a></td>
+    <td class="esq"><u>NÚMERO DE COMERCIANTE (SIDF)</u> <p>Campo composto pelo tipo de
+    terminal e pela nomenclatura do Comerciante. Este campo apresenta o número de CA, o
+    número de COM/EST, ou o número de COM Estrangeiro no âmbito do ficheiro de comerciantes
+    SIDF. </p>
+    <p>Será preenchido de acordo com a seguinte estrutura:<br>
+    &nbsp; CA - 10BBBBAAAANN<br>
+    &nbsp; COM - 2CCCCCCCEEEE<br>
+    &nbsp; ESTR - 3RPPPMMMM000 </p>
+    <p>Em que:<br>
+    &nbsp; BBBB=Cod. Banco<br>
+    &nbsp; AAAA=Agência<br>
+    &nbsp; NN=Número de CA na agência<br>
+    &nbsp; CCCCCCC=Número Comerciante<br>
+    &nbsp; EEEE=Número Estabelecimento<br>
+    &nbsp; R=Rede - 4-Visa, 5-MasterCard, 6-AMEX, 7-Eufiserv<br>
+    &nbsp; PPP=Código de País<br>
+    &nbsp; MMMM=MCC</td>
+    <td class="dta">12</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COMERC-SIDF</td>
+  </tr>
+  <tr>
+    <td><a name="1796">1796</a></td>
+    <td class="esq"><u>ACORDOS DO COMERCIANTE (SIDF)</u> <p>Apresenta os acordos matriculados
+    num Estabelecimento (âmbito do ficheiro de comerciantes SIDF).</p>
+    <p>Byte 1 - Acordo VISA (UNICRE)<br>
+    Byte 2 - Acordo MASTERCARD (UNICRE)<br>
+    Byte 3 - Acordo VISA ELECTRON <br>
+    Byte 4 - Acordo DINERS CLUB INTERNAT<br>
+    Byte 5 - Acordo CARTAO TARJETA 6000 <br>
+    Byte 6 - Acordo MAESTRO <br>
+    Byte 7 - Acordo JCB<br>
+    Reserva - 8 Bytes </p>
+    <p>Preenchido com 1: Possui o acordo<br>
+    Preenchido com 2: Não possui o acordo</td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ACOR-COM-SIDF</td>
+  </tr>
+  <tr>
+    <td><a name="1797">1797</a></td>
+    <td class="esq"><u>DATA DE ALTERAÇÃO DO INDICADOR DE RISCO</u> <p>Apresenta a data em
+    que o indicador de risco de um determinado Comerciante foi alterado.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DT-ALT-INDRISC</td>
+  </tr>
+  <tr>
+    <td><a name="1798">1798</a></td>
+    <td class="esq"><u>TIPO DE ENTIDADE / PARTICIPANTE </u><p>Indica o tipo de entidade ou de
+    participante presente no Sistema MB.</p>
+    <p>No caso da produção de cartões os valores possíveis são:<br>
+    &nbsp;&nbsp; B - Banco<br>
+    &nbsp;&nbsp; E - Empresa</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" colspan="2">No caso da Compensação Multibanco, os valores possíveis
+        são:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; B -&nbsp; </td>
+        <td class="esq">Banco Liquidador</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; I&nbsp;&nbsp; -&nbsp; </td>
+        <td class="esq">Instituição, não liquidadora, com código atribuído pelo Banco de
+        Portugal</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; E -&nbsp;&nbsp; </td>
+        <td class="esq">Empresa</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIP-ENT</td>
+  </tr>
+  <tr>
+    <td><a name="1799">1799</a></td>
+    <td class="esq"><u>CÓDIGO DE OPERADOR</u> <p>Informa o código de operador atribuído às
+    empresas de telefones móveis:<br>
+    &nbsp;&nbsp; 91- Vodafone<br>
+    &nbsp;&nbsp; 93 - Optimus<br>
+    &nbsp;&nbsp; 96 - TMN</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODOPER</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

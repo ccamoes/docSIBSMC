@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>A.1 ARQUITECTURA GERAL</title>
+<script>top.captulos.location='indicea.htm#A';</script>
+</head>
+
+<body>
+
+<h1><a name="A.1">A.1</a> ARQUITECTURA GERAL </h1>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.1.1">A.1.1</a> INTRODUÇÃO </h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="1">OBJECTIVOS</a> DO SISTEMA</h3>
+
+<p><br>
+O sistema de interligação entre computadores que a seguir se aborda é o preconizado
+pela SIBS para viabilizar as comunicações entre o seu centro de processamento de dados e
+os centros dos bancos, centrais de <em>Clearing</em> ou outros organismos, com os quais
+necessita de manter comunicações regulares, independentemente dos tipos ou marcas de
+máquinas envolvidas. </p>
+
+<p>Este sistema privilegiou o uso do standard X.25, como forma tecnicamente mais simples e
+segura e economicamente mais acessível de estabelecer uma rede de comunicações &quot;<em>end
+to end</em>&quot; que abranja todos os parceiros nacionais, encontrando-se
+no entanto já aberto à utilização de TCP/IP (ver ponto <a href="#A.1.2.4">A.1.2.4</a>).</p>
+
+<p>As aplicações a servir são todas aquelas que implicam o intercâmbio de
+dados, seja por troca de mensagens ou de ficheiros, entre a SIBS e um Participante no
+Sistema MB.</p>
+
+<p>A rede X.25 assegura a ligação entre os computadores portadores das aplicações
+clientes, garantido a transferência dos dados em pacotes. Resta (de acordo com o modelo
+OSI) assegurar as funções de transporte, controlo de sessão e protocolo aplicacional. </p>
+
+<p>Para cobrir as funções referidas, o Sistema MB cria uma aproximação ao modelo
+referido, com a construção de duas camadas sobre os serviços X.25. 
+
+<ul>
+  <li><strong>PRT</strong> (Protocolo a <em>Real-Time</em>) que implementa as necessárias
+    funções de transporte e controlo de sessão. </li>
+</ul>
+
+<ul>
+  <li>Camada aplicacional que usa os serviços do PRT e que constrói e interpreta os dados
+    entregues pelo protocolo.</li>
+</ul>
+
+<p>No que diz respeito a teletransmissão de ficheiros, a SIBS define adiante um protocolo
+próprio (MFT), a utilizar com todas as entidades que necessitem desta funcionalidade.</p>
+
+<p><br>
+Nos pontos seguintes é descrita a concepção funcional do sistema.</p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="A.1.2">A.1.2</a> ARQUITECTURA - REDE,
+AMBIENTE E MEIOS ENVOLVIDOS </h2>
+
+<p>&nbsp;</p>
+
+<h6 class="center">MODELO DE CAMADAS</h6>
+
+<p class="center"><br>
+<img src="imagens3/a1-1.gif" alt="a1-1.gif" WIDTH="535" HEIGHT="143"></p>
+
+<p><br>
+A nível de rede a comunicação realiza-se em X.25 (puro, isto é, livre dos protocolos
+dos fabricantes).</p>
+
+<p>A Rede a usar pode ser uma linha dedicada, a rede privada da SIBS ou a rede pública
+(combinações destas componentes, ou ainda de redes privadas X.25 dos parceiros, podem
+também ser consideradas).</p>
+
+<p>O tipo de circuitos X.25 a usar são SVCs que se devem manter permanentemente abertos
+(a iniciativa de abertura cabe à SIBS, sempre que seja tecnicamente possível; os casos
+de excepção devem ser discutidos caso a caso).</p>
+
+<p>O protocolo PRT situa-se aos níveis 4 e 5 do modelo OSI, procurando pôr em prática
+algumas das suas funções e acrescentando outras próprias. </p>
+
+<p>A figura anterior mostra o paralelismo com o modelo OSI, mas só os níveis 1, 2 e 3
+são usados integralmente. Está incluído nesta zona o interface X.25 próprio de cada
+fabricante. </p>
+
+<p>A figura seguinte mostra como se concretiza o diálogo entre os comandos do mesmo
+nível de ambas as máquinas, através do uso de <em>Headers</em> adicionados aos dados
+recebidos do nível superior.</p>
+
+<p>&nbsp;</p>
+
+<p><img src="imagens3/a1-2.gif" alt="a1-2.gif" WIDTH="492" HEIGHT="668"></p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.1.2.1">A.1.2.1</a> FUNCIONAMENTO GENÉRICO</h3>
+
+<p><br>
+O nível aplicacional do centro emissor de transacções gera os dados aplicacionais em
+blocos que constituem mensagens a enviar, e entrega estas ao nível de transporte e
+sessão (PRT). O PRT gera os procedimentos de diálogo e constrói as mensagens, juntando
+aos dados o seu <em>header</em> e entregando depois cada mensagem ao nível de rede.</p>
+
+<p>Este nível encarrega-se de executar os procedimentos de comunicação, tais como
+&quot;empacotar&quot; as mensagens, adicionar-lhes o <em>header</em> de rede e
+entregá-las à rede de comunicação de dados.</p>
+
+<p>A rede, encaminha as mensagens para o centro receptor.</p>
+
+<p>O nível de rede do centro receptor processa os pacotes recebidos, subtrai-lhes o <em>header</em>
+de rede e entrega as mensagens recebidas ao nível seguinte.</p>
+
+<p>Este processa e retira o <em>header</em> de transporte e sessão e entrega os dados
+originais à aplicação destino, ficando em sintonia com esta para a devolução da
+respectiva resposta. A este nível cabe apenas interpretar os dados, de acordo com o
+protocolo estabelecido com o mesmo nível do centro emissor, e a construção e entrega da
+respectiva resposta ao nível de diálogo.</p>
+
+<p>O caminho da resposta é inverso ao do pedido.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.1.2.2">A.1.2.2</a> ESPECIFICAÇÕES DO NÍVEL DE REDE</h3>
+
+<p><br>
+As especificações X.25 são as definidas pela rede pública de comunicação de dados,
+mas quase todos os fabricantes de equipamentos oferecem o <em>software</em> necessário à
+manipulação deste nível.</p>
+
+<p>Ele corresponde à implementação do primeiro, segundo e terceiro <em>layer</em> OSI.</p>
+
+<p><br>
+<strong>Neste sistema são usadas as seguintes opções deste nível: </strong>
+
+<ul>
+  <li>Janela de nível 3 = 2 </li>
+  <li>Tamanho do pacote = 128 <em>bytes</em> <br>
+    (pode ser acordado bilateralmente outro tamanho) </li>
+  <li>Não usado o campo facilidades do pacote &quot;<em>call request</em>&quot; </li>
+  <li>Bite D = O </li>
+  <li>Bite Q = 0 </li>
+</ul>
+
+<p>O &quot;<em>User data field</em>&quot; no pacote de chamada, é preenchido com valor a
+acordar bilateralmente.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.1.2.3">A.1.2.3</a> ESPECIFICAÇÕES DO NÍVEL DE TRANSPORTE E SESSÃO</h3>
+
+<p><br>
+Este nível usa sempre que possível dois circuitos virtuais para estabelecer a sessão
+(ou sessões) entre dois sistemas. Um dos circuitos fica reservado a mensagens num sentido
+e o outro a mensagens no sentido inverso.</p>
+
+<p>O uso de um único circuito para ambos os sentidos pode ser considerado em situações
+de baixo volume de tráfego, dado que os custos de comunicação são proporcionais ao
+número de circuitos usados. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.1.2.4">A.1.2.4</a> LIGAÇÕES EM TCP/IP</h3>
+
+<p><br>
+A crescente disseminação do uso de redes IP, quer nas redes locais que abrangem o acesso
+aos <em>mainframes</em> das entidades, quer nas ligações inter-empresas, bem como a
+maior capacidade oferecida pelas mesmas e maior versatilidade, levaram a SIBS a abrir a
+possibilidade de utilização deste protocolo nas comunicações com o seu <em>mainframe</em>,
+possibilitando-a como uma alternativa com vantagens em relação ao <em>standard</em> X.25
+anteriormente em uso exclusivo.</p>
+
+<p>No entanto, os problemas de segurança que se levantam perante o uso de redes abertas,
+levaram à adopção de normas de utilização, que garantam o nível de integridade e
+confidencialidade necessários ao tipo de informação trocada entre a SIBS e os seus
+parceiros. É neste contexto que se insere o uso de uma rede segura (RSSF), sempre que se
+pretenda usar os protocolos TCP/IP, entre a SIBS e os seus parceiros.</p>
+
+<p>A SIBS, através de meios próprios ou sub-contratados, efectua a gestão dos
+mecanismos e filtros de segurança nesta rede.</p>
+
+<h5><br>
+<a name="A.1.2.4.1">A.1.2.4.1</a> ACESSO DOS PARCEIROS À REDE SEGURA</h5>
+
+<p>Os Participantes no Sistema MB que pretendem este tipo de ligação, devem solicitá-lo
+expressamente através dos canais de comunicações usuais entre o Participante e a SIBS,
+informando as características requeridas (velocidade, linhas de <em>backup</em>,
+localização do acesso, etc.).</p>
+
+<p>Os endereços de rede são fornecidos pela SIBS, através dos seus serviços de
+comunicações. Cabe aos parceiros efectuar a tradução de endereços para as suas redes
+internas, se tal for necessário.</p>
+
+<p>A iniciativa de chamada (abertura de <em>sockets</em> TCP), cabe:</p>
+
+<blockquote>
+  <ul>
+    <li><em>File Transfer</em> - A qualquer das partes, que pretenda num dado momento enviar ou
+      receber ficheiros;</li>
+  </ul>
+  <ul>
+    <li><em>Real-Time</em> - Sempre à SIBS. É aberto um <em>socket</em> para cada sessão RT,
+      o qual é mantido aberto independentemente da frequência de tráfego no mesmo. Em caso de
+      quebra, é também a SIBS a efectuar o restabelecimento.</li>
+  </ul>
+</blockquote>
+
+<p class="dta"><br>
+<a href="a2.htm">Seguinte</a></p>
+</body>
+</html>

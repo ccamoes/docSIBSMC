@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicec.htm#C';</script>
+
+<title>C.3 SERVIÇO INTERNACIONAL NA REDE MULTIBANCO</title>
+</head>
+
+<body>
+
+<h1>C.3 SERVIÇO INTERNACIONAL NA REDE MB</h1>
+
+<p>&nbsp;</p>
+
+<p>A aceitação de transacções internacionais, i.e., a utilização dos terminais em
+Portugal por cartões estrangeiros, pode realizar-se de diversos modos: 
+
+<ul>
+  <li>Mediante a utilização da rede de um Sistema de Pagamento Internacional (ex.: Visa,
+    MasterCard, AMEX, etc.); </li>
+  <li>Através de ligações bilaterais ou multilaterais. </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.3.1">C.3.1</a> SISTEMAS DE PAGAMENTO INTERNACIONAIS</h2>
+
+<p><br>
+O serviço prestado através de um Sistema de Pagamento Internacional envolve as seguintes
+entidades: 
+
+<ul>
+  <li>Os Emissores de cartões (<em>Issuer</em>); </li>
+  <li>As entidades responsáveis por uma rede de terminais aceitantes dos cartões da marca em
+    causa (<em>Acquirer</em>); </li>
+  <li>O Sistema de Pagamento. </li>
+</ul>
+
+<p>A SIBS é um membro de pleno direito dos principais Sistemas de Pagamento
+Internacionais. O objectivo deste estatuto é o permitir que esta Entidade receba a
+totalidade das especificações relativas aos serviços destas redes e que lhe permita
+participar plenamente nas reuniões de planeamento e decisão ao mais alto nível destas
+organizações.</p>
+
+<p>No entanto, a SIBS não emite directamente cartões de nenhum Sistema de Pagamento
+Internacional, não actua como <em>Sponsor</em> de <em>&quot;Associated Members&quot;</em>,
+nem actua como <em>Acquirer</em> face a comerciantes ou à rede de CAs.</p>
+
+<p>Como membro processador de transacções a SIBS presta os seguintes serviços a <em>Acquirers</em>:
+
+<ul>
+  <li>processamento de autorizações;</li>
+  <li><em>switching</em> de transacções;</li>
+  <li>compensação;</li>
+  <li>actualização de dados (ex: Lista Negra); </li>
+  <li>conversão de protocolos, do <i>standard</i> nacional para os interfaces proprietários
+    de cada sistema internacional. </li>
+</ul>
+
+<p><br>
+Na Rede MB são aceites um conjunto bastante diverso de cartões emitidos de acordo com as
+respectivas regras de cada Sistema de Pagamento Internacional. As marcas dos produtos mais
+conhecidos são:</p>
+
+<blockquote>
+  <table CELLSPACING="0" BORDER="0" CELLPADDING="2" WIDTH="400">
+    <tr>
+      <td class="esq10">Visa<br>
+      Visa Electron<br>
+      MasterCard</td>
+      <td class="esq10">Maestro<br>
+      Cirrus <br>
+      American Express</td>
+      <td class="esq10">Tarjeta 6000<br>
+      Diners Club<br>
+      JCB </td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><br>
+O serviço proporcionado aos Emissores estrangeiros tem por base a figura do Representante
+de cada uma das marcas, sendo esta entidade a responsável por assegurar a cobertura
+financeira das transacções realizadas.</p>
+
+<p>Em termos gerais, as mensagens trocadas entre o país aceitante e o país emissor são
+autorizações de pagamento, não possuindo valor financeiro. Posteriormente é enviado
+pelo Sistema de Pagamento, tipicamente no final de dia, um ficheiro comunicando os
+movimentos devidamente finalizados (Ficheiro de <em>Clearing</em>), sendo também
+informado o total contabilístico apurado para cada Participante. Os Participantes têm de
+indicar previamente ao Sistema de Pagamento uma conta a movimentar, quer pelas
+operações, quer pelas remunerações previstas para os diferentes serviços existentes.</p>
+
+<p>Os aspectos particulares relativos ao processamento das operações em cada um dos
+sistemas de pagamento podem ser consultados na extensa documentação emitida por estes.
+Para uma descrição mais detalhada das transacções realizáveis na rede MB no âmbito
+do serviço internacional, consultar o Livro II (capítulos relativos ao <a
+href="../l-ii/b1-a.htm">Serviço em CA</a> e ao <a href="../l-ii/c1.htm">Serviço em TPA</a>).</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.3.2">C.3.2</a> ACORDOS BILATERAIS</h2>
+
+<p><br>
+No caso do serviço suportado em acordos bilaterais, não existe a infra-estrutura
+proporcionada por um Sistema de Pagamento Internacional. Um dos pressupostos iniciais é a
+existência de uma solução de comunicações que permita o encaminhamento <em>online</em>,
+por parte do aceitante, das transacções efectuadas pelos cartões para autorização
+pelo país emissor. O protocolo de diálogo utilizado entre os sistemas, aceitante e
+emissor, foi, no caso dos acordos em que a SIBS participou, o BEST - Bilateral European
+Standard, baseado nas mensagens financeiras definidas pela ISO.</p>
+
+<p>Neste tipo de serviço, a diferença principal é o facto de as mensagens trocadas
+entre a rede aceitante e a entidade emissora dos cartões serem normalmente mensagens
+financeiras. Assim, a informação que é trocada em tempo real (levantamentos, compras,
+anulações ou consultas) tem valor contabilístico. Não há necessidade de definição
+prévia de quaisquer limitações a gerir pela rede aceitante, uma vez que a operação
+será sempre validada pelo Emissor do cartão (ou por um seu representante). </p>
+
+<p>Nas operações realizadas através deste protocolo, todas as operações são baseadas
+na leitura da pista 2 do cartão e na autenticação do cliente feita com base no Código
+Secreto. No fim de cada operação é sempre entregue um talão ao cliente com os dados
+que caracterizam uma operação.</p>
+
+<p>No caso do cartão ser capturado num ATM, o cliente deve solicitar à Agência onde
+está instalado o ATM que o devolva. Para tal deve apresentar a sua identificação (B.I.
+nos países da UE ou passaporte). No caso do serviço ter funcionado incorrectamente,
+nomeadamente no levantamento de dinheiro, a reclamação do cliente deve ser sempre
+apresentada através do Emissor.</p>
+
+<p>Para efeitos de apuramento de totais contabilísticos, a rede aceitante envia uma
+mensagem de fecho de sessão (<em>Cut-off</em>), comunicando o número total de
+operações correctamente concluídas, e a correspondente importância apurada desde o
+fecho anterior. A entidade emissora devolve os totais que obteve, e que devem ser
+coincidentes. Eventuais divergências de valores são analisadas e regularizadas caso a
+caso.</p>
+
+<p>O país emissor deve possuir uma conta num Banco do país aceitante, na qual é
+debitado o total das importâncias informadas na mensagem de <em>Cut-off</em>. A
+data-valor do débito é a correspondente a dois dias úteis depois do envio da mensagem
+de <em>Cut-off</em>.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="C.3.2.1">C.3.2.1</a> SISTEMA SAVINGS BANK</h3>
+
+<p><br>
+Este sistema visa permitir, através de uma cooperação bilateral entre os seus membros,
+a utilização dos cartões emitidos pelas Caixas de Aforro (Saving Banks) num conjunto de
+redes de ATMs na Europa.</p>
+
+<p>Cada Caixa nacional Participante neste sistema definiu uma central gestora da rede dos
+seus ATMs para dialogar com a entidade central, responsável pela gestão das
+comunicações, sediada na Alemanha. No caso de Portugal, a Caixa Geral de Depósitos
+delegou na SIBS esse serviço. </p>
+
+<p>Os cartões emitidos pelos Saving Banks europeus podem utilizar qualquer CA Multibanco
+e, reciprocamente, os cartões emitidos pela CGD podem utilizar as redes de ATMs dos
+Saving Banks europeus que aderiram à Eufiserv.</p>
+
+<p>As mensagens trocadas entre os Emissores e os <em>Acquirers</em> são financeiras, tal
+como nos acordos bilaterais, não havendo necessidade de enviar um ficheiro de <em>Clearing</em>
+no fim do dia. A liquidação é feita pelo valor trocado na mensagem de <em>Cut-off</em>
+com o total a debitar pelo <em>Acquirer</em> na conta do país emissor. </p>
+
+<p class="dta"><br>
+<a href="c2.htm">Anterior</a>/<a href="c4.htm">Seguinte</a></p>
+</body>
+</html>

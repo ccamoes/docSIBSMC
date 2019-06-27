@@ -1,0 +1,856 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="subject" content="MODELO GLOBAL">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Caracterização do BIN</title>
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicei.htm#I';</script>
+</head>
+
+<body>
+
+<h1><br>
+Para visualizar o formulário, clique <a href="i_a1c.doc">aqui</a>. </h1>
+
+<h1>Para preencher o formulário, siga as <a href="i_a1c.htm#*">instruções</a>. </h1>
+
+<p>&nbsp;</p>
+
+<h3>CARACTERIZAÇÃO DO BIN </h3>
+
+<p><br>
+Nesta caracterização, o Emissor indica os parâmetros pretendidos para cada tipo de cartão. </p>
+
+<p>Aquando do início de funcionamento de um novo BIN, ou sempre que se pretenda
+alterar uma das parametrizações em uso, o Emissor define os parâmetros do BIN através
+da funcionalidade de <a href="i3.htm#I.3.16">Pedido de Caracterização de Emissores</a>
+disponibilizada no Terminal de Serviços SIBS. Para situações de excepção em que tal
+não seja possível, o Emissor deve preencher e enviar à SIBS este formulário. </p>
+
+<p class="a">O Emissor indica o ambiente em que pretende realizar parametrizações por escolha de uma das opções para o “Tipo de Caracterização”: </p>
+
+<ul class="a">
+  <li>Pré-Produção - as parametrizações indicadas referem-se exclusivamente ao ambiente de Pré-Produção. O Emissor indica posteriormente se pretende anular estas parametrizações ou integrá-las em Produção;</li>
+  <li>Produção (e em Pré-Produção) - as parametrizações indicadas são efectuadas em paralelo nos ambientes de Pré-Produção e de Produção.</li>
+</ul>
+
+<p>&nbsp; </p>
+
+<h6><br>
+1. CÓDIGO DO EMISSOR</h6>
+
+<p>Indique o número de identificação do Emissor no Sistema Multibanco. </p>
+
+<h6><br>
+2. BIN</h6>
+
+<p>Indique os oito dígitos correspondentes ao BIN e respectiva extensão do
+produto-cartão. </p>
+
+<h6><br>
+3. CLASSIFICAÇÃO DO PRODUTO CARTÃO</h6>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap><strong><br>
+    3.1.&nbsp;&nbsp;</strong></td>
+    <td class="esq"><br>
+    <strong>DESIGNAÇÃO COMERCIAL</strong><p>Indique a designação comercial que identifica
+    o produto-cartão. </td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>&nbsp; </strong>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq"><strong><br>
+    3.2.&nbsp;&nbsp;</strong></td>
+    <td class="esq"><strong><br>
+    TIPO DE CONTA ASSOCIADA</strong><p>A classificação do produto-cartão é usada
+    unicamente para fins estatísticos, de acordo com as orientações do Banco de Portugal. </td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>&nbsp; </strong>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq"><strong><br>
+    3.3.</strong></td>
+    <td class="esqa"><br>
+      <strong>FAMÍLIA DE CARTÃO</strong><p class="a">Indique o sistema ou sistemas de pagamento a que
+    pertence o cartão, por indicação da família de cartão correspondente. </p>
+    <p class="a">Possibilita-se que emissores bancários nacionais emitam cartões sem a marca
+    Multibanco. Para cartões que possuam em simultâneo a marca Multibanco e uma outra marca,
+    é necessário indicar a família de cartão correspondente à combinação de ambas as
+    marcas.&nbsp;</p>
+      <p class="a"> A escolha de uma família de cartão que não inclua a marca Multibanco condiciona as operações
+      disponibilizadas na Rede Multibanco.</p>
+    <p>Para mais informações sobre as operações disponíveis no âmbito de cada
+    marca, consulte o capítulo <a href="a6.htm">A.6</a>.</td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>&nbsp; </strong>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esqa"><strong><br>
+    3.4.</strong></td>
+    <td class="esqa"><br>
+      <strong>CÓDIGOS DE SERVIÇO (<em>SERVICE CODE</em>)</strong><p class="a">Indique se pretende utilizar um
+      <i> Service Code</i> específico para os cartões deste BIN diferente dos valores habituais para o produto associado.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>&nbsp; </strong>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esqa"><strong><br>
+      3.5.</strong></td>
+    <td class="esq"><br>
+    <strong><em>CHIP</em> <span class="a">NÃO-EMV</span></strong><p>Indique se o produto-cartão possui ou não <em>chip</em>
+      <span class="a">não-EMV</span>.<br>
+    Em caso afirmativo, o Emissor deve indicar que aplicações se encontram disponíveis: <ul>
+      <li>Só a aplicação de Porta Moedas MB (cartão combinado), ou </li>
+      <li>A anterior mais uma segunda aplicação com outras características (ex.: controlo de
+        acessos). </li>
+    </ul>
+    </td>
+  </tr>
+</table>
+
+<h6>4. TENTATIVAS DE PIN</h6>
+
+<p>Indique qual deve ser o procedimento a executar quando o cliente erra o código secreto
+pela terceira vez consecutiva num Caixa Automático MB: 
+
+<ul>
+  <li>Capturar o cartão, podendo o cliente reavê-lo após o fecho contabilístico do CA ou </li>
+  <li>Expulsar o cartão, deixando este de ser utilizável para operações de uso
+    electrónico. </li>
+</ul>
+
+<h6><br>
+5. FORMATO DO NÚMERO DE CARTÃO NOS RECIBOS </h6>
+
+<p>O Emissor deve escolher a identificação que melhor se adeque ao cartão. Normalmente
+em cartões Visa utiliza-se o formato 'BIN e número de cartão' e nos MB ou
+Proprietários, o formato 'Código de Emissor e número de cartão'. </p>
+
+<h6><br>
+6. BIN PARA CARTÕES TEMPORÁRIOS DO SERVIÇO MBNet </h6>
+
+<p>O Emissor deve indicar o BIN utilizado para a geração de cartões temporários
+associado ao serviço <a href="d1.htm">MBNet</a>. </p>
+
+<h6 class="a"><br>
+7. DESTINO DE FICHEIROS (<i>File Transfer</i>) E PROCESSAMENTOS OPCIONAIS</h6>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esqa" nowrap><strong><br>
+      7.1.&nbsp;&nbsp;</strong></td>
+    <td class="esqa"><br>
+      <b>ENDEREÇO PARA ENVIO DE FICHEIROS</b>
+    <strong>&nbsp;</strong>
+      <p class="a">Indique o endereço a utilizar para envio dos ficheiros seguintes, quando se pretenda agregar a informação por BIN:</p>
+      <ul class="a">
+        <li>Destinos (<a href="../l-iii/dst-1.htm">DST5</a>)&nbsp;</li>
+        <li>Captura e Lista Negra (<a href="../l-iii/cln.htm">CLN5</a>)</li>
+      </ul>
+      <p class="a">A indicação deste endereço de <i> File Transfer </i> é opcional.&nbsp;</p>
+      <p class="a"> A agregação de informação relativa à utilização de cartões é agregada pelo destino de
+      <i> File Transfer</i> aplicável. Quando não for indicado nenhum endereço neste ponto da caracterização, os registos relativos às movimentações de cartões deste BIN são incluídos nos ficheiros enviados para o endereço indicado na
+      <a href="i_a1b.htm"> Caracterização do CPD</a> ao qual pertencem os cartões. </td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esqa"><strong><br>
+      7.2.</strong></td>
+    <td class="esqa"><br>
+      <strong>INDICADORES DE PROCESSAMENTOS ADICIONAIS</strong>
+      <ul class="a">
+        <li>Ficheiro Detalhes: indique se o Emissor pretende recepcionar o ficheiro
+          <a href="../l-iii/det.htm">DET5</a>. Se SIM, este ficheiro é enviado para o endereço de
+          <i> File Transfer</i> do BIN ou, se este não estiver definido, para o endereço de
+          <i> File Transfer </i> do CPD.<br>
+          <br>
+        </li>
+        <li>Ficheiro Pagamentos de Baixo Valor: indique se o Emissor pretende recepcionar o ficheiro
+          <a href="../l-iii/pbv.htm">PBV5</a>. Se SIM, este ficheiro é enviado para o endereço de
+          <i> File Transfer </i> do BIN ou, se este não estiver definido, para o endereço de
+          <i> File Transfer</i> do CPD.<br>
+          <br>
+        </li>
+        <li>Ficheiro Autorizações <a href="../l-iii/aut.htm">AUT5</a>: indique se o Emissor pretende recepcionar o ficheiro
+          <a href="../l-iii/aut.htm">AUT5</a>. Se SIM, pode opcionalmente indicar um endereço
+          específico utilizado exclusivamente para o envio deste ficheiro. A não definição de um endereço específico implica o envio do
+          <a href="../l-iii/aut.htm">AUT5</a> para o endereço de <i> File Transfer
+          </i> do BIN ou, se este não estiver definido, para o endereço de <i> File Transfer
+          </i> do CPD.&nbsp;</li>
+      </ul>
+ </td>
+  </tr>
+</table>
+
+<h6 class="a">8. OBSCURECIMENTO DE CONTA NOS TALÕES DE CA </h6>
+
+<p class="a">Indique se pretende que a conta associada ao cartão não seja apresentada nos talões entregues ao cliente, relativos a operações realizadas em Caixas Automáticos da
+Rede Multibanco com impressão de talão. </p>
+
+<h6><br>
+9. LIMITES</h6>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap><strong><br>
+    9.1.&nbsp;&nbsp;</strong></td>
+    <td class="esq"><br>
+    <strong>LIMITE EM CENÁRIO DE DEGRADAÇÃO EM TPA&nbsp;</strong><p>No funcionamento do cenário
+    <em><a href="a1.htm#A.1.1.1">Real-Time</a></em> não existe controlo de limite máximo
+    para os montantes de operações de compra, de pagamento de serviços/compras e
+    transferência interbancária aceites na Rede Multibanco. Deste modo, o Emissor deve
+    definir um eventual limite para estas operações-cliente (por razões de segurança). </p>
+    <p>Porém, no caso de estar em funcionamento o cenário de <a href="a1.htm#A.1.1.2">Saldo
+    de Conta</a> ou de <a href="a1.htm#A.1.1.3">Cartão</a>, a SIBS efectua esse controlo com
+    base num montante máximo diário definido pelo Emissor, com excepção para os pagamentos
+    de serviços/compras. <br>
+    Mesmo que a operação solicitada fosse aceitável pelo Saldo de Cartão ou de Conta,
+    presente na SIBS, o sistema MB verifica se o total de compras feitas pelo cartão nesse
+    dia adicionado ao que se pretende efectuar, não ultrapassa esse montante. </td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>&nbsp; </strong>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq"><strong><br>
+    9.2.</strong></td>
+    <td class="esq"><br>
+    <strong><a name="LIMITE">LIMITE</a> EM SERVIÇO REDUZIDO </strong><strong>EM
+      TPA</strong><p>Em
+    caso de falha de comunicação com o <em>Host</em> da SIBS, um TPA pode ficar a funcionar
+    através de um equipamento <em>Front-End</em> (FEP-POS), que controla uma grande área de
+    TPAs. O Emissor pode indicar qual o montante máximo diário por cartão, que o FEP pode
+    aceitar. </p>
+    <p>Para mais informações, consultar o capítulo <a href="a1.htm#A.1.1.4">Serviço
+    Reduzido</a>. </td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>&nbsp; </strong>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq"><strong><br>
+    9.3.</strong></td>
+    <td class="esq"><br>
+    <strong>LIMITE EM PAGAMENTOS DE BAIXO VALOR</strong> <p>Existem alguns serviços
+    Multibanco para os quais não é necessária a introdução de código secreto: são as
+    operações de baixo valor. Pretende-se que o Emissor defina qual a importância que a
+    SIBS deve usar para este objectivo. </td>
+  </tr>
+</table>
+
+<h6><br>
+10. OPERAÇÕES NO ESTRANGEIRO </h6>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap><strong><br>
+    10.1.&nbsp;&nbsp;</strong></td>
+    <td class="esq"><br>
+    <strong>CENÁRIO DE LIMITE DE AUTORIZAÇÃO </strong><p>Esta alínea deve ser preenchida
+    pelos emissores que pretenderem que a SIBS aplique um cenário de degradação nas
+    operações que são feitas no estrangeiro, em sistemas de pagamento cujas mensagens não
+    são financeiras (ex.: Visa, MasterCard, AMEX). <br>
+    Para mais informações, consulte o capítulo <a href="a1.htm#A.1.3.1">Cenário de Limite
+    de Autorização</a>. </td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>&nbsp; </strong>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq"><strong><br>
+      10.6.</strong></td>
+    <td class="esq"><br>
+    <strong>ACÇÃO PARA ERRO OU <em>TIME OUT</em>&nbsp; NA RESPOSTA EM <em>REAL-TIME</em> </strong><p>Indique
+    o procedimento da SIBS junto do sistema de pagamento internacional quando não há uma
+    resposta em tempo real do Emissor.<br>
+    Para mais informações, consultar o capítulo <a href="a1.htm#A.1.3.1">Cenário de Limite
+    de Autorização</a>. </td>
+  </tr>
+</table>
+
+<h6><br>
+11. CARACTERIZAÇÃO DE OUTRAS VERTENTES </h6>
+
+<p>Esta alínea deve ser preenchida no caso do cartão, possuir uma outra vertente para
+além do Multibanco (por exemplo, pertencer a um sistema de pagamento internacional, com
+condições especiais na rede de comerciantes gerida pelo seu representante em Portugal
+(ex: Unicre para cartões Visa e MasterCard). </p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap><strong><br>
+    11.1.&nbsp;&nbsp;</strong></td>
+    <td class="esq"><strong><br>
+    AUTENTICAÇÃO DAS OPERAÇÕES </strong><p>Assinale qual a modalidade que o cliente pode
+    utilizar em TPAs com atendimento. No caso de optar pela alternativa de uso de
+    código ou assinatura, à escolha, a SIBS valida o código secreto apenas se o cliente o
+    introduzir. Neste caso, a operação só pode ser aceite se o código estiver correcto. No
+    caso do código não ter sido introduzido, o cliente deve assinar o talão da compra. </td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>&nbsp; </strong>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esqa" nowrap><strong><br>
+      11.2.&nbsp;&nbsp;</strong></td>
+    <td class="esqa"><br>
+      <b>REGIME DE <i>PRICING</i></b><p class="a">Os comissionamentos relativos a transacções realizadas na rede do
+      Representante em Portugal podem estar indexados a valores previamente definidos. Quando existe um acordo entre o Emissor e o
+      Representante para a aplicação de um regime de comissionamento específico (regime de
+      <i>pricing</i>), indique o código atribuído a esse regime de comissionamento.&nbsp; </td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>&nbsp; </strong>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esqa" nowrap><strong><br>
+      11.3.&nbsp;&nbsp;</strong></td>
+    <td class="esqa"><strong><br>
+      PRODUTO FINANCEIRO (ACORDO) ASSOCIADO AO BIN</strong><p class="a">A aceitação de cartões em TPA numa vertente diferente da vertente Multibanco é efectuada no âmbito de um acordo específico, carregado nos terminais e habitualmente designado por Produto
+      Financeiro.<p class="a">Indique neste ponto o Produto Financeiro (principal) associado ao
+      BIN.<p class="a">No caso específico de cartões representados pela Unicre (cartões com uma marca da
+      Visa ou da MasterCard), o Produto Financeiro (principal) a utilizar está
+      indexado ao Tipo de Conta associada ao cartão:
+      <ul class="a">
+        <li>
+          <p class="a">se o Tipo de Conta indica uma vertente de Débito: o Produto Financeiro (principal) a indicar é obrigatoriamente "00347-UNICRE DB";</li>
+        <li>
+          <p class="a">se o Tipo de Conta indica uma vertente de Crédito: o Produto Financeiro (principal) a indicar é obrigatoriamente "00346-UNICRE
+          CR&quot;.</li>
+      </ul>
+      <p class="a">Exclusivamente nas situações em que o Produto Financeiro (principal) indicado seja "00347-UNICRE DB", deve ser indicado como Produto Financeiro (secundário) o "00346-UNICRE CR", para garantir a normal aceitação dos cartões. </td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>&nbsp; </strong>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq"><strong><br>
+      11.4.</strong></td>
+    <td class="esq"><strong><br>
+    REPRESENTANTE DO PRODUTO-CARTÃO</strong><ol TYPE="a">
+      <li>Indique quem é o representante dos cartões, isto é, a entidade que negoceia com o
+        comerciante as condições contratuais para a aceitação da marca (que não MB) associada
+        ao cartão. </li>
+      <li>Indique qual é o acordo de partilha da comissão (paga pelo comerciante nas operações
+        feitas com cartões do Emissor) que o Emissor tem com o representante do cartão. Esta
+        partilha também se aplica às comissões pagas pelos comerciantes a cartões Multibanco,
+        em alguns acordos entre o representante e o comerciante. Por isso, solicita-se o
+        preenchimento, também, para o caso do cartão ser MB ou Proprietário. </li>
+      <li class="a">Indique se nas transacções realizadas em gasolineiras por cartões deste BIN deve ser aplicada a taxa gasolineira (€ 0,50). </li>
+      <li>Indique qual o encaminhamento que deve ser dado às operações recebidas de TPAs
+        pertencentes à rede do representante, sendo um cartão desse âmbito: </li>
+      <ul type="disc">
+        <li>Emissor, em <i>Real-Time</i>: significa que este processa as referidas operações tal como as
+          outras compras dos cartões Multibanco, pressupondo que o Emissor tem cenário <em><a
+          href="a1.htm#A.1.1.1">Real-Time</a></em> (Emissor autónomo); </li>
+        <li>Representante, em <i>Real-Time</i>:<i> </i>significa que a SIBS encaminha essas operações para o representante
+          (ex.: Unicre), validando previamente a existência do cartão no seu sistema e a
+          autenticidade do PIN. A Compensação da operação é feita através do
+          Representante
+          (Emissor não autónomo); </li>
+        <li class="a"> SIBS, em saldo de Conta/Cartão/Crédito Disponível: significa que o Emissor pretende que
+          a SIBS trate estas operações utilizando
+          o cenários de <a href="a1.htm#A.1.1.2">Saldo de Conta</a>, <a href="a1.htm#A.1.1.3">Saldo
+          de Cartão</a> ou <a href="a1.htm#A.1.3.2">Saldo
+          de Crédito Disponível</a>. A opção escolhida para o cenário principal determina o destinatário da
+          compensação das transacções (envio directo ao Emissor ou ao Representante). </li>
+      </ul>
+    </ol>
+    <blockquote>
+      <p>Se o centro de autorizações for o Emissor em <i>Real-Time</i>, este deve indicar qual o cenário
+      de degradação das operações que não são decididas pelo Emissor. </p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2"><strong>&nbsp; </strong></td>
+  </tr>
+  <tr>
+    <td class="esq"><strong>11.5.</strong></td>
+    <td class="esq"><strong>ENCAMINHAMENTO AUTOMÁTICO DE INFORMAÇÃO SOBRE LISTA NEGRA </strong><p>No
+    caso de inserções em Lista Negra <span class="a">ou Lista Cinzenta </span>não originadas no Emissor, este deve indicar quais
+    são os representantes (nacional e/ou internacional) que a SIBS deve informar
+    automaticamente: <ul>
+      <li>Inserções detectadas na rede SIBS (Lista Negra da rede MB); </li>
+      <li>Inserções recebidas como 'lista negra urgente'; </li>
+      <li class="a">Inserções detectadas na Rede SIBS (Lista Cinzenta da Rede MB). </li>
+    </ul>
+    </td>
+  </tr>
+</table>
+
+<p><strong>12. CARACTERIZAÇÃO DE ELEMENTOS EMV</strong></p>
+
+<p>Esta alínea é de preenchimento obrigatório para possibilitar a emissão de cartões EMV, com a excepção de alguns pontos em que
+tal é expressamente indicado. <br>
+Os elementos parametrizados através desta alínea serão utilizados quando os cartões
+sejam de tecnologia EMV. </p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap><strong><br>
+    12.1.&nbsp;&nbsp;</strong></td>
+    <td class="esq"><strong><br>
+    ÂMBITO DE UTILIZAÇÃO </strong><p>Neste ponto o emissor pode restringir o âmbito de
+    utilização geográfico e os serviços permitidos à aplicação EMV.<br>
+    Assinale os serviços a disponibilizar. </td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>&nbsp; </strong>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq"><strong><br>
+    12.2.</strong></td>
+    <td class="esq"><strong><br>
+    PARÂMETROS DE RISCO: TRANSACÇÕES <em>OFFLINE </em></strong><p>Quando a aplicação que
+    está a ser parametrizada tem correspondência com um produto de um Sistema de Pagamentos
+    Internacional habitualmente visto como de débito (ex: Visa Electron e Maestro), sugere-se
+    o não preenchimento do ponto a. (segunda moeda) e que os parâmetros de gestão de risco
+    para operações no estrangeiro, no ponto c. (Transacções Internacionais), sejam
+    preenchidos com &quot;0&quot; (zeros). Desta forma, ainda que a nível doméstico o
+    emissor disponibilize funcionalidades <em>offline</em> para estes cartões, garante-se que
+    as transacções realizadas são 100% autorizadas, minimizando-se assim o risco associado
+    a transacções no estrangeiro com validação de PIN <em>Offline</em>. <ol type="a">
+      <li>Código da segunda moeda da aplicação </li>
+    </ol>
+    <blockquote>
+      <p>Este ponto só deve ser preenchido se o emissor desejar posicionar um código de uma
+      segunda moeda para a Aplicação EMV em causa. <br>
+      A existência deste código permite uma validação adicional dos montantes de
+      transacções <em>offline</em> realizados na segunda moeda. <br>
+      O código de segunda moeda é parametrizado na emissão do cartão e não é actualizável
+      posteriormente. <br>
+      Para as restantes transacções <em>offline</em> que não sejam realizadas na moeda
+      principal da aplicação ou na segunda moeda, apenas são aplicáveis parâmetros de risco
+      baseados em número de transacções (não são aplicáveis outros parâmetros de risco em
+      valor). </p>
+    </blockquote>
+    <blockquote>
+      <ul>
+        <li>Código da segunda moeda: <br>
+          O emissor deve indicar uma representação de 3 caracteres numéricos, de acordo com a
+          norma ISO 4217. </li>
+      </ul>
+      <ul>
+        <li>Descritivo: <br>
+          Texto para confirmação do código da segunda moeda.&nbsp; </li>
+      </ul>
+      <ul>
+        <li>Factor de conversão: <br>
+          Valor decimal utilizado para conversão de valores da segunda moeda para a moeda principal
+          da Aplicação EMV (o euro). <br>
+          O factor de conversão é actualizado apenas por indicação do emissor. Pode ser
+          actualizado em qualquer momento da vida útil do cartão (via ficheiro <a
+          href="../l-iii/egcc.htm">EGCC</a>). <br>
+          Trata-se de um valor aproximado, utilizado apenas para a validação do Montante Máximo
+          Acumulado. Recomenda-se a sua actualização apenas quando se considere que sofreu uma
+          variação que o justifica. </li>
+      </ul>
+    </blockquote>
+    <ol type="a" start="2">
+      <li>Limites sobre os montantes das transacções</li>
+    </ol>
+    <ul type="square">
+      <li>Quantia Máxima Acumulada permitida para Transacções <em>Offline</em>, mesmo que o
+        terminal tenha a possibilidade de efectuar a transacção <em>Online: </em></li>
+    </ul>
+    <blockquote>
+      <ul>
+        <li>MasterCard: este limite é aplicável a todas as transacções realizadas na moeda
+          principal da Aplicação ou na segunda moeda, quando esta exista. </li>
+        <li>Visa: este Sistema de Pagamentos considera a existência de dois elementos distintos,
+          estabelecendo um &quot;limite na moeda principal da aplicação&quot; e um &quot;<em>limite
+          dual currency</em>&quot;, quando exista uma segunda moeda. Na caracterização de
+          aplicações Visa, os referidos dois elementos assumem o mesmo valor (parametrizado neste
+          campo do Padrão EMV). </li>
+        <li>Quando ultrapassado este limite, tenta-se decidir a transacção <em>online</em>. Se tal
+          não for possível, a transacção pode ser realizada <em>offline</em>. </li>
+      </ul>
+    </blockquote>
+    <ul type="square">
+      <li>Quantia Máxima Acumulada permitida para Transacções <em>Offline</em> a partir da qual
+        a transacção tem obrigatoriamente que ser decidida <em>online</em>: </li>
+    </ul>
+    <blockquote>
+      <ul>
+        <li>Este limite é aplicável a todas as transacções realizadas na moeda principal da
+          Aplicação ou na segunda moeda, quando esta exista. </li>
+        <li>Quando ultrapassado este limite, a transacção tem que ir <em>online</em>. A
+          impossibilidade de decisão <em>online</em> implica a recusa da transacção. </li>
+        <li>Este elemento existe apenas se o cartão suportar a norma VIS 1.4.0 (Visa) ou a norma
+          MChip/4 (MasterCard), ou versões superiores. </li>
+      </ul>
+    </blockquote>
+    <ol type="a" start="3">
+      <li>Transacções Internacionais</li>
+    </ol>
+    <blockquote>
+      <p>Preenchimento livre pelo emissor (existem contudo recomendações dos Sistemas de
+      Pagamento para o preenchimento destes valores). </p>
+    </blockquote>
+    <ol type="a" start="4">
+      <li>Limites globais</li>
+    </ol>
+    <blockquote>
+      <p>Preenchimento livre pelo emissor (existem contudo recomendações dos Sistemas de
+      Pagamento para o preenchimento destes valores). </p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2"><strong>&nbsp; </strong></td>
+  </tr>
+  <tr>
+    <td class="esq"><strong>12.3.</strong></td>
+    <td class="esq"><strong>LISTA DE MÉTODOS DE VERIFICAÇÃO DO PORTADOR (CVM List)</strong><ol
+    type="a">
+      <li>Montante abaixo do qual se permite o PIN Offline</li>
+    </ol>
+    <blockquote>
+      <p>Esta condição corresponde a um método adicional de Verificação do Portador.<br>
+      Como elemento adicional de gestão de risco, o emissor pode parametrizar opcionalmente um
+      valor abaixo do qual pode ser utilizado o método de verificação &quot;PIN <em>Offline</em>&quot;,
+      quando este exista na lista de métodos do cartão; é aplicável para cartões DDA e
+      quando o terminal suporta PIN <em>Offline</em>.</p>
+      <p>A aplicabilidade e restrições impostas por este método dependem das capacidade do
+      Terminal: </p>
+    </blockquote>
+    <blockquote>
+      <ul>
+        <li>Quando o terminal suporta PIN <em>Offline</em> e o montante está abaixo do indicado, é
+          tentado o PIN Offline como primeiro método. Se não for validado o PIN <em>Offline</em>,
+          utiliza-se o Método de Verificação seguinte.</li>
+        <li>Quando o terminal não suporta o PIN <em>Offline</em>, ignora-se o limite apresentado
+          neste ponto e utiliza-se o próximo Método de Verificação do Portador (incluído na
+          lista de CVMs) que seja aplicável.</li>
+      </ul>
+    </blockquote>
+    <ol type="a" start="2">
+      <li>Listas de CVM alternativas</li>
+    </ol>
+    <blockquote>
+      <p>O emissor pode escolher apenas uma das 3 hipóteses alternativas indicadas neste ponto.</p>
+      <p>As 3 hipóteses apresentadas têm em consideração diversos factores:</p>
+    </blockquote>
+    <blockquote>
+      <ul>
+        <li>As recomendações dos Sistemas de Pagamento Internacionais para os diversos produtos
+          existentes.</li>
+        <li>O comportamento pretendido para o funcionamento dos cartões on-us (possibilitar a
+          validação por assinatura para sectores determinados, como por exemplo os restaurantes;
+          para os restantes sectores, considerar o PIN Obrigatório).</li>
+        <li>A validação adicional introduzida no ponto 12.3.a).</li>
+        <li>A tecnologia do <em>chip</em> EMV do cartão: assume-se que é desaconselhável a
+          utilização do PIN <em>Offline</em> em claro, pelo que o PIN <em>Offline</em> não é um
+          dos métodos suportados quando os cartões possuem uma tecnologia SDA (Static Data
+          Authentication).</li>
+      </ul>
+    </blockquote>
+    <blockquote>
+      <p>Sobre as recomendações dos Sistemas de Pagamento Internacionais, recorda-se que:</p>
+    </blockquote>
+    <blockquote>
+      <ul>
+        <li>A &quot;Assinatura&quot; deve existir nos produtos com vertente de crédito (ex: Visa e
+          MasterCard).</li>
+        <li>Se for pretendida a utilização dos cartões em causa em terminais que apenas suportam
+          PIN <em>Online</em>, este tem que ser incluído na lista de métodos.</li>
+        <li>Os Visa Electron podem ter PIN <em>Offline</em> (opcional).</li>
+        <li>Se existir o método &quot;No-CVM&quot;, este deve ser o último da lista de métodos de
+          verificação.</li>
+        <li>O método &quot;No-CVM&quot; deve existir para os produtos com vertente de crédito (ex:
+          Visa e MasterCard).</li>
+        <li>O método &quot;No-CVM&quot; pode ser incluído nos produtos da Visa normalmente
+          associados a produtos de débito (Visa Electron).</li>
+        <li>O método &quot;No-CVM&quot; não pode ser incluído nos produtos da MasterCard
+          normalmente associados a produtos de débito (Maestro).</li>
+      </ul>
+    </blockquote>
+    <p>O detalhe das alternativas de Lista de Métodos de Verificação do Portador são
+    apresentadas de seguida. Indicam-se também as regras aplicáveis relativamente a cada um
+    dos métodos de verificação suportados:</p>
+    <p><strong><br>
+    Alternativa 1 - Produto &quot;de Crédito&quot; </strong></p>
+    <table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="547">
+      <tr>
+        <td COLSPAN="3" class="mid"><em>Tecnologia chip EMV : SDA</em></td>
+        <td COLSPAN="3" class="mid"><em>Tecnologia chip EMV : DDA<br>
+        </em>(PIN <em>Offline</em> suportado)</td>
+      </tr>
+      <tr>
+        <td class="mid"><u><em>Método</em></u></td>
+        <td class="mid"><u><em>Condição de aplicabilidade</em></u></td>
+        <td class="mid"><u><em>O que fazer se falhar</em></u></td>
+        <td class="mid"><u><em>Método</em></u></td>
+        <td class="mid"><u><em>Condição de aplicabilidade</em></u></td>
+        <td class="mid"><u><em>O que fazer se falhar</em></u></td>
+      </tr>
+      <tr>
+        <td class="mid" nowrap>1º PIN <em>Online</em></td>
+        <td class="mid">Se suportado <br>
+        pelo Terminal</td>
+        <td class="mid">Passar ao seguinte</td>
+        <td class="mid">1º PIN <em>Offline</em></td>
+        <td class="mid">Se montante da transacção &lt; X</td>
+        <td class="mid">Passar ao seguinte</td>
+      </tr>
+      <tr>
+        <td class="mid">2º Assinatura</td>
+        <td class="mid">Se suportado <br>
+        pelo Terminal</td>
+        <td class="mid">Falhar</td>
+        <td class="mid">2º PIN <em>Online</em></td>
+        <td class="mid">Se suportado <br>
+        pelo Terminal</td>
+        <td class="mid">Passar ao seguinte</td>
+      </tr>
+      <tr>
+        <td class="mid">3º No CVM</td>
+        <td class="mid">Sempre</td>
+        <td class="mid">Falhar</td>
+        <td class="mid">3º PIN <em>Offline</em></td>
+        <td class="mid">Se suportado <br>
+        pelo Terminal</td>
+        <td class="mid">Passar ao seguinte</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class="mid" nowrap>4º Assinatura</td>
+        <td class="mid">Se suportado <br>
+        pelo Terminal</td>
+        <td class="mid">Falhar</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class="mid">5º No CVM</td>
+        <td class="mid">Sempre</td>
+        <td class="mid">Falhar</td>
+      </tr>
+    </table>
+    <p><br>
+    <strong>Alternativa 2 - Produto &quot;de Débito&quot;</strong></p>
+    <table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="547">
+      <tr>
+        <td COLSPAN="3" class="mid"><em>Tecnologia chip EMV : SDA</em></td>
+        <td COLSPAN="3" class="mid"><em>Tecnologia chip EMV : DDA<br>
+        </em>(PIN <em>Offline</em> suportado)</td>
+      </tr>
+      <tr>
+        <td class="mid"><u><em>Método</em></u></td>
+        <td class="mid"><u><em>Condição de aplicabilidade</em></u></td>
+        <td class="mid"><u><em>O que fazer se falhar</em></u></td>
+        <td class="mid"><u><em>Método</em></u></td>
+        <td class="mid"><u><em>Condição de aplicabilidade</em></u></td>
+        <td class="mid"><u><em>O que fazer se falhar</em></u></td>
+      </tr>
+      <tr>
+        <td class="mid">1º PIN <em>Online</em></td>
+        <td class="mid">Se suportado <br>
+        pelo Terminal</td>
+        <td class="mid">Falhar</td>
+        <td class="mid">1º PIN <em>Offline</em></td>
+        <td class="mid">Se montante da transacção &lt; X</td>
+        <td class="mid">Passar ao seguinte</td>
+      </tr>
+      <tr>
+        <td class="mid" nowrap>2º Assinatura</td>
+        <td class="mid">Se suportado <br>
+        pelo Terminal</td>
+        <td class="mid">Falhar</td>
+        <td class="mid">2º PIN <em>Online</em></td>
+        <td class="mid">Se suportado <br>
+        pelo Terminal</td>
+        <td class="mid">Falhar</td>
+      </tr>
+      <tr>
+        <td class="mid">3º No CVM</td>
+        <td class="mid">Sempre</td>
+        <td class="mid">Falhar</td>
+        <td class="mid">3º PIN <em>Offline</em></td>
+        <td class="mid">Se suportado <br>
+        pelo Terminal</td>
+        <td class="mid">Falhar</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class="mid" nowrap>4º Assinatura</td>
+        <td class="mid">Se suportado <br>
+        pelo Terminal</td>
+        <td class="mid">Falhar</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td class="mid">5º No CVM</td>
+        <td class="mid">Sempre</td>
+        <td class="mid">Falhar</td>
+      </tr>
+    </table>
+    <p class="nove">NOTA: o &quot;No CVM&quot; não é um método possível para cartões
+    Maestro. Por este motivo, os Maestro não podem ser utilizados em nenhum terminal que
+    apenas suporte o &quot;No CVM&quot; (CATs diferentes de CAT1).</p>
+    <p><br>
+    <strong>Alternativa 3 - Produto Multibanco</strong></p>
+    <table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="547">
+      <tr>
+        <td COLSPAN="3" class="mid"><em>Tecnologia chip EMV : SDA</em></td>
+        <td COLSPAN="3" class="mid"><em>Tecnologia chip EMV : DDA<br>
+        </em>(PIN <em>Offline</em> suportado)</td>
+      </tr>
+      <tr>
+        <td class="mid"><u><em>Método</em></u></td>
+        <td class="mid"><u><em>Condição de aplicabilidade</em></u></td>
+        <td class="mid"><u><em>O que fazer se falhar</em></u></td>
+        <td class="mid"><u><em>Método</em></u></td>
+        <td class="mid"><u><em>Condição de aplicabilidade</em></u></td>
+        <td class="mid"><u><em>O que fazer se falhar</em></u></td>
+      </tr>
+      <tr>
+        <td class="mid" nowrap>1º PIN <em>Online</em></td>
+        <td class="mid">Se suportado <br>
+        pelo Terminal</td>
+        <td class="mid">Falhar</td>
+        <td class="mid" nowrap>1º PIN <em>Online</em></td>
+        <td class="mid">Se suportado <br>
+        pelo Terminal</td>
+        <td class="mid">Falhar</td>
+      </tr>
+      <tr>
+        <td class="mid">2º No CVM</td>
+        <td class="mid">Sempre</td>
+        <td class="mid">Falhar</td>
+        <td class="mid">2º PIN <em>Offline</em></td>
+        <td class="mid">Se suportado <br>
+        pelo Terminal</td>
+        <td class="mid">Falhar</td>
+      </tr>
+      <tr>
+        <td class="mid">&nbsp;</td>
+        <td class="mid">&nbsp;</td>
+        <td class="mid">&nbsp;</td>
+        <td class="mid">3º No CVM</td>
+        <td class="mid">Sempre</td>
+        <td class="mid">Falhar</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq"><br>
+    <b>12.4</b></td>
+    <td class="esq"><b><br>
+    <em>FALLBACK</em> PARA PISTA MAGNÉTICA</b>&nbsp; <p>Em qualquer transacção com uma
+    aplicação de pagamento, no diálogo com o cartão o terminal efectua uma primeira
+    validação do conteúdo da Pista 2. Se esta indicar que o cartão utilizado tem <i>chip</i>
+    EMV, o terminal tenta ler os elementos do <i>chip</i>.<br>
+    Prevendo as situações em que não é possível efectuar uma correcta leitura dos dados
+    contidos no <i>chip</i>, possibilita-se que o emissor especifique se pretende que a
+    decisão da transacção seja efectuada com base nos elementos da pista magnética (<i>Fallback</i>).<ol
+    type="a">
+      <li>As transacções podem ser decididas com recurso a <i>Fallback</i>?</li>
+    </ol>
+    <blockquote>
+      <p>O emissor deve indicar expressamente se pretende autorizar a possibilidade de <i>Fallback</i>
+      para os seus cartões.</p>
+      <p>Elementos parametrizáveis:<ul>
+        <li>Número máximo de operações consecutivas permitidas<br>
+          Este campo só deve ser preenchido se o emissor indicou que pretende possibilitar o <i>Fallback</i>.&nbsp;<br>
+          Limita o número de transacções com recurso a <i>Fallback</i> consecutivas. Quando este
+          limite é atingido, qualquer transacção posterior só pode ser realizada com base nos
+          elementos do chip, não se permitindo que o cartão continue a efectuar operações
+          exclusivamente sobre os dados da pista magnética.</li>
+      </ul>
+      <ul>
+        <li>Valor máximo por operação<br>
+          Este campo só deve ser preenchido se o emissor indicou que pretende possibilitar o <i>Fallback</i>.&nbsp;<br>
+          Montante máximo para cada transacção com recurso a <i>Fallback</i>, considerada
+          individualmente.</li>
+      </ul>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+
+<p><strong>13. CARACTERIZAÇÃO DE LINHA DE CRÉDITO (PRESTAÇÕES)</strong></p>
+
+<p>Este ponto possibilita a parametrização de um número de ocorrências
+(máximo de 9) para conjuntos de elementos necessários à operacionalidade da
+funcionalidade &quot;Linha de Crédito&quot;. Se o Emissor pretender disponibilizar esta
+funcionalidade em cartões EMV emitidos para o BIN em causa, tem obrigatoriamente que
+preencher pelo menos uma ocorrência (linha da tabela).</p>
+
+<p>A cada linha da tabela corresponde uma identificação (ID), a indicar no
+momento da emissão de novos cartões (via ficheiro <a href="../l-iii/eecb.htm">EECB</a>)
+ou em actualizações após a emissão (via <a href="../l-iii/egcc.htm">EGCC</a>).</p>
+
+<h6 class="a"><br>
+14. TEXTOS PARA TERMINAIS (ESPECÍFICOS DO BIN)</h6>
+
+<p class="a">Indique os descritivos específicos pretendidos para apresentação nos recibos emitidos pelos Terminais de Pagamento Automático e Caixas Automáticos nas operações realizadas por cartões deste BIN.</p>
+
+<h6><br>
+15. OPERAÇÕES AUTORIZADAS</h6>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap><strong><br>
+      15.1.&nbsp;&nbsp;</strong></td>
+    <td class="esq"><strong><br>
+    OPERAÇÕES AUTORIZADAS</strong> <p>O Emissor deve indicar as operações que estão
+    disponíveis para os cartões de um produto-cartão. </td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>&nbsp; </strong>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq"><strong><br>
+      15.2.</strong></td>
+    <td class="esqa"><strong><br>
+    SERVIÇOS ESPECIAIS ESPECÍFICOS</strong><p class="a">No caso de se pretender disponibilizar para o produto-cartão Serviços Especiais exclusivos do
+      Emissor, indique-os no quadro 15.2 da '<a href="i_a1c.doc">Caracterização do BIN</a>'. </td>
+  </tr>
+</table>
+
+<p><br>
+<strong><a name="*">Instruções</a> de preenchimento:</strong> 
+
+<ul>
+  <li>Clique <a href="i_a1c.doc">aqui</a> com o botão do lado direito do rato;</li>
+  <li>Escolha a opção &quot;Save target as...&quot; (ou &quot;Guardar destino
+    como...&quot;);</li>
+  <li>Grave o ficheiro num directório;</li>
+  <li>Preencha o formulário, utilizando o Microsoft Word.</li>
+</ul>
+
+<p>O envio do documento deve efectuar-se alguns dias antes da data pretendida para a
+entrada em funcionamento por e-mail para o <span class="a">Departamento de Produção
+da SIBS, Área de Regularizações (regularizacoes@sibs.pt).</span> </p>
+
+<p>Alternativamente pode imprimi-lo e envia-lo por correio/fax para o destinatário acima
+referido.</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

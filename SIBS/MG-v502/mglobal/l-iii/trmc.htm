@@ -1,0 +1,1243 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>TERMINAIS - CADASTRO (TRMC)</title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+</head>
+
+<body>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: &nbsp; TERMINAIS - CADASTRO</td>
+        <td class="fichdta">&quot;FICH&quot; = TRMC </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Este ficheiro é enviado da SIBS para diferentes destinatários e contém a informação
+necessária para a função de Entidade de Apoio de Terminais.</p>
+
+<p>O ficheiro abrange os terminais Caixa Automático e os terminais de Pagamento
+Automático de cada Entidade e detalha a informação de Comerciantes e Estabelecimentos,
+assim como toda a informação relativa às condições contratuais matriculadas.</p>
+
+<p>É enviado um ficheiro base (informação existente num determinado momento do tempo)
+quando a Entidade inicia a sua recepção, e a partir daí o ficheiro é enviado
+diariamente sempre que exista um acontecimento que implique informar o Sistema da
+Entidade.</p>
+
+<p>Existe um outro ficheiro de terminais (<a target="main" href="trmf.htm">MTRMF</a>)
+constituído por um menor número de registos cuja finalidade é o controlo de
+facturação.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído por: 
+
+<ul>
+  <li>um registo de <em>Header</em> do ficheiro &quot;TIPREG=0&quot;;</li>
+</ul>
+
+<ul>
+  <li>registos de Detalhe &quot;TIPREG=1&quot;, com os dados completos dos Caixas
+    Automáticos, enviados para os respectivos Bancos de Apoio; </li>
+</ul>
+
+<ul>
+  <li>registos de Detalhe &quot;TIPREG=2&quot;, com os dados completos dos Comerciantes
+    existentes na Rede Multibanco; </li>
+</ul>
+
+<ul>
+  <li>registos de Detalhe &quot;TIPREG=3&quot;, com os dados completos dos Estabelecimentos
+    dos Comerciantes existentes na Rede Multibanco;</li>
+</ul>
+
+<ul>
+  <li>registos de Detalhe &quot;TIPREG=4&quot;, com os dados completos dos Terminais de
+    Pagamento Automático, enviados para a respectiva Entidade de Apoio do Terminal;</li>
+</ul>
+
+<ul>
+  <li >registos de Detalhe &quot;TIPREG=5&quot;, relativos aos cartões de
+    supervisão, enviados para a respectiva Entidade de Apoio do Terminal;</li>
+</ul>
+    
+<ul>    
+  <li>o registo de <em>Trailer</em> &quot;TIPREG=9&quot;.</li>
+</ul>
+
+<p><br>
+O ficheiro é constituído por registos de comprimento fixo de 285
+bytes.</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">TRMC - TIPO DE REGISTO <a name="= 1">= 1</a>
+(DADOS COMPLETOS DE CAS - Bancos de Apoio)</p>
+
+<p>Este registo de detalhe informa os seguintes acontecimentos sobre a actividade de cada
+Caixa Automático apoiado pelo Banco:</p>
+
+<p class="nove"><strong><br>
+a) Inserção e alteração de um CA</strong></p>
+
+<table CELLSPACING="0" BORDER="0" CELLPADDING="7" width="80%">
+  <tr>
+    <td nowrap class="esq" width="10%"></td>
+    <td nowrap class="esq" width="15%"><strong>Inserção de um CA</strong><br>
+    (GESTRM = 01)</td>
+    <td class="just" width="55%">Normalmente ocorre logo que o Banco informa a SIBS do local
+    da sua instalação. O CA pode ser inicializado muito tempo depois, conforme as
+    condições de obtenção de linhas, instalações, etc.<br>
+    <br>
+    O CA não é facturável pela SIBS antes de ser inicializado.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="10%"></td>
+    <td class="esq" width="15%"><strong>Alterações de CA</strong><br>
+    (GESTRM = 06)</td>
+    <td class="just" width="55%">Sempre que haja uma alteração de dados do CA que incida
+    sobre os dados enviados ao Banco, esta informação é reenviada para o Banco.</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">Nº Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPREG </td>
+    <td class="dta">1</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq">GESTRM</td>
+    <td class="dta">2</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#370">370</a></td>
+    <td class="esq" width="200">= <strong>01 ou 06</strong></td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPOTERM</td>
+    <td class="dta">1</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos1.htm#003">003</a></td>
+    <td class="esq" width="200">= <strong>A</strong></td>
+  </tr>
+  <tr>
+    <td class="esq">BANAPOIO</td>
+    <td class="dta">4</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos3.htm#241">241</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid">IDTERMINAL</td>
+    <td class="dtamid">10</td>
+    <td class="dtamid">9</td>
+    <td class="mid">A</td>
+    <td class="mid"><a href="../../Campos/campos1.htm#006">006</a></td>
+    <td class="esq" width="200">0000AAAANN, em que:<br>
+    AAAA = código de agência<br>
+    NN = código de máquina</td>
+  </tr>
+  <tr>
+    <td class="esq">CAP-TERM</td>
+    <td class="dta">1</td>
+    <td class="dta">19</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp2300.htm#2354">2354</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DISTCONC</td>
+    <td class="dta">4</td>
+    <td class="dta">20</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#158">158</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">CODPAIS</td>
+    <td class="dta">3</td>
+    <td class="dta">24</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos3.htm#226">226</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">FUNCION</td>
+    <td class="dta">2</td>
+    <td class="dta">27</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#371">371</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DATAFUNC</td>
+    <td class="dta">8</td>
+    <td class="dta">29</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#373">373</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">MARCAMOD</td>
+    <td class="dta">2</td>
+    <td class="dta">37</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos4.htm#337">337</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPOCA</td>
+    <td class="dta">1</td>
+    <td class="dta">39</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos2.htm#148">148</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">MOR-COM</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp1000.htm#1043">1043</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">LOCTERM</td>
+    <td class="dta">40</td>
+    <td class="dta">80</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos1.htm#007">007</a></td>
+    <td class="esq" width="200">Nome (25) + Localidade (15)</td>
+  </tr>
+  <tr>
+    <td class="esq">CODPOSTAL</td>
+    <td class="dta">8</td>
+    <td class="dta">120</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp1000.htm#1004">1004</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">LOC-CA</td>
+    <td class="dta">30</td>
+    <td class="dta">128</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos8.htm#794">794</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;TOTAL</td>
+    <td class="dta">157</td>
+    <td class="dta">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="nove"><strong>b) Alteração do Estado de
+Funcionamento</strong> (GESTRM = 03)</p>
+
+<p>Um terminal CA pode ter vários estados: em funcionamento, desactivado, mudança de
+Banco de Apoio, etc. A alteração deste estado é informada ao Banco, juntamente com a
+identificação do terminal.</p>
+
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">Nº Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPREG </td>
+    <td class="dta">1</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq">GESTRM</td>
+    <td class="dta">2</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#370">370</a></td>
+    <td class="esq">= <strong>03</strong></td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPOTERM</td>
+    <td class="dta">1</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos1.htm#003">003</a></td>
+    <td class="esq">= <strong>A</strong></td>
+  </tr>
+  <tr>
+    <td class="esq">BANAPOIO</td>
+    <td class="dta">4</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos3.htm#241">241</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid">IDTERMINAL</td>
+    <td class="dtamid">10</td>
+    <td class="dtamid">9</td>
+    <td class="mid">A</td>
+    <td class="mid"><a href="../../Campos/campos1.htm#006">006</a></td>
+    <td class="esq">0000AAAANN, em que:<br>
+    AAAA = código de agência<br>
+    NN = código de máquina</td>
+  </tr>
+  <tr>
+    <td class="esq">FUNCION</td>
+    <td class="dta">2</td>
+    <td class="dta">19</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#371">371</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DATAFUNC</td>
+    <td class="dta">8</td>
+    <td class="dta">21</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#373">373</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TOTAL</td>
+    <td class="dta">28</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">TRMC - TIPO DE REGISTO <a name="= 2">= 2</a>
+(DADOS COMPLETOS DE COMERCIANTES)</p>
+
+<p>Este registo de detalhe informa os dados completos relativos aos comerciantes que
+utilizam os serviços da Rede Multibanco:</p>
+
+<p class="nove"><br>
+<strong>Inserção, alteração e abate de um Comerciante</strong> (GESTRM = 14, 15 e 16
+respectivamente)</p>
+
+<p><br>
+</p>
+
+<table CELLSPACING="0" BORDER="1" CELLPADDING="2">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">Nº Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPREG</td>
+    <td class="dta">1</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq">= 2</td>
+  </tr>
+  <tr>
+    <td class="esq">GESTRM</td>
+    <td class="dta">2</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#370">370</a></td>
+    <td class="esq">= <strong>14, 15 ou 16</strong></td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDCOMEMP</td>
+    <td class="dta">7</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">NPCCOM</td>
+    <td class="dta">9</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#375">375</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">NOMECOM</td>
+    <td class="dta">40</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos4.htm#376">376</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">SIGLA-COM</td>
+    <td class="dta">20</td>
+    <td class="dta">60</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp1000.htm#1093">1093</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">MOR-COM</td>
+    <td class="dta">40</td>
+    <td class="dta">80</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp1000.htm#1043">1043</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">LOC-COM</td>
+    <td class="dta">20</td>
+    <td class="dta">120</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp1000.htm#1033">1033</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">CODPOSTAL</td>
+    <td class="dta">8</td>
+    <td class="dta">140</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp1000.htm#1004">1004</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">LOC-POST</td>
+    <td class="dta">25</td>
+    <td class="dta">148</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp1000.htm#1034">1034</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">CODPAIS</td>
+    <td class="dta">3</td>
+    <td class="dta">173</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos3.htm#226">226</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">CAE</td>
+    <td class="dta">5</td>
+    <td class="dta">176</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#182">182</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TAXAIVA</td>
+    <td class="dta">3</td>
+    <td class="dta">181</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos5.htm#403">403</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TOTAL</td>
+    <td class="dta">183</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">TRMC - TIPO DE
+REGISTO <a name="= 3">= 3</a> (DADOS COMPLETOS DE ESTABELECIMENTOS)</p>
+
+<p class="nove"><br>
+<strong>Inserção, alteração e abate de um Estabelecimento </strong>(GESTRM = 17, 18 e
+19 respectivamente)</p>
+
+<p><br>
+</p>
+
+<table CELLSPACING="0" BORDER="1" CELLPADDING="2">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">Nº Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPREG</td>
+    <td class="dta">1</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq">= 3</td>
+  </tr>
+  <tr>
+    <td class="esq">GESTRM</td>
+    <td class="dta">2</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#370">370</a></td>
+    <td class="esq">= <strong>17, 18 ou 19</strong></td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDCOMEMP</td>
+    <td class="dta">7</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDEST</td>
+    <td class="dta">4</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#328">328</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDPROP</td>
+    <td class="dta">7</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos1.htm#068">068</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">NOMEST</td>
+    <td class="dta">40</td>
+    <td class="dta">22</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos2.htm#179">179</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">MOREST</td>
+    <td class="dta">20</td>
+    <td class="dta">62</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos2.htm#180">180</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">LOCEST</td>
+    <td class="dta">20</td>
+    <td class="dta">82</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos2.htm#181">181</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TEL-EST</td>
+    <td class="dta">10</td>
+    <td class="dta">102</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp1100.htm#1101">1101</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">FAX-EST</td>
+    <td class="dta">10</td>
+    <td class="dta">112</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp1000.htm#1025">1025</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">RESP-EST</td>
+    <td class="dta">20</td>
+    <td class="dta">122</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp1000.htm#1090">1090</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">N-HR-FUNC-SEM</td>
+    <td class="dta">3</td>
+    <td class="dta">142</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp1000.htm#1055">1055</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DISTCONC</td>
+    <td class="dta">4</td>
+    <td class="dta">145</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#158">158</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPEST</td>
+    <td class="dta">2</td>
+    <td class="dta">149</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#335">335</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IND_AC_UNI</td>
+    <td class="dta">1</td>
+    <td class="dta">151</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp1800.htm#1897">1897</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IND_AC_AMEX</td>
+    <td class="dta">1</td>
+    <td class="dta">152</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp1400.htm#1434">1434</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">ENDER_CLI</td>
+    <td class="dta">40</td>
+    <td class="dta">153</td>
+    <td >A</td>
+    <td><a href="../../Campos/campos1.htm#081">081</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">ENDER_CLI (2)</td>
+    <td class="dta">40</td>
+    <td class="dta">193</td>
+    <td >A</td>
+    <td><a href="../../Campos/campos1.htm#081">081</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">LOC_CLI</td>
+    <td class="dta">20</td>
+    <td class="dta">233</td>
+    <td >A</td>
+    <td><a href="../../Campos/campos1.htm#082">082</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">C_POST_CLI</td>
+    <td class="dta">8</td>
+    <td class="dta">253</td>
+    <td >A</td>
+    <td><a href="../../Campos/campos1.htm#083">083</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">L_POST_CLI</td>
+    <td class="dta">25</td>
+    <td class="dta">261</td>
+    <td >A</td>
+    <td><a href="../../Campos/campos1.htm#084">084</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TOTAL</td>
+    <td class="dta">285</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">TRMC - TIPO DE REGISTO <a name="= 4">= 4</a>
+(DADOS COMPLETOS DE TPAs - Entidades de Apoio de Terminais de Pagamento Automático)</p>
+
+<p>Este registo de detalhe informa os seguintes acontecimentos sobre a actividade de cada
+Terminal de Pagamento Automático apoiado pela Entidade:</p>
+
+<p class="nove"><br>
+<strong>a) Inserção e alteração de um Terminal Pagamento Automático</strong></p>
+
+<table CELLSPACING="0" BORDER="0" CELLPADDING="7" width="80%">
+  <tr>
+    <td nowrap width="10%"></td>
+    <td nowrap width="15%" class="esq"><strong>Inserção de um TPA</strong><br>
+    (GESTRM = 02)</td>
+    <td class="just" width="55%">Sempre que sejam introduzidos os dados de um TPA na Rede
+    Multibanco através do Terminal de Serviços da Entidade de Apoio do Terminal, é enviado
+    um registo para as Entidades de Apoio.<br>
+    <br>
+    Porém a sua entrada em funcionamento só se realiza com a atribuição do <em>pinpad</em>
+    e portanto com uma alteração da situação (GESTRM=03). <br>
+    Só a partir desse momento a SIBS passa a tarifar o TPA à Entidade de Apoio do Terminal .</td>
+  </tr>
+  <tr>
+    <td width="10%"></td>
+    <td width="15%" class="esq"><strong>Alteração de TPA</strong><br>
+    (GESTRM = 07)</td>
+    <td class="just" width="55%">Sempre que haja uma alteração de dados do TPA que incida
+    sobre os dados enviados ao Participante, esta informação é-lhe reenviada.</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table CELLSPACING="0" BORDER="1" CELLPADDING="2">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">Nº Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPREG</td>
+    <td class="dta">1</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 4</td>
+  </tr>
+  <tr>
+    <td class="esq">GESTRM</td>
+    <td class="dta">2</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#370">370</a></td>
+    <td class="esq" width="200">= <strong>02 ou 07</strong></td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDCOMEMP</td>
+    <td class="dta">7</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDEST</td>
+    <td class="dta">4</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#328">328</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDPROP</td>
+    <td class="dta">7</td>
+    <td class="dta">15</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos1.htm#068">068</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPOTERM</td>
+    <td class="dta">1</td>
+    <td class="dta">22</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos1.htm#003">003</a></td>
+    <td class="esq" width="200">= <strong>B</strong></td>
+  </tr>
+  <tr>
+    <td class="esq">BANAPOIO</td>
+    <td class="dta">4</td>
+    <td class="dta">23</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos3.htm#241">241</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDTERMINAL</td>
+    <td class="dta">10</td>
+    <td class="dta">27</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos1.htm#006">006</a></td>
+    <td class="esq" width="200">00NNNNNNNN (n.º do TPA)</td>
+  </tr>
+  <tr>
+    <td class="esq">CAP-TERM</td>
+    <td class="dta">1</td>
+    <td class="dta">37</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp2300.htm#2354">2354</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DT-ULT-TRN</td>
+    <td class="dta">8</td>
+    <td class="dta">38</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#141">141</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DISTCONC</td>
+    <td class="dta">4</td>
+    <td class="dta">46</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos2.htm#158">158</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">MCC</td>
+    <td class="dta">4</td>
+    <td class="dta">50</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos2.htm#157">157</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">CODPAIS</td>
+    <td class="dta">3</td>
+    <td class="dta">54</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos3.htm#226">226</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">FUNCION</td>
+    <td class="dta">2</td>
+    <td class="dta">57</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#371">371</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DATAFUNC</td>
+    <td class="dta">8</td>
+    <td class="dta">59</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#373">373</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">MARCAMOD</td>
+    <td class="dta">2</td>
+    <td class="dta">67</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos4.htm#337">337</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPPOS</td>
+    <td class="dta">2</td>
+    <td class="dta">69</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#334">334</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPCOM</td>
+    <td class="dta">2</td>
+    <td class="dta">71</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#336">336</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">VENDA DE COMBUSTÍVEIS</td>
+    <td class="dta">1</td>
+    <td class="dta">73</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp1400.htm#1460">1460</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">KEY ENTER</td>
+    <td class="dta">1</td>
+    <td class="dta">74</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp1400.htm#1471">1471</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TOTAL</td>
+    <td class="dta">74</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="nove"><strong>Alteração do Estado de Funcionamento (GESTRM = 03)</strong></p>
+
+<p>Os TPAs podem ter vários estados: em funcionamento, desactivado, mudança de Entidade
+de Apoio, etc. A alteração deste estado é informada à Entidade, juntamente com a
+identificação do terminal.</p>
+
+<p><br>
+</p>
+
+<table CELLSPACING="0" BORDER="1" CELLPADDING="2">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">Nº Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPREG</td>
+    <td class="dta">1</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq">= 4</td>
+  </tr>
+  <tr>
+    <td class="esq">GESTRM</td>
+    <td class="dta">2</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#370">370</a></td>
+    <td class="esq">= <strong>03</strong></td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDCOMEMP</td>
+    <td class="dta">7</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDEST</td>
+    <td class="dta">4</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#328">328</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDPROP</td>
+    <td class="dta">7</td>
+    <td class="dta">15</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos1.htm#068">068</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPOTERM</td>
+    <td class="dta">1</td>
+    <td class="dta">22</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos1.htm#003">003</a></td>
+    <td class="esq">= <strong>B</strong></td>
+  </tr>
+  <tr>
+    <td class="esq">BANAPOIO</td>
+    <td class="dta">4</td>
+    <td class="dta">23</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos3.htm#241">241</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDTERMINAL</td>
+    <td class="dta">10</td>
+    <td class="dta">27</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos1.htm#006">006</a></td>
+    <td class="esq">00NNNNNNNN (n.º do TPA)</td>
+  </tr>
+  <tr>
+    <td class="esq">FUNCION</td>
+    <td class="dta">2</td>
+    <td class="dta">37</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#371">371</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DATAFUNC</td>
+    <td class="dta">8</td>
+    <td class="dta">39</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#373">373</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TOTAL</td>
+    <td class="dta">46</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">TRMC - TIPO DE REGISTO <a name="= 5">= 5</a>
+(EMISSÃO DE PEDIDO DE CARTÕES DE SUPERVISÃO &#150; Entidade de Apoio do Terminal)</p>
+
+<p>Este registo informa quantos cartões de supervisão, de operador e de
+depósito PMB associados à conta do cliente-comerciante, foram solicitados para
+produção. </p>
+
+<p><br>
+</p>
+
+<table CELLSPACING="0" BORDER="1" CELLPADDING="2">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">Nº Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPREG</td>
+    <td class="dta">1</td>
+    <td class="dta">1</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq">= 5</td>
+  </tr>
+  <tr>
+    <td class="esq">GESTRM</td>
+    <td class="dta">2</td>
+    <td class="dta">2</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos4.htm#370">370</a></td>
+    <td class="esq">= <strong>05</strong></td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDCOMEMP</td>
+    <td class="dta">7</td>
+    <td class="dta">4</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDEST</td>
+    <td class="dta">4</td>
+    <td class="dta">11</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos4.htm#328">328</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDPROP</td>
+    <td class="dta">7</td>
+    <td class="dta">15</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos1.htm#068">068</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">N-CRT-SUP</td>
+    <td class="dta">2</td>
+    <td class="dta">22</td>
+    <td >N</td>
+    <td><a href="../../Campos/camp1000.htm#1066">1066</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">N-CRT-DEP-PMB</td>
+    <td class="dta">2</td>
+    <td class="dta">24</td>
+    <td >N</td>
+    <td><a href="../../Campos/camp1000.htm#1063">1063</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">N-CRT-OPER</td>
+    <td class="dta">2</td>
+    <td class="dta">26</td>
+    <td >N</td>
+    <td><a href="../../Campos/camp1000.htm#1064">1064</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DATAPROC</td>
+    <td class="dta">8</td>
+    <td class="dta">28</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos4.htm#380">380</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">CODBAN </td>
+    <td class="dta">4</td>
+    <td class="dta">36</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">CODAGE</td>
+    <td class="dta">4</td>
+    <td class="dta">40</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos2.htm#134">134</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">CONTA</td>
+    <td class="dta">15</td>
+    <td class="dta">44</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TOTAL</td>
+    <td class="dta">58</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+</html>

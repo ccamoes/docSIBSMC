@@ -1,0 +1,1137 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>PERSONALIZAÇÃO DE CARTÕES EMV</title>
+<script>top.captulos.location='indicee.htm#E';</script>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: PERSONALIZAÇÃO DE CARTÕES EMV</td>
+        <td class="fichdta">&quot;FICH&quot; = PEMV</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Este ficheiro é enviado pela SIBS aos Bancos emissores de cartões EMV que pretendam
+efectuar a personalização física dos cartões num centro alternativo à SIBS. É
+enviado quando se justifique, em função do valor do campo (<a href="../../Campos/campos5.htm#488">488</a>) Diferimento, indicado pelo Banco no ficheiro
+de Emissão de Cartões (<a href="eecb.htm" target="main">EECB</a>).</p>
+
+<p>As aplicações a incluir em cada cartão, bem como os dados do cliente, são obtidos a
+partir do ficheiro <a href="eecb.htm" target="main">EECB</a> correspondente.</p>
+
+<p>Para garantir a correcta personalização dos plásticos, é ainda necessário
+considerar as parametrizações genéricas, descritas em documento próprio (<a href="../l-ii/a_a5.pdf" target="main">Anexo 5</a> ao Capítulo A do Livro II do Modelo
+Global).</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li><strong>o registo de <em>Header</em> do ficheiro &quot;TIPREG=0&quot;</strong></li>
+</ul>
+
+<ul>
+  <li><strong>registo de chaves &quot;TIPREG=1&quot;</strong></li>
+</ul>
+
+<blockquote>
+  <p>Neste tipo de registo são identificadas as chaves de transporte utilizadas para
+  protecção dos dados incluídos nos restantes tipos de registos.<br>
+  Existe apenas um &quot;TIPREG=1&quot;, composto pela concatenação de duas
+  chaves de cifra:<ul type="square">
+    <li>KS PIN - cifra do PIN</li>
+    <li>KS KEY - cifra de chaves </li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li><strong>registos de Detalhe </strong></li>
+</ul>
+
+<blockquote>
+  <p>Os registos de detalhe (tipos de registo 2 a 4) informam os campos necessários à
+  personalização das Aplicações EMV a incluir nos cartões. <ul type="square">
+    <li><em>registos de detalhe <strong>&quot;TIPREG=2&quot;</strong></em></li>
+  </ul>
+  <blockquote>
+    <p>Os elementos informados no TIPREG=2 são comuns a todas as aplicações existentes para
+    um mesmo cartão EMV. <br>
+    Existe um TIPREG=2 por cada cartão a personalizar.<br>
+    Este tipo de registo transporta um conjunto de campos não sensíveis no canal de
+    transmissão seguro entre os Emissores e a SIBS, pelo que são informados em claro (i.e.,
+    sem cifra). Estes campos correspondem aos vários componentes do PAN, e possibilitam a
+    rápida identificação do cartão a personalizar.<br>
+    Este tipo de registo transporta ainda o elemento &quot;Reference PIN&quot;
+    cifrado pela chave KS PIN.</p>
+  </blockquote>
+  <ul type="square">
+    <li style="page-break-before: always"><em>registos de detalhe &quot;<strong>TIPREG=3</strong>&quot;</em></li>
+  </ul>
+  <blockquote>
+    <p>Neste tipo de registo informam-se elementos por Aplicação. <br>
+    Por cada registo de tipo 2 existe uma ou mais ocorrências de TIPREG=3, referentes a cada
+    aplicação a posicionar no cartão.<br>
+    Os dados sensíveis estão cifrados pela chave KS KEY.</p>
+  </blockquote>
+  <ul type="square">
+    <li><em>registos de detalhe &quot;<strong>TIPREG=4</strong>&quot; (opcional)</em></li>
+  </ul>
+  <blockquote>
+    <p>O TIPREG=4 só existe quando o cartão-<em>chip</em> a personalizar suporta DDA (<em>Dynamic
+    Data Authentication</em>). Esta característica técnica é identificada no momento do
+    processamento do ficheiro de Emissão de Cartões, a partir da informação posicionada no
+    Contrato de produção de cartões.<br>
+    Por cada registo de tipo 2 existe uma ou mais ocorrências de TIPREG=4, referentes a cada
+    aplicação a posicionar no cartão.<br>
+    Os dados sensíveis estão cifrados pela chave KS KEY.</p>
+  </blockquote>
+</blockquote>
+
+<ul>
+  <li><strong>o registo de <em>Trailer</em> &quot;TIPREG=9&quot;</strong></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>Representação da estrutura do ficheiro:</p>
+
+<blockquote>
+  <p><img src="imagens3/pemv.gif" alt="pemv.gif" WIDTH="357" HEIGHT="418"></p>
+</blockquote>
+
+<p><br>
+O ficheiro é constituído por registos de comprimento fixo, com 1268
+posições.</p>
+
+<p>&nbsp;</p>
+
+<h6 style="page-break-before: always" ><u>OBSERVAÇÕES</u></h6>
+
+<p><br>
+Para que seja possível garantir a correcta personalização, e posterior funcionamento
+dos cartões após a emissão, a máscara de <em>chip</em> utilizada deve obedecer a um
+conjunto de requisitos tecnológicos que a seguir se discriminam.</p>
+
+<p>Requisitos mínimos da máscara do <em>chip</em> para emitir cartões Visa: 
+
+<ul >
+  <li>Versão da norma: VIS 1.4.0</li>
+  <li>Capacidade de memória para suportar o número de aplicações simultâneas que o Banco
+    pretende colocar no cartão, de acordo com o &quot;PersType&quot; que vai ser usado (1, 2
+    ou 3 aplicações).</li>
+  <li>Suporte de PDOL e <em>Geographical restrictions check</em>.</li>
+  <li>Suporte de <em>Partial name selection</em> e <em>SELECT next option</em>.</li>
+  <li>Suporte de 2ª moeda.</li>
+  <li>C<em>ryptogram Version Number</em> 0Ah.</li>
+  <li><em>Offline Data Authentication:</em> SDA - <em>Static Data Authentication</em></li>
+  <li>Suporte dos seguintes comandos de <em>Issuer Script</em>:</li>
+</ul>
+
+<ul >
+  <ul  type="square">
+    <li>PIN CHANGE/UNBLOCK (só para cartões DDA) &#150; Alteração e/ou desbloqueio de PIN.</li>
+    <li>UPDATE RECORD &#150; Actualização do <em>record</em> da <em>Track 2 Equivalent Data</em>,
+      <em>record</em> das <em>tags</em> proprietárias (1º <em>record</em> do 3º ficheiro do
+      AFL) e <em>records</em> das funcionalidades adicionais (2º, 3º e 4º <em>records</em> do
+      3º ficheiro do AFL).</li>
+    <li>CARD BLOCK &#150; Bloqueio de cartão.</li>
+    <li>APPLICATION BLOCK &#150; Bloqueio de aplicação.</li>
+    <li>APPLICATION UNBLOCK &#150; Desbloqeio de aplicação.</li>
+    <li>PUT DATA &#150; Actualização dos parâmetros internos de risco do cartão:</li>
+  </ul>
+</ul>
+
+<ul >
+  <ul >
+    <ul  type="disc">
+      <li>Tag &#145;9F53&#146; - <em>&quot;Consecutive Transaction Limit (International)&quot;</em>.</li>
+      <li>Tag &#145;9F54&#146; - <em>&quot;Cumulative Total Transaction Amount Limit&quot;.</em></li>
+      <li>Tag &#145;9F58&#146; - <em>&quot;Lower Consecutive Offline Limit&quot;.</em></li>
+      <li>Tag &#145;9F59&#146; - <em>&quot;Upper Consecutive Offline Limit&quot;.</em></li>
+      <li>Tag &#145;9F72&#146; - <em>&quot;Consecutive Transaction Limit (International -
+        Country)&quot;.</em></li>
+      <li>Tag &#145;9F73&#146; - <em>&quot;Currency Conversion Factor&quot;.</em></li>
+      <li>Tag &#145;9F75&#146; - <em>&quot;Cumulative Total Transaction Amount Limit (Dual
+        Currency)&quot;.</em></li>
+    </ul>
+  </ul>
+</ul>
+
+<p><br>
+Requisitos mínimos da máscara do <em>chip</em> para emitir cartões MasterCard: 
+
+<ul >
+  <li>Versão da norma: <em>M/Chip</em> 4.</li>
+  <li>Capacidade de memória para suportar o número de aplicações simultâneas que o Banco
+    pretende colocar no cartão, de acordo com o &quot;PersType&quot; que vai ser usado (1 ou
+    2 aplicações).</li>
+  <li>Suporte de <em>Partial name selection</em> e <em>SELECT next option</em>.</li>
+  <li>Suporte de 2ª moeda.</li>
+  <li><em>Cryptogram Version Number</em> 10h.</li>
+  <li><em>Offline Data Authentication</em>: SDA - <em>Static Data Authentication</em>.</li>
+  <li>Suporte dos seguintes comandos de <em>Issuer Script</em>:</li>
+</ul>
+
+<ul>
+  <ul  type="square">
+    <li>PIN CHANGE/UNBLOCK (só para cartões DDA) &#150; Alteração e/ou desbloqueio de PIN.</li>
+    <li>UPDATE RECORD &#150; Actualização do <em>record</em> da <em>Track 2 Equivalent Data</em>,
+      <em>record</em> das <em>tags</em> proprietárias (1º <em>record</em> do 3º ficheiro do
+      AFL) e <em>records</em> das funcionalidades adicionais (2º, 3º e 4º <em>records</em> do
+      3º ficheiro do AFL).</li>
+    <li>CARD BLOCK &#150; Bloqueio de cartão.</li>
+    <li>APPLICATION BLOCK &#150; Bloqueio de aplicação.</li>
+    <li>APPLICATION UNBLOCK &#150; Desbloqeio de aplicação.</li>
+    <li>PUT DATA &#150; Actualização dos parâmetros internos de risco do cartão:</li>
+  </ul>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <ul >
+      <li>Tag &#145;9F14&#146; - <em>&quot;Lower Consecutive Offline Limit&quot;</em>.</li>
+      <li>Tag &#145;9F23&#146; - <em>&quot;Upper Consecutive Offline Limit&quot;</em>.</li>
+      <li>Tag &#145;CA&#146; - <em>&quot;Lower Cumulative Offline Transaction Amount&quot;</em>.</li>
+      <li>Tag &#145;CB&#146; - <em>&quot;Upper Cumulative Offline Transaction Amount&quot;</em>.</li>
+      <li>Tag &#145;D1&#146; - <em>&quot;Currency Conversion Table&quot;</em>.</li>
+    </ul>
+  </blockquote>
+</blockquote>
+
+<p><br>
+Requisitos mínimos da máscara do <em>chip</em> para emitir cartões AMEX: 
+
+<ul>
+  <li><p>A definir posteriormente.</p>
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h6 ><u>VERSÕES</u></h6>
+
+<ul>
+  <li >As primeiras informações sobre o ficheiro PEMV foram publicadas na versão
+    4.3 do Modelo Global, de Junho de 2003.</li>
+  <li >Em Janeiro de 2004, finalizou-se a implementação do ficheiro PEMV. Nesta
+    data, a documentação anterior foi revista para integrar alterações introduzidas
+    durante a fase de implementação. Não se incrementou a versão do ficheiro, que se
+    mantém como versão 00 (primeira versão implementada).</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">PEMV - TIPO DE REGISTO = 1 (CHAVES DE
+CIFRA) </p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">KEY-KSPIN</td>
+    <td class="dta" width="45">32</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1748">1748</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">KEY-KSKEY</td>
+    <td class="dta" width="45">32</td>
+    <td class="dta" width="45">34</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1749">1749</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">PEMV - TIPO DE REGISTO = 2 (ELEMENTOS COMUNS, POR CARTÃO) </p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq">= 2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">18</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="250" colspan="3"><em>ELEMENTOS EMV CIFRADOS POR KS PIN</em></td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">REF-PIN</td>
+    <td class="dta" width="45">16</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1751">1751</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="250" colspan="3"><em>ELEMENTOS NÃO CIFRADOS</em></td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">PVV2</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">38</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#028">028</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CVV1-CVC1</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">42</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#496">496</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CVV2-CVC2</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">45</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos6.htm#508">508</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CVV3-CVC3</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">48</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1752">1752</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SERVCOD</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">51</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1133">1133</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">PISTA3 (a)</td>
+    <td class="dta" width="45">104</td>
+    <td class="dta" width="45">54</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#106">106</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FILLER</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">158</td>
+    <td width="45">H</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq">= '80000000'</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" width="100%" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap>(a) - &nbsp; </td>
+    <td class="esq">Mantém-se o campo (<a href="../../Campos/campos2.htm#106">106</a>) PISTA3
+    por forma a garantir uma maior compatibilidade com funções actuais durante a fase de
+    migração para o <em>chip</em>.</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">PEMV - TIPO DE REGISTO = 3 (ELEMENTOS POR APLICAÇÃO) </p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="180">Nome do Campo </td>
+    <td class="fundo">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="180">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TIPREG</td>
+    <td class="dta">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq">= 3</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">BIN</td>
+    <td class="dta">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">EXBIN</td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">NUMCAR</td>
+    <td class="dta">7</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">CARCD</td>
+    <td class="dta">1</td>
+    <td class="dta" width="45">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td class="dta">4</td>
+    <td class="dta" width="45">18</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">EMV-AID-LGT</td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1714">1714</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">EMV-AID-SIBS</td>
+    <td class="dta">16</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1713">1713</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">EMV-PREFNAME</td>
+    <td class="dta">16</td>
+    <td class="dta" width="45">40</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1717">1717</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2"><em>ELEMENTOS EMV NÃO CIFRADOS</em></td>
+    <td class="esq" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">AFL</td>
+    <td class="dta">24</td>
+    <td class="dta" width="45">56</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1753">1753</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">VERSAOAPLIC</td>
+    <td class="dta">4</td>
+    <td class="dta" width="45">80</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1746">1746</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">DATAACTIVA</td>
+    <td class="dta">6</td>
+    <td class="dta" width="45">84</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1754">1754</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">APP-PROFILE</td>
+    <td class="dta">4</td>
+    <td class="dta" width="45">90</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp800.htm#891">891</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">KEY-PKI</td>
+    <td class="dta">4</td>
+    <td class="dta" width="45">94</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1755">1755</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">CVMLIST</td>
+    <td class="dta">var.</td>
+    <td class="dta" width="45">98</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1784">1784</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="180">ISS-CERTIF</td>
+    <td class="dta">260<br>
+    ou 292</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" class="mid">H</td>
+    <td width="85" class="mid"><a href="../../Campos/camp1700.htm#1756">1756</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">ISS-EXPONE</td>
+    <td class="dta">4</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1757">1757</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">ISS-REMAIN</td>
+    <td class="dta">42</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1758">1758</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">SDA-TAGLIST</td>
+    <td class="dta">4</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1759">1759</a></td>
+    <td class="esq">= '0182'</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="180">SSAD</td>
+    <td class="dta">226<br>
+    ou 260<br>
+    ou 292</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" class="mid">H</td>
+    <td width="85" class="mid"><a href="../../Campos/camp1700.htm#1760">1760</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">ELEMENTOS DE GESTÃO DE RISCO (<a href="pemv.htm#a" target="main">a</a>)</td>
+    <td class="dta">97</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="3"><em>ELEMENTOS EMV CIFRADOS POR KS KEY</em></td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">KEY-UDK A (UDK A)</td>
+    <td class="dta">16</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1762">1762</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">KEY-UDK B (UDK B)</td>
+    <td class="dta">16</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1762">1762</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">KEY-UDKDATA A (UDK ENC A)</td>
+    <td class="dta">16</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1763">1763</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">KEY-UDKDATA B (UDK ENC B)</td>
+    <td class="dta">16</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1763">1763</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">KEY-UDKMAC A (UDK MAC A)</td>
+    <td class="dta">16</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1764">1764</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">KEY-UDKMAC B (UDK MAC B)</td>
+    <td class="dta">16</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1764">1764</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="4"><em>ELEMENTOS CRIPTOGRÁFICOS EMV NÃO CIFRADOS </em></td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">CVN-CRIPTOG</td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1765">1765</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">KEY-DKI</td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1766">1766</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">FILLER</td>
+    <td class="dta">12</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq">= '800000000000'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2"><em>ELEMENTOS PROPRIETÁRIOS</em></td>
+    <td class="esq" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">CONTASASSOC</td>
+    <td class="dta">22</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1767">1767</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">EMV-TCRU</td>
+    <td class="dta">38</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1768">1768</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">EMV-SEQPAN</td>
+    <td class="dta">8</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1769">1769</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">EMV-IDCLIENTE</td>
+    <td class="dta">32</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1770">1770</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">INIB-TXCLIENTE</td>
+    <td class="dta">8</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1771">1771</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">ISS-PAIS</td>
+    <td class="dta">10</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1772">1772</a></td>
+    <td class="esq">= 'DF48020620'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2"><em>FUNCIONALIDADES ADICIONAIS</em></td>
+    <td class="esq">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">LINHACRE</td>
+    <td class="dta">86</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1773">1773</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">FIDELIZACAO</td>
+    <td class="dta">74</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1774">1774</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">PROGEMISSOR</td>
+    <td class="dta">12</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1775">1775</a></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" width="100%" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap><strong>(<a name="a">a</a>)</strong>&nbsp;&nbsp; </td>
+    <td class="esq"><strong>ELEMENTOS DE GESTÃO DE RISCO</strong><p class="nove">Os campos
+    aqui incluídos dependem do Sistema de Pagamento e da versão de especificações
+    (&quot;máscara&quot;) do <em>chip</em>. Esta última característica técnica é
+    determinada pela informação posicionada no contrato de produção de cartões (campo
+    &quot;(<a href="../../Campos/campos5.htm#469">469</a>) CONTRATO&quot;, informado através
+    do ficheiro de Emissão de Cartões - <a href="eecb.htm" target="main">EECB</a>), no qual
+    é indicada a versão de especificações suportada pelo cartão-<em>chip</em>.</td>
+  </tr>
+</table>
+
+<p ALIGN="center">&nbsp;</p>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="565">
+  <tr>
+    <td WIDTH="69%" class="fundo">Nome do Campo</td>
+    <td WIDTH="8%" class="fundo">Comp.</td>
+    <td WIDTH="6%" class="fundo">Rep.</td>
+    <td WIDTH="13%" class="fundo">N.º Campo</td>
+  </tr>
+  <tr>
+    <td WIDTH="37%" class="esq">INDICADOR DE PRESENÇA - ELEMENTOS DE GESTÃO DE RISCO</td>
+    <td WIDTH="8%">11</td>
+    <td WIDTH="6%">N</td>
+    <td WIDTH="13%"><a href="../../Campos/camp1700.htm#1761">1761</a></td>
+  </tr>
+  <tr>
+    <td WIDTH="69%" class="esq">ELEMENTOS POSSÍVEIS:</td>
+    <td WIDTH="8%">&nbsp;</td>
+    <td WIDTH="6%">&nbsp;</td>
+    <td WIDTH="13%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td WIDTH="69%" class="esq">Lower Consecutive Offline Limit (LCOL)</td>
+    <td WIDTH="8%">2</td>
+    <td WIDTH="6%">H</td>
+    <td WIDTH="13%"><a href="../../Campos/camp1700.htm#1730">1730</a></td>
+  </tr>
+  <tr>
+    <td WIDTH="69%" class="esq">Upper Consecutive Offline Limit (UCOL) </td>
+    <td WIDTH="8%">2</td>
+    <td WIDTH="6%">H</td>
+    <td WIDTH="13%"><a href="../../Campos/camp1700.htm#1731">1731</a></td>
+  </tr>
+  <tr>
+    <td WIDTH="69%" class="esq">Consecutive Transaction Limit (International) </td>
+    <td WIDTH="8%">2</td>
+    <td WIDTH="6%">H</td>
+    <td WIDTH="13%"><a href="../../Campos/camp1700.htm#1728">1728</a></td>
+  </tr>
+  <tr>
+    <td WIDTH="69%" class="esq">Consecutive Transaction Limit (International-Country) </td>
+    <td WIDTH="8%">2</td>
+    <td WIDTH="6%">H</td>
+    <td WIDTH="13%"><a href="../../Campos/camp1700.htm#1729">1729</a></td>
+  </tr>
+  <tr>
+    <td WIDTH="69%" class="esq">Cumulative Total Transaction Amount Limit </td>
+    <td WIDTH="8%">12</td>
+    <td WIDTH="6%">N</td>
+    <td WIDTH="13%"><a href="../../Campos/camp1700.htm#1726">1726</a></td>
+  </tr>
+  <tr>
+    <td WIDTH="69%" class="esq">Cumulative Total Transaction Amount Limit - Dual Currency </td>
+    <td WIDTH="8%">12</td>
+    <td WIDTH="6%">N</td>
+    <td WIDTH="13%"><a href="../../Campos/camp1700.htm#1726">1726</a></td>
+  </tr>
+  <tr>
+    <td WIDTH="69%" class="esq">Currency Conversion Factor </td>
+    <td WIDTH="8%">8</td>
+    <td WIDTH="6%">N</td>
+    <td WIDTH="13%"><a href="../../Campos/camp1700.htm#1725">1725</a></td>
+  </tr>
+  <tr>
+    <td WIDTH="69%" class="esq">Cumul. Total Transaction Amount Upper Limit</td>
+    <td WIDTH="8%">12</td>
+    <td WIDTH="6%">N</td>
+    <td WIDTH="13%"><a href="../../Campos/camp1700.htm#1727">1727</a></td>
+  </tr>
+  <tr>
+    <td WIDTH="69%" class="esq">Lower Cumulative Offline Transaction Amount </td>
+    <td WIDTH="8%">12</td>
+    <td WIDTH="6%">N</td>
+    <td WIDTH="13%"><a href="../../Campos/camp1700.htm#1726">1726</a></td>
+  </tr>
+  <tr>
+    <td WIDTH="69%" class="esq">Upper Cumulative Offline Transaction Amount </td>
+    <td WIDTH="8%">12</td>
+    <td WIDTH="6%">N</td>
+    <td WIDTH="13%"><a href="../../Campos/camp1700.htm#1727">1727</a></td>
+  </tr>
+  <tr>
+    <td WIDTH="69%" class="esq">Currency Conversion Table </td>
+    <td WIDTH="8%">10</td>
+    <td WIDTH="6%">H</td>
+    <td WIDTH="13%"><a href="../../Campos/camp1700.htm#1785">1785</a></td>
+  </tr>
+  <tr>
+    <td WIDTH="69%" class="esq">FILLER </td>
+    <td WIDTH="8%">&nbsp;</td>
+    <td WIDTH="6%">&nbsp;</td>
+    <td WIDTH="13%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td WIDTH="69%" class="dta">TOTAL</td>
+    <td WIDTH="8%" >97</td>
+    <td WIDTH="6%">&nbsp;</td>
+    <td WIDTH="13%">&nbsp;</td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">PEMV - TIPO DE REGISTO = 4 (ELEMENTOS POR APLICAÇÃO - DDA) </p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="180">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="180">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq">= 4</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">BIN</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">EXBIN</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">NUMCAR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">CARCD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">18</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">EMV-AID-LGT</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1714">1714</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">EMV-AID-SIBS</td>
+    <td class="dta" width="45">16</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1713">1713</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2"><em>ELEMENTOS EMV NÃO CIFRADOS</em></td>
+    <td class="esq" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="180">ICC-CERTIF</td>
+    <td class="dta" width="45">226<br>
+    ou 260<br>
+    ou 292</td>
+    <td class="dta" width="45"><br>
+    40</td>
+    <td width="45" class="mid">H</td>
+    <td width="85" class="mid"><a href="../../Campos/camp1700.htm#1776">1776</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">ICC-EXPONE</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1777">1777</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">ICC-REMAIN</td>
+    <td class="dta" width="45">42</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1778">1778</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="3"><em>ELEMENTOS EMV CIFRADOS POR KS KEY</em></td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="180">ICCKEY-DDA</td>
+    <td class="dta" width="45">226<br>
+    ou 260<br>
+    ou 292</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" class="mid">H</td>
+    <td width="85" class="mid"><a href="../../Campos/camp1700.htm#1782">1782</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">&quot;PADDING&quot;</td>
+    <td class="dta" width="45">12<br>
+    ou 14</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">H</td>
+    <td width="85">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

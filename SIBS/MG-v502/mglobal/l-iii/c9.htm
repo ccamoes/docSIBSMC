@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>C.9 COMPACTAÇÃO DE DADOS </title>
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicec.htm#C';</script>
+</head>
+
+<body>
+
+<h1>C.9 COMPACTAÇÃO DE DADOS </h1>
+
+<p>&nbsp;</p>
+
+<p>A compactação destina-se a tornar mais rápida a transmissão, sempre que com um
+algoritmo apropriado se pode codificar a informação diminuindo o número de <em>bytes</em>
+a transmitir.</p>
+
+<p>A fim de usar algoritmos simples, fáceis de implementar e performantes, aplica-se a
+compactação apenas em ficheiros <em>display</em> (ASCII ou EBCDIC).</p>
+
+<p>A compactação faz-se ao nível do ficheiro, isto é, apenas aos dados e nunca aos
+headers nem aos parâmetros dos comandos. A unidade de informação a submeter de cada vez
+a este processo é um bloco (os dados que transporta uma mensagem).</p>
+
+<p>Estabelecem-se dois algoritmos, um específico para compactar caracteres repetidos e o
+outro para compactar caracteres numéricos mais &quot;A, B, C, D, E, F&quot;. Durante a
+compactação o primeiro será preferencialmente usado pois permite na maioria dos casos
+maior redução de caracteres.</p>
+
+<h5><br>
+Caracteres repetidos:</h5>
+
+<p>Um <em>string</em> de caracteres repetidos é substituído por 3 caracteres com o
+seguinte formato:</p>
+
+<p><img src="imagens3/c9-1.gif" alt="c9-1.gif" WIDTH="557" HEIGHT="168"></p>
+
+<h5><br>
+Caracteres numéricos + 'A B C D E F' :<br>
+</h5>
+
+<p>Um <em>string</em> que contenha apenas aqueles caracteres é substituído por outro <em>string</em>
+com o seguinte formato:<br>
+</p>
+
+<p><img src="imagens3/c9-2.gif" alt="c9-2.gif" WIDTH="541" HEIGHT="196"></p>
+
+<p style="page-break-before: always" class="times11">&nbsp;&nbsp; Exemplo:</p>
+
+<p class="times11">&nbsp;&nbsp; Não compact :
+&quot;AMFGHDJ004849FBD78A0000H00000000000000000JKLM&quot; </p>
+
+<p><img src="imagens3/c9-3.gif" alt="c9-3.gif" WIDTH="535" HEIGHT="154"></p>
+
+<p class="dta"><a href="c8.htm">Anterior</a>/<a href="c10.htm">Seguinte</a></p>
+</body>
+</html>

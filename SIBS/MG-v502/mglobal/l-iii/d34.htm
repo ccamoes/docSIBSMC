@@ -1,0 +1,648 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indiced.htm#D';</script>
+
+<title>D.3.4 ESPECIFICAÇÃO DAS MENSAGENS</title>
+</head>
+
+<body>
+
+<h2>D.3.4 ESPECIFICAÇÃO DAS MENSAGENS</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.3.4.1">D.3.4.1</a> MENSAGENS DE PEDIDO ENVIADAS PELA SIBS</h3>
+
+<p><br>
+Apresentam-se neste ponto os grupos de dados que constituem cada mensagem de pedido
+enviada pela SIBS e a estrutura detalhada de cada uma delas.</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+  <tr>
+    <th rowspan="2" class="fundo">GRUPOS DE DADOS</th>
+    <th rowspan="2" class="fundo">COMP.</th>
+    <th colspan="5">CÓDIGOS DAS MENSAGENS</th>
+  </tr>
+  <tr>
+    <td class="fundo"><a target="main" href="116x316x.htm">1161</a><br>
+    <a target="main" href="116x316x.htm">3161</a></td>
+    <td class="fundomid"><a href="216x.htm">2161</a></td>
+    <td class="fundomid"><a href="116x316x.htm">1162</a></td>
+    <td class="fundomid"><a href="216x.htm">2162</a></td>
+    <td class="fundomid"><a href="11633163.htm">1163</a><br>
+    <a href="11633163.htm">3163</a></td>
+  </tr>
+  <tr>
+    <td class="esq"><em>HEADER</em> DO PEDIDO</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS TERMINAL GLOBAL</td>
+    <td class="dta">77</td>
+    <td class="dta">77</td>
+    <td class="dta">77</td>
+    <td class="dta">77</td>
+    <td class="dta">77</td>
+    <td class="dta">77</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS TERMINAL REDE MB</td>
+    <td class="dta">19</td>
+    <td class="dta">19</td>
+    <td class="dta">19</td>
+    <td class="dta">19</td>
+    <td class="dta">19</td>
+    <td class="dta">19</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DO CARTÃO</td>
+    <td class="dta">25</td>
+    <td class="dta">25</td>
+    <td class="dta">25</td>
+    <td class="dta">25</td>
+    <td class="dta">25</td>
+    <td class="dta">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS ADICIONAIS DO CARTÃO</td>
+    <td class="dta">8</td>
+    <td class="dta">8</td>
+    <td class="dta">8</td>
+    <td class="dta">8</td>
+    <td class="dta">8</td>
+    <td class="dta">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DA CONTA</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DO NIB DO CLIENTE</td>
+    <td class="dta">21</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">21</td>
+  </tr>
+  <tr>
+    <td class="esq">MONTANTES DA OPERAÇÃO</td>
+    <td class="dta">22</td>
+    <td class="dta">22</td>
+    <td class="dta">22</td>
+    <td class="dta">22</td>
+    <td class="dta">22</td>
+    <td class="dta">22</td>
+  </tr>
+  <tr>
+    <td class="esqmid">DADOS VARIÁVEIS MSG PEDIDO</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DA OPERAÇÃO ORIGINAL</td>
+    <td class="dta">64</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">64</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">64</td>
+    <td class="dta">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="dtamid">TOTAL</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">210<br>
+    a 1906</td>
+    <td class="dta">274<br>
+    a 1970</td>
+    <td class="dta">210<br>
+    a 1906</td>
+    <td class="dta">274<br>
+    a 1970</td>
+    <td class="dta">183<br>
+    a 1879</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+  <tr>
+    <th rowspan="2" class="fundo">GRUPOS DE DADOS</th>
+    <th rowspan="2" class="fundo">COMP.</th>
+    <th colspan="5">CÓDIGOS DAS MENSAGENS</th>
+  </tr>
+  <tr>
+    <td class="fundomid" checked="false"><a href="1172.htm">1172</a></td>
+    <td class="fundomid" checked="false"><a href="11823182.htm">1182</a><br>
+    <a href="11823182.htm">3182</a></td>
+    <td class="fundomid"><a href="2182.htm">2182</a></td>
+    <td class="fundo" checked="false"><a href="11473147.htm">1147</a><br>
+    <a href="11473147.htm">3147</a></td>
+    <td class="fundomid" checked="false"><a href="2147.htm">2147</a></td>
+  </tr>
+  <tr>
+    <td class="esq"><em>HEADER</em> DO PEDIDO</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS TERMINAL GLOBAL</td>
+    <td class="dta">77</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">77</td>
+    <td class="dta">77</td>
+    <td class="dta">77</td>
+    <td class="dta">77</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS TERMINAL REDE MB</td>
+    <td class="dta">19</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">19</td>
+    <td class="dta">19</td>
+    <td class="dta">19</td>
+    <td class="dta">19</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DO CARTÃO</td>
+    <td class="dta">25</td>
+    <td class="dta">25</td>
+    <td class="dta">25</td>
+    <td class="dta">25</td>
+    <td class="dta">25</td>
+    <td class="dta">25</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS ADICIONAIS DO CARTÃO</td>
+    <td class="dta">8</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">8</td>
+    <td class="dta">8</td>
+    <td class="dta">8</td>
+    <td class="dta">8</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DA CONTA</td>
+    <td class="dta">15</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+  </tr>
+  <tr>
+    <td class="esq">MONTANTES DA OPERAÇÃO</td>
+    <td class="dta">22</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">22</td>
+    <td class="dta">22</td>
+    <td class="dta">22</td>
+    <td class="dta">22</td>
+  </tr>
+  <tr>
+    <td class="esqmid">DADOS VARIÁVEIS MSG PEDIDO</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DA OPERAÇÃO ORIGINAL</td>
+    <td class="dta">64</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">64</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">64</td>
+  </tr>
+  <tr>
+    <td class="dtamid">TOTAL</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">69<br>
+      a 1765</td>
+    <td class="dta">210<br>
+    a 1906</td>
+    <td class="dta">274<br>
+    a 1970</td>
+    <td class="dta">210<br>
+    a 1906</td>
+    <td class="dta">274<br>
+    a 1970</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table style="page-break-before: always" border="1" cellpadding="2" cellspacing="0"
+width="100%">
+  <tr>
+    <th rowspan="2" class="fundo">GRUPOS DE DADOS</th>
+    <th rowspan="2" class="fundo">COMP.</th>
+    <th colspan="7">CÓDIGOS DAS MENSAGENS</th>
+  </tr>
+  <tr>
+    <td class="fundo"><a href="3164.htm" target="main">3164</a></td>
+    <td class="fundomid"><a href="2164.htm" target="main">2164</a></td>
+    <td class="fundomid"><a href="3135.htm">3135</a></td>
+    <td class="fundomid"><a href="3136.htm">3136</a></td>
+    <td class="fundomid"><a href="1137.htm">1137</a></td>
+    <td class="fundomid"><a href="3137.htm">3137</a></td>
+    <td class="fundomid"><a href="2137.htm">2137</a></td>
+  </tr>
+  <tr>
+    <td class="esq"><em>HEADER</em> DO PEDIDO</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+    <td class="dta">40</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS TERMINAL GLOBAL</td>
+    <td class="dta">77</td>
+    <td class="dta">77</td>
+    <td class="dta">77</td>
+    <td class="dta">77</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">77</td>
+    <td class="dta">77</td>
+    <td class="dta">77</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS TERMINAL REDE MB</td>
+    <td class="dta">19</td>
+    <td class="dta">19</td>
+    <td class="dta">19</td>
+    <td class="dta">19</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">19</td>
+    <td class="dta">19</td>
+    <td class="dta">19</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DO CARTÃO</td>
+    <td class="dta">25</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">25</td>
+    <td class="dta">25</td>
+    <td class="dta">25</td>
+    <td class="dta">25</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS ADICIONAIS DO CARTÃO</td>
+    <td class="dta">8</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">8</td>
+    <td class="dta">8</td>
+    <td class="dta">8</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DA CONTA</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DO COMERCIANTE</td>
+    <td class="dta">11</td>
+    <td class="dta">11</td>
+    <td class="dta">11</td>
+    <td class="dta">11</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DO <em>ACQUIRER</em></td>
+    <td class="dta">12</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">12</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">MONTANTES DA OPERAÇÃO</td>
+    <td class="dta">22</td>
+    <td class="dta">22</td>
+    <td class="dta">22</td>
+    <td class="dta">22</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">22</td>
+    <td class="dta">22</td>
+    <td class="dta">22</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DA OPERAÇÃO COMERCIANTE</td>
+    <td class="dta">7</td>
+    <td class="dta">7</td>
+    <td class="dta">7</td>
+    <td class="dta">7</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS LISTA NEGRA PAPEL</td>
+    <td class="dta">13</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">13</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DA AUTORIZAÇÃO</td>
+    <td class="dta">12</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">14</td>
+    <td class="dta">14</td>
+    <td class="dta">14</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS SEGURANÇA</td>
+    <td class="dta">48</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">48</td>
+    <td class="dta">48</td>
+    <td class="dta">48</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS ADICIONAIS EMV</td>
+    <td class="dta">90</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">90</td>
+    <td class="dta">90</td>
+    <td class="dta">90</td>
+  </tr>
+  <tr>
+    <td class="esqmid">DADOS VARIÁVEIS MSG PEDIDO</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DA OPERAÇÃO ORIGINAL</td>
+    <td class="dta">64</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">64</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">64</td>
+  </tr>
+  <tr>
+    <td class="dtamid">TOTAL</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">195<br>
+    a 1891</td>
+    <td class="dta">259<br>
+    a 1955</td>
+    <td class="dta">207<br>
+    a 1903</td>
+    <td class="dta">82<br>
+    a 1778</td>
+    <td class="dta">347<br>
+    a 2043</td>
+    <td class="dta">347<br>
+    a 2043</td>
+    <td class="dta">411<br>
+    a 2107</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.3.4.2">D.3.4.2</a> MENSAGENS DE RESPOSTA ENVIADAS PELOS PARTICIPANTES</h3>
+
+<p><br>
+Apresentam-se neste ponto os grupos de dados que constituem cada mensagem de resposta
+enviada por um Participante no Sistema MB e a estrutura detalhada de cada uma delas.</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+  <tr>
+    <th rowspan="2" class="fundo">GRUPOS DE DADOS</th>
+    <th rowspan="2" class="fundo">COMP.</th>
+    <th colspan="8">CÓDIGO DAS MENSAGENS</th>
+  </tr>
+  <tr>
+    <td class="fundomid"><a href="126x.htm">1261</a></td>
+    <td class="fundomid"><a href="126x.htm">1262</a></td>
+    <td class="fundomid"><a href="126x.htm">1263</a></td>
+    <td class="fundomid"><a href="1272.htm">1272</a></td>
+    <td class="fundomid"><a href="1282.htm">1282</a></td>
+    <td class="fundomid"><a href="1237.htm">1237</a></td>
+    <td class="fundomid"><a href="1247.htm">1247</a></td>
+    <td class="fundo"><a href="22xx32xx.htm">2261</a><br>
+      <a href="22xx32xx.htm">2262</a><br>
+      <a href="22xx32xx.htm">2264</a><br>
+    <a href="22xx32xx.htm">2237</a><br>
+    <a href="22xx32xx.htm">2247</a><br>
+    <a href="22xx32xx.htm">2282</a><br>
+    <a href="22xx32xx.htm">3261</a><br>
+    <a href="22xx32xx.htm">3262</a><br>
+    <a href="22xx32xx.htm">3263</a><br>
+    <a href="22xx32xx.htm">3264</a><br>
+    <a href="22xx32xx.htm">3235</a><br>
+    <a href="22xx32xx.htm">3236</a><br>
+    <a href="22xx32xx.htm">3237</a><br>
+    <a href="22xx32xx.htm">3247</a><br>
+    <a href="22xx32xx.htm">3282</a></td>
+  </tr>
+  <tr>
+    <td class="esq">HEADER DA RESPOSTA</td>
+    <td class="dta">20</td>
+    <td class="dta">20</td>
+    <td class="dta">20</td>
+    <td class="dta">20</td>
+    <td class="dta">20</td>
+    <td class="dta">20</td>
+    <td class="dta">20</td>
+    <td class="dta">20</td>
+    <td class="dta">20</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS DA RESPOSTA</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+    <td class="dta">15</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS ADICIONAIS DA RESPOSTA</td>
+    <td class="dta">3</td>
+    <td class="dta">3</td>
+    <td class="dta">3</td>
+    <td class="dta">3</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">3</td>
+    <td class="dta">3</td>
+    <td class="dta">3</td>
+    <td class="dta">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS SALDOS DE CONTA</td>
+    <td class="dta">50</td>
+    <td class="dta">50</td>
+    <td class="dta">50</td>
+    <td class="dta">50</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">50</td>
+    <td class="dta">50</td>
+    <td class="dta">50</td>
+    <td class="dta">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS SIDF DE CRÉDITO</td>
+    <td class="dta">48</td>
+    <td class="dta">48</td>
+    <td class="dta">48</td>
+    <td class="dta">48</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">48</td>
+    <td class="dta">48</td>
+    <td class="dta">48</td>
+    <td class="dta">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid">DADOS VARIÁVEIS MSG RESPOSTA</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">4<br>
+    a 1700</td>
+    <td class="dta">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="dtamid">TOTAL</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">140<br>
+    a 1836</td>
+    <td class="dta">140<br>
+    a 1836</td>
+    <td class="dta">140<br>
+    a 1836</td>
+    <td class="dta">39<br>
+    a 1735</td>
+    <td class="dta">140<br>
+    a 1836</td>
+    <td class="dta">140<br>
+    a 1836</td>
+    <td class="dta">140<br>
+    a 1836</td>
+    <td class="dta">35</td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="d33.htm" target="main">Anterior</a>/<a target="main" href="d4.htm">Seguinte</a></p>
+</body>
+</html>

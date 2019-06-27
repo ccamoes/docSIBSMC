@@ -1,0 +1,1147 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos 1100 (1100-1199)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.</td>
+    <td class="fundo">REP.</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="1100" name="1100">1100</a></td>
+    <td class="esq"><u>TAXA COMISSÃO EUROS</u> <p>Tarifa aplicada em euros e por operação,
+    na sequência do acordo celebrado entre um Estabelecimento de um Comerciante e o
+    Representante ou emissor de um cartão ou entre o Representante e o Emissor (interchange
+    fee).</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>3 int.<br>
+    2 dec.</td>
+    <td>TX-COM</td>
+  </tr>
+  <tr>
+    <td><a id="1101" name="1101">1101</a></td>
+    <td class="esq"><u>TELEFONE ESTABELECIMENTO</u> <p>Número de telefone associado ao
+    Estabelecimento.</td>
+    <td class="dta">10</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TEL-EST</td>
+  </tr>
+  <tr>
+    <td><a id="1102" name="1102">1102</a></td>
+    <td class="esq"><u>TIPO DE CARTÃO</u> </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1103" name="1103">1103</a></td>
+    <td class="esq"><u>TIPO DE SERVIÇO DE EXTRACTO</u> <p>Campo que informa o tipo de
+    serviço de extracto existente para o Estabelecimento onde está matriculado o TPA.</p>
+    <p>Assume os seguintes valores:<br>
+    &nbsp;&nbsp; 0 - Só com Compensação (Sem Extracto)<br>
+    &nbsp;&nbsp; 1 - Com Extracto por Fecho Local<br>
+    &nbsp;&nbsp; 3 - Por Fecho Mais Comissões<br>
+    &nbsp;&nbsp; 4 - Extracto electrónico por fecho local<br>
+    &nbsp;&nbsp; 5 - Extracto electrónico por fecho mais comissões</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIP-SERV-EXT</td>
+  </tr>
+  <tr>
+    <td><a id="1104" name="1104">1104</a></td>
+    <td class="esq"><u>TIPO PAGAMENTO</u> <p>Campo que indica o tipo de pagamento posicionado
+    para o representante ou emissor de um cartão.</p>
+      <p>&nbsp;&nbsp; 000 - Não aplicável<br>
+      &nbsp;&nbsp; 001 - Compra fim do mês<br>
+    &nbsp;&nbsp; 002 - Crédito permanente<br>
+    &nbsp;&nbsp; 003 - Crédito gratuito - prestações<br>
+      &nbsp;&nbsp; 201 - Tipo de pagamento default</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIP-PAG</td>
+  </tr>
+  <tr>
+    <td><a id="1105" name="1105">1105</a></td>
+    <td class="esq"><u>TSC ESCUDOS (Taxa Fixa)</u> <p>Campo preenchido a zeros.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>3 int.</td>
+    <td nowrap="nowrap">TSC-MB-FIXA-$</td>
+  </tr>
+  <tr>
+    <td><a id="1106" name="1106">1106</a></td>
+    <td class="esq"><u>TSC ESCUDOS (Valor Máximo)</u> <p>Campo preenchido a zeros.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>5 int.</td>
+    <td>TSC-MB-MAX-$</td>
+  </tr>
+  <tr>
+    <td><a id="1107" name="1107">1107</a></td>
+    <td class="esq"><u>TSC ESCUDOS (Valor Mínimo)</u> <p>Campo preenchido a zeros.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>3 int.</td>
+    <td>TSC-MB-MIN-$</td>
+  </tr>
+  <tr>
+    <td><a id="1108" name="1108">1108</a></td>
+    <td class="esq"><u>TSC EUROS (Taxa Fixa)</u> <p>Montante fixo a aplicar no cálculo da
+    Tarifa Sobre Comerciante (TSC), quando perante uma operação com um cartão na vertente
+    Multibanco.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>1 int.<br>
+    2 dec.</td>
+    <td>TSC-MB-FIXA</td>
+  </tr>
+  <tr>
+    <td><a id="1109" name="1109">1109</a></td>
+    <td class="esq"><u>TSC EUROS (Valor Máximo)</u> <p>Indica o valor máximo a aplicar na
+    TSC, quando perante uma operação com um cartão na vertente Multibanco.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>3 int.<br>
+    2 dec.</td>
+    <td>TSC-MB-MAX</td>
+  </tr>
+  <tr>
+    <td><a id="1110" name="1110">1110</a></td>
+    <td class="esq"><u>TSC EUROS (Valor Mínimo)</u> <p>Indica o valor mínimo a aplicar na
+    TSC, quando perante uma operação com um cartão na vertente Multibanco.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>1 int.<br>
+    2 dec.</td>
+    <td>TSC-MB-MIN</td>
+  </tr>
+  <tr>
+    <td><a id="1111" name="1111">1111</a></td>
+    <td class="esq"><u>TSC MULTIBANCO (%)</u> <p>Percentagem a aplicar para cálculo da Tarifa
+    Sobre Comerciante (TSC), quando perante uma operação com um cartão na vertente
+    Multibanco.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>2&nbsp; int.<br>
+    2 dec.</td>
+    <td>TSCMB</td>
+  </tr>
+  <tr>
+    <td><a id="1112" name="1112">1112</a></td>
+    <td class="esq"><u>TSC PMB (%)</u> <p>Percentagem a aplicar para cálculo da Tarifa Sobre
+    Comerciante (TSC), quando perante uma operação com um cartão PMB.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>2 int.<br>
+    2 dec.</td>
+    <td>TSC-PMB</td>
+  </tr>
+  <tr>
+    <td><a id="1113" name="1113">1113</a></td>
+    <td class="esq"><u>TSC PMB ESCUDOS (Valor Máximo)</u> <p>Campo preenchido a zeros.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>5 int.</td>
+    <td nowrap="nowrap">TSC-PMB-MAX-$</td>
+  </tr>
+  <tr>
+    <td><a id="1114" name="1114">1114</a></td>
+    <td class="esq"><u>TSC PMB ESCUDOS (Valor Mínimo)</u> <p>Campo preenchido a zeros.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>5 int.</td>
+    <td>TSC-PMB-MIN-$</td>
+  </tr>
+  <tr>
+    <td><a id="1115" name="1115">1115</a></td>
+    <td class="esq"><u>TSC PMB EUROS (Valor Máximo)</u> <p>Indica o valor máximo a aplicar
+    na TSC, quando perante uma operação com um cartão PMB.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>3 int.<br>
+    2 dec.</td>
+    <td nowrap="nowrap">TSC-MB-MAX</td>
+  </tr>
+  <tr>
+    <td><a id="1116" name="1116">1116</a></td>
+    <td class="esq"><u>TSC PMB EUROS (Valor Mínimo)</u> <p>Indica o valor mínimo a aplicar
+    na TSC, quando perante uma operação com um cartão PMB.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>3 int.<br>
+    2 dec.</td>
+    <td>TSC-MB-MIN</td>
+  </tr>
+  <tr>
+    <td><a id="1117" name="1117">1117</a></td>
+    <td class="esq"><u>VALOR DAS COMISSÕES DAS OPERAÇÕES CLIENTE A CRÉDITO DO COMERCIANTE</u>
+    </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br>
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1118" name="1118">1118</a></td>
+    <td class="esq"><u>VALOR DAS COMISSÕES DAS OPERAÇÕES CLIENTE A DÉBITO DO COMERCIANTE</u>
+    </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br>
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1119" name="1119">1119</a></td>
+    <td class="esq"><u>VALOR ADIANTAMENTOS</u> </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br>
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1120" name="1120">1120</a></td>
+    <td class="esq"><u>VALOR COMPRAS NACIONAIS</u> </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br>
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1121" name="1121">1121</a></td>
+    <td class="esq"><u>VALOR DEVOLUÇÕES</u> </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br>
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1122" name="1122">1122</a></td>
+    <td class="esq"><u>VALOR EXISTÊNCIAS DO CA</u> <p>Indica o montante em unidades (Escudos
+    ou Euros) que o Caixa Automático tem carregado nos seus cacifos.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1123" name="1123">1123</a></td>
+    <td class="esq"><u>VALOR LEVANTAMENTOS INTERNACIONAIS</u> <p>Indica o montante em unidades
+    (Escudos ou Euros) que o Caixa Automático disponibilizou em operações de Levantamento
+    com Cartões Internacionais.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1124" name="1124">1124</a></td>
+    <td class="esq"><u>VALOR LEVANTAMENTOS NACIONAIS</u> <p>Indica o montante em unidades
+    (Escudos ou Euros) que o Caixa Automático disponibilizou em operações de Levantamento
+    com Cartões Nacionais.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1125" name="1125">1125</a></td>
+    <td class="esq"><u>VALOR NOTA DO CACIFO</u> </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1126" name="1126">1126</a></td>
+    <td class="esq"><u>VALOR OPERAÇÕES CLIENTE CRÉDITO COMERCIANTE</u> </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br>
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1127" name="1127">1127</a></td>
+    <td class="esq"><u>VALOR OPERAÇÕES CLIENTE DÉBITO COMERCIANTE</u> </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br>
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1128" name="1128">1128</a></td>
+    <td class="esq"><u>VALOR DOS DEPÓSITOS</u> </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br>
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1129" name="1129">1129</a></td>
+    <td class="esq"><u>REFERÊNCIA DA INSERÇÃO / ALTERAÇÃO</u> <p>É a referência gerada
+    pelo Sistema da SIBS, quando um cartão é inserido (ou alterado) em Lista Negra urgente.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1130" name="1130">1130</a></td>
+    <td class="esq"><u>PROCESSO DE ALTERAÇÃO</u> <p>É o código do processo que deu origem
+    à inserção ou alteração de um cartão em Lista Negra.</p>
+    <p>&nbsp;&nbsp; 01 - Ficheiro do Banco<br />
+    &nbsp;&nbsp; 02 - Lista Negra urgente (gestão da rede)<br />
+    &nbsp;&nbsp; 03 - Lista Negra urgente (terminal bancário)<br />
+    &nbsp;&nbsp; 04 - Lista Negra rede (trans. online)<br />
+    &nbsp;&nbsp; 05 - Lista Negra rede (trans. reentrie)<br />
+    &nbsp;&nbsp; 06 - Revalidações - cartão expirado em L.N.<br />
+    &nbsp;&nbsp; 07 - Lista Negra Eurocheque<br />
+    &nbsp;&nbsp; 08 - Trans. estrangeiro - batch<br />
+    &nbsp;&nbsp; 09 - Trans. estrangeiro - online<br />
+    &nbsp;&nbsp; 10 - Cartão&nbsp; em L.N. há mais de 2 meses<br />
+    &nbsp;&nbsp; 11 - Cartão inexistente<br />
+    &nbsp;&nbsp; 12 - Lista Negra urgente (Unicre)<br>
+    &nbsp;&nbsp; 13 - SIDF - Ficheiro<br>
+    &nbsp;&nbsp; 14 - SIDF - Online<br />
+    &nbsp;&nbsp; 20 - Processo de segurança de POS Bxv<br />
+    &nbsp;&nbsp; 30 - Gestão de VIPs</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INS_ALT_LN</td>
+  </tr>
+  <tr>
+    <td><a id="1131" name="1131">1131</a></td>
+    <td class="esq"><u>CÓDIGO RESPOSTA REPRESENTANTE</u> <p>É o código de resposta que o
+    representante envia à SIBS, após a informação de inclusão (ou alteração) de um
+    cartão em Lista Negra urgente.</p>
+    <p>&nbsp;&nbsp; 00 - Transacção aceite em <em>Real-Time</em><br />
+    &nbsp;&nbsp; 05 - Recusa do Centro <em>Clearing</em><br />
+    &nbsp;&nbsp; 06 - Erro detectado pelo Centro <em>Clearing</em><br />
+    &nbsp;&nbsp; 14 - Nº de cartão inválido</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1132" name="1132">1132</a></td>
+    <td class="esq"><u>COMPLEMENTO CÓDIGO RESPOSTA REPRESENTANTE</u> <p>É o código que a
+    VISA envia à SIBS e que complementa o código de resposta do representante, após a
+    informação de inclusão (ou alteração) de um cartão em Lista Negra urgente.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1133" name="1133">1133</a></td>
+    <td class="esq"><u>CÓDIGO DO SERVIÇO (SERVICE CODE)</u> <p>É um código de 3 dígitos,
+    atribuído segundo a norma ISO Standard 7813, que permite a diferenciação dos sistemas
+    de pagamento onde os cartões poderão ser utilizados (nacionais ou internacionais); a
+    indicação de utilização ou não de PIN e restrições diversas aplicadas a famílias
+    de cartões.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SERVCODE</td>
+  </tr>
+  <tr>
+    <td><a id="1134" name="1134">1134</a></td>
+    <td class="esq"><u>DATA PRODUÇÃO OU ÚLTIMA RENOVAÇÃO DO CARTÃO</u> <p>É a data em
+    que o cartão foi produzido ou que foi renovado no sistema da SIBS.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTA_PRD_REN</td>
+  </tr>
+  <tr>
+    <td><a id="1135" name="1135">1135</a></td>
+    <td class="esq"><u>MONTANTE PLAFOND DO BANCO</u> </td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1136" name="1136">1136</a></td>
+    <td class="esq"><u>DATA DO ÚLTIMO MOVIMENTO CA</u> <p>Campo com a data do último
+    movimento executado com o cartão na rede de Caixas Automáticos.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>ATM_DTA_ULT</td>
+  </tr>
+  <tr>
+    <td><a id="1137" name="1137">1137</a></td>
+    <td class="esq"><u>NÚMERO DE LEVANTAMENTOS NO ANO</u> <p>Indica o número de
+    levantamentos efectuado durante o ano para um determinado cartão.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1138" name="1138">1138</a></td>
+    <td class="esq"><u>MONTANTE TOTAL DE LEVANTAMENTOS NO ANO</u> <p>Indica o montante total
+    de levantamentos efectuado durante o ano para um determinado cartão (se a moeda for
+    Escudos o montante indicado é em milhares de Escudos).<br>
+      Nota: campo substituído pelo <a href="camp2800.htm#2857">2857</a></td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1139" name="1139">1139</a></td>
+    <td class="esq"><u>MONTANTE GASTO NO DIA EM CA</u> <p>Indica o montante total de
+    levantamentos efectuado durante o dia para um determinado cartão na rede de Caixas
+    Automáticos (se a moeda for Escudos o montante indicado é em milhares de Escudos).<br>
+      Nota: campo substituído pelo <a href="camp2800.htm#2855">2855</a></td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1140" name="1140">1140</a></td>
+    <td class="esq"><u>MONTANTE GASTO NO DIA EM TPA</u> <p>Indica o montante total de compras
+    efectuado durante o dia para um determinado cartão, na rede de Terminais de Pagamento
+    Automático (se a moeda for Escudos o montante indicado é em milhares de Escudos).<br>
+      Nota: campo substituído pelo <a href="camp2800.htm#2856">2856</a></td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1141" name="1141">1141</a></td>
+    <td class="esq"><u>NÚMERO OUTRAS OPERAÇÕES NO ANO</u> <p>Indica o número de outras
+    operações efectuadas durante o ano para um determinado cartão. Estas operações
+    subdividem-se para a rede de CAs, TPAs e NEs.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUM_OPE_ANO</td>
+  </tr>
+  <tr>
+    <td><a id="1142" name="1142">1142</a></td>
+    <td class="esq"><u>NÚMERO DE DEPÓSITOS NO ANO</u> <p>Indica o número de operações de
+    depósito efectuados durante o ano para um determinado cartão.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1143" name="1143">1143</a></td>
+    <td class="esq"><u>MONTANTE TOTAL DE DEPÓSITOS NO ANO</u> <p>Indica o montante total de
+    depósitos efectuado durante o ano para um determinado cartão (se a moeda for Escudos o
+    montante indicado é em milhares de Escudos).</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1144" name="1144">1144</a></td>
+    <td class="esq"><u>NÚMERO DE COMPRAS NO ANO</u> <p>Indica o número de compras efectuadas
+    durante o ano para um determinado cartão.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUM_CPR_ANO</td>
+  </tr>
+  <tr>
+    <td><a id="1145" name="1145">1145</a></td>
+    <td class="esq"><u>MONTANTE TOTAL DE COMPRAS NO ANO</u> <p>Indica o montante total de
+    compras efectuadas durante o ano para um determinado cartão (se a moeda for Escudos o
+    montante indicado é em milhares de Escudos).<br>
+      Nota: campo substituído pelo <a href="camp2800.htm#2858">2858</a></td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1146" name="1146">1146</a></td>
+    <td class="esq"><u>NÚMERO DE OPERAÇÕES NÃO CONCRETIZADAS NO ANO</u> <p>Indica o
+    número de operações interrompidas durante o ano para um determinado cartão.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1147" name="1147">1147</a></td>
+    <td class="esq"><u>NÚMERO DE SEQUÊNCIA DO MOVIMENTO DO CARTÃO EM TPA</u> <p>Número
+    atribuído ao movimento e aplicável só às operações TPA (ou online), pelo cartão e
+    que o identificará nas informações de estatísticas de Terminal Bancário. A primeira
+    operação do cartão é 00 e é incrementada de 1 em 1 até 99, voltando a 00.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>POS_SEQ_MOV</td>
+  </tr>
+  <tr>
+    <td><a id="1148" name="1148">1148</a></td>
+    <td class="esq"><u>DATA DO ÚLTIMO MOVIMENTO TPA</u> <p>Campo com a data do último
+    movimento executado com o cartão na rede de TPAs.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>POS_DTA_ULT</td>
+  </tr>
+  <tr>
+    <td><a id="1149" name="1149">1149</a></td>
+    <td class="esq"><u>DATA INÍCIO DO PAGAMENTO</u> <p>Data início para a aceitação do
+    pagamento de serviço, indicada pela entidade cobradora. A operação é aceite a partir
+    das 00.00 horas do dia.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1150" name="1150">1150</a></td>
+    <td class="esq"><u>VALOR DO PLAFOND DO SALDO GERAL</u> <p>É o valor do plafond de saldo
+    geral do Banco atribuído ao cartão. Este saldo é actualizado por todas as
+    transacções, excepto levantamentos e carregamentos PMB, feitas pelo cartão no cenário
+    de &quot;saldo de cartão&quot;. Encontra-se expresso em escudos ou euros.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PLF_SLD_GER</td>
+  </tr>
+  <tr>
+    <td><a id="1151" name="1151">1151</a></td>
+    <td class="esq"><u>TRANCHE DE LIMITE DE CRÉDITO</u> <p>Indica o código da tranche a que
+    corresponde o limte de crédito do cartão.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td nowrap="nowrap">IND-TRANC-LC</td>
+  </tr>
+  <tr>
+    <td><a id="1152" name="1152">1152</a></td>
+    <td class="esq"><u>DATA DA SITUAÇÃO DA CONTA</u> <p>Data de início da situação da
+    conta crédito.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTA-SIT-CTA</td>
+  </tr>
+  <tr>
+    <td><a id="1153" name="1153">1153</a></td>
+    <td class="esq"><u>DATA DA SITUAÇÃO DO CARTÃO</u> <p>Data de início da situação do
+    cartão (Campo <a href="campos2.htm#161">161</a>).</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTA-SIT-CAR</td>
+  </tr>
+  <tr>
+    <td><a id="1154" name="1154">1154</a></td>
+    <td class="esq"><u>CÓDIGO DE DADOS PARTICULARES</u> <p>Código identificativo dos dados
+    particulares do cliente.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD-D-PART</td>
+  </tr>
+  <tr>
+    <td><a id="1155" name="1155">1155</a></td>
+    <td class="esq"><u>FIM DE DADOS PARTICULARES</u> <p>Indicador de fim de dados particulares
+    que indica a existência ou não de mais blocos de dados particulares a serem enviados.</p>
+    <p>&nbsp;&nbsp; 0 - Não há mais dados<br />
+    &nbsp;&nbsp; 1 - Existem mais dados.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FIM-D-PART</td>
+  </tr>
+  <tr>
+    <td><a id="1156" name="1156">1156</a></td>
+    <td class="esq"><u>HEADER DO BUFFER DADOS PARTICULARES</u> <p>Trata-se de um
+    &quot;Character Map&quot; que contém 0 (zero), ou o comprimento da informação incluída
+    na mensagem correspondente ao dado particular.<br />
+    Para reduzir o &quot;Overhead&quot; na mensagem, o comprimento estará codificado num
+    único byte contendo o comprimento real do dado + 32 (para evitar os caracteres
+    &quot;proibidos&quot; na tabela ASCII).<br />
+    O número do dado particular é obtido pela soma da posição que ocupa no Header ao
+    número de dados particulares enviado anteriormente.</td>
+    <td class="dta">64</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>HDR-D-PART</td>
+  </tr>
+  <tr>
+    <td><a id="1157" name="1157">1157</a></td>
+    <td class="esq"><u>DADOS DA PROPOSTA</u> <p>Campo de conteúdo variável que contém um
+    conjunto de informações referentes aos dados particulares de um cliente de crédito.
+    Esta informação está agrupada neste campo de forma não estruturada, por ter inserção
+    de informações diferentes de cliente a cliente. A estrutura deste campo está definida
+    no campo 1156 - &quot;Header do Buffer Dados Particulares&quot;.</td>
+    <td class="dta">934</td>
+    <td>A</td>
+    <td>TRAMA<br />
+    VARIÁVEL</td>
+    <td>VAL-D-PROP</td>
+  </tr>
+  <tr>
+    <td><a id="1158" name="1158">1158</a></td>
+    <td class="esq"><u>DADOS PARTICULARES</u> <p>Valor dos dados do cliente (conta crédito).</td>
+    <td class="dta">934</td>
+    <td>A</td>
+    <td>TRAMA<br />
+    VARIÁVEL</td>
+    <td>VAL-D-PART</td>
+  </tr>
+  <tr>
+    <td><a id="1159" name="1159">1159</a></td>
+    <td class="esq"><u>TELEFONE DE CONTACTO</u> <p>Telefone de contacto do titular.</td>
+    <td class="dta">25</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TELCONT</td>
+  </tr>
+  <tr>
+    <td><a id="1160" name="1160">1160</a></td>
+    <td class="esq"><u>GESTOR DO CLIENTE</u> <p>Código de identificação do gestor do
+    cliente, isto é, a pessoa que estará encarregue de gerir os incobráveis do cliente.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDGESTCLI</td>
+  </tr>
+  <tr>
+    <td><a id="1161" name="1161">1161</a></td>
+    <td class="esq"><u>CHEQUE DÍGITO</u> <p>Cheque dígito do PAN do cartão.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CARCD</td>
+  </tr>
+  <tr>
+    <td><a id="1162" name="1162">1162</a></td>
+    <td class="esq"><u>DATA DE INÍCIO DA SITUAÇÃO</u> <p>Data de início da situação do
+    cliente face ao produto em questão.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTAINISP</td>
+  </tr>
+  <tr>
+    <td><a id="1163" name="1163">1163</a></td>
+    <td class="esq"><u>CÓDIGO DE RENOVAÇÃO</u> <p>Código de renovação do cartão que
+    indica se o cartão pode ser ou não renovado ou re-emitido automaticamente.</p>
+    <p>Os valores que podem ser atribuídos são os seguintes (dos quais só os valores 0 e 4
+    podem ser escolhidos na bancada do gestor):<br>
+    &nbsp;&nbsp; 0 - Normal;<br />
+    &nbsp;&nbsp; 1 - Espera confirmação do Banco;<br />
+    &nbsp;&nbsp; 2 - Deixar expirar sem renovação;<br />
+    &nbsp;&nbsp; 3 - Renovação antecipada;<br />
+    &nbsp;&nbsp; 4 - Sem renovação.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODRENCAR</td>
+  </tr>
+  <tr>
+    <td><a id="1164" name="1164">1164</a></td>
+    <td class="esq"><u>NÚMERO DO CARTÃO ANTERIOR</u> <p>Número do cartão anterior.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMCARANT</td>
+  </tr>
+  <tr>
+    <td><a id="1165" name="1165">1165</a></td>
+    <td class="esq"><u>CÓDIGO DE REJEIÇÃO</u> <p>Código de rejeição SIBS / Para as
+    transacções recebidas via ficheiro da UNICRE e via ficheiro BASE II, a SIBS valida se o
+    movimento recebido pode ter alguma anomalia (por exemplo, transacção não permitida para
+    o cartão). Ver <a href="1165.htm" target="main">Tabela</a> de Códigos de Rejeição.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD-REJ</td>
+  </tr>
+  <tr>
+    <td><a id="1166" name="1166">1166</a></td>
+    <td class="esq"><u>LINHA DE EXTRACTO</u> <p>Número de linha do extracto:</p>
+    <p>&nbsp;&nbsp; AAAASSLLL<br />
+    &nbsp;&nbsp; AAAA -&gt; Ano<br />
+    &nbsp;&nbsp; AA - &gt; Nº extracto (01 até 13)<br />
+    &nbsp;&nbsp; LLL -&gt; Nº linha do extracto</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>AAAASSLLL</td>
+    <td>LINHAEXT</td>
+  </tr>
+  <tr>
+    <td><a id="1167" name="1167">1167</a></td>
+    <td class="esq"><u>NÚMERO DE CARTÕES INIBIDOS</u> <p>Número de cartões do cliente, na
+    situação de inibidos. Neste caso o campo &quot;SITCAR&quot; (<a href="campos2.htm#161">161</a>)
+    estará sempre preenchido com o valor 06 ou 07, indicando que, a nível da vertente de
+    crédito, o cartão está Inibido e Não Expirado.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUM-CAR-INI</td>
+  </tr>
+  <tr>
+    <td><a id="1168" name="1168">1168</a></td>
+    <td class="esq"><u>NATUREZA DO PAGAMENTO À SEGURANÇA SOCIAL</u> <p>Indica o tipo de
+    pagamento que foi efectuado à Segurança Social, no âmbito da operação de Serviço
+    Especial.</p>
+    <p>Tem os valores:<br />
+    &nbsp;&nbsp; 03 - Trabalhadores do Serviço Doméstico<br />
+    &nbsp;&nbsp; 04 - Trabalhadores Independentes<br />
+    &nbsp;&nbsp; 05 - Seguro Social Voluntário</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1169" name="1169">1169</a></td>
+    <td class="esq"><u>TIPO DE REMUNERAÇÃO</u> <p>Código que define o tipo de remuneração
+    indicada no pagamento que foi efectuado à Segurança Social, no âmbito da operação de
+    Serviço Especial.</p>
+    <p>Tem os valores:<br>
+    &nbsp;&nbsp; 1 - Mensal - Mês Completo<br />
+    &nbsp;&nbsp; 2 - Mensal - Mês Incompleto<br />
+    &nbsp;&nbsp; 3 - Horária</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1170" name="1170">1170</a></td>
+    <td class="esq"><u>NÚMERO SE</u> <p>Identificador único do Estabelecimento para o
+    Representante.<br />
+    É a concatenação dos campos <a href="campos1.htm#072">072</a> &quot;Nº de
+    Estabelecimento no Representante&quot; e <a href="camp1200.htm#1231">1231</a> &quot;Id.
+    Prefixo do Nº de Estabelecimento no Representante&quot;.</td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1171" name="1171">1171</a></td>
+    <td class="esq"><u>CENTRO NEGÓCIO ACQUIRER</u> <p>Código de 3 dígitos que identifica o
+    centro de negócio do Acquirer. No caso da AMEX Portugal, o seu código é 028.</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1172" name="1172">1172</a></td>
+    <td class="esq"><u>NOME COMERCIANTE PARA O REPRESENTANTE</u> <p>Nome do Comerciante para o
+    Representante.</td>
+    <td class="dta">38</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1173" name="1173">1173</a></td>
+    <td class="esq"><u>NOME ESTABELECIMENTO PARA O REPRESENTANTE</u> <p>Nome do
+    estabelecimento do Representante que aparece no descritivo da factura.</td>
+    <td class="dta">42</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1174" name="1174">1174</a></td>
+    <td class="esq"><u>MORADA 3 DO ESTABELECIMENTO DO REPRESENTANTE</u> <p>3ª morada
+    alternativa do Estabelecimento do Representante. Este campo poderá ser utilizado para
+    emissão de 2ªs Vias de Extracto e é enviado no ficheiro SE Demographics.</td>
+    <td class="dta">38</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1175" name="1175">1175</a></td>
+    <td class="esq"><u>MORADA 4 DO ESTABELECIMENTO DO REPRESENTANTE</u> <p>4ª morada
+    alternativa do Estabelecimento do Representante. Este campo poderá ser utilizado para
+    emissão de 2ªs Vias de Extracto e é enviado no ficheiro SE Demographics.</td>
+    <td class="dta">38</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1176" name="1176">1176</a></td>
+    <td class="esq"><u>CIDADE DO ESTABELECIMENTO DO REPRESENTANTE</u> <p>Nome da cidade
+    (localidade) do Estabelecimento do Representante.</td>
+    <td class="dta">21</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1177" name="1177">1177</a></td>
+    <td class="esq"><u>CÓDIGO POSTAL DO ESTABELECIMENTO DO REPRESENTANTE</u> <p>Código
+    postal associado à localidade do Estabelecimento do Representante.</td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1178" name="1178">1178</a></td>
+    <td class="esq"><u>CÓDIGO DE REGIÃO DO ESTABELECIMENTO DO REPRESENTANTE</u> <p>Código
+    de 3 dígitos identificativo da região dentro de cada país a que pertence o
+    Estabelecimento do Representante. No caso de Portugal, este código está associado ao
+    código de país 620.</p>
+    <p>Tem os seguintes valores:<br />
+    &nbsp;&nbsp; 000 - Portugal<br />
+    &nbsp;&nbsp; 001 - Aveiro<br />
+    &nbsp;&nbsp; 002 - Beja<br />
+    &nbsp;&nbsp; 003 - Braga<br />
+    &nbsp;&nbsp; 004 - Bragança<br />
+    &nbsp;&nbsp; 005 - Castelo Branco<br />
+    &nbsp;&nbsp; 006 - Coimbra<br />
+    &nbsp;&nbsp; 007 - Évora<br />
+    &nbsp;&nbsp; 008 - Faro<br />
+    &nbsp;&nbsp; 009 - Guarda<br />
+    &nbsp;&nbsp; 010 - Leiria<br />
+    &nbsp;&nbsp; 011 - Lisboa<br />
+    &nbsp;&nbsp; 012 - Portalegre<br />
+    &nbsp;&nbsp; 013 - Porto<br />
+    &nbsp;&nbsp; 014 - Santarém<br />
+    &nbsp;&nbsp; 015 - Setúbal<br />
+    &nbsp;&nbsp; 016 - Viana do Castelo<br />
+    &nbsp;&nbsp; 017 - Vila Real<br />
+    &nbsp;&nbsp; 018 - Viseu<br />
+    &nbsp;&nbsp; 019 - Açores<br />
+    &nbsp;&nbsp; 020 - Madeira</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1179" name="1179">1179</a></td>
+    <td class="esq"><u>SITUAÇÃO DO ESTABELECIMENTO DO&nbsp; REPRESENTANTE</u> <p>Código de
+    1 dígito que define o estado do Estabelecimento do Representante.</p>
+    <p>Os códigos válidos são:<br />
+    &nbsp;&nbsp;&nbsp;1 - Activo<br />
+    &nbsp;&nbsp;&nbsp;2 - Cancelado<br />
+    &nbsp;&nbsp;&nbsp;3 - Reactivado</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1180" name="1180">1180</a></td>
+    <td class="esq"><u>DATA ACTIVAÇÃO</u> <p>Data em que o Estabelecimento do Representante
+    foi colocado no estado Activo.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1181" name="1181">1181</a></td>
+    <td class="esq"><u>DATA CANCELAMENTO</u> <p>Data em que o Estabelecimento do Representante
+    foi colocado no estado Cancelado, se o campo&nbsp; (<a href="#1179">1179</a>)&nbsp;SITUAÇÃO
+    DO ESTABELECIMENTO DO REPRESENTANTE estiver posicionado como Cancelado ou Reactivado.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1182" name="1182">1182</a></td>
+    <td class="esq"><u>DATA REACTIVAÇÃO</u> <p>Data em que o Estabelecimento do
+    Representante foi colocado no estado Reactivado, se o campo&nbsp; (<a href="#1179">1179</a>)&nbsp;SITUAÇÃO
+    DO ESTABELECIMENTO DO REPRESENTANTE estiver posicionado como Reactivado.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1183" name="1183">1183</a></td>
+    <td class="esq"><u>MOTIVO DO CANCELAMENTO</u> <p>Código de 2 dígitos que define o motivo
+    pelo qual o Estabelecimento do Representante foi colocado no estado de Cancelado.<br />
+    Se o campo&nbsp; (<a href="#1179">1179</a>)&nbsp;SITUAÇÃO DO ESTABELECIMENTO DO
+    REPRESENTANTE estiver posicionado como Cancelado, consultar a respectiva&nbsp; <a
+    href="1183.htm" target="main">tabela</a>.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1184" name="1184">1184</a></td>
+    <td class="esq"><u>TIPO DE POSICIONAMENTO</u> <p>Código de 3 dígitos que identifica o
+    posicionamento do Estabelecimento do Representante.<br />
+    Ver <a target="main" href="1184.htm">tabela</a> existente na documentação da AMEX - <em>Release
+    Documentation (Appendix 2)</em>.</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1185" name="1185">1185</a></td>
+    <td class="esq"><u>MCC AMEX</u> <p>Código de 4 dígitos que classifica o tipo de
+    produto/serviço associado a cada transacção.<br />
+    Ver <a target="main" href="1185.htm">tabela</a> existente na documentação da AMEX - <em>Code
+    Technical Manual.</em></td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1186" name="1186">1186</a></td>
+    <td class="esq"><u>TIPO DE INDÚSTRIA</u> <p>Código de 2 dígitos que identifica a
+    categoria do Comerciante, para hotéis, restaurantes e retalho.</p>
+    <p>Tem os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp; 01 - Restaurante Económico (1 garfo)<br />
+    &nbsp;&nbsp;&nbsp; 02 - Restaurante Preço Moderado (2 garfos)<br />
+    &nbsp;&nbsp;&nbsp; 03 - Restaurante Preço Premium (4 garfos)<br />
+    &nbsp;&nbsp;&nbsp; 04 - Hotel Cinco Estrelas<br />
+    &nbsp;&nbsp;&nbsp; 09 - Hotel Quatro Estrelas<br />
+    &nbsp;&nbsp;&nbsp; 10 - Hotel Três Estrelas<br />
+    &nbsp;&nbsp;&nbsp; 11 - Hotel Duas Estrelas<br />
+    &nbsp;&nbsp;&nbsp; 12 - Hotel Uma Estrela<br />
+    &nbsp;&nbsp;&nbsp; 13 - Hotel Sem Categoria<br />
+    &nbsp;&nbsp;&nbsp; 14 - Hotel De Luxo<br />
+    &nbsp;&nbsp;&nbsp; 16 - Retalho Económico<br />
+    &nbsp;&nbsp;&nbsp; 17 - Retalho Moderado<br />
+    &nbsp;&nbsp;&nbsp; 18 - Retalho Premium<br />
+    &nbsp;&nbsp;&nbsp; 19 - Retalho De Luxo<br />
+    &nbsp;&nbsp;&nbsp; 24 - Hotel &amp; Restaurante Económico<br />
+    &nbsp;&nbsp;&nbsp; 25 - Hotel &amp; Restaurante Preço Moderado<br />
+    &nbsp;&nbsp;&nbsp; 26 - Hotel &amp; Restaurante Preço Premium<br />
+    &nbsp;&nbsp;&nbsp; 27 - Hotel &amp; Restaurante De Luxo<br />
+    &nbsp;&nbsp;&nbsp; 28 - Restaurante De Luxo (5 garfos)<br />
+    &nbsp;&nbsp;&nbsp; 29 - Restaurante Familiar (3 garfos) &nbsp; &nbsp;</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1187" name="1187">1187</a></td>
+    <td class="esq"><u>CÓDIGO DE LOCALIZAÇÃO</u> <p>Código de 2 dígitos que identifica a
+    localização do Estabelecimento.</p>
+    <p>Os códigos válidos são:<br />
+    &nbsp;&nbsp;&nbsp; '01' - Rua principal / Baixa da cidade<br />
+    &nbsp;&nbsp;&nbsp; '02' - Suburbano<br />
+    &nbsp;&nbsp;&nbsp; '03' - Centro Comercial / Alameda<br />
+    &nbsp;&nbsp;&nbsp; '04' - Aeroporto<br />
+    &nbsp;&nbsp;&nbsp; '05' - Zona de negócio<br />
+    &nbsp;&nbsp;&nbsp; '06' - Zona turística<br />
+    &nbsp;&nbsp;&nbsp; '07' - Estrada Nacional<br />
+    &nbsp;&nbsp;&nbsp; '08' - Campo / Zona rural<br />
+    &nbsp;&nbsp;&nbsp; '09' - Fora da cidade<br />
+    &nbsp;&nbsp;&nbsp; '10' - Parque industrial<br />
+    &nbsp;&nbsp;&nbsp; '11' - Zona ribeirinha / Zona costeira</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1188" name="1188">1188</a></td>
+    <td class="esq"><u>NÍVEL NA HIERARQUIA</u> <p>Código que indica o nível na hierarquia,
+    caso tenha ocorrido recentemente uma alteração - esta informação deverá ser fornecida
+    se o Comerciante estiver integrado nalgum grupo ou cadeia.</p>
+    <p>Tem os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp; 02 - Estabelecimento<br />
+    &nbsp;&nbsp;&nbsp; 05 - Divisão por regiões, zonas; produtos, indústrias<br />
+    &nbsp;&nbsp;&nbsp; 06 - Central para Regiões<br />
+    &nbsp;&nbsp;&nbsp; 07 - Estatístico para várias indústrias<br />
+    &nbsp;&nbsp;&nbsp; 08 - Estatístico para unir Estabelecimentos a nível nacional<br />
+    &nbsp;&nbsp;&nbsp; 09 - Estatístico para unir Estabelecimentos a nível europeu<br />
+    &nbsp;&nbsp;&nbsp; 10 - Estatístico para unir Estabelecimentos a nível mundial</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1189" name="1189">1189</a></td>
+    <td class="esq"><u>NOVO SUPERIOR HIERÁRQUICO</u> <p>NÚMERO SE do novo superior
+    hierárquico, caso o Comerciante esteja integrado nalgum grupo ou cadeia.</td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1190" name="1190">1190</a></td>
+    <td class="esq"><u>DATA INÍCIO NOVA SITUAÇÃO NA HIERARQUIA</u> <p>Data em que se tornou
+    efectivo o novo relacionamento hierárquico - esta informação deverá ser fornecida se o
+    Comerciante estiver integrado nalgum grupo ou cadeia.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1191" name="1191">1191</a></td>
+    <td class="esq"><u>DATA FIM NOVA SITUAÇÃO NA HIERARQUIA</u> <p>Data em que se findará o
+    novo relacionamento hierárquico - esta informação deverá ser fornecida se o
+    Comerciante estiver integrado nalgum grupo ou cadeia.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1192" name="1192">1192</a></td>
+    <td class="esq"><u>CÓDIGO DE PARTICIPAÇÃO NA HIERARQUIA</u> <p>Código do Comerciante
+    na nova estrutura hierárquica - esta informação deverá ser fornecida se o Comerciante
+    estiver integrado nalgum grupo ou cadeia.</p>
+    <p>Os códigos válidos são:<br />
+    &nbsp;&nbsp;&nbsp; 01 - Este Comerciante não pertence à hierarquia<br />
+    &nbsp;&nbsp;&nbsp; 02 - Este Comerciante está no topo da hierarquia<br />
+    &nbsp;&nbsp;&nbsp; 03 - Este Comerciante tem uma posição de dependência na hierarquia</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1193" name="1193">1193</a></td>
+    <td class="esq"><u>CÓDIGO DE ACÇÃO NA HIERARQUIA</u> <p>Código identificativo do tipo
+    de mudança na hierarquia - esta informação deverá ser fornecida se o Comerciante
+    estiver integrado nalgum grupo ou cadeia.</p>
+    <p>Os códigos válidos são:<br />
+    &nbsp;&nbsp;&nbsp; 1 - Esta ligação hierárquica foi suprimida<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (não suportado actualmente)<br
+    />
+    &nbsp;&nbsp;&nbsp; 2 - Esta ligação hierárquica foi adicionada<br />
+    &nbsp;&nbsp;&nbsp; 3 - Esta ligação hierárquica foi alterada<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (não suportado actualmente)</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1194" name="1194">1194</a></td>
+    <td class="esq"><u>NOVO TIPO DE RELACIONAMENTO</u> <p>Código de 3 dígitos que identifica
+    o tipo de relacionamento, depois da mudança ocorrida - esta informação deverá ser
+    fornecida se o Comerciante possuir um relacionamento comercial com outro.</p>
+    <p>Os códigos válidos são:<br />
+    &nbsp;&nbsp;&nbsp; 000 - Sem relacionamento<br />
+    &nbsp;&nbsp;&nbsp; 001 - Departamento de<br />
+    &nbsp;&nbsp;&nbsp; 002 - Franchisado por<br />
+    &nbsp;&nbsp;&nbsp; 003 - Ter licença de<br />
+    &nbsp;&nbsp;&nbsp; 004 - Localizado em<br />
+    &nbsp;&nbsp;&nbsp; 005 - Dirigido por<br />
+    &nbsp;&nbsp;&nbsp; 006 - Membro de filiação<br />
+    &nbsp;&nbsp;&nbsp; 007 - Membro de associação<br />
+    &nbsp;&nbsp;&nbsp; 008 - Membro de cartel<br />
+    &nbsp;&nbsp;&nbsp; 010 - Pertencente a</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1195" name="1195">1195</a></td>
+    <td class="esq"><u>COMERCIANTE SUPERIOR NO NOVO RELACIONAMENTO</u> <p>NÚMERO SE do
+    superior deste Comerciante no novo relacionamento - esta informação deverá ser
+    fornecida se o Comerciante possuir um relacionamento comercial com outro.</td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1196" name="1196">1196</a></td>
+    <td class="esq"><u>DATA INÍCIO DO NOVO TIPO DE RELACIONAMENTO</u> <p>Data em que se
+    tornou efectivo o novo tipo de relacionamento - esta informação deverá ser fornecida se
+    o Comerciante possuir um relacionamento comercial com outro.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1197" name="1197">1197</a></td>
+    <td class="esq"><u>DATA FIM DO NOVO TIPO DE RELACIONAMENTO</u> <p>Data em que findará o
+    novo tipo de relacionamento - esta informação deverá ser fornecida se o Comerciante
+    possuir um relacionamento comercial com outro.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1198" name="1198">1198</a></td>
+    <td class="esq"><u>CÓDIGO DE ACÇÃO DO TIPO DE RELACIONAMENTO</u> <p>Código
+    identificativo do tipo de mudança na hierarquia - esta informação deverá ser fornecida
+    se o Comerciante possuir um relacionamento comercial com outro.</p>
+    <p>Os códigos válidos são:<br />
+    &nbsp;&nbsp;&nbsp; 1 - Esta ligação hierárquica foi suprimida<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (não suportado actualmente)<br />
+    &nbsp;&nbsp;&nbsp; 2 - Esta ligação hierárquica foi adicionada<br />
+    &nbsp;&nbsp;&nbsp; 3 - Esta ligação hierárquica foi alterada<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (não suportado actualmente)</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1199" name="1199">1199</a></td>
+    <td class="esq"><u>CONTA MULTINACIONAL AMEX</u> <p>Flag que indica se o Comerciante é um
+    American Express Multinational Account (MNA).</p>
+    <p>Valores válidos:<br />
+    &nbsp;&nbsp; Y - Comerciante American Express MNA<br />
+    &nbsp;&nbsp; N - Comerciante não American Express MNA (valor assumido, <em>por defeito</em>).</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

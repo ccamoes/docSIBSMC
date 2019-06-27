@@ -1,0 +1,1444 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos 2000 (2000-2099)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.&nbsp;</td>
+    <td class="fundo">REP.&nbsp;</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="2000" name="2000">2000</a></td>
+    <td class="esq"><u>CÓDIGO DA MOEDA ORIGINAL</u> <p>Código da moeda em que foi efectuada
+    a operação original. </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD-MOEDA-ORIG</td>
+  </tr>
+  <tr>
+    <td><a id="2001" name="2001">2001</a></td>
+    <td class="esq"><u>CÓDIGO MOEDA REFERÊNCIA</u> <p>É o código de moeda do SIDF. Assume
+    o valor fixo 978 - Euro.&nbsp;</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD-MOEDA-REF</td>
+  </tr>
+  <tr>
+    <td><a id="2002" name="2002">2002</a></td>
+    <td class="esq"><u>BANCO DE APOIO SIDF</u> <p>Código do Banco de Apoio do terminal onde
+    foi efectuada a operação.&nbsp;</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>BANCO-APOIO</td>
+  </tr>
+  <tr>
+    <td><a id="2003" name="2003">2003</a></td>
+    <td class="esq"><u>CÓDIGO DO PAÍS SIDF</u> <p>Indica o código do país onde se efectuou
+    a operação.&nbsp;</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>COD-PAIS</td>
+  </tr>
+  <tr>
+    <td><a id="2004" name="2004">2004</a></td>
+    <td class="esq"><u>HORA DE ALTERAÇÃO DO ACORDO</u> <p>Hora em que o Representante
+    efectuou uma alteração no acordo do seu estabelecimento.&nbsp;</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>HHMMSS</td>
+    <td>HR-ALT-ACR</td>
+  </tr>
+  <tr>
+    <td><a id="2005" name="2005">2005</a></td>
+    <td class="esq"><u>CÓDIGO COMERCIANTE SIDF</u> <p>Informa a identificação (código) do
+    comerciante onde se efectuou a transacção.&nbsp;</td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ID-COMERC</td>
+  </tr>
+  <tr>
+    <td><a id="2006" name="2006">2006</a></td>
+    <td class="esq"><u>NOME COMERCIANTE SIDF</u> <p>Identificação (nome) do comerciante onde
+    se efectuou a operação.&nbsp;</td>
+    <td class="dta">25</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NOME-COMERC</td>
+  </tr>
+  <tr>
+    <td><a id="2007" name="2007">2007</a></td>
+    <td class="esq"><u>PAÍS COMERCIANTE SIDF</u> <p>Campo utilizado apenas nas transacções
+    realizadas no estrangeiro e preenchido com o código do País do comerciante.&nbsp;</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>PAIS-COMERC</td>
+  </tr>
+  <tr>
+    <td><a id="2008" name="2008">2008</a></td>
+    <td class="esq"><u>LOCAL COMERCIANTE SIDF</u> <p>Indica a localização do comerciante
+    onde se efectuou a transacção.&nbsp;</td>
+    <td class="dta">13</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>LOCAL-COMERC</td>
+  </tr>
+  <tr>
+    <td><a id="2009" name="2009">2009</a></td>
+    <td class="esq"><u>SYSTEM TRACE AUDIT NUMBER (STAN)</u> <p>Número atribuído ao movimento
+    pelo Acquirer, para efeitos de auditoria.&nbsp;</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>STAN</td>
+  </tr>
+  <tr>
+    <td><a id="2010" name="2010">2010</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO ACQUIRER DE FORWARDING</u> <p>Identifica a entidade
+    que efectuou o reenvio das mensagens de Real-Time.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 620100 - Valor Fixo<br>
+    &nbsp;&nbsp; 361607 - Diners</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FORW-ACQ-ID</td>
+  </tr>
+  <tr>
+    <td><a id="2011" name="2011">2011</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO ACQUIRER ORIGINAL</u> <p>Campo que identifica a
+    entidade onde se realizou a transacção original.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 454898 - Valor Fixo<br>
+    &nbsp;&nbsp; 361607 - Diners</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ACQUIRER-ORIG</td>
+  </tr>
+  <tr>
+    <td><a id="2012" name="2012">2012</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO ACQUIRER DE FORWARDING ORIGINAL</u> <p>Identifica a
+    entidade que efectuou o reenvio das mensagens de Real-Time originais.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 620100 - Valor Fixo<br>
+    &nbsp;&nbsp; 361607 - Diners</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FORW-ACQ-ORIG</td>
+  </tr>
+  <tr>
+    <td><a id="2013" name="2013">2013</a></td>
+    <td class="esq"><u>SYSTEM TRACE AUDIT NUMBER (STAN) ORIGINAL</u> <p>Número atribuído ao
+    movimento original pelo Acquirer para efeitos de auditoria.&nbsp;</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>STAN-ORIG</td>
+  </tr>
+  <tr>
+    <td><a id="2014" name="2014">2014</a></td>
+    <td class="esq"><u>INDICADOR DE MAIL-PHONE ORDER</u> <p>Campo que indica se se trata duma
+    operação com origem numa &quot;Mail-phone-order&quot; ou noutro canal.</p>
+    <p>Valores possíveis:<br>
+    <br>
+    <em>Sistema VISA</em><br>
+    &nbsp;&nbsp; 00 -&nbsp; Não aplicável<br>
+    &nbsp;&nbsp; 01 - MOTO&nbsp; <br>
+    &nbsp;&nbsp; 02 - Recurring Trn<br>
+    &nbsp;&nbsp; 03 - Installment payment<br>
+    &nbsp;&nbsp; 04 - unknown MOTO<br>
+    &nbsp;&nbsp; 05 - Set carholder certificate<br>
+    &nbsp;&nbsp; 06 - Set no carholder certificate<br>
+    &nbsp;&nbsp; 07 - Channel encrypted<br>
+    &nbsp;&nbsp; 08 - No security<br>
+    &nbsp;&nbsp; 09 - Set merchant No set transaction</p>
+    <p><em>Restantes Sistemas</em><br>
+    <em>1º byte:</em><br>
+    &nbsp;&nbsp; 1 - Secure transaction<br>
+    &nbsp;&nbsp; 2 - Channel encrypted<br>
+    &nbsp;&nbsp; 9 - No secure transaction<br>
+    <em>2º byte:</em><br>
+    &nbsp;&nbsp; 1 - No carholder certificate<br>
+    &nbsp;&nbsp; 2 - Carholder certificate<br>
+    &nbsp;&nbsp; 3 - Chip criptogram<br>
+    &nbsp;&nbsp; 4 - Chip criptogram and cardholder certificate </td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MAIL-PHONE-IND</td>
+  </tr>
+  <tr>
+    <td><a id="2015" name="2015">2015</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO TERMINAL DE INCOMING SIDF</u> <p>Elementos para o
+    SIDF, do terminal onde se efectuou a transacção.&nbsp;</td>
+    <td class="dta">10</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ID-T-INCOMING</td>
+  </tr>
+  <tr>
+    <td><a id="2016" name="2016">2016</a></td>
+    <td class="esq"><u>CAPACIDADES DO TPA</u> <p>Indica qual versão de equipamento do
+    TPA.&nbsp;</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CAP-TPA</td>
+  </tr>
+  <tr>
+    <td><a id="2017" name="2017">2017</a></td>
+    <td class="esq"><u>PAN DO CARTÃO TEMPORÁRIO</u> <p>Número do cartão temporário num
+    formato PAN.&nbsp;</td>
+    <td class="dta">23</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>PAN-CAR-TEMP</td>
+  </tr>
+  <tr>
+    <td><a id="2018" name="2018">2018</a></td>
+    <td class="esq"><u>DATA DE EXPIRAÇÃO CARTÃO TEMPORÁRIO</u> <p>Data de expiração do
+    cartão temporário.&nbsp;</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>AAMM</td>
+    <td>DTEXP-CAR-TEMP</td>
+  </tr>
+  <tr>
+    <td><a id="2019" name="2019">2019</a></td>
+    <td class="esq"><u>CVV2 CARTÃO TEMPORÁRIO</u> <p>Card Validation Value2. Valor que é
+    utilizado como elemento de segurança no processamento das autorizações em que o
+    plástico não está presente.<br>
+    É transmitido pelo Cliente ao Comerciante que o inclui nos dados a transmitir para obter
+    a autorização da transacção.&nbsp;</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CVV2-CAR-TEMP</td>
+  </tr>
+  <tr>
+    <td><a id="2020" name="2020">2020</a></td>
+    <td class="esq"><u>ENTIDADE QUE CONCEDEU A AUTORIZAÇÃO ORIGINAL</u> <p>Entidade emissora
+    que concedeu a autorização do movimento original.</p>
+    <p>Além dos valores constantes na tabela de emissores, existem os seguintes casos
+    especiais:<br>
+    &nbsp;&nbsp; 0500 - SIBS (FEP)<br>
+    &nbsp;&nbsp; 0602 - SIBS (HOST)<br>
+    &nbsp;&nbsp; 0698 - UNICRE<br>
+    &nbsp;&nbsp; 0999 - VISA/EUROPAY<br>
+    &nbsp;&nbsp; 9777 - EUFISERV<br>
+    &nbsp;&nbsp; 9888 - AMEX<br>
+    &nbsp;&nbsp; 9999 - DINERS</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>COD-RES-ORIGI</td>
+  </tr>
+  <tr>
+    <td><a id="2021" name="2021">2021</a></td>
+    <td class="esq"><u>ORIGEM DO MOVIMENTO</u> <p>Indica a origem do movimento para o SIDF
+    para formatação pelo módulo 2. </p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; A1 - ATM<br>
+    &nbsp;&nbsp; P2 - Disquetes<br>
+    &nbsp;&nbsp; P3 - POS Indoor<br>
+    &nbsp;&nbsp; P4 - POS Outdoor<br>
+    &nbsp;&nbsp; P8 - POS Unicre<br>
+    &nbsp;&nbsp; AC - Centro de Atendimento Telefónico<br>
+    &nbsp;&nbsp; RE - Recolha Especial<br>
+    &nbsp;&nbsp; RA - Recolha Alternativa<br>
+    &nbsp;&nbsp; RD - Recolha Degradado<br>
+    &nbsp;&nbsp; MP - Manuais Pay-later<br>
+    &nbsp;&nbsp; MD - Manuais Disquete<br>
+    &nbsp;&nbsp; E1- Europay &quot;a quente&quot;<br>
+    &nbsp;&nbsp; E2 - Europay Advices<br>
+    &nbsp;&nbsp; V1 - Visa a &quot;quente&quot;<br>
+    &nbsp;&nbsp; V2 - Visa Advices<br>
+    &nbsp;&nbsp; CI - Centro de Atendimento Telefónico Incoming<br>
+    &nbsp;&nbsp; X0 - Amex <br>
+    &nbsp;&nbsp; S0 - Eufiserv</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>OR-MOV</td>
+  </tr>
+  <tr>
+    <td><a id="2022" name="2022">2022</a></td>
+    <td class="esq"><u>REDE DO MOVIMENTO</u> <p>Campo que indica a origem da rede de movimento
+    onde foi executada a operação. </p>
+    <p>Valores aceites:<br>
+    &nbsp;&nbsp; 1 - UNICRE<br>
+    &nbsp;&nbsp; 2 - Multibanco<br>
+    &nbsp;&nbsp; 3 - AMEX<br>
+    &nbsp;&nbsp; 4 - Outros</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>REDE-ORI-MOV</td>
+  </tr>
+  <tr>
+    <td><a id="2023" name="2023">2023</a></td>
+    <td class="esq"><u>LIMITE CRÉDITO (SIDF)</u> <p>Limite de Crédito concedido à conta
+    Crédito pelo Emissor.&nbsp; </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>LIM-CRED</td>
+  </tr>
+  <tr>
+    <td><a id="2024" name="2024">2024</a></td>
+    <td class="esq"><u>SALDO DISPONÍVEL PARA CASH (SIDF)</u> <p>Apresenta o valor do
+    parâmetro utilizado, ou limite de crédito para cash, deduzido das operações já
+    realizadas.&nbsp; </td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>VAL-CS-AC</td>
+  </tr>
+  <tr>
+    <td><a id="2025" name="2025">2025</a></td>
+    <td class="esq"><u>SALDO DISPONÍVEL PARA COMPRAS (SIDF)</u> <p>Apresenta o valor do
+    parâmetro utilizado, ou limite de crédito para compras, deduzido das operações já
+    realizadas.&nbsp;</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>VAL-LIM-AC</td>
+  </tr>
+  <tr>
+    <td><a id="2026" name="2026">2026</a></td>
+    <td class="esq"><u>CÓDIGO POSTAL</u> <p>Campo que indica o código postal da localidade
+    da sede do comerciante para efeitos do SIDF.&nbsp;</td>
+    <td class="dta">9</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>COD-POST</td>
+  </tr>
+  <tr>
+    <td><a id="2027" name="2027">2027</a></td>
+    <td class="esq"><u>SUB-ZONA</u> <p>Código indicador da área onde está inserido o
+    Estabelecimento. Pode ser um grupo de localidades, uma localidade, um bairro ou uma
+    rua.&nbsp; </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SUB-ZONA</td>
+  </tr>
+  <tr>
+    <td><a id="2028" name="2028">2028</a></td>
+    <td class="esq"><u>INDICADOR DE APLICAÇÃO DE GESTÃO CARTÃO</u> <p>Código da
+    aplicação que efectua a gestão do cartão que executou a operação. </p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; A - Autónomo<br>
+    &nbsp;&nbsp; C - CardPac<br>
+    &nbsp;&nbsp; D - Cartões Débito<br>
+    &nbsp;&nbsp; E - Mcard/Ecard<br>
+    &nbsp;&nbsp; I - Diners<br>
+    &nbsp;&nbsp; J - JCB<br>
+    &nbsp;&nbsp; M - AMEX<br>
+    &nbsp;&nbsp; R - Crbank<br>
+    &nbsp;&nbsp; X - Não Determinado</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CARD-SOURCE</td>
+  </tr>
+  <tr>
+    <td><a id="2029" name="2029">2029</a></td>
+    <td class="esq"><u>CÓDIGO DE PROCESSAMENTO ORIGINAL</u> <p>Campo que corresponde ao
+    código SIDF, resultado da conjugação de vários campos que compõem o ficheiro de
+    movimentos do SIDF, tais como por exemplo: Origem do movimento, Cod. Contabilístico,
+    etc.&nbsp; </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>COD-PROC-ORIG</td>
+  </tr>
+  <tr>
+    <td><a id="2030" name="2030">2030</a></td>
+    <td class="esq"><u>DATA DE ALTERAÇÃO DO INDICADOR DE RISCO</u> <p>Data em que o
+    Representante alterou o Indicador de Risco do seu estabelecimento.&nbsp;</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DT-ALT-IND-RIS</td>
+  </tr>
+  <tr>
+    <td><a id="2031" name="2031">2031</a></td>
+    <td class="esq"><u>HORA DE ALTERAÇÃO DO INDICADOR DE RISCO</u> <p>Hora em que o
+    Representante alterou o Indicador de Risco do seu estabelecimento.&nbsp;</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>HHMMSS</td>
+    <td>HR-ALT-IND-RIS</td>
+  </tr>
+  <tr>
+    <td><a id="2032" name="2032">2032</a></td>
+    <td class="esq"><u>INDICADOR DE RISCO SIDF</u> <p>Código que indica se a aceitação das
+    operações deve ser encaminhada previamente à Unicre antes da autorização pelo Banco
+    Emissor. </p>
+    <table border="0" cellspacing="0">
+      <tr>
+        <td colspan="3" class="esq">Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>1 - Vermelho&nbsp; </td>
+        <td class="esq" nowrap>- </td>
+        <td class="esq">operação deve ser rejeitada (é o código equivalente ao código 1 -
+        Activo do atributo <a href="camp800.htm#815">815</a>)</td>
+      </tr>
+      <tr>
+        <td class="esq">2 - Amarelo</td>
+        <td class="esq">- </td>
+        <td class="esq">operação decorre normalmente (é o código equivalente ao código 0 -
+        Inactivo do atributo <a href="camp800.htm#815">815</a>).</td>
+      </tr>
+      <tr>
+        <td class="esq">3 - Verde</td>
+        <td class="esq">- </td>
+        <td class="esq">operação decorre normalmente (é o código equivalente ao código 0 -
+        Inactivo do atributo <a href="camp800.htm#815">815</a>).&nbsp;</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND-RISCO</td>
+  </tr>
+  <tr>
+    <td><a id="2033" name="2033">2033</a></td>
+    <td class="esq"><u>CONTA FACTURAS MANUAIS</u> <p>Conta do comerciante. Utilizada para a
+    movimentação de facturas manuais.&nbsp;</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CNT-FACT-MAN</td>
+  </tr>
+  <tr>
+    <td><a id="2034" name="2034">2034</a></td>
+    <td class="esq"><u>FICHEIRO DE FACTURAS FACTURAS MANUAIS</u> <p>Indicador de aceitação
+    de ficheiros referentes à aceitação de facturas manuais. </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FICH-FACT-MAN</td>
+  </tr>
+  <tr>
+    <td><a id="2035" name="2035">2035</a></td>
+    <td class="esq"><u>CÓDIGO DE TARIFA DA ENTIDADE DE PAGAMENTOS</u> </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD-TAR-ENT</td>
+  </tr>
+  <tr>
+    <td><a id="2036" name="2036">2036</a></td>
+    <td class="esq"><u>TIPO DE CARTÃO SUPERVISOR</u> <p>Indicador de Tipo de Cartão (=96)<br>
+    &nbsp;&nbsp; 1 - Supervisor (Esc)<br>
+    &nbsp;&nbsp; 2 - Operador<br>
+    &nbsp;&nbsp; 3 - n.a.<br>
+    &nbsp;&nbsp; 4 - Terminal Bancário<br>
+    &nbsp;&nbsp; 5 - Cartão de Depósito<br>
+    &nbsp;&nbsp; 6 - Supervisor (Eur)<br>
+    &nbsp;&nbsp; 7 - Manutenção de POS<br>
+    &nbsp;&nbsp; 8 - Manutenção de ATM</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIP-CAR-SUP</td>
+  </tr>
+  <tr>
+    <td><a id="2037" name="2037">2037</a></td>
+    <td class="esq"><u>DATA DO ÚLTIMO MOVIMENTO ESTRANGEIRO</u> <p>Campo com a data do
+    último movimento executado com o cartão no estrangeiro.&nbsp;</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DT_ULT_MOV_EST</td>
+  </tr>
+  <tr>
+    <td><a id="2038" name="2038">2038</a></td>
+    <td class="esq"><u>DATA DA SITUAÇÃO DO CARTÃO CAPTURADO</u> </td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DT-SIT-CC</td>
+  </tr>
+  <tr>
+    <td><a id="2039" name="2039">2039</a></td>
+    <td class="esq"><u>SITUAÇÃO CARTÃO SUPERVISOR</u> </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SIT-CAR-SUP</td>
+  </tr>
+  <tr>
+    <td><a id="2040" name="2040">2040</a></td>
+    <td class="esq"><u>DATA DA SITUAÇÃO DO CARTÃO SUPERVISOR</u> </td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DT-SIT-CAR-SUP</td>
+  </tr>
+  <tr>
+    <td><a id="2041" name="2041">2041</a></td>
+    <td class="esq"><u>DATA DO ÚLTIMO MOVIMENTO CARTÃO SUPERVISOR</u> </td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DT-MOV-CAR-SUP</td>
+  </tr>
+  <tr>
+    <td><a id="2042" name="2042">2042</a></td>
+    <td class="esq"><u>DATA DE DESINSTALAÇÃO DO CA</u> </td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DT_DESINST</td>
+  </tr>
+  <tr>
+    <td><a id="2043" name="2043">2043</a></td>
+    <td class="esq"><u>ESTADO DE TRANSMISSÃO</u> <p>&nbsp;&nbsp; 1 - A enviar em Real-Time <br>
+    &nbsp;&nbsp; 2 - Enviado com resposta <br>
+    &nbsp;&nbsp; 3 - Enviado sem resposta <br>
+    &nbsp;&nbsp; 4 - A enviar em Batch <br>
+    &nbsp;&nbsp; 5 - Enviado com resposta tardia <br>
+    &nbsp;&nbsp; 9 - A não enviar </p>
+    <p>Nota:<br>
+    &nbsp;&nbsp; 1, 4 e 9 - Não tem bloco de Real-Time<br>
+    &nbsp;&nbsp; 2, 3 e 5 - Tem bloco de Real-Time</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>EST-TRANS</td>
+  </tr>
+  <tr>
+    <td><a id="2044" name="2044">2044</a></td>
+    <td class="esq"><u>TIPO DE FRAUDE</u> <p>Indica o tipo de fraude com que a transacção
+    foi classificada: </p>
+    <p>&nbsp;&nbsp; 01 - Proposta fraudulenta<br>
+    &nbsp;&nbsp; 02 - Counterfeit<br>
+    &nbsp;&nbsp; 03 - Skimming<br>
+    &nbsp;&nbsp; 04 - Perdido<br>
+    &nbsp;&nbsp; 05 - Não recepcionado<br>
+    &nbsp;&nbsp; 06 - Outros<br>
+    &nbsp;&nbsp; 07 - Roubado<br>
+    &nbsp;&nbsp; 08 - Takeover<br>
+    &nbsp;&nbsp; 09 - Mail/phone fraud<br>
+    &nbsp;&nbsp; 10 - Internet order fraud<br>
+    &nbsp;&nbsp; 11 - Friendly fraud (account compromised by cardholder)</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIP-FRAUDE</td>
+  </tr>
+  <tr>
+    <td><a id="2045" name="2045">2045</a></td>
+    <td class="esq"><u>COMISSÃO/TARIFA</u> <p>Apresenta a Comissão ou Tarifa Interbancária
+    aplicada à transacção. </p>
+    <p>O campo tem a seguinte estrutura: <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; TTDCNNNNNNN<br>
+    Em que:<br>
+    &nbsp;&nbsp; TT - Código da tarifa<br>
+    &nbsp;&nbsp; D - Entidade Debitada<br>
+    &nbsp;&nbsp; C - Entidade Creditada<br>
+    &nbsp;&nbsp; NNNNNNN - Montante</p>
+    <p>As entidades envolvidas podem ser:<br>
+    &nbsp;&nbsp; P - Cliente<br>
+    &nbsp;&nbsp; C - Comerciante<br>
+    &nbsp;&nbsp; E - Emissor do Cartão<br>
+    &nbsp;&nbsp; T - Banco de Apoio do Terminal<br>
+    &nbsp;&nbsp; S - SiBS<br>
+    &nbsp;&nbsp; R - Representante<br>
+    &nbsp;&nbsp; G - Banco de Apoio PgS<br>
+    &nbsp;&nbsp; D - Proprietário do Terminal</td>
+    <td class="dta">11</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>COM-TAR</td>
+  </tr>
+  <tr>
+    <td><a id="2046" name="2046">2046</a></td>
+    <td class="esq"><u>DATA DE COMPENSAÇÃO DA TRANSACÇÃO</u> <p>Indica a data em que a
+    transacção foi compensada, e só é preenchido neste caso.&nbsp;</td>
+    <td class="dta">8</td>
+    <td>B</td>
+    <td>AAAANNDD</td>
+    <td>DT-COMP</td>
+  </tr>
+  <tr>
+    <td><a id="2047" name="2047">2047</a></td>
+    <td class="esq"><u>DATA/HORA DO REGISTO LOG</u> <p>É a data/hora que está associada à
+    escrita do registo de log central da SIBS.&nbsp;</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>AAAAMMDD<br>
+    HHMMSS</td>
+    <td>DT-HR-LOG</td>
+  </tr>
+  <tr>
+    <td><a id="2048" name="2048">2048</a></td>
+    <td class="esq"><u>INDICADOR DE EMISSÃO</u> <p>Espaço - Não significativo<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 - Na SIBS - Normal<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 - Na SIBS - Just in Time<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 - PIN diferido (plástico
+    emitido)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 - Segurança na SIBS (MEELC)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4 - Replacement Card<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5 - PIN diferido (sem emissão de
+    plástico)</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>INDIC-EMI</td>
+  </tr>
+  <tr>
+    <td><a id="2049" name="2049">2049</a></td>
+    <td class="esq"><u>DUPLICADOS</u> <p>Indica o número de dias em que se valida se o
+    pagamento realizado através de um Entidade de pagamento de serviços/compras é um
+    duplicado.<br>
+    Nota: se preenchido a zeros a Entidade aceita duplicados.&nbsp;</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DUPLIC</td>
+  </tr>
+  <tr>
+    <td><a id="2050" name="2050">2050</a></td>
+    <td class="esq"><u>NOME DO CLIENTE</u> <p>Equivalente ao atributo <a
+    href="campos1.htm#080">080</a>; foi expandido para efeitos de SIDF. </td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NOME_CLI</td>
+  </tr>
+  <tr>
+    <td><a id="2051" name="2051">2051</a></td>
+    <td class="esq"><u>LOCALIDADE</u> <p>Equivalente ao atributo <a href="campos1.htm#082">082</a>;
+    foi expandido para efeitos de SIDF.&nbsp;</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>LOCAL</td>
+  </tr>
+  <tr>
+    <td><a id="2052" name="2052">2052</a></td>
+    <td class="esq"><u>ACTIVIDADE PROFISSIONAL</u> <p>Apresenta a actividade profissional do
+    titular.&nbsp;</td>
+    <td class="dta">30</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ACT_PROF</td>
+  </tr>
+  <tr>
+    <td><a id="2053" name="2053">2053</a></td>
+    <td class="esq"><u>EMAIL</u> <p>Equivalente ao atributo <a href="camp1700.htm#1794">1794</a>
+      expandido.&nbsp;</td>
+    <td class="dta">55</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMAIL</td>
+  </tr>
+  <tr>
+    <td><a id="2054" name="2054">2054</a></td>
+    <td class="esq"><u>DATA DA ÚLTIMA GRAVAÇÃO</u> </td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>AAAAMMDD</td>
+    <td>DT_ULT_GRAV</td>
+  </tr>
+  <tr>
+    <td><a id="2055" name="2055">2055</a></td>
+    <td class="esq"><u>TECNOLOGIA DO CHIP</u> <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 0 - Sem Chip (Pista LOW-CO)<br>
+    &nbsp;&nbsp; 1 - PCOS<br>
+    &nbsp;&nbsp; 2 - WGPV<br>
+    &nbsp;&nbsp; 3 - Pista HI-CO<br>
+    &nbsp;&nbsp; 4 - EMV (Pista HI-CO)<br>
+    &nbsp;&nbsp; 5 - EMV (Pista LOW-CO)</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TEC-CHIP</td>
+  </tr>
+  <tr>
+    <td><a id="2056" name="2056">2056</a></td>
+    <td class="esq"><u>INDICADOR ACÇÕES FEE</u><p>Código que indica se o utilizador do
+    Terminal Bancário seleccionou a consulta a acções de Fee de um processo de
+    reclamação.</p>
+    <p>Assume os valores:<br>
+    &nbsp; 0 - Não (valor de <em>default)<br>
+    </em>&nbsp; 1 - Sim</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND_AC_FEE</td>
+  </tr>
+  <tr>
+    <td><a id="2057" name="2057">2057</a></td>
+    <td class="esq"><u>TEXTO DA REJEIÇÃO ESTRANGEIRO</u><p>Campo que descreve o motivo de
+    rejeição de determinada acção sobre processo de reclamação NE, por parte do Sistema
+    de Pagamento. <br>
+    Este campo está directamente ligado ao campo <a href="camp1600.htm#1611">1611</a> (campo
+    que informa o código de rejeição).</td>
+    <td class="dta">50</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TEXT-REJ-EST</td>
+  </tr>
+  <tr>
+    <td><a id="2058" name="2058">2058</a></td>
+    <td class="esq"><u>CÓDIGO DE MENSAGEM ENTRE POS E FEP</u> </td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODMENS</td>
+  </tr>
+  <tr>
+    <td><a id="2059" name="2059">2059</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO FEP</u> </td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>IDFEP</td>
+  </tr>
+  <tr>
+    <td><a id="2060" name="2060">2060</a></td>
+    <td class="esq"><u>CÓDIGO RESPOSTA FEP/HOST OU HOST/FEP</u> </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODRESPFEP</td>
+  </tr>
+  <tr>
+    <td><a id="2061" name="2061">2061</a></td>
+    <td class="esq"><u>BANKEY</u> </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>BANKEY</td>
+  </tr>
+  <tr>
+    <td><a id="2062" name="2062">2062</a></td>
+    <td class="esq"><u>TIPO EMISSOR PRINCIPAL</u> </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>TEMISSPRC</td>
+  </tr>
+  <tr>
+    <td><a id="2063" name="2063">2063</a></td>
+    <td class="esq"><u>DESCRITIVO DO MCC</u> <p>Descrição dos códigos. Existirá uma tabela
+    por sistema de pagamento.&nbsp;</td>
+    <td class="dta">35</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DESC-MCC</td>
+  </tr>
+  <tr>
+    <td><a id="2064" name="2064">2064</a></td>
+    <td class="esq"><u>OBSOLESCÊNCIA DO MCC</u> <p>Flag que indica se o código MCC se tornou
+    obsoleto.&nbsp;</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>OBSOL-MCC</td>
+  </tr>
+  <tr>
+    <td><a id="2065" name="2065">2065</a></td>
+    <td class="esq"><u>DATA DA ÚLTIMA ALTERAÇÃO DA TABELA DE MCC</u> </td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DT-ULT-ALT-MCC</td>
+  </tr>
+  <tr>
+    <td><a id="2066" name="2066">2066</a></td>
+    <td class="esq"><u>CÓDIGO DE ERRO DO FICHEIRO MATPA</u> 
+      <p>Indica o erro registado no processamento dum ficheiro MATPA
+      recepcionado pela SIBS.</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td colspan="2" class="esq">Pode assumir os seguintes valores:</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp; R01 -&nbsp;</td>
+          <td class="esq">Número de comerciante não numérico</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp; R02 -</td>
+          <td class="esq">Número de comerciante inválido</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp; R03 -</td>
+          <td class="esq">Número de estabelecimento não numérico</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp; R04 -</td>
+          <td class="esq">Número de estabelecimento inválido</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp; R05 -</td>
+          <td class="esq">Número de terminal não numérico</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp; R06 -</td>
+          <td class="esq">Número de terminal inválido</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp; R07 -</td>
+          <td class="esq">Tipo de comunicação não numérica</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp; R08 -</td>
+          <td class="esq">Tipo de comunicação inválida</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp; R09 -</td>
+          <td class="esq">Proprietário do estabelecimento diferente do banco</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp; R10 -</td>
+          <td class="esq">Tipo de registo inválido</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="esq">&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp; F01 -&nbsp;</td>
+          <td class="esq">Número de registos (registo de trailer) não
+            numérico</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp; F02 -&nbsp;</td>
+          <td class="esq">Número de registos (registo de trailer) igual a zero</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp; F03 -&nbsp;</td>
+          <td class="esq">Número de registos (registo de trailer) incorrecto</td>
+        </tr>
+      </table>
+ </td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODERRTPA</td>
+  </tr>
+  <tr>
+    <td><a id="2067" name="2067">2067</a></td>
+    <td class="esq"><u>ENTIDADE QUE PAGA O TARSIBS</u> <p>Valores possíveis:<br>
+    &nbsp;&nbsp; B - Banco<br>
+    &nbsp;&nbsp; BE - Banco Emissor<br>
+    &nbsp;&nbsp; BAT - Banco de Apoio do Terminal<br>
+    &nbsp;&nbsp; BAC - Banco de Apoio do Comerciante<br>
+    &nbsp;&nbsp; BAE - Banco de Apoio da Entidade<br>
+    &nbsp;&nbsp; ACQ - Acquirer<br>
+    &nbsp;&nbsp; &#133;</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ENT-PAG-TARS</td>
+  </tr>
+  <tr>
+    <td><a id="2068" name="2068">2068</a></td>
+    <td class="esq"><u>RESOLUÇÃO GRÁFICA DO CA</u> <p>Código que indica qual a resolução
+    gráfica existente no Caixa Automático.</p>
+    <p>Tem os valores seguintes:<br>
+    &nbsp; 0 - Definição de 640 x 480<br>
+    &nbsp; 1 - Definição de 800 x 600<br>
+    &nbsp; 2 - Definição de 1024 x 768</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2069" name="2069">2069</a></td>
+    <td class="esq"><u>CÓDIGO DO FILTRO 2</u> <p>Trata-se do campo que identifica o tipo de
+    filtro a utilizar na selecção dos alertas na&nbsp; aplicação SIDF.</p>
+    <p>Assume os valores:<br>
+    &nbsp;&nbsp; 01 - Valor do Movimento<br>
+    &nbsp;&nbsp; 02 - Nº de Horas</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2070" name="2070">2070</a></td>
+    <td class="esq"><u>CÓDIGO DO MOTIVO DE ALERTA</u> <p>É o código que traduz qual o tipo
+    de alerta que foi seleccionado para pesquisa, na Aplicação SIDF.</p>
+    <p>Tem os seguintes valores válidos:<br>
+    &nbsp;&nbsp; C01 - Cartão excedeu nº de transac.<br>
+    &nbsp;&nbsp; C02 - Cartão excedeu valor acumulado<br>
+    &nbsp;&nbsp; C03 - Cartão em distritos diferentes<br>
+    &nbsp;&nbsp; C04 - Trans. obteve cód. resposta<br>
+    &nbsp;&nbsp; C05 - Transacções múltiplas em POS<br>
+    &nbsp;&nbsp; C06 - Cartão atingiu % do lim. créd.<br>
+    &nbsp;&nbsp; C07 - Mov.s com data exp. diferente<br>
+    &nbsp;&nbsp; C08 - Mov.s com CVV inválido/sem CVV<br>
+    &nbsp;&nbsp; C09 - Trans. múltiplas manuais<br>
+    &nbsp;&nbsp; C20 - Transações extra C01<br>
+    &nbsp;&nbsp; E01 - Cartão<br>
+    &nbsp;&nbsp; E02 - Range de Cartões<br>
+    &nbsp;&nbsp; E03 - BIN<br>
+    &nbsp;&nbsp; E04 - Comerciante<br>
+    &nbsp;&nbsp; E05 - Cadeia de Comerciantes<br>
+    &nbsp;&nbsp; E06 - Actividade<br>
+    &nbsp;&nbsp; E07 - Zona<br>
+    &nbsp;&nbsp; E08 - Nº de POS / Terminal<br>
+    &nbsp;&nbsp; M01 - Excesso de alertas per.tempo<br>
+    &nbsp;&nbsp; M02 - Trans. recusadas e aceites<br>
+    &nbsp;&nbsp; M04 - Excedeu limite perc devoluções<br>
+    &nbsp;&nbsp; M05 - Excedeu lim perc trans manuais<br>
+    &nbsp;&nbsp; P01 - Nível 1 C. Padrão<br>
+    &nbsp;&nbsp; P02 - Nível 2 C. Padrão<br>
+    &nbsp;&nbsp; P03 - Nível 3 C. Padrão<br>
+    &nbsp;&nbsp; P04 - Nível 1 C.Padrão (diário)<br>
+    &nbsp;&nbsp; P05 - Nível 2 C.Padrão (diário)<br>
+    &nbsp;&nbsp; P06 - Nível 3 C.Padrão (diário)<br>
+    &nbsp;&nbsp; P07 - Nível 1 C.Padrão (semanal)<br>
+    &nbsp;&nbsp; P08 - Nível 2 C.Padrão (semanal)<br>
+    &nbsp;&nbsp; P09 - Nível 3 C.Padrão (semanal)<br>
+    &nbsp;&nbsp; S01 - Lim. de valor por transac N/E<br>
+    &nbsp;&nbsp; S02 - Lim. de valor acumulado N/E<br>
+    &nbsp;&nbsp; S03 - Lim. de valor acumulado cartão<br>
+    &nbsp;&nbsp; S04 - Lim. de Quantidade de Transac.<br>
+    &nbsp;&nbsp; S05 - Lim. valor trans. Key Enter<br>
+    &nbsp;&nbsp; Z77 - Comerciante inibido de transac<br>
+    &nbsp;&nbsp; Z88 - Tipo cart. desconhec./inexist.<br>
+    &nbsp;&nbsp; Z99 - Não existe C. Pad. Actividade</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2071" name="2071">2071</a></td>
+    <td class="esq"><u>ESTADO DO FILTRO 2</u> <p>Identifica se o tipo de filtro seleccionado
+    na Aplicação SIDF se encontra activo ou não.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 0 - Inactivo<br>
+    &nbsp;&nbsp; 1 - Activo</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2072" name="2072">2072</a></td>
+    <td class="esq"><u>NÚMERO DE HORAS PARA FILTRO</u> <p>Indica o número de horas que o
+    utilizador da aplicação SIDF pretende definir como filtro para pesquisa.&nbsp;</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2073" name="2073">2073</a></td>
+    <td class="esq"><u>DATA DE ACTIVAÇÃO DO FILTRO 2</u> <p>É a data em que o estado do
+    filtro (campo <a href="#2071">2071</a>) passou à situação de activo, i.e., ao código
+    1.&nbsp;</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2074" name="2074">2074</a></td>
+    <td class="esq"><u>NÚMERO DE ALERTAS DESCARTADOS</u> <p>Campo que indica o número de
+    alertas detectados pela Aplicação SIDF, de acordo com o filtro (campo <a href="#2069">2069</a>)
+    seleccionado.&nbsp;</td>
+    <td class="dta"><p align="center">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2075" name="2075">2075</a></td>
+    <td class="esq"><u>TECNOLOGIA DO CHIP EMV</u><p>&nbsp;&nbsp; S - SDA (Static Data
+    Authentication)<br>
+    &nbsp;&nbsp; D - DDA (Dynamic Data Authentication)<br>
+    &nbsp;&nbsp; C - CDA (Combined Data Authentication)</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TECN-CHIP</td>
+  </tr>
+  <tr>
+    <td><a id="2076" name="2076">2076</a></td>
+    <td class="esq"><u>NOME DO ECRÃ</u><p>Identificação de um ecrã gráfico a utilizar nos
+    Caixas Automáticos, por exemplo em operações de Serviço Especial ou em publicidade.</td>
+    <td class="dta">5</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2077" name="2077">2077</a></td>
+    <td class="esq"><u>PRIORIDADE DE ENVIO </u><p>Código que indica&nbsp; qual o grau de
+    prioridade atribuído ao envio do ficheiro para um ou mais Caixas Automáticos Multibanco.<br>
+    O grau de prioridade é inversamente proporcional ao valor que o campo tiver preenchido,
+    i.e., um envio com valor 9 (nove) terá menor prioridade que um ficheiro cujo estado de
+    transmissão tenha um código de prioridade 0 (zero).</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2078" name="2078">2078</a></td>
+    <td class="esq"><u>NÚMERO TOTAL DE CAs QUE NÃO RECEBERAM FICHEIROS</u><p>Campo que
+    indica o número de Caixas Automáticos Multibanco que não recebeu as actualizações
+    definidas no sistema central da SIBS.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2079">2079</a></td>
+    <td class="esq"><u>TIPO DE CONTRATO DE PAGAMENTOS SERVIÇOS/COMPRAS</u>
+      
+      <p>Indica com que entidades existe contrato para aceitação de
+      pagamentos:
+      
+      </p>
+      <p>&nbsp;&nbsp; B - Banco<br>
+      &nbsp;&nbsp; R - Representante<br>
+      &nbsp;&nbsp; S - SIBS
+      
+      </p>
+    </td>
+    <td class="dta">1
+      
+    </td>
+    <td>A
+      
+    </td>
+    <td>
+      &nbsp;
+    </td>
+    <td>TIP-CONTR-PGS
+      
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2080">2080</a></td>
+    <td class="esq"><u>CÓDIGO DA INSTITUIÇÃO CONTRATANTE (PAGAMENTOS SERVIÇOS/COMPRAS)</u>
+      
+    </td>
+    <td class="dta">7
+      
+    </td>
+    <td>N
+      
+    </td>
+    <td>
+      &nbsp;
+    </td>
+    <td>COD-INS-CONTRA
+      
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2081">2081</a></td>
+    <td class="esq"><u>DATA DE ACTUALIZAÇÃO DO ACORDO MB</u>
+      
+    </td>
+    <td class="dta">8
+      
+    </td>
+    <td>N
+      
+    </td>
+    <td>AAAAMMDD
+      
+    </td>
+    <td>DT-ACT-ACOR-MB
+      
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2082">2082</a></td>
+    <td class="esq"><u>TSC PMB EUROS (Taxa Fixa)</u>
+      
+    </td>
+    <td class="dta">5
+      
+    </td>
+    <td>N
+      
+    </td>
+    <td>3 int.<br>
+      2 dec.
+    </td>
+    <td>TSC-PMB-FIX
+      
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2083">2083</a></td>
+    <td class="esq"><u>ORIGEM DA CONTA</u>
+      <p>&nbsp;&nbsp; 1 - SAN<br>
+      &nbsp;&nbsp; 2 - SCD</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ORI-CNT</td>
+  </tr>
+  <tr>
+    <td><a name="2084">2084</a></td>
+    <td class="esq"><u>SERVIÇO VIA VERDE</u>
+      <p>Indica se o cartão está associado ao serviço.
+      <p>&nbsp;&nbsp; 0 - Não<br>
+      &nbsp;&nbsp; 1 - Sim</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SERV-VV</td>
+  </tr>
+  <tr>
+    <td><a name="2085">2085</a></td>
+    <td class="esq"><u>SERVIÇO MBNET</u>
+              
+              <p>Indica se o cartão está associado ao serviço.
+              
+              </p>
+              <p>&nbsp;&nbsp; 0 - Não<br>
+              &nbsp;&nbsp; 1 - Sim
+              
+              </p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SERV-MBNET</td>
+  </tr>
+  <tr>
+    <td><a name="2086">2086</a></td>
+    <td class="esq"><u>SERVIÇO ACCESS</u>
+                
+                <p>Indica se o cartão está associado ao serviço.
+                
+                </p>
+                <p>&nbsp;&nbsp; 0 - Não<br>
+                &nbsp;&nbsp; 1 - Sim
+                
+                </p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SERV-ACCESS</td>
+  </tr>
+  <tr>
+    <td><a name="2087">2087</a></td>
+    <td class="esq"><u>SERVIÇO TMB</u>
+                  
+                  <p>Indica se o cartão está associado ao serviço.
+                  
+                  </p>
+                  <p>&nbsp;&nbsp; 0 - Não<br>
+                  &nbsp;&nbsp; 1 - Sim
+                  
+                  </p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SERV-TMB</td>
+  </tr>
+  <tr>
+    <td><a name="2088">2088</a></td>
+                  <td class="esq"><u>INDICADOR DE LINHA DE CRÉDITO (EMV)</u>
+                    
+                    <p>Indica se existe associada ao produto uma linha de crédito.
+                    
+                    </p>
+                    <p>&nbsp;&nbsp; 0 - Não<br>
+                    &nbsp;&nbsp; 1 - Sim
+                    
+                    </p>
+                  </td>
+                  <td class="dta">1
+                    
+                  </td>
+                  <td>N
+                    
+                  </td>
+                  <td>
+                    &nbsp;
+                  </td>
+                  <td>IND-LINHACRE
+                    
+                  </td>
+  </tr>
+  <tr>
+    <td><a name="2089">2089</a></td>
+                  <td class="esq"><u>INDICADOR DE PROGRAMA DE FIDELIZAÇÃO (EMV)</u>
+                    
+                    <p>Indica se existe associada ao produto um programa de
+                    pontos.
+                    
+                    </p>
+                    <p>&nbsp;&nbsp; 0 - Não<br>
+                    &nbsp;&nbsp; 1 - Sim
+                    
+                    </p>
+                  </td>
+                  <td class="dta">1
+                    
+                  </td>
+                  <td>N
+                    
+                  </td>
+                  <td>
+                    &nbsp;
+                  </td>
+                  <td>IND-PROG-FIDEL
+                    
+                  </td>
+  </tr>
+  <tr>
+    <td><a name="2090">2090</a></td>
+                  <td class="esq"><u>INDICADOR DE COMPRA COM DETALHE (EMV)</u>
+                    
+                    <p>&nbsp;&nbsp; 0 - Não<br>
+                    &nbsp;&nbsp; 1 - Sim
+                    
+                    </p>
+                  </td>
+                  <td class="dta">1
+                    
+                  </td>
+                  <td>N
+                    
+                  </td>
+                  <td>
+                    &nbsp;
+                  </td>
+                  <td>IND-PROGEMIS
+                    
+                  </td>
+  </tr>
+  <tr>
+    <td><a name="2091">2091</a></td>
+                  <td class="esq"><u>INDICADOR DE RESET PARÂMETROS DE RISCO (EMV)</u>
+                    
+                    <p>&nbsp;&nbsp; 0 - Não<br>
+                    &nbsp;&nbsp; 1 - Sim
+                    
+                    </p>
+                  </td>
+                  <td class="dta">1
+                    
+                  </td>
+                  <td>N
+                    
+                  </td>
+                  <td>
+                    &nbsp;
+                  </td>
+                  <td>IND-RESET-RISCO
+                    
+                  </td>
+  </tr>
+  <tr>
+    <td><a name="2092">2092</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO REPRESENTANTE</u><p>Número do Representante
+    (comerciante) no Sistema MB.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDREP</td>
+  </tr>
+  <tr>
+    <td><a name="2093">2093</a></td>
+                  <td class="esq"><u>NÚMERO DE CARTÃO SUPERVISOR</u>
+                    
+                    <p>Tipo (3) + Nº (4) + BAC (4) + COM (7) + EST (4)
+                    
+                    </p>
+                  </td>
+                  <td class="dta">22
+                    
+                  </td>
+                  <td>N
+                    
+                  </td>
+                  <td>
+                    &nbsp;
+                  </td>
+                  <td>NUMCARSUP
+                    
+                  </td>
+  </tr>
+  <tr>
+    <td><a name="2094">2094</a></td>
+                  <td class="esq"><u>DESIGNAÇÃO DA FAMÍLIA DE CARTÃO</u>
+                    
+                  </td>
+                  <td class="dta">30
+                    
+                  </td>
+                  <td>A
+                    
+                  </td>
+                  <td>
+                    &nbsp;
+                  </td>
+                  <td>DESIG-FAM
+                    
+                  </td>
+  </tr>
+  <tr>
+    <td><a name="2095">2095</a></td>
+                  <td class="esq"><u>DESIGNAÇÃO ABREVIADA DA FAMÍLIA DE CARTÃO</u>
+                    
+                  </td>
+                  <td class="dta">15
+                    
+                  </td>
+                  <td>A
+                    
+                  </td>
+                  <td>
+                    &nbsp;
+                  </td>
+                  <td>DESIG-FAM-ABRV
+                    
+                  </td>
+  </tr>
+  <tr>
+    <td><a name="2096">2096</a></td>
+                  <td class="esq"><u>INDICADOR DE VALIDAÇÃO DE LISTA NEGRA DE
+                    CARTÕES INTERNACIONAIS</u><p>&nbsp;&nbsp; 0 - Não valida<br>
+                    &nbsp;&nbsp; 1 - Valida 
+                    
+                    </p>
+                  </td>
+                  <td class="dta">1
+                    
+                  </td>
+                  <td>A
+                    
+                  </td>
+                  <td>
+                    &nbsp;
+                  </td>
+                  <td>PROC-LN
+                    
+                  </td>
+  </tr>
+  <tr>
+    <td><a name="2097">2097</a></td>
+                  <td class="esq"><u>TIPO DE CARTÃO INTERNACIONAL</u><p>&nbsp;&nbsp;
+                    0 - EUROCHEQUE<br>
+                    &nbsp;&nbsp; 1 - AMEX<br>
+                    &nbsp;&nbsp; 2 - EUROSHELL<br>
+                    &nbsp;&nbsp; 3 - VISA<br>
+                    &nbsp;&nbsp; 4 - MASTERCARD<br>
+                    &nbsp;&nbsp; 5 - EUROCARD<br>
+                    &nbsp;&nbsp; 6 - NEXUS<br>
+                    &nbsp;&nbsp; 7 - UNICRE<br>
+                    &nbsp;&nbsp; 8 - ESSO - EUROSHELL<br>
+                    &nbsp;&nbsp; 9 - 4BS<br>
+                    &nbsp;&nbsp; A - SAVING BANKS&nbsp;&nbsp;&nbsp;<br>
+                    &nbsp;&nbsp; B - BANKSYS&nbsp;&nbsp;<br>
+                    &nbsp;&nbsp; C - GALP&nbsp;&nbsp;&nbsp;<br>
+                    &nbsp;&nbsp; D - S.S.B&nbsp;<br>
+                    &nbsp;&nbsp; E - EDC<br>
+                    &nbsp;&nbsp; F - CIRRUS<br>
+                    &nbsp;&nbsp; G - MAESTRO<br>
+                    &nbsp;&nbsp; H - EDC/MAESTRO<br>
+                    &nbsp;&nbsp; I - EC-CIRRUS<br>
+                    &nbsp;&nbsp; J - VISA/NIL&nbsp;&nbsp;<br>
+                    &nbsp;&nbsp; K - SEMP&nbsp;&nbsp;<br>
+                    &nbsp;&nbsp; L - ANDORRA
+                    
+                    </p>
+                  </td>
+                  <td class="dta">1
+                    
+                  </td>
+                  <td>A
+                    
+                  </td>
+                  <td>
+                    &nbsp;
+                  </td>
+                  <td>TIP-CAR-INT
+                    
+                  </td>
+  </tr>
+  <tr>
+    <td><a name="2098">2098</a></td>
+                  <td class="esq"><u>ÂMBITO DE FUNCIONAMENTO DO CARTÃO INTERNACIONAL</u>
+                    
+                    <p>Tipo de terminal em que o tipo de cartão pode ser
+                    aceite.
+                    
+                    </p>
+                  </td>
+                  <td class="dta">1
+                    
+                  </td>
+                  <td>A
+                    
+                  </td>
+                  <td>
+                    &nbsp;
+                  </td>
+                  <td>AMB-FUNC
+                    
+                  </td>
+  </tr>
+  <tr>
+    <td><a name="2099">2099</a></td>
+                  <td class="esq"><u>REPRESENTANTE DO CARTÃO INTERNACIONAL</u>
+                    
+                  </td>
+                  <td class="dta">7
+                    
+                  </td>
+                  <td>N
+                    
+                  </td>
+                  <td>
+                    &nbsp;
+                  </td>
+                  <td>REP-INT
+                    
+                  </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

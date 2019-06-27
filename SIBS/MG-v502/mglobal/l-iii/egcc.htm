@@ -1,0 +1,2383 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>GESTÃO DE CARTÕES E CONTAS</title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">&nbsp;NOME DO FICHEIRO: &nbsp; GESTÃO DE CARTÕES E CONTAS</td>
+        <td class="fichdta">&quot;FICH&quot; = EGCC</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Este ficheiro é enviado pelo Emissor para a SIBS, sempre que seja necessário actualizar
+os dados dos cartões e das contas D.O. associadas.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de <em>Header</em> do ficheiro &quot;TIPREG=0&quot;;</li>
+</ul>
+
+<ul>
+  <li>o registo de Detalhe &quot;TIPREG=1&quot;, tem um código de gestão (<a
+    href="../../Campos/campos3.htm#285">CODGEST</a>) que indica a acção a efectuar sobre os
+    campos;</li>
+</ul>
+
+<ul>
+  <li>o registo de <em>Trailer</em> &quot;TIPREG=9&quot;, é o último do ficheiro e contém o
+    número de registos de detalhe enviados. </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h6><u>DESCRIÇÃO </u></h6>
+
+<p><br>
+Os processos de gestão que se encontram previstos são os seguintes:</p>
+
+<blockquote>
+  <p><br>
+  CODGEST=1 - Inserção de segunda conta - SAN2 (<a href="../../Campos/campos2.htm#132">132</a>)CONTA
+  <br>
+  CODGEST=2 - Remoção da associação à segunda conta - SAN2 (<a
+  href="../../Campos/campos2.htm#132">132</a>)CONTA <br>
+  CODGEST=3 - Reservado<br>
+  CODGEST=4 - Reservado<br>
+  CODGEST=5 - Alteração características de P3/<em>Plafond</em> de Saldo Geral de cartão<br>
+  CODGEST=6 - Alteração o tipo de restrições duma conta<br>
+  CODGEST=7 - Reservado<br>
+  CODGEST=8 - Reservado<br>
+  CODGEST=9 - Reservado<br>
+  CODGEST=10 - Alteração do número da primeira conta - SAN1 (<a
+  href="../../Campos/campos2.htm#132">132</a>)CONTA<br>
+  CODGEST=11 -&nbsp;Alteração do factor de conversão entre a moeda principal da
+  aplicação<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  e uma segunda moeda existente para o cartão (EMV)<br>
+  CODGEST=12 -&nbsp;Alteração dos parâmetros de risco associados ao número e valor
+  das&nbsp;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  transacções permitidas em <i>offline</i><br>
+  CODGEST=13 -&nbsp;Abate ou associação/caracterização de programa Linha de Crédito<br>
+  CODGEST=14 -&nbsp;Abate ou associação/caracterização de programa de Fidelização<br>
+  CODGEST=15 -&nbsp;Abate ou associação/caracterização de programa de Emissor&nbsp; <br>
+  CODGEST=16 -&nbsp;Gestão de vales virtuais (programa de Fidelização)<br>
+  CODGEST=17 -&nbsp;Alteração de <em>plafond</em> de cartão (programa Linha de Crédito)<br>
+  CODGEST=18 -&nbsp;Alteração de dados de conta - SAN1 ou SAN2<br>
+  <span class="a">CODGEST=19 -&nbsp;Sistema de Autenticação Forte - activa/inactiva serviço de autenticação<br>
+  CODGEST=20 -&nbsp;Sistema de Autenticação Forte - alteração de associação de cartão a NIF</span> </p>
+</blockquote>
+
+<p><br>
+O formato do registo é fixo, com o tamanho de 55 bytes.</p>
+
+<p><br>
+<strong>NOTA: Neste processo não estamos a incluir a alteração de situação de
+cartão.</strong></p>
+
+<p><br>
+Em cada ficheiro EGCC, só é possível indicar uma das alterações referidas por
+cartão.</p>
+
+<p>&nbsp;</p>
+
+<h6 ><u>OBSERVAÇÕES</u></h6>
+
+<p><br>
+
+</p>
+
+<p><b>Renovação/Substituição de Cartões EMV</b> 
+
+</p>
+
+<p>
+No processo de renovação ou substituição de cartões com <i> chip</i> EMV, existe um
+conjunto de valores posicionados no cartão substituído que são transferidos
+para o novo cartão, nomeadamente relativos a: 
+
+</p>
+
+<ul >
+  <li>Parâmetros
+de risco para transacções <i> offline</i></li>
+  <li>Funcionalidade &quot;linha de crédito&quot;</li>
+  <li>Funcionalidade &quot;fidelização&quot;</li>
+  <li>Funcionalidade &quot;programa do Emissor&quot;</li>
+</ul>
+<p>Por forma a garantir a integridade dos dados EMV, após a emissão lógica do
+novo cartão, no período em que os dois cartões coexistem não são permitidas
+alterações aos valores posicionados no cartão substituído para os elementos
+que transitam para o novo cartão.
+
+</p>
+<p>Assim, são rejeitados todos os registos do EGCC em que se verifique
+simultaneamente que o cartão em causa tem indicação de já ter sido substituído
+e que o código de gestão utilizado é um dos seguintes:
+
+</p>
+<ul >
+  <li>CODGEST=11</li>
+  <li>CODGEST=12</li>
+  <li>CODGEST=13</li>
+  <li>CODGEST=14</li>
+  <li>CODGEST=15</li>
+  <li>CODGEST=17</li>
+</ul>
+
+<p><br>
+</p>
+
+<p><b>Restrições à Associação de Funcionalidades
+Adicionais a Cartões EMV</b></p>
+<p>As funcionalidades adicionais de cartões EMV (ver capítulo <a href="../l-ii/a7.htm" target="main">A.7</a>)
+são disponibilizadas apenas para cartões normais de clientes bancários
+(SEQPAN=1). Quando o cartão para o qual se pretende indicar uma alteração
+possui SEQPAN de valor superior a 1, não são admitidos os seguintes códigos
+de gestão:</p>
+<ul >
+  <li>CODGEST=13</li>
+  <li>CODGEST=14</li>
+  <li>CODGEST=15</li>
+  <li>CODGEST=16</li>
+  <li>CODGEST=17</li>
+</ul>
+<p>Para informação adicional sobre restrições à utilização dos códigos
+de gestão das Funcionalidades Adicionais de cartões EMV deve ser consultado o
+Livro II, capítulo <a href="../l-ii/a7.htm#A.7.3" target="main">A.7.3</a>.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>VERSÕES</u></h6>
+
+<ul>
+  <li>A versão 00 dos ficheiros corresponde à introdução da versão 4.0 do Modelo Global
+    em Novembro de 1997, cujo objectivo principal foi a preparação para o Euro.</li>
+</ul>
+
+<ul>
+  <li>A versão 01 de Junho de 2002 apresenta novos campos no bloco de dados de cartão, por
+    forma a permitir a gestão de cartões por BIN/N.º cartão em lugar de Emissor/N.º
+    cartão, assim como a gestão de cartões com o mesmo número (diferenciados pela data de
+    expiração). São ainda retirados os códigos de gestão 3, 4, 7 e 9 relativos à gestão
+    de cartões de crédito.</li>
+</ul>
+
+<ul>
+  <li>Em Junho de 2003, para possibilitar a gestão de um conjunto de elementos posicionados
+    nos cartões <i>chip</i> EMV (parâmetros de risco para transacções <i>offline</i> e
+    gestão de programas específicos dos emissores), foram adicionados à versão 01 os
+    códigos de gestão 11, 12, 13, 14 e 15.</li>
+</ul>
+
+<ul>
+  <li >Em Março de 2004, implementou-se o código de gestão 18 para permitir a
+    alteração dos diferentes elementos de uma conta já existente no cartão (SAN1 ou SAN2).</li>
+</ul>
+
+<ul>
+  <li >Em Maio de 2004, foram especificados os códigos de gestão 16 e 17, que
+    complementam os já existentes referentes às funcionalidades adicionais dos cartões com <em>chip</em>
+    EMV, possibilitando a gestão de vales virtuais (16) e a gestão do saldo específico para
+    compras com pagamento fraccionado (17).</li>
+</ul>
+
+<ul class="a">
+  <li>Para possibilitar a gestão da informação que vai residir no SAF (Sistema de Autenticação Forte), em Setembro de 2005 foram definidos os códigos de gestão 19 e 20.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">EGCC - TIPO DE REGISTO = 1 (GESTÃO DE CARTÕES E CONTAS) - Versão 00</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODGEST</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 01 (Inserir SAN2)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODAGE</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">11</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#134">134</a></td>
+    <td class="esq" width="200">dados relativos a SAN2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTA</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">15</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td class="esq" width="200">dados relativos a SAN2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TCRU</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">30</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#133">133</a></td>
+    <td class="esq" width="200">dados relativos a SAN2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LIMES</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">32</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#135">135</a></td>
+    <td class="esq" width="200">dados relativos a SAN2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DIA</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">36</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#136">136</a></td>
+    <td class="esq" width="200">dados relativos a SAN2</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODGEST</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 02 (Abater SAN2)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTA</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">11</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td class="esq" width="200">dados relativos a SAN2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TCRU</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">26</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#133">133</a></td>
+    <td class="esq" width="200">dados relativos a SAN2</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODGEST</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 05 (Alterar dados Pista 3)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">MONTP3</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">11</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#154">154</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DURPER</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">15</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#124">124</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATINI</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#125">125</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">PLAF-SALD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#232">232</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODGEST</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 06 (Alterar restrições conta)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTA</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">11</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TCRU</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">26</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#133">133</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">CODGEST</td>
+    <td class="dtamid" width="45">2</td>
+    <td class="dtamid" width="45">9</td>
+    <td width="45" class="mid">A</td>
+    <td width="85" class="mid"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 10 (Alteração do número da primeira conta - SAN1)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODAGE (a)</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">11</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#134">134</a></td>
+    <td class="esq" width="200">dados relativos a SAN1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTA</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">15</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td class="esq" width="200">dados relativos a SAN1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TCRU (a)</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">30</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#133">133</a></td>
+    <td class="esq" width="200">dados relativos a SAN1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LIMES (a)</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">32</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#135">135</a></td>
+    <td class="esq" width="200">dados relativos a SAN1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DIA (a)</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">36</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#136">136</a></td>
+    <td class="esq" width="200">dados relativos a SAN1</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" height="25">
+  <tr>
+    <td>
+&nbsp;    </td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" nowrap>(a) -&nbsp; </td>
+    <td class="just">Os campos que caracterizam uma determinada conta não são alteráveis
+    através deste código de gestão. O código 10 destina-se exclusivamente à alteração
+    da primeira conta do cartão (campo (<a href="../../Campos/campos2.htm#132">132</a>)
+    CONTA).<br>
+    Os restantes campos, indicados com (a), são alteráveis através do código de gestão
+    18.</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">EGCC - TIPO DE REGISTO = 1 (GESTÃO DE
+CARTÕES E CONTAS) - Versão 01</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD (<a href="egcc.htm#1" target="main">1</a>)</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP (<a target="main" href="egcc.htm#2">2</a>)</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODGEST</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 01 (Inserir SAN2)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODAGE</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#134">134</a></td>
+    <td class="esq" width="200">dados relativos a SAN2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTA</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">28</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td class="esq" width="200">dados relativos a SAN2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TCRU</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">43</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#133">133</a></td>
+    <td class="esq" width="200">dados relativos a SAN2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LIMES</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">45</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#135">135</a></td>
+    <td class="esq" width="200">dados relativos a SAN2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DIA</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">49</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#136">136</a></td>
+    <td class="esq" width="200">dados relativos a SAN2</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" height="25">
+  <tr>
+    <td>
+&nbsp;    </td>
+  </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap>
+(<a name="1">1</a>)
+<strong> -</strong> &nbsp;</td>
+    <td class="esq"> Parâmetro - é validado se o Emissor indicar que
+envia o CD.</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap colspan="2">&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="2">2</a>) -&nbsp;</td>
+    <td class="esq">Preenchimento opcional - mandatório para a gestão de cartões com o
+    mesmo número.</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODGEST</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 02 (Abater SAN2)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTA</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td class="esq" width="200">dados relativos a SAN2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TCRU</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">39</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#133">133</a></td>
+    <td class="esq" width="200">dados relativos a SAN2</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODGEST</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 05 (Alterar dados Pista 3)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">MONTP3</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#154">154</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DURPER</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">28</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#124">124</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATINI</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">30</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#125">125</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">PLAF-SALD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">35</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#232">232</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODGEST</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 06 (Alterar restrições conta)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTA</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TCRU</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">39</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#133">133</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">CODGEST</td>
+    <td class="dtamid" width="45">2</td>
+    <td class="dtamid" width="45">22</td>
+    <td width="45" class="mid">A</td>
+    <td width="85" class="mid"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 10 (Alteração do número da primeira conta - SAN1)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODAGE (a)</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#134">134</a></td>
+    <td class="esq" width="200">dados relativos a SAN1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTA</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">28</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td class="esq" width="200">dados relativos a SAN1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TCRU (a)</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">43</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#133">133</a></td>
+    <td class="esq" width="200">dados relativos a SAN1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LIMES (a)</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">45</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#135">135</a></td>
+    <td class="esq" width="200">dados relativos a SAN1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DIA (a)</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">49</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#136">136</a></td>
+    <td class="esq" width="200">dados relativos a SAN1</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" height="25">
+  <tr>
+    <td>
+&nbsp;    </td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" nowrap>(a) -&nbsp; </td>
+    <td class="just">Os campos que caracterizam uma determinada conta não são alteráveis
+    através deste código de gestão. O código 10 destina-se exclusivamente à alteração
+    da primeira conta do cartão (campo (<a href="../../Campos/campos2.htm#132">132</a>)
+    CONTA).<br>
+    Os restantes campos, indicados com (a), são alteráveis através do código de gestão
+    18.</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">CODGEST</td>
+    <td class="dtamid" width="45">2</td>
+    <td class="dtamid" width="45">22</td>
+    <td width="45" class="mid">A</td>
+    <td width="85" class="mid"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 11 (EMV - Alterar factor de conversão para a
+    segunda moeda)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">EMV-PADRAO</td>
+    <td class="dtamid" width="45">3</td>
+    <td class="dtamid" width="45">28</td>
+    <td width="45" class="mid">N</td>
+    <td width="85" class="mid"><a href="../../Campos/camp1700.htm#1716">1716</a></td>
+    <td class="esq" width="200">Padrão EMV correspondente à aplicação para a qual se
+    pretende efectuar alterações</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EMV-FACTORCONV</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">31</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1725">1725</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">CODGEST</td>
+    <td class="dtamid" width="45">2</td>
+    <td class="dtamid" width="45">22</td>
+    <td width="45" class="mid">A</td>
+    <td width="85" class="mid"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 12 (EMV - Alterar parâmetros de risco <i>Offline</i>)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">EMV-PADRAO</td>
+    <td class="dtamid" width="45">3</td>
+    <td class="dtamid" width="45">28</td>
+    <td width="45" class="mid">N</td>
+    <td width="85" class="mid"><a href="../../Campos/camp1700.htm#1716">1716</a></td>
+    <td class="esq" width="200">Padrão EMV correspondente à aplicação para a qual se
+    pretende efectuar alterações</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">OFFLINEVAL-LOW (a)</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">31</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1726">1726</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">OFFLINEVAL-UP (a)</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">37</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1727">1727</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">OFFLINE-MOEDA</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">43</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1728">1728</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">OFFLINE-PAIS</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">45</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1729">1729</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">OFFLINE-LOWER</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">47</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1730">1730</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">OFFLINE-UPPER</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">49</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1731">1731</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" height="25">
+  <tr>
+    <td>
+&nbsp;    </td>
+  </tr>
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap>(a) -&nbsp;</td>
+    <td class="esq">O valor do campo (<a href="../../Campos/camp1700.htm#1727">1727</a>)
+      OFFLINEVAL-UP tem obrigatoriamente que ser igual ou superior ao valor
+      indicado para o campo (<a href="../../Campos/camp1700.htm#1726">1726</a>) OFFLINEVAL-LOW.
+      Se esta condição não se verificar, o registo é rejeitado.</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">CODGEST</td>
+    <td class="dtamid" width="45">2</td>
+    <td class="dtamid" width="45">22</td>
+    <td width="45" class="mid">A</td>
+    <td width="85" class="mid"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 13 (EMV - Alterar associação a Linha de Crédito)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">LINHACRE-APLIC</td>
+    <td class="dtamid" width="45">3</td>
+    <td class="dtamid" width="45">28</td>
+    <td width="45" class="mid">N</td>
+    <td width="85" class="mid"><a href="../../Campos/camp1700.htm#1734">1734</a></td>
+    <td class="esq" width="200">Padrão EMV correspondente à aplicação para a qual se
+    pretende&nbsp; associar a funcionalidade (<a href="#c" target="main">c</a>)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LINHACRE-ID (<a href="egcc.htm#a" target="main">a</a>)</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">31</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1735">1735</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LINHACRE-VMIN (<a href="egcc.htm#b" target="main">b</a>)</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">32</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1736">1736</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LINHACRE-PREST (<a href="egcc.htm#b" target="main">b</a>)</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">38</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1737">1737</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LINHACRE-VPREST (<a href="egcc.htm#b" target="main">b</a>)</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">40</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1738">1738</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LINHACRE-IDTEX (<a href="egcc.htm#b" target="main">b</a>)</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">46</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1739">1739</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" height="25">
+  <tr>
+    <td>
+&nbsp;    </td>
+  </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap>(<a name="a">a</a>) e (<a name="b">b</a>) <strong>
+    -</strong>&nbsp;</td>
+    <td class="just">Apenas deve ser preenchido um dos conjuntos de campos. Se preenchido o
+    ponto (<b>a</b>), campo (<a href="../../Campos/camp1700.htm#1735">1735</a>) LINHACRE-ID,
+    os pontos referenciados com (<b>b</b>) têm que ser preenchidos com zeros, e vice-versa. O
+    prenchimento em simultâneo de campos do ponto (<b>a</b>) e (<b>b</b>) implica a
+    rejeição do registo.<br>
+      Quando tenha significado (valor entre 1 e 9), o valor do campo (<a href="../../Campos/camp1700.htm#1735">1735</a>)
+      LINHACRE-ID tem que corresponder a uma combinação de elementos que
+      caracterizam a linha de crédito que esteja definida na Caracterização
+      do BIN.</td>
+  </tr>
+</table>
+
+<p>(<a name="c">c</a>) -&nbsp;O valor a indicar para o campo (<a href="../../campos/camp1700.htm#1734">1734</a>)
+      LINHACRE-APLIC depende da acção pretendida:</p>
+<blockquote>
+      <ul class="nove">
+        <li>
+          desactivar a funcionalidade - valor ‘000’. A desactivação
+          implica também o abate do <i> plafond</i>  de cartão para compras
+          com pagamento fraccionado, quando exista, pelo que é desnecessário o
+          envio de um registo adicional com CODGEST=17;</li>
+        <li >
+          associar funcionalidade ao cartão - qualquer valor entre ‘001’ a
+          ‘989’, correspondente a um padrão existente no cartão;</li>
+        <li>
+          alterar parâmetros de funcionalidade já activa - qualquer valor
+          entre ‘001’ a ‘989’, idêntico ao valor indicado no momento da
+          emissão ou num ficheiro EGCC anterior.</li>
+      </ul>
+</blockquote>
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">CODGEST</td>
+    <td class="dtamid" width="45">2</td>
+    <td class="dtamid" width="45">22</td>
+    <td width="45" class="mid">A</td>
+    <td width="85" class="mid"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 14 (EMV - Alterar associação a programa de
+    Fidelização)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">FIDELIZ-APLIC</td>
+    <td class="dtamid" width="45">3</td>
+    <td class="dtamid" width="45">28</td>
+    <td width="45" class="mid">N</td>
+    <td width="85" class="mid"><a href="../../Campos/camp1700.htm#1741">1741</a></td>
+    <td class="esq" width="200">Padrão EMV correspondente à aplicação para a qual se
+    pretende associar a funcionalidade (a)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FIDELIZACAO-ID</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">31</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1742">1742</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" height="25">
+  <tr>
+    <td>
+&nbsp;    </td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%" class="esq">(a) -&nbsp;O valor a indicar para o campo (<a href="../../Campos/camp1700.htm#1741">1741</a>)
+      FIDELIZ-APLIC depende da acção pretendida:</td>
+  </tr>
+</table>
+      <ul class="nove">
+        <li>
+          desactivar a funcionalidade - valor ‘000’;</li>
+        <li>
+          associar programa (FIDELIZACAO-ID) ao cartão - qualquer
+          valor entre ‘001’ a ‘989’ ou ‘999’;</li>
+        <li>
+      alterar a aplicação ou aplicações EMV que têm associada a funcionalidade:</li>
+      </ul>
+      <blockquote >
+        <ul class="nove" type="square">
+          <li >
+            valor '999' - quando na emissão, ou através de
+            EGCC anterior, se associou a funcionalidade a um único padrão
+            identificado por um valor entre ‘001’ a ‘989’, associa o
+            mesmo programa (FIDELIZACAO-ID) aos restantes padrões existentes no
+            cartão;</li>
+          <li >valor entre ‘001’ a ‘989’, correspondente a um padrão
+            existente no cartão - quando na emissão, ou através de EGCC
+            anterior, se associou a funcionalidade a todos os padrões (valor
+            '999'), mantém a associação ao programa (FIDELIZACAO-ID) para o
+            padrão indicado e retira a associação aos restantes padrões.</li>
+        </ul>
+      </blockquote>
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">CODGEST</td>
+    <td class="dtamid" width="45">2</td>
+    <td class="dtamid" width="45">22</td>
+    <td width="45" class="mid">A</td>
+    <td width="85" class="mid"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 15 (EMV - Alterar associação a programa de
+    Emissor)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">PROGEMI-APLIC</td>
+    <td class="dtamid" width="45">3</td>
+    <td class="dtamid" width="45">28</td>
+    <td width="45" class="mid">N</td>
+    <td width="85" class="mid"><a href="../../Campos/camp1700.htm#1743">1743</a></td>
+    <td class="esq" width="200">Padrão EMV correspondente à aplicação para a qual se
+    pretende&nbsp; associar a funcionalidade (a)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">PROGEMISSOR-ID</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">31</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1744">1744</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" height="25">
+  <tr>
+    <td>
+&nbsp;    </td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq">(a) -&nbsp;O valor a indicar para o campo (<a href="../../Campos/camp1700.htm#1743">1743</a>)
+      PROGEMI-APLIC depende da acção pretendida:</td>
+  </tr>
+</table>
+      <ul class="nove">
+        <li>
+          desactivar a funcionalidade - valor ‘000’;</li>
+        <li>
+          associar programa (PROGEMISSOR-ID) ao cartão - qualquer
+          valor entre ‘001’ a ‘989’ ou ‘999’;</li>
+        <li style="page-break-before: always">
+      alterar a aplicação ou aplicações EMV que têm associada a funcionalidade:</li>
+		</ul>
+         <blockquote >
+        <ul class="nove" type="square">
+          <li >
+            valor '999' - quando na emissão, ou através de
+            EGCC anterior, se associou a funcionalidade a um único padrão
+            identificado por um valor entre ‘001’ a ‘989’, associa o
+            mesmo programa (PROGEMISSOR-ID) aos restantes padrões existentes no
+            cartão;</li>
+          <li >valor entre ‘001’ a ‘989’, correspondente a um padrão
+            existente no cartão - quando na emissão, ou através de EGCC
+            anterior, se associou a funcionalidade a todos os padrões (valor
+            '999'), mantém a associação ao programa (PROGEMISSOR-ID) para o
+            padrão indicado e retira a associação aos restantes padrões.</li>
+        </ul>
+  
+     </blockquote>
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">CODGEST</td>
+    <td class="dtamid" width="45">2</td>
+    <td class="dtamid" width="45">22</td>
+    <td width="45" class="mid">A</td>
+    <td width="85" class="mid"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 16 (EMV - Fidelização - gestão de vales
+    virtuais)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">24</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FID-PONTOSDIS (a)</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">28</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2309">2309</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FID-VALORDIS (a)</td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">35</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2311">2311</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FID-VALEEXP</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">44</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2312">2312</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" height="25">
+  <tr>
+    <td>
+&nbsp;    </td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" nowrap>(a) -&nbsp; </td>
+    <td class="just">Quando um ou os dois campos são preenchidos a zeros, o vale de pontos
+    associado ao cartão é eliminado e é preparado um <em>script</em> para envio ao cartão,
+    para actualização do indicador de rebate de pontos (rebate desactivado) na aplicação
+    (ou aplicações) EMV para a(s) qual(ais) se disponibilizou previamente um programa de
+    fidelização.</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">CODGEST</td>
+    <td class="dtamid" width="45">2</td>
+    <td class="dtamid" width="45">22</td>
+    <td width="45" class="mid">A</td>
+    <td width="85" class="mid"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 17 (EMV - Linha de Crédito - alteração de <em>plafond
+    </em>de cartão)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">24</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">LINHACRE-APLIC</td>
+    <td class="dtamid" width="45">3</td>
+    <td class="dtamid" width="45">28</td>
+    <td width="45" class="mid">N</td>
+    <td width="85" class="mid"><a href="../../Campos/camp1700.htm#1734">1734</a></td>
+    <td class="esq" width="200">Padrão EMV correspondente à aplicação para a qual se
+    pretende efectuar alterações (a)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CRE-PLAFOND (b)</td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">31</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2305">2305</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CRE-PLAFDIA</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">40</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2306">2306</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" height="25">
+  <tr>
+    <td>
+&nbsp;    </td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" nowrap>(a) -&nbsp; </td>
+    <td class="esq">O valor a indicar para o campo (<a href="../../Campos/camp1700.htm#1734">1734</a>)
+      LINHACRE-APLIC tem que corresponder à ocorrência de EMV-PADRAO existente
+      no cartão para a qual está parametrizada uma linha de crédito. A falha
+      desta validação implica rejeição do registo.</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap> &nbsp;&nbsp; </td>
+    <td class="just">&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(b) -&nbsp; </td>
+    <td class="just">Se não for utilizado o conceito de <a href="../l-ii/a1.htm#Limite"
+    target="main">limite mensal</a>, pressupõe-se que o valor indicado corresponde ao novo
+    saldo disponível.<br>
+    Se o Emissor utilizar o conceito de limite mensal, o valor indicado corresponde ao
+    montante a parametrizar para o primeiro período mensal a iniciar após o processamento do
+    ficheiro (não é alterado o valor disponível no próprio período).</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">CODGEST</td>
+    <td class="dtamid" width="45">2</td>
+    <td class="dtamid" width="45">22</td>
+    <td width="45" class="mid">A</td>
+    <td width="85" class="mid"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esq" width="200"><strong>= 18 (Alteração de dados de conta - SAN1 ou SAN2)</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODAGE</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">24</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#134">134</a></td>
+    <td class="esq" width="200">dados relativos à conta informada</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTA (a)</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">28</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td class="esq" width="200">SAN1 ou SAN2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TCRU</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">43</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#133">133</a></td>
+    <td class="esq" width="200">dados relativos à conta informada</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LIMES </td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">45</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#135">135</a></td>
+    <td class="esq" width="200">dados relativos à conta informada</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DIA</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">49</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#136">136</a></td>
+    <td class="esq" width="200">dados relativos à conta informada</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" height="25">
+  <tr>
+    <td>
+&nbsp;    </td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" nowrap>(a) -&nbsp; </td>
+    <td class="just">Campo preenchido com o número de uma conta associada ao cartão, quer
+    seja a primeira conta (SAN1) ou segunda conta (SAN2). A alteração de dados é efectuada
+    para a conta indicada, de acordo com as seguintes validações:<ul class="nove">
+      <li>(<a href="../../Campos/campos2.htm#134">134</a>) CODAGE - a agência é sempre alterada
+        para o valor informado pelo Emissor. O valor &#145;0000&#146; é considerado como válido
+        e equiparado a qualquer outro. </li>
+      <li>(<a href="../../Campos/campos2.htm#133">133</a>) TCRU - este campo tem que estar
+        preenchido com um valor válido (preenchimento obrigatório). São colocadas no cartão as
+        restrições de conta informadas.</li>
+      <li>(<a href="../../Campos/campos2.htm#135">135</a>) LIMES e (<a
+        href="../../Campos/campos2.htm#136">136</a>) DIA - se estes dois campos forem preenchidos
+        a zeros, os valores já posicionados não são alterados. Caso contrário, são
+        posicionados valores de acordo com o informado.</li>
+    </ul>
+    </td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+</table>
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160"><span class="a">Nome do Campo</span> </td>
+    <td class="fundoa" width="45">Comp. </td>
+    <td class="fundoa" width="45">Pos. </td>
+    <td class="fundoa" width="45">Rep. </td>
+    <td class="fundoa" width="85">N.º Campo </td>
+    <td class="fundoa" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">TIPREG</td>
+    <td class="dtaa" width="45">1</td>
+    <td class="dtaa" width="45">1</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esqa" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">BIN</td>
+    <td width="45" class="dtaa">6</td>
+    <td width="45" class="dtaa">2</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">EXBIN</td>
+    <td width="45" class="dtaa">2</td>
+    <td width="45" class="dtaa">8</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">NUMCAR</td>
+    <td width="45" class="dtaa">7</td>
+    <td width="45" class="dtaa">10</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">CARCD</td>
+    <td width="45" class="dtaa">1</td>
+    <td width="45" class="dtaa">17</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">DATEXP</td>
+    <td width="45" class="dtaa">4</td>
+    <td width="45" class="dtaa">18</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmida" width="160">CODGEST</td>
+    <td class="dtamida" width="45">2</td>
+    <td class="dtamida" width="45">22</td>
+    <td width="45" class="mida">A</td>
+    <td width="85" class="mid"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esqa" width="200"><strong>= 19 (EMV - CAP - activa/inactiva
+      serviço de autenticação)</strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">CODBAN</td>
+    <td class="dtaa" width="45">4</td>
+    <td class="dtaa" width="45">24</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">ESTADO-PAN</td>
+    <td class="dtaa" width="45">1</td>
+    <td class="dtaa" width="45">28</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/camp3100.htm#3121">3121</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160"><span class="a">Nome do Campo</span> </td>
+    <td class="fundoa" width="45">Comp. </td>
+    <td class="fundoa" width="45">Pos. </td>
+    <td class="fundoa" width="45">Rep. </td>
+    <td class="fundoa" width="85">N.º Campo </td>
+    <td class="fundoa" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">TIPREG</td>
+    <td class="dtaa" width="45">1</td>
+    <td class="dtaa" width="45">1</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esqa" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">BIN</td>
+    <td width="45" class="dtaa">6</td>
+    <td width="45" class="dtaa">2</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">EXBIN</td>
+    <td width="45" class="dtaa">2</td>
+    <td width="45" class="dtaa">8</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">NUMCAR</td>
+    <td width="45" class="dtaa">7</td>
+    <td width="45" class="dtaa">10</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">CARCD</td>
+    <td width="45" class="dtaa">1</td>
+    <td width="45" class="dtaa">17</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">DATEXP</td>
+    <td width="45" class="dtaa">4</td>
+    <td width="45" class="dtaa">18</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmida" width="160">CODGEST</td>
+    <td class="dtamida" width="45">2</td>
+    <td class="dtamida" width="45">22</td>
+    <td width="45" class="mida">A</td>
+    <td width="85" class="mid"><a href="../../Campos/campos3.htm#285">285</a></td>
+    <td class="esqa" width="200"><strong>= 20 (EMV - CAP - alteração de
+      associação de cartão a NIF)</strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">CODBAN</td>
+    <td class="dtaa" width="45">4</td>
+    <td class="dtaa" width="45">24</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">ACCAO-NIF</td>
+    <td class="dtaa" width="45">1</td>
+    <td class="dtaa" width="45">28</td>
+    <td width="45" class="a" >A</td>
+    <td width="85"><a href="../../Campos/camp3100.htm#3122">3122</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">TIPO-NIF</td>
+    <td class="dtaa" width="45">1</td>
+    <td class="dtaa" width="45">29</td>
+    <td width="45" class="a" >A</td>
+    <td width="85"><a href="../../Campos/camp3100.htm#3123">3123</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="160">NIF</td>
+    <td class="dtaa" width="45">9</td>
+    <td class="dtaa" width="45">30</td>
+    <td width="45" class="a" >N</td>
+    <td width="85"><a href="../../Campos/camp3100.htm#3124">3124</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+
+<p>&nbsp;</p>
+
+
+</body>
+</html>

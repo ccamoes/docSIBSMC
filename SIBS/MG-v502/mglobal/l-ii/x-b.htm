@@ -1,0 +1,477 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>X-B - LIGAÇÃO DE EQUIPAMENTO</title>
+<script>top.captulos.location='indicex.htm#X';</script>
+</head>
+
+<body>
+
+<h2>B - LIGAÇÃO DE EQUIPAMENTO</h2>
+
+<p><br>
+Neste grupo são facturados os equipamentos (CA e TPA e outros Terminais) que se encontram
+ligados à SIBS no mês a que se refere o processamento da facturação. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="B1">B1</a> - REDE BÁSICA DE TERMINAIS</h3>
+
+<p><br>
+<strong>B11 - De 1 a 50 terminais <br>
+B12 - No excedente, de 51 a 150 <br>
+B13 - No excedente, de 151 a 300 <br>
+B14 - No excedente, de 301 a 400 <br>
+B15 - No excedente, de 401 a 500 <br>
+B16 - No excedente de 500</strong></p>
+
+<p><br>
+Trata-se de uma tarifa mensal aplicada aos Bancos de Apoio dos CAs em funcionamento, e que
+varia de acordo com a classificação do CA na Rede Multibanco (campo (<a
+href="../../Campos/campos2.htm#148" target="explicac">148</a>) Tipo CA, e campo (<a
+href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) TARSIBS-E
+que constam no <a href="../l-iii/trmf.htm#= 1">tipo de registo 1</a> do ficheiro de
+Terminais (MTRMF). Consultar o anexo 1 - CLASSIFICAÇÕES DOS CA E
+IMPLICAÇÕES NO TARIFÁRIO - presente no tarifário.<br>
+Os escalões são apurados no fim de cada mês e os valores a aplicar são por
+terminal/mês. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Para realizar o controlo desta rubrica deve ser utilizado o <a
+href="../l-iii/trmf.htm#= 1">tipo de registo 1</a> do ficheiro de Terminais <span
+>(MTRMF)</span>. No fim de cada mês, a SIBS envia um ficheiro deste tipo,
+conjuntamente com os dados da facturação, por forma a consolidar as variações
+ocorridas no mês, nomeadamente eventuais alterações realizadas em massa ou outras
+alterações que não tenham sido alvo de reporte.</p>
+
+<p>O ficheiro enviado diariamente reflecte os acontecimentos que impliquem a
+actualização do sistema de controlo do Banco, como seja: 
+
+<ul>
+  <li>Inserção de CA;</li>
+  <li>Inserção de TPA;</li>
+  <li>Alteração do Estado de funcionamento;</li>
+  <li>Alterações de CA, ou alterações de TPA;</li>
+  <li>Etc..</li>
+</ul>
+<font FACE="Arial" SIZE="2">
+
+<p></font>No entanto, estas actualizações diárias não devem ser utilizadas numa
+óptica de controlo da facturação; a sua principal aplicação é alimentar sistemas
+internos do Banco (ex. Data Warehouse). <br>
+Considera-se fundamental que o Banco valide a correcta inserção de um CA sob o ponto de
+vista da facturação, e que informe a SIBS caso encontre incorrecções, pois a
+facturação só se efectua após a sua inicialização, ou seja, quando ocorrer uma
+alteração de estado de funcionamento (Ficheiro MTRMC, <a
+href="../l-iii/trmc.htm#= 1">TIPREG=1</a>, GESTRM=03, FUNCION=02). </p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>Esta rubrica apresenta no registo tipo 4 os seguintes dados por cada ocorrência: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p>No registo tipo 5 é identificado: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica <span
+    >(6)</span></li>
+  <li>(<a href="../../Campos/campos2.htm#178" target="explicac">178</a>) agência (4) + nº do
+    CA na agência (2)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="551">
+  <tr>
+    <td class="fundoesq" width="541"><em>MEFAC &#150; Exemplo da rubrica B1</em></td>
+  </tr>
+  <tr>
+    <td class="esq" width="541"><pre class="tahoma">&#133;
+2B  LIGACAO EQUIPAMENTO
+3B1 REDE BASICA TERMINAIS
+4B1120020228                          DE 1 A 50 TERMINAIS  000000030000000000000000500000001500000D
+5B11000101
+&#133;
+5B11021501
+4B1220020228                          EXCED. 51 A 150      000000020000000000000001000000002000000D
+5B12022201
+&#133;
+5B12050101
+4B1320020228                          EXCED.151 A 300      000000012500000000000001500000001875000D
+5B13055001
+&#133;
+5B13199905
+4B1420020228                          EXCED.301 A 400      000000009000000000000001000000000900000D
+5B14199906
+&#133;
+5B14350101
+4B1520020228                          EXCED.401 A 500      000000006000000000000001000000000600000D
+5B15366601
+&#133;
+5B15606001
+4B1620020228                          NO EXCEDENTE DE 500  000000005000000000000012930000006465000D
+5B16760901
+&#133;
+5B16990310
+6B1 0000013340000D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="B2">B2</a> - REDE DE REFORÇO DE CA</h3>
+
+<p><br>
+<strong>B2 - Tarifa mensal única </strong></p>
+
+<p><br>
+Tarifa aplicada aos CAs do tipo Duplo SIBS, e Duplo Banco, conforme a classificação
+actual. Consultar o anexo 1 - CLASSIFICAÇÕES DOS CA E IMPLICAÇÕES NO
+TARIFÁRIO - presente no tarifário. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Através do ficheiro de Terminais (<a href="../l-iii/trmf.htm">MTRMF</a>). Ver
+descrição da forma de controlo aplicado na rubrica <a href="x-b.htm#B1">B1</a>.</p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>Esta rubrica apresenta no tipo de registo 4 os seguintes dados por cada ocorrência: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p>No registo tipo 5 é identificado: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica <span
+    >(6)</span></li>
+  <li>(<a href="../../Campos/campos2.htm#178" target="explicac">178</a>) agência (4) + nº do
+    CA na agência (2)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica B2</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+2B LIGACAO EQUIPAMENTO
+&#133;
+4B2 20020228                         REDE REFORCO DE CA'S  000000000000000000000002100000000000000D
+5B2 010203
+&#133;
+5B2 960328
+6B2 0000000000000D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3>B5 - OUTROS TERMINAIS</h3>
+
+<p><br>
+<strong><a name="B51">B51</a> - Ligação mensal da aplicação de Tesouraria<br>
+</strong></p>
+
+<p>A Tarifa <strong>B51</strong> aplica-se aos bancos que utilizam a aplicação de
+Tesouraria.</p>
+
+<p><br>
+<strong>Forma de controlo</strong></p>
+
+<p>Administrativa. Os Bancos participantes directos no SPGT possuem documentação trocada
+com o Banco Central.</p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>Esta rubrica apresenta no tipo de registo 4 os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="559">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica B5</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+3B5 OUTROS TERMINAIS
+4B5120020228                         LIG.MENS.DA APL.TESOU.000000017500000000000000010000000017500D
+6B5 0000000017500D
+ &#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="B7">B7</a> - INSTALAÇÃO DE TPA</h3>
+
+<p><br>
+<strong>B71 - Por instalação de TPA <br>
+B72 - Por instalação de Terminal exclusivamente PMB </strong></p>
+
+<p><br>
+A SIBS aplica a tarifa <strong>B71</strong> ao Banco de Apoio do Terminal, no mês em que
+este é inicializado (atribuição de Pinpad), não sendo então cobrada a taxa de
+ligação de TPA (<a href="x-b.htm#B8">B8</a>). A tarifa <strong>B72</strong> aplica-se no
+mês do primeiro depósito. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Utilizar o ficheiro de Terminais (<a href="../l-iii/trmf.htm">MTRMF</a>) para validar e
+verificar as características de cada TPA do Banco. São comunicados todos os TPAs cujo
+Banco é o Banco de Apoio do Terminal. </p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>Esta rubrica apresenta no tipo de registo 4 os seguintes dados por cada TPA: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#373">373</a>) data de
+    inicialização do TPA (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#327">327</a>) identificação do
+    comerciante (7)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#328">328</a>) identificação do
+    estabelecimento (4)</li>
+  <li>(<a target="explicac" href="../../Campos/campos1.htm#006">006</a>) identificação do
+    terminal (10)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="554">
+  <tr>
+    <td class="fundoesq" width="544"><em>MEFAC &#150; Exemplo da rubrica B7</em></td>
+  </tr>
+  <tr>
+    <td class="esq" width="544"><pre class="tahoma7">&#133;
+3B7 INSTALACAO DE TPA
+4B7120020201000108700380000200540    POR INSTALACAO DE TPA 000000002500000000000000010000000002500D
+&#133;
+4B7120020228012748600010000206466    POR INSTALACAO DE TPA 000000002500000000000000010000000002500D
+4B7220020201003136600010000047590    POR INST. TERM. PMB   000000002500000000000000010000000002500D
+&#133;
+4B7220020225008011900010000118492    POR INST. TERM. PMB   000000002500000000000000010000000002500D
+6B7 0000000992500D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="B8">B8</a> - LIGAÇÃO DE TPA</h3>
+
+<p><br>
+Taxa aplicada a cada TPA que se encontre em funcionamento na Rede. Os escalões são
+apurados por Banco de Apoio do Terminal, no final de cada mês. </p>
+
+<p><br>
+<strong>B81 - De 1 a 250 TPAs <br>
+B82 - No excedente, de 251 a 600 <br>
+B83 - No excedente, de 601 a 1.500 <br>
+B84 - No excedente, de 1.501 a 2.500 <br>
+B85 - No excedente, de 2.501 a 4.000 <br>
+B86 - No excedente de 4.000 </strong></p>
+
+<p><br>
+<strong>Forma de Controlo </strong></p>
+
+<p>Aplica-se a descrição apresentada na rubrica <a href="x-b.htm#B7">B7</a>.</p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>A rubrica <strong>B8</strong> apresenta-se em dois tipos de registo:</p>
+
+<blockquote>
+  <p>-&gt; Registo tipo 4 - apresenta o total de TPAs por escalão<br>
+  -&gt; Registo tipo 5 - apresenta a identificação de cada equipamento tarifado </p>
+</blockquote>
+
+<p>Assim os campos do registo tipo 4 são: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p>No tipo de registo 5 apresenta-se: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#327">327</a>) identificação do
+    comerciante (7)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#328">328</a>) identificação do
+    estabelecimento (4)</li>
+  <li>(<a target="explicac" href="../../Campos/campos1.htm#006">006</a>) identificação do
+    terminal (10)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" BORDER="1" CELLSPACING="0" CELLPADDING="4"
+WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica B8</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+3B8 TAXA LIG. TPA
+4B8120020228                         DE 1 A 250 TPAS       000000000650000000000002500000000162500D
+5B81000033300010000007609
+&#133;
+5B81000570100020000076032
+4B8220020228                         EXCED. 251 A 600      000000000450000000000003500000000157500D
+5B82000570100030000076033
+&#133;
+5B82001219000020000122871
+4B8320020228                         EXCED. 601 A 1500     000000000300000000000009000000000270000D
+5B83001228600020000169969
+&#133;
+5B83005589500010000085089
+4B8420020228                         EXCED.1501 A 2500     000000000200000000000010000000000200000D
+5B84005589500020000146627
+&#133;
+5B84009959300010000152600
+4B8520020228                         EXCED.2501 A 4000     000000000150000000000015000000000225000D
+5B85009962900010000153618
+&#133;
+5B85001283900020000135382
+4B8620020228                         EXCED.4000            000000000125000000000169400000002117500D
+5B86001284600010000018931
+&#133;
+5B86012666200010000204626
+6B8 0000003132500D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span> <br>
+    Para efeitos de apresentação e por uma questão prática mantém-se o layout anterior nas
+    tabelas auxiliares. </em></td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="x2.htm">Anterior</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

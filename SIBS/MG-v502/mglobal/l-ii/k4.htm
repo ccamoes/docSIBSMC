@@ -1,0 +1,383 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>K.4 COMPENSAÇÃO DE TEI</title>
+<base target="_self">
+<script>top.captulos.location='indicek.htm#K';</script>
+</head>
+
+<body>
+
+<h1>K.4 COMPENSAÇÃO DE TEI</h1>
+
+<p><br>
+Última revisão: 2004/03/19</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="K.4.1">K.4.1</a> OBJECTIVOS</h2>
+
+<p><br>
+Tendo entrado em produção em 1992, o subsistema de Compensação de TEI tem por
+objectivo a realização de transferências electrónicas interbancárias a crédito,
+expressas em euros, entre contas domiciliadas em diferentes Instituições de Crédito (ou
+Bancos) participantes. Este objectivo materializa-se nos seguintes pressupostos,
+subjacentes ao desenvolvimento do sistema: 
+
+<ul>
+  <li>Melhoria contínua da prestação deste serviço, pela implementação de mecanismos
+    tendentes à automatização do processamento das respectivas operações;</li>
+  <li>Utilização da SIBS como forma de viabilizar a transmissão de dados e a compensação
+    de saldos;</li>
+  <li>Aumento da flexibilidade nas relações entre Bancos e Clientes, através da criação
+    de circuitos alternativos, nomeadamente no que respeita à ligação directa entre as
+    Empresas e a SIBS, como forma de racionalizar o processo de transmissão da informação.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><a name="K.4.2">K.4.2</a> CARACTERÍSTICAS GERAIS</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.4.2.1">K.4.2.1</a> PRINCÍPIOS</h3>
+
+<p><br>
+A utilização do Número de Identificação Bancária (NIB) para a identificação das
+contas do Ordenante e do Beneficiário nas ordens de transferência é um princípio
+fundamental para o eficiente funcionamento do sistema. O subsistema TEI foi desenhado por
+forma a permitir o tratamento automático de informação, para o qual o uso do NIB é uma
+condição essencial. Para incentivar esta utilização, encontra-se prevista a
+aplicação de uma tarifa interbancária penalizadora do Banco Ordenante, a pagar ao Banco
+Destinatário, para os casos em que o primeiro proceda ao envio de uma transferência sem
+NIB válido da conta destinatária.</p>
+
+<p>Como natural extensão deste princípio adoptado a nível doméstico, o sistema
+encontra-se preparado para o processamento de transferências transfronteiras com o IBAN (<em>International
+Bank Account Number</em>) das contas, integradas no sistema doméstico, não apenas do
+ponto de vista técnico mas também através da definição de procedimentos adequados a
+seguir pelos Bancos. Deste modo e à semelhança dos princípios que
+presidiram em Portugal à criação do NIB, é possível a qualquer Instituição
+Ordenante validar os números de conta da operação, mesmo quando esta está domiciliada
+noutro país.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.4.2.2">K.4.2.2</a> INTERVENIENTES</h3>
+
+<p><br>
+Como intervenientes directos neste subsistema temos: 
+
+<ul>
+  <li>Os Bancos, que podem assumir a posição de Banco Ordenante (quando enviam
+    transferências a crédito a outro Banco), Banco Recebedor (quando recebem transferências
+    transfronteiras, para envio a outros Bancos da Praça nacional) e de Banco Destinatário
+    (Banco do Beneficiário de uma transferência a crédito).</li>
+  <li>A SIBS, que procede à compensação da informação recebida e ao envio dos ficheiros
+    dela resultantes.</li>
+  <li>O Banco de Portugal, que lança no SPGT os saldos apurados na compensação e os
+    comunica aos Participantes após liquidação.</li>
+</ul>
+
+<p><br>
+De acordo com o SICOI, a participação dos Bancos no subsistema TEI pode realizar-se a
+dois níveis: 
+
+<ol>
+  <li>Participante Directo: envia e recebe informação da SIBS, em ficheiros próprios. Esta
+    sociedade procede ao apuramento diário dos saldos de compensação do Participante, para
+    liquidação no Banco de Portugal, via SPGT.</li>
+</ol>
+
+<ol start="2">
+  <li>Participante Indirecto: a liquidação de valores no Banco de Portugal é realizada
+    através do Participante Directo que o representa, ou seja, sem determinação de saldos
+    específicos para o Banco Representado por parte da SIBS (os saldos de compensação que
+    lhe corresponderiam afectam os saldos da Instituição sua representante).</li>
+</ol>
+
+<p>Em termos operacionais, a comunicação de informação com a SIBS é sempre efectuada
+em ficheiros distintos, podendo os mesmos ser enviados/recebidos a partir do Centro de
+Processamento de Dados (CPD) do Banco Representante (participação indirecta passiva) ou
+do CPD do Banco Representado (participação indirecta activa). Estes procedimentos devem
+ser previamente acordados entre os Bancos Representado e Representante, e a SIBS.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.4.2.3">K.4.2.3</a> OPERAÇÕES SUBJACENTES AO SISTEMA</h3>
+
+<p><br>
+Englobam-se no subsistema de Compensação de TEI todas as operações de transferência a
+crédito em que a conta do Ordenante é debitada, por contrapartida do crédito da conta
+ou contas destinatárias, desde que não se enquadrem no Sistema de Pagamentos de Grandes
+Transacções (SPGT) <span class="oito"><a href="k4.htm#*">a)</a></span>. </p>
+
+<p>Os tipos de transferências a crédito a processar no subsistema TEI encontram-se
+definidos no Manual de Funcionamento deste subsistema, podendo ser considerada a
+existência de dois grandes grupos de operações: 
+
+<ul>
+  <li>operações domésticas;</li>
+  <li>operações transfronteiras.</li>
+</ul>
+
+<p class="oito"><strong><a name="*">a)</a></strong> Operações de valor igual ou superior
+ao limite que implica a liquidação por bruto no SPGT.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.4.2.4">K.4.2.4</a> TRANSMISSÃO DA INFORMAÇÃO</h3>
+
+<p><br>
+<strong>BANCOS/SIBS</strong></p>
+
+<p>O subsistema de Compensação de TEI baseia-se no envio, pelos Bancos à SIBS, de
+ficheiros com: 
+
+<ul>
+  <li>ordens de transferências;</li>
+  <li>pedidos de NIB e de confirmação de dados de conta;</li>
+  <li >informação de alteração e de anulação de NIB;</li>
+  <li>devoluções (pelo Banco Destinatário) ou pedidos de devolução (pelo Banco Ordenante)
+    de transferências anteriormente recebidas/enviadas;</li>
+  <li>pedidos de anulação de transferências anteriormente enviadas;</li>
+  <li>informação sobre os <em>plafonds</em> atribuídos a clientes seus (vd. Ponto <a
+    href="k4.htm#EMPRESAS">Empresas/SIBS/Bancos</a>).</li>
+</ul>
+
+<p style="page-break-before: always" table>Tendo a SIBS recebido toda a informação com
+as operações do dia, esta é organizada por forma a que os Participantes do sistema
+sejam informados relativamente às operações em que estiveram envolvidos e aos
+respectivos saldos de compensação, a movimentar no SPGT. Deste modo, a SIBS envia, no
+final de cada fecho de compensação, ficheiros para os Participantes e para o Banco de
+Portugal. Nos ficheiros enviados aos Participantes, informa: 
+
+<ul>
+  <li>as operrações recebidas pela SIBS envolvendo o Banco ou Empresa destino do ficheiro;</li>
+  <li>cada Banco acerca da origem dos valores que foram considerados para o apuramento do
+    respectivo saldo de compensação;</li>
+  <li>cada Banco e Empresa sobre erros detectados nos ficheiros por si enviados à SIBS (à
+    medida que são processados pela SIBS);</li>
+  <li>o controlo da facturação SIBS e interbancária (apenas para os Bancos).</li>
+</ul>
+
+<p>Ao Banco de Portugal, a SIBS envia os ficheiros que informam, relativamente a cada
+Banco: 
+
+<ul>
+  <li>os saldos relativos às operações da sessão;</li>
+  <li>os saldos bilaterais entre os Participantes;</li>
+  <li>o valor mensal a imputar a cada Participante, relativamente à aplicação do Tarifário
+    Interbancário.</li>
+</ul>
+
+<p>A devolução de transferências deve efectuar-se de acordo com os prazos
+máximos definidos no Regulamento do SICOI.</p>
+
+<p><br>
+<strong><a class="bookm" name="EMPRESAS">EMPRESAS</a>/SIBS/BANCOS</strong></p>
+
+<p>O subsistema de TEI disponibiliza a Entidades não bancárias (i.e.,
+Empresas) a funcionalidade de transmissão de dados directamente à SIBS. A possibilidade
+de comunicação de dados entre as Empresas e a SIBS apresenta-se como um princípio de
+racionalidade já que, para além da redução de custos, subjacente ao encurtamento dos
+circuitos administrativos, proporciona uma situação de maior facilidade para as Empresas
+e uma prestação de serviços mais eficaz por parte dos Bancos. Trata-se de uma relação
+meramente técnica, não entrando na esfera comercial dos Bancos, consubstanciando-se no
+desenvolvimento de mais uma funcionalidade que os Bancos podem disponibilizar aos seus
+clientes.</p>
+
+<p>As Empresas, mediante a utilização de uma aplicação adequada para esse efeito,
+podem enviar ordens de transferência e pedidos de anulação de lotes de transferências
+por elas ordenadas, de acordo com as seguintes modalidades: 
+
+<ol>
+  <li>Mecanismo de pré-notificação, segundo o qual as Empresas enviam as ordens de
+    transferência entre 5 a 2 dias úteis antes da data de respectiva execução. No dia
+    útil anterior a esta última data, a SIBS envia a pré-notificação ao Banco do
+    Ordenante, para que este autorize a operação. Em caso afirmativo, a execução é
+    efectuada no dia previsto, em caso negativo não é executada.</li>
+</ol>
+
+<ol start="2">
+  <li>Mecanismo de <em>plafonds</em>: os Bancos enviam previamente à SIBS ficheiros com os <em>plafonds</em>
+    dos seus clientes para cada código de operação. Se o valor da(s) transferência(s) a
+    executar for inferior ao plafond, a transferência é realizada sem necessidade de
+    autorização prévia do Banco onde a Empresa tem domiciliada a conta a debitar. Os <em>plafonds</em>
+    são actualizados pela SIBS em caso de execução da transferência, até que o Banco
+    envie os novos valores para os <em>plafonds</em> (pode fazê-lo diariamente, por exemplo).
+    Este mecanismo permite reduzir em um dia útil o prazo de execução da transferência.</li>
+</ol>
+
+<p>Para aumentar a flexibilidade às Empresas, a SIBS criou a possibilidade de aquelas
+anularem lotes de transferências previamente transmitidos, através do envio de um
+ficheiro próprio para o efeito, até ao horário limite definido no Manual de
+Funcionamento deste subsistema.</p>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="K.4.2.5">K.4.2.5</a> SERVIÇO DE NORMALIZAÇÃO DO NÚMERO DE CONTA
+DE PENSÕES</h3>
+
+<p><br>
+No âmbito do subsistema de Compensação de TEI, a SIBS disponibiliza, aos Participantes
+que o solicitem, o serviço de automatização do processamento das transferências
+transfronteiras relativas a pensões, através da normalização do número de conta do
+beneficiário.</p>
+
+<p>Trata-se de um sistema de automatização do tratamento das transferências
+transfronteiras, relativas a pensões, através da utilização do NIB do beneficiário,
+com base na conversão, pela SIBS, da informação comunicada pelo Banco Recebedor (BR).</p>
+
+<p>Os Bancos (na sua vertente de destinatários das transferências) enviam para
+a SIBS, elementos de informação relativos a todos os pensionistas que neles têm
+domiciliadas contas a creditar por transferências do tipo acima referido (Número de
+Segurança Social - NSS - e NIB). Os Bancos actualizam esta informação através da
+utilização da infra-estrutura existente nas TEI para a informação de NIB nas
+transferências domésticas, transferindo para a SIBS a responsabilidade inerente a este
+mecanismo.</p>
+
+<p>A SIBS utiliza a informação disponível para converter o número de conta
+do beneficiário, não normalizado, comunicado pelo Banco Recebedor, no NIB associado ao
+Número de Segurança Social do beneficiário, conforme o comunicado pelo Banco deste
+último e possibilitando assim o tratamento automático deste tipo de transferências
+neste mesmo Banco.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.4.2.6">K.4.2.6</a> CONTROLO DE DUPLICAÇÕES</h3>
+
+<p><br>
+O subsistema de Compensação de TEI contempla a implementação de um mecanismo de
+controlo de duplicações da informação de valor contabilístico a submeter para
+compensação.</p>
+
+<p>Trata-se de um sistema que permite evitar a compensação e consequente
+liquidação de ordens de transferência ou de devoluções em duplicado, por forma a
+reduzir o risco operacional e os riscos de crédito, liquidação e sistémico associados
+a estas situações.</p>
+
+<p>O sistema a implementar baseia-se nos seguintes mecanismos: 
+
+<ul >
+  <li>Mecanismos preventivos e de reacção primária:</li>
+</ul>
+
+<blockquote>
+  <ul  type="square">
+    <li>implementação na SIBS de mecanismos de controlo pré-compensação, que permitem
+      alertar o Banco Ordenante para um potencial risco de erro; complementado pela,</li>
+    <li>utilização pelos Bancos Ordenantes de ficheiros de anulação;</li>
+  </ul>
+</blockquote>
+
+<ul >
+  <li>E num mecanismo de reacção secundária:</li>
+</ul>
+
+<blockquote>
+  <ul  type="square">
+    <li>com a possibilidade de envio de pedidos de devolução por parte dos Bancos Ordenantes,
+      potenciando assim a recuperação automatizada dos fundos incorrectamente processados.</li>
+  </ul>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.4.2.7">K.4.2.7</a> HORÁRIOS</h3>
+
+<p><br>
+O subsistema de TEI caracteriza-se pela existência de duas sessões de compensação
+diárias, que determinam a realização de duas liquidações por dia no Banco de
+Portugal, de acordo com os horários de fecho definidos no Regulamento do SICOI e no
+Manual de Funcionamento. Os horários de fecho e de disponibilização de informação
+correspondem ao limite de conclusão da transmissão de ficheiros dos Bancos à SIBS.</p>
+
+<p>Até ao horário limite definido no Manual de Funcionamento, a SIBS procede ao envio
+dos ficheiros resultantes da compensação aos Bancos e ao Banco de Portugal.</p>
+
+<p style="page-break-before: always">A necessidade de se limitar a utilização do 2º
+Fecho de processamento, tendo em consideração o horário de funcionamento do SPGT e o
+momento do dia em que esse fecho se realiza, implica que o mesmo seja restrito a ordens de
+transferência comunicadas directamente pelos Bancos, e, dentro delas: 
+
+<ul>
+  <li>a certos tipos específicos de transferências que, pela sua natureza, no mesmo devam
+    ser compensadas (vd. transferências entre IC e Sociedades Financeiras) e, nessa medida
+    não sofrerão qualquer agravamento de custo, ou </li>
+  <li>a transferências consideradas urgentes pelo BO, sobre as quais incide uma tarifa
+    especial de urgência.</li>
+</ul>
+
+<p>As transferências comunicadas por Empresas, as transferências relativas ao Sistema
+Multibanco, as Transferências de Baixo Valor e as Transferências que requerem tratamento
+manual apenas podem ser processadas no 1º Fecho.</p>
+
+<p>As transferências interbancárias apenas podem ser processadas no 2º Fecho.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.4.2.8">K.4.2.8</a> TARIFÁRIO E FACTURAÇÃO</h3>
+
+<p><br>
+O tarifário a aplicar nas TEI tem subjacente o princípio geral de que as tarifas de
+processamento, a favor da SIBS (Tarifário SIBS), devem ser suportadas pelo BO, excluindo
+as que respeitam à comunicação de alterações ou anulação de NIB. Em paralelo,
+consideram-se valores, também a facturar aos BO, que visam, de alguma forma, compensar os
+BD pela carga administrativa inerente às respostas a pedidos de NIB, pedidos de
+informação de dados de conta, pedidos de devolução e às transferências sem NIB
+(Tarifário Interbancário).</p>
+
+<p>O Tarifário SIBS é facturado mensalmente por esta sociedade, mediante apresentação
+a cada Participante de factura mensal em que é comunicado o total da facturação SIBS.
+Tendo em conta os meios que a SIBS tem que ter permanentemente disponíveis, foi
+considerada a implementação de uma tarifa mensal mínima a imputar a todas as
+Instituições intervenientes nas TEI, quer como Participantes Directos ou Indirectos.
+Desta forma, o valor mínimo é aplicado quando, para uma dada Instituição, os totais
+mensais resultantes da aplicação dos custos de processamento da SIBS lhe sejam
+inferiores.</p>
+
+<p>O Tarifário Interbancário é liquidado mensalmente via SPGT pelo Banco de Portugal.
+Para tal, no final de cada mês, a SIBS envia a esta Instituição um ficheiro com os
+valores finais do tarifário apurado por Instituição.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="K.4.3">K.4.3</a> DOCUMENTAÇÃO</h2>
+
+<p><br>
+O Regulamento do SICOI estabelece as regras e procedimentos a considerar para o subsistema
+de Compensação TEI. O Manual de Funcionamento constitui a documentação de referência
+técnica detalhada deste subsistema.</p>
+
+<p class="dta"><br>
+<a href="k3.htm" target="main">Anterior</a>/<a href="k5.htm" target="main">Seguinte</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

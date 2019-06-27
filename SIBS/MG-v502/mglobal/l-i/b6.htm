@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="_self">
+<script>top.captulos.location='indiceb.htm#B';</script>
+
+
+<title>B.6 COMPENSAÇÃO MB E LIQUIDAÇÃO FINANCEIRA</title>
+</head>
+
+<body>
+
+<h1>B.6 COMPENSAÇÃO MB E LIQUIDAÇÃO FINANCEIRA</h1>
+
+<p>&nbsp;</p>
+
+<p>A compensação Multibanco consiste no apuramento do saldo financeiro de cada Instituição
+participante no Sistema MB.</p>
+<p>Como resultado da
+compensação do sistema, a SIBS produz vários ficheiros, com informação para
+os Emissores/<i>Acquirers</i>:</p>
+<ul>
+  <li><a href="../l-iii/dst-1.htm"> Ficheiro Destinos</a> (para
+Emissor) - contém informação sobre as transacções realizadas com os cartões
+do Emissor ao abrigo dos diversos acordos sob os quais aqueles podem
+transaccionar;</li>
+  <li><a href="../l-iii/mov-0.htm"> Ficheiro Movimentos</a> (para <i>Acquirer</i>)
+    - contém informação sobre as transacções realizadas com os cartões
+dos diversos Emissores, ao abrigo dos acordos representados pelo <i>Acquirer</i>;</li>
+  <li><a href="../l-iii/det.htm"> Ficheiro de Detalhes</a>
+(facultativo; para Emissor/<i>Acquirer</i>) - contém informação, não contabilística,
+adicional aos movimentos informados no Ficheiro de Destinos ou Movimentos, como
+por exemplo, o detalhe dos produtos e quantidades transaccionados através das
+operações de “Compra com detalhe” (<a href="#1">1</a>).</li>
+  <li> <a href="../l-iii/cln.htm"> Ficheiro de Capturas e Lista
+Negra</a> (para Emissor/<i>Acquirer</i>) - informar os cartões que foram colocados em
+situação de Lista Negra Urgente durante o dia e que não tiveram origem em
+ficheiro enviado pelo Emissor (por exemplo, telefonemas para a SIBS ou alteração
+via Terminal de Serviços SIBS).</li>
+</ul>
+<p>No caso de transacções
+contabilísticas, a liquidação financeira da Compensação é efectuada através
+de uma IC presente no SPGT (Sistema de Pagamento de Grandes Transacções) do
+Banco de Portugal, a indicar pelo Emissor ou <i>Acquirer</i>, caso não estejam
+presentes no mesmo.</p>
+<p>Para estes Bancos
+Liquidadores, entidades que suportam a movimentação contabilística (liquidação
+ou <i>Settlement</i>) do Sistema MB realizada
+via Banco de Portugal, é disponibilizado:</p>
+<ul>
+  <li><a href="../l-iii/rmb.htm">Ficheiro Resumo da Compensação</a>
+(para Banco Liquidador) - inclui os saldos apurados para as Instituições
+participantes no Sistema MB, e autorizadas pelo Banco de Portugal a participar
+directamente no SICOI, e destina-se exclusivamente a este grupo de
+Participantes.</li>
+</ul>
+<p>No caso de transacções
+não contabilísticas a SIBS produz o(s) ficheiro(s) acima mencionados não
+executando a liquidação financeiras das mesmas.</p>
+<p><br>
+</p>
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td nowrap class="oito">(<a name="1">1</a>)&nbsp;&nbsp; </td>
+    <td class="esq"> Funcionalidade disponível apenas nos TPA com versão EMV, que disponham da
+    funcionalidade, que não faz parte da implementação obrigatória na Rede
+    MB.</td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a target="main" href="b5.htm">Anterior</a>/<a href="b7.htm">Seguinte</a> </p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+</html>

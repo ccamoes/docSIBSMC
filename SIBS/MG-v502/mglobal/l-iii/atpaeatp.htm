@@ -1,0 +1,347 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>ACTUALIZAÇÃO TERMINAL PAGAMENTO AUTOMÁTICO E ERROS</title>
+<script>top.captulos.location='indicee.htm#E';</script>
+
+
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="11" cellspacing="0" width="98%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME:&nbsp; ACTUALIZAÇÃO TERMINAL PAGAMENTO
+        AUTOMÁTICO</td>
+        <td class="fichdta">&quot;FICH&quot; = ATPA</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Este ficheiro é enviado pelo Banco à SIBS sempre que pretenda efectuar alterações, de
+forma massiva, ao tipo de comunicação de Terminais de Pagamento Automático.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de Header do ficheiro &quot;TIPREG=0&quot;;</li>
+</ul>
+
+<ul>
+  <li>registos de detalhe &quot;TIPREG=1&quot;;</li>
+</ul>
+
+<ul>
+  <li>o registo de Trailer &quot;TIPREG=9&quot;. </li>
+</ul>
+
+<p><br>
+O registo tem um comprimento fixo de 46 bytes.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>NOTAS</u></h6>
+
+<p><br>
+Todos os estabelecimentos incluídos no ficheiro devem ter como BAT (i.e. entidade
+responsável pela matrícula no Sistema Multibanco dos terminais instalados no
+estabelecimento) o código de comerciante do Banco enviado no header do ficheiro. Caso
+algum dos estabelecimentos possua, no sistema MB, um BAT diferente, o registo é recusado.</p>
+
+<p><br>
+Os novos valores só entram em vigor quando, após o processamento do ficheiro pela SIBS,
+os TPA dos comerciantes/estabelecimentos enviados no ficheiro efectuem uma abertura de
+período contabilístico.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">ATPA - TIPO DE REGISTO = 1 (ACTUALIZAÇÃO TIPO DE COMUNICAÇÃO DE
+TPA)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">='1'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDCOMEMP</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDEST</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#328">328</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDTERMINAL</td>
+    <td class="dta" width="45">10</td>
+    <td class="dta" width="45">13</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos1.htm#006">006</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPO DE COMUNICAÇÃO</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#336">336</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always"><a name="eatp">&nbsp; </a></p>
+<div align="center"><center>
+
+<table border="1" cellpadding="11" cellspacing="0" width="98%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME: &nbsp; ERROS DO FICHEIRO ATPA</td>
+        <td class="fichdta">&quot;FICH&quot; = EATP</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Este ficheiro é produzido pela SIBS para o Banco sempre que for processado um ficheiro de
+actualização de TPA (<a target="main" href="atpaeatp.htm">ATPA</a>) recebido do Banco,
+quer tenham ocorrido erros ou não.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de Header do ficheiro &quot;TIPREG=0&quot;;</li>
+</ul>
+
+<ul>
+  <li>o registo de detalhe &quot;TIPREG=1&quot;, que identifica o ficheiro original tratado, e
+    indica a situação do seu registo de header;</li>
+</ul>
+
+<ul>
+  <li>um registo de detalhe &quot;TIPREG=2&quot;, por cada registo de detalhe errado, no
+    ficheiro original;</li>
+</ul>
+
+<ul>
+  <li>o registo de Trailer &quot;TIPREG=9&quot;. </li>
+</ul>
+
+<p><br>
+O registo tem um comprimento fixo de 76 bytes.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">EATP - TIPO DE REGISTO = 1 (CARACTERIZAÇÃO DO FICHEIRO DE ORIGEM)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">='1'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">APLIC</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#101">101</a></td>
+    <td width="200" class="esq">='M'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">3</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td width="200" class="esq">='ATPA'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VERFICH</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#064">064</a></td>
+    <td width="200" class="esq">='00'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200" class="esq">Preenchido</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">13</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#104">104</a></td>
+    <td width="200" class="esq">='1'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td width="200" class="esq">Preenchido</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">HDRSIT</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos6.htm#521">521</a></td>
+    <td width="200" class="esq">(Qualquer valor <font face="Symbol">¹</font> de '0'
+    significa a rejeição total do ficheiro do Banco)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">26</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td width="200" class="esq">=zeros (não aplicável)</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">EATP - TIPO DE REGISTO = 2 (REGISTO
+ERRADO)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPREG</td>
+    <td class="dta">1</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq">='2'</td>
+  </tr>
+  <tr>
+    <td class="esq">NUMOCORR</td>
+    <td class="dta">2</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos5.htm#428">428</a></td>
+    <td class="esq">(a)</td>
+  </tr>
+  <tr>
+    <td class="esq">CODERRTPA</td>
+    <td class="dta">3</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp2000.htm#2066">2066</a></td>
+    <td class="esq">(b)</td>
+  </tr>
+  <tr>
+    <td class="esq">REGISTO ERRADO</td>
+    <td class="dta">46</td>
+    <td class="dta">31</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp900.htm#905">905</a></td>
+    <td class="esq">(c)</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="590">
+  <tr>
+    <td class="esq" nowrap>(a) - &nbsp;</td>
+    <td class="just">Indica o número de vezes que ocorre o campo seguinte, para o registo
+    que foi rejeitado, no máximo de 9 erros. </td>
+  </tr>
+  <tr>
+    <td class="esq">(b) - &nbsp;</td>
+    <td class="just">Estes erros implicam apenas a rejeição do registo informado no campo
+    seguinte. Caso o número de erros seja inferior a 9, os restantes bytes, que completam as
+    9 ocorrências, são preenchidos a espaços.</td>
+  </tr>
+  <tr>
+    <td class="esq">(c) - &nbsp;</td>
+    <td class="just">Apresenta o registo tal como foi recebido no ficheiro de origem e sobre
+    o qual é(são) informado(s) o(s) erro(s).</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

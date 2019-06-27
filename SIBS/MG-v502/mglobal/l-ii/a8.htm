@@ -1,0 +1,357 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="_self">
+<script>top.captulos.location='indicea.htm#A';</script>
+
+<title>A.8 OPERAÇÕES DE CLIENTES NACIONAIS NO ESTRANGEIRO</title>
+</head>
+
+<body>
+
+<h1>A.8 OPERAÇÕES DE CLIENTES NACIONAIS NO ESTRANGEIRO</h1>
+
+<p>&nbsp;</p>
+
+<p>Neste capítulo descrevem-se os aspectos relevantes relacionados com as operações
+aceites em redes estrangeiras recebidas pelo Sistema MB, relativas a cartões: 
+
+<ul>
+  <li>pertencentes aos Sistemas de Pagamento Internacionais MasterCard Europe (ex.:
+    MasterCard, Maestro e Cirrus) ou Visa (ex.: Visa Classic, Visa Electron e Visa Plus), em
+    que o <em>host</em> da SIBS está em <em>online</em> com o sistema de autorizações
+    daqueles;</li>
+  <li>considerados como Multibanco, utilizados nas redes que têm acordos bilaterais com a
+    Rede Multibanco.</li>
+</ul>
+
+<p>A responsabilidade do funcionamento dos ATM e POS do estrangeiro pertence à rede
+aceitante das operações. A SIBS acolhe as mensagens enviadas, considerando que o
+funcionamento dos equipamentos se orienta pelos princípios acordados: 
+
+<ul>
+  <li>Os terminais possuem um leitor magnético da pista 2 e um módulo de segurança local
+    capaz de cifrar o código secreto (PIN) no percurso entre o terminal e o computador
+    central da rede (embora também se admita a assinatura como forma de validação dos
+    cartões de débito Maestro e Electron); </li>
+  <li>No sistema central da rede, existem módulos de segurança que cifram o PIN com chaves
+    lógicas de transporte entre a rede estrangeira e a SIBS (exceptuando as situações em
+    que a validação é feita por assinatura, como foi referido na alínea anterior); </li>
+  <li>A importância entregue em notas no levantamento corresponde à solicitada e aprovada
+    pelo Emissor, salvo se for enviada mensagem de anulação; </li>
+  <li>A rede estrangeira regista a operação num ficheiro de registo, que permite a sua
+    auditoria; </li>
+  <li>O cliente recebe normalmente um talão comprovativo da operação; </li>
+  <li>Os ATM&nbsp; ou POS estão devidamente assinalados com os logotipos que indicam aos
+    clientes a possibilidade de efectuar os serviços pretendidos.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.8.1">A.8.1</a> PROCESSAMENTO DAS OPERAÇÕES NO ESTRANGEIRO</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.8.1.1">A.8.1.1</a> SISTEMAS DE PAGAMENTO INTERNACIONAIS</h3>
+
+<p><br>
+As transacções dos cartões emitidos de acordo com os Sistemas de Pagamento
+Internacionais realizam-se em dois passos: 
+
+<ul>
+  <li>primeiro, um pedido de autorização através de uma mensagem <i>real-time</i> (não
+    financeira);&nbsp;</li>
+  <li>segundo, o envio posterior de um movimento firme via ficheiro (financeiro).</li>
+</ul>
+
+<p><br>
+<strong>Autorizações</strong></p>
+
+<p>A SIBS tem aplicações específicas que dialogam com os diferentes Sistemas de
+Pagamentos e que gerem a troca das mensagens de autorização (<a target="main"
+href="../l-iii/116x316x.htm">1161</a>/<a target="main" href="../l-iii/126x.htm">1261</a>)
+com o Emissor. </p>
+
+<p style="page-break-before: always">Neste contexto a SIBS efectua os seguintes
+procedimentos no processamento dos pedidos de autorização: 
+
+<ul>
+  <li>Validação da mensagem recebida;</li>
+  <li>Validação da existência do cartão na base de dados;</li>
+  <li>Validações de segurança; </li>
+  <li>Conversão de formato do pedido para o interface <i>real-time</i>, se este cenário
+    estiver posicionado na Caracterização de Emissor e se estiver a sessão activa;</li>
+  <li>Degradação na ausência da resposta do Emissor ou se a sessão não estiver activa;</li>
+  <li>Registo no Sistema Multibanco da informação processada;</li>
+  <li>Envio no ficheiro de Destinos (<a href="../l-iii/dst-1.htm">MDST5</a>) das
+    autorizações processadas.</li>
+</ul>
+
+<p><strong>Nota:</strong> uma descrição exaustiva do cenário Limite de Autorização
+encontra-se no capítulo <a href="a1.htm#A.1.3.1" target="main">A.1.3.1</a>. </p>
+
+<p><br>
+<strong>Compensação e <i>Clearing</i></strong></p>
+
+<p>A SIBS pode disponibilizar diferentes níveis de serviço no que concerne ao
+processamento dos ficheiros de <i>Clearing</i> recepcionados dos Sistemas de Pagamentos
+Internacionais. As possibilidades descritas a seguir, são, a título de exemplo,
+relativas ao sistema Visa e ao processamento do ficheiro BASE II.</p>
+
+<p><br>
+<strong>Opção 1:</strong><br>
+Acolhimento do ficheiro ITF (ficheiro BASE II por processar) executando o <i>File Transfer</i>
+VAP-SIBS e posterior envio do ficheiro obtido por FTP para o Emissor. Envio pelo processo
+inverso dos ITFs de <i>outgoing</i> gerados pelo Emissor (reclamações, <i>fees</i>).</p>
+
+<p><br>
+<strong>Opção 2:</strong><br>
+Acolhimento do ficheiro ITF e processamento do <i>Edit Package</i> enviando para o Emissor
+as resultantes - ficheiro CTF e <i>reports</i> gerados pelo EP. Recepção do Emissor do
+ficheiro CTF de <i>outgoing</i>, execução do <i>Edit Package</i> e envio para o VAP do
+ITF resultante, devolvendo ao Emissor os <i>reports</i> gerados.</p>
+
+<p><br>
+<strong>Opção 3:</strong><br>
+A SIBS acolhe o ficheiro ITF, executa o <i>Edit Package</i> enviando para o Emissor as
+resultantes - ficheiro CTF (se o Emissor o pretender para suportar processamentos
+internos) e os <i>reports</i> gerados pelo <i>Edit Package</i> - e efectua o seguinte
+processamento: 
+
+<ul>
+  <li>Valida o ficheiro recebido (detalhe de cada movimento e valor);</li>
+  <li>Emparelha os movimentos originais recebidos com as autorizações. Podem existir
+    movimentos cujo emparelhamento não é possível devido a insuficiência, ou discrepância
+    de dados;</li>
+  <li>Incorpora no ficheiro Destinos (<a target="main" href="../l-iii/mov-0.htm">MMOV5</a>) a
+    informação de <i>Clearing</i> e de <i>Settlement</i>;</li>
+  <li>No sentido inverso, o <i>outgoing</i> a enviar ao Sistema de Pagamento é gerado pela
+    aplicação de Compensação de reclamações da SIBS. O Banco recebe os <i>reports</i>
+    gerados pelo <i>Edit Package</i> respectivo.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h6>AUTORIZAÇÃO (DO ESTRANGEIRO) (<a name="012">012</a>) </h6>
+
+<p><br>
+Código de transacção para processar os pedidos de levantamento em CA e compras
+recebidas do estrangeiro vindas de Sistemas de Pagamento (MasterCard, Visa ou AMEX). As
+transacções são apenas pedidos de autorização, ou seja, não são operações
+&quot;firmes&quot; (que apresentem valores definitivos), pelo que a SIBS considera que
+não têm valor contabilístico e devem gerar cativos temporários nas contas associadas
+aos cartões. </p>
+
+<h5 style="page-break-before: always"><br>
+Cenário de Limite de Autorização associado ao Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.3.1">Limite
+de Autorização</a>, o CPD do Banco recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a>)
+indicando a importância da autorização e à qual deve responder (<a
+href="../l-iii/126x.htm">1261</a>), segundo os seus critérios internos. </p>
+
+<p>Após a recepção das operações &quot;firmes&quot; (código transacção 001, 010 ou
+015) nos ficheiros de <i>Clearing</i> dos Sistemas de Pagamento Internacionais, a SIBS
+envia as mesmas em <a href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a>, no ficheiro
+Destinos (MDST5). </p>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="A.8.1.2">A.8.1.2</a> ACORDOS BILATERAIS</h3>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.8.1.2.1">A.8.1.2.1</a> LEVANTAMENTO NO ESTRANGEIRO (Rede Eufiserv/Savings
+Bank)</h5>
+
+<p>Esta operação tem como base o processamento definido na rede Eufiserv/Savings Bank
+(ver Livro I - capítulo<a target="_self" href="../l-i/c3.htm#C.3.2.1"> C.3.2.1</a>).Todas
+as ligações são feitas em &quot;<i>on-line-to-issuer</i>&quot;. Com a chegada do pedido
+de levantamento da rede estrangeira, a SIBS valida a autenticidade do cartão,
+confrontando com a base de dados de cartões, verifica o código secreto do utilizador e
+verifica os montantes transmitidos: </p>
+
+<p class="nove"><br>
+<strong>Montante solicitado pelo cliente </strong></p>
+
+<p>É calculado o contravalor em euros e este não deve exceder o &quot;Montante Máximo
+diário para Levantamentos&quot; do Multibanco acrescido de mais 20% para salvaguardar
+flutuações cambiais.</p>
+
+<p><strong><span class="nove"><br>
+As <i>fees</i> ou comissões aplicadas</span> </strong></p>
+
+<p>São calculadas e verificadas as importâncias enviadas como remuneração do <em>Acquirer</em>,
+de acordo com os princípios acordados no sistema da Eufiserv/Savings Bank. Sempre que
+este ultrapasse o cálculo em mais de 1% a mensagem é rejeitada. </p>
+
+<p>A SIBS preenche a mensagem para o Emissor com os campos que justificam o montante do
+débito: 
+
+<ul>
+  <li>câmbio aplicado (informado pelo Banco de Apoio ou recebido do Sistema Internacional); </li>
+  <li>importância da operação; </li>
+  <li>o total da operação (importância + comissões e taxas).</li>
+</ul>
+
+<h5><br>
+Cenário Real-Time </h5>
+
+<p><em>Savings Bank </em></p>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Emissor recebe uma mensagem (<a target="main" href="../l-iii/116x316x.htm">1161</a>
+em que <a href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=001 e <a target="explicac" href="../../Campos/campos1.htm#003">TIPOTERM</a>=C),
+indicando os seguintes valores que justificam o montante do débito: 
+
+<ul>
+  <li>câmbio aplicado (informado pelo Banco de apoio); </li>
+  <li>importância da operação; </li>
+  <li>total da operação (importância + comissões e taxas). </li>
+</ul>
+
+<p>Se a operação for aceite pelo Emissor, a mensagem é aprovada para o <em>Acquirer</em>.
+Se for recusada por Saldo Insuficiente, a SIBS calcula o contravalor na moeda do <em>Acquirer</em>.
+</p>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<h5><br>
+Cenário Saldo de Conta </h5>
+
+<p>No caso do Emissor do cartão estar a funcionar neste <a href="a1.htm#A.1.1.2">cenário</a>,
+o processamento é idêntico ao descrito para RT, embora a SIBS utilize unicamente o Saldo
+Disponível existente no ficheiro <a href="../l-iii/ECSV.htm">Saldo de Véspera</a>,
+posicionado na SIBS. </p>
+
+<h5><br>
+Cenário Saldo de Cartão </h5>
+
+<p>No caso de cartões Multibanco e em redes com acordo bilateral, é utilizado o Saldo de
+Cartão para verificar a possibilidade de aceitação da operação no estrangeiro. </p>
+
+<h5><br>
+Talão</h5>
+
+<p>O talão é efectuado no idioma seleccionado pelo cliente no ATM estrangeiro. Os items
+obrigatórios são: 
+
+<ul>
+  <li>identificação da rede; </li>
+  <li>data e hora da operação; </li>
+  <li>designação da operação e sua identificação; </li>
+  <li>identificação do terminal; </li>
+  <li>identificação do cartão; </li>
+  <li>montante do levantamento na moeda do A<em>cquirer.</em></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.8.1.2.2">A.8.1.2.2</a> SERVIÇO DE BANCO DE APOIO</h5>
+
+<p>O Banco de Apoio deve proceder à abertura de uma conta (podendo obviamente ser
+utilizada uma conta já existente para outras finalidades) junto de um Banco pertencente
+ao Sistema Internacional que se pretende apoiar. </p>
+
+<p>Esta conta é debitada, na moeda do país da rede aceitante, pelos movimentos
+efectuados durante um dado período de tempo (normalmente um dia) por cartões nacionais
+nessa rede. O Banco tem conhecimento, com dois dias de antecedência, do montante a ser
+debitado nessa conta, devendo tomar as medidas necessárias ao seu aprovisionamento.</p>
+
+<p>Os Sistemas de Pagamento Internacionais estão a realizar desenvolvimentos
+por forma a permitir a Compensação deste tipo de transacções no próprio dia.</p>
+
+<p>A Compensação interbancária é efectuada pela SIBS: 
+
+<ul>
+  <li>debitando os Emissores pelo total das operações efectuadas pelos seus clientes (que
+    utilizaram o serviço), e informando-os do detalhe de cada operação:</li>
+</ul>
+
+<blockquote>
+  <ul type="square">
+    <li>local da operação</li>
+    <li>montante da operação na moeda do <i>Acquirer</i></li>
+    <li>valor total (montante + comissões) na moeda do <i>Acquirer</i></li>
+    <li>código da moeda da operação (moeda do <i>Acquirer</i>)</li>
+    <li>câmbio aplicado (informado pelo Banco de Apoio)</li>
+    <li>contravalor apurado;</li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>creditando o Banco de Apoio pelo total dos débitos efectuados aos Emissores. </li>
+</ul>
+
+<p><br>
+<img src="imagens2/a8-1.gif" alt="a8-1.gif" WIDTH="500" HEIGHT="422"></p>
+
+<p><br>
+
+<ol>
+  <li>Recepção de levantamentos. </li>
+  <li>Envio de pedido e registo do Emissor. </li>
+  <li>Recepção da mensagem de <i>cut-off</i>. </li>
+  <li>Recepção da tabela cambial do Banco de apoio para Compensação. </li>
+  <li>Envio de <a href="../l-iii/mov-5.htm">registo tipo 5</a> no ficheiro
+    Movimentos (MMOV5) com a importância a creditar. </li>
+  <li>O Banco de apoio envia ordem de transferência para crédito na conta do Banco
+    correspondente, no país aceitante da operação.</li>
+</ol>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.8.2">A.8.2</a> CIRCUITO DE CARTÕES NACIONAIS CAPTURADOS NO ESTRANGEIRO</h2>
+
+<p><br>
+A SIBS informa diariamente os Emissores nacionais, por intermédio do ficheiro Capturas e
+Lista Negra (<a HREF="../l-iii/cln.htm">MCLN5</a>), de quais os seus cartões que ficaram
+retidos em Caixas Automáticos, quer na rede nacional, quer no estrangeiro. </p>
+
+<p>No que diz respeito às ocorrências no estrangeiro, apenas é possível reportar as
+capturas que chegam ao conhecimento do Sistema SIBS, ou seja, quase exclusivamente,
+aquelas que são consequência dos pedidos de captura com origem na SIBS ou Emissor.</p>
+
+<p>Os plásticos capturados devem ser encaminhados pela rede aceitante para a SIBS, que os
+devolve ao respectivo Emissor. </p>
+
+<p style="page-break-before: always" >Relativamente à Visa, este Sistema
+Internacional regulamenta ainda que: 
+
+<ul >
+  <li>A rede aceitante deve comunicar a captura de um cartão de marca Visa ao respectivo
+    Emissor até final do dia útil seguinte ao da captura;</li>
+  <li>A rede aceitante deve devolver o cartão num prazo que não deve exceder os 5 dias
+    úteis após a data de captura;</li>
+  <li>No caso de cartões com <i>chip</i> (EMV), a rede aceitante deve inutilizar a pista
+    magnética, furando-a ou cortando o canto do cartão oposto ao que contém o <i>chip</i>.
+    O <i>chip</i> não deve ser danificado. Para cartões capturados no espaço da UE, apenas
+    deve ser utilizada a segunda opção (corte).</li>
+</ul>
+
+<p>Para um Sistema específico - Saving Banks - no qual o pedido de captura de um cartão,
+pelo seu Emissor, é facturado pela rede aceitante, a SIBS disponibiliza mensalmente uma
+listagem incluindo: 
+
+<ul>
+  <li>o número total de cartões nacionais capturados, por rede aceitante; </li>
+  <li>o número total de cartões capturados em Portugal, por país emissor. </li>
+</ul>
+
+<p class="dta"><br>
+<a target="main" href="a7.htm">Anterior</a>/<a href="a9.htm">Seguinte</a></p>
+</body>
+</html>

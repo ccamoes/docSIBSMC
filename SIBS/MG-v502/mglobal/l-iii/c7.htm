@@ -1,0 +1,459 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>C.7 FORMATO DAS MENSAGENS PARA O NÍVEL FILE TRANSFER</title>
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicec.htm#C';</script>
+</head>
+
+<body>
+
+<h1>C.7 FORMATO DAS MENSAGENS PARA O NÍVEL <em>FILE-TRANSFER</em></h1>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.7.1">C.7.1</a> CODIFICAÇÃO DO <em>HEADER</em></h2>
+
+<p><br>
+Todos os comandos F.T. são 'Data Messages' para o nível Sessão. </p>
+
+<p>Assim, o <em>header</em> de sessão é seguido do <em>header</em> F.T., sendo este
+constituído por dois campos, com 7 <em>bytes</em> no total e tamanho fixo em todos os
+comandos. 
+
+<ul>
+  <li>O primeiro é o código do comando e ocupa 1 <em>byte</em>. </li>
+  <li>O segundo é o número de sequência do comando e ocupa 6 <em>bytes</em>. </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h5 class="times11">Mensagens F.T. :</h5>
+
+<p><img src="imagens3/c7-1.gif" alt="c7-1.gif" WIDTH="555" HEIGHT="559"></p>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.7.2">C.7.2</a> CODIFICAÇÃO DOS COMANDOS</h2>
+
+<p><br>
+Todos os parâmetros dos comandos são transmitidos em formato <em>display</em>, usando o
+código (ASCII/EBCDIC) que for acordado bilateralmente entre os interlocutores. </p>
+
+<p>Note-se que a sessão identifica os interlocutores e assim automaticamente é conhecido
+o código usado no diálogo.</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <th class="times11">Comando</th>
+    <th class="times11">Parâmetros </th>
+    <th class="times11">Bytes</th>
+    <th class="times11">Formato, valores e regras de preenchimento </th>
+  </tr>
+  <tr>
+    <td class="times11">OPEN</td>
+    <td class="times11">File_id <br>
+    ( File_name <br>
+    (File_origin <br>
+    File_destinat.<br>
+    File_code) <br>
+    File_date <br>
+    File_seq. <br>
+    num./time) </td>
+    <td class="times11"><br>
+    <br>
+    8+ <br>
+    8+ <br>
+    8+ <br>
+    6+ <br>
+    4=34 </td>
+    <td class="times11">Alfanumérico. Identificação completa do ficheiro. <br>
+    Nome, composto por 3 subcampos seguintes : <br>
+    1. nome da entidade origem. <br>
+    2. nome da entidade destino. <br>
+    3. código ou nome do ficheiro. <br>
+    numérico, data de criação (AAMMDD). <br>
+    numérico, numeração sequencial ou hora de criação <br>
+    ( NNNN ou HHMM ). </td>
+  </tr>
+  <tr>
+    <td class="times11">&nbsp;</td>
+    <td class="times11">File_size </td>
+    <td class="times11">8</td>
+    <td class="times11">Numérico. Indica o número de registos do ficheiro. <br>
+    Nos ficheiros não estruturados em registos (ficheiros flat) indica o tamanho do ficheiro
+    em bytes. </td>
+  </tr>
+  <tr>
+    <td class="times11">&nbsp;</td>
+    <td class="times11">File_record_ size </td>
+    <td class="times11">4</td>
+    <td class="times11">Numérico. Indica o tamanho do registo.<br>
+    Nos ficheiros não estruturados em registos terá o valor 1. <br>
+    Nos ficheiros de registo variável, terá o valor zero, situação que serve exactamente
+    para caracterizar este tipo de ficheiros. </td>
+  </tr>
+  <tr>
+    <td class="times11">&nbsp;</td>
+    <td class="times11">Block_size </td>
+    <td class="times11">4</td>
+    <td class="times11">Numérico, tamanho do bloco/msg em transferência <br>
+    ( número de bytes de dados em cada mensagem ). <br>
+    Nos ficheiros de registo variável, este é o tamanho máximo do bloco. </td>
+  </tr>
+  <tr>
+    <td class="times11">&nbsp;</td>
+    <td class="times11">File_ <br>
+    compress </td>
+    <td class="times11">1</td>
+    <td class="times11">Indicador de compactação : <br>
+    'Y' = Yes <br>
+    'N' = No (No para ficheiros Binary). </td>
+  </tr>
+  <tr>
+    <td class="times11">&nbsp;</td>
+    <td class="times11">File_ <br>
+    caracter_ <br>
+    code </td>
+    <td class="times11">1</td>
+    <td class="times11">Código de caracteres usado no conteúdo do ficheiro : <br>
+    A = ASCII <br>
+    E = EBCDIC <br>
+    B = BINARY </td>
+  </tr>
+  <tr>
+    <td class="times11">&nbsp;</td>
+    <td class="times11">Block_ <br>
+    number </td>
+    <td class="times11">6</td>
+    <td class="times11">Numérico. Indica o número de blocos (mensagens) que são
+    enviadas/recebidas, durante a transmissão. </td>
+  </tr>
+  <tr>
+    <td class="times11">ROPEN</td>
+    <td class="times11">Resp_code </td>
+    <td class="times11">1 <br>
+    <br>
+    <br>
+    <br>
+    </td>
+    <td class="times11">0 - Ok. <br>
+    1 - Erro de sequência ou de iniciativa do comando. <br>
+    2 - Parâmetros errados ou valores não suportados. <br>
+    3 - Ficheiro já recebido. <br>
+    4 - Falta de espaço para o tamanho do ficheiro. <br>
+    5 - A máquina que abriu a Sessão não está autorizada a enviar ficheiros desta
+    Entidade. <br>
+    9 - Outros motivos. </td>
+  </tr>
+  <tr>
+    <td class="times11">&nbsp;</td>
+    <td class="times11">Msg_ <br>
+    received </td>
+    <td class="times11"><br>
+    6</td>
+    <td class="times11">Numérico. <br>
+    = 0 se o ficheiro está a ser aberto pela primeira vez. <br>
+    = número de mensagens já recebidas quando se retoma uma recepção anteriormente
+    interrompida. </td>
+  </tr>
+  <tr>
+    <td class="times11">WRITE</td>
+    <td class="times11">Data </td>
+    <td class="times11">&nbsp;</td>
+    <td class="times11">Um registo ou um bloco. Valor limite 4084 bytes. </td>
+  </tr>
+  <tr>
+    <td class="times11">CLOSE_ <br>
+    FILE </td>
+    <td class="times11">Last_block</td>
+    <td class="times11">6 </td>
+    <td class="times11">Numérico, deve conter o número de sequência do último Write
+    enviado (ou seja o número de comandos Write efectuados/blocos enviados). </td>
+  </tr>
+  <tr>
+    <td class="times11">RCLOSE</td>
+    <td class="times11">Resp_Code </td>
+    <td class="times11">1</td>
+    <td class="times11">0 - Ok. <br>
+    1 - Erro de sequência ou de iniciativa do comando. <br>
+    2 - Last_block não coincide com o valor do último Write recebido. <br>
+    3 - Erro interno no Close. <br>
+    9 - Outros motivos. </td>
+  </tr>
+  <tr>
+    <td class="times11">INVITE</td>
+    <td class="times11">File_id <br>
+    File_name <br>
+    File_date <br>
+    File_seq._ <br>
+    number </td>
+    <td class="times11"><br>
+    24 <br>
+    6<br>
+    <br>
+    4 </td>
+    <td class="times11">( formato indicado no Open ) <br>
+    O File_date e o File_seq_number devem ser preenchidos a zeros quando se deseja receber o
+    ficheiro mais antigo ainda não transmitido, ou sempre que o Invite é genérico. <br>
+    (O file_code não é obrigatório e o file_origin também não. Podem ser preenchidos a
+    espaços) <br>
+    (Se o File_code estiver a espaços, o Invite diz-se Genérico. Neste caso o Receptor pede
+    ao Emissor que lhe envie todos os ficheiros que tiver para ele. Se o file_origin também
+    estiver a espaços, o Invite refere-se a todos os ficheiros que o destino especificado tem
+    para receber, independentemente da origem) <br>
+    (O Invite é especifico sempre que o File_code esteja preenchido. Neste caso apenas um
+    ficheiro é enviado) </td>
+  </tr>
+  <tr>
+    <td class="times11">RINVITE</td>
+    <td class="times11">Resp_Code </td>
+    <td class="times11">1</td>
+    <td class="times11">0 - Resposta positiva. <br>
+    (a resposta positiva é enviada apenas depois de feito o envio do ficheiro ou ficheiros
+    pedidos. <br>
+    Ou seja, a resposta positiva indica que está completa a operação solicitada). <br>
+    1 - Erro de sequência ou de iniciativa do comando. <br>
+    2 - Parâmetros errados ou valores não suportados. <br>
+    3 - NÃO existe o ficheiro pedido ou não existe nenhum ficheiro para enviar. <br>
+    5 - A máquina que abriu a Sessão não está autorizada a receber ficheiros para esta
+    Entidade. <br>
+    9 - Outras razões. </td>
+  </tr>
+  <tr>
+    <td class="times11">DIR</td>
+    <td class="times11">Inquiry_type </td>
+    <td class="times11">1</td>
+    <td class="times11">Situação dos ficheiros a consultar: <br>
+    A - ALL. <br>
+    T - Transmitidos (só). <br>
+    N - NÃO transmitidos (só). </td>
+  </tr>
+  <tr>
+    <td class="times11">&nbsp;</td>
+    <td class="times11">File_ <br>
+    destination </td>
+    <td class="times11">8</td>
+    <td class="times11">Nome da entidade destino. (Como descrito no Open_file) </td>
+  </tr>
+  <tr>
+    <td class="times11">&nbsp;</td>
+    <td class="times11">Initial_Key </td>
+    <td class="times11">6</td>
+    <td class="times11">File_date início de consulta. </td>
+  </tr>
+  <tr>
+    <td class="times11">RDIR</td>
+    <td class="times11">Resp.Code </td>
+    <td class="times11">1</td>
+    <td class="times11">0 - Ok. <br>
+    1 - Erro de sequência ou de iniciativa do comando. <br>
+    2 - Comando não suportado ou formato dos parâmetros errado. <br>
+    3 - Directório vazio. <br>
+    4 - NÃO há mais ficheiros para além da data indicada. <br>
+    9 - outros motivos. </td>
+  </tr>
+  <tr>
+    <td class="times11">&nbsp;</td>
+    <td class="times11">End_ <br>
+    indicator </td>
+    <td class="times11">1</td>
+    <td class="times11">0 - NÃO é a última mensagem da resposta. <br>
+    1 - É a última mensagem da resposta. </td>
+  </tr>
+  <tr>
+    <td class="times11">&nbsp;</td>
+    <td class="times11">Number of File_inf. in message </td>
+    <td class="times11">2</td>
+    <td class="times11">Numérico. Número de referências incluídas na mensagem. Valores de
+    1 a 20. </td>
+  </tr>
+  <tr>
+    <td class="times11">&nbsp;</td>
+    <td class="times11">File_Info. <br>
+    File_id + <br>
+    File_size + <br>
+    Record_size </td>
+    <td class="times11">46= <br>
+    (34+ <br>
+    8+ <br>
+    4) </td>
+    <td class="times11"><br>
+    descrito anteriormente ( no comando Open ) <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; &quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &quot; <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; &quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &quot; &nbsp; </td>
+  </tr>
+</table>
+
+<p style="page-break-before: always"><br>
+Comando <em>'</em>Open':</p>
+
+<table border="1" cellpadding="3" cellspacing="0">
+  <tr>
+    <th colspan="5" class="times11">File_id</th>
+    <th colspan="6">&nbsp;</th>
+  </tr>
+  <tr>
+    <th colspan="3" class="times11">File_name</th>
+    <th colspan="2">&nbsp;</th>
+    <th colspan="6">&nbsp;</th>
+  </tr>
+  <tr>
+    <th class="times11">ORIGIN</th>
+    <th class="times11">DESTIN.</th>
+    <th class="times11">CODE</th>
+    <th class="times11">DATE</th>
+    <th class="times11">SEQ.</th>
+    <th class="times11">FILESIZE</th>
+    <th class="times11">Rsize</th>
+    <th class="times11">Bsize</th>
+    <th class="times11">&nbsp;</th>
+    <th class="times11">&nbsp;</th>
+    <th class="times11">B.num</th>
+  </tr>
+  <tr>
+    <td class="times11">########</td>
+    <td class="times11">########</td>
+    <td class="times11">########</td>
+    <td class="times11">######</td>
+    <td class="times11">####</td>
+    <td class="times11">########</td>
+    <td class="times11">####</td>
+    <td class="times11">####</td>
+    <td class="times11">Y <br>
+    N</td>
+    <td class="times11">A<br>
+    E<br>
+    B</td>
+    <td class="times11">####</td>
+  </tr>
+</table>
+
+<p><br>
+Comando 'ROpen' :</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <th width="85" class="times11">Resp_code</th>
+    <th width="72" class="times11">Msg_rec</th>
+  </tr>
+  <tr>
+    <td width="85" class="times11">0 <br>
+    1 ....</td>
+    <td width="72" class="times11">######</td>
+  </tr>
+</table>
+
+<p><br>
+Comando 'Dir' :</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <th width="49" class="times11">Type</th>
+    <th width="84" class="times11">File_dest</th>
+    <th width="90" class="times11">Initial_Key </th>
+  </tr>
+  <tr>
+    <td width="49" class="times11">A <br>
+    T<br>
+    N</td>
+    <td width="84" class="times11">########</td>
+    <td width="90" class="times11">######<br>
+    000000</td>
+  </tr>
+</table>
+
+<p><br>
+Comando 'RDir':</p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="513">
+  <tr>
+    <th colspan="3" class="times11" width="131">&nbsp;</th>
+    <th colspan="3" class="times11" width="359">File_information</th>
+  </tr>
+  <tr>
+    <th class="times11" width="46">Resp_<br>
+    Code</th>
+    <th class="times11" width="39">End_<br>
+    Indic</th>
+    <th class="times11" width="43">Num_<br>
+    Files</th>
+    <th class="times11" width="210">File_identification</th>
+    <th class="times11" width="90">File_size</th>
+    <th class="times11" width="49">Rec_<br>
+    size</th>
+  </tr>
+  <tr>
+    <td class="times11" width="46">0<br>
+    ...<br>
+    9</td>
+    <td class="times11" width="39">0<br>
+    1</td>
+    <td class="times11" width="43">01<br>
+    ...<br>
+    20</td>
+    <td class="times11" width="210">XXXXXXXXXXXXXXXXXXXXX<br>
+    XXXNNNNNNNNNN</td>
+    <td class="times11" width="90">NNNNNNNN</td>
+    <td class="times11" width="49">NNNN</td>
+  </tr>
+</table>
+
+<p><br>
+Comando 'Write':</p>
+
+<p>Ficheiros com registo de tamanho fixo :</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <th colspan="5" class="times11" width="550">Data</th>
+  </tr>
+  <tr>
+    <td width="90" class="times11">Record 1</td>
+    <td width="90" class="times11">Record 2</td>
+    <td width="90" class="times11">Record 3 </td>
+    <td width="90" class="times11">---</td>
+    <td width="90" class="times11">Record N</td>
+  </tr>
+</table>
+
+<p style="page-break-before: always"><br>
+Ficheiros de registo variável : </p>
+
+<p>Nos ficheiros de registo variável, cada registo é precedido de 4 <em>bytes</em> que
+indicam o tamanho deste. Estes 4 <em>bytes</em> são representados no mesmo código de
+caracteres que os dados do ficheiro (ASCII ou EBCDIC). Se o ficheiro for 'Binary', então
+eles estão no mesmo código que os parâmetros do Open_File.</p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="577">
+  <tr>
+    <th colspan="8" class="times11" width="571">Data</th>
+  </tr>
+  <tr>
+    <td width="55" class="times11">LLLL</td>
+    <td width="75" class="times11">Record 1</td>
+    <td width="63" class="times11">LLLL </td>
+    <td width="73" class="times11">Record 2</td>
+    <td width="58" class="times11">LLLL</td>
+    <td width="66" class="times11">--- </td>
+    <td width="61" class="times11">LLLL</td>
+    <td width="78" class="times11">Record N</td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="c6.htm">Anterior</a>/<a href="c8.htm">Seguinte</a></p>
+</body>
+</html>

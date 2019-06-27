@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+
+<title>X-V - LISTAGENS DE MOVIMENTOS</title>
+<script>top.captulos.location='indicex.htm#X';</script>
+</head>
+
+<body>
+
+<h2>V - LISTAGENS DE MOVIMENTOS</h2>
+
+<p>&nbsp;</p>
+
+<p>Tarifa criada devido ao crescimento significativo no consumo de recursos
+humanos e informáticos, relacionado com as listagens de movimentos de cartões
+criadas a partir de pedidos de Bancos (ou das autoridades com respeito a
+movimentos de cartões emitidos pelos Bancos), e com o objectivo de incentivar
+uma utilização racional e criteriosa do serviço. As listagens são
+consubstanciadas no envio, pela SIBS, de um ficheiro (ou papel) contendo o
+detalhe dos movimentos efectuados pelo cartão, no período solicitado pelo Banco ou a que se refere a solicitação/ordem judiciária.</p>
+<p>Os pedidos podem ser efectuados via Terminal de Serviços SIBS ou através
+do Serviço de Atendimento e Regularizações (Departamento de Produção). Em
+ambos os casos, o processo de consulta aos <i> logs</i> aplicacionais desencadeado
+internamente impõe encargos administrativos e de validação técnica
+(incluindo jurídica, nos casos aplicáveis) apreciáveis, tanto mais que vêm
+reflectindo uma tendência quantitativa crescente.</p>
+<p><br>
+A tarifa a aplicar encontra-se desagregada nas seguintes componentes:</p>
+<ul>
+  <li>Custo administrativo<br>
+    &nbsp; - por pedido recebido pelo DPRAR
+(idêntico à retransmissão de ficheiros)&nbsp;<br>
+    &nbsp; - por pedido recebido via Terminal
+Bancário (menor impacto administrativo para a SIBS)</li>
+</ul>
+<ul>
+  <li>Custo de processamento -
+por dia abrangido na consulta.</li>
+</ul>
+<p>A que correspondem as seguintes rubricas:
+
+</p>
+<p><b><br>
+V51 - Pedido recebido via Serviço Atendimento e Regularizações<br>
+V52 - Pedido recebido via Terminal SIBS<br>
+V53 - Por dia de processamento</b>
+
+</p>
+<p><br>
+<b>Forma de Controlo</b>
+
+</p>
+<p>Sempre que se desencadeia um pedido de listagem é remetido o ficheiro MLIS
+para a entidade requerente. O registo tipo 5 do <a href="../l-iii/efac.htm"> EFAC</a> apresenta os dados necessários
+para a auditabilidade deste tipo de pedidos.
+
+</p>
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong>
+
+</p>
+<p>O registo tipo 4 apresenta para cada uma das rubricas indicadas os seguintes
+dados: 
+
+</p>
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+O registo tipo 5 detalha para cada uma das rubricas os dados relativos a cada
+pedido:
+
+</p>
+<p><b>Rubricas V51/V52:</b>
+
+</p>
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#327">327</a>) identificação do
+    comerciante (7)</li>
+  <li>(<a href="../../Campos/camp2200.htm#2274" target="explicac">2274</a>) origem do pedido (1)</li>
+  <li>(<a target="explicac" href="../../Campos/campos2.htm#112">112</a>) data do pedido (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos2.htm#185">185</a>) identificação pedido
+    de listagem (3)</li>
+  <li>(<a target="explicac" href="../../Campos/campos7.htm#656">656</a>) tipo de listagem (1)</li>
+  <li>(<a href="../../Campos/camp2200.htm#2279" target="explicac">2279</a>) formato da listagem
+    (1)</li>
+  <li>(<a target="explicac" href="../../Campos/campos7.htm#612">612</a>) user id (8)</li>
+</ul>
+
+<p><b>Rubrica V53:</b>
+
+</p>
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>)
+    rubrica do tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#327">327</a>)
+    identificação do comerciante (7)</li>
+  <li>(<a href="../../Campos/camp2200.htm#2274" target="explicac">2274</a>) origem do pedido (1)</li>
+  <li>(<a target="explicac" href="../../Campos/campos2.htm#112">112</a>) data do pedido (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos2.htm#185">185</a>) identificação pedido
+    de listagem (3)</li>
+  <li>(<a target="explicac" href="../../Campos/campos7.htm#656">656</a>) tipo de listagem (1)</li>
+  <li>(<a href="../../Campos/camp2200.htm#2279" target="explicac">2279</a>) formato da listagem
+    (1)</li>
+  <li>(<a target="explicac" href="../../Campos/campos2.htm#187">187</a>) data de início da
+    listagem (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos2.htm#188">188</a>) data de fim da
+    listagem (8)</li>
+  <li>(<a href="../../Campos/camp2200.htm#2270" target="explicac">2270</a>) n.º dias pesquisados
+    (3)</li>
+  <li>(<a href="../../Campos/camp2500.htm#2591" target="explicac">2591</a>) valor parcial da
+    emissão de listagem (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos7.htm#612">612</a>) user id (8)</li>
+  <li>Dados variáveis do pedido</li>
+</ul>
+<p><br>
+Dependendo do tipo de listagem, os dados variáveis do pedido podem ser
+preenchidos com a seguinte informação:
+
+</p>
+<div align="center">
+  <center>
+<table border="1" cellspacing="0" cellpadding="2" width="464" >
+  <tr>
+    <th  width="163">Tipo de Listagem
+      
+    </th>
+    <th  width="221"  >Dados
+      variáveis do Pedido
+      
+    </th>
+    <th  width="60"  >Formato
+      
+    </th>
+  </tr>
+  <tr>
+    <td class="esq" width="163">1 - Cartão Nacional
+      
+    </td>
+    <td class="esq" width="221"  >BIN Cartão<br>
+      N.º Cartão<br>
+      CD Cartão<br>
+      Data Expiração Cartão<br>
+      Filler
+    </td>
+    <td width="41" class="dta"  >8 N<br>
+      7 N<br>
+      1 N<br>
+      4 N<br>
+      5 A</td>
+  </tr>
+  <tr>
+    <td class="esq" width="163">2 - Cartão Internacional
+      
+    </td>
+    <td class="esq" width="221"  >N.º de Cartão Internacional
+      
+    </td>
+    <td width="41" class="dta"  >25 A
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" width="163">3 ou 5 - TPA
+      
+    </td>
+    <td class="esq" width="221"  >N.º TPA<br>
+      <i>Filler</i>
+    </td>
+    <td width="41" class="dta"  >10 N<br>
+      15 A
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" width="163">4 - CA
+      
+    </td>
+    <td class="esq" width="221"  >N.º CA (BBBB/AAAA/NN)<br>
+      <i>Filler</i>
+    </td>
+    <td width="41" class="dta"  >10 N<br>
+      15 A</td>
+  </tr>
+  <tr>
+    <td class="esq" width="163">D - Pag. Serviços/Compras
+      
+    </td>
+    <td class="esq" width="221"  >N.º Entidade Pag. Serviços/Compras<br>
+      Referência<br>
+      <i>Filler</i>
+    </td>
+    <td width="41" class="dta"  >5 N<br>
+      15 N<br>
+      5 A</td>
+  </tr>
+</table>
+  </center>
+</div>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"> <span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span> </span> <br>
+    Para efeitos de apresentação e por uma questão prática mantém-se o layout anterior nas
+    tabelas auxiliares. </em></td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="x2.htm">Anterior</a></p>
+</body>
+</html>

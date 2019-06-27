@@ -1,0 +1,1129 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="_self">
+<script>top.captulos.location='indicea.htm#A';</script>
+
+<style>
+<!--
+#table tbody td { font-family: Tahoma, Arial; font-size: 8pt; color: #006400;}
+#table tbody th { font-family: Tahoma, Arial; font-size: 7pt; color: #006400;}
+-->
+</style>
+<title>A.3 EMISSÃO DE CARTÕES EMV</title>
+</head>
+
+<body>
+
+<h1>A.3 EMISSÃO DE CARTÕES EMV</h1>
+
+<p>&nbsp;</p>
+
+<p>O <i>standard</i> EMV representa uma nova plataforma tecnológica (cartões com <em>chip</em>
+vs. cartões com pista magnética), baseada num conjunto de especificações desenvolvidas
+e acordadas pelos Sistemas de Pagamento Internacionais. A migração para esta tecnologia
+em Portugal iniciou-se em 2001.</p>
+
+<p>A transição para o EMV obriga a significativas actualizações nas componentes de
+emissão e aceitação de cartões. Este capítulo tem como objectivo apresentar os
+aspectos particulares relacionados com a emissão de cartões com <em>chip</em> EMV,
+complementares aos indicados genericamente para a Emissão de Cartões (capítulo<a
+href="a2.htm"> A.2</a>).</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.3.1">A.3.1</a> IMPACTOS DA TRANSIÇÃO PARA O EMV NA EMISSÃO DE CARTÕES</h2>
+
+<p><br>
+No que se refere à componente de emissão no interface entre os Emissores e a SIBS, a
+transição para a tecnologia <em>chip</em> EMV afecta as seguintes áreas:</p>
+
+<blockquote>
+  <ul>
+    <li><a href="#A.3.1.1">Componente de Segurança na Emissão de Cartões EMV</a></li>
+    <li><a href="#A.3.1.2">Caracterização dos Cartões EMV</a></li>
+    <li><a href="#A.3.1.3">Personalização de Cartões</a></li>
+  </ul>
+</blockquote>
+
+<p>Cada um destes aspectos é abordado nos pontos seguintes. </p>
+
+<p>No anexo&nbsp;<a href="a_a4.pdf">A.AX4</a> são apresentadas as acções
+necessárias à emissão de cartões com <i>chip</i> EMV, adicionais aos processos já
+existentes para emissão de cartões sem <i>chip</i> EMV.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.3.1.1">A.3.1.1</a> COMPONENTE DE SEGURANÇA NA EMISSÃO DE CARTÕES EMV</h3>
+
+<p><br>
+A transição para o <em>standard</em> EMV tem subjacente uma evolução significativa na
+componente de segurança associada à emissão e operação dos cartões com <i>chip</i>.
+Para além das componentes já existentes nos cartões que apenas possuem pista
+magnética, as especificações EMV introduzem uma série de novos elementos
+criptográficos que é necessário considerar.</p>
+
+<p>&nbsp;</p>
+
+<h5 class="a"><a name="A.3.1.1.1">A.3.1.1.1</a> DESCRIÇÃO DAS CHAVES</h5>
+<p class="a">As chaves necessárias à emissão de cartões EMV são as
+seguintes:</p>
+<ul class="a">
+  <li><b>Chaves Simétricas (3DES)</b></li>
+</ul>
+<blockquote>
+  <ul class="a" type="square">
+    <li>Transaccionais de Emissor (*)</li>
+    <li>de Emissão (*)</li>
+    <li>Transaccionais de Emissor para <i>Chip</i></li>
+  </ul>
+  <blockquote>
+<p class="a">(*) Estas chaves já existiam para os cartões de pista magnética.</p>
+  </blockquote>
+</blockquote>
+<ul style="page-break-before: always" class="a">
+  <li><b>Chaves Públicas (RSA)</b></li>
+</ul>
+<blockquote>
+  <ul class="a" type="square">
+    <li>de <i>Certification Authority</i></li>
+    <li>de Emissor</li>
+    <li>de Cartão (apenas para cartões DDA-<i>Dynamic Data Authentication</i>)</li>
+    <li>de PIN (opcionais, e apenas para cartões DDA)</li>
+  </ul>
+</blockquote>
+<p class="a">Todas as chaves são geradas aleatoriamente na SIBS através de
+módulos de seguranças centrais (HSM) com geradores de números aleatórios
+criptograficamente seguros.</p>
+<p class="a">Todas as chaves podem exportadas para o Emissor ou para o Sistema
+de Pagamento respectivo, mediante solicitação e autorização do primeiro.</p>
+<p>&nbsp;</p>
+<h5 class="a"><a name="A.3.1.1.2">A.3.1.1.2</a> CHAVES SIMÉTRICAS</h5>
+<p class="a"><b>
+<br>
+Chaves Simétricas Transaccionais de Emissor</b></p>
+<ul class="a">
+  <li>Chaves de PVV-MB</li>
+  <li>Chaves de CCD-MB</li>
+  <li>Chaves de PVV para os Sistemas de Pagamento Internacionais (Visa, MCI
+    ou Amex)</li>
+  <li>Chaves de CVV/CVC para os Sistemas de Pagamento Internacionais (para
+    CVV1/CVC1 e CVV2/CVC2)</li>
+</ul>
+<blockquote>
+  <p class="a">Estas chaves são utilizadas na fase de emissão de cartões,
+  para geração de PVV, CCD e CVV/CVC, e na validação do PIN e da integridade
+  das pistas 2 e 3, em momento de utilização do cartão.</p>
+</blockquote>
+<p class="a"><b>
+<br>
+Chaves Simétricas de Emissão</b></p>
+<ul class="a">
+  <li><span class="verda8a">Chaves de Guarda de PINs cifrados na SIBS</span><br>
+    Estas chaves têm como função cifrar os PINs
+  guardados pela SIBS, para utilização nas reemissões de cartões sem
+  modificação/geração de PIN.</li>
+</ul>
+<p class="a"><b>
+<br>
+Chaves Simétricas Transaccionais de Emissor para <i>Chip</i></b></p>
+<ul class="a">
+  <li><span class="verda8a">Chaves de CVV3/CVC3 para os Sistemas de Pagamento Internacionais</span><br>
+    Estas chaves são utilizadas na fase de emissão de cartões,
+  para geração dos CVV3 e, posteriormente, nas validações de integridade de
+  dados da imagem da pista 2 (<i>track 2 equivalent data</i>) contida no <i>chip</i>.</li>
+</ul>
+<ul class="a">
+  <li><span class="verda8a">Chave de <i> Application Cryptogram</i></span><br>
+    Estas chaves são utilizadas na derivação das chaves de cartão
+  para geração e validação de criptogramas do <i>chip</i>.</li>
+</ul>
+<ul class="a">
+  <li><span class="verda8a">Chave de Cifra para <i> Secure Messaging</i></span><br>
+    Estas chaves são utilizadas na derivação das chaves de cartão
+  para confidencialidade no <i> Secure Messaging</i>.</li>
+</ul>
+<ul>
+  <li class="a"><span class="verda8a">Chave de MAC para <i> Secure Messaging</i></span><br>
+    Estas chaves são utilizadas na derivação das chaves de cartão
+  para integridade <i> Secure Messaging</i>.</li>
+</ul>
+<ul>
+  <li class="a"><span class="verda8a">Chaves de Geração de <i> ICC Dynamic Number</i> (*)</span><br>
+    Estas chaves são utilizadas na derivação das chaves de cartão
+  para geração de <i> ICC Dynamic Number</i>.</li>
+</ul>
+<ul class="a">
+  <li><span class="verda8a">Chaves de Geração de <i> Data Authentication Code</i> (*)</span><br>
+    Estas chaves são utilizadas na derivação das chaves de cartão
+  para geração de <i> Data Authentication Code.</i></li>
+</ul>
+<blockquote>
+  <p class="a">(*) Utilizadas apenas em cartões EMV de tecnologia DDA.</p>
+</blockquote>
+<p>&nbsp;</p>
+<h5 class="a"><a name="A.3.1.1.3">A.3.1.1.3</a> CHAVES PÚBLICAS</h5>
+<p class="a"><b><br>
+Chaves Públicas de <i> Certification Authority </i> (CA)</b></p>
+<ul class="a">
+  <li><span class="verda8a">Chave Privada de CA</span><br>
+    As chaves privadas de CA são utilizadas pelos Sistemas de Pagamento
+    para assinar Chaves Públicas de Emissor, através da geração de um
+    certificado.</li>
+</ul>
+<ul class="a">
+  <li><span class="verda8a">Chave Pública de CA</span><br>
+    As chaves públicas de CA servem para validação de certificados
+  de Chave Pública de Emissor. Estas chaves são distribuídas pelos terminais
+  EMV da respectiva rede de aceitação.</li>
+</ul>
+<p class="a"><b><br>
+Chaves Públicas de Emissor</b></p>
+<ul class="a">
+  <li><span class="verda8a">Chave Privada de Emissor</span><br>
+    As chaves privadas de Emissor são utilizadas na emissão de cartões para
+  assinar dados estáticos de cartões <i>chip</i>, SDA e DDA. No caso de cartões DDA,
+  são utilizadas para assinar as respectivas chaves públicas de cartão e de
+  PIN (quando aplicável).</li>
+</ul>
+<ul class="a">
+  <li><span class="verda8a">Chave Pública de Emissor</span><br>
+    As chaves públicas de Emissor são utilizadas pelo terminal na fase de
+  autenticação dos dados e das chaves dos cartões.</li>
+</ul>
+  <p class="a"><br>
+  <b>Chaves Públicas de Cartão (apenas para cartões DDA)</b></p>
+<ul class="a">
+  <li><span class="verda8a">Chave Privada de Cartão</span><br>
+    As chaves privadas de cartão são utilizadas para assinar dados dinâmicos
+  do cartão e do terminal durante a realização das transacções.<br>
+    Caso o cartão não tenha chaves específicas de PIN, serve também para
+  decifrar o PIN no método <i> Offline</i> PIN.</li>
+</ul>
+<ul class="a">
+  <li><span class="verda8a">Chave Pública de Cartão</span><br>
+    As chaves públicas de cartão são utilizadas pelos terminais para validar
+  os dados dinâmicos gerados pelos cartões.<br>
+    Caso o cartão não tenha chaves específicas de PIN serve também para
+  cifrar o PIN no método <i> Offline</i> PIN.</li>
+</ul>
+<p class="a"><b><br>
+Chaves Públicas de PIN (opcionais, e apenas para cartões DDA)</b></p>
+<ul class="a">
+  <li><span class="verda8a">Chave Privada de PIN</span><br>
+    As chaves privadas de PIN são utilizadas pelo cartão para decifrar o PIN
+  no método <i> Offline</i> PIN.</li>
+</ul>
+<ul class="a">
+  <li><span class="verda8a">Chave Pública de PIN</span><br>
+    As chaves públicas de PIN são utilizadas pelos terminais para cifrar o
+  PIN no método <i> Offline</i> PIN.</li>
+</ul>
+<blockquote>
+</blockquote>
+  <p>&nbsp;</p>
+<h5 style="page-break-before: always" class="a"><a name="A.3.1.1.4">A.3.1.1.4</a> RESPONSABILIDADES DA SIBS NA
+GESTÃO DE CHAVES</h5>
+<p class="a">São da responsabilidade da SIBS os seguintes processos de gestão de chaves:</p>
+<p class="a"><b><br>
+Gestão de chaves de CA MB</b></p>
+<ul class="a">
+  <li>Geração e introdução dos pares de chaves públicas do Sistema de Pagamento MB;</li>
+  <li>Gestão segura dos pares de chaves públicas do Sistema de Pagamento;</li>
+  <li>Publicação das chaves públicas do Sistema de Pagamento MB no Modelo
+  Global;</li>
+  <li>Certificação das chaves públicas de Emissor.</li>
+</ul>
+  <p class="a"><b><br>
+  Gestão de chaves dos Emissores</b></p>
+<ul class="a">
+  <li>Geração de chaves de Emissor necessárias à emissão de cartões;</li>
+  <li>Pedidos de certificados das chaves públicas de Emissor aos respectivos
+  Sistemas de Pagamento, necessários à personalização e emissão dos
+  cartões <i>chip</i>;</li>
+  <li>Importação dos certificados das chaves públicas de Emissor recebidos
+  dos Sistemas de Pagamento;</li>
+  <li>Exportação das chaves simétricas para os Emissores ou para os
+  Sistemas de Pagamento;</li>
+  <li>No final do tempo de vida das chaves de Emissor, tratar de todo o
+  processo de renovação das chaves de Emissor com os Sistemas de Pagamento, se
+  até à data não houver um pedido expresso pelos Emissores de cancelamento
+  das chaves. Estes procedimentos incluem o arquivo e desactivação das chaves
+  expiradas para além da geração e emissão de certificados de novas chaves;</li>
+  <li>Substituição das chaves caso se verifique o seu comprometimento;</li>
+  <li>Gestão das chaves públicas das <i> Certification Authority</i> dos vários
+  Sistemas de Pagamento, tratando nomeadamente da sua importação,
+  armazenamento e controlo permanente (por exemplo, possível comprometimento,
+  alteração de datas de expiração, etc.);</li>
+  <li>Protecção da integridade de todas as chaves geradas pela SIBS e
+  recebidas dos diversos Sistemas de Pagamento.</li>
+</ul>
+  <p>&nbsp;</p>
+<h5 class="a"><a name="A.3.1.1.5">A.3.1.1.5</a> POLÍTICA DE GESTÃO DAS CHAVES
+PÚBLICAS</h5>
+<p class="a"><b><br>
+Regras gerais de segurança</b></p>
+<p class="a">Toda a Política de Gestão de Chaves Públicas adoptada pela SIBS é baseada
+nas regras e requisitos definidos na documentação da EMV:</p>
+<ul class="a">
+  <li><i>EMV2000 Integrated Circuit Card Specification for Payment Systems - Book 2
+  - Security and Key Management, Version 4.0, December, 2000;</i></li>
+  <li><i>EMV Issuer Security Guidelines - Draft, Version 0.5, October 31, 2000;</i></li>
+  <li><i>EMVCo Public Key Revocation - Principles and Policies, Version 1.0, April
+    1999.</i></li>
+</ul>
+<p class="a">A política implementada tem por objectivo garantir que sejam cumpridas as
+seguintes regras gerais de segurança:</p>
+<ul class="a">
+  <li><span class="verda8a"><strong>Segurança das Chaves Privadas e Secretas</strong></span><br>
+    As chaves são geradas de forma aleatória em Módulos de Segurança, e
+    apenas podem existir em claro dentro de Módulo de Segurança. Fora deste,
+    estão sempre devidamente protegidas por chaves próprias para o efeito.<br>
+    As chaves são geridas em todas as fases do seu ciclo de vida, de modo a
+    garantir que não sejam comprometidas e que seja mantida a sua integridade.
+    Caso seja necessário exportar chaves (para entrega aos Sistemas de
+    Pagamento, por exemplo), existem mecanismos de protecção de integridade
+    durante o seu transporte.</li>
+</ul>
+<ul class="a">
+  <li><span class="verda8a"><strong>Auditoria e Controlo</strong></span><br>
+    Todos os procedimentos de gestão de chaves realizados na SIBS estão
+  documentados e estão implementados mecanismos de controlo dos processos
+  envolvidos. Estes processos visam melhorar a gestão das chaves em termos de
+  segurança, eficiência e qualidade.</li>
+</ul>
+<blockquote>
+</blockquote>
+<ul class="a">
+  <li><span class="verda8a"><strong>Detecção de Fraude</strong></span><br>
+   Existem mecanismos de detecção de comprometimento de chaves e estão
+  definidos procedimentos a seguir em casos de suspeitas de comprometimento de
+  chaves.</li>
+</ul>
+<p class="a"><b><br>
+Critérios para a escolha dos parâmetros das chaves públicas</b></p>
+<p class="a">Na geração das chaves públicas (de CA MB, de Emissor, de Cartão e de PIN)
+é necessário definir alguns parâmetros que garantam um equilíbrio entre o
+nível de segurança requerido e o tempo de transacção. Na sua definição
+são tidos em conta os seguintes critérios:</p>
+  <ul class="a">
+    <li>Estudos publicados sobre a robustez do RSA e dimensão mínima das
+  chaves a utilizar, de modo a que ataques por criptoanálise não sejam
+  praticáveis com a tecnologia actual;</li>
+    <li>Tabela publicada anualmente pela EMVco com as dimensões de chaves de CA
+  e respectivas datas de expiração;</li>
+    <li>Capacidade de memória e de processamento dos cartões <i>chip</i>;</li>
+    <li>Tempo gasto no processo de autenticação em função das capacidades
+  dos terminais. A autenticação baseia-se em operações RSA cujo
+  processamento é pesado, e que pode degradar o tempo de processamento das
+  transacções;</li>
+    <li>Minimizar o número de chaves geradas reduzindo assim a complexidade da
+  logística de gestão de chaves;</li>
+    <li>Possibilidade dos Emissores definirem alguns parâmetros em função dos
+  seus cartões e requisitos de segurança.</li>
+  </ul>
+<p class="a"><br>
+<b>Parâmetros actuais definidos para as chaves públicas de CA Multibanco</b></p>
+<p class="a">Em Setembro de 2005 as características definidas para as chaves
+públicas de CA Multibanco são as apresentadas na tabela 1 - <i> Chaves Públicas de
+CA Multibanco</i>.</p>
+<p class="a">Todos os valores indicados são revistos anualmente em função dos factores
+atrás referidos. A revisão é realizada após a actualização da tabela de
+chaves de CA publicada anualmente pela EMVCo.</p>
+<p class="center"><span class="a"><br>
+Tabela 1&nbsp;-
+Chaves públicas de CA Multibanco</span></p>
+<center>
+<table id="table" BORDER="1" CELLSPACING="0" CELLPADDING="4">
+  <tr>
+    <th WIDTH="14%">Índice</th>
+    <th WIDTH="20%">Dimensão</th>
+    <th WIDTH="32%">Expoente Público</th>
+    <th WIDTH="33%" nowrap>Data de Expiração</th>
+  </tr>
+  <tr>
+    <td WIDTH="14%">05</td>
+    <td WIDTH="20%">1024 bit</td>
+    <td WIDTH="32%">03</td>
+    <td WIDTH="33%">31/12/2009</td>
+  </tr>
+  <tr>
+    <td WIDTH="14%">07</td>
+    <td WIDTH="20%">1152 bit</td>
+    <td WIDTH="32%">03</td>
+    <td WIDTH="33%">31/12/2012</td>
+  </tr>
+</table>
+</center>
+<p class="a">&nbsp;<br>
+<b>Parâmetros definidos por <i> default</i> para as chaves públicas de Emissor, de
+Cartão e de PIN</b></p>
+<p class="a">Em Setembro de 2005 as características assumidas para as chaves
+públicas de Emissor, de Cartão e de PIN são as apresentadas na tabela 2 - <i>Parâmetros de default das chaves públicas de Emissor, de Cartão e de
+PIN</i>.</p>
+<p class="a">Importa referir que todas estas definições de parâmetros são revistas
+anualmente em função dos factores anteriormente referidos. A revisão é
+realizada após a actualização da tabela de chaves de CA publicada anualmente
+pela EMVCo.</p>
+<p style="page-break-before: always"><span class="a">
+<br>
+Tabela 2&nbsp;- Parâmetros de <i> default</i>  das chaves públicas de Emissor, de Cartão e de
+PIN</span></p>
+    <center>
+<div align="left">
+<table id="table" BORDER="1" CELLSPACING="0" CELLPADDING="2" width="577">
+  <tr>
+    <th class="esq" width="119">
+      Número de Chaves</th>
+    <td class="esq" width="415">
+      <b>
+      1</b> chave de Emissor por cada par BIN/aplicação
+      <br><b>1</b> chave de Cartão (DDA) por BIN/aplicação/cartão
+      <br><b>Nenhuma</b> chave de PIN</td>
+    <td width="23">
+    &nbsp;&nbsp;
+    </td>
+  </tr>
+  <tr>
+    <th class="esqa" width="119">
+      Dimensão</th>
+    <td class="esqa" width="415">
+      <b>
+      896 <i> bit</i></b></td>
+    <td class="a" width="23">
+    (a)
+    </td>
+  </tr>
+  <tr>
+    <th class="esqa" width="119">
+      Expoente Público</th>
+    <td class="esqa" width="415">
+      <b>
+      3</b></td>
+    <td class="a" width="23">
+    (b)
+    </td>
+  </tr>
+  <tr>
+    <th class="esqa" width="119">
+      Data de Expiração</th>
+    <td class="esqa" width="415">
+      <b>
+      31/12/2009</b></td>
+    <td class="a" width="23">
+    (c)
+    </td>
+  </tr>
+  <tr>
+    <th class="esqa" width="119">
+      Certificado</th>
+    <td class="esqa" width="415">
+      A chave de <b>Emissor</b> tem um certificado com validade até <b> 31/12/2009</b> e
+      <b>
+      1024 <i> bit</i></b>
+      <br>A chave de <b>Cartão</b> tem um certificado com validade até <b> 31/12/2009</b> e<b>
+      896 <i> bit</i></b></td>
+    <td class="a" width="23">
+    (d)
+    </td>
+  </tr>
+</table>
+</div>
+    </center>
+<br>
+
+<table id="table" border="0" cellspacing="0">
+  <tr>
+    <td class="esq" nowrap>
+(a) -&nbsp;</td>
+    <td class="esq">Os valores aceites actualmente para a dimensão da chave são 896
+      <i>bits</i>,
+      1024 e 1152 <i>bits</i>.</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>
+(b) -&nbsp;</td>
+    <td class="esq">Os valores possíveis para este parâmetro são 3 e 2^16 +
+      1, no entanto
+      este segundo valor não é recomendado pela SIBS.</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>
+(c) -&nbsp;</td>
+    <td class="esq">Este é o valor máximo que se pode atribuir à data de expiração
+      para a dimensão acima referida.</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>
+(d) -&nbsp;</td>
+    <td class="esq">Para além deste certificado de Emissor pode também ser emitido pelas
+      CAs um certificado com validade de 31/12/2009 e de 1152 <i>bit</i>.</td>
+  </tr>
+</table>
+<p class="a"><br>
+<b>
+Utilização de Chaves Públicas na Produção de Cartões</b></p>
+<p class="a">Quando um Emissor solicita a produção de cartões de determinado BIN,
+existem dois possíveis cenários de utilização de chaves que estão resumidos
+na tabela 3 - Elementos criptográficos utilizados na produção de cartões.</p>
+<p class="a">A opção utilizada depende da validade pretendida pelo Emissor para os
+cartões a produzir.</p>
+<p class="a"><br>
+Tabela 3 - Elementos criptográficos utilizados na produção de cartões</p>
+<table BORDER="1" CELLSPACING="0" CELLPADDING="3" id="table">
+  <tr>
+    <td rowspan="2">
+      <p></p>
+    </td>
+    <th rowspan="2">Validade do&nbsp;<br>
+ Cartão</th>
+    <th COLSPAN="2">Chave de CA</th>
+    <th COLSPAN="2">Chave de&nbsp;<br>
+ Emissor</th>
+    <th COLSPAN="2">Chave de Cartão&nbsp;<br>
+ (DDA)</th>
+    <th COLSPAN="2">Chave de PIN&nbsp;<br>
+ (DDA)</th>
+  </tr>
+  <tr>
+    <td>Qtd.</td>
+    <td>Dim.</td>
+    <td>Qtd.</td>
+    <td>Dim.</td>
+    <td>Qtd.</td>
+    <td>Dim.</td>
+    <td>Qtd.</td>
+    <td>Dim.</td>
+  </tr>
+  <tr>
+    <td>cenário 1</td>
+    <td>até 31/12/2009</td>
+    <td>1</td>
+    <td>1024 <i> bit</i></td>
+    <td>1/BIN/APL</td>
+    <td>896 <i> bit</i></td>
+    <td>1/BIN/APL</td>
+    <td>896 <i> bit</i></td>
+    <td>0</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>cenário 2</td>
+    <td>até 31/12/2012</td>
+    <td>1</td>
+    <td>1152 <i> bit</i></td>
+    <td>1/BIN/APL</td>
+    <td>1024 <i> bit</i></td>
+    <td>1/BIN/APL</td>
+    <td>1024 <i> bit</i></td>
+    <td>0</td>
+    <td>-</td>
+  </tr>
+</table>
+<p class="a"><br>
+Actualmente, é utilizado o cenário 1. Esta opção utiliza as chaves com as
+características por <i> default</i> definidas na Política de Gestão de Chaves em
+vigor na SIBS.</p>
+<p class="a">Para cartões com validade superior a 31/12/2009 é necessária a
+utilização do cenário 2. Neste caso, têm de ser geradas as chaves de
+Emissor e tem de ser tratado todo o processo de assinatura com os Sistemas de
+Pagamento em questão.<br>
+A opção de utilização do cenário 2 implica um processo mais demorado
+para o início da produção de cartões, e requer planeamento prévio.</p>
+<p>&nbsp;</p>
+<h5 class="a"><a name="A.3.1.1.6">A.3.1.1.6</a> IMPACTO PARA OS EMISSORES</h5>
+<p class="a">A migração para o EMV não se traduz em acções adicionais a realizar pelo
+Emissor no que diz respeito à componente de segurança.</p>
+<p class="a">O Emissor tem de efectuar o pedido de geração de chaves sempre que
+deseje preparar um BIN para a emissão de cartões EMV.</p>
+<p class="a">A gestão desta componente é assegurada pela SIBS, de acordo com a Política
+de Segurança descrita na secção anterior, e caso não exista indicação em
+contrário da parte do Emissor.</p>
+<p class="a">O Emissor pode optar por escolher alguns parâmetros como, por exemplo, a
+dimensão e as datas de expiração. Neste caso, as alterações solicitadas
+estão sujeitas a uma avaliação pela SIBS, de modo a garantir que estão
+dentro dos valores possíveis e que não comprometem os requisitos mínimos de
+segurança.</p>
+<p class="a">O Emissor só pode emitir cartões EMV após a geração e carregamento,
+no Sistema SIBS, das novas chaves para EMV do(s) BIN(s) em causa, e apenas após
+estas estarem devidamente assinadas pelas Entidades de Certificação (<i>Certification
+Authorities</i>) do Multibanco, Visa e/ou MasterCard.</p>
+<p>&nbsp;</p>
+
+<h3><a name="A.3.1.2">A.3.1.2</a> CARACTERIZAÇÃO DOS CARTÕES EMV</h3>
+
+<p><br>
+O EMV introduz um conjunto alargado de novos Elementos de dados. De acordo com as suas
+características e origem, consideram-se os seguintes grupos:</p>
+
+<blockquote>
+  <ul>
+    <li><a href="#1">Caracterizações de BINs</a></li>
+    <li><a href="#2">Caracterização de Padrões EMV</a></li>
+    <li><a href="#3">Parametrizações EMV genéricas</a></li>
+    <li><a href="#4">Elementos de Segurança</a></li>
+    <li><a href="#5">Contrato de Produção de Cartões</a></li>
+    <li><a href="#6">Elementos variáveis por cartão, enviados pelo Emissor</a></li>
+  </ul>
+</blockquote>
+
+<p><br>
+<strong><a name="1">Caracterizações</a> de BINs</strong></p>
+
+<p>Na caracterização existente foi adicionado o ponto 12, &quot;Caracterização de
+Elementos EMV&quot;, com o conjunto de elementos parametrizáveis pelos Emissores: 
+
+<ul>
+  <li>Âmbito de utilização - serviços permitidos, por tipo de terminal e por área
+    geográfica;</li>
+  <li>Parâmetros de gestão risco para transacções <em>offline</em>, em número de
+    operações permitidas e valor;</li>
+  <li>Lista de métodos de autenticação do cliente;</li>
+  <li>Parâmetros de <i>Fallback</i> para pista magnética.</li>
+</ul>
+
+<p>Quando o Emissor caracteriza pela primeira vez para um BIN qualquer os
+elementos supracitados, necessários a qualquer emissão de cartões EMV, desencadeia um
+processo de preparação do BIN. Este processo inclui a geração e carregamento de chaves
+públicas de Emissor (ver ponto <a href="#A.3.1.1">A.3.1.1</a>), não sendo possível a
+emissão de cartões até que estas chaves existam no sistema. Para que o Emissor tenha
+conhecimento do estado de preparação, a consulta da Caracterização do BIN via Terminal
+de Serviços SIBS apresenta dois indicadores: 
+
+<ul >
+  <li>É possível a emissão de cartões SDA (<i>Static Data Authentication</i>) - Sim/Não </li>
+  <li>É possível a emissão de cartões DDA (<i>Dynamic Data Authentication</i>) - Sim/Não</li>
+</ul>
+
+<p><br>
+<strong><a name="2">Caracterização</a> de Padrões EMV</strong></p>
+
+<p>O Padrão EMV corresponde a uma nova componente da <a href="i3.htm#I.3.16">Caracterização
+de Emissores</a> (ver capítulo I do Livro II). Esta nova caracterização completa, para
+a vertente EMV, as caracterizações já existentes (de Emissor, CPD e BIN).<br>
+O Padrão EMV possibilita a definição pelo Emissor de diferentes perfis para os cartões
+EMV. Estes perfis consubstanciam-se na definição de duas ordens de parâmetros: 
+
+<ul>
+  <li>Selecção da aplicação EMV associada ao Padrão EMV;</li>
+  <li>Selecção (opcional) de uma segunda língua suportada pela aplicação, para
+    utilização no terminal.</li>
+</ul>
+
+<p><br>
+<strong><a name="3">Parametrizações</a> EMV genéricas</strong></p>
+
+<p>Elementos posicionados na SIBS ou calculados no momento da emissão. <br>
+O valor assumido por estes elementos depende do produto a emitir e das recomendações do
+Sistema de Pagamento respectivo. Para a sua determinação não é necessário um <em>input</em>
+de dados provenientes do Emissor.<br>
+A descrição das parametrizações genéricas é apresentada em documento próprio, em
+anexo ao capítulo A do Livro II do Modelo Global (<a href="a_a5.pdf">A.AX.5</a> -
+Parametrizações Genéricas EMV).</p>
+
+<p><br>
+<strong><a name="4">Elementos</a> de Segurança</strong></p>
+
+<p>Elementos gerados a partir da componente de segurança na emissão de Cartões EMV,
+utilizando as chaves referidas no ponto <a href="#A.3.1.1">A.3.1.1</a>.</p>
+
+<p><br>
+<strong><a name="5">Contrato</a> de Produção de Cartões</strong></p>
+
+<p>Ao nível do contrato, foram acrescentadas informações sobre a máscara do <i>chip</i>
+a utilizar por forma a possibilitar a verificação de um conjunto de características
+tecnológicas suportadas pelo <i>chip</i> (características que determinam elementos ou
+valores para elementos EMV a colocar no cartão, no momento da personalização). Os
+requisitos mínimos que a máscara de chip deve suportar são apresentados na descrição
+do ficheiro de Personalização de Cartões EMV (<a href="../l-iii/pemv.htm">PEMV</a>). </p>
+
+<p>Para identificar este conjunto de características tecnológicas, foi
+definido o campo &quot;PersType&quot; que deve ser indicado na caracterização do
+contrato. </p>
+
+<p style="page-break-before: always">Para contratos que se destinem à personalização de cartões fora da SIBS,
+deve ser o Banco a indicar o respectivo valor, tendo em conta a seguinte lista de valores
+possíveis:</p>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" width="100%">
+  <tr>
+    <td ROWSPAN="2" class="mid"><strong>PersType</strong></td>
+    <th ROWSPAN="2" >Sistema<br>
+    Pagamento</th>
+    <th ROWSPAN="2" ><em>Offline Data <br>
+    Authentication</em></th>
+    <th COLSPAN="6" >Combinação de aplicações</th>
+  </tr>
+  <tr>
+    <th >Visa</th>
+    <th >Electron</th>
+    <th >MB</th>
+    <th >MasterCard</th>
+    <th >Maestro</th>
+    <th >Amex</th>
+  </tr>
+  <tr>
+    <td >0300</td>
+    <td ROWSPAN="8" class="mid">Visa</td>
+    <td ROWSPAN="8" class="mid">SDA</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0301</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0302</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0303</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0304</td>
+    <td class="wingding">üü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0305</td>
+    <td class="wingding">üü</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0306</td>
+    <td >X</td>
+    <td class="wingding">üü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0307</td>
+    <td >X</td>
+    <td class="wingding">üü</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0308</td>
+    <td ROWSPAN="4" class="mid">MasterCard</td>
+    <td ROWSPAN="4" class="mid">SDA</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0309</td>
+    <td >X</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0310</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >v</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0311</td>
+    <td >X</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >v</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0312</td>
+    <td ROWSPAN="2" class="mid">AMEX</td>
+    <td ROWSPAN="2" class="mid">SDA</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+  </tr>
+  <tr>
+    <td >0313</td>
+    <td >X</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+  </tr>
+  <tr>
+    <td >0400</td>
+    <td ROWSPAN="8" class="mid">Visa</td>
+    <td ROWSPAN="8" class="mid">DDA</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0401</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0402</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0403</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0404</td>
+    <td class="wingding">üü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0405</td>
+    <td class="wingding">üü</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0406</td>
+    <td >X</td>
+    <td class="wingding">üü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0407</td>
+    <td >X</td>
+    <td class="wingding">üü</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0408</td>
+    <td ROWSPAN="4" class="mid">MasterCard</td>
+    <td ROWSPAN="4" class="mid">DDA</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0409</td>
+    <td >X</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0410</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0411</td>
+    <td >X</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >0412</td>
+    <td ROWSPAN="2" class="mid">AMEX</td>
+    <td ROWSPAN="2" class="mid">DDA</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+  </tr>
+  <tr>
+    <td >0413</td>
+    <td >X</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+    <td >X</td>
+    <td >X</td>
+    <td class="wingding">ü</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellpadding="0" cellspacing="0" width="200">
+  <tr>
+    <td colspan="2" class="esq" width="200">Legenda:</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="esq" width="200">&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="wingding" width="48">ü </td>
+    <td class="esq" width="152">-&nbsp; 1 aplicação presente</td>
+  </tr>
+  <tr>
+    <td class="wingding" width="48">üü</td>
+    <td class="esq" width="152">-&nbsp; 2 aplicações presentes</td>
+  </tr>
+  <tr>
+    <td  width="48">X</td>
+    <td class="esq" width="152">-&nbsp; aplicação ausente</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><strong><a name="6">Elementos</a> variáveis por cartão, enviados pelo Emissor</strong></p>
+
+<p>Elementos variáveis por cada produção (ex.: nomes, PAN, etc.), não alterados devido
+ao EMV.<br>
+As alterações introduzidas ao ficheiro de Emissão de Cartões (<a
+href="../l-iii/eecb.htm">EECB</a>) consubstanciam-se num primeiro momento (Junho de 2003),
+numa nova versão do ficheiro (v03), com impacto apenas ao nível do registo de
+parâmetros (<a href="../l-iii/eecb.htm#= 1">tipo de registo 1</a>) do ficheiro.<br>
+Este diferencia-se da versão anterior por possuir o seguinte conjunto de elementos
+adicionais: 
+
+<ul>
+  <li>5 ocorrências para Padrão EMV, apresentadas por ordem decrescente de prioridade,
+    permitindo ao Emissor indicar quais as aplicações EMV que pretende incluir no <i>chip</i>
+    do cartão;</li>
+</ul>
+
+<ul>
+  <li>Caracterização de programa Linha de Crédito (compra com pagamento
+    fraccionado):&nbsp;</li>
+</ul>
+
+<blockquote>
+  <ul type="square">
+    <li>Indicação da aplicação associada à Linha de Crédito </li>
+    <li>Identificação das características inerentes à linha de crédito (parametrizadas ao
+      nível do produto);</li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>Caracterização de programa de Fidelização (compra com rebate de
+    pontos):&nbsp;</li>
+</ul>
+
+<blockquote>
+  <ul type="square">
+    <li>Indicação da aplicação (ou aplicações) para a qual existe um programa de
+      Fidelização</li>
+    <li>Identificação do programa de Fidelização a posicionar no cartão;</li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>Caracterização de programa Emissor (compra com detalhe):</li>
+</ul>
+
+<blockquote>
+  <ul type="square">
+    <li type="square">Indicação da aplicação associada a um programa do Emissor</li>
+    <li>Identificação do programa do Emissor.</li>
+  </ul>
+</blockquote>
+
+<p>Em Abril de 2004 foi criada a versão 04 do ficheiro EECB. Relativamente à
+versão anterior, esta versão possibilita a definição, por cartão (<a
+href="../l-iii/eecb.htm#= 2">tipo de registo 2</a>), dos parâmetros necessários ao
+funcionamento do cenário de <a href="a1.htm#A.1.3.3">Saldo para Compras com Pagamento
+Fraccionado</a>:&nbsp; 
+
+<ul >
+  <li>Saldo para Compras com Pagamento Fraccionado (associado a programa Linha de Crédito):</li>
+</ul>
+
+<blockquote>
+  <ul  type="square">
+    <li>Identificação de <i>plafond</i> aplicável especificamente a estas operações de
+      compra</li>
+    <li>Identificação de um dia de renovação mensal do <i>plafond</i> (opcional).</li>
+  </ul>
+</blockquote>
+
+<p>Adicionalmente, a versão 04 do ficheiro EECB possibilita ao Emissor a
+definição dos parâmetros de risco para autorização de transacções <i>offline</i> ao
+nível de cada cartão. Para esse efeito, os elementos necessários foram adicionados ao
+registo de detalhe (<a href="../l-iii/eecb.htm#= 2">tipo de registo 2</a>) do ficheiro
+EECB. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.3.1.3">A.3.1.3</a> PERSONALIZAÇÃO DE CARTÕES</h3>
+
+<p><br>
+Possibilitando a separação da Produção Lógica da Produção Física, existente para
+cartões sem <i>chip</i> EMV, foi definido o novo ficheiro Personalização de Cartões
+EMV (<a href="../l-iii/pemv.htm">PEMV</a>). Este novo ficheiro serve de interface entre o
+ambiente no qual se realiza a produção lógica e o ambiente no qual é personalizado o
+cartão, quando a produção física dos cartões EMV se realiza fora da SIBS.<br>
+Foram também definidas chaves criptográficas 3DES por emissão, para transporte, entre
+os dois ambientes referidos, da informação sensível contida no <a
+href="../l-iii/pemv.htm">PEMV</a>.</p>
+
+<p>O ficheiro de personalização a enviar ao Emissor, no caso da personalização física
+dos cartões ser efectuada num centro de personalização alternativo à SIBS, é: 
+
+<ul>
+  <li>o ficheiro <a href="../l-iii/eelc.htm">EELC</a>, já existente, se os cartões a
+    personalizar não possuem <i>chip</i> EMV;</li>
+  <li>o novo ficheiro <a href="../l-iii/pemv.htm">PEMV</a> criado para o efeito, se os
+    cartões a personalizar são cartões com <i>chip</i> EMV.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.3.2">A.3.2</a> GESTÃO DE CARTÕES EMV: CARTÕES NO ESTADO POR ACTIVAR (0D)</h2>
+
+<p><br>
+Na emissão de cartões EMV, a funcionalidade correspondente à produção de cartões no
+estado inicial Por Activar (NSITCAR=<a href="a9.htm#0D">0D</a>) não pode ser implementada
+no formato aplicado aos cartões que apenas possuem pista magnética. Relativamente à
+operativa desta funcionalidade, existem assim algumas considerações adicionais, que a
+seguir se apresentam.</p>
+
+<p>Sequência de acções: 
+
+<ol>
+  <li>O Emissor envia um ficheiro para a produção lógica de cartões (<a
+    href="../l-iii/eecb.htm">EECB</a>), indicando nos registos de detalhe o estado Por Activar
+    para os cartões que pretende produzir nessa situação</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Com o processamento do ficheiro supracitado, é posicionado o valor &quot;0&quot; (zero)
+      para todos os parâmetros de risco associados a operações <i>offline</i>, nas várias
+      aplicações EMV de pagamento existentes em cada cartão. A SIBS guarda a informação dos
+      parâmetros que seriam posicionados caso o cartão tivesse sido produzido na situação de
+      Normal (<a href="a9.htm#02">02</a>);</li>
+    <li>Devido ao descrito no ponto anterior, o cartão fica assim impossibilitado de realizar
+      operações <i>offline</i> (a transacção é obrigatoriamente decidida <i>online</i>);</li>
+    <li>Qualquer transacção que seja transmitida para decisão <i>online</i> é rejeitada
+      centralmente, enquanto existir a informação de que o cartão se encontra na situação
+      Por Activar (<a href="a9.htm#0D">0D</a>).</li>
+  </ul>
+</blockquote>
+
+<ol start="2">
+  <li>O Emissor coloca o cartão na situação Normal (<a href="a9.htm#02">02</a>) através do
+    ficheiro de Alteração da Situação de Cartão (<a href="../l-iii/easc.htm">EASC</a>)</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Após colocação do cartão na nova situação, a SIBS prepara e guarda como pendente
+      para envio um <i>script</i> de actualização dos parâmetros anteriormente guardados,
+      para possibilitar a realização de transacções <i>offline</i>;</li>
+    <li>Antes ou depois da alteração à situação do cartão, o Emissor pode alterar os
+      parâmetros de risco a posicionar no cartão no momento da sua passagem ao estado Normal,
+      através do ficheiro de Gestão de Cartões e Contas (<a href="../l-iii/egcc.htm">EGCC</a>);</li>
+    <li>A primeira transacção <i>online</i> após colocação do cartão na situação Normal
+      (<a href="a9.htm#02">02</a>) pode ser autorizada centralmente, se as condições para
+      decisão da operação assim o permitirem;</li>
+    <li>Com a primeira transacção <i>online</i>, é desencadeado o envio do <i>script</i> para
+      actualização dos elementos posicionados no cartão.</li>
+  </ul>
+</blockquote>
+
+<p><br>
+À semelhança dos cartões que apenas possuem pista magnética, o Emissor pode alterar o
+estado dos cartões EMV produzidos na situação Por Activar (<a href="a9.htm#0D">0D</a>)
+para os estados Normal (<a href="a9.htm#02">02</a>) ou Anulado (<a href="a9.htm#09">09</a>),
+utilizando para esse efeito o ficheiro <a href="../l-iii/easc.htm">EASC</a>.</p>
+
+<p class="dta"><br>
+<a target="main" href="a2.htm">Anterior</a>/<a href="a4.htm">Seguinte</a></p>
+</body>
+</html>

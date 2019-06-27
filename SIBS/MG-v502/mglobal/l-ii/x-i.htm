@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>X-I - ENCARGOS DO SERVIÇO TPA</title>
+<script>top.captulos.location='indicex.htm#X';</script>
+</head>
+
+<body>
+
+<h2>I - ENCARGOS DO SERVIÇO TPA</h2>
+
+<p>&nbsp;</p>
+
+<p>Neste grupo factura-se o Banco de Apoio a instalações de Terminais de Pagamento
+Automático (TPA) pelos diversos tipos de serviços prestados. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="I1">I1</a> - TPA COM LINHA COMUTADA</h3>
+
+<p><strong><br>
+<a name="I11">I11</a> - Tarifa de comunicação por transacção taxada no destinatário</strong></p>
+
+<p><br>
+Nos TPAs cujas instalações foram feitas com linha comutada, o pagamento da comunicação
+é feito chamada a chamada. Assim, nesta rubrica aplica-se ao Banco de Apoio do Terminal
+uma taxa a cada comunicação feita pelo TPA, sendo que o total de
+comunicações é sempre maior que as compras realizadas dado que se contabilizam
+operações de supervisão, operações recusadas, etc.. O Banco de Apoio do
+Terminal pode fazer incidir este custo sobre o comerciante. </p>
+
+<p><strong><br>
+Forma de Controlo</strong></p>
+
+<p>A partir do ficheiros Movimentos (MOV5), <a
+href="../l-iii/mov-3.htm">registo tipo 3</a>, o Banco pode controlar (e totalizar) o
+número destas operações pelo respectivo grupo de tarifário. </p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#408">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#327">327</a>) identificação do
+    comerciante (7)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#328">328</a>) identificação do
+    estabelecimento (4)</li>
+  <li>(<a target="explicac" href="../../Campos/campos1.htm#006">006</a>) identificação do
+    terminal (10)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2">
+  <tr>
+    <td class="fundoesq" width="620"><em>MEFAC &#150; Exemplo da rubrica I1</em></td>
+  </tr>
+  <tr>
+    <td class="esq" width="620"><pre class="tahoma">…
+3I1 TPA COM LINHA COMUTADA
+4I1120020228000031800020000007690    TAR.COMU.TRANS.TAXA.  000000000010500000000003520000000003696D
+…
+4I1120020228000411200010000010271    TAR.COMU.TRANS.TAXA.  000000000010500000000004000000000004200D
+6I1 0000019524123D
+…</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><a name="I2">I2</a> - EMISSÃO DE EXTRACTO </h3>
+
+<p><strong><br>
+I21 - Tarifa por extracto</strong></p>
+
+<p><br>
+Esta rubrica diz respeito à prestação de um serviço adicional da SIBS aos Bancos de
+Apoio, e estes por sua vez aos comerciantes, que consiste na emissão de um extracto
+mensal, reflectindo os movimentos efectuados nos estabelecimentos. A
+tarifa aplica-se igualmente aos pedidos de re-emissão de extractos.</p>
+
+<p><strong><br>
+Forma de Controlo</strong></p>
+
+<p>Utilizar o ficheiro de Terminais (MTRMF) <a
+href="../l-iii/trmf.htm#= 8">TIPREG=8</a> - dados sobre o serviço de
+extractos.</span></p>
+
+<p>O ficheiro apresenta no registo tipo 5 os dados referentes ao acordo MB (e PMB), onde
+se encontra o campo (<a href="../../Campos/camp1100.htm#1103" target="explicac">1103</a>)
+TIP-SERV-EXT referente ao tipo de serviço de extracto posicionado para o TPA. </p>
+
+<p>&nbsp;<br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#408">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#327">327</a>) identificação do
+    comerciante (7)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#328">328</a>) identificação do
+    estabelecimento (4)</li>
+  <li>(<a target="explicac" href="../../Campos/campos1.htm#006">006</a>) identificação do
+    terminal (10)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="616">
+  <tr>
+    <td class="fundoesq" width="606"><em>MEFAC &#150; Exemplo da rubrica I2</em></td>
+  </tr>
+  <tr>
+    <td class="esq" width="606"><pre class="tahoma">…
+3I2 EMISSAO DE EXTRACTO
+4I2120020228000411200010000010271    TARIFA POR EXTRACTO   000000000039000000000000010000000000039D
+…
+4I2120020228006782500990000232484    TARIFA POR EXTRACTO   000000000039000000000000010000000000039D
+6I2 0000000220311D
+7I  0000000019744434D
+…</pre>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span> <br>
+    Para efeitos de apresentação e por uma questão prática mantém-se o layout anterior nas
+    tabelas auxiliares. </em></td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="x2.htm">Anterior</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+</body>
+</html>

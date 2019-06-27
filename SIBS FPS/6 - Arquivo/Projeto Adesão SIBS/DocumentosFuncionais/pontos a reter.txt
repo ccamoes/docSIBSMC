@@ -1,0 +1,27 @@
+Pontos a reter sobre o projecto:
+
+1-Preencher e enviar o formulário(Livro 1 capitulo D):
+D.AX.1 -  FORMULÁRIO DE INDICAÇÃO DOS INTERLOCUTORES DO BANCO 
+
+2-Tratar das formalidades referentes a emitir cartões com chip EMV com a SIBS (ter em atenção as tecnologias possiveis SDA e DDA)
+
+3-No caso de emitirmos cartões com chip EMV saber com a contiforme o(s) ficheiro(s) e os dados a transmitir para o efeito.
+
+4-Serviço de guarda de PINBLOCK's
+Caso o Emissor deseje utilizar este serviço, deve essa intenção ser formalizada pelo Chefe de Projecto do Emissor junto da SIBS com um mínimo de 15 dias de antecedência relativamente à data em que pretenda dar início ao mesmo. 
+
+5-Definir com a SIBS o contrato de produção de cartões
+
+6-Definir com a SIBS 
+existem três cenários possíveis para os Emissores em termos de estrutura da Base de Dados: 
+
+Número de cartão único por Emissor (cenário base). 
+Número de cartão único por BIN identificado pelo PAN. 
+Número de cartão único composto por PAN e Data expiração. 
+ 
+
+7-
+
+
+
+

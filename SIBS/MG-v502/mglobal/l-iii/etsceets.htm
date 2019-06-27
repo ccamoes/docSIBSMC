@@ -1,0 +1,412 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>ACTUALIZAÇÃO DE ACORDO MB E ERROS</title>
+<script>top.captulos.location='indicee.htm#E';</script>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: &nbsp; ACTUALIZAÇÃO DE ACORDO MB</td>
+        <td class="fichdta">&quot;FICH&quot; = ETSC</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Este ficheiro é enviado pelo Banco à SIBS sempre que pretenda efectuar alterações, de
+forma massiva, às condições contratuais, do acordo MB, definidas para estabelecimentos
+por si matriculados.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de Header do ficheiro &quot;TIPREG=0&quot;;</li>
+</ul>
+
+<ul>
+  <li>registos de detalhe &quot;TIPREG=1&quot;;</li>
+</ul>
+
+<ul>
+  <li>o registo de Trailer &quot;TIPREG=9&quot;. </li>
+</ul>
+
+<p><br>
+O registo tem um comprimento fixo de 46 bytes.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>NOTAS</u></h6>
+
+<p><br>
+Todos os estabelecimentos incluídos no ficheiro devem ter como &#145;proprietário&#146;
+(entidade responsável pela matrícula no Sistema Multibanco dos terminais instalados no
+estabelecimento) o código de comerciante do Banco enviado no header do ficheiro. Caso
+algum dos estabelecimentos possua, no sistema MB, um proprietário diferente, o registo é
+recusado.</p>
+
+<p>&nbsp;<br>
+O processamento de cada registo de detalhe, consoante o &quot;INDICADOR DE
+ACTUALIZAÇÃO&quot; informado, é: 
+
+<ul>
+  <li><u>&#145;1&#146; - Actualização do tipo de serviço</u> &#150; Apenas se processa o
+    campo <a href="../../Campos/camp1100.htm#1103">1103</a> - TIPO DE SERVIÇO. Não se valida
+    nem processa o conteúdo dos restantes campos relacionados com a TSC, qualquer que seja o
+    seu conteúdo.</li>
+</ul>
+
+<ul>
+  <li><u>&#145;2&#146; - Actualização de dados da TSC</u> &#150; Apenas se processa os
+    campos relacionados com a TSC, isto é, os campos <a href="../../Campos/camp1100.htm#1111">1111</a>,
+    <a href="../../Campos/camp1100.htm#1110">1110</a>, <a
+    href="../../Campos/camp1100.htm#1109">1109</a>, <a href="../../Campos/camp1100.htm#1108">1108</a>.
+    Não se valida nem processa o conteúdo do campo <a href="../../Campos/camp1100.htm#1103">1103</a>.
+    Ainda que o Banco não pretenda alterar alguns dos dados relacionados com a TSC, deve
+    enviar valores correctos (isto é, os existentes e a manter) para todos os 4 campos atrás
+    mencionados.</li>
+</ul>
+
+<ul>
+  <li><u>&#145;3&#146; - Actualização de tipo de serviço e dados da TSC</u> &#150;
+    Processa-se e integra-se no sistema MB todos os dados enviados pelo Banco no registo.
+    Ainda que o Banco não pretenda alterar algum dos dados relacionado com a TSC, deve enviar
+    um valor correcto (isto é, o existente e a manter) para todos os 4 campos relacionados
+    com esta tarifa.</li>
+</ul>
+
+<p><br>
+Os novos valores só entram em vigor quando, após o processamento do ficheiro pela SIBS,
+os TPA dos comerciantes/estabelecimentos enviados no ficheiro efectuem uma abertura de
+período contabilístico.</p>
+
+<p style="page-break-before: always">O processamento do ficheiro não altera a
+informação relativa ao serviço PMB, caso exista, nos estabelecimentos incluídos no
+ficheiro. </p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">ETSC - TIPO DE REGISTO = 1 (ACTUALIZAÇÃO ACORDOS MB)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">='1'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDCOMEMP</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDEST</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#328">328</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">INDACTTSC</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">13</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1700.htm#1711">1711</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPO DE SERVIÇO</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1103">1103</a></td>
+    <td width="200" class="esq">='0' - Normal. Só Compensação;<br>
+    ='1' - Com Extracto por Fecho Local;<br>
+    ='3' - Por Fecho Mais Comissões.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TSC MULTIBANCO (%)</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">15</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1111">1111</a></td>
+    <td width="200" class="esq">=9(2)V99</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TSC EUROS (Valor mínimo)</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">19</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1110">1110</a></td>
+    <td width="200" class="esq">=9V99</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TSC EUROS (Valor máximo)</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1109">1109</a></td>
+    <td width="200" class="esq">=9(3)V99</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TSC EUROS (Taxa fixa)</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">27</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1108">1108</a></td>
+    <td width="200" class="esq">=9V99</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always"><a name="eets">&nbsp; </a></p>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: &nbsp; ERROS DO FICHEIRO ETSC</td>
+        <td class="fichdta">&quot;FICH&quot; = EETS</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Este ficheiro é produzido pela SIBS para o Banco sempre que for processado um ficheiro de
+actualização de acordos MB (<a href="etsceets.htm" target="main">ETSC</a>) recebido do
+Banco, quer tenham ocorrido erros ou não.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de Header do ficheiro &quot;TIPREG=0&quot;;</li>
+</ul>
+
+<ul>
+  <li>o registo de detalhe &quot;TIPREG=1&quot;, que identifica o ficheiro original tratado, e
+    indica a situação do seu registo de header;</li>
+</ul>
+
+<ul>
+  <li>um registo de detalhe &quot;TIPREG=2&quot;, por cada registo de detalhe errado, no
+    ficheiro original;</li>
+</ul>
+
+<ul>
+  <li>o registo de Trailer &quot;TIPREG=9&quot;. </li>
+</ul>
+
+<p><br>
+O registo tem um comprimento fixo de 76 bytes.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">EETS - TIPO DE REGISTO = 1 (CARACTERIZAÇÃO DO FICHEIRO DE ORIGEM)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">='1'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">APLIC</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#101">101</a></td>
+    <td width="200" class="esq">='M'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">3</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td width="200" class="esq">='ETSC'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VERFICH</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#064">064</a></td>
+    <td width="200" class="esq">='00'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">13</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#104">104</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">HDRSIT</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos6.htm#521">521</a></td>
+    <td width="200" class="esq">(Qualquer valor <font face="Symbol">¹</font> de '0' significa
+    a rejeição total do ficheiro do Banco)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">26</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td width="200" class="esq">=zeros (não aplicável)</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">EETS - TIPO DE REGISTO = 2 (REGISTO ERRADO)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPREG</td>
+    <td class="dta">1</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq">='2'</td>
+  </tr>
+  <tr>
+    <td class="esq">NUMOCORR</td>
+    <td class="dta">2</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos5.htm#428">428</a></td>
+    <td class="esq">a)</td>
+  </tr>
+  <tr>
+    <td class="esq">CODERRTSC</td>
+    <td class="dta">3</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp1700.htm#1712">1712</a></td>
+    <td class="esq">b)</td>
+  </tr>
+  <tr>
+    <td class="esq">REGISTO ERRADO</td>
+    <td class="dta">46</td>
+    <td class="dta">31</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp900.htm#905">905</a></td>
+    <td class="esq">c)</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="590">
+  <tr>
+    <td class="esq" nowrap>a) &nbsp;</td>
+    <td class="just">Indica o número de vezes que ocorre o campo seguinte, para o registo que
+    foi rejeitado, no máximo de 9 erros. </td>
+  </tr>
+  <tr>
+    <td class="esq">b) &nbsp;</td>
+    <td class="just">Estes erros implicam apenas a rejeição do registo informado no campo
+    seguinte. Caso o número de erros seja inferior a 9, os restantes bytes, que completam as
+    9 ocorrências, são preenchidos a espaços.</td>
+  </tr>
+  <tr>
+    <td class="esq">c) &nbsp;</td>
+    <td class="just">Apresenta o registo tal como foi recebido no ficheiro de origem e sobre o
+    qual é(são) informado(s) o(s) erro(s).</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

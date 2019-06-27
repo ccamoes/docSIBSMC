@@ -1,0 +1,458 @@
+000100* +--------------------------------------------------------------+00010041
+000200* -                                                              -00020041
+000300* -                     CP SISTEMAS DE PAGO                      -00030041
+000400* -                          CROD971                             -00040041
+000500* -                                                              -00050041
+000600* -        RUTINA PARA LA GENERACION PARAMETRIZADA DEL PAN       -00060041
+000700* -                                                              -00070041
+000800* +--------------------------------------------------------------+00080041
+000900 IDENTIFICATION DIVISION.                                         00090041
+001000*-----------------------.                                         00100041
+001100                                                                  00110041
+001200 PROGRAM-ID.    CROD971.                                          00120041
+001300 AUTHOR.        CP SISTEMAS DE PAGO.                              00130041
+001400 DATE-WRITTEN.  24 DE AGOSTO DE 1994.                             00140041
+001500 DATE-COMPILED.                                                   00150041
+001600                                                                  00160041
+001700 DATA DIVISION.                                                   00170041
+001800*-------------.                                                   00180041
+001900                                                                  00190041
+002000* +--------------------------------------------------------------+00200041
+002100* -        W O R K I N G - S T O R A G E   S E C T I O N         -00210041
+002200* -        =============================================         -00220041
+002300* +--------------------------------------------------------------+00230041
+002400 WORKING-STORAGE SECTION.                                         00240041
+002500*-----------------------.                                         00250041
+002600                                                                  00260041
+002700 01  FILLER                         PIC  X(25)                    00270041
+002800           VALUE 'COMIENZO WORKING CROD971'.                      00280041
+002900                                                                  00290041
+003000 01  VARIABLES-WORKING.                                           00300041
+003100                                                                  00310041
+003200     05  CHECK-W                    PIC  X     VALUE SPACE.       00320041
+003300     05  PAN-CHECK                  PIC  9(16) VALUE ZERO.        00330041
+003400                                                                  00340041
+003500     05  PAN-SAC.                                                 00350041
+003600         10  BIN-SAC                PIC  9(6)  VALUE ZERO.        00360041
+003700         10  EXT-BIN-SAC            PIC  9(2)  VALUE ZERO.        00370041
+003800         10  CONT-SEQ-SAC           PIC  9(7)  VALUE ZERO.        00380041
+003900         10  CHECK-SAC              PIC  9     VALUE ZERO.        00390041
+004000     05  PAN-SAC-R        REDEFINES  PAN-SAC PIC 9(16).           00400041
+004100                                                                  00410041
+004200     05  CONT-SEQ-SAC-W             PIC  9(7)  VALUE ZERO.        00420041
+004300     05  RANGOINF-W                 PIC  X(9)  VALUE ZERO.        00430041
+004400     05  VALCONT-W                  PIC  X(9)  VALUE ZERO.        00440041
+004500     05  W69VALCONT-W               PIC  9(9)  VALUE ZERO.        00450041
+004600                                                                  00460041
+004700* +--------------------------------------------------------------*00470041
+004800*                 NOMBRES                                        *00480041
+004900* +--------------------------------------------------------------*00490041
+005000                                                                  00500041
+005100     05  NOMBRES.                                                 00510041
+005200         10  CROD997                PIC  X(8)  VALUE 'CROD997'.   00520041
+005300         10  CROF959                PIC  X(8)  VALUE 'CROF959'.   00530041
+005400         10  CROF982                PIC  X(8)  VALUE 'CROF982'.   00540041
+005500         10  CROE961                PIC  X(8)  VALUE 'CROE961'.   00550041
+005600                                                                  00560041
+005700* +--------------------------------------------------------------*00570041
+005800*    MENSAJES DEL PROGRAMA                                       *00580041
+005900* +--------------------------------------------------------------*00590041
+006000                                                                  00600041
+006100     05  TX-NO-ASIG-MAN             PIC  X(77) VALUE              00610041
+006200         'NÃO PERMITIDA A ASSIGNAÇÃO MANUAL DO PAN'.              00620041
+006300                                                                  00630041
+006400     05  TX-ERROR-MAXIMO            PIC  X(77) VALUE              00640041
+006500         'O NÚMERO MÁXIMO DE MEMBROS FOI SUPERADO'.               00650041
+006600                                                                  00660041
+006700     05  TX-ERROR-SIN-PAN           PIC  X(77) VALUE              00670041
+006800         'O PAN DO TITULAR/BENEFICIÁRIO NÃO FOI ENVIADO'.         00680041
+006900                                                                  00690041
+007000     05  TX-ERROR-RUTINA            PIC  X(77) VALUE              00700041
+007100         'A ROTINA ESPECIFICADA NÃO EXISTE'.                      00710041
+007200                                                                  00720041
+007300* +--------------------------------------------------------------*00730041
+007400*        COPY DE PARAMETROS POR DEFECTO                          *00740041
+007500* +--------------------------------------------------------------*00750041
+007600                                                                  00760041
+007700     COPY CRYK0477.                                               00770041
+007800     COPY CRYK0447.                                               00780041
+007810     COPY CRYL0509.                                               00781043
+007900                                                                  00790041
+008000* +--------------------------------------------------------------*00800041
+008100*    LONGITUDES DE AREAS DE COMUNICACION                         *00810041
+008200* +--------------------------------------------------------------*00820041
+008300                                                                  00830041
+008400 01  LONG-AREA.                                                   00840041
+008500     COPY CRYR0407.                                               00850041
+008600                                                                  00860041
+008700* +--------------------------------------------------------------*00870041
+008800*    COPYS UTILIZADAS                                            *00880041
+008900* +--------------------------------------------------------------*00890041
+009000                                                                  00900041
+009100 01  RUTINA-PAN.                                                  00910041
+009200     COPY CRYL0149.                                               00920041
+009300                                                                  00930041
+009400 01  TBPARBIN.                                                    00940041
+009500     COPY CRYW0135.                                               00950041
+009600                                                                  00960041
+009700 01  TBPANELE.                                                    00970041
+009800     COPY CRYW0134.                                               00980041
+009900                                                                  00990041
+010000 01  TBSECUEN.                                                    01000041
+010100     COPY CRYW0537.                                               01010041
+010200                                                                  01020041
+010300     COPY CRYL0453.                                               01030041
+010400                                                                  01040041
+010500* +--------------------------------------------------------------*01050041
+010600*    AREA DE COMUNICACION CON LOS SERVERS                        *01060041
+010700* +--------------------------------------------------------------*01070041
+010800                                                                  01080041
+010900 01  AREA-COMAREA-SERVER.                                         01090041
+011000     COPY  CRYR0301.                                              01100041
+011100     COPY  CRYW0299.                                              01110041
+011200     COPY  CRYR0504.                                              01120041
+011300                                                                  01130041
+011400* +--------------------------------------------------------------*01140041
+011500*    AREA DE COMUNICACION CON EL CICS                            *01150041
+011600* +--------------------------------------------------------------*01160041
+011700                                                                  01170041
+011800     COPY CRYK0315.                                               01180041
+011900     COPY CRYK0316.                                               01190041
+012000     COPY CRYL0196.                                               01200041
+012100                                                                  01210041
+012200 01  AREA-COMAREA-RUTINAS.                                        01220041
+012300     05 FILLER                      PIC X(200).                   01230041
+012400                                                                  01240041
+012500 01  FILLER                         PIC  X(25)                    01250041
+012600           VALUE 'FINAL    WORKING CROD971'.                      01260041
+012700                                                                  01270041
+012800* +--------------------------------------------------------------+01280041
+012900* -                 L I N K A G E    S E C T I O N               -01290041
+013000* -                 ==============================               -01300041
+013100* +--------------------------------------------------------------+01310041
+013200 LINKAGE SECTION.                                                 01320041
+013300*---------------.                                                 01330041
+013400                                                                  01340041
+013500 01  DFHCOMMAREA     PIC X(200).                                  01350041
+013600                                                                  01360041
+013700* +--------------------------------------------------------------+01370041
+013800* -             P R O C E D U R E   D I V I S I O N              -01380041
+013900* -             ===================================              -01390041
+014000* +--------------------------------------------------------------+01400041
+014100 PROCEDURE DIVISION.                                              01410041
+014200*------------------.                                              01420041
+014300 1-COMIENZO-CROD971.                                              01430041
+014400*-------------------.                                             01440041
+014500                                                                  01450041
+014600     MOVE DFHCOMMAREA       TO   ATRUTPAN.                        01460041
+014700     MOVE     1             TO   RUT-FLAG-OK.                     01470041
+014800                                                                  01480041
+014900     PERFORM 10-ACCESO-TBPARBIN                                   01490041
+015000        THRU 10-ACCESO-TBPARBIN-FIN.                              01500041
+015100                                                                  01510041
+015200     IF RUT-OK                                                    01520041
+015300        IF W50RUTINAPAN EQUAL 'SAC'                               01530041
+015400           PERFORM 14-FORMAR-PAN-SALIDA                           01540041
+015500              THRU 14-FORMAR-PAN-SALIDA-FIN                       01550041
+015600        ELSE                                                      01560041
+015700           PERFORM 12-VALIDAR-ENTRADA                             01570041
+015800              THRU 12-VALIDAR-ENTRADA-FIN                         01580041
+015900           IF RUT-OK                                              01590041
+016000               PERFORM 14-FORMAR-PAN-SALIDA                       01600041
+016100                  THRU 14-FORMAR-PAN-SALIDA-FIN.                  01610041
+016200                                                                  01620041
+016300     MOVE ATRUTPAN          TO DFHCOMMAREA.                       01630041
+016400                                                                  01640041
+016500 1-FIN-CROD971.                                                   01650041
+016600*--------------.                                                  01660041
+016700                                                                  01670041
+016800     GOBACK.                                                      01680041
+016900                                                                  01690041
+017000 10-ACCESO-TBPARBIN.                                              01700041
+017100*-------------------.                                             01710041
+017200                                                                  01720041
+017300     MOVE RUT-CODENT               TO W50CODENT.                  01730041
+017400     MOVE RUT-CODMAR               TO W50CODMAR.                  01740041
+017500     MOVE RUT-INDTIPT              TO W50INDTIPT.                 01750041
+017600     IF RUT-CLAMONEUR-R  NOT NUMERIC                              01760041
+017700         MOVE 620   TO  W50CLAMONEUR                              01770041
+017800         MOVE 620   TO  RUT-CLAMONEUR                             01780041
+017900     ELSE                                                         01790041
+018000         IF RUT-CLAMONEUR NOT = 978 AND 620                       01800041
+018100             MOVE 620  TO  W50CLAMONEUR                           01810041
+018200             MOVE 620  TO  RUT-CLAMONEUR                          01820041
+018300         ELSE                                                     01830041
+018400             MOVE RUT-CLAMONEUR            TO W50CLAMONEUR        01840041
+018500         END-IF                                                   01850041
+018600     END-IF                                                       01860041
+018700                                                                  01870041
+018800     MOVE 1                        TO COD-OPE                     01880041
+018900                                      IND-SELECCION-BD.           01890041
+019000                                                                  01900041
+019100     MOVE ATPARBIN                 TO ATCTXXXX.                   01910041
+019200     MOVE SPACES                   TO ATR1XXXX.                   01920041
+019300                                                                  01930041
+019400     EXEC CICS LINK PROGRAM  (CROF982)                            01940041
+019500                    COMMAREA (AREA-COMAREA-SERVER)                01950041
+019600                    LENGTH   (LONG-COMAREA-SERVER)                01960041
+019700     END-EXEC.                                                    01970041
+019800                                                                  01980041
+019900     MOVE ATCTXXXX                 TO ATPARBIN.                   01990041
+020000                                                                  02000041
+020100     IF SQL-STATUS  NOT  EQUAL  ACCESO-CORRECTO-BD                02010041
+020200        MOVE  0                    TO  RUT-FLAG-OK                02020041
+020300        MOVE  INF-ERROR-BD         TO  RUT-MENSAJE.               02030044
+020310* EXTMBY 2000-11-07                                               02031044
+020400*    ELSE                                                         02040044
+020500*    IF RUT-ASIG-MAN EQUAL 'S' AND W50INDINTPAN EQUAL 'N'         02050044
+020600*       MOVE  0                    TO  RUT-FLAG-OK                02060044
+020700*       MOVE  'N'                  TO  RUT-ASIG-MAN               02070044
+020800*       MOVE  TX-NO-ASIG-MAN       TO  RUT-MENSAJE.               02080044
+020900                                                                  02090041
+021000 10-ACCESO-TBPARBIN-FIN.                                          02100041
+021100*-----------------------.                                         02110041
+021200     EXIT.                                                        02120041
+021300                                                                  02130041
+021400 12-VALIDAR-ENTRADA.                                              02140041
+021500*-------------------.                                             02150041
+021600                                                                  02160041
+021700     IF RUT-ASIG-MAN  NOT  EQUAL  'S'                             02170041
+021800                                                                  02180041
+021900        IF RUT-NUMULTBEN  GREATER  W50NUMMAXPAN                   02190041
+022000           MOVE  0                 TO  RUT-FLAG-OK                02200041
+022100           MOVE  TX-ERROR-MAXIMO   TO  RUT-MENSAJE                02210041
+022200        ELSE                                                      02220041
+022300        IF RUT-TIPOGEN  EQUAL  2  OR  3                           02230041
+022400                                                                  02240041
+022500           IF RUT-PANTITBEN EQUAL SPACES OR LOW-VALUES OR ZERO    02250041
+022600              MOVE  0                 TO  RUT-FLAG-OK             02260041
+022700              MOVE  TX-ERROR-SIN-PAN  TO  RUT-MENSAJE.            02270041
+022800                                                                  02280041
+022900 12-VALIDAR-ENTRADA-FIN.                                          02290041
+023000*-----------------------.                                         02300041
+023100     EXIT.                                                        02310041
+023200                                                                  02320041
+023300* +--------------------------------------------------------------+02330041
+023400* -               MODULO : 14-FORMAR-PAN-SALIDA                   02340041
+023500* +--------------------------------------------------------------+02350041
+023600 14-FORMAR-PAN-SALIDA.                                            02360041
+023700*---------------------.                                           02370041
+023800                                                                  02380041
+023900*                                                                 02390041
+024000     IF W50RUTINAPAN EQUAL  'SAC'                                 02400041
+024300        IF RUT-ASIG-MAN   EQUAL 'S'                               02430041
+024400           PERFORM  145-VALIDAR-PAN-ELECTRON                      02440041
+024500              THRU  145-VALIDAR-PAN-ELECTRON-FIN                  02450041
+024600        ELSE                                                      02460041
+024700           PERFORM  145-PAN-SAC                                   02470041
+024800              THRU  145-PAN-SAC-FIN                               02480041
+024900     ELSE                                                         02490041
+025000                                                                  02500041
+025100        MOVE  0                    TO  RUT-FLAG-OK                02510041
+025200        MOVE  TX-ERROR-RUTINA      TO  RUT-MENSAJE.               02520041
+025300                                                                  02530041
+025400 14-FORMAR-PAN-SALIDA-FIN.                                        02540041
+025500*-------------------------.                                       02550041
+025600     EXIT.                                                        02560041
+025700                                                                  02570041
+025800 145-VALIDAR-PAN-ELECTRON.                                        02580041
+025900*------------------------.                                        02590041
+026000                                                                  02600041
+026100     PERFORM 1451-ACCESO-TBPANELE                                 02610041
+026200        THRU 1451-ACCESO-TBPANELE-FIN.                            02620041
+026300                                                                  02630041
+026400     IF NOT RUT-OK                                                02640041
+026500        GO  145-VALIDAR-PAN-ELECTRON-FIN.                         02650041
+026600                                                                  02660041
+026700     IF (W70CODENT  NOT EQUAL  RUT-CODENT)   OR                   02670041
+026800        (W70CODOFI  NOT EQUAL  RUT-OFICINA)                       02680041
+026900        MOVE  0                    TO  RUT-FLAG-OK                02690041
+027000        MOVE  TX-ERROR-PANELE-OFI  TO  RUT-MENSAJE                02700041
+027100     ELSE                                                         02710041
+027200        IF (W70CODMAR    NOT EQUAL  RUT-CODMAR)   OR              02720041
+027300           (W70INDTIPT   NOT EQUAL  RUT-INDTIPT)                  02730042
+027500           MOVE  0                    TO  RUT-FLAG-OK             02750041
+027600           MOVE  TX-ERROR-PANELE-TIPO TO  RUT-MENSAJE             02760041
+027700        ELSE                                                      02770041
+027800           IF W70INDUSO  EQUAL '1'                                02780041
+027900              MOVE  0                    TO  RUT-FLAG-OK          02790041
+028000              MOVE  TX-ERROR-PAN-USADO   TO  RUT-MENSAJE          02800043
+028001* EXTMBY                                                          02800143
+028002           ELSE                                                   02800243
+028003              MOVE  '0'  TO  INDI-SEPARADOR                       02800343
+028004              EXEC CICS LINK PROGRAM (PGM-FECHA-HORA)             02800443
+028005                        COMMAREA  (AREA-COMAREA-FECHA-HORA)       02800543
+028006                       LENGTH    (LONG-COM-FECHA-HORA)            02800643
+028007              END-EXEC                                            02800743
+028009              IF ( W70FECCADTAR - ( FECHA-AAAAMMDD / 100 ) ) < 6  02800943
+028010                 MOVE  0            TO  RUT-FLAG-OK               02801043
+028012                 MOVE 'O CARTAO INDEXADO JA NAO E VALIDO, INFORME 02801243
+028013-                  'NOVO CARTAO'  TO RUT-MENSAJE.                 02801343
+028100                                                                  02810041
+028200 145-VALIDAR-PAN-ELECTRON-FIN.                                    02820041
+028300*----------------------------.                                    02830041
+028400     EXIT.                                                        02840041
+028500                                                                  02850041
+028600 1451-ACCESO-TBPANELE.                                            02860041
+028700*--------------------.                                            02870041
+028800                                                                  02880041
+028900     MOVE RUT-PANTITBEN   TO W70PAN.                              02890041
+029000                                                                  02900041
+029100     MOVE 1               TO COD-OPE                              02910041
+029200                             IND-SELECCION-BD.                    02920041
+029300                                                                  02930041
+029400     MOVE ATPANELE        TO ATCTXXXX.                            02940041
+029500     MOVE SPACES          TO ATR1XXXX.                            02950041
+029600                                                                  02960041
+029700     EXEC CICS LINK PROGRAM  (CROF959)                            02970041
+029800                    COMMAREA (AREA-COMAREA-SERVER)                02980041
+029900                    LENGTH   (LONG-COMAREA-SERVER)                02990041
+030000     END-EXEC.                                                    03000041
+030100                                                                  03010041
+030200     MOVE ATCTXXXX                 TO ATPANELE.                   03020041
+030300                                                                  03030041
+030400     IF SQL-STATUS  EQUAL  REG-NO-EXISTENTE-BD                    03040041
+030500        MOVE  0                    TO  RUT-FLAG-OK                03050041
+030600        MOVE  TX-PAN-INEXISTENTE   TO  RUT-MENSAJE                03060041
+030700     ELSE                                                         03070041
+030800        IF SQL-STATUS  NOT  EQUAL  ACCESO-CORRECTO-BD             03080041
+030900           MOVE  0                 TO  RUT-FLAG-OK                03090041
+031000           MOVE  INF-ERROR-BD      TO  RUT-MENSAJE.               03100041
+031100                                                                  03110041
+031200 1451-ACCESO-TBPANELE-FIN.                                        03120041
+031300*------------------------.                                        03130041
+031400     EXIT.                                                        03140041
+031500                                                                  03150041
+031600                                                                  03160041
+031700 145-PAN-SAC.                                                     03170041
+031800*------------.                                                    03180041
+031900                                                                  03190041
+032000     INITIALIZE PAN-SAC.                                          03200041
+032100                                                                  03210041
+032200     MOVE W50BINENTTIP        TO BIN-SAC.                         03220041
+032300     MOVE W50RANGOINF      TO RANGOINF-W.                         03230041
+032400     MOVE RANGOINF-W(1:2)  TO EXT-BIN-SAC.                        03240041
+032500                                                                  03250041
+032600     PERFORM CALC-NSEQ-SAC                                        03260041
+032700        THRU CALC-NSEQ-SAC-FIN.                                   03270041
+032800                                                                  03280041
+032900     IF RUT-OK                                                    03290041
+033000        MOVE CONT-SEQ-SAC-W TO CONT-SEQ-SAC                       03300041
+033100                                                                  03310041
+033200        PERFORM MODIF-NSEQ-SAC                                    03320041
+033300           THRU MODIF-NSEQ-SAC-FIN.                               03330041
+033400                                                                  03340041
+033500     IF RUT-OK                                                    03350041
+033600                                                                  03360041
+033700* CALCULO DO CHECK-DIGIT                                          03370041
+033800                                                                  03380041
+033900        MOVE  ZERO                    TO  CHECK-SAC               03390041
+034000        MOVE  PAN-SAC                 TO  PAN-CHECK               03400041
+034100                                                                  03410041
+034200        PERFORM  OBTENER-CHECK                                    03420041
+034300           THRU  OBTENER-CHECK-FIN                                03430041
+034400                                                                  03440041
+034500        MOVE  CHECK-W                 TO    CHECK-SAC             03450041
+034600                                                                  03460041
+034700        MOVE  PAN-SAC                 TO    RUT-PANGENERADO       03470041
+034800     END-IF.                                                      03480041
+034900                                                                  03490041
+035000 145-PAN-SAC-FIN.                                                 03500041
+035100*----------------.                                                03510041
+035200     EXIT.                                                        03520041
+035300                                                                  03530041
+035400                                                                  03540041
+035500                                                                  03550041
+035600 CALC-NSEQ-SAC.                                                   03560041
+035700*--------------.                                                  03570041
+035800                                                                  03580041
+035900                                                                  03590041
+036000     MOVE W50CODENT                TO W69CLACONT(1:4).            03600041
+036100     MOVE 'G.PAN'                  TO W69CLACONT(5:5).            03610041
+036200                                                                  03620041
+036300     MOVE 1                        TO COD-OPE                     03630041
+036400                                      IND-SELECCION-BD.           03640041
+036500                                                                  03650041
+036600     MOVE ATSECUEN                 TO ATCTXXXX.                   03660041
+036700     MOVE SPACES                   TO ATR1XXXX.                   03670041
+036800                                                                  03680041
+036900     EXEC CICS LINK PROGRAM  (CROE961)                            03690041
+037000                    COMMAREA (AREA-COMAREA-SERVER)                03700041
+037100                    LENGTH   (LONG-COMAREA-SERVER)                03710041
+037200     END-EXEC.                                                    03720041
+037300                                                                  03730041
+037400     MOVE ATCTXXXX                 TO ATSECUEN.                   03740041
+037500                                                                  03750041
+037600     IF SQL-STATUS  NOT  EQUAL  ACCESO-CORRECTO-BD                03760041
+037700        MOVE  0               TO    RUT-FLAG-OK                   03770041
+037800        MOVE  INF-ERROR-BD    TO    RUT-MENSAJE                   03780041
+037900     ELSE                                                         03790041
+038000*------ CALCULO DO NUM. SEQUENCIA DO CARTAO                       03800041
+038100        MOVE W69VALCONT      TO  VALCONT-W                        03810041
+038200        MOVE VALCONT-W(3:7)  TO  CONT-SEQ-SAC-W                   03820041
+038300                                                                  03830041
+038400        IF CONT-SEQ-SAC-W = 9999999                               03840041
+038500           MOVE 0000001 TO CONT-SEQ-SAC-W                         03850041
+038600        ELSE                                                      03860041
+038700          ADD 1 TO CONT-SEQ-SAC-W                                 03870041
+038800        END-IF                                                    03880041
+038900                                                                  03890041
+039000     END-IF.                                                      03900041
+039100                                                                  03910041
+039200 CALC-NSEQ-SAC-FIN.                                               03920041
+039300*------------------.                                              03930041
+039400     EXIT.                                                        03940041
+039500                                                                  03950041
+039600 MODIF-NSEQ-SAC.                                                  03960041
+039700*--------------.                                                  03970041
+039800                                                                  03980041
+039900     MOVE ATSECUEN                 TO ATR1XXXX.                   03990041
+040000                                                                  04000041
+040100     MOVE CONT-SEQ-SAC             TO W69VALCONT-W(3:7).          04010041
+040200     MOVE W69VALCONT-W             TO W69VALCONT.                 04020041
+040300                                                                  04030041
+040400     MOVE 3                        TO COD-OPE.                    04040041
+040500     MOVE 1                        TO IND-SELECCION-BD.           04050041
+040600                                                                  04060041
+040700     MOVE ATSECUEN                 TO ATCTXXXX.                   04070041
+040800                                                                  04080041
+040900     EXEC CICS LINK PROGRAM  (CROE961)                            04090041
+041000                    COMMAREA (AREA-COMAREA-SERVER)                04100041
+041100                    LENGTH   (LONG-COMAREA-SERVER)                04110041
+041200     END-EXEC.                                                    04120041
+041300                                                                  04130041
+041400     MOVE ATCTXXXX                 TO ATSECUEN.                   04140041
+041500                                                                  04150041
+041600     IF SQL-STATUS  NOT  EQUAL  ACCESO-CORRECTO-BD                04160041
+041700        MOVE  0               TO    RUT-FLAG-OK                   04170041
+041800        MOVE  INF-ERROR-BD    TO    RUT-MENSAJE                   04180041
+041900     END-IF.                                                      04190041
+042000                                                                  04200041
+042100 MODIF-NSEQ-SAC-FIN.                                              04210041
+042200*------------------.                                              04220041
+042300     EXIT.                                                        04230041
+042400* +--------------------------------------------------------------+04240041
+042500* -               MODULO : OBTENER-CHECK                         -04250041
+042600* +--------------------------------------------------------------+04260041
+042700 OBTENER-CHECK.                                                   04270041
+042800*-------------.                                                   04280041
+042900                                                                  04290041
+043000     MOVE     PAN-CHECK         TO CARS-CON-CHECK-LUHN.           04300041
+043100     MOVE     16                TO LONGITUD.                      04310041
+043200                                                                  04320041
+043300     MOVE     ATMULUHN          TO AREA-COMAREA-RUTINAS.          04330041
+043400                                                                  04340041
+043500     EXEC CICS LINK PROGRAM  (CROD997)                            04350041
+043600                    COMMAREA (AREA-COMAREA-RUTINAS)               04360041
+043700                    LENGTH   (LONG-COMAREA-RUTINAS)               04370041
+043800     END-EXEC.                                                    04380041
+043900                                                                  04390041
+044000     MOVE  AREA-COMAREA-RUTINAS TO ATMULUHN.                      04400041
+044100                                                                  04410041
+044200     MOVE  CHECK-LUHN           TO CHECK-W.                       04420041
+044300                                                                  04430041
+044400 OBTENER-CHECK-FIN.                                               04440041
+044500*-----------------.                                               04450041
+044600     EXIT.                                                        04460041
+044700                                                                  04470041
+

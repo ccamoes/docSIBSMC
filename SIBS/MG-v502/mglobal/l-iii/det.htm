@@ -1,0 +1,515 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>DETALHES (DET5)</title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+
+
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: &nbsp;DETALHES</td>
+        <td class="fichdta">&quot;FICH&quot; = DET5</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Enviar diariamente ao Emissor informações não contabilísticas, adicionais às
+transacções de compra, realizadas por cartões do Emissor nos TPAs da Rede Multibanco.</p>
+
+<p>Uma vez que o ficheiro pretende transmitir apenas elementos de carácter
+informativo, não contém campos que possibilitem uma contabilização da operação de
+compra realizada pelo cliente. A movimentação financeira da conta do cliente deve ser
+realizada com base na informação consolidada enviada ao Emissor através do ficheiro <a
+href="dst-1.htm" target="main">Destinos</a>.</p>
+
+<p>O ficheiro é opcional. O Emissor deve indicar expressamente à SIBS o
+momento a partir do qual deseja começar a recebê-lo.</p>
+
+<p>O ficheiro é incluído no conjunto dos ficheiros da Compensação Multibanco
+(Grupo 1). Ao Emissor pode ser enviado um ou mais ficheiros por sessão da Compensação
+Multibanco, de acordo com as regras aplicáveis ao Grupo 1 dos <a href="e4.htm"
+target="main">Ficheiros da Compensação</a>. </p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA DO FICHEIRO</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>O registo de <i>Header</i> do ficheiro &quot;TIPREG=0&quot;;&nbsp;</li>
+</ul>
+
+<ul>
+  <li>Registos de Detalhe &quot;TIPREG=1&quot;, tem um código de detalhe que tipifica a
+    informação enviada; </li>
+</ul>
+
+<ul>
+  <li>O registo de <i>Trailer</i> &quot;TIPREG=9&quot;. </li>
+</ul>
+
+<p><br>
+O registo tem um comprimento fixo de 577 bytes. </p>
+
+<p>&nbsp; </p>
+
+<h6><u>ESTRUTURA DOS REGISTOS DE DETALHE</u></h6>
+
+<p><br>
+Os registos de detalhe&nbsp;têm uma estrutura com uma componente fixa e uma componente
+variável.</p>
+
+<p>Cada registo inicia-se com um conjunto de campos que possibilitam a identificação da
+transacção e do cliente: 
+
+<ul>
+  <li>Os campos (<a href="../../Campos/camp1700.htm#1709">1709</a>) APLIC_N, (<a
+    href="../../Campos/campos4.htm#320">320</a>) IDLOG e (<a
+    href="../../Campos/campos2.htm#117">117</a>) NRLOG incluem os valores necessários para
+    identificação da operação de compra realizada, possibilitando o emparelhamento com o
+    enviado no ficheiro <a href="dst-1.htm" target="main">Destinos</a>.</li>
+</ul>
+
+<ul>
+  <li>O campo (<a href="../../Campos/campos7.htm#699">699</a>) CODTRN-E e o campo (<a
+    href="../../Campos/campos4.htm#313">313</a>) INDESTR identificam a operação de
+    autorização e a sua natureza.</li>
+</ul>
+
+<ul>
+  <li>Para possibilitar uma imediata identificação do cliente, os registos de detalhe
+    incluem ainda os campos (<a href="../../Campos/camp2300.htm#2324">2324</a>) COMP-PAN, (<a
+    href="../../Campos/camp2300.htm#2325">2325</a>) PAN e (<a
+    href="../../Campos/campos2.htm#126">126</a>) DATEXP, que identificam o cartão utilizado
+    na operação de compra.</li>
+</ul>
+
+<p>Os registos completam-se com uma componente variável determinada pelo tipo de
+informação transmitida, identificada através do campo (<a
+href="../../Campos/camp2300.htm#2393">2393</a>) CODDETALHE. </p>
+
+<p><br>
+Encontram-se disponíveis os seguintes códigos de detalhe: 
+
+<ul>
+  <li>CODDETALHE = 001 - Detalhe de compra com cartão EMV realizada no âmbito de um Programa
+    Emissor (consultar Livro II, <a href="../l-ii/a7.htm#A.7.2.4" target="main">A.7.2.4</a>).</li>
+</ul>
+
+<ul>
+  <li>CODDETALHE = 002 - Detalhe de compra com cartão Shell ou factura manual Euroshell.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="tipreg"><strong>DET5 - TIPO DE REGISTO <a name="= 1">= 1</a> (DETALHE DE
+COMPRA)&nbsp;</strong></p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPREG</td>
+    <td class="dta">1</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq">APLIC_N</td>
+    <td class="dta">2</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp1700.htm#1709">1709</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDLOG</td>
+    <td class="dta">4</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#320">320</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">NRLOG</td>
+    <td class="dta">8</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#117">117</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">CODTRN-E</td>
+    <td class="dta">3</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos7.htm#699">699</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">INDESTR</td>
+    <td class="dta">1</td>
+    <td class="dta">19</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#313">313</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">COMP-PAN</td>
+    <td class="dta">2</td>
+    <td class="dta">20</td>
+    <td >N</td>
+    <td><a href="../../Campos/camp2300.htm#2324">2324</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">PAN</td>
+    <td class="dta">19</td>
+    <td class="dta">22</td>
+    <td >N</td>
+    <td><a href="../../Campos/camp2300.htm#2325">2325</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DATEXP</td>
+    <td class="dta">4</td>
+    <td class="dta">41</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">CODDETALHE</td>
+    <td class="dta">3</td>
+    <td class="dta">45</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp2300.htm#2393">2393</a></td>
+    <td class="esq">= 001 (detalhe Compra EMV)</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">NUMOCORR</td>
+    <td class="dta">2</td>
+    <td class="dta">48</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos5.htm#428">428</a></td>
+    <td class="esq">= 01 a 24 (máximo)</td>
+  </tr>
+  <tr>
+    <td class="esq">PROGEM-CODPRO *</td>
+    <td class="dta">4</td>
+    <td class="dta">50</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp2300.htm#2314">2314</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TAXAIVA *</td>
+    <td class="dta">3</td>
+    <td class="dta">&nbsp;</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos5.htm#403">403</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">PROGEM-CUSTOUN *</td>
+    <td class="dta">7</td>
+    <td class="dta">&nbsp;</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp2300.htm#2315">2315</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">PROGEM-QUANT *</td>
+    <td class="dta">5</td>
+    <td class="dta">&nbsp;</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp2300.htm#2316">2316</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">PROGEM-UNIDADE *</td>
+    <td class="dta">3</td>
+    <td class="dta">&nbsp;</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp2300.htm#2317">2317</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TOTAL</td>
+    <td class="dta">577</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">(máximo)</td>
+  </tr>
+</table>
+
+<p style="page-break-before: always">&nbsp;</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq">TIPREG</td>
+    <td class="dta">1</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq">APLIC_N</td>
+    <td class="dta">2</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td><a href="../../Campos/camp1700.htm#1709">1709</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IDLOG</td>
+    <td class="dta">4</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#320">320</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">NRLOG</td>
+    <td class="dta">8</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos2.htm#117">117</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">CODTRN-E</td>
+    <td class="dta">3</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos7.htm#699">699</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">INDESTR</td>
+    <td class="dta">1</td>
+    <td class="dta">19</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos4.htm#313">313</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">COMP-PAN</td>
+    <td class="dta">2</td>
+    <td class="dta">20</td>
+    <td >N</td>
+    <td><a href="../../Campos/camp2300.htm#2324">2324</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">PAN</td>
+    <td class="dta">19</td>
+    <td class="dta">22</td>
+    <td >N</td>
+    <td><a href="../../Campos/camp2300.htm#2325">2325</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DATEXP</td>
+    <td class="dta">4</td>
+    <td class="dta">41</td>
+    <td >N</td>
+    <td><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">CODDETALHE</td>
+    <td class="dta">3</td>
+    <td class="dta">45</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp2300.htm#2393">2393</a></td>
+    <td class="esq">= 002 (detalhe Compra Shell)</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">ID-COM-REP</td>
+    <td class="dta">7</td>
+    <td class="dta">48</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp1000.htm#1007">1007</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">FLENUMFAC</td>
+    <td class="dta">6</td>
+    <td class="dta">55</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp1400.htm#1425">1425</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">KMULTUTI</td>
+    <td class="dta">6</td>
+    <td class="dta">61</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp1400.htm#1448">1448</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">NUMOCORR</td>
+    <td class="dta">2</td>
+    <td class="dta">67</td>
+    <td>N</td>
+    <td><a href="../../Campos/campos5.htm#428">428</a></td>
+    <td class="esq">no máximo 5</td>
+  </tr>
+  <tr>
+    <td class="esq">CODPRO *</td>
+    <td class="dta">3</td>
+    <td class="dta">69</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp1400.htm#1426">1426</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">QUANPROD *</td>
+    <td class="dta">6</td>
+    <td class="dta">&nbsp;</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp1400.htm#1427">1427</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">VALPROD *</td>
+    <td class="dta">8</td>
+    <td class="dta">&nbsp;</td>
+    <td>N</td>
+    <td><a href="../../Campos/camp1400.htm#1428">1428</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">SINAL *</td>
+    <td class="dta">1</td>
+    <td class="dta">&nbsp;</td>
+    <td>A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">TOTAL</td>
+    <td class="dta">158</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">(máximo)</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

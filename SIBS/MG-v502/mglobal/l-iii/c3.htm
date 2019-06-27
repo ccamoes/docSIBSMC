@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>C.3 ESTRUTURAÇÃO E PARALELISMO COM O MODELO ISO</title>
+<script>top.captulos.location='indicec.htm#C';</script>
+</head>
+
+<body>
+
+<h1>C.3 ESTRUTURAÇÃO E PARALELISMO COM O MODELO OSI</h1>
+
+<p>&nbsp;</p>
+
+<p>Como já se disse, o modelo OSI esteve presente como base orientadora deste sistema,
+pelo que a figura seguinte pretende estabelecer um certo paralelismo entre a estrutura a
+desenhar e os <em>layers</em> daquele modelo.<br>
+</p>
+
+<p class="center"><img src="imagens3/c3-1.gif" alt="c3-1.gif" WIDTH="525" HEIGHT="323"></p>
+
+<p><br>
+A figura pretende mostrar também os três cenários admitidos para implantação do <em>File
+Transfer</em>, no sistema central da SIBS.</p>
+
+<p>A implementação a nível <em>File Transfer</em> pode no entanto suportar apenas um
+dos cenários (caso dos PCs).</p>
+
+<p>Quanto a especificações dos níveis inferiores ao 4, é desnecessário qualquer
+comentário, dado serem níveis bem definidos em qualquer dos cenários apontados e
+normalmente implementados pelos construtores. Apontamos apenas os parâmetros passíveis
+de variação para os circuitos X.25 : 
+
+<ul>
+  <li>Level 3 Window size = 2. </li>
+  <li>Packet size = 128 bytes (pode ser acordado bilateralmente outro valor, quando usada
+    linha ou rede privada). </li>
+  <li>Facility Field no CALL Request NÃO usado. </li>
+  <li>User Data Field nos pacotes de CALL, a acordar bilateralmente. </li>
+  <li>Delivery Bit (D) = 0. </li>
+  <li>Qualifier Bit (Q) = 0. </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h4><em>Cenário A :</em></h4>
+
+<blockquote>
+  <p>Este cenário é implementado em PVCs X.25, quer usando uma linha alugada, quer a rede
+  pública de comunicação de dados.</p>
+  <p>No cenário A, dado que as duas máquinas estão ligadas permanentemente entre si, os
+  procedimentos do nível sessão limitam-se essencialmente a sincronizar os dois
+  interlocutores, podendo eventualmente alterar parâmetros de sessão prefixados.</p>
+  <p>(Está praticamente abandonada a sua utilização, em benefício dos SVCs). </p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h4><em>Cenário B :</em></h4>
+
+<blockquote>
+  <p>Este cenário é implementado em SVCs, quer via rede pública de comunicação de
+  dados, quer em linha ou rede privada.</p>
+  <p>Nesta situação, dado não existir uma ligação permanente entre as máquinas,
+  torna-se necessário identificar os interlocutores para estabelecer parâmetros de
+  sessão.</p>
+  <p>Especialmente neste cenário, são importantes as funções do nível sessão tais como
+  estabelecimento e fecho, identificação e autenticação do interlocutor que estabeleceu
+  a chamada X.25.</p>
+</blockquote>
+
+<blockquote>
+  <p>Parâmetros de sessão, tais como código de caracteres usado, devem ser previamente
+  acordados entre ambos os interlocutores, pelo que são assignados consoante a
+  identificação do interlocutor.</p>
+  <p>Este é o cenário preferencial do presente protocolo, por ser aquele em que se torna
+  mais simples e performante a implementação. O circuito pode manter-se aberto
+  permanentemente (quando usada rede privada) ou ser aberto no início de cada
+  transferência e fechado no final. </p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h4><em><a name="Cenário C :">Cenário C :</a></em></h4>
+
+<blockquote>
+  <p>O cenário C, como se vê na figura, é usado para ligações assíncronas, normalmente
+  em PCs que se ligam a um &quot;PAD&quot;.</p>
+</blockquote>
+
+<blockquote>
+  <p>Neste cenário, tal como no B, tornam-se necessários os mesmos procedimentos do nível
+  sessão. Mas além disso, em virtude da comunicação assíncrona, da baixa velocidade e
+  dos possíveis erros de transmissão, torna-se necessário implementar algumas funções
+  do nível transporte, que garantam a qualidade da informação e a sincronização entre
+  as máquinas. Estes pormenores serão descritos em parágrafo próprio.</p>
+</blockquote>
+
+<blockquote>
+  <p>Para este cenário fica definido que é o PC que tem sempre a iniciativa de estabelecer
+  a chamada X.25 e iniciar a sessão.</p>
+</blockquote>
+
+<p class="dta"><br>
+<a href="c2.htm">Anterior</a>/<a href="c4.htm">Seguinte</a></p>
+</body>
+</html>

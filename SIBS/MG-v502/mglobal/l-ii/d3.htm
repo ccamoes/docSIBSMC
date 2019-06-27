@@ -1,0 +1,659 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>D.3 AUTENTICAÇÃO FORTE</title>
+<script>top.captulos.location='indiced.htm#D';</script>
+
+<style>
+<!--
+BODY, H1, H2, H3, H4, H5, H6, OL, UL, P, TH, TD {
+	color: #006400;
+}
+-->
+</style>
+<base target="main">
+</head>
+
+<body>
+
+<h1>D.3 AUTENTICAÇÃO FORTE</h1>
+
+<p>&nbsp;</p>
+
+<p>O Sistema de Autenticação Forte é um serviço, disponibilizado pela SIBS a entidades bancárias e não bancárias, que possibilita a autenticação segura de um cliente em canais como a Internet.</p>
+
+<p>A Autenticação Forte baseia-se na infra-estrutura de segurança descrita na especificação CAP (*), que por sua vez se baseia na segurança existente na norma EMV para cartões bancários. Desta forma, no âmbito da Autenticação Forte, é possível utilizar cartões bancários EMV para realizar operações de autenticação.</p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esqa" nowrap>(*)&nbsp;</td>
+    <td class="esqa"> CAP = <i> Chip Authentication Program</i> (norma definida pela
+      MasterCard e adoptada pela VISA para autenticação forte <i>online</i>, baseada na utilização de cartões com
+      <i> chip</i> EMV).</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.3.1">D.3.1</a> ENQUADRAMENTO&nbsp;</h2>
+
+<p><br>
+Nas operações em que existe um processo de autenticação de um cliente por canais como a Internet (exemplo: acesso a
+<i> Home Banking</i>), as <i> passwords</i> dos clientes podem ser comprometidas através de:</p>
+
+<ul>
+  <li>engenharia social;</li>
+  <li><i>phishing</i>;</li>
+  <li><i>keyloggers</i> (e outros <i>loggers</i>);</li>
+  <li>cavalos de Tróia (<i>trojans</i>).</li>
+</ul>
+
+<p>Considerando em particular o impacto relativo a operações em <i> Home
+Banking</i>, estes ataques podem comprometer:</p>
+
+<ul>
+  <li>a confidencialidade da informação;</li>
+  <li>a integridade das transacções financeiras;</li>
+  <li>o património dos clientes e do banco;</li>
+  <li>a confiança dos clientes e a imagem dos bancos.</li>
+</ul>
+
+<p>Num contexto em que é visível uma tendência de crescimento da frequência e sofisticação dos ataques, é cada vez mais necessário considerar mecanismos de assinatura das transacções ou de confirmação das transacções que (a) funcionem fora do contexto de segurança do cliente ou (b) por canais alternativos.</p>
+
+<p>Para dar resposta às necessidades crescentes de definição de mecanismos de assinatura de transacções, e após análise das diversas alternativas disponíveis, a opção de implementação de um novo sistema recaiu na utilização do padrão EMV-CAP.</p>
+
+<p>A opção pela utilização do padrão EMV-CAP resulta das vantagens que podem ser obtidas pela rentabilização dos seguintes factores:</p>
+
+<ul>
+  <li>capitalização do projecto EMV;</li>
+  <li>possibilidade de conjugar a segurança do <i> eBanking</i> e do comércio electrónico;</li>
+  <li>potencial atractividade para outras entidades, em particular na área do <i>eGovernance</i>;</li>
+  <li>capacidade de personalização do cartão e de partilha do leitor do cartão;</li>
+  <li>alinhamento com tendências de mercado;</li>
+  <li>utilização de um padrão de mercado (EMV-CAP), que permite independência de fornecedores.</li>
+</ul>
+
+<p><br>
+Enquanto padrão aceite pelo mercado, a utilização da solução EMV-CAP como base de implementação de um
+Sistema de Autenticação Forte tem inerente várias vantagens:</p>
+
+<ul>
+  <li>Capitaliza as características específicas do EMV. O CAP reutiliza estruturas de dados das aplicações de pagamentos, introduzindo novos elementos.<br>
+    <br>
+  </li>
+  <li>Garante a interoperabilidade entre leitores e cartões, através das padrões EMV
+    <i> Level</i> 1 (requisitos de <i>hardware</i>) e EMV <i> Level</i> 2 (requisitos de
+    <i>software</i>).&nbsp;<br>
+    <br>
+  </li>
+  <li>Permite obter evidência da:</li>
+</ul>
+<blockquote>
+  <ol type="a">
+    <li>presença do cliente (<i>cardholder</i>), através da introdução de um PIN (mandatório);</li>
+    <li>presença do cartão de pagamento no ponto de interacção, através da geração de um criptograma;</li>
+    <li>aprovação dos detalhes da transacção, através da assinatura  de campos (opcional).</li>
+  </ol>
+</blockquote>
+<ul>
+  <li>O EMV-CAP prevê diversos modos de funcionamento (incluindo <i> Mode 2</i> e o
+    <i> Mode 2</i> com TDS, respectivamente para autenticação forte no <i> login</i> e para assinatura de transacções).</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.3.2">D.3.2</a> GLOSSÁRIO</h2>
+
+<p><br>
+</p>
+
+<blockquote>
+
+<table border="0" cellspacing="3">
+  <tr>
+    <td class="esq10a">AC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    </td>
+    <td class="esq10a">		<i>		Application Cryptogram</i></td>
+  </tr>
+  <tr>
+    <td class="esq10a">
+
+AF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    </td>
+    <td class="esq10a"> 		Autenticação Forte</td>
+  </tr>
+  <tr>
+    <td class="esq10a">
+
+BIN&nbsp;&nbsp;&nbsp;&nbsp;
+
+    </td>
+    <td class="esq10a"><i>		Bank Identification Number</i></td>
+  </tr>
+  <tr>
+    <td class="esq10a">
+
+CAP&nbsp;&nbsp;&nbsp;
+
+    </td>
+    <td class="esq10a"><i> 		Chip Authentication Program</i></td>
+  </tr>
+  <tr>
+    <td class="esq10a">
+
+EMV&nbsp;&nbsp;&nbsp;
+
+    </td>
+    <td class="esq10a">		Europay MasterCard Visa</td>
+  </tr>
+  <tr>
+    <td class="esq10a">
+
+HSM&nbsp;
+
+    </td>
+    <td class="esq10a"><i>		Hardware Security Module</i></td>
+  </tr>
+  <tr>
+    <td class="esq10a">
+
+PAN&nbsp;
+
+    </td>
+    <td class="esq10a"><i>		Primary Account Number</i></td>
+  </tr>
+  <tr>
+    <td class="esq10a">
+
+PCR&nbsp;
+
+    </td>
+    <td class="esq10a"><i>		Personal Card Reader</i></td>
+  </tr>
+  <tr>
+    <td class="esq10a">
+
+PIN&nbsp;
+
+    </td>
+    <td class="esq10a"><i>		Personal Identification Number</i></td>
+  </tr>
+  <tr>
+    <td class="esq10a">
+
+SAF&nbsp;
+
+    </td>
+    <td class="esq10a">		Sistema de Autenticação Forte</td>
+  </tr>
+</table>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.3.3">D.3.3</a> ENTIDADES ENVOLVIDAS NA AUTENTICAÇÃO</h2>
+
+<p><br>
+Identificam-se de seguida as entidades envolvidas no processo de Autenticação Forte e nos processos de gestão de informação associados.&nbsp;</p>
+
+<p><br>
+<b>
+Emissor</b></p>
+
+<p>
+O Emissor do cartão é responsável por desencadear o pedido de emissão de um cartão definindo a existência ou não da aplicação CAP no mesmo. Ao definir a existência da aplicação CAP no cartão, esta informação
+dá origem à criação no <i> Host</i> da SIBS dos elementos de informação necessários para envio ao SAF (Sistema de Autenticação Forte).&nbsp;<br>
+O Emissor é também responsável por solicitar a alteração de estado do cartão.&nbsp;</p>
+
+<p><br>
+<b><i>
+Host</i> SIBS</b></p>
+
+<p>
+O <i> Host</i> SIBS é responsável por processar os pedidos realizados pelos Emissores e produzir em conformidade os dados necessários para a personalização do cartão, gerar e comunicar a informação necessária ao SAF para responder aos pedidos de autenticação.&nbsp;<br>
+São também processados e comunicados por esta entidade ao SAF os pedidos de alteração de estado do cartão (aplicação CAP).</p>
+
+<p style="page-break-before: always"><br>
+<b>SIBS Cartões</b></p>
+
+<p>
+No cenário de produção do cartão por parte da SIBS Cartões, é a entidade responsável pela produção e personalização do cartão com os elementos necessários ao processo de autenticação CAP.&nbsp;</p>
+
+<p><br>
+<b>
+WEB do Emissor</b>&nbsp;</p>
+
+<p>
+Esta entidade recebe internamente os dados relativos a um cartão, nomeadamente o PAN, e associa-os a um utilizador do seu sistema. Estes dados são enviados ao SAF na mensagem de autenticação.&nbsp;</p>
+
+<p><br>
+<b>
+Entidades Externas</b>&nbsp;</p>
+
+<p>
+Qualquer entidade fora do sistema bancário que queira utilizar o sistema AF para realizar autenticação dos seus utilizadores.&nbsp;<br>
+Estas entidades participam no sistema através de um Emissor ou directamente (cenário
+<i>E-Government</i>). Recebem por parte do Utilizador dados que o identificam no seu sistema e um
+<i> token</i> CAP que o autentica.<br>
+As mensagens de autenticação enviadas por estas entidades não possuem o PAN completo (apenas os últimos 4 dígitos). Adicionalmente é enviado o NIF do utilizador (previamente registado no sistema) e o NIF da entidade que indica a proveniência da mensagem de autenticação.&nbsp;</p>
+
+<p><br>
+<b>
+SAF</b></p>
+
+<p>
+Este sistema tem a responsabilidade de manter a estrutura de dados necessária para a resposta a pedidos de validação de
+<i> tokens</i> CAP. A recepção de pedidos é feita via mensagem e realiza-se exclusivamente através de uma rede segura. A estrutura de dados é criada e gerida a partir de dados enviados por ficheiro pelo
+<i> Host</i> SIBS.&nbsp;<br>
+Pressupõe-se a utilização de um HSM para as operações de cifra e de validação de AC EMV. Pressupõe-se também a existência de uma chave de transporte carregada no SAF que permita a troca segura de elementos cifrados com o
+<i> Host</i> SIBS.</p>
+
+<p><br>
+<b>
+Utilizador</b></p>
+
+<p>
+O utilizador é responsável por desencadear o processo de autenticação lendo o
+<i> token</i> CAP do PCR e fornecendo-o à entidade que lhe pediu a autenticação/assinatura. O utilizador é solicitado a introduzir o PIN no PCR durante o processo geração do
+<i> token</i> CAP.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.3.4">D.3.4</a> INFORMAÇÃO RELEVANTE PARA A AUTENTICAÇÃO</h2>
+
+<p><br>
+Identifica-se de seguida a informação relevante para os processos de gestão e de autenticação.&nbsp;</p>
+
+<p><br>
+<b>
+Cartão com aplicação CAP&nbsp;</b></p>
+
+<p>
+Consiste num cartão EMV que adicionalmente às aplicações de pagamento usuais inclui uma aplicação CAP para geração de criptogramas usados no processo de AF. Este cartão é emitido com PIN
+<i> Offline</i> de 4 dígitos, sendo este usado apenas no contexto da aplicação CAP para validação do Utilizador.&nbsp;</p>
+
+<p><br>
+<b>
+<i>
+Token</i> CAP&nbsp;</b></p>
+
+<p>
+Consiste num código numérico de 7 dígitos (decimais) devolvido ao Utilizador pelo PCR, como resultado da transacção EMV realizada com a aplicação CAP do cartão.&nbsp;</p>
+
+<p><br>
+<b>
+Ficheiro de BINs e PANs</b></p>
+
+<p>
+Ficheiro produzido pelo <i> Host</i> SIBS para envio ao SAF dos elementos necessários ao processo de autenticação.&nbsp;</p>
+
+<p><br>
+<b>
+Ficheiro </b><a href="../l-iii/eecb.htm">EECB</a></p>
+
+<p>Ficheiro de Emissão de cartões.&nbsp;<br>
+É produzido pelo Emissor de cartões e enviado à SIBS.<br>
+A emissão de cartões com aplicação CAP é suportada nas versões 03 ou superiores do ficheiro
+<a href="../l-iii/eecb.htm">EECB</a>.</p>
+
+<p><br>
+<b>
+Ficheiro <a href="../l-iii/egcc.htm"> EGCC</a></b>&nbsp;</p>
+
+<p>
+Ficheiro de Gestão de Cartões e Contas.&nbsp;<br>
+É produzido pelo Emissor de cartões e enviado à SIBS para alterar elementos associados ao cartão. Permite também realizar a associação entre NIF e PAN do cartão.</p>
+
+<p><br>
+<b>
+Ficheiro de Personalização de Cartões&nbsp;</b></p>
+
+<p>
+Ficheiro <a href="../l-iii/pemv.htm"> PEMV</a> - Ficheiro de Emissão de cartões para entidades de produção de cartões (que não a SIBS Cartões).&nbsp;<br>
+É produzido pelo <i> Host</i> SIBS e devolvido ao Emissor na sequência do processamento de um ficheiro
+<a href="../l-iii/eecb.htm">EECB</a>.&nbsp;<br>
+A emissão de cartões com aplicação CAP é suportada pelo ficheiro <a href="../l-iii/pemv.htm"> PEMV</a>. Adicionalmente ao ficheiro
+<a href="../l-iii/pemv.htm"> PEMV</a>, é necessário que a entidade que vai personalizar o cartão considere os valores específicos a utilizar pela aplicação CAP, indicados no Livro II, capítulo A, anexo
+<a href="a_a5.pdf">A.AX.5</a>.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.3.5">D.3.5</a> PROCESSOS ENVOLVIDOS NA AUTENTICAÇÃO</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.3.5.1">D.3.5.1</a> PROCEDIMENTOS PRÉVIOS À EMISSÃO</h3>
+
+<p><br>
+Para que um Emissor possa emitir cartões EMV com uma aplicação de autenticação são necessários dois conjuntos de acções:</p>
+
+<ul>
+  <li>certificação do Emissor e respectivos BINs para emissão de cartões EMV com uma aplicação de um
+    Sistema de Pagamento;</li>
+  <li>parametrizações específicas relativas à aplicação CAP&nbsp;.</li>
+</ul>
+
+<p>
+Mantêm-se os procedimentos já existentes na componente relativa à certificação do
+Emissor junto do Sistema de Pagamento, para possibilitar a emissão de cartões EMV que possuam uma aplicação de pagamento.<br>
+As acções que o Emissor necessita desenvolver para possibilitar a emissão de cartões com
+<i> chip</i> EMV encontram-se documentadas no Livro II, capítulo A, anexo <a href="a_a4.pdf">A.AX.4</a>.&nbsp;</p>
+
+<p>
+O Emissor necessita ainda de desenvolver um conjunto de acções adicionais prévias a qualquer emissão de cartões EMV com uma aplicação CAP incluída no
+<i>chip</i>.</p>
+
+<p>
+Nos pontos seguintes, são indicadas as acções e procedimentos que devem ser seguidos para possibilitar a emissão de cartões EMV com uma aplicação CAP.&nbsp;</p>
+
+<p>
+O anexo <a href="d_a1.pdf"> D.AX.1</a> apresenta um resumo das acções necessárias.</p>
+
+<p>
+<br>
+<b>
+Caracterização de BIN</b></p>
+
+<p>
+A emissão de cartões com <i> chip</i> EMV com uma aplicação CAP não tem qualquer influência sobre a estrutura das caracterizações de BIN já existentes.<br>
+O Emissor pode utilizar os BINs já parametrizados ou solicitar a parametrização de novos BINs para emissão de cartões EMV com aplicação CAP.</p>
+
+<p>
+<br>
+<b>
+Caracterização de Padrão EMV</b></p>
+
+<p>
+A aplicação CAP existe como aplicação independente no <i> chip</i> de cartões EMV.&nbsp;<br>
+A definição das aplicações EMV a colocar no <i> chip</i> tem como requisito prévio a parametrização de um Padrão EMV correspondente, que o
+Emissor referencia no momento da emissão do cartão e nas acções após a personalização do mesmo.<br>
+O Emissor pode solicitar a parametrização de um Padrão EMV associado a uma aplicação CAP através do Terminal de Serviços SIBS ou, na impossibilidade de utilização deste, através do anexo
+<a href="i_a1e.doc">I.AX.1E</a>, do Livro II, capítulo I.</p>
+
+<p>
+Os elementos presentes na Caracterização do Padrão EMV: "Sufixo de AID",
+&quot;<i>Preferred Name</i>&quot; e "Segunda linguagem suportada pela aplicação" não são aplicáveis quando se indique uma aplicação CAP. Assim, os Emissores que pretendam emitir cartões com uma aplicação CAP necessitam parametrizar apenas um ou, no limite, dois Padrões EMV:</p>
+
+<ul>
+  <li>um Padrão EMV para emissão de cartões com <i> chip</i> que utilizem uma máscara VISA;</li>
+  <li>um Padrão EMV para emissão de cartões com <i> chip</i> que utilizem uma máscara
+    MasterCard.</li>
+</ul>
+<p>
+<br>
+<b>
+Carregamento de chaves de Emissor por BIN</b></p>
+<p>
+A emissão de cartões EMV com aplicação CAP obriga ao carregamento prévio de chaves de Emissor. A gestão das componentes de segurança é da competência exclusiva do Emissor e/ou Entidades em quem este delegue esta gestão.</p>
+<p>
+Assim, para que seja possível emitir cartões com uma aplicação CAP, o Emissor tem que indicar à SIBS quais os BINs abrangidos. Esta indicação é efectuada através do envio à SIBS, ao Departamento de Clientes e Negócios (DCN), do formulário de "Registo de BINs no Sistema de Autenticação Forte" constante no anexo
+<a href="d_a2.doc">D.AX.2</a>.</p>
+<p>
+Com a recepção deste formulário, o Departamento de Segurança e Qualidade (SIBS) efectua a geração aleatória e carregamento das chaves necessárias.&nbsp;<br>
+Após efectuado o carregamento das referidas chaves, o Emissor é informado pelo DCN da conclusão deste processo.</p>
+<p>
+A preparação de um BIN tem como consequência a parametrização de todas as extensões que existam ou possam vir a existir para esse BIN.</p>
+<p>
+<br>
+<b>
+Definição de contrato de produção de cartões</b></p>
+<p>
+Para definição dos aspectos particulares dos contratos de produção de cartões a utilizar, o Emissor deve contactar a SIBS Cartões.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.3.5.2">D.3.5.2</a> EMISSÃO DE CARTÃO EMV COM APLICAÇÃO CAP</h3>
+
+<p><br>
+A emissão de cartões com inclusão da aplicação CAP é efectuada através do ficheiro
+<a href="../l-iii/eecb.htm">EECB</a>, versão 03 ou superior.</p>
+
+<p>
+Para incluir a aplicação CAP no cartão, o Emissor preenche uma das ocorrências do campo
+(<a href="../../Campos/camp1700.htm#1716" target="explicac">1716</a>)
+EMV-PADRAO, presente nos registos de tipo 1 do ficheiro <a href="../l-iii/eecb.htm#= 1">EECB</a>.&nbsp;</p>
+
+<p>
+A ocorrência do campo (<a href="../../Campos/camp1700.htm#1716" target="explicac">1716</a>) EMV-PADRAO a preencher é obrigatoriamente a última da lista de ocorrências. Ou seja, a aplicação CAP é informada por uma ocorrência posterior às correspondentes a aplicações de pagamento
+(Visa, MasterCard, Amex ou Multibanco).</p>
+
+<p>
+<br>
+<b><u>
+Personalização do plástico fora da SIBS (ficheiro PEMV)</u></b></p>
+
+<p>
+A aplicação CAP constitui-se como uma aplicação EMV que coexiste no cartão com outras aplicações EMV de pagamento. A estrutura da aplicação CAP é semelhante à de uma aplicação EMV de pagamento<br>
+Na emissão de um cartão EMV com aplicação CAP é necessário considerar elementos específicos desta aplicação. Uma vez que são constantes e uma vez que o seu valor foi definido previamente, estes campos são incorporados no conjunto de elementos considerados como "Parametrizações Genéricas EMV", consultável no Livro II, capítulo A, anexo
+<a href="a_a5.pdf">A.AX.5</a>.<br>
+O cartão a usar deve garantir que com os dados de personalização enviados no <a href="../l-iii/pemv.htm"> PEMV</a>, o valor do IAD devolvido no comando
+<i> Generate Application Cryptogram</i> é determinístico, e igual ao que está definido no campo
+(<a href="../../Campos/camp3100.htm#3138" target="explicac">3138</a>) CAP-IAD.</p>
+
+<p>
+<br>
+<b><u>
+Informação ao Sistema de Autenticação Forte (SAF)</u></b></p>
+
+<p>
+Os registos de emissão de cartões do ficheiro <a href="../l-iii/eecb.htm">EECB</a>
+que sejam correctamente processados, desencadeiam o envio ao SAF de informação relativa ao cartão em causa. Esta informação representa um registo do PAN de um cartão, para utilização nas operações de AF.</p>
+
+<p>
+Assim, temos:</p>
+
+<div align="center">
+  <center>
+
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr>
+    <th>
+Informação no tipo de registo 2 do <a href="../l-iii/eecb.htm">EECB</a></th>
+    <th>	Informação no sistema SAF</th>
+  </tr>
+  <tr>
+    <td>
+(<a href="../../Campos/campos2.htm#144" target="explicac">144</a>) NSITCAR = 02 (Normal)&nbsp;</td>
+    <td>	PAN activo para sistema de autenticação</td>
+  </tr>
+</table>
+
+  </center>
+</div>
+
+<p class="center">&nbsp;<b>Tabela 1 - Estados do Cartão no Momento da Emissão</b></p>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.3.5.3">D.3.5.3</a> GESTÃO DA SITUAÇÃO DO CARTÃO EMV APÓS A EMISSÃO</h3>
+
+<p><br>
+<b><u>
+Informação ao Sistema de Autenticação Forte (SAF)</u></b></p>
+
+<p>
+Ao longo da vida útil do cartão, o Emissor pode alterar a situação do cartão EMV através do ficheiro
+Alteração de Situação de Cartão (<a href="../l-iii/easc.htm">EASC</a>) ou através do Terminal de Serviços SIBS.<br>
+Adicionalmente, existem condições nas quais a SIBS também efectua alterações à situação do cartão, automáticas ou a pedido junto dos seus serviços de atendimento (exemplo: colocação em Lista Negra).</p>
+
+<p>
+As alterações de situação do cartão EMV têm o seguinte impacto na informação enviada ao SAF:</p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;</td>
+  </tr>
+</table>
+<div align="center">
+  <center>
+  <table border="1" width="550" cellspacing="0" cellpadding="2">
+    <tr>
+      <th width="260">
+Alteração de situação do cartão EMV</th>
+      <th width="276">&nbsp;Informação no sistema SAF</th>
+    </tr>
+    <tr>
+      <td width="260">
+Alteração de estado de 13 (Por Activar)&nbsp;<br>
+ para 02 (Normal)&nbsp;</td>
+      <td width="276" class="mida">	Estado de registo de PAN alterado para "activo"</td>
+    </tr>
+    <tr>
+      <td width="260">
+Colocação de cartão em 06 (Lista Negra)&nbsp;<br>
+ ou 07 (Lista Cinzenta)</td>
+      <td width="276" class="mida">	Estado de registo de PAN alterado para "inactivo"</td>
+    </tr>
+    <tr>
+      <td width="260">
+Alteração de estado de 06 (Lista Negra)&nbsp;<br>
+ ou 07 (Lista Cinzenta) para 02 (Normal)&nbsp;</td>
+      <td width="276" class="mida">	Estado de registo de PAN alterado para "activo"</td>
+    </tr>
+    <tr>
+      <td width="260" class="mida">
+Colocação de cartão em (09) Anulado</td>
+      <td width="276">	 Estado de registo de PAN alterado para "anulado", não podendo ser retirado desse estado.</td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p class="center"><b>
+Tabela 2 - Impacto das Alterações de Situação do Cartão</b>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.3.5.4">D.3.5.4</a> GESTÃO DO ESTADO DO REGISTO DE PAN NO SAF (FICHEIRO EGCC)</h3>
+
+<p><br>
+<b><u>
+Informação ao Sistema de Autenticação Forte (SAF)</u></b></p>
+
+<p>
+A SIBS assegura a activação directa do PAN para o serviço SAF. No entanto, o Emissor pode, se o pretender, actuar directamente sobre o estado do registo de PAN existente no SAF, através do envio à SIBS do ficheiro de
+Gestão de Cartões e Contas (<b><a href="../l-iii/egcc.htm">EGCC</a></b>), com o código de gestão 19 definido para o efeito.</p>
+
+<p>
+Através do <b><a href="../l-iii/egcc.htm"> EGCC</a></b>, o Emissor pode desencadear as seguintes acções:</p>
+
+<ul>
+  <li>alterar o estado do registo de PAN para "Activo", para disponibilizar o serviço de AF para um PAN;</li>
+  <li>alterar o estado do registo de PAN para "Inactivo", para impossibilitar a utilização de um PAN no serviço de AF.</li>
+</ul>
+
+<p>
+Com o processamento do ficheiro <b><a href="../l-iii/egcc.htm"> EGCC</a></b>, o <i> Host</i> SIBS desencadeia o envio de um ficheiro de actualização dos dados existentes no SAF.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.3.5.5">D.3.5.5</a> ALTERAÇÃO À ASSOCIAÇÃO DO REGISTO DE PAN A UM NIF NO SAF (FICHEIRO EGCC)</h3>
+
+<p><br>
+<b><u>
+Informação ao Sistema de Autenticação Forte (SAF)</u></b></p>
+
+<p>
+Após a emissão de um cartão EMV com aplicação CAP, o Emissor pode associar ou eliminar a associação existente entre o cartão e um Número de Identificação Fiscal.&nbsp;<br>
+Através desta gestão, são disponibilizadas as condições necessárias para que seja possível disponibilizar o serviço de AF a entidades não bancárias.<br>
+A gestão da associação entre os dados de um cartão e NIF é efectuada através do código de gestão 20 definido para o efeito, no ficheiro
+<b><a href="../l-iii/egcc.htm"> EGCC</a></b>.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.3.5.6">D.3.5.6</a> VALIDAÇÃO DO <i> TOKEN CAP</i></h3>
+
+<p><br>
+Este processo é efectuado no SAF.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.3.6">D.3.6</a>  <i> WORKFLOW</i></h2>
+
+<p><br>
+A figura seguinte ilustra a interacção entre os intervenientes nos processos envolvidos na Autenticação. São também evidenciados os interfaces referidos nas secções anteriores. Por questões de simplicidade é apenas apresentado um Emissor e um cartão.</p>
+
+<p class="center"><br>
+<img border="0" src="imagens2/d3.gif" alt="d3.gif" width="573" height="653"></p>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.3.7">D.3.7</a> INTERFACE EMISSOR / SIBS</h2>
+
+<p><br>
+<b>
+Ficheiro de Emissão de Cartões (</b><a href="../l-iii/eecb.htm">EECB</a><b>)</b></p>
+
+<p>
+Para a emissão de cartões EMV com aplicação CAP pode ser utilizada a versão 03 ou superior do ficheiro
+<a href="../l-iii/eecb.htm">EECB</a>.</p>
+
+<p>
+<br>
+<b>
+Ficheiro de Personalização de Cartões EMV (<a href="../l-iii/pemv.htm">PEMV</a>)</b></p>
+
+<p>
+A aplicação CAP obedece à estrutura das aplicações EMV de pagamento, pelo que os dados para personalização são enviados através do ficheiro
+<b><a href="../l-iii/pemv.htm">PEMV</a> </b>à semelhança das aplicações de pagamento.<br>
+Os elementos específicos da aplicação CAP têm um valor pré-determinado. São por isso englobados no conjunto de elementos considerados como "Parametrizações Genéricas EMV", apresentadas no Livro II, capítulo A, anexo
+<a href="a_a5.pdf">A.AX.5</a>.</p>
+
+<p><br>
+<b>
+Ficheiro de Gestão de Cartões e Contas (<a href="../l-iii/egcc.htm">EGCC</a>)</b></p>
+
+<p>
+Para possibilitar a gestão da informação que vai residir no SAF, são utilizados dois códigos de gestão específicos:</p>
+
+<ul>
+  <li>CODGEST=19 - Sistema de Autenticação Forte - activa/inactiva serviço de autenticação;</li>
+  <li>CODGEST=20 - Sistema de Autenticação Forte - alteração de associação de cartão a NIF.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.3.8">D.3.8</a> INTERFACE EMISSOR / SAF</h2>
+
+<p><br>
+A forma de interacção entre o Emissor e o SAF baseia-se na troca de mensagens real-time, utilizando protocolo HTTPS
+- método POST.&nbsp;</p>
+
+<p>
+Informação detalhada relativa a estas mensagens pode ser consultada no
+capítulo <a href="../l-iii/d5.htm">D.5</a> do Livro III.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.3.9">D.3.9</a> INTERFACE ENTIDADE EXTERNA / SAF</h2>
+
+<p><br>
+A forma de interacção entre o Emissor e o SAF baseia-se na troca de mensagens real-time, utilizando protocolo HTTPS
+- método POST.&nbsp;</p>
+
+<p>
+Informação detalhada relativa a estas mensagens pode ser consultada no
+capítulo <a href="../l-iii/d5.htm">D.5</a> do Livro III.</p>
+
+<p class="dta"><br>
+<a target="main" href="d2.htm">Anterior</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

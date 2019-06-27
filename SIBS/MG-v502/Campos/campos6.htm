@@ -1,0 +1,1231 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos6 (500-599)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.</td>
+    <td class="fundo">REP.</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="500" name="500">500</a></td>
+    <td class="esq"><u>TIPO DE DESPESA</u> <p>Código que indica o tipo de despesa admitida
+    para o cartão:</p>
+    <p>&nbsp;&nbsp; I - Ilimitada<br />
+    &nbsp;&nbsp; L - Limitada p/ montante de cartão e conta<br />
+    &nbsp;&nbsp; V - Complemento do vencimento</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DSPTIP</td>
+  </tr>
+  <tr>
+    <td><a id="501" name="501">501</a></td>
+    <td class="esq"><u>PERÍODO DE DESPESA</u> <p>Código que indica o período que está
+    associado ao tipo de despesa (<a href="campos6.htm#500">500</a>) do limite (<a href="#502">502</a>).
+    Só é significativo se o tipo de despesa for &quot;L&quot; ou &quot;V&quot;.</p>
+    <p>Pode assumir os valores:<br />
+    &nbsp;&nbsp; 01 - Diário<br />
+    &nbsp;&nbsp; 80 - Semanal<br />
+    &nbsp;&nbsp; 83 - Mensal<br />
+    &nbsp;&nbsp; 86 - Anual</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DSPPER</td>
+  </tr>
+  <tr>
+    <td><a id="502" name="502">502</a></td>
+    <td class="esq"><u>LIMITE DE DESPESA</u> <p>Montante, em dezenas de euros, de despesa
+    admitida para o cartão no período.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DSPLIM</td>
+  </tr>
+  <tr>
+    <td><a id="503" name="503">503</a></td>
+    <td class="esq"><u>NÚMERO DO TELEFONE CELULAR</u> </td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMTELC</td>
+  </tr>
+  <tr>
+    <td><a id="504" name="504">504</a></td>
+    <td class="esq"><u>NÚMERO SEQ. CONTA TELEMÓVEL</u> <p>Informa qual é a sequência
+    atribuída a uma conta bancária quando é associada ao telefone, num máximo de 5 contas.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NSEQCONTA</td>
+  </tr>
+  <tr>
+    <td><a id="505" name="505">505</a></td>
+    <td class="esq"><u>PAN</u> <p>Número completo do cartão bancário (Primary Account
+    Number), como se apresenta em <em>embossed</em>.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PAN</td>
+  </tr>
+  <tr>
+    <td><a id="506" name="506">506</a></td>
+    <td class="esq"><u>CÓDIGO PROCESSAMENTO</u> <p>É o código que identifica o tipo de cada
+    transacção efectuada:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>&nbsp; 04 -&nbsp;</td>
+        <td class="esq">Crédito</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 21 -&nbsp;</td>
+        <td class="esq">Associação</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 22 -&nbsp;</td>
+        <td class="esq">Cancelamento da conta associada via Banco</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 23 -&nbsp;</td>
+        <td class="esq">Substituição de cartão</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 80 -&nbsp;</td>
+        <td class="esq">Inserção/Alteração de Referência</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 82 -&nbsp;</td>
+        <td class="esq">Abate de Referência</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODPROC</td>
+  </tr>
+  <tr>
+    <td><a id="507" name="507">507</a></td>
+    <td class="esq"><u>TIPO DE CARTÃO EMPRESA</u> <p>&nbsp;&nbsp; 1 - Empresa<br />
+    &nbsp;&nbsp; 2 - Adicional</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPCAREMP</td>
+  </tr>
+  <tr>
+    <td><a id="508" name="508">508</a></td>
+    <td class="esq"><u>CVV2/CVC2</u> <p>&quot;Card Validation Value2&quot;<br />
+    Trata-se do valor que é escrito no verso do cartão Visa e Eurocard/MasterCard e que é
+    utilizado como elemento de segurança no processamento das autorizações em que o
+    plástico não está presente. É transmitido pelo Cliente ao Comerciante que o inclui nos
+    dados a transmitir para obter a autorização da transacção.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CVV2-CVC2</td>
+  </tr>
+  <tr>
+    <td><a id="509" name="509">509</a></td>
+    <td class="esq"><u>NOME COMPLETO DO TITULAR</u> <p>Nome completo do titular do cartão
+    empresa (processado na SIBS) utilizado no endereçamento de extractos.</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NOME_TIT_E</td>
+  </tr>
+  <tr>
+    <td><a id="510" name="510">510</a></td>
+    <td class="esq"><u>FUNÇÃO</u> <p>Constituído por um código e respectivo descritivo.
+    Ver <a href="497-510.htm#510" target="main">tabela</a> com os códigos actualmente em uso.
+    As duas posições iniciais são o código.</td>
+    <td class="dta">22</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>FUNCAO</td>
+  </tr>
+  <tr>
+    <td><a id="511" name="511">511</a></td>
+    <td class="esq"><u>DATA NASCIMENTO DO TITULAR</u> <p>Formato Ano (2), Mês (2), Dia (2).</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DTN_TIT</td>
+  </tr>
+  <tr>
+    <td><a id="512" name="512">512</a></td>
+    <td class="esq"><u>DEPARTAMENTO DO TITULAR</u> <p>Sigla do nome do Departamento onde o
+    titular do cartão empresa trabalha.</td>
+    <td class="dta">5</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DEP_TIT</td>
+  </tr>
+  <tr>
+    <td><a id="513" name="513">513</a></td>
+    <td class="esq"><u>MORADA DO TITULAR DE UM CARTÃO DE CRÉDITO EMPRESA</u> <p>Morada
+    complementar à usada para a empresa onde trabalha o titular do cartão empresa.</td>
+    <td class="dta">30</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MOR_TIT</td>
+  </tr>
+  <tr>
+    <td><a id="514" name="514">514</a></td>
+    <td class="esq"><u>TELEFONE DO TITULAR</u> </td>
+    <td class="dta">10</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TEL_TIT</td>
+  </tr>
+  <tr>
+    <td><a id="515" name="515">515</a></td>
+    <td class="esq"><u>NÚMERO EMPREGADO TITULAR</u> </td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMEMP</td>
+  </tr>
+  <tr>
+    <td><a id="516" name="516">516</a></td>
+    <td class="esq"><u>FICHEIRO TELETRANSMITIDO</u> <p>Designação do ficheiro
+    teletransmitido.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>FTPFICH</td>
+  </tr>
+  <tr>
+    <td><a id="517" name="517">517</a></td>
+    <td class="esq"><u>ENTIDADE FORWARD</u> <p>Designação da entidade <em>forward</em>
+    dentro do sistema FTP SIBS.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>FTPENT</td>
+  </tr>
+  <tr>
+    <td><a id="518" name="518">518</a></td>
+    <td class="esq"><u>TIPO DE EMISSÃO DE CARTÃO</u> <p>Indica o motivo do pedido de
+    produção de cartão.</p>
+    <p>Admite os seguintes valores:<br>
+    &nbsp;&nbsp; 1 - Produção Inicial<br />
+    &nbsp;&nbsp; 2 - Renovação Normal<br />
+    &nbsp;&nbsp; 3 - Substituição Roubo<br />
+    &nbsp;&nbsp; 4 - Substituição Perdido<br />
+    &nbsp;&nbsp; 5 - Substituição<br />
+    &nbsp;&nbsp; 7 - Renovação Antecipada</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIPEMICAR</td>
+  </tr>
+  <tr>
+    <td><a id="519" name="519">519</a></td>
+    <td class="esq"><u>TIPO DE PIN A EMITIR</u> <p>Define o tipo de PIN associado ao cartão.</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2" class="esq">Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap">&nbsp;&nbsp; 0 - &nbsp;</td>
+        <td class="esq">PIN aleatório (com emissão de carta de PIN) ou inexistente (no caso de
+        'replacement card')</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 1 - &nbsp;</td>
+        <td class="esq">PIN fixo (emissão de carta de PIN e guarda do respectivo <em>Pinblock</em>,
+        ou utilização de <em>Pinblock</em> de cartão anterior, dependendo do preenchimento de
+        outros campos do registo do ficheiro de produção de cartões).</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 2 - &nbsp;</td>
+        <td class="esq">PIN fixo (utilização de <em>Pinblock</em> de carta de PIN previamente
+        emitida e guarda do respectivo <em>Pinblock</em> associado ao cartão).</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPPIN</td>
+  </tr>
+  <tr>
+    <td><a id="520" name="520">520</a></td>
+    <td class="esq"><u>NÚMERO IDENTIFICADOR VIA VERDE</u> <p>Indica qual o identificador de
+    Via Verde que efectuou a passagem incluída no ficheiro <a target="main"
+    href="../mglobal/l-iii/pbv.htm">PBV</a>.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRIDVV</td>
+  </tr>
+  <tr>
+    <td><a id="521" name="521">521</a></td>
+    <td class="esq"><u>SITUAÇÃO DE PROCESSAMENTO DO HEADER</u> <p>Corresponde à situação
+    de processamento do <em>header</em> do ficheiro origem.<br />
+    <br />
+    Assume o seguinte significado:<br />
+    &nbsp;&nbsp; 0 - Correcto<br />
+    &nbsp;&nbsp; 1 - Erro de formato<br />
+    &nbsp;&nbsp; 2 - Erro de sequência<br />
+    &nbsp;&nbsp; 3 - Erro de data<br />
+    &nbsp;&nbsp; 4 - Erro do registo de parâmetros<br />
+    &nbsp;&nbsp; 5 - <em>Header</em> não reconhecido<br />
+    &nbsp;&nbsp; 6 - Instituição origem inválida</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>HDRSIT</td>
+  </tr>
+  <tr>
+    <td><a id="522" name="522">522</a></td>
+    <td class="esq"><u>REIMBURSEMENT ATTRIBUTE</u> <p>Código atribuído pela VISA
+    Internacional a cada operação recebida no ficheiro de <em>clearing</em> deste Sistema da
+    Pagamento (Base II).</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>REIMBATTR</td>
+  </tr>
+  <tr>
+    <td><a id="523" name="523">523</a></td>
+    <td class="esq"><u>SITUAÇÃO DE PROCESSAMENTO DO TRAILER</u> <p>Indica, nos ficheiros de
+    erros correspondentes a cartões e contas, o processamento do trailer do ficheiro.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 - OK<br />
+    &nbsp; &nbsp;&nbsp;&nbsp; 1 - <em>Trailer</em> errado<br />
+    &nbsp; &nbsp;&nbsp;&nbsp; 2 - <em>Trailer</em> inexistente<br />
+    &nbsp; &nbsp;&nbsp;&nbsp; 3 - + de x registos de detalhe por ficheiro<br />
+    &nbsp; &nbsp;&nbsp;&nbsp; 4 - Outros erros<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9 - NOK</p>
+    <p>A validação dos valores do <em>trailer</em> é meramente informativa, i.e., é feita
+    a validação, gerado um erro de <em>trailer</em> no caso de não coincidir, mas o
+    ficheiro é aceite.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TRLSIT</td>
+  </tr>
+  <tr>
+    <td><a id="524" name="524">524</a></td>
+    <td class="esq"><u>TIPO DE ESPECTÁCULO</u> <p>Código que caracteriza o género de
+    espectáculo que estará à venda no serviço especial Venda de Bilhetes para
+    Espectáculo.<br />
+    <br />
+    Valores possíveis:<br />
+    &nbsp;&nbsp; 01 - Cinema<br />
+    &nbsp;&nbsp; 02 - Teatro<br />
+    &nbsp;&nbsp; 03 - Dança<br />
+    &nbsp;&nbsp; 04 - Ópera<br />
+    &nbsp;&nbsp; 05 - Música Clássica<br />
+    &nbsp;&nbsp; 06 - Música Popular<br />
+    &nbsp;&nbsp; 07 - Música Jazz<br />
+    &nbsp;&nbsp; 08 - Música Por/Rock<br />
+    &nbsp;&nbsp; 09 - Folclore<br />
+    &nbsp;&nbsp; 10 - Exposições<br />
+    &nbsp;&nbsp; 11 - Festivais<br />
+    &nbsp;&nbsp; 12 - Futebol<br />
+    &nbsp;&nbsp; 13 - Musical<br />
+    &nbsp;&nbsp; 14 - Variedades<br />
+    &nbsp;&nbsp; 15 - Motociclismo</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="525" name="525">525</a></td>
+    <td class="esq"><u>NOME DO ESPECTÁCULO</u> <p>É a designação do espectáculo que irá
+    aparecer no serviço especial Venda de Bilhetes para Espectáculo. Esta designação será
+    dividida por duas linhas de informação com 16 caracteres cada (Nome1 e Nome2)</td>
+    <td class="dta">32</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="526" name="526">526</a></td>
+    <td class="esq"><u>SITUAÇÃO DO ESPECTÁCULO</u> <p>Código que define a situação do
+    espectáculo no serviço especial Venda de Bilhetes para Espectáculo.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; 0 - Normal<br />
+    &nbsp;&nbsp; 1 a 7 - Prioritário<br />
+    &nbsp;&nbsp; 9 - Anulado (abate)</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="527" name="527">527</a></td>
+    <td class="esq"><u>DESCRITIVO DA ZONA GEOGRÁFICA</u> <p>Campo que descreve a zona
+    geográfica associada ao código indicado no atributo <a href="#560">560</a> do serviço
+    especial Venda de Bilhetes para Espectáculo.</td>
+    <td class="dta">32</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="528" name="528">528</a></td>
+    <td class="esq"><u>CLASSIFICAÇÃO DO ESPECTÁCULO</u> <p>Código que define a
+    classificação do espectáculo no que concerne ao género de público admitido.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 0 - Sem Classificação<br />
+    &nbsp;&nbsp; 1 - Infantil<br />
+    &nbsp;&nbsp; 2 - Maiores 6<br />
+    &nbsp;&nbsp; 3 - Maiores 12<br />
+    &nbsp;&nbsp; 4 - Maiores 18<br />
+    &nbsp;&nbsp; 5 - Adultos </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="529" name="529">529</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO ESPECTÁCULO</u> <p>É o número atribuído pelo
+    sistema da SIBS aquando da sua inserção. Este número será utilizado para definição
+    das sessões.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="530" name="530">530</a></td>
+    <td class="esq"><u>DATA DA SESSÃO</u> <p>É a data para a realização duma sessão
+    relativa a um espectáculo. O mesmo espectáculo poderá ter várias sessões, na mesma
+    data e à mesma hora, desde que sejam realizadas em locais diferentes. É a data que
+    aparece nos écrans dos CAs.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="531" name="531">531</a></td>
+    <td class="esq"><u>HORA DA SESSÃO</u> <p>É a hora de realização duma sessão.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>HHMM</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="532" name="532">532</a></td>
+    <td class="esq"><u>NÚMERO DE BILHETES TOTAL</u> <p>Indica o número total de bilhetes que
+    foram adquiridos na transacção (valores possíveis entre 1 e 8).</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="533" name="533">533</a></td>
+    <td class="esq"><u>TIPO DE PAGAMENTO</u> <p>Indica o tipo de pagamento que foi
+    seleccionado pelo Apresentante no decorrer duma petição inicial ou de um processo em
+    curso, relativamente a uma acção judicial.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" colspan="2">Assume os seguintes valores:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 01 -&nbsp; </td>
+        <td class="esq">Custas Cíveis - Taxa de Justiça Inicial - Normal</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 02 - </td>
+        <td class="esq">Custas Cíveis - Taxa de Justiça Subsequente - Normal</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 04 - </td>
+        <td class="esq">Promoção de Execuções</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 05 - </td>
+        <td class="esq">Custas Criminais</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 06 - </td>
+        <td class="esq">Custas Cíveis - Taxa de Justiça Inicial - Com Redução 10%</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 07 - </td>
+        <td class="esq">Custas Cíveis - Taxa de Justiça Subsequente - Com Redução 10%</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="534" name="534">534</a></td>
+    <td class="esq"><u>TOTAL TARIFAÇÃO</u> <p>É um campo preenchido com o somatório dos
+    valores das tarifas aplicadas às operações de Pagamento de Serviços/Compras e
+    Serviços Especiais, relativamente a um período de Compensação.</td>
+    <td class="dta">12</td>
+    <td>N</td>
+    <td>10 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="535" name="535">535</a></td>
+    <td class="esq"><u>TARIFA DA OPERAÇÃO</u> <p>Tarifa por operação de Pagamento de
+    Serviços ou Serviço Especial, definida entre o Comerciante (Empresa) e o Banco.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>4 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="536" name="536">536</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DA SALA</u> <p>É o número atribuído pelo sistema da
+    SIBS a uma determinada sala para a realização de espectáculos, definida em função da
+    sua localização geográfica e da distribuição dos seus planos de lugar.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="537" name="537">537</a></td>
+    <td class="esq"><u>VALOR</u> <p>É o montante fixado pelo proprietário na
+    parametrização de um preço, com ou sem desconto associado. Será utilizado na
+    definição dos preços para cada tipo de bilhete.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>6 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="538" name="538">538</a></td>
+    <td class="esq"><u>REFERÊNCIA DA OPERAÇÃO</u> <p>Número que codifica a operação
+    Venda de Bilhetes para Espectáculo na Rede Multibanco. É um dos campos impressos nos
+    recibos emitidos pelos CAs e serve para referenciar a entrega do bilhete final.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="539" name="539">539</a></td>
+    <td class="esq"><u>TOTAL IVA</u> <p>Importância calculada para o IVA. Este valor é
+    obtido pelo produto da multiplicação do campo (<a href="campos5.htm#403">403</a>) TAXA
+    DE IVA pelo campo (<a href="campos6.htm#535">535</a>) TARIFA DA OPERAÇÃO e campo (<a
+    href="campos2.htm#105">105</a>) NÚMERO DE REGISTOS.</td>
+    <td class="dta">12</td>
+    <td>N</td>
+    <td>10 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="540" name="540">540</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DE PLANO DE SESSÃO</u> <p>É um número atribuído
+    pelo sistema da SIBS a um determinado conjunto de elementos que definem um plano (de sala
+    ou de sessão), ao qual será associado um montante fixado pelo proprietário, aquando da
+    sua parametrização, designado como Valor do Bilhete.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="541" name="541">541</a></td>
+    <td class="esq"><u>DESCRITIVO DO LUGAR</u> <p>É a designação atribuída pelo
+    proprietário da sala, que lhe permite destrinçar todos os seus lugares e para os quais
+    irá associar os respectivos preços de bilhete.<br />
+    Poderá ter associado tipos de desconto.<br />
+    Este texto irá aparecer no ecrã do CA associado ao campo &quot;Zona&quot;.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="542" name="542">542</a></td>
+    <td class="esq"><u>PARTICIPANTES</u> <p>Campo que designa a identificação dos
+    participantes num espectáculo do serviço especial Venda de Bilhetes para Espectáculo.</td>
+    <td class="dta">32</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="543" name="543">543</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO SERVIDOR</u> <p>Campo que identifica o servidor com
+    o qual são trocadas as mensagens de serviço.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="544" name="544">544</a></td>
+    <td class="esq"><u>NOME DA SALA</u> <p>É a designação duma determinada sala para a
+    realização de espectáculos, definida em função da sua localização geográfica e
+    pela distribuição dos seus planos de lugar.</td>
+    <td class="dta">32</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="545" name="545">545</a></td>
+    <td class="esq"><u>CÓDIGO LUGAR</u> <p>É o código atribuído pelo sistema da SIBS ao
+    lugar reservado pelo cliente, quando o plano da sessão contemplar lugares marcados.<br />
+    Este código será impresso no recibo do cliente e poderá ocorrer num máximo de 8
+    lugares, que é o número máximo de bilhetes à venda por ecrã de CA.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="546" name="546">546</a></td>
+    <td class="esq"><u>NOME DO AGENTE</u> <p>É a designação do comerciante Multibanco
+    autorizado a aceder ao serviço especial Venda de Bilhetes para Espectáculo, na qualidade
+    de agente promotor e/ou vendedor de bilhetes para espectáculo. É responsável pela
+    gestão dos dados das suas próprias salas, dos planos associados, dos tipos de lugar dos
+    planos e pelos preços aplicados.</td>
+    <td class="dta">32</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="547" name="547">547</a></td>
+    <td class="esq"><u>DATA/HORA INÍCIO DE APRESENTAÇÃO PREÇO</u> <p>É a data/hora em que
+    se inicia a aplicação de um determinado preço para um ou mais tipos de lugar de um
+    plano de sessão.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>AAAAMMDD<br />
+    HHMMSS</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="548" name="548">548</a></td>
+    <td class="esq"><u>DATA/HORA FIM DE APRESENTAÇÃO PREÇO</u> <p>É a data/hora em que
+    termina a aplicação de um determinado preço para um ou mais tipos de lugar de um plano
+    de sessão.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>AAAAMMDD<br />
+    HHMMSS</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="549" name="549">549</a></td>
+    <td class="esq"><u>DENOMINAÇÃO DO PREÇO</u> <p>É o nome com que o comerciante
+    Multibanco autorizado a aceder ao serviço especial Venda de Bilhetes para Espectáculo
+    (Agente) identifica os seus preços para os diferentes tipos de lugar de cada plano.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="550" name="550">550</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DE PREÇO</u> <p>É o número que o sistema da SIBS
+    atribui aos preços dos diferentes tipos de lugar de cada plano, que os Agentes inseriram
+    via Aplicação Local.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="551" name="551">551</a></td>
+    <td class="esq"><u>LUGARES INICIAIS</u> <p>É o número de lugares disponibilizados para
+    venda na rede MB, posicionado no sistema da SIBS pelo Agente, para cada tipo de lugar de
+    cada plano de sessão dum determinado espectáculo.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="552" name="552">552</a></td>
+    <td class="esq"><u>LUGARES DISPONÍVEIS</u> <p>É o número de lugares ainda disponíveis
+    para venda na rede MB, para cada tipo de lugar de cada plano de sessão dum determinado
+    espectáculo, resultante da subtracção do Nº de Lugares Iniciais (<a href="#551">551</a>)
+    pelo Nº de Bilhetes Vendidos (<a href="#553">553</a>).</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="553" name="553">553</a></td>
+    <td class="esq"><u>NÚMERO TOTAL DE BILHETES VENDIDOS</u> <p>É o número de lugares
+    vendidos na rede MB, para cada tipo de lugar de cada plano de sessão dum determinado
+    espectáculo.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="554" name="554">554</a></td>
+    <td class="esq"><u>GRUPO DE DADOS DE BILHETES COM DESCONTO</u> <p>Campo que detalha uma
+    transacção de aquisição de bilhetes para espectáculo, cujos bilhetes têm descontos
+    associados.<br />
+    É um grupo com 8 ocorrências, composto pelos campos <a href="#557">557</a>, <a
+    href="#556">556</a> e <a href="#555">555</a>.</td>
+    <td class="dta">88</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="555" name="555">555</a></td>
+    <td class="esq"><u>MONTANTE TOTAL POR TIPO DE DESCONTO</u> <p>Indica o valor total
+    referente aos bilhetes adquiridos nas situações em que o tipo de bilhete pode ter
+    descontos associados.<br />
+    Este campo faz parte do Campo <a href="#554">554</a> - Grupo de Dados de Bilhetes com
+    Desconto.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>6 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="556" name="556">556</a></td>
+    <td class="esq"><u>NÚMERO DE BILHETES POR TIPO DE DESCONTO</u> <p>Indica o número de
+    bilhetes que têm um tipo de desconto associado (valores possíveis entre 1 e 8).<br />
+    Este campo faz parte do Campo <a href="#554">554</a> - Grupo de Dados de Bilhetes com
+    Desconto.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="557" name="557">557</a></td>
+    <td class="esq"><u>TIPO DE DESCONTO</u> <p>Código que caracteriza o tipo de desconto que
+    um determinado tipo de bilhete poderá ter associado no serviço especial Venda de
+    Bilhetes para Espectáculo.<br />
+    <br />
+    Valores possíveis:<br />
+    &nbsp;&nbsp;&nbsp; 01 - Sem Desconto<br />
+    &nbsp;&nbsp;&nbsp; 02 - Criança<br />
+    &nbsp;&nbsp;&nbsp; 03 - Jovem<br />
+    &nbsp;&nbsp;&nbsp; 04 - Estudante<br />
+    &nbsp;&nbsp;&nbsp; 05 - Reformado<br />
+    &nbsp;&nbsp;&nbsp; 06 - Sócio<br>
+    &nbsp;&nbsp;&nbsp; 07 - 2ª feira<br />
+    <br />
+    Este campo faz parte do Campo <a href="#554">554</a> - Grupo de Dados de Bilhetes com
+    Desconto.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="558" name="558">558</a></td>
+    <td class="esq"><u>DESCRITIVO DO TIPO DE DESCONTO</u> <p>Campo que descreve o tipo de
+    desconto associado ao código indicado no atributo <a href="#557">557</a>, do serviço
+    especial Venda de Bilhetes para Espectáculo.</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="559" name="559">559</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO LOCAL</u> <p>É o código que identifica o local ao
+    qual será associada uma ou mais salas para realização de espectáculos.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="560" name="560">560</a></td>
+    <td class="esq"><u>ZONA GEOGRÁFICA</u> <p>Área geográfica onde estão inseridos os
+    locais para a realização de espectáculos.<br />
+    <br />
+    Está subordinada à seguinte tabela de identificação:<br />
+    &nbsp;&nbsp;&nbsp; 01 - Lisboa Cidade<br />
+    &nbsp;&nbsp;&nbsp; 02 - Porto Cidade<br />
+    &nbsp;&nbsp;&nbsp; 03 - Grande Lisboa (Z. Metropolitana)<br />
+    &nbsp;&nbsp;&nbsp; 04 - Grande Porto (Z. Metropolitana)<br />
+    &nbsp;&nbsp;&nbsp; 05 - Zona Norte (Norte Rio Douro)<br />
+    &nbsp;&nbsp;&nbsp; 06 - Zona Centro (Entre Douro/Tejo)<br />
+    &nbsp;&nbsp;&nbsp; 07 - Zona Sul (Sul Rio Tejo)<br />
+    &nbsp;&nbsp;&nbsp; 08 - Algarve<br />
+    &nbsp;&nbsp;&nbsp; 09 - Madeira (Arquipélago)<br />
+    &nbsp;&nbsp;&nbsp; 10 - Açores (Arquipélago)</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="561" name="561">561</a></td>
+    <td class="esq"><u>NOME DO LOCAL ESPECTÁCULO</u> <p>É a designação do local onde
+    estão parametrizadas as salas para realização de espectáculos.</td>
+    <td class="dta">32</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="562" name="562">562</a></td>
+    <td class="esq"><u>ENDEREÇO</u> <p>É a morada do local onde estão parametrizadas as
+    salas para realização de espectáculos.</td>
+    <td class="dta">60</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="563" name="563">563</a></td>
+    <td class="esq"><u>LOTAÇÃO</u> <p>É a capacidade máxima que uma sala onde se realizam
+    espectáculos, permite para definição de tipos de lugar. O número de lugares definidos
+    por sessão, não pode exceder o valor definido na lotação da sala.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="564" name="564">564</a></td>
+    <td class="esq"><u>NOME DO MAPA DA SALA</u> <p>É a designação que um Agente atribui
+    para um determinado mapeamento duma sala para a realização de espectáculos. Esta
+    designação visa uma identificação sucinta da sala, em função da distribuição dos
+    seus planos de lugar.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="565" name="565">565</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO MAPA DA SALA</u> <p>É o código associado a um
+    determinado mapeamento duma sala para a realização de espectáculos.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="566" name="566">566</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO TIPO DE LUGAR</u> <p>É o código associado a um
+    determinado lugar associado a um plano de sessão.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="567" name="567">567</a></td>
+    <td class="esq"><u>NÚMERO DE FILAS</u> <p>Número de filas que o utilizador deseja
+    parametrizar num plano de sessão.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="568" name="568">568</a></td>
+    <td class="esq"><u>NÚMERO DE LUGARES POR FILA</u> <p>Número de lugares por fila, que o
+    utilizador deseja parametrizar num plano de sessão.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="569" name="569">569</a></td>
+    <td class="esq"><u>TIPO DE FILA</u> <p>É o tipo de incrementação que a Aplicação
+    central irá efectuar para atribuição de filas com lugares marcados.</p>
+    <p>Assume os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp; 1 - Atribuição Sequencial<br />
+    &nbsp;&nbsp;&nbsp; 2 - Atribuição Não Sequencial<br />
+    <br />
+    A atribuição não sequencial é efectuada de 2 em 2 e será efectuada a partir do valor
+    preenchido no campo <a href="#571">571</a> - Primeiro Código de Fila.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="570" name="570">570</a></td>
+    <td class="esq"><u>TIPO DE LUGAR</u> <p>É o tipo de incrementação que a Aplicação
+    central irá efectuar para atribuição de lugares marcados.</p>
+    <p>Assume os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp; 1 - Atribuição Sequencial<br />
+    &nbsp;&nbsp;&nbsp; 2 - Atribuição Par ou Ímpar<br />
+    <br />
+    No caso do código 2, a atribuição será &#145;Par&#146; se o dígito do campo <a
+    href="#572">572</a> - Primeiro Número de Lugar, for um algarismo par. A atribuição
+    será &#145;Ímpar&#146; se o dígito do campo <a href="#572">572</a> - Primeiro Número
+    de Lugar, for um algarismo ímpar.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="571" name="571">571</a></td>
+    <td class="esq"><u>PRIMEIRO CÓDIGO DE FILA</u> <p>É a primeira fila a ser atribuída ao
+    plano que se pretende parametrizar.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="572" name="572">572</a></td>
+    <td class="esq"><u>PRIMEIRO NÚMERO DE LUGAR</u> <p>É o primeiro lugar da fila que o
+    utilizador pretende que seja atribuído ao plano a parametrizar.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="573" name="573">573</a></td>
+    <td class="esq"><u>DESCRITIVO DA LINHA DE RECIBO</u> <p>Campo informativo e impresso no
+    talão comprovativo da operação, em 3 linhas de 40 caracteres cada, e utilizado pelo
+    Agente para indicações específicas relacionadas a sessão do espectáculo.</td>
+    <td class="dta">120</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="574" name="574">574</a></td>
+    <td class="esq"><u>INDICADOR DE LUGARES MARCADOS</u> <p>Código indicador da existência,
+    ou não, de lugares marcados para uma sessão.</p>
+    <p>Assume os valores:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Sem lugares marcados<br />
+    &nbsp;&nbsp;&nbsp; 1 - Com lugares marcados</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="575" name="575">575</a></td>
+    <td class="esq"><u>NÚMERO DE LUGARES</u> <p>Indica o número total de lugares que um tipo
+    de lugar de uma sessão terá à venda.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="576" name="576">576</a></td>
+    <td class="esq"><u>ESTADO DA SESSÃO</u> <p>Campo que indica o estado da sessão.</p>
+    <p>Poderá ter os seguintes códigos:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Por inicializar<br />
+    &nbsp;&nbsp;&nbsp; 1 - Activa<br>
+    &nbsp;&nbsp;&nbsp; 2 - Suspensa<br>
+    &nbsp;&nbsp;&nbsp; 3 - Cancelada<br>
+    &nbsp;&nbsp;&nbsp; 4 - Realizada</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="577" name="577">577</a></td>
+    <td class="esq"><u>NÚMERO DE LUGARES DA FILA</u> <p>Indica o número de lugares que foram
+    definidos para venda numa fila de um determinado tipo de lugar para uma sessão.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="578" name="578">578</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DA FILA</u> <p>Designação pela qual foi inserida no
+    sistema, uma fila de um determinado tipo de lugar de uma sessão à venda.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="579" name="579">579</a></td>
+    <td class="esq"><u>DESCRITIVO DA CLASSIFICAÇÃO DO ESPECTÁCULO</u> <p>Campo que descreve
+    a classificação do espectáculo associado ao código indicado no atributo <a href="#528">528</a>,
+    do serviço especial Venda de Bilhetes para Espectáculo.</td>
+    <td class="dta">32</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="580" name="580">580</a></td>
+    <td class="esq"><u>COMPRIMENTO DO BITMAP DE LUGAR</u> <p>Informa o comprimento total que o
+    bitmap terá, para o preenchimento do quadro dos lugares vendidos, numa sessão com
+    lugares marcados.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="581" name="581">581</a></td>
+    <td class="esq"><u>FREQUÊNCIA DA SESSÃO</u> <p>Campo que indica qual a frequência para
+    a realização de um conjunto de sessões.</p>
+    <p>As posições do campo obedecem à ordem seguinte:<br />
+    &nbsp;&nbsp; 1ª Posição do Campo - Diária<br />
+    &nbsp;&nbsp; 2ª Posição do Campo - Segunda-Feira<br />
+    &nbsp;&nbsp; 3ª Posição do Campo - Terça-Feira<br />
+    &nbsp;&nbsp; 4ª Posição do Campo - Quarta-Feira<br />
+    &nbsp;&nbsp; 5ª Posição do Campo - Quinta-Feira<br />
+    &nbsp;&nbsp; 6ª Posição do Campo - Sexta-Feira<br />
+    &nbsp;&nbsp; 7ª Posição do Campo - Sábado<br />
+    &nbsp;&nbsp; 8ª Posição do Campo - Domingo<br />
+    <br />
+    Quando o 1º caracter for <span class="cor">1 - Diário</span>, carateres seguintes:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 0 - Realiza<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 - Não se realiza<br
+    />
+    Quando o 1º caracter for<span class="cor"> 0 - Não Diário</span>, carateres seguintes:<br
+    />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 0 - Não se realiza<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 1 - Realiza</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="582" name="582">582</a></td>
+    <td class="esq"><u>DATA/HORA FIM DE VENDA DO PLANO DA SESSÃO</u> <p>É a data/hora em que
+    termina a venda de um plano de sessão.</td>
+    <td class="dta">12</td>
+    <td>N</td>
+    <td>AAAAMMDD<br />
+    HHMM</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="583" name="583">583</a></td>
+    <td class="esq"><u>CÓDIGO DE TRANSAÇÃO MULTIBILHETE</u> <p>Campo que indica a natureza
+    da transacção numa alteração de tabelas. Poderá ser uma alteração a um campo
+    existente, ou poderá ser uma adição de um novo campo.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="584" name="584">584</a></td>
+    <td class="esq"><u>DATA/HORA INÍCIO DE VENDA DA SESSÃO</u> <p>É a data/hora em que se
+    inicia a venda de uma sessão.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>AAAAMMDD<br />
+    HHMMSS</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="585" name="585">585</a></td>
+    <td class="esq"><u>DATA/HORA FIM DE VENDA DA SESSÃO</u> <p>É a data/hora em que termina
+    a venda de uma sessão.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>AAAAMMDD<br />
+    HHMMSS</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="586" name="586">586</a></td>
+    <td class="esq"><u>SINAL AUXILIAR</u> <p>Sinal auxiliar que, quando presente antes dos
+    campos <a href="#575">575</a> ou <a href="#577">577</a>, indica que o número de lugares
+    definido é para adicionar ou retirar ao número de lugares disponíveis para venda.</p>
+    <table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">Neste caso terá os seguintes valores:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap">&quot;<span class="cor">-</span>&quot;&nbsp; -&gt;&nbsp;</td>
+        <td class="esq">Indicador de que o campo (<a href="#575">575</a> ou <a href="#577">577</a>)
+        deverá ser subtraído ao número de lugares disponíveis para venda.</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap">&quot;<span class="cor">+</span>&quot; -&gt;&nbsp;</td>
+        <td class="esq">Indicador de que o campo (<a href="#575">575</a> ou <a href="#577">577</a>)&nbsp;
+        deverá ser adicionado ao número de lugares disponíveis para venda.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="587" name="587">587</a></td>
+    <td class="esq"><u>CÓDIGO DE CONTRIBUIÇÃO</u> <p>Código descritivo da taxa e do
+    escalão em que se encontra o beneficiário da Segurança Social.<br />
+    É um número composto pela natureza do pagamento, taxa e escalão de cada beneficiário.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="588" name="588">588</a></td>
+    <td class="esq"><u>PERÍODO DE PAGAMENTO DE CONTRIBUIÇÃO</u> <p>Campo que indica o
+    período de vigor para os montantes de pagamento, em função do Código de
+    Contribuição.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>AAAAMM</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="589" name="589">589</a></td>
+    <td class="esq"><u>CÓDIGO DO TIPO DE DOCUMENTO (APLICAÇÃO ACQUIRER)</u> <p>Código do
+    documento que foi apresentado para compensação. Poderá ser uma factura, chargeback,
+    reapresentação, etc.</p>
+    <p>Assume os valores seguintes:<br />
+    &nbsp;&nbsp; 1 - Factura manual<br />
+    &nbsp;&nbsp; 2 - Credit voucher<br />
+    &nbsp;&nbsp; 3 - Chargeback<br />
+    &nbsp;&nbsp; 4 - Debit adjustment<br />
+    &nbsp;&nbsp; 5 - Credit adjustment</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="590" name="590">590</a></td>
+    <td class="esq"><u>CÓDIGO DE ERRO</u> <p>Código que identifica o erro ocorrido no
+    processamento de um ficheiro.</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="591" name="591">591</a></td>
+    <td class="esq"><u>MÊS DO PERÍODO DE PAGAMENTO</u> <p>Código que indica qual o mês a
+    que se refere o pagamento efectuado à Segurança Social, no âmbito da operação de
+    Serviço Especial.<br />
+    Tem os valores válidos de 01 a 12, correspondendo ao meses de Janeiro a Dezembro,
+    respectivamente.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="592" name="592">592</a></td>
+    <td class="esq"><u>ANO DO PERÍODO DE PAGAMENTO</u> <p>Código que indica qual o ano a que
+    se refere o pagamento efectuado à Segurança Social, no âmbito da operação de Serviço
+    Especial.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="593" name="593">593</a></td>
+    <td class="esq"><u>NÚMERO DA SEGURANÇA SOCIAL</u> <p>Número que identifica o pagador,
+    para o Sistema da Segurança Social, no âmbito da operação de Serviço Especial.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="594" name="594">594</a></td>
+    <td class="esq"><u>CÓDIGO DE IDENTIFICAÇÃO DO BENEFICIÁRIO/REGIME</u> <p>Código que
+    identifica o beneficiário da Segurança Social, dentro de cada regime de pagamento.<br />
+    Número composto pelos campos <a href="camp1100.htm#1168">1168</a> - Natureza do Pagamento
+    e <a href="#593">593</a> - Número de Segurança Social.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="595" name="595">595</a></td>
+    <td class="esq"><u>DATA DA SITUAÇÃO DA CONTA</u> <p>Data de início da situação em que
+    se encontra a conta à ordem de uma Empresa e domiciliada no Sistema da SIBS, para débito
+    no âmbito da Compensação TEIs.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="596" name="596">596</a></td>
+    <td class="esq"><u>SITUAÇÃO DA CONTA</u> <p>Código que identifica a situação da conta
+    à ordem de uma Empresa e domiciliada no Sistema da SIBS, para débito no âmbito da
+    Compensação TEIs.</p>
+    <p>Pode assumir os valores:<br />
+    &nbsp;&nbsp; 1 - Normal<br />
+    &nbsp;&nbsp; 2 - Inibida</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="597" name="597">597</a></td>
+    <td class="esq"><u>CÓDIGO DA APLICAÇÃO</u> <p>Código identificador do serviço a
+    utilizar pelo Terminal da Empresa.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="598" name="598">598</a></td>
+    <td class="esq"><u>CÓDIGO DA AGÊNCIA</u> <p>Código que identifica a Agência do Banco a
+    que pertence o Terminal de Serviços, no Serviço de Acesso às TEIs.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="599" name="599">599</a></td>
+    <td class="esq"><u>DATA DE ABATE DE TERMINAL</u> <p>É a data em que um Terminal de
+    Serviços foi abatido do Sistema da SIBS.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

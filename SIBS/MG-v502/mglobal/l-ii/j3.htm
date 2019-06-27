@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicej.htm#J';</script>
+
+
+<title>J.3 REGULARIZAÇÃO DE OPERAÇÕES CLIENTE - REDES ESTRANGEIRAS</title>
+</head>
+
+<body>
+
+<h1>J.3 REGULARIZAÇÃO DE OPERAÇÕES CLIENTE - REDES ESTRANGEIRAS</h1>
+
+<p>&nbsp;</p>
+
+<p>A SIBS efectua o processamento de operações realizadas no estrangeiro por cartões de
+Emissores nacionais que o tenham delegado. Neste processamento a SIBS integra, na
+Compensação Multibanco, os ficheiros de <em>Clearing</em> (ficheiros de <em>incoming</em>
+e de <em>outgoing</em>) dos Sistemas de Pagamento Internacionais.</p>
+
+<p>Para estes Emissores, a SIBS disponibiliza um serviço, integrado no Terminal de
+Serviços SIBS e designado por <a href="i3.htm#I.3.12">Gestão de Reclamações - Redes
+Estrangeiras</a>, que possibilita a inserção e tratamento de reclamações de
+operações realizadas em redes estrangeiras, e a gestão de todas as acções (e.g. <em>chargebacks</em>,
+reapresentações) que constituem o ciclo de reclamações, regulamentado pelos diferentes
+Sistemas de Pagamento Internacionais. </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="J.3.1">J.3.1</a> PEDIDOS DE ESCLARECIMENTO DE CLIENTES</h2>
+
+<p><br>
+As operações realizadas no estrangeiro com um cartão nacional, podem ser reclamadas ou
+não, dependendo das regras e procedimentos definidos pelo Sistema de Pagamento
+respectivo. </p>
+
+<p>Em todos os sistemas de cooperação bilateral, o esclarecimento de dúvidas relativas
+a operações dos clientes que não consigam ser esclarecidas a nível nacional, deve ser
+efectuado entre a Central de Processamento do país emissor e a do país da rede aceitante
+da operação.</p>
+
+<p>Os clientes nacionais devem reportar quaisquer anomalias ocorridas com operações no
+estrangeiro, à Instituição Emissora do seu cartão (tal como referido no capítulo <a href="j1.htm">J.1</a>), ou na Instituição em que esta tenha delegado o tratamento das
+mesmas.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="J.3.2">J.3.2</a> PROCESSOS SIBS ASSOCIADOS A RECLAMAÇÕES DE OPERAÇÕES NO
+ESTRANGEIRO</h2>
+
+<p><br>
+As operações constantes dos ficheiros de <em>Clearing</em> dos Sistemas de Pagamento
+Internacionais são incorporadas na Compensação Multibanco.</p>
+
+<p>Para além das operações resultantes do processamento com os Sistemas de Pagamentos
+Internacionais, são também integrados, na Compensação, os movimentos que o Emissor
+decide debitar ou creditar ao seu cliente na sequência de um processo de reclamação no
+estrangeiro.</p>
+
+<p>Todos os movimentos contabilísticos derivados do tratamento de reclamações de
+operações no estrangeiro (com excepção da emissão de <em>Fees</em>) são efectuados
+por contrapartida de uma conta de regularização do Emissor (indicada na <a href="i3.htm#I.3.16">Caracterização de BIN</a>, ponto 10.8). Assim, as operações
+relacionadas com os processos de reclamação no estrangeiro são agregadas, gerando um
+registo do ficheiro Destinos (<a href="../l-iii/dst-2.htm#= 6">TIPREG=6</a>) para
+movimento da referida conta de regularização.</p>
+
+<p>No esquema seguinte é apresentada, de uma forma simplificada, a operativa e
+respectivos fluxos de informação relacionados com a devolução (<em>chargeback-</em>CBK)
+de uma operação realizada no estrangeiro, ao respectivo <em>Acquirer</em>, através do
+Sistema de Pagamento.</p>
+
+<p class="center"><br>
+<!--webbot bot="ImageMap" rectangle="(388,71) (438,89) ../l-iii/dst-1.htm" src="imagens2/j3-1.gif" alt="j3-1.gif" border="0" width="587" height="223" startspan --><MAP NAME="FrontPageMap"><AREA SHAPE="RECT" COORDS="388, 71, 438, 89" HREF="../l-iii/dst-1.htm"></MAP><a href="../../_vti_bin/shtml.dll/mglobal/l-ii/j3.htm/map"><img src="imagens2/j3-1.gif" alt="j3-1.gif" border="0" width="587" height="223" ismap usemap="#FrontPageMap"></a><!--webbot bot="ImageMap" endspan i-checksum="54057" --></p>
+
+<p>Legenda:</p>
+
+<p><a href="#1">1</a> - Aceitação da reclamação do Cliente<br>
+<a href="#2">2</a> - Operação suspeita recebida do estrangeiro<br>
+<a href="#3">3</a> - Envio de 1º ou 2º CBK ao Sistema de Pagamento<br>
+<a href="#4">4</a> - Recepção de reapresentação do Sistema de Pagamento<br>
+<a href="#5">5</a> - Fim de reclamação com lançamento no Cliente<br>
+<a href="#6">6</a> - Conclusão de reclamação com afectação do Emissor ou do <em>Acquirer</em></p>
+
+<p>&nbsp;</p>
+
+<h6>DESCRIÇÃO DOS FLUXOS</h6>
+
+<p><br>
+<strong><a name="1">1</a> - Aceitação da reclamação do Cliente</strong></p>
+
+<p>Quando uma operação realizada no estrangeiro é enviada, à SIBS, pelo Sistema de
+Pagamento Internacional, e é aceite após as validações existentes no processamento dos
+ficheiros de <em>incoming</em>, é lançada ao cliente.</p>
+
+<p>Perante o movimento, o cliente pode apresentar uma reclamação na Instituição
+Emissora do seu cartão. Esta efectua uma primeira análise da reclamação e pode decidir
+encaminhá-la para o respectivo Sistema de Pagamento Internacional.</p>
+
+<p>Neste caso, o Emissor insere um pedido de reclamação no serviço<a href="i3.htm#I.3.12"> Gestão de Reclamações - Redes Estrangeiras</a>. A operação de
+inserção é a acção que dá início a um processo de reclamação, atribuindo à
+reclamação um número único dentro do Sistema de Pagamento Internacional respectivo.</p>
+
+<p>Confirmada a inserção pela SIBS, a transacção é retirada ao cliente e o montante
+respectivo fica pendente na conta de Regularização do Emissor. Desta forma, a
+regularização é incorporada na Compensação Multibanco e informada no ficheiro
+Destinos (MDST5), nos registos: 
+
+<ul>
+  <li><a href="../l-iii/dst-1.htm#= 1">TIPREG=1</a> -&gt; movimento para actuar sobre a conta
+    do cliente, igual ao da operação original, excepto o campo (<a href="../../Campos/campos4.htm#313" target="explicac">313</a>) INDESTR que segue com o
+    valor 2 - regularização;</li>
+  <li><a href="../l-iii/dst-2.htm#= 6">TIPREG=6</a> -&gt; movimento para actuar sobre a conta
+    de regularização do Emissor; neste registo, o valor da regularização não vai
+    descriminado, mas sim incluído num total. </li>
+</ul>
+
+<p style="page-break-before: always"><br>
+<strong><a name="2">2</a> - Operação Suspeita recebida do estrangeiro</strong></p>
+
+<p>No processamento dos ficheiros de <em>incoming</em> dos Sistemas de Pagamento, a SIBS
+implementou um processo de controlo das operações recebidas, a fim de detectar
+situações anómalas.</p>
+
+<p>Consideram-se situações anómalas, entre outras: 
+
+<ul>
+  <li>operação para cartão inválido (expirado, anulado, em LN, inexistente na base de
+    dados),</li>
+  <li>operação sem autorização,</li>
+  <li>operação com autorização rejeitada.</li>
+</ul>
+
+<p>Perante uma situação anómala, em vez de ser gerado o registo para lançamento no
+cliente, é inserida, automaticamente, uma reclamação sobre a operação, na aplicação
+de reclamações de operações no estrangeiro. Estas reclamações são posteriormente
+consultadas e analisadas pelo serviço de reclamações do Emissor através do serviço<a href="i3.htm#I.3.12"> Gestão de Reclamações - Redes Estrangeiras</a>.</p>
+
+<p>Ao nível da Compensação, as operações suspeitas são agregadas e lançadas, como
+processos pendentes, num único registo na conta de regularização do Emissor; ou seja,
+é incorporado um <a href="../l-iii/dst-2.htm#= 6">registo tipo 6</a> no ficheiro
+Destinos (MDST5).</p>
+
+<p><br>
+<strong><a name="3">3</a> - Envio de 1º ou 2º CBK ao Sistema de Pagamento Internacional</strong></p>
+
+<p>O envio de CBK (devolução da operação ao <em>Acquirer</em>, via Sistema de
+Pagamento) é uma acção possível num processo de reclamação, desencadeada por
+actuação do gestor dos cartões, no serviço<a href="i3.htm#I.3.12"> Gestão de
+Reclamações - Redes Estrangeiras</a>.</p>
+
+<p>Esta acção gera registos que são incorporados no processamento de <em>outgoing</em>,
+a fim de serem tratados e incluídos nos ficheiros a enviar para os Sistemas de Pagamento.
+O envio é considerado confirmado quando: 
+
+<ul>
+  <li>é recebido e processado o ficheiro de <em>incoming</em> imediatamente seguinte ao envio
+    do ficheiro de <em>outgoing</em> e </li>
+  <li>o Sistema de Pagamento não envia rejeições para os registos que integraram o último
+    ficheiro de <em>outgoing</em> enviado.</li>
+</ul>
+
+<p>Perante a confirmação, os registos de envio de CBK são incluídos na Compensação
+Multibanco e enviados no ficheiro Destinos (MDST5), <a href="../l-iii/dst-2.htm#= 6">tipo
+de registo 6</a>, para movimentação da conta de regularização do Emissor .</p>
+
+<p><br>
+<strong><a name="4">4</a> - Recepção de reapresentação do Sistema de Pagamento
+Internacional</strong></p>
+
+<p>A acção de reapresentação de uma operação é desencadeada pelo <em>Acquirer</em>
+(via Sistema de Pagamento) e surge sempre que o Comerciante não aceita a devolução (<em>chargeback</em>)
+da operação original.</p>
+
+<p>Os registos de reapresentação recebidos nos ficheiros dos Sistemas de Pagamento são
+tratados pelo processamento de <em>incoming</em> que: 
+
+<ul>
+  <li>os envia para a Aplicação de Reclamações de Operações Nacionais no Estrangeiro,
+    para serem incluídos nas acções do processo de reclamação respectivo, podendo ser
+    consultadas no serviço<a href="i3.htm#I.3.12"> Gestão de Reclamações - Redes
+    Estrangeiras</a>. </li>
+  <li>os incorpora na Compensação Multibanco, possibilitando o seu envio no ficheiro
+    Destinos (MDST5),&nbsp; <a href="../l-iii/dst-2.htm#= 6">tipo de registo 6</a>, para
+    movimentação da conta de regularização do Emissor.</li>
+</ul>
+
+<p>O montante da reapresentação pode ser diferente do montante do <em>chargeback</em>,
+pois podem existir diferenças cambiais.</p>
+
+<p style="page-break-before: always"><br>
+<strong><a name="5">5</a> - Fim de reclamação com lançamento no Cliente</strong></p>
+
+<p>O fim de um processo de reclamação é uma acção desencadeada por actuação do
+gestor dos cartões, no serviço<a href="i3.htm#I.3.12"> Gestão de Reclamações - Redes
+Estrangeiras</a>. </p>
+
+<p>Esta acção encerra o processo de reclamação com o lançamento da operação
+reclamada ao cliente.</p>
+
+<p>Assim, ao ser desencadeada a acção, a regularização é incorporada na Compensação
+Multibanco e informada no ficheiro Destinos (MDST5), nos registos: 
+
+<ul>
+  <li><a href="../l-iii/dst-1.htm#= 1">TIPREG=1</a> -&gt; movimento para actuar sobre a conta
+    do cliente, igual ao da operação original, excepto o campo (<a href="../../Campos/campos4.htm#313" target="explicac">313</a>) INDESTR que segue com o
+    valor 2 - regularização;</li>
+  <li><a href="../l-iii/dst-2.htm#= 6">TIPREG=6</a> -&gt; movimento para actuar sobre conta
+    de regularização do Emissor. Neste registo, o valor da regularização não vai
+    descriminado, mas sim incluído num total. </li>
+</ul>
+
+<p><br>
+<strong><a name="6">6</a> - Conclusão de reclamação com afectação do Emissor ou do <em>Acquirer</em></strong></p>
+
+<p>A conclusão de reclamação com afectação do Emissor ou do <em>Acquirer</em> é uma
+acção desencadeado por actuação do gestor dos cartões, no serviço<a href="i3.htm#I.3.12"> Gestão de Reclamações - Redes Estrangeiras</a>.</p>
+
+<p>A acção é tomada pelo gestor quando: 
+
+<ul>
+  <li>a disputa da operação não permitiu que esta fosse lançada no cliente, nem devolvida
+    para o <em>Acquirer</em> (afectação do Emissor), ou</li>
+  <li>a disputa da operação foi aceite pelo <em>Acquirer</em> (afectação do <em>Acquirer</em>)
+    - neste caso, o saldo final do processo é &quot;zero&quot;. </li>
+</ul>
+
+<p>Esta acção gera, do lado do Sistema Multibanco, a inclusão de um registo que permite
+retirar o saldo do processo de reclamação (caso este seja diferente de zero) da conta de
+Regularização, por contrapartida de uma outra conta, definida internamente pelo Emissor.
+No ficheiro Destinos (MDST5) segue a seguinte informação: 
+
+<ul>
+  <li><a href="../l-iii/dst-2.htm#= 6">TIPREG=6</a> -&gt; movimento para actuar sobre a conta
+    de regularização do Emissor e sobre outra conta, definida internamente pelo mesmo. O
+    valor a considerar vai informado no campo (<a target="explicac" href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E e no campo (<a href="../../Campos/campos4.htm#340" target="explicac">340</a>) VALCOM, como contrapartida.</li>
+</ul>
+
+<p>Para um melhor entendimento da movimentação contabilística produzida pelas diversas
+situações, consultar o <a href="../l-iii/dst-2.htm#8.">quadro resumo</a> apresentado na
+descrição do ficheiro Destinos (MDST5).</p>
+
+<p>No esquema seguinte é apresentada a movimentação contabilística efectuada na conta
+de regularização do Emissor (via ficheiro Destinos), tendo em conta o processamento dos
+ficheiros de <em>Clearing</em> dos Sistemas de Pagamento e as acções de &quot;Início e
+Fim de reclamação&quot; desencadeadas pelo utilizador no Terminal de Serviços SIBS - <a href="i3.htm#I.3.12">Gestão de Reclamações - Redes Estrangeiras</a>.</p>
+
+<p>A auditoria desta conta deve ser efectuada com recurso à opção &quot;Consulta Contas
+Regularização&quot; disponível no Serviço Terminal de Serviços SIBS referido no
+parágrafo anterior.</p>
+
+<p class="center"><br>
+<!--webbot bot="ImageMap" rectangle="(275,531) (301,542) ../../Campos/campos1.htm#063#explicac" rectangle="(12,355) (35,367) ../../Campos/campos1.htm#063#explicac" rectangle="(11,236) (38,248) ../../Campos/campos1.htm#063#explicac" rectangle="(275,518) (301,530) ../../Campos/campos2.htm#132#explicac" rectangle="(12,343) (39,354) ../../Campos/campos2.htm#132#explicac" rectangle="(10,223) (37,235) ../../Campos/campos2.htm#132#explicac" rectangle="(275,504) (302,518) ../../Campos/campos3.htm#222#explicac" rectangle="(12,330) (37,342) ../../Campos/campos3.htm#222#explicac" rectangle="(13,210) (38,223) ../../Campos/campos3.htm#222#explicac" rectangle="(274,214) (301,227) ../../Campos/campos3.htm#222#explicac" rectangle="(274,491) (303,503) ../../Campos/campos3.htm#221#explicac" rectangle="(9,316) (37,330) ../../Campos/campos3.htm#221#explicac" rectangle="(276,200) (301,213) ../../Campos/campos3.htm#221#explicac" rectangle="(12,196) (35,210) ../../Campos/campos3.htm#221#explicac" rectangle="(10,556) (37,571) ../../Campos/campos4.htm#313#explicac" rectangle="(10,467) (40,481) ../../Campos/campos4.htm#313#explicac" rectangle="(320,173) (378,190) ../l-iii/dst-2.htm#%3d+5" rectangle="(318,465) (376,480) ../l-iii/dst-2.htm#%3d+6" rectangle="(56,299) (110,316) ../l-iii/dst-2.htm#%3d+6" rectangle="(59,182) (115,199) ../l-iii/dst-2.htm#%3d+6" rectangle="(56,541) (112,559) ../l-iii/dst-1.htm#%3d+1" rectangle="(55,450) (111,468) ../l-iii/dst-1.htm#%3d+1" rectangle="(12,123) (40,137) ../../Campos/campos4.htm#313#explicac" rectangle="(56,107) (114,125) ../l-iii/dst-1.htm#%3d+1" src="imagens2/j3-2.gif" alt="j3-2.gif" border="0" width="527" height="583" startspan --><MAP NAME="FrontPageMap1"><AREA SHAPE="RECT" COORDS="275, 531, 301, 542" HREF="../../Campos/campos1.htm#063" TARGET="explicac"><AREA SHAPE="RECT" COORDS="12, 355, 35, 367" HREF="../../Campos/campos1.htm#063" TARGET="explicac"><AREA SHAPE="RECT" COORDS="11, 236, 38, 248" HREF="../../Campos/campos1.htm#063" TARGET="explicac"><AREA SHAPE="RECT" COORDS="275, 518, 301, 530" HREF="../../Campos/campos2.htm#132" TARGET="explicac"><AREA SHAPE="RECT" COORDS="12, 343, 39, 354" HREF="../../Campos/campos2.htm#132" TARGET="explicac"><AREA SHAPE="RECT" COORDS="10, 223, 37, 235" HREF="../../Campos/campos2.htm#132" TARGET="explicac"><AREA SHAPE="RECT" COORDS="275, 504, 302, 518" HREF="../../Campos/campos3.htm#222" TARGET="explicac"><AREA SHAPE="RECT" COORDS="12, 330, 37, 342" HREF="../../Campos/campos3.htm#222" TARGET="explicac"><AREA SHAPE="RECT" COORDS="13, 210, 38, 223" HREF="../../Campos/campos3.htm#222" TARGET="explicac"><AREA SHAPE="RECT" COORDS="274, 214, 301, 227" HREF="../../Campos/campos3.htm#222" TARGET="explicac"><AREA SHAPE="RECT" COORDS="274, 491, 303, 503" HREF="../../Campos/campos3.htm#221" TARGET="explicac"><AREA SHAPE="RECT" COORDS="9, 316, 37, 330" HREF="../../Campos/campos3.htm#221" TARGET="explicac"><AREA SHAPE="RECT" COORDS="276, 200, 301, 213" HREF="../../Campos/campos3.htm#221" TARGET="explicac"><AREA SHAPE="RECT" COORDS="12, 196, 35, 210" HREF="../../Campos/campos3.htm#221" TARGET="explicac"><AREA SHAPE="RECT" COORDS="10, 556, 37, 571" HREF="../../Campos/campos4.htm#313" TARGET="explicac"><AREA SHAPE="RECT" COORDS="10, 467, 40, 481" HREF="../../Campos/campos4.htm#313" TARGET="explicac"><AREA SHAPE="RECT" COORDS="320, 173, 378, 190" HREF="../l-iii/dst-2.htm#= 5"><AREA SHAPE="RECT" COORDS="318, 465, 376, 480" HREF="../l-iii/dst-2.htm#= 6"><AREA SHAPE="RECT" COORDS="56, 299, 110, 316" HREF="../l-iii/dst-2.htm#= 6"><AREA SHAPE="RECT" COORDS="59, 182, 115, 199" HREF="../l-iii/dst-2.htm#= 6"><AREA SHAPE="RECT" COORDS="56, 541, 112, 559" HREF="../l-iii/dst-1.htm#= 1"><AREA SHAPE="RECT" COORDS="55, 450, 111, 468" HREF="../l-iii/dst-1.htm#= 1"><AREA SHAPE="RECT" COORDS="12, 123, 40, 137" HREF="../../Campos/campos4.htm#313" TARGET="explicac"><AREA SHAPE="RECT" COORDS="56, 107, 114, 125" HREF="../l-iii/dst-1.htm#= 1"></MAP><a href="../../_vti_bin/shtml.dll/mglobal/l-ii/j3.htm/map1"><img src="imagens2/j3-2.gif" alt="j3-2.gif" border="0" width="527" height="583" ismap usemap="#FrontPageMap1"></a><!--webbot bot="ImageMap" endspan i-checksum="53369" --></p>
+
+<p class="dta"><br>
+<a href="j2.htm">Anterior</a>/<a href="j4.htm">Seguinte</a></p>
+</body>
+</html>

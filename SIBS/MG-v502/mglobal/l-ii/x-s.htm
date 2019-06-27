@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>X-S - SISTEMA DE PAGAMENTOS DE GRANDES TRANSACÇÕES </title>
+<script>top.captulos.location='indicex.htm#X';</script>
+</head>
+
+<body>
+
+<h2>S - SISTEMA DE PAGAMENTOS DE GRANDES TRANSACÇÕES </h2>
+
+<p>&nbsp;</p>
+
+<h3><br>
+<a name="S3">S3</a> - CUSTO COM A REDE DE COMUNICAÇÕES </h3>
+
+<p><br>
+<strong>S31 - Circuito de acesso - AT produção<br>
+S32 - Circuito de acesso - AT teste</strong></p>
+
+<p><br>
+Esta rubrica aplica-se aos Participantes que não sejam já facturados no âmbito de
+outros contratos de Serviços de Telecomunicações. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Administrativa. Os Bancos têm conhecimento da sua participação no sistema
+(supervisão por parte do Banco Central).</p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica S</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+2S  SIST.PGM.GRANDES TRANS
+3S3 CUSTO COM REDE COMUNI 
+4S3120020228                         CIRC.ACESSO DIAL BCK-P000000012500000000000000010000000012500D
+4S3220020228                         CIRC.ACESSO DIAL BCK-T000000010000000000000000010000000010000D
+6S3 0000000022500D                                                              
+7S  0000000000022500D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"><span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span> </span><br>
+    Para efeitos de apresentação e por uma questão prática mantém-se o layout anterior nas
+    tabelas auxiliares. </em></td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="x2.htm">Anterior</a></p>
+</body>
+</html>

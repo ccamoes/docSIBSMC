@@ -1,0 +1,1322 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos 2600 (2600-2699)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.&nbsp;</td>
+    <td class="fundo">REP.&nbsp;</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="2600" name="2600">2600</a></td>
+    <td class="esq"><u>VISA - TIPO DE SETTLEMENT</u>
+      &nbsp;
+      <p>
+      Campo que identifica o tipo de Settlement da Visa.</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td colspan="2" class="esq">
+            Este campo pode assumir os valores:</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap colspan="2">
+            &nbsp;&nbsp; espaço -&nbsp;Não aplicável</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 0 -&nbsp;</td>
+          <td class="esq">International Settlement Service (ISS) - data de
+            Settlement corresponde à &quot;central processing data&quot; (CPD)
+            da Visa + 2 dias.</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>
+            &nbsp;&nbsp; 8 -&nbsp;</td>
+          <td class="esq">Euro Area Net Settlement Service (EANSS) - data de
+            Settlement é a &quot;central processing date&quot; (CPD) da Visa.</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td nowrap>VISA-TIP-SET</td>
+  </tr>
+  <tr>
+    <td><a id="2601" name="2601">2601</a></td>
+    <td class="esq"><u>MODALIDADE DE PAGAMENTO</u>
+      <p>Tipo de pagamento, informado pelo TPA (transacções com cartão
+      not-on-us):</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; - &nbsp;</td>
+          <td class="esq">valores menores que 100 para transacções não
+            contabilísticas;</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; - &nbsp;</td>
+          <td class="esq">valores maiores ou iguais a 100 para transacções
+            contabilísticas.</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MOD_PAG</td>
+  </tr>
+  <tr>
+    <td><a id="2602" name="2602">2602</a></td>
+    <td class="esq"><u>INDICADOR DE ACÇÃO</u>
+      <p>Campo que destrinça a acção de consulta ao custo duma listagem duma
+      acção de registo de pedido de listagem.</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" colspan="2">Tem os seguintes valores:</td>
+        </tr>
+        <tr>
+          <td class="dta" nowrap>&nbsp;&nbsp; 0 -&nbsp;</td>
+          <td class="esq">Consulta Custo Estimado da Listagem</td>
+        </tr>
+        <tr>
+          <td class="dta" nowrap>&nbsp;&nbsp; 1 -&nbsp;</td>
+          <td class="esq">Regista o Pedido de Listagem</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2603" name="2603">2603</a></td>
+    <td class="esq">
+     <u>
+     VALOR UNITÁRIO DO BILHETE</u>
+     <p>É o custo do bilhete, com ou sem desconto.</p>
+    </td>
+    <td class="dta">&nbsp;7</td>
+    <td>N</td>
+    <td>5 int.&nbsp;<br>
+      2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2604" name="2604">2604</a></td>
+    <td class="esq">
+      <p><u>CÓDIGO
+      DE MENSAGENS POR ENVIAR</u>
+      </p>
+      <p>Campo que indica ao
+      receptor se existem mais mensagens para enviar ou se está a receber a última.
+           </p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; 0 - Não existem mais mensagens<br>
+      &nbsp;&nbsp; 1 - Existem mais mensagens
+      </p>
+    </td>
+    <td class="dta">&nbsp;1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2605" name="2605">2605</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2606" name="2606">2606</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2607" name="2607">2607</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2608" name="2608">2608</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2609" name="2609">2609</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2610" name="2610">2610</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2611" name="2611">2611</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2612" name="2612">2612</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2613" name="2613">2613</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2614" name="2614">2614</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2615" name="2615">2615</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td nowrap>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2616" name="2616">2616</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2617" name="2617">2617</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2618" name="2618">2618</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2619" name="2619">2619</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2620" name="2620">2620</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2621" name="2621">2621</a></td>
+    <td class="esq"><u>TIPO DE PARTICIPANTE NA COMPENSAÇÃO MULTIBANCO</u>
+      <p>Campo que identifica o tipo de participação em termos de
+      movimentação financeira na Compensação Multibanco.</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; 0 - Não participante<br>
+      &nbsp;&nbsp; 1 - Participante liquidador<br>
+      &nbsp;&nbsp; 2 - Participante não liquidador</p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIP_PART_MB</td>
+  </tr>
+  <tr>
+    <td><a id="2622" name="2622">2622</a></td>
+    <td class="esq"><u>CONTA (NIB) PARA MOVIMENTAÇÃO FINANCEIRA NO BANCO LIQUIDADOR</u>
+      <p>Indica a conta para movimentação financeira, no Banco liquidador, da
+      entidade participante na Compensação Multibanco.</p>
+    </td>
+    <td class="dta">21</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>LIQ_NIB</td>
+  </tr>
+  <tr>
+    <td><a id="2623" name="2623">2623</a></td>
+    <td class="esq"><u>DATA DE ADESÃO À COMPENSAÇÃO MULTIBANCO</u>
+      <p>Primeiro dia em que a entidade participa na Compensação Multibanco.</p>
+    </td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DT_INI_MB</td>
+  </tr>
+  <tr>
+    <td><a id="2624" name="2624">2624</a></td>
+    <td class="esq"><u>ENDEREÇO DE FILE TRANSFER - BANCOS DE APOIO DE CA</u>
+      <p>Endereço para envio dos seguintes ficheiros:<br>
+      &nbsp;&nbsp; - Origens (ORI5)<br>
+      &nbsp;&nbsp; - Captura e Lista Negra (CLN5)</p>
+    </td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>END_FT_BACA</td>
+  </tr>
+  <tr>
+    <td><a id="2625" name="2625">2625</a></td>
+    <td class="esq"><u>ENDEREÇO DE FILE TRANSFER - FICHEIRO MOVIMENTOS PARA
+      EMISSOR</u>
+      <p>Endereço para envio do seguinte ficheiro:<br>
+      &nbsp;&nbsp; - Movimentos (MOV5)</p>
+      <p>Quando não preenchido (espaços) indica que a entidade não recebe
+      este ficheiro.</p>
+    </td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>END_FT_MOV</td>
+  </tr>
+  <tr>
+    <td><a id="2626" name="2626">2626</a></td>
+    <td class="esq"><u>ENDEREÇO DE FILE TRANSFER - FICHEIRO RESUMO DE COMPENSAÇÃO</u>
+      <p>Endereço para envio do seguinte ficheiro:<br>
+      &nbsp;&nbsp; - Resumo de Compensação (RMB5)</p>
+    </td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>END_FT_RMB</td>
+  </tr>
+  <tr>
+    <td><a id="2627" name="2627">2627</a></td>
+    <td class="esq"><u>ENDEREÇO DE FILE TRANSFER - FICHEIRO LOCAIS DE PONTOS DE SERVIÇO MB</u>
+      <p>Endereço para envio do seguinte ficheiro:<br>
+      &nbsp;&nbsp; - Locais de Pontos de Serviço MB (ELPS)</p>
+      <p>Quando não preenchido (espaços) indica qua a entidade não recebe
+      este ficheiro.</p>
+    </td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>END_FT_LPS</td>
+  </tr>
+  <tr>
+    <td><a id="2628" name="2628">2628</a></td>
+    <td class="esq"><u>ENDEREÇO DE FILE TRANSFER - FICHEIRO TERMINAIS - CADASTRO</u>
+      <p>Endereço para envio do seguinte ficheiro:<br>
+      &nbsp;&nbsp; - Terminais - Cadastro (TRMC)</p>
+      <p>Quando não preenchido (espaços) indica que a entidade não recebe
+      este ficheiro.</p>
+    </td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>END_FT_TRMC</td>
+  </tr>
+  <tr>
+    <td><a id="2629" name="2629">2629</a></td>
+    <td class="esq"><u>INDICADOR DE DEPÓSITOS COM VALIDAÇÃO</u>
+      <p>Indica a utilização do serviço de Depósitos com Validação.</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; 0 - Não<br>
+      &nbsp;&nbsp; 1 - Sim</p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>I_DEP_VALID</td>
+  </tr>
+  <tr>
+    <td><a id="2630" name="2630">2630</a></td>
+    <td class="esq"><u>ENDEREÇO DE FILE TRANSFER - FICHEIROS IMAGENS DE CHEQUES</u>
+      <p><br>
+      </p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td colspan="2" class="esq">Endereço para envio dos seguintes
+            ficheiros:</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp;</td>
+          <td class="esq">Imagens de Cheques para Arquivo (ICA)</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp;</td>
+          <td class="esq">Imagens de Cheques para Validação (ICV)</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp;</td>
+          <td class="esq">Validação de Notas Suspeitas em <i>Back Office</i>
+            Centralizado (VNSB)</td>
+        </tr>
+      </table>
+      <p>Quando não preenchido (espaços) indica que a entidade não recebe
+      estes ficheiros</p>
+    </td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>END_FT_CHQ</td>
+  </tr>
+  <tr>
+    <td><a id="2631" name="2631">2631</a></td>
+    <td class="esq"><u>INDICADOR DE ENVIO DE FICHEIRO VALIDAÇÃO DE NOTAS SUSPEITAS EM
+      <i> BACK OFFICE</i> CENTRALIZADO</u>
+      <p>Indica o envio do ficheiro &quot;Validação de Notas Suspeitas em <i>Back
+      Office </i>Centralizado&quot; (VNSB), para o endereço de<i> File Transfer
+      - </i>Ficheiros Imagens de Cheques (END_FT_CHQ), quando o Emissor possui um <i>Back Office </i>onde
+      centraliza a validação de notas suspeitas.</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; 0 - Não<br>
+      &nbsp;&nbsp; 1 - Sim</p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>I_ENV_VNSB</td>
+  </tr>
+  <tr>
+    <td><a id="2632" name="2632">2632</a></td>
+    <td class="esq"><u>ENDEREÇO DE FILE TRANSFER - FICHEIROS PMB</u>
+      <p>Endereço para envio dos seguintes ficheiros:<br>
+      &nbsp;&nbsp; - Saldos Disponíveis (ESDP)<br>
+      &nbsp;&nbsp; - Acumulados da Agência (PMB) (EAGE)</p>
+      <p>Quando não preenchido (espaços) indica que a entidade não recebe
+      estes ficheiros.</p>
+    </td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>END_FT_PMB</td>
+  </tr>
+  <tr>
+    <td><a id="2633" name="2633">2633</a></td>
+    <td class="esq"><u>INDICADOR DE ENVIO DE FICHEIRO ACUMULADOS DA AGÊNCIA (PMB)</u>
+      <p>Indica o envio do ficheiro &quot;Acumulados da Agência (PMB)&quot;
+      (EAGE), para o endereço de <i>File Transfer</i> - Ficheiros PMB (END_FT_PMB).</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; 0 - Não<br>
+      &nbsp;&nbsp; 1 - Sim</p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>I_ENV_AGE</td>
+  </tr>
+  <tr>
+    <td><a id="2634" name="2634">2634</a></td>
+    <td class="esq"><u>CONTA (NIB) DO REPRESENTANTE PARA BIN AUTÓNOMO</u>
+      <p>Indica a conta do representante no Banco Emissor, para a movimentação
+      resultante das transacções aceites sob os acordos que representa.</p>
+    </td>
+    <td class="dta">21</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NIB_REP_BIN</td>
+  </tr>
+  <tr>
+    <td><a id="2635" name="2635">2635</a></td>
+    <td class="esq"><u>INDICADOR DE ENVIO DE FICHEIRO DETALHES</u>
+      <p>Indica o envio do ficheiro &quot;Detalhes&quot; (DET5) para o endereço
+      de <i>File Transfer - </i>Ficheiros para BIN (campo END_FT_BIN) ou em
+      omissão, para o endereço de <i>File Transfer - </i>Ficheiros para CPD (END_FT_CPD).</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; 0 - Não<br>
+      &nbsp;&nbsp; 1 - Sim</p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>I_ENV_DET</td>
+  </tr>
+  <tr>
+    <td><a id="2636" name="2636">2636</a></td>
+    <td class="esq"><u>INDICADOR DE ENVIO DE FICHEIRO PAGAMENTOS DE BAIXO VALOR</u>
+      <p>Indica o envio do ficheiro &quot;Pagamentos de Baixo Valor&quot; (PBV)
+      para o endereço de <i>File Transfer</i> - Ficheiros para BIN (campo END_FT_BIN) ou em omissão, para o endereço de <i>File Transfer</i> -
+      Ficheiros para CPD (END_FT_CPD).</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; 0 - Não<br>
+      &nbsp;&nbsp; 1 - Sim</p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>I_ENV_PBV</td>
+  </tr>
+  <tr>
+    <td><a id="2637" name="2637">2637</a></td>
+    <td class="esq"><u>INDICADOR DE ENVIO DE FICHEIRO AUTORIZAÇÕES</u>
+      <p>Indica o envio do ficheiro &quot;Autorizações&quot; (AUT).</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" colspan="2">Valores possíveis:</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 0 -&nbsp;</td>
+          <td class="esq">Não existe envio</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 1 -&nbsp;</td>
+          <td class="esq">Envio para o endereço de <i>File Transfer</i> -
+            Ficheiros para BIN (campo END_FT_BIN) ou em omissão, para o
+            endereço de <i>File Transfer </i>- Ficheiros para CPD (END_FT_CPD)</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 2 -&nbsp;</td>
+          <td class="esq">Envio para o endereço de <i>File Transfer </i>-
+            Ficheiro Autorizações definido no campo END_FT_AUT</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>I_ENV_AUT</td>
+  </tr>
+  <tr>
+    <td><a id="2638" name="2638">2638</a></td>
+    <td class="esq"><u>ENDEREÇO DE FILE TRANSFER - FICHEIRO AUTORIZAÇÕES</u>
+      <p>Endereço para envio do seguinte ficheiro:<br>
+      &nbsp;&nbsp; - Autorizações (AUT5)</p>
+      <p>Quando não preenchido (espaços) indica que a entidade não recebe
+      este ficheiro.</p>
+    </td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>END_FT_AUT</td>
+  </tr>
+  <tr>
+    <td><a id="2639" name="2639">2639</a></td>
+    <td class="esq"><u>TIPO DE CARACTERIZAÇÃO</u>
+      <p>Indica o ambiente pretendido para a inserção/alteração da
+      Caracterização.</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; C - Certificação<br>
+      &nbsp;&nbsp; P - Produção (e em Certificação)</p>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIP_CARACTZ</td>
+  </tr>
+  <tr>
+    <td><a id="2640" name="2640">2640</a></td>
+    <td class="esq"><u>NÚMERO DE TRANSACÇÕES</u></td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUM_TRANS</td>
+  </tr>
+  <tr>
+    <td><a id="2641" name="2641">2641</a></td>
+    <td class="esq"><u>EMV - FIDELIZAÇÃO - DATA DE EMISSÃO DO VALE VIRTUAL</u>
+      <p>Indica a data na qual foi efectuado o último carregamento de pontos ou
+      última alteração aos valores (quantidade de pontos e montante) de um
+      vale virtual de pontos.</p>
+    </td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>FID-VALEDATA</td>
+  </tr>
+  <tr>
+    <td><a id="2642" name="2642">2642</a></td>
+    <td class="esq"><u>EMV - FIDELIZAÇÃO - DESCRITIVO DO PROGRAMA</u>
+      <p>Texto (&quot;nome&quot;) que o emissor definiu para um Programa de
+      Fidelização.</p>
+    </td>
+    <td class="dta">32</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>FID-TEXTDESC</td>
+  </tr>
+  <tr>
+    <td><a id="2643" name="2643">2643</a></td>
+    <td class="esq"><u>EMV - PROGRAMA DE EMISSOR - DESCRITIVO DO PROGRAMA</u>
+      <p>Texto (&quot;nome&quot;) que o emissor definiu para um Programa
+      Emissor.</p>
+    </td>
+    <td class="dta">32</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td nowrap>PROGEMI-DESC</td>
+  </tr>
+  <tr>
+    <td><a id="2644" name="2644">2644</a></td>
+    <td class="esq"><u>ESTADO DA ENTIDADE DE PAGAMENTOS</u>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; 0 - Inibida<br>
+      &nbsp;&nbsp; 1 - Activa</p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>EST_ENT_PGS</td>
+  </tr>
+  <tr>
+    <td><a id="2645" name="2645">2645</a></td>
+    <td class="esq"><u>VERSÃO DO CATÁLOGO</u>
+      <p>Versão do Catálogo de títulos de transporte passíveis de
+      carregamento na Rede de CA-MB.</td>
+    <td>N</td>
+    <td class="dta">5</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2646" name="2646">2646</a></td>
+    <td class="esq"><u>DATA DE INÍCIO DA VALIDADE DO CATÁLOGO</u>
+      <p>Data que indica o início da validade de uma versão de Catálogo de
+      títulos de transporte. Campo utilizado para implementar a gestão do
+      Catálogo.</td>
+    <td>N</td>
+    <td class="dta">14</td>
+    <td>AAAAMMDD<br>
+      HHMMSS</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2647" name="2647">2647</a></td>
+    <td class="esq"><u>VALID_PRODUCT_FLAG</u>
+      <p>Indicador da disponibilidade do produto/título de transportes para
+      carregamento.</p>
+      <p>Valores válidos:<br>
+      &nbsp;&nbsp; 0 - Título não disponível<br>
+      &nbsp;&nbsp; 1 - Título disponível</td>
+    <td>N</td>
+    <td class="dta">1</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2648" name="2648">2648</a></td>
+    <td class="esq"><u>TICK_OPER_CODE</u>
+      <p>Código do operador do sistema de transportes ao qual o título de
+      transportes está assignado.<br>
+      Deve ser utilizado em conjunto com o campo <i>Tick_Code</i> para
+      identificar um título de transporte/contrato no catálogo.</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2649" name="2649">2649</a></td>
+    <td class="esq"><u>TICK_CODE</u>
+      <p>Código do título de transportes de um operador ou conjunto de
+      operadores do sistema de transportes.<br>
+      Deve ser utilizado em conjunto com o campo <i>Tick_Oper_Code </i>para
+      identificar um título de transporte/contrato no catálogo.</td>
+    <td>N</td>
+    <td class="dta">5</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2650" name="2650">2650</a></td>
+    <td class="esq"><u>TICK_OPER_CODE_CONT</u>
+      <p>Código do operador do sistema de transportes ao qual corresponde o
+      título de transportes a carregar no cartão em caso de expiração do
+      perfil actual.<br>
+      Por ex.: Quando um cliente com um contrato “L Criança” vê o seu
+      perfil Criança expirar e pretende carregar o contrato no cartão, a
+      operativa implementa o carregamento de um título “L” normal que não
+      existe no cartão.<br>
+      Este campo apenas será utilizado na 3ª fase do serviço (Carregamento de
+      contratos que não existem no cartão de transportes).<br>
+      Deve ser utilizado em conjunto com o campo <i>Tick_Code_Cont </i>para
+      identificar um título de transporte/contrato no catálogo.</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>00”</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2651" name="2651">2651</a></td>
+    <td class="esq"><u>TICK_CODE_CONT</u>
+      <p>Código do título de transportes de um operador ou conjunto de
+      operadores do sistema de transportes a carregar no cartão em caso de
+      expiração do perfil actual.<br>
+      Este campo apenas será utilizado na 3ª fase do serviço (Carregamento de
+      contratos que não existem no cartão de transportes).<br>
+      Deve ser utilizado em conjunto com o campo <i>Tick_Oper_Code_Cont</i> para
+      identificar um título de transporte/contrato no catálogo.</td>
+    <td>N</td>
+    <td class="dta">5</td>
+    <td>= “00000”</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2652" name="2652">2652</a></td>
+    <td class="esq"><u>DESCRITIVO DO TÍTULO DE TRANSPORTE</u>
+      <p>Texto descritivo do título de transporte. Informação utilizada para
+      a formatação das teclas dos ecrãs do serviço no CA-MB, para o
+      descritivo no ecrã E12 de confirmação e para o descritivo dos talões
+      do serviço.</td>
+    <td>A</td>
+    <td class="dta">30</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2653" name="2653">2653</a></td>
+    <td class="esq"><u>QUANTIDADE 1</u>
+      <p>Número de unidades do título de transporte para carregamento,
+      associado ao campo <i>Preço 1</i>.</td>
+    <td>N</td>
+    <td class="dta">3</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2654" name="2654">2654</a></td>
+    <td class="esq"><u>QUANTIDADE 2</u>
+      <p>Número de unidades do título de transporte para carregamento,
+      associado ao campo <i>Preço 2</i>.<br>
+      Este campo apenas será utilizado na 3ª fase do serviço (Carregamento de
+      contratos que não existem no cartão de transportes).</td>
+    <td>N</td>
+    <td class="dta">3</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2655" name="2655">2655</a></td>
+    <td class="esq"><u>QUANTIDADE 3</u>
+      <p>Número de unidades do título de transporte para carregamento,
+      associado ao campo <i>Preço 3</i>.<br>
+      Este campo apenas será utilizado na 3ª fase do serviço (Carregamento de
+      contratos que não existem no cartão de transportes).</td>
+    <td>N</td>
+    <td class="dta">3</td>
+    <td>= “000”</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2656" name="2656">2656</a></td>
+    <td class="esq"><u>QUANTIDADE 4</u>
+      <p>Número de unidades do título de transporte para carregamento,
+      associado ao campo <i>Preço 4</i>.<br>
+      Este campo apenas será utilizado na 3ª fase do serviço (Carregamento de
+      contratos que não existem no cartão de transportes).</td>
+    <td>N</td>
+    <td class="dta">3</td>
+    <td>= “000”</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2657" name="2657">2657</a></td>
+    <td class="esq"><u>PREÇO 1</u>
+      <p>Preço das unidades do título de transporte indicadas no campo <i>Quantidade
+      1</i>, em euro, incluindo o IVA, com 2 casas decimais. No ecrã E12 de
+      confirmação e nos talões do serviço apresentamos apenas os dígitos
+      inteiros significativos e os decimais.<br>
+      Nos títulos de validade temporal mensal fixa é utilizado, em conjunto
+      com o campo <i>Quantidade 1</i>, para os carregamentos do mês actual.
+      Esta implementação permite gerir os processos de alteração do preço
+      dos títulos.</td>
+    <td>N</td>
+    <td class="dta">10</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2658" name="2658">2658</a></td>
+    <td class="esq"><u>PREÇO 2</u>
+      <p>Preço das unidades do título de transporte indicadas no campo <i>Quantidade
+      2,</i> em euro, incluindo o IVA, com 2 casas decimais. No ecrã E12 de
+      confirmação e nos talões do serviço apresentamos apenas os dígitos
+      inteiros significativos e os decimais.</td>
+    <td>N</td>
+    <td class="dta">10</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2659" name="2659">2659</a></td>
+    <td class="esq"><u>PREÇO 3</u>
+      <p>Preço das unidades do título de transporte indicadas no campo <i>Quantidade
+      3</i>, em euro, incluindo o IVA, com 2 casas decimais. No ecrã E12 de
+      confirmação e nos talões do serviço apresentamos apenas os dígitos
+      inteiros significativos e os decimais.<br>
+      Este campo apenas será utilizado na 3ª fase do serviço (Carregamento de
+      contratos que não existem no cartão de transportes).</td>
+    <td>N</td>
+    <td class="dta">10</td>
+    <td>= “0000000000”</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2660" name="2660">2660</a></td>
+    <td class="esq"><u>PREÇO 4</u>
+      <p>Preço das unidades do título de transporte indicadas no campo <i>Quantidade
+      4</i>, em euro, incluindo o IVA, com 2 casas decimais. No ecrã E12 de
+      confirmação e nos talões do serviço apresentamos apenas os dígitos
+      inteiros significativos e os decimais.<br>
+      Este campo apenas será utilizado na 3ª fase do serviço (Carregamento de
+      contratos que não existem no cartão de transportes).</td>
+    <td>N</td>
+    <td class="dta">10</td>
+    <td nowrap>= “0000000000”</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2661" name="2661">2661</a></td>
+    <td class="esq"><u>PROF_COMPANY_OPER</u>
+      <p>Código da empresa de transportes onde o titular do cartão de
+      transportes trabalha. Igual a “00” se o titular do cartão de
+      transportes não trabalhar numa empresa de transportes.<br>
+      Ficheiro MMTT: a obter do ficheiro de <i>Environment</i> do cartão de
+      transportes.</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2662" name="2662">2662</a></td>
+    <td class="esq"><u>CONTRACT_LOADING_MARGIN</u>
+      <p>Número de dias após o fim da validade do cartão para o qual o(s)
+      contrato(s) a carregar ainda pode(m) ser válido(s) (situações de “fronteira”).<br>
+      Por ex.: para um cartão que expire daqui a 25 dias, com uma margem
+      definida de 10 dias, é possível carregar um título de transporte
+      válido por 30 dias após a data da compra.<br>
+      Na 1ª fase é sempre igual a “00”.</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>“00”</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2663" name="2663">2663</a></td>
+    <td class="esq"><u>PROF_USAGE_CODE 1</u>
+      <p>Código 1 do perfil do titular do cartão de transportes.<br>
+      Ficheiro MMTT: a obter do ficheiro de catálogo se utilizado para
+      carregamento; “00” se não utilizado para carregamento.</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2664" name="2664">2664</a></td>
+    <td class="esq"><u>PROF_USAGE_CODE 2</u>
+      <p>Código 2 do perfil do titular do cartão de transportes.<br>
+      Ficheiro MMTT: a obter do ficheiro de catálogo se utilizado para
+      carregamento; “00” se não utilizado para carregamento.</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2665" name="2665">2665</a></td>
+    <td class="esq"><u>PROF_USAGE_CODE 3</u>
+      <p>Código 3 do perfil do titular do cartão de transportes.<br>
+      Ficheiro MMTT: a obter do ficheiro de catálogo se utilizado para
+      carregamento; “00” se não utilizado para carregamento.</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2666" name="2666">2666</a></td>
+    <td class="esq"><u>PROF_USAGE_CODE 4</u>
+      <p>Código 4 do perfil do titular do cartão de transportes. Não
+      utilizado na primeira fase do serviço (= “00”).</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>= “00”</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2667" name="2667">2667</a></td>
+    <td class="esq"><u>PROF_CONTRACT_LOADING_MARGIN 1</u>
+      <p>Número de dias após o fim da validade do perfil 1 para o qual o
+      contrato a carregar ainda pode ser válido (Situações de “fronteira”;
+      análogo ao campo <i>Contract_Loading_Margin </i>mas para controlar a data
+      de expiração do perfil).</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2668">2668</a></td>
+    <td class="esq"><u>PROF_CONTRACT_LOADING_MARGIN 2</u>
+      <p>Número de dias após o fim da validade do perfil 2 para o qual o
+      contrato a carregar ainda pode ser válido (Situações de “fronteira”;
+      análogo ao campo <i>Contract_Loading_Margin</i> mas para controlar a data
+      de expiração do perfil).</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2669" name="2669">2669</a></td>
+    <td class="esq"><u>PROF_CONTRACT_LOADING_MARGIN 3</u>
+      <p>Número de dias após o fim da validade do perfil 3 para o qual o
+      contrato a carregar ainda pode ser válido (Situações de “fronteira”;
+      análogo ao campo <i>Contract_Loading_Margin </i>mas para controlar a data
+      de expiração do perfil).</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2670" name="2670">2670</a></td>
+    <td class="esq"><u>PROF_CONTRACT_LOADING_MARGIN 4</u>
+      <p>Número de dias após o fim da validade do perfil 4 para o qual o
+      contrato a carregar ainda pode ser válido (Situações de “fronteira”;
+      análogo ao campo <i>Contract_Loading_Margin</i> mas para controlar a data
+      de expiração do perfil).</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2671" name="2671">2671</a></td>
+    <td class="esq"><u>TIPO DE INÍCIO DE VALIDADE TEMPORAL</u>
+      <p>Código de classifica o tipo de título relativamente à validade.</p>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 00 -&nbsp;</td>
+          <td class="esq">Início do mês (Mensal fixo)</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 01 -&nbsp;</td>
+          <td class="esq">Data da venda (Mensal e X dias deslizante)</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 02 -&nbsp;</td>
+          <td class="esq">Data indicada pelo cliente (por <i>default</i> é
+            igual à data da venda)</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 03 -&nbsp;</td>
+          <td class="esq">Primeira validação</td>
+        </tr>
+      </table>
+    </td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2672" name="2672">2672</a></td>
+    <td class="esq"><u>VALIDADE TEMPORAL GLOBAL</u>
+      <p>Validade temporal global do contrato após data da venda (em meses).<br>
+      Por ex.: Se = “06”, o cliente tem que utilizar o título até 6 meses
+      após a data da venda do mesmo.<br>
+      Este campo apenas será utilizado na 3ª fase do serviço (Carregamento de
+      contratos que não existem no cartão de transportes).</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2673" name="2673">2673</a></td>
+    <td class="esq"><u>CÓDIGO DO TEXTO DA VALIDADE</u>
+      <p>Código do descritivo a apresentar no ecrã E12 de confirmação e nos
+      talões do serviço relativamente à validade do título carregado (após
+      “Válido:”).</p>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td nowrap class="esq">&nbsp;&nbsp; 01 -&nbsp;</td>
+          <td class="esq">Mensal fixo: “no mês de &lt;MÊS&gt; de &lt;ANO&gt;”;
+            MÊS com o formato Extenso (por ex. Fevereiro); ANO com o formato
+            AAAA (máximo de 27 posições)</td>
+        </tr>
+        <tr>
+          <td nowrap class="esq">&nbsp;&nbsp; 02 -&nbsp;</td>
+          <td class="esq">Mensal e X dias deslizante: “até &lt;DATA&gt;”;
+            DATA com o formato AAAA-MM-DD (máximo de 14 posições)</td>
+        </tr>
+      </table>
+    </td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2674" name="2674">2674</a></td>
+    <td class="esq"><u>TEMPLATE DO CONTRATO</u>
+      <p>Representação binária do título de transporte a carregar em Base
+      64.<br>
+      Este campo apenas será utilizado na 3ª fase do serviço (Carregamento de
+      contratos que não existem no cartão de transportes).</td>
+    <td>A</td>
+    <td class="dta">46</td>
+    <td>= espaços</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2675" name="2675">2675</a></td>
+    <td class="esq"><u>MODELO DE DADOS DO CARTÃO</u>
+      <p>Identificação do modelo de dados do cartão de transportes. Resulta
+      da combinação do <i>output</i> do comando de leitura do cartão sobre o
+      campo <i>Envi_Vers_Numb</i> do ficheiro de <i>Environment</i>, com o
+      output do comando de <i>Select Application</i> sobre o cartão (para obter
+      o campo <i>Tipo de cartão físico</i>):</p>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 001 -&nbsp;</td>
+          <td class="esq">se o campo <i>Envi_Vers_Numb </i>= “00” e se o
+            campo <i>Tipo de cartão físico</i> = GTML2 ou CD-Light</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 002 -&nbsp;</td>
+          <td class="esq">se o campo <i>Envi_Vers_Numb</i> = “00” e se o
+            campo <i>Tipo de cartão físico</i> = CTS</td>
+        </tr>
+      </table>
+      <p>Na 1ª fase é sempre igual a “001”.</td>
+    <td>N</td>
+    <td class="dta">3</td>
+    <td>= “001”</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2676" name="2676">2676</a></td>
+    <td class="esq"><u>TIPO DE CARTÃO FÍSICO</u>
+      <p>Código que identifica o tipo de cartão físico de transportes.<br>
+      Resulta do <i>output</i> do comando de <i>Select Application</i> sobre o
+      cartão.</p>
+      <p>&nbsp;&nbsp; 001 - GTML2<br>
+      &nbsp;&nbsp; 002 - CTS<br>
+      &nbsp;&nbsp; 003 - CD-Light</p>
+      <p>Na 1ª fase pode ser igual a “001” ou “003”.</td>
+    <td>N</td>
+    <td class="dta">3</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2677" name="2677">2677</a></td>
+    <td class="esq"><u>CARD_SERI_NUMB</u>
+      <p>Número de série do cartão de transportes.<br>
+      Resulta do <i>output</i> do comando de <i>Select Application</i> sobre o
+      cartão.<br>
+      Informação utilizada para a formatação dos talões do serviço.</td>
+    <td>N</td>
+    <td class="dta">20</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2678" name="2678">2678</a></td>
+    <td class="esq"><u>LOAD_OPER</u>
+      <p>Código da entidade cujo sistema foi utilizado para a operação de
+      carregamento do título de transporte.<br>
+      &nbsp;&nbsp; 29 - SIBS</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>= “29”</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2679">2679</a></td>
+    <td class="esq"><u>TICK_RELO_MACH_CODE</u>
+      <p>Código do sistema de carregamento. Na operação de carregamento em
+      CA-MB corresponde ao número do SAM da SIBS.<br>
+      A gama de códigos atribuídos à SIBS pela OTLIS é: 2944 – 3231.</td>
+    <td>N</td>
+    <td class="dta">4</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2680">2680</a></td>
+    <td class="esq"><u>TICK_RELO_NUMB_DAILY</u>
+      <p>Número sequencial do carregamento no dia para cada <i>Tick_relo_mach_code</i>
+      (cada SAM pode carregar até 1023 títulos de transporte por dia). Não
+      incrementado nas Invalidações.</td>
+    <td>N</td>
+    <td class="dta">4</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2681">2681</a></td>
+    <td class="esq"><u>QUANTITY</u>
+      <p>Número de unidades do título de transporte vendidas no carregamento.<br>
+      Se o campo <i>Trip_Limit_Type</i> (do ficheiro de Contrato) = 0, então <i>Quantity</i>
+      = “001”;<br>
+      Se &#8800; o, então <i>Quantity</i> = “&lt;valor final menos o valor
+      inicial do campo <i>Tick_Count</i> (do ficheiro <i>All Counters</i>, para
+      o contrato carregado)&gt;”; número de unidades vendidas.</td>
+    <td>N</td>
+    <td class="dta">3</td>
+    <td>= “001”</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2682">2682</a></td>
+    <td class="esq"><u>CARDNUMB</u>
+      <p>Número do cartão de transportes.<br>
+      Campo que resulta da seguinte combinação de campos do ficheiro de <i>Environment</i>:<br>
+      &nbsp;&nbsp; <i>Envi_Appl_Issu</i> + “0” + <i>Card_Numb<br>
+      </i>Informação utilizada para a formatação do ecrã de confirmação
+      (E12) e dos talões do serviço.</td>
+    <td>N</td>
+    <td class="dta">12</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2683">2683</a></td>
+    <td class="esq"><u>LOAD_CONTRACT</u>
+      <p>Representação binária do título de transporte a carregar/ficheiro
+      de contrato, mais o respectivo contador do ficheiro <i>All Counters</i>,
+      em Base 64.<br>
+      Resulta do output da mensagem F003 (últimos 29 bytes do Comando C02?,
+      mais o contador do respectivo contrato, no Comando C032, na posição
+      calculada a partir do índice do contrato a carregar).</td>
+    <td>A</td>
+    <td class="dta">43</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2684">2684</a></td>
+    <td class="esq"><u>CONTRACT_INDEX</u>
+      <p>Índice do registo no ficheiro de contratos (1 a 4).</td>
+    <td>N</td>
+    <td class="dta">1</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2685">2685</a></td>
+    <td class="esq"><u>PREV_CONTRACT_HEADER 1</u>
+      <p>Representação binária do <i>Header</i> do registo de contrato 1
+      carregado antes do carregamento em Base 64.<br>
+      Resulta do <i>output</i> da mensagem F001.</td>
+    <td>A</td>
+    <td class="dta">11</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2686">2686</a></td>
+    <td class="esq"><u>PREV_CONTRACT_HEADER 2</u>
+      <p>Representação binária do <i>Header</i> do registo de contrato 2
+      carregado antes do carregamento em Base 64.<br>
+      Resulta do <i>output</i> da mensagem F001.</td>
+    <td>A</td>
+    <td class="dta">11</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2687">2687</a></td>
+    <td class="esq"><u>PREV_CONTRACT_HEADER 3</u>
+      <p>Representação binária do <i>Header</i> do registo de contrato 3
+      carregado antes do carregamento em Base 64.<br>
+      Resulta do <i>output</i> da mensagem F001.</td>
+    <td>A</td>
+    <td class="dta">11</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2688">2688</a></td>
+    <td class="esq"><u>PREV_CONTRACT_HEADER 4</u>
+      <p>Representação binária do <i>Header</i> do registo de contrato 4
+      carregado antes do carregamento em Base 64.<br>
+      Resulta do <i>output</i> da mensagem F001.</td>
+    <td>A</td>
+    <td class="dta">11</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2689">2689</a></td>
+    <td class="esq"><u>MAC</u>
+      <p><i>Output</i> do cálculo do mac gerado no final da operação de
+      carregamento em base 64.<br>
+      Resulta do <i>output</i> da mensagem f004.</td>
+    <td>A</td>
+    <td class="dta">40</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2690">2690</a></td>
+    <td class="esq"><u>ENTITY</u>
+      <p>Codificação da Entidade do utilizador (Sub-perfil). Por ex.: Para
+      atribuição à PSP ou GNR.<br>
+      Composto pelas primeiras 3 posições a contar da esquerda do campo <i>Prof_Company_
+      Worker_Number</i> do ficheiro de <i>Environment</i> do cartão de
+      transportes.</td>
+    <td>N</td>
+    <td class="dta">3</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2691">2691</a></td>
+    <td class="esq"><u>MENSALIDADE</u>
+      <p>Tarifa mensal cobrada pela SIBS relativamente à disponibilização e
+      gestão do serviço de “Carregamento de Títulos de Transporte”, com
+      dois decimais.</td>
+    <td>N</td>
+    <td class="dta">9</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2692">2692</a></td>
+    <td class="esq"><u>DURAÇÃO</u>
+      <p>Duração do título de transportes, de acordo com o tipo de validade
+      temporal.</p>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td class="esq">Em dias -&nbsp;</td>
+          <td class="esq">para títulos de transporte de validade temporal X
+            dias deslizante;</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>Em meses -&nbsp;</td>
+          <td class="esq">para títulos de transporte de validade temporal
+            mensal fixa ou mensal deslizante.</td>
+        </tr>
+      </table>
+    </td>
+    <td>N</td>
+    <td class="dta">3</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2693">2693</a></td>
+    <td class="esq"><u>DIMENSÃO DO REGISTO</u>
+      <p>Identifica a dimensão dos registos indicados no campo <a href="campos2.htm#111">111</a>.</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2694">2694</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DA REDE</u>
+      <p>Código que identifica a Aplicação da Rede de Transportes.</p>
+      <p>&nbsp;&nbsp; 01 - Lisboa Viva - Lisboa<br>
+      &nbsp;&nbsp; 02 - Andante Gold - Porto</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2695">2695</a></td>
+    <td class="esq"><u>ENVI_VERS_NUMB</u>
+      <p>Versão do ficheiro de <i>Environment</i> do CT.</td>
+    <td>N</td>
+    <td class="dta">2</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2696">2696</a></td>
+    <td class="esq"><u>NETW</u>
+      <p>Identificação da Rede de Transportes no país.</td>
+    <td>N</td>
+    <td class="dta">3</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2697">2697</a></td>
+    <td class="esq"><u>COUNTRY</u>
+      <p>Código de país da Aplicação da Rede de Transportes.</td>
+    <td>N</td>
+    <td class="dta">3</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2698">2698</a></td>
+    <td class="esq"><u>ENVI_APPL_ISSU</u>
+      <p>Emissor da Aplicação da Rede de Transportes.</td>
+    <td>N</td>
+    <td class="dta">3</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2699">2699</a></td>
+    <td class="esq"><u>CARD_NUMB</u>
+      <p>Número do CT emitido pela entidade referida no campo 2698 (e não pela
+      entidade que produziu o CT).</td>
+    <td>N</td>
+    <td class="dta">8</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<center></center>
+<p>&nbsp;</p>
+</body>
+</html>

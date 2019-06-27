@@ -1,0 +1,439 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>K.5 SISTEMA DE DÉBITOS DIRECTOS</title>
+<base target="_self">
+<script>top.captulos.location='indicek.htm#K';</script>
+</head>
+
+<body>
+
+<h1>K.5 SISTEMA DE DÉBITOS DIRECTOS</h1>
+
+<p><br>
+</p>
+
+<p>Última revisão: 2004/03/10<b></p>
+
+<p>&nbsp;</p>
+
+<h2></b><a name="K.5.1">K.5.1</a> OBJECTIVOS</h2>
+
+<p><br>
+O Sistema de Débitos Directos (SDD), criado em Outubro de 2000, foi concebido com o
+objectivo de processar de uma forma automatizada e eficiente, todas as operações de
+transferência interbancária em que a conta do ordenante é creditada, por contrapartida
+do débito da(s) conta(s) do destinatário(s), desde que não se enquadrem nas
+transferências obrigatoriamente liquidadas por bruto através do SPGT. </p>
+
+<p>São especialmente abrangidos, por este sistema, pagamentos decorrentes da cobrança
+regular de serviços como água, electricidade, televisão por cabo, assinaturas,
+mensalidades, prestações de pagamentos, etc..</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="K.5.2">K.5.2</a> CARACTERÍSTICAS GERAIS</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.5.2.1">K.5.2.1</a> PRINCÍPIOS</h3>
+
+<p><br>
+Do ponto de vista técnico e de processamento eficiente da informação, os seguintes
+princípios estiveram subjacentes ao desenho do subsistema: 
+
+<ul>
+  <li>Possibilitar aos credores a ordenação de instruções de débito em conta -
+    Instruções de Débito Directo (IDD) - a partir de uma única conta para uma ou mais
+    contas, numa perspectiva interbancária.</li>
+  <li>Possibilitar aos credores e às instituições financeiras, um formato normalizado,
+    optimizado para o transporte e tratamento de informação relevante associada às IDD.</li>
+  <li>Disponibilizar aos clientes e instituições financeiras canais eficientes para a
+    transmissão de Autorizações de Débito em Conta (ADC).</li>
+  <li>Permitir comunicação de dados entre Entidades Credoras (empresas) e SIBS.</li>
+  <li>Garantir a segurança da informação transmitida por participantes e intervenientes.</li>
+</ul>
+
+<p><br>
+Numa perspectiva de serviço e de garantias aos intervenientes (clientes, empresas e
+bancos), foram considerados os seguintes requisitos: 
+
+<ul>
+  <li>Imperatividade de o débito em conta ser autorizado pelo cliente bancário, através de
+    ADC;</li>
+  <li>Possibilidade de alteração e cancelamento de uma autorização.</li>
+  <li>Existência de período para aceitação, pelo cliente, de uma instrução de débito
+    directo (a realizar ou realizada).</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><a name="K.5.2.2">K.5.2.2</a> INTERVENIENTES</h3>
+
+<p><br>
+Como intervenientes directos neste sistema encontram-se: 
+
+<ul>
+  <li>Os Bancos, que assumem a posição de Bancos do Credor (quando transmitem para o sistema
+    IDD por ordem dos seus clientes) e/ou de Bancos do Devedor (quando as IDD introduzidas se
+    destinam a clientes seus).</li>
+  <li>A SIBS, entidade que gere o sistema Multibanco, que assume as funções de notariado
+    electrónico das ADC enviadas através daquele sistema, e que procede à compensação da
+    informação recebida e ao envio dos ficheiros resultantes.</li>
+  <li>O Banco de Portugal, que lança no SPGT os movimentos de acordo com os saldos apurados
+    na compensação.</li>
+  <li>As Entidades Credoras que, enquanto agentes que disponibilizam bens ou serviços,
+    pretendem cobrar a terceiros as importâncias correspondentes aos mesmos, dando origem a
+    instruções de débitos directos junto do seu Banco (Banco do Credor). A cada Entidade
+    Credora admitida no sistema, é associada um número de identificação inequívoco -
+    Identificação do Credor.</li>
+  <li>Os Devedores, titulares das contas a debitar, que devem dar o seu assentimento (através
+    de ADC) para a realização de débitos em conta por parte da(s) entidade(s) credora(s)
+    por si autorizada(s), em contrapartida por serviços a si por esta(s) prestado(s).</li>
+</ul>
+
+<p><br>
+Os Bancos participantes podem escolher uma de três possibilidades de participação: 
+
+<ol>
+  <li>Directa, em que enviam e recebem ficheiros, de e para a SIBS, com liquidação na sua
+    conta junto do Banco de Portugal.</li>
+  <li>Indirecta activa, em que enviam e recebem ficheiros de e para a SIBS, sendo no entanto
+    os saldos de compensação integrados no saldo do Banco Representante comunicado ao Banco
+    de Portugal, e a liquidação efectuada na conta de liquidação daquele.</li>
+  <li>Indirecta Passiva, em que o envio dos ficheiros à SIBS é efectuado pelo Banco
+    Representante, decorrendo a compensação e a liquidação de forma semelhante à
+    indirecta activa.</li>
+</ol>
+
+<p>&nbsp;</p>
+
+<h3><strong><a name="K.5.2.3">K.5.2.3</a></strong> OPERAÇÕES SUBJACENTES AO SUBSISTEMA</h3>
+
+<p><br>
+O Sistema de Débitos Directos engloba as seguintes operações: Autorizações de Débito
+em Conta (ADC); Alteração de ADC; Cancelamento de ADC; Cobranças de Instruções de
+Débito Directo (IDD); Anulações de lotes de IDDs, Rejeições,
+Revogações, Anulações por ausência de ADC e Reversões de IDD,
+devoluções de Reversões. 
+
+<ul>
+  <li>Autorização de Débito em Conta: consiste numa autorização, concedida pelo titular
+    de uma conta, no sentido de permitir a uma Entidade Credora registada no SDD a
+    realização de débitos na sua conta. Esta autorização pode ser efectuada através de
+    operação na rede de Caixas Automáticos Multibanco no Banco de domiciliação da conta
+    que vai ser debitada (por um dos canais por este disponibilizado) ou junto da Entidade
+    Credora (ADCs Truncadas). A ADC permite a indicação de limite para montante máximo
+    autorizado para as IDD e a definição do mês e ano limite para o último débito (caso
+    não sejam definidos, serão adoptados os limites do sistema). Toda a informação
+    relativa às ADC fica residente numa base de dados gerida pela SIBS.</li>
+</ul>
+
+<ul>
+  <li>Alteração de ADC: consiste na alteração, pelo cliente devedor, das características
+    de uma autorização. Pode abranger limite máximo de débito autorizado, a data de
+    expiração e o NIB associado. Pode ser efectuada em Caixas Automáticos Multibanco ou
+    através dos canais disponibilizados pelo Banco do Devedor para o efeito ou
+    ainda pelo Banco Credor.</li>
+</ul>
+
+<ul>
+  <li>Cancelamento de ADC: através desta operação, o devedor procede ao cancelamento de uma
+    ADC por si previamente dada. Pode ser efectuada em qualquer momento, através da rede
+    Multibanco nos canais disponibilizados pelo Banco do Devedor, ou junto da Entidade Credora
+    (apenas para as autorizações aí concedidas). Assume carácter efectivo apenas quando
+    for inserida no sistema, de acordo com os horários estabelecidos no SDD.</li>
+</ul>
+
+<ul>
+  <li>Pedido de fotocópia de ADC: existindo truncagem de ADC na Entidade Credora (ou Banco do
+    Credor) há que assegurar que o Banco do Devedor disponha de meios para fazer prova de
+    validade de uma dada autorização, caso o devedor o solicite. O circuito de pedido e
+    resposta de fotocópia de ADC, consiste na utilização dos meios tradicionais para
+    resolução de anomalias entre os Bancos. Neste entendimento, confrontado com um pedido de
+    prova de ADC, o BD contacta o BC solicitando a fotocópia da ADC, dispondo de um prazo
+    máximo de resposta de 4 dias úteis.</li>
+</ul>
+
+<ul>
+  <li>Instruções de Débito Directo: instruções de débito em conta transmitidas pela
+    Entidade Credora ao seu Banco e deste para o SDD, com identificação do NIB da conta a
+    debitar, referência da Autorização de Débito e montante. O período de cobrança das
+    IDD é de dois dias úteis com o intuito de permitir ao Banco do
+    Devedor rejeitar as operações antes da liquidação financeira das mesmas. Estas IDD
+    são submetidas a validação prévia da SIBS, verificando esta entidade que a respectiva
+    autorização não se encontra cancelada, fora de prazo de validade e que o montante não
+    excede o limite máximo indicado pelo Devedor.</li>
+</ul>
+
+<ul>
+  <li>Anulação de IDD: consiste na anulação dos efeitos contabilísticos de lotes de
+    instruções de débito já inseridas em cobrança, por iniciativa da Entidade Credora ou
+    do seu Banco). É possível proceder à anulação durante os dois
+    dias úteis existentes para efectivação da cobrança.</li>
+</ul>
+
+<ul>
+  <li>Rejeição de IDD: acontece por iniciativa do Devedor ou do seu Banco por discordância
+    dos montantes, falta de fundos, conta encerrada, entre outros, nos dois
+    dias úteis do período de cobrança.</li>
+</ul>
+
+<ul>
+  <li>Revogação de IDD: esta funcionalidade permite que após a efectivação do débito na
+    sua conta, o cliente devedor disponha de cinco dias úteis para comunicar ao seu Banco a
+    anulação do débito realizado e o crédito imediato na sua conta, originando o reembolso
+    do montante debitado por parte da Entidade Credora. Para os devedores aos quais não foi
+    possível provar a existência de autorização para determinada Entidade Credora, pedido
+    de fotocópia não válido ou não satisfeito no prazo máximo estipulado procede-se à
+    anulação (revogação) automática de todos os débitos efectuados nos últimos 90 dias,
+    desde que não existam mais débitos cobrados anteriores a esse período.</li>
+</ul>
+
+<ul >
+  <li>Anulação por Ausência de ADC: para os devedores aos quais não foi possível provar a
+    existência de autorização para determinada Entidade Credora, pedido de fotocópia não
+    válido ou não satisfeito no prazo máximo estipulado procede-se à anulação
+    (revogação) automática de todos os débitos efectuados nos últimos 90 dias, desde que
+    não existam mais débitos cobrados anteriores a esse período. </li>
+</ul>
+
+<ul>
+  <li>Reversão de IDD: consiste na reposição (por iniciativa da Entidade Credora) de
+    montantes cobrados em excesso resultantes do lançamento de uma ou várias IDD, após a
+    respectiva compensação.</li>
+</ul>
+
+<ul>
+  <li>Devoluções de reversões de IDD: possíveis nos dois dias úteis após o envio da
+    reversão, por motivos como número de conta do destinatário inexistente ou
+    impossibilidade de movimentação da conta do ordenante.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.5.2.4">K.5.2.4</a> TRANSMISSÃO DA INFORMAÇÃO</h3>
+
+<p><strong><u><br>
+</u>BANCOS/SIBS</strong></p>
+
+<p>Diariamente, os Bancos participantes enviam à SIBS ficheiros correspondentes aos
+seguintes movimentos: 
+
+<ul>
+  <li>Envio de Débitos e Reversões </li>
+  <li>Anulação de lotes de IDD em cobrança</li>
+  <li>Indicação de <i>plafonds</i> de Entidades Credoras (ainda não disponível)</li>
+  <li>Pré-autorizações de débito em conta (para validação de ADC concedidas em CA)</li>
+  <li>Resposta a Movimentos de Débitos Directos</li>
+  <li>Envio de ADC</li>
+</ul>
+
+<p>Como se verá mais adiante, as Entidades Credoras têm também a possibilidade de
+enviar ficheiros à SIBS com movimentos deste tipo.</p>
+
+<p>Tendo a SIBS recebido toda a informação do dia relativa a débitos directos, esta é
+organizada por forma a que os Bancos participantes no sistema sejam informados quanto aos
+registos que envolveram cada um e quanto ao seu saldo final, a movimentar no SPGT. Deste
+modo, a SIBS envia, no final de cada fecho de compensação, ficheiros para Participantes
+e para o Banco de Portugal.</p>
+
+<p>Nos ficheiros enviados a cada Participante, informa-se: 
+
+<ul>
+  <li>os movimentos relativos a IDD recebidos pela SIBS, envolvendo o destinatário do
+    ficheiro</li>
+  <li>a origem dos valores que foram considerados para apurar o saldo de compensação</li>
+  <li>adesões, alterações e cancelamentos a ADC correspondentes ao Banco</li>
+  <li>alterações na base de dados de entidades credoras (ficheiro enviado a todos os
+    Participantes)</li>
+  <li>erros detectados nos ficheiros enviados à SIBS (à medida que são processados por
+    esta).</li>
+</ul>
+
+<p table>Ao Banco de Portugal, a SIBS envia os ficheiros que informam, relativamente a
+cada Banco: 
+
+<ul>
+  <li>os saldos relativos às operações da sessão</li>
+  <li>os saldos bilaterais entre os Participantes</li>
+</ul>
+
+<p><strong><br>
+EMPRESAS/SIBS/BANCOS (ainda não disponível)</strong></p>
+
+<p>Como referido anteriormente, o Sistema de Débitos Directos permite a comunicação
+directa de dados entre Entidades Credoras (EC) e SIBS. Tal justifica-se como um princípio
+de racionalidade já que, para além da redução de custos subjacente ao encurtamento dos
+processos administrativos, proporciona uma situação de maior facilidade para as empresas
+e uma prestação de serviços mais eficaz por parte dos Bancos.</p>
+
+<p>As EC comunicam à SIBS ficheiros com registos correspondentes a IDD, reversões de
+IDD, anulações de lotes de IDD e pré autorizações de ADC. Recebem da SIBS,
+diariamente, ficheiros de erros correspondentes aos enviados no dia e ficheiros de resumo
+de movimentos de IDD e de recepção de ADC a si associados.</p>
+
+<p>A execução das IDD ou reversões ordenadas pelas Entidades Credoras (EC) obedece a
+uma das seguintes modalidades: 
+
+<ol>
+  <li>Mecanismo de pré-notificação. Nesta situação, as IDD e/ou reversões devem ser
+    enviadas pela empresa quatro dias úteis antes da data prevista para liquidação. Por
+    cada lote a SIBS emitirá no dia útil seguinte, uma pré-notificação ao Banco do
+    Credor, através do qual este deve (no dia útil seguinte) autorizar, recusar ou suspender
+    a realização das operações ordenadas pela EC. A autorização origina a transmissão
+    pela SIBS do lote ao Banco do Devedor, dois dias úteis antes da liquidação, seguindo a
+    partir desse momento os trâmites normais de uma IDD/reversão no SDD. A recusa origina a
+    não execução do lote em apreciação e a suspensão o adiamento (no máximo por dois
+    dias úteis) de decisão definitiva sobre o assunto.</li>
+</ol>
+
+<ol start="2">
+  <li>Mecanismo de <i>plafonds</i>. Nesta modalidade, é atribuído à EC, pelo seu Banco, um <i>plafond</i>
+    que permite a viabilização de operações sem recorrer ao mecanismo de
+    pré-notificação. Este <i>plafond</i> tem prazo de validade, sendo afectado por cada
+    operação, isto é, deduzido do valor de cada lote no período para o qual está
+    definido. Findo esse período, o Banco pode comunicar à SIBS a reposição do <em>plafond</em>
+    ou definição de um novo valor. </li>
+  <p>A utilização de <em>plafonds</em> permite que lotes de IDD/reversões inferiores ou
+  iguais ao montante disponível possam ser directamente inseridos no sistema sem recurso à
+  pré-notificação, permitindo que se ganhe um dia na respectiva execução (na prática,
+  a EC pode proceder ao envio das IDD/reversões até três dias úteis antes da data de
+  liquidação). Se um lote ultrapassar o valor disponível, é encaminhado através do
+  mecanismo de pré-notificação e anulado o <em>plafond</em>.</p>
+</ol>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><strong><a name="K.5.2.5">K.5.2.5</a></strong>
+HORÁRIOS</h3>
+
+<p><br>
+O envio de ficheiros à SIBS decorre ao longo de cada dia útil, tendo como limite o
+horário de fecho na SIBS definido no Regulamento do SICOI. Até ao horário limite
+definido no Manual de Funcionamento deste subsistema, a SIBS procede ao envio dos
+ficheiros de compensação aos Bancos, Entidades Credoras e Banco de Portugal, ocorrendo a
+respectiva liquidação na abertura do SPGT, no dia útil seguinte.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.5.2.6">K.5.2.6</a> TARIFÁRIO E FACTURAÇÃO</h3>
+
+<p><br>
+Aplica-se a este subsistema um tarifário SIBS e um tarifário interbancário. </p>
+
+<p>O tarifário SIBS aplica-se às operações aceites pela SIBS como válidas como
+contrapartida de serviço prestado por esta entidade, existindo o princípio geral de que
+as tarifas de processamento devem ser suportadas pelo Banco que transmite a informação.
+Complementarmente, tendo em conta os meios que a SIBS tem que ter permanentemente
+disponíveis, existe uma tarifa mensal mínima a imputar a todas as instituições
+intervenientes no Sistema de Débitos Directos, quer como participantes directas, quer
+como representadas. O valor mínimo apenas será aplicado quando, para uma dada
+instituição, os totais resultantes da aplicação dos custos de processamento da SIBS
+lhe sejam inferiores.</p>
+
+<p>No tarifário interbancário, a lógica subjacente consiste no pagamento de tarifas
+como contrapartida de serviços recíprocos prestados entre os Participantes, através do
+SDD.</p>
+
+<p>Em cada compensação, os Bancos participantes recebem um resumo do número de registos
+considerados para facturação SIBS, o que lhes permitirá efectuar o controlo desta. O
+apuramento da facturação SIBS é feito numa base mensal e enviado aos Participantes
+mediante apresentação de factura. Os valores do tarifário interbancário excluindo o tarifário das IDDs são apurados diariamente e integram o
+saldo de compensação comunicado na sessão ao Banco de Portugal. O
+tarifário interbancário das IDDs é calculado numa base mensal e cobrado no primeiro dia
+útil do mês seguinte ao da facturação.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="K.5.3">K.5.3</a> DOCUMENTAÇÃO</h2>
+
+<p><br>
+Como documentação de referência deste subsistema existem: 
+
+<ul>
+  <li>Aviso do Banco de Portugal n.º 1/2002 de Janeiro de 2002 que explicita os principais
+    direitos e responsabilidade dos credores, devedores e instituições de crédito
+    participantes no SDD.</li>
+  <li>Regulamento do SICOI, o qual inclui regras e procedimentos gerais para este Subsistema,
+    no que concerne a telecompensação</li>
+  <li>Manual de Funcionamento do Sistema de Débitos Directos, que define as características
+    e especificações técnicas.</li>
+  <li>Manual Terminal Bancário, Opção Sistema de Débitos Directos, que detalha o modo de
+    utilização do Terminal Bancário na sua componente de SDD.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="K.5.4">K.5.4</a> APLICAÇÕES DESENVOLVIDAS
+PELA SIBS</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.5.4.1">K.5.4.1</a> TERMINAL DE SERVIÇOS SIBS</h3>
+
+<p><br>
+Os Participantes no Sistema de Débitos Directos têm de recorrer obrigatoriamente à
+utilização serviço de Terminal de Serviços SIBS, aplicação desenvolvida pela SIBS
+para a realização de operações relativas aos clientes devedores e às Entidades
+Credoras participantes no SDD, tais como: inserção, cancelamento, alteração e consulta
+de Autorizações de Débito em Conta e de Entidades Credoras.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.5.4.2">K.5.4.2</a> <i>KITS</i> DE SEGURANÇA <em>HARDWARE</em> E <em>SOFTWARE</em></h3>
+
+<p><br>
+A participação no SDD obriga à implementação de <em>hardware</em> e <em>software</em>
+de segurança. Neste contexto, a SIBS desenvolveu diversos <em>kits</em> de segurança, de
+acordo com os requisitos especificados para o SDD e considerando os ambientes
+aplicacionais mais utilizados no mercado, oferecendo uma ampla oferta aos Participantes
+neste domínio. Os Participantes podem assim escolher entre os <em>kits</em>
+disponibilizados pela SIBS ou adoptar outras soluções no mercado, que têm de cumprir as
+especificações de segurança do SDD.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.5.4.3">K.5.4.3</a> TERMINAL DE DÉBITOS DIRECTOS</h3>
+
+<p><br>
+À semelhança do sucedido para outros subsistemas, a SIBS desenvolveu um Terminal de
+Débitos Directos, que permite formatar a informação a apresentar à compensação, de
+acordo com as especificações do Manual de Funcionamento, bem como validar os ficheiros
+recebidos (a aplicação inclui ainda um <em>software</em> de segurança, compatível com
+as exigências do sistema neste âmbito e integrável em alguns dos <em>kits</em>
+referidos no parágrafo anterior). Os Participantes podem, no entanto, desenvolver ou
+encomendar as suas próprias aplicações, desde que em conformidade com as
+especificações do Manual de Funcionamento.</p>
+
+<p class="dta"><br>
+<a href="k4.htm" target="main">Anterior</a>/<a href="k6.htm" target="main">Seguinte</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

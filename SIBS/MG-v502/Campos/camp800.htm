@@ -1,0 +1,1841 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos 800 (800-899)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.</td>
+    <td class="fundo">REP.</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="800" name="800">800</a></td>
+    <td class="esq"><u>ORIGEM DA FEE</u> <p>Indica o tipo de entidade que originou um registo
+    de fee (comissão).</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; 1 - SIBS/Banco Emissor<br />
+    &nbsp;&nbsp; 2 - Acquirer Internacional</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ORI-FEE</td>
+  </tr>
+  <tr>
+    <td><a id="801" name="801">801</a></td>
+    <td class="esq"><u>CÓDIGO DE RESPOSTA DA UNICRE</u> <p>Campo que informa a resposta da
+    UNICRE a um pedido de operação.</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2" class="esq">Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td nowrap>&nbsp;&nbsp; 000 -&nbsp;</td>
+        <td class="esq">Transacção aprovada</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 001 -&nbsp;</td>
+        <td class="esq">Delegação na UNICRE</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 003 -&nbsp;</td>
+        <td class="esq">Comerciante classificado - Ligue xxxxxxxxx</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 004 -&nbsp;</td>
+        <td class="esq">Captura do cartão no ATM</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 005 -&nbsp;</td>
+        <td class="esq">Transacção não aprovada por motivos vários</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 006 -&nbsp;</td>
+        <td class="esq">Erro aplicacional</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 007 -&nbsp;</td>
+        <td class="esq">Recusado c/captura cartão (c/fraude)</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 014 -&nbsp;</td>
+        <td class="esq">Cartão inválido ou inexistente</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 015 -&nbsp;</td>
+        <td class="esq">Emissor inexistente</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 030 -&nbsp;</td>
+        <td class="esq">Autorização c/pedido de identificação</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 041 -&nbsp;</td>
+        <td class="esq">Cartão perdido</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 043 -&nbsp;</td>
+        <td class="esq">Cartão roubado</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 051 -&nbsp;</td>
+        <td class="esq">Transacção não aprovada por saldo insuficiente. O campo 027 indica o
+        máximo que poderia ter sido pago na transacção que finda.</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 054 -&nbsp;</td>
+        <td class="esq">Cartão expirado</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 055 -&nbsp;</td>
+        <td class="esq">PIN inválido</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 057 -&nbsp;</td>
+        <td class="esq">Serviço inválido para o cartão</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 075 -&nbsp;</td>
+        <td class="esq">Tentativas de PIN esgotadas</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 076 -&nbsp;</td>
+        <td class="esq">Não existe movimento original</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODRESPU</td>
+  </tr>
+  <tr>
+    <td><a id="802" name="802">802</a></td>
+    <td class="esq"><u>TEXTO ESPECIAL DO RECIBO</u> <p>Texto a apresentar no recibo do cliente
+    e que identifica o sistema de pagamento ou outro texto (ex.: Taxa Cliente).</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TEXTO RECIBO</td>
+  </tr>
+  <tr>
+    <td><a id="803" name="803">803</a></td>
+    <td class="esq"><u>TIPO DE RECIBO</u> <p>Código que indica se se pretende que o POS emita
+    um recibo com espaço para assinatura, ou não:</p>
+    <p>&nbsp;&nbsp; 0 - sem necessitar assinatura<br />
+    &nbsp;&nbsp; 1 - para pôr assinatura<br />
+    &nbsp;&nbsp; 2 - sem recibo/sem assinatura</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPORECIBO</td>
+  </tr>
+  <tr>
+    <td><a id="804" name="804">804</a></td>
+    <td class="esq"><u>ISSUER ID</u> <p>Indica o BIN do cartão (Bank Identifier Number).
+    Normalmente será preenchido com 6 dígitos numéricos encostados à esquerda e completado
+    com espaços.</td>
+    <td class="dta">17</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ISSUER ID</td>
+  </tr>
+  <tr>
+    <td><a id="805" name="805">805</a></td>
+    <td class="esq"><u>ACCOUNT NR</u> <p>Indica o número do cartão. Preenchido com o número
+    encostado à esquerda com CD e completado com espaços.</td>
+    <td class="dta">17</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ACCOUNT NR</td>
+  </tr>
+  <tr>
+    <td><a id="806" name="806">806</a></td>
+    <td class="esq"><u>TIPO DE CARTÃO</u> <p>Identifica o tipo de cartão. Trata-se de um
+    campo composto:</p>
+    <p>O <em>1º dígito</em> pode assumir os seguintes valores:<br />
+    &nbsp;&nbsp; 3 - VISA<br />
+    &nbsp;&nbsp; 2 - SHELL<br />
+    &nbsp;&nbsp; 4 - MASTERCARD<br />
+    &nbsp;&nbsp; 5 - EUROCARD<br />
+    &nbsp;&nbsp; 6 - ELECTRON<br />
+    &nbsp;&nbsp; 7 - UNIBANCO<br />
+    &nbsp;&nbsp; 8 - ESSO<br />
+    &nbsp;&nbsp; A - CECA<br />
+    &nbsp;&nbsp; C - GALP<br />
+    &nbsp;&nbsp; G - MAESTRO<br />
+    &nbsp;&nbsp; K - DKV<br>
+    &nbsp;&nbsp; M - DINERS<br />
+    &nbsp;&nbsp; N - REPSOL (SOLRED)<br />
+    &nbsp;&nbsp; O - REPSOL<br />
+    &nbsp;&nbsp; Q - CREDIPLUS<br />
+    &nbsp;&nbsp; R - CREDIPLUS<br />
+    &nbsp;&nbsp; S - SERVISA<br />
+    &nbsp;&nbsp; T - CEPSA<br />
+    &nbsp;&nbsp; U - UTA<br />
+    &nbsp;&nbsp; V - RESSA<br>
+    &nbsp;&nbsp; X - JCB</p>
+    <p>O <em>2º dígito</em> pode assumir os seguintes valores:<br />
+    &nbsp;&nbsp; 0 - cartão internacional<br />
+    &nbsp;&nbsp; 1 - cartão nacional Banco autónomo<br />
+    &nbsp;&nbsp; 2 - cartão nacional Banco não autónomo<br />
+    &nbsp;&nbsp; 3 - cartão nacional Banco semi-autónomo<br />
+    &nbsp;&nbsp; 4 - cartão nacional fora da SIBS</p>
+    <p>Ex:<br />
+    &nbsp;&nbsp; 70 - cartões Unibanco<br />
+    &nbsp;&nbsp; 30 - cartões Visa internacionais<br />
+    &nbsp;&nbsp; 31 - cartões Visa nacionais BCP<br />
+    &nbsp;&nbsp; 42 - cartões Mastercard nacionais BTA</p>
+    <p><u>Nota:</u><br />
+    Sempre que referenciada apenas a primeira posição trata-se de identificar a família de
+    cartões processada.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIPOCART</td>
+  </tr>
+  <tr>
+    <td><a id="807" name="807">807</a></td>
+    <td class="esq"><u>PINBLOCK</u> <p>Trata-se do valor do PIN introduzido no terminal
+    encifrado por uma chave de transporte carregada para a comunicação entre o Sistema SIBS
+    e UNICRE.</p>
+    <p>O formato do campo é o seguinte:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td nowrap="nowrap">&nbsp; - &nbsp;</td>
+        <td class="esq">preenchido a low-values -&gt; ausência de PIN</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; - &nbsp;</td>
+        <td class="esq">preenchido com valores significativos -&gt; Pinblock</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; - &nbsp;</td>
+        <td class="esq">preenchido a high-values -&gt; PIN validado</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; - &nbsp;</td>
+        <td class="esq">preenchido a zeros -&gt; operação não necessita de PIN</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap"></td>
+        <td class="esq">(ex: telefones)</td>
+      </tr>
+    </table>
+    <p>No caso de devoluções e cancelamentos, o PIN do cliente nunca é introduzido, por
+    isso o PINBLOCK será preenchido a low values.</td>
+    <td class="dta">8</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>PINBLOCK</td>
+  </tr>
+  <tr>
+    <td><a id="808" name="808">808</a></td>
+    <td class="esq"><u>PVV</u> <p>&quot;Personal Validation Value&quot; da pista 2. Trata-se
+    do valor que é escrito sobre a pista 2 do cartão e que participa na validação do PIN.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PVV</td>
+  </tr>
+  <tr>
+    <td><a id="809" name="809">809</a></td>
+    <td class="esq"><u>ENTIDADE DA AUTORIZAÇÃO</u> <p>Indica a entidade que autorizou a
+    operação. Estará preenchido a zeros nas mensagens a quente (1xxx). Nas mensagens a frio
+    (2xxx e 3xxx) e no ficheiro de movimentos pode assumir os seguintes valores:</p>
+    <p>&nbsp; - &#145;0698&#146; (UNICRE)<br />
+    &nbsp; - código do Banco (Emissor do cartão)<br />
+    &nbsp; - &#145;0602&#146; (Host da SIBS)<br />
+    &nbsp; - &#145;0500&#146; (FEP da SIBS)<br />
+    &nbsp; - &#145;8888&#146; (Visa Internacional - Base I)<br />
+    &nbsp; - &#145;8889&#146; (Visa Internacional - single message)<br />
+    &nbsp; - &#145;2800&#146; (CECA)<br />
+    &nbsp; - &#145;5400&#146; (Europay/Mastercard)<br>
+    &nbsp; - '6666' (Cartão EMV)</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ENTAUT</td>
+  </tr>
+  <tr>
+    <td><a id="810" name="810">810</a></td>
+    <td class="esq"><u>SEPARADOR</u> <p>Caracter ASCII X '23', &quot;#&quot;.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>SEPARADOR</td>
+  </tr>
+  <tr>
+    <td><a id="811" name="811">811</a></td>
+    <td class="esq"><u>INDICADOR DE EXPANSÃO DA PISTA 2</u> <p>Código que indica se o
+    terminal onde a pista 2 do cartão foi lida, já apresenta os caracteres que efectivamente
+    existem no cartão (EXP-P2 = &#145;1&#146;) ou se o campo PISTA2 (<a
+    href="camp800.htm#832">832</a>) inclui um &quot;padding&quot; de zeros no fim da pista
+    para preencher os 37 caracteres do campo. O campo estará prenchido a zeros nos casos em
+    que a Pista 2 não foi lida (ex: operações key-entered).<br />
+    O campo será igual a 2, quando o campo (<a href="camp800.htm#832">832</a>) apresentar os
+    dados de um cartão temporário, criado pela SIBS para o MBNet.<br />
+    O campo será igual a 3, quando o campo (<a href="camp800.htm#832">832</a>) apresentar os
+    dados em formato de pista, criada pela SIBS a partir da Base de Dados de Cartões.<br />
+    O campo será igual a 4, quando o campo (<a href="camp800.htm#832">832</a>) apresentar os
+    dados em formato de pista manual, criada pela SIBS a partir da Base de Dados de Cartões.<br>
+    O campo será igual a 5, quando o campo (<a href="camp800.htm#832">832</a>) apresentar os
+    dados de um cartão EMV para o qual não foi obtido no Terminal o campo 'Track 2
+    equivalent data'.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>EXP-P2</td>
+  </tr>
+  <tr>
+    <td><a id="812" name="812">812</a></td>
+    <td class="esq"><u>COMPRIMENTO DA PISTA 2</u> <p>Número de caracteres da Pista 2 do
+    cartão lida pelo terminal até encontrar o caracter de fim de pista. O campo estará
+    preenchido a zeros nos casos em que a Pista 2 não foi lida (ex: operações key-entered).</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COMP-P2</td>
+  </tr>
+  <tr>
+    <td><a id="813" name="813">813</a></td>
+    <td class="esq"><u>COMPRIMENTO DO BIN</u> <p>Número de caracteres que representam o
+    emissor no campo ISSUER ID (<a href="camp800.htm#804">804</a>).</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COMP-BIN</td>
+  </tr>
+  <tr>
+    <td><a id="814" name="814">814</a></td>
+    <td class="esq"><u>COMPRIMENTO DO NÚMERO DE CARTÃO</u> <p>Número de caracteres que
+    representam o número de cartão no campo ACCOUNT NR (<a href="camp800.htm#805">805</a>).</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COMP-NCART</td>
+  </tr>
+  <tr>
+    <td><a id="815" name="815">815</a></td>
+    <td class="esq"><u>INDICADOR DE RISCO</u> <p>Indica a classificação do comerciante
+    efectuada pela entidade contratante do mesmo<em> (Acquirer) </em>ou pela entidade
+    encarregada da Detecção de Fraude que actue em seu nome:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" nowrap="nowrap">&nbsp;&nbsp; 0 - Inactivo -&nbsp;</td>
+        <td class="esq">operação decorre normalmente</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap">&nbsp;&nbsp; 1 - Activo&nbsp;&nbsp; -</td>
+        <td class="esq">operação deve ser enviada ao SIDF</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDRISCO</td>
+  </tr>
+  <tr>
+    <td><a id="816" name="816">816</a></td>
+    <td class="esq"><u>CÓDIGO DE RESPOSTA DO RESOLUTOR</u> <p>Campo unicamente preenchido nas
+    mensagens a frio relativas a operações em TPA; indica o código de recusa da
+    operação original.</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2" class="esq">Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 00 -&nbsp;</td>
+        <td class="esq">Transacção aprovada</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 03 -&nbsp;</td>
+        <td class="esq">Comerciante inválido (por ordem da Unicre)</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 04 -&nbsp;</td>
+        <td class="esq">Captura do cartão</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 05 -&nbsp;</td>
+        <td class="esq">Transacção não aprovada por motivos vários</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 06 -&nbsp;</td>
+        <td class="esq">Erro aplicacional</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 07 -&nbsp;</td>
+        <td class="esq">Recusado c/captura cartão (c/fraude)</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 09 -&nbsp;</td>
+        <td class="esq">Situação de cartão inválido (anulado, etc)</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 14 -&nbsp;</td>
+        <td class="esq">Cartão inexistente</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 15 -&nbsp;</td>
+        <td class="esq">Emissor inexistente</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 16 -&nbsp;</td>
+        <td class="esq">Operação não autorizada para comerciante</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 41 -&nbsp;</td>
+        <td class="esq">Cartão perdido</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 43 -&nbsp;</td>
+        <td class="esq">Cartão roubado</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 51 -&nbsp;</td>
+        <td class="esq">Transacção não aprovada por saldo insuficiente</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 54 -&nbsp;</td>
+        <td class="esq">Cartão expirado</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 55 -&nbsp;</td>
+        <td class="esq">PIN inválido</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 62 -&nbsp;</td>
+        <td class="esq">Cartão com restrições de uso</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 75 -&nbsp;</td>
+        <td class="esq">Tentativas de PIN esgotadas</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 78 -&nbsp;</td>
+        <td class="esq">Cartão sem conta atribuída</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODREC</td>
+  </tr>
+  <tr>
+    <td><a id="817" name="817">817</a></td>
+    <td class="esq"><u>CÓDIGO DE OPERAÇÃO DE CONSULTA</u> <p>Todos os códigos de 0 a 50
+    poderão ser posicionados pela UNICRE para identificação de pedidos do comerciante para
+    o Sistema da UNICRE.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODOPER</td>
+  </tr>
+  <tr>
+    <td><a id="818" name="818">818</a></td>
+    <td class="esq"><u>DADOS OPERAÇÃO DE CONSULTA</u> <p>Tratam-se dos dados digitados pelo
+    utilizador no POS onde são indicados os outros elementos necessários à correcta
+    definição do pedido pretendido. Cada um dos componentes é delimitado por um separador
+    (atributo <a href="camp800.htm#810">810</a>) que é introduzido quando o operador prime a
+    tecla Enter. Os caracteres a serem introduzidos são: 0 a 9, A a Z e DOT (#). O campo é
+    de comprimento variável e termina quando o operador prime duas vezes a tecla
+    &quot;enter&quot;. Portanto o campo termina com dois separadores.</p>
+    <p>&nbsp;&nbsp; Ex.1: #<br />
+    &nbsp;&nbsp; Ex.2: # 90 # 00735##</td>
+    <td class="dta">100</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DADOPER</td>
+  </tr>
+  <tr>
+    <td><a id="819" name="819">819</a></td>
+    <td class="esq"><u>SITUAÇÃO DO CARTÃO FINAL</u> <p>Código que indica o sentido da
+    modificação de situação de um cartão:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td nowrap="nowrap">&nbsp; 0 -&nbsp;</td>
+        <td class="esq">cartão normalizado</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 1 -&nbsp;</td>
+        <td class="esq">cartão capturado (origem-ATM)</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 2 -&nbsp;</td>
+        <td class="esq">cartão a colocar na L.N. nacional (origem cliente/Banco)</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 3 -&nbsp;</td>
+        <td class="esq">cartão a colocar na L.N. nacional + internacional (origem cliente/Banco)</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 4 -&nbsp;</td>
+        <td class="esq">cartão inibido - tentativas de PIN esgotadas (origem-UNICRE)</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 5 -&nbsp;</td>
+        <td class="esq">cartão capturado por ordem da UNICRE passa a cartão normal
+        (origem-UNICRE)</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 6 -&nbsp;</td>
+        <td class="esq">cartão com tentativas de PIN esgotadas passa a cartão normal
+        (origem-UNICRE)</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 7 -&nbsp;</td>
+        <td class="esq">Alteração dados L.N. nacionais (origem-BANCO)</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 8 -&nbsp;</td>
+        <td class="esq">Alteração dados L.N. nacionais + internacionais<br />
+        (origem BANCO)</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SITCARTF</td>
+  </tr>
+  <tr>
+    <td><a id="820" name="820">820</a></td>
+    <td class="esq"><u>ORIGEM DA INIBIÇÃO</u> <p>Código que indica a origem do pedido de
+    inibição:</p>
+    <p>&nbsp;&nbsp; 0 - Sem comunicação à Unicre<br />
+    &nbsp;&nbsp; 1 - A pedido do Banco<br />
+    &nbsp;&nbsp; 2 - A pedido do cliente<br />
+    &nbsp;&nbsp; 3 - Gerado pela Rede MB</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ORI-INIB</td>
+  </tr>
+  <tr>
+    <td><a id="821" name="821">821</a></td>
+    <td class="esq"><u>LISTA NEGRA UNICRE</u> <p>Código que indica se o Banco pretende que o
+    cartão seja inserido na Lista de cartões inibidos enviada aos comerciantes nacionais (1)
+    ou não (0). No caso do campo estar preenchido com &quot;1&quot;, o campo <a
+    href="camp800.htm#822">822</a> deve estar preenchido com a data de abate desta Lista
+    Negra.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>LC-NAC</td>
+  </tr>
+  <tr>
+    <td><a id="822" name="822">822</a></td>
+    <td class="esq"><u>DATA LIMITE LISTA NEGRA NACIONAL</u> <p>Data em que se pretende que
+    seja retirado o cartão da Lista Negra enviada aos comerciantes nacionais.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DT-LC-NAC</td>
+  </tr>
+  <tr>
+    <td><a id="823" name="823">823</a></td>
+    <td class="esq"><u>DATA LIMITE LISTA NEGRA VISA</u> <p>Data em que se pretende que seja
+    retirado o cartão da Lista Negra da Visa Internacional. Corresponde à data limite para a
+    informação VISCA (campo <a href="campos3.htm#279">279</a>) se manter activa. Deve ser
+    zeros se VISCA estiver a espaços.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DT-LST-INT</td>
+  </tr>
+  <tr>
+    <td><a id="824" name="824">824</a></td>
+    <td class="esq"><u>KEY - KS</u> <p>Chave de sessão encifrada pela chave transporte
+    fornecida pela UNICRE. Há duas ocorrências de chaves assinaladas com 1 e 2 na mensagem.
+    Numa mensagem, a determinação da chave usada na formatação do PINBLOCK é obtida pelo
+    algoritmo (mod. 2) aplicado aos campos:<br />
+    <br />
+    (<a href="campos2.htm#105">105</a>)DTHORA (oito posições da esquerda) + (<a
+    href="campos2.htm#117">117</a>)NRLOG</td>
+    <td class="dta">8</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>KEY-KS</td>
+  </tr>
+  <tr>
+    <td><a id="825" name="825">825</a></td>
+    <td class="esq"><u>KEY - KCV</u> <p>Valor de controlo da chave gerada (<a
+    href="camp800.htm#824">824</a>).</td>
+    <td class="dta">3</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>KEY-KCV</td>
+  </tr>
+  <tr>
+    <td><a id="826" name="826">826</a></td>
+    <td class="esq"><u>DISPLAY POS</u> <p>Texto a apresentar no display do POS. O campo
+    termina com o primeiro caracter de controlo do campo seguinte (<a href="camp800.htm#827">827</a>).</td>
+    <td class="dta">32</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DISPLAYPOS</td>
+  </tr>
+  <tr>
+    <td><a id="827" name="827">827</a></td>
+    <td class="esq"><u>DADOS RECIBO</u> <p>A soma dos atributos 65 e 66 não pode exceder 217
+    caracteres. O corpo do recibo será efectuado a partir dos textos correspondentes às
+    linhas emitidas e que serão impressas. Cada linha começa com um caracter especial e é
+    seguida pelos caracteres a imprimir. O campo termina com outro caracter especial. Este
+    poderá ser o único no caso de não haver textos de comprimento variável.</p>
+    <p>Caracteres especiais:<br />
+    &nbsp; X '0A' - impressão normal<br />
+    &nbsp; X '09' - impressão condensada<br />
+    &nbsp; X '0B' - impressão expandida<br />
+    &nbsp; X '0C' - fim do recibo</td>
+    <td class="dta">217</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DADOSRECIBO</td>
+  </tr>
+  <tr>
+    <td><a id="828" name="828">828</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DA MENSAGEM NA UNICRE</u> <p>Campo que permite
+    identificar a mensagem no sistema da UNICRE; corresponde ao número da autorização.</td>
+    <td class="dta">6</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>IDMSG-UNI</td>
+  </tr>
+  <tr>
+    <td><a id="829" name="829">829</a></td>
+    <td class="esq"><u>CÓDIGO DE RESPOSTA DA SIBS</u> <p>Código que indica a resposta a
+    pedidos enviados pela Unicre. </p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2" class="esq">Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 00 -&nbsp;</td>
+        <td class="esq">Transacção aprovada</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 01 -&nbsp;</td>
+        <td class="esq">Delegação na Unicre</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 04 -&nbsp;</td>
+        <td class="esq">Captura em ATM</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 05 -&nbsp;</td>
+        <td class="esq">Transacção não aprovada por motivos vários</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 06 -&nbsp;</td>
+        <td class="esq">Erro aplicacional</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 07 -&nbsp;</td>
+        <td class="esq">Recusado c/ captura cartão (c/ fraude)</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 14 -&nbsp;</td>
+        <td class="esq">Cartão inexistente</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 15 -&nbsp;</td>
+        <td class="esq">Emissor inexistente</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 30 -&nbsp;</td>
+        <td class="esq">Autorização c/ pedido de identificação</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 51 -&nbsp;</td>
+        <td class="esq">Transacção não aprovada por saldo insuficiente</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 54 -&nbsp;</td>
+        <td class="esq">Cartão expirado</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 55 -&nbsp;</td>
+        <td class="esq">PIN inválido</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 75 -&nbsp;</td>
+        <td class="esq">Tentativas de PIN esgotadas</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 76 -&nbsp;</td>
+        <td class="esq">Não existe movimento original</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 82 -&nbsp;</td>
+        <td class="esq">CVV1/CVC1 ou CVV2/CVC2 inválido</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODRSIBS</td>
+  </tr>
+  <tr>
+    <td><a id="830" name="830">830</a></td>
+    <td class="esq"><u>NÚMERO DE AUTORIZAÇÃO PARA UNICRE</u> <p>Nas mensagens de resposta
+    enviadas pela SIBS, informa o número da autorização; a UNICRE envia o valor recebido da
+    SIBS nas mensagens de anulação.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NR-AUT-U</td>
+  </tr>
+  <tr>
+    <td><a id="831" name="831">831</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DA MENSAGEM ORIGINAL NA UNICRE</u> <table border="0"
+    cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2" class="esq"><br />
+        Campo que indica:</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; -&nbsp;</td>
+        <td class="esq">nas mensagens de anulação enviadas pela UNICRE, a identificação da
+        UNICRE incluída no pedido original;</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; -&nbsp;</td>
+        <td class="esq">nas mensagens de anulação enviadas pela SIBS, a identificação da
+        UNICRE enviada pela Unicre na resposta ao pedido original.</td>
+      </tr>
+    </table>
+    <p>Nas mensagens originais de operações de cancelamento inclui o valor introduzido no
+    Terminal.</td>
+    <td class="dta">6</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>IDMSG-UNI-O</td>
+  </tr>
+  <tr>
+    <td><a id="832" name="832">832</a></td>
+    <td class="esq"><u>PISTA 2</u> <p>Informa a pista 2 do cartão expandida. Ver <a
+    href="832.htm" target="main">formato</a>.</td>
+    <td class="dta">37</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>PISTA2</td>
+  </tr>
+  <tr>
+    <td><a id="833" name="833">833</a></td>
+    <td class="esq"><u>COMISSÃO DA UNICRE</u> <p>O campo é preenchido com o valor da
+    percentagem da Unicre na comissão paga pelo Comerciante relativa a operações de
+    produtos não MB (ex: acordo VISA).</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>COMUNI</td>
+  </tr>
+  <tr>
+    <td><a id="834" name="834">834</a></td>
+    <td class="esq"><u>COMISSÃO DO COMERCIANTE</u> <p>O campo é preenchido com a comissão
+    paga pelo comerciante ao representante de cartões, relativa a operações de produtos
+    não MB (ex: acordo VISA).</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>COMCOM</td>
+  </tr>
+  <tr>
+    <td><a id="835" name="835">835</a></td>
+    <td class="esq"><u>CÂMBIO DO DÓLAR</u> <p>É o valor da venda do dólar comunicado pela
+    UNICRE à SIBS e que vigorará no Sistema a partir das 13 horas do dia da comunicação.
+    Será utilizado para efectuar o cálculo do montante da transacção para a VISA (campo
+    835).</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>4 int.<br />
+    5 dec.</td>
+    <td>CAMBIODOL</td>
+  </tr>
+  <tr>
+    <td><a id="836" name="836">836</a></td>
+    <td class="esq"><u>MONTANTE EM DÓLARES</u> <p>É o montante da transacção informado no
+    pedido de autorização para a VISA, que resultou da conversão do montante em escudos
+    pedidos pelo cliente no terminal (campo <a href="campos1.htm#008">008</a>) pelo câmbio do
+    dólar (campo <a href="camp800.htm#834">834</a>). Será feito um arredondamento na segunda
+    decimal. Corresponde ao bit 04.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>4 int.<br />
+    2 dec.</td>
+    <td>MONTDOLAR</td>
+  </tr>
+  <tr>
+    <td><a id="837" name="837">837</a></td>
+    <td class="esq"><u>INDICADOR DE SETTLEMENT</u> <p>Indica, no registo que informa os totais
+    de cut-off trocados com a VISA Internacional (Single Messages), se existiu ou não
+    diferença entre os totais apurados pela SIBS e os totais enviados pela VISA.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; 1 - totais conferem;<br />
+    &nbsp;&nbsp; 2 - totais não conferem.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>INDSET</td>
+  </tr>
+  <tr>
+    <td><a id="838" name="838">838</a></td>
+    <td class="esq"><u>CREDITS, NUMBER (Field 74)</u> <p>Ver descrição na documentação da
+    Visa.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>3 int.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="839" name="839">839</a></td>
+    <td class="esq"><u>CREDITS, REVERSAL NUMBER (Field 75)</u> <p>Ver descrição na
+    documentação da Visa.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>3 int.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="840" name="840">840</a></td>
+    <td class="esq"><u>DEBITS, NUMBER (Field 76)</u> <p>Ver descrição na documentação da
+    Visa.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>3 int.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="841" name="841">841</a></td>
+    <td class="esq"><u>DEBITS, REVERSAL NUMBER (Field 77)</u> <p>Ver descrição na
+    documentação da Visa.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>3 int.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="842" name="842">842</a></td>
+    <td class="esq"><u>CREDITS, AMOUNT (Field 86)</u> <p>Ver descrição na documentação da
+    Visa.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="843" name="843">843</a></td>
+    <td class="esq"><u>CREDITS, REVERSAL AMOUNT (Field 87)</u> <p>Ver descrição na
+    documentação da Visa.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="844" name="844">844</a></td>
+    <td class="esq"><u>DEBITS, AMOUNT (Field 88)</u> <p>Ver descrição na documentação da
+    Visa.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="845" name="845">845</a></td>
+    <td class="esq"><u>DEBITS, REVERSAL AMOUNT (Field 89)</u> <p>Ver descrição na
+    documentação da Visa.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="846" name="846">846</a></td>
+    <td class="esq"><u>AMOUNT, NET SETTLEMENT (Field 97)</u> <p>Ver descrição na
+    documentação da Visa.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="847" name="847">847</a></td>
+    <td class="esq"><u>NÚMERO DE CONSULTAS</u> <p>Indica o número de consultas (enquiries)
+    efectuadas na sessão real-time com a VISA (Single Messages).</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRCONS</td>
+  </tr>
+  <tr>
+    <td><a id="848" name="848">848</a></td>
+    <td class="esq"><u>MONTANTE DE CONSULTAS</u> <p>Indica o montante total de comissões
+    resultantes das consultas indicadas no campo anterior (crédito à SIBS).</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>TOT-CONS</td>
+  </tr>
+  <tr>
+    <td><a id="849" name="849">849</a></td>
+    <td class="esq"><u>CÓDIGO DO BANCO DE APOIO DA UNICRE</u> <p>É o código do Banco onde
+    reside a conta da Unicre na qual será reflectido o impacto contabilístico do registo.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>BANCOUNI</td>
+  </tr>
+  <tr>
+    <td><a id="850" name="850">850</a></td>
+    <td class="esq"><u>TOTAL DE TAXAS CLIENTE</u> <p>Indica o total de taxas cliente (cash
+    advance fees) relativas a operações efectuadas no sistema de single messages. Está
+    deduzido o respectivo valor no caso de anulações.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>TOT-TAXACLI</td>
+  </tr>
+  <tr>
+    <td><a id="851" name="851">851</a></td>
+    <td class="esq"><u>TOTAL DE COMISSÕES UNICRE</u> <p>Indica o total de comissões da
+    UNICRE resultantes da partilha das cash advance fees (25% dos campo <a
+    href="camp800.htm#848">848</a> e <a href="camp800.htm#850">850</a>) ou das comissões
+    cobradas a comerciantes resultantes de um acordo posicionado pela UNICRE (20% do campo <a
+    href="camp800.htm#852">852</a>).</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>TOT-COMUNI</td>
+  </tr>
+  <tr>
+    <td><a id="852" name="852">852</a></td>
+    <td class="esq"><u>TOTAL DE COMISSÕES COMERCIANTE</u> <p>Indica o total de comissões
+    pagas pelos comerciantes relativamente a um dado acordo (ex: CECA) posicionado pela
+    UNICRE.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>TOT-COM</td>
+  </tr>
+  <tr>
+    <td><a id="853" name="853">853</a></td>
+    <td class="esq"><u>TOTAL DAS OPERAÇÕES DE UM ACORDO</u> <p>Indica o montante total das
+    operações efectuadas ao abrigo de um dado acordo (ex: CECA) posicionado pela UNICRE.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>TOT-ACORDO</td>
+  </tr>
+  <tr>
+    <td><a id="854" name="854">854</a></td>
+    <td class="esq"><u>INDICADOR DE VALIDAÇÃO DA PISTA 2</u> <p>Indica, nas mensagens de
+    resposta em real-time, se foi efectuada a validação da pista 2 recebida.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp;&nbsp; 0 - não validada<br />
+    &nbsp;&nbsp;&nbsp; 1 - validada</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDVALP2</td>
+  </tr>
+  <tr>
+    <td><a id="855" name="855">855</a></td>
+    <td class="esq">I<u>DENTIFICAÇÃO NO REPRESENTANTE</u> <p>Identificação do comerciante
+    de um POS na nomenclatura de um Representante (ex. número do comerciante para a rede
+    UNICRE).</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDCOMREP</td>
+  </tr>
+  <tr>
+    <td><a id="856" name="856">856</a></td>
+    <td class="esq"><u>DATA-HORA DA ACTUALIZAÇÃO DO ACORDO</u> <p>Indica a data-hora da
+    actualização de acordo de representação posicionado pela Unicre.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>AAAAMMDD<br />
+    HHMMSS</td>
+    <td>DTH-ACT</td>
+  </tr>
+  <tr>
+    <td><a id="857" name="857">857</a></td>
+    <td class="esq"><u>DATA-HORA DO PROCESSAMENTO</u> <p>Indica, no header dos ficheiros
+    enviados à Unicre, a data-hora do processamento efectuado pela SIBS.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>AAAAMMDD<br />
+    HHMMSS</td>
+    <td>DTH-PROC</td>
+  </tr>
+  <tr>
+    <td><a id="858" name="858">858</a></td>
+    <td class="esq"><u>DATA DE SETTLEMENT</u> <p>É a data em que a transacção foi
+    processada pelo sistema de pagamento internacional. Poderá ser diferente da data em que a
+    transacção foi efectivamente realizada.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="859" name="859">859</a></td>
+    <td class="esq"><u>TEXTO DA FEE</u> <p>Campo descritivo com o motivo que deu origem à
+    FEE.</td>
+    <td class="dta">70</td>
+    <td>A</td>
+    <td>TEXT-FEE</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="860" name="860">860</a></td>
+    <td class="esq"><u>SALDO A REGULARIZAR</u> <p>É o montante total (devedor ou credor) que
+    a conta de regularização da Entidade (Banco) apresenta.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="861" name="861">861</a></td>
+    <td class="esq"><u>MONTANTE MOVIMENTADO</u> <p>É o valor pelo qual foi movimentada (a
+    débito ou a crédito) a conta de regularização da Entidade (Banco) ou do Cliente.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="862" name="862">862</a></td>
+    <td class="esq"><u>ACQUIRER REFERENCE NUMBER</u> <p>É a chave que a Entidade aceitante da
+    operação atribui à operação.</td>
+    <td class="dta">23</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="863" name="863">863</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DA ENTIDADE</u> <p>É a identificação da
+    Instituição no processamento de informação enviada ou recebida dum sistema de
+    pagamento internacional. Indica, por exemplo:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>&nbsp; -&nbsp;</td>
+        <td class="esq">o BIN processador de settlement duma conta de regularização</td>
+      </tr>
+      <tr>
+        <td>&nbsp; -&nbsp;</td>
+        <td class="esq">a entidade que originou um registo de Fee.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">11</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td nowrap="nowrap">ID-ENT-SISTPAG</td>
+  </tr>
+  <tr>
+    <td><a id="864" name="864">864</a></td>
+    <td class="esq"><u>MONTANTE NA MOEDA DO ACQUIRER</u> <p>Montante da operação no Acquirer
+    (LOG-XMN-01-ACQ-MNT). O campo 865 indica o número de decimais a aplicar ao valor
+    informado neste campo.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="865" name="865">865</a></td>
+    <td class="esq"><u>NÚMERO DE DECIMAIS MONTANTE ACQUIRER</u> <p>É o número de decimais
+    que o campo <a href="camp800.htm#864">864</a> MONTANTE ACQUIRER (LOG-XMN-01-ACQ-MNT)
+    contém.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="866" name="866">866</a></td>
+    <td class="esq"><u>MONTANTE DE SETTLEMENT</u> <p>Indica o montante de uma operação na
+    moeda de Settlement. Informado em escudos ou euros.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="867" name="867">867</a></td>
+    <td class="esq"><u>CÓDIGO VISA PAÍS ORIGEM TRANSACÇÃO</u> <p>É o código
+    internacional atribuído ao País onde teve origem a transacção.<br>
+    Ver descrição na documentação da VISA.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="868" name="868">868</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO ÁREA NEGÓCIO ACQUIRER</u> <p>Ver descrição na
+    documentação da VISA.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="869" name="869">869</a></td>
+    <td class="esq"><u>CÓDIGO PROVÍNCIA / ESTADOS NOS EUA / CANADÁ</u> <p>Ver descrição
+    na documentação da VISA.</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="870" name="870">870</a></td>
+    <td class="esq"><u>CÓDIGO POSTAL DA LOCALIDADE DO COMERCIANTE ORIGEM DA TRANSACÇÃO</u> <p>Código
+    Postal associado à localidade (Campo <a href="campos7.htm#644">644</a>) do comerciante
+    onde teve origem a transacção do estrangeiro.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="871" name="871">871</a></td>
+    <td class="esq"><u>POS ENTRY MODE</u> <p>Código que indica o modo como foi efectuada a
+    transacção no Terminal.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" colspan="2">Pode assumir os seguintes valores:</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap="nowrap">Espaços -&nbsp;</td>
+        <td class="esq">Não especificado</td>
+      </tr>
+      <tr>
+        <td class="dta">00 -&nbsp;</td>
+        <td class="esq">Terminal não utilizado</td>
+      </tr>
+      <tr>
+        <td class="dta">01 -&nbsp;</td>
+        <td class="esq">Key-entered</td>
+      </tr>
+      <tr>
+        <td class="dta">02 -&nbsp;</td>
+        <td class="esq">Leitura banda magnética (Pista 2 quando conhecida ou quando o terminal
+        não diferencia a Pista 1 da 2</td>
+      </tr>
+      <tr>
+        <td class="dta">03 -&nbsp;</td>
+        <td class="esq">Leitura código de barras</td>
+      </tr>
+      <tr>
+        <td class="dta">04 -&nbsp;</td>
+        <td class="esq">Leitura de reconhecimento de caracteres ópticos (OCR)</td>
+      </tr>
+      <tr>
+        <td class="dta">05 -&nbsp;</td>
+        <td class="esq">Leitura de cartão com chip; dados confirmados</td>
+      </tr>
+      <tr>
+        <td class="dta">06 -&nbsp;</td>
+        <td class="esq">Leitura Pista 1</td>
+      </tr>
+      <tr>
+        <td class="dta">90 -&nbsp;</td>
+        <td class="esq">Leitura e transmissão completa da pista magnética (CVV)</td>
+      </tr>
+      <tr>
+        <td class="dta">95 -&nbsp;</td>
+        <td class="esq">Leitura de cartão com chip - dados não confirmados</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="872" name="872">872</a></td>
+    <td class="esq"><u>INDICADOR CARD RECOVERY BUL.</u> <p>Código que indica se o pedido de
+    captura/recolha do cartão está informado na Visa.<br>
+    Pode assumir os seguintes valores:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">Pode assumir os seguintes valores:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp; Espaço -&nbsp;</td>
+        <td class="esq">Visa não informada</td>
+      </tr>
+      <tr>
+        <td class="dta">I -&nbsp;</td>
+        <td class="esq">Informação insuficiente para fazer a validação contra o Bul.</td>
+      </tr>
+      <tr>
+        <td class="dta">N -&nbsp;</td>
+        <td class="esq">O cartão não existia na região do comerciante na data da transacção</td>
+      </tr>
+      <tr>
+        <td class="dta">Y -&nbsp;</td>
+        <td class="esq">Cartão informado no CRB na data da transacção</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="873" name="873">873</a></td>
+    <td class="esq"><u>REQ. PAYMENT SERVICE</u> <p>Pode assumir os seguintes valores:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">Pode assumir os&nbsp; valores:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp; Espaço -&nbsp;</td>
+        <td class="esq">Sem informação</td>
+      </tr>
+      <tr>
+        <td class="dta">A -&nbsp;</td>
+        <td class="esq">Assinatura</td>
+      </tr>
+      <tr>
+        <td class="dta">P -&nbsp;</td>
+        <td class="esq">PIN</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="874" name="874">874</a></td>
+    <td class="esq"><u>CÓDIGO INTERNACIONAL SETTLEMENT</u> <p>Códigos possíveis:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="dta" nowrap>Espaço -&nbsp;</td>
+        <td class="esq">Settled under national or regional fee schedule</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap>1 -&nbsp;</td>
+        <td class="esq">Settled at the internacional standard IRF</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap>2 -&nbsp;</td>
+        <td class="esq">Settled at the International Pre-PS2000 rate</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap>3 -&nbsp;</td>
+        <td class="esq">Settled at the Internacional Electron rate</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap>4 -&nbsp;</td>
+        <td class="esq">Acquirer Chip Fee / Acquirer Chip Fee-Visa Electron / Airline Acquirer
+        Chip Fee</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap>5 -&nbsp;</td>
+        <td class="esq">Issuer Chip Fee / Issuer Chip Fee Electron</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap>6 -&nbsp;</td>
+        <td class="esq">Acquirer SET Secure Electronic Transaction Electronic Commerce Fee</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap>7 -&nbsp;</td>
+        <td class="esq">Full SET Electronic Commerce Fee</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap>8 -&nbsp;</td>
+        <td class="esq">Airline Fee</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="875" name="875">875</a></td>
+    <td class="esq"><u>INDICADOR MAIL TELEPHONE ORDER</u> <p>Código que indica o tipo de
+    Mail/Telephone ou Electronic Commerce Order.<br />
+    Poderá ter os seguintes valores:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="dta" nowrap="nowrap">Espaço -&nbsp;</td>
+        <td class="esq">Campo não aplicável ou não especificado</td>
+      </tr>
+      <tr>
+        <td class="dta">1 -&nbsp;</td>
+        <td class="esq">Transacção única para uma encomenda</td>
+      </tr>
+      <tr>
+        <td class="dta">2 -&nbsp;</td>
+        <td class="esq">Transacção recorrente</td>
+      </tr>
+      <tr>
+        <td class="dta">3 -&nbsp;</td>
+        <td class="esq">Pagamento de instalação</td>
+      </tr>
+      <tr>
+        <td class="dta">4 -&nbsp;</td>
+        <td class="esq">Classificação desconhecida/outra encomenda por mail</td>
+      </tr>
+      <tr>
+        <td class="dta">5 -&nbsp;</td>
+        <td class="esq">Transacção segura de comércio electrónico com certificado do titular
+        do cartão</td>
+      </tr>
+      <tr>
+        <td class="dta">6 -&nbsp;</td>
+        <td class="esq">Transacção de segurança não autenticada com certificado de comerciante
+        SET</td>
+      </tr>
+      <tr>
+        <td class="dta">7 -&nbsp;</td>
+        <td class="esq">Transacção de segurança não autenticada sem certificado de comerciante
+        SET, por ex.: uma transacção encriptada</td>
+      </tr>
+      <tr>
+        <td class="dta">8 -&nbsp;</td>
+        <td class="esq">Transacção não segura</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="876" name="876">876</a></td>
+    <td class="esq"><u>COD. INTERCHANGING REIMBURSEMENT FEE</u> <p>Pode assumir os seguintes
+    valores:</p>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><em>&nbsp; 0 -&nbsp;</em> </td>
+        <td class="esq">Standard Issuer's/Interchange Reimbursement Fee or Cash Disbursement
+        Reimbursement Fee</td>
+      </tr>
+      <tr>
+        <td class="esq"><em>&nbsp; 1 -&nbsp;</em> </td>
+        <td class="esq">Plus ATM Cash Disbursement</td>
+      </tr>
+      <tr>
+        <td class="esq"><em>&nbsp; 2 -&nbsp;</em> </td>
+        <td class="esq">VISA ATM Cash Disbursement</td>
+      </tr>
+      <tr>
+        <td class="esq"><em>&nbsp; B -&nbsp;</em> </td>
+        <td class="esq">Interregional Pre-PS2000<br />
+        EU Intraregional Pre-PS2000<br />
+        CEMEA Electronic</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap"><em>&nbsp; H -&nbsp;</em> </td>
+        <td class="esq">VISA ATM Cash Disbursement - Tier II</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="877" name="877">877</a></td>
+    <td class="esq"><u>TIPO DE AUTORIZAÇÃO NO MOVIMENTO</u> <p>Indica qual o tipo de
+    autorização utilizada no movimento, de acordo com a tabela:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td nowrap><em>&nbsp; 0 -&nbsp;</em> </td>
+        <td class="esq">Advice of Exception File update</td>
+      </tr>
+      <tr>
+        <td><em>&nbsp; 1 -&nbsp;</em> </td>
+        <td class="esq">Resposta fornecida pelo STIP: time out solicitado pelo Switch (Resposta
+        Transacção Segura)</td>
+      </tr>
+      <tr>
+        <td><em>&nbsp; 2 -&nbsp;</em> </td>
+        <td class="esq">Resposta fornecida pelo STIP: valor da transacção abaixo do limite do
+        issuer PCAS (com ou sem AVS), só AVS ou só verificação do telecódigo.</td>
+      </tr>
+      <tr>
+        <td><em>&nbsp; 3 -&nbsp;</em> </td>
+        <td class="esq">Resposta fornecida pelo STIP: sistema do issuer em modo &quot;Consultas
+        Indisponíveis&quot; - Suppress Inquiries (SI) mode.</td>
+      </tr>
+      <tr>
+        <td><em>&nbsp; 4 -&nbsp;</em> </td>
+        <td class="esq">Resposta fornecida pelo STIP: issuer não disponível para processamento
+        (por outros motivos que não o anterior)</td>
+      </tr>
+      <tr>
+        <td><em>&nbsp; 5 -&nbsp;</em> </td>
+        <td class="esq">Resposta fornecida pelo sistema do issuer (só autorização,
+        autorização e verificação da morada, ou só verificação da morada).</td>
+      </tr>
+      <tr>
+        <td><em>&nbsp; 6 -&nbsp;</em> </td>
+        <td class="esq">Aprovação offline: originada num POS.</td>
+      </tr>
+      <tr>
+        <td><em>&nbsp; 7 -&nbsp;</em> </td>
+        <td class="esq">Aprovação do acquirer: BASE I indisponível.</td>
+      </tr>
+      <tr>
+        <td><em>&nbsp; 8 -&nbsp;</em> </td>
+        <td class="esq">Aprovação do acquirer: referral.</td>
+      </tr>
+      <tr>
+        <td><em>&nbsp; 9 -&nbsp;</em> </td>
+        <td class="esq">Sem código de autorização; transacções não autorizadas.</td>
+      </tr>
+      <tr>
+        <td><em>&nbsp; D -&nbsp;</em> </td>
+        <td class="esq">Referral: código de autorização inserido manualmente.</td>
+      </tr>
+      <tr>
+        <td><em>&nbsp; E -&nbsp;</em> </td>
+        <td class="esq">Aprovação offline: código de autorização inserido manualmente.</td>
+      </tr>
+      <tr>
+        <td><em>&nbsp; F -&nbsp;</em> </td>
+        <td class="esq">Resposta originada em CAFIS; autorização posterior (só para o Japão).</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap"><em>&nbsp; G -&nbsp;</em> </td>
+        <td class="esq">Aprovação do issuer: autorização posterior (só para o Japão).</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="878" name="878">878</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO ACQUIRER</u> <p>Campo numérico que identifica o
+    Acquirer onde se realizou o movimento.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="879" name="879">879</a></td>
+    <td class="esq"><u>POS CAPABILITY CODE</u> <p>Indicador do tipo de captura de dados
+    disponível no TPA.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" colspan="2">Tem os seguintes valores:</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap="nowrap">Espaço -&nbsp;</td>
+        <td class="esq">Não especificado</td>
+      </tr>
+      <tr>
+        <td class="dta">0 -&nbsp;</td>
+        <td class="esq">Desconhecido</td>
+      </tr>
+      <tr>
+        <td class="dta">1 -&nbsp;</td>
+        <td class="esq">Sem terminal</td>
+      </tr>
+      <tr>
+        <td class="dta">2 -&nbsp;</td>
+        <td class="esq">Leitor de fita magnética</td>
+      </tr>
+      <tr>
+        <td class="dta">3 -&nbsp;</td>
+        <td class="esq">Leitor de código de barras</td>
+      </tr>
+      <tr>
+        <td class="dta">4 -&nbsp;</td>
+        <td class="esq">Leitor de reconhecimento de caracteres ópticos (OCR)</td>
+      </tr>
+      <tr>
+        <td class="dta">5 -&nbsp;</td>
+        <td class="esq">Leitor de cartões de circuito integrado</td>
+      </tr>
+      <tr>
+        <td class="dta">6 -&nbsp;</td>
+        <td class="esq">Key entry only</td>
+      </tr>
+      <tr>
+        <td class="dta">7 -&nbsp;</td>
+        <td class="esq">Leitor de fita magnética e key entry</td>
+      </tr>
+      <tr>
+        <td class="dta">8 -&nbsp;</td>
+        <td class="esq">Leitor de fita magnética, key entry e EMV compatível</td>
+      </tr>
+      <tr>
+        <td class="dta">9 -&nbsp;</td>
+        <td class="esq">Apenas com key entry, sem capacidade de leitura electrónica</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>POS-CAP-CODE</td>
+  </tr>
+  <tr>
+    <td><a id="880" name="880">880</a></td>
+    <td class="esq"><u>CARDHOLDER ID METHOD</u> <p>Campo que indica se o tipo de terminal
+    Cardholder está activo.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" colspan="2">Tem os seguintes valores:</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap="nowrap">Espaço -&nbsp;</td>
+        <td class="esq">Não especificado</td>
+      </tr>
+      <tr>
+        <td class="dta">1 -&nbsp;</td>
+        <td class="esq">Assinatura</td>
+      </tr>
+      <tr>
+        <td class="dta">2 -&nbsp;</td>
+        <td class="esq">PIN</td>
+      </tr>
+      <tr>
+        <td class="dta">3 -&nbsp;</td>
+        <td class="esq">Terminal não utilizado, sem Pinpad</td>
+      </tr>
+      <tr>
+        <td class="dta">4 -&nbsp;</td>
+        <td class="esq">Encomenda por mail/telefone</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="881" name="881">881</a></td>
+    <td class="esq"><u>INDICADOR ENTIDADE CONTRATANTE DE PAGAMENTO COMISSIONADO</u> <p>Este
+    campo indica se a entidade contratante duma empresa que aderiu ao pagamento comissionado
+    foi o Banco de Apoio ou a Unicre.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; 1 - Banco<br />
+    &nbsp;&nbsp; 2 - Unicre</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDPAGC</td>
+  </tr>
+  <tr>
+    <td><a id="882" name="882">882</a></td>
+    <td class="esq"><u>KEY - KS (TRIPLE DES)</u> <p>Chave de sessão encifrada pela chave
+    transporte fornecida pela Unicre. Há duas ocorrências de chaves assinaladas com 1 e 2 na
+    mensagem.</td>
+    <td class="dta">16</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>KEY-KS-TD</td>
+  </tr>
+  <tr>
+    <td><a id="883" name="883">883</a></td>
+    <td class="esq"><u>EMV - ARPC RESPONSE CODE</u> <p>Campo 139.2 da mensagem ISO 8583.
+    Indica o valor usado pelo emissor no cálculo do ARPC (ver campo 884). Caso o emissor não
+    tenha enviado este campo na resposta, deve ser preenchido com o valor recebido no campo 39
+    da mensagem de resposta.</p>
+    <p>Campo E034 Specs POS. Tag '8A'</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ARPC-RC</td>
+  </tr>
+  <tr>
+    <td><a id="884" name="884">884</a></td>
+    <td class="esq"><u>EMV - ARPC - AUTHORIZATION RESPONSE CRYPTOGRAM</u> <p>Corresponde ao
+    'Isser Authentication Data' , campo 139.1 e 139.2 da mensagem ISO 8583. Certificado que
+    autentica o emissor do cartão. O primeiro byte indica o comprimento dos dados
+    transmitidos.</p>
+    <p>Campo E108 Specs POS. Tag &#145;91&#146;</td>
+    <td class="dta">17</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>ARPC</td>
+  </tr>
+  <tr>
+    <td><a id="885" name="885">885</a></td>
+    <td class="esq"><u>EMV - INDICADOR DE EXISTÊNCIA DE SCRIPT</u> <p>Indica se foi recebido
+    do emissor do cartão EMV script para entregar ao cartão.&nbsp;</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp;&nbsp; 0 - não foi recebido script<br />
+    &nbsp;&nbsp;&nbsp; 1 - script recebido e incluído na mensagem.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND-SCRIPT</td>
+  </tr>
+  <tr>
+    <td><a id="886" name="886">886</a></td>
+    <td class="esq"><u>EMV - ISSUER SCRIPT</u> <p>Campo 142 da mensagem ISO 8583. Dados
+    recebidos do emissor para entrega ao cartão EMV.</p>
+    <p>Campo de comprimento variável, contituído por:<br />
+    &nbsp;&nbsp;&nbsp; - comprimento total (2 B)<br />
+    &nbsp;&nbsp;&nbsp; - Tag (1 B = x'71')<br />
+    &nbsp;&nbsp;&nbsp; - Comprimento tag '71' (1 B)<br />
+    &nbsp;&nbsp;&nbsp; - Value tag '71' (máx. 127 B)<br />
+    &nbsp;&nbsp;&nbsp; - Tag (1 B = x'72')<br />
+    &nbsp;&nbsp;&nbsp; - Comprimento tag '72' ( 1 B)<br />
+    &nbsp;&nbsp;&nbsp; - Value tag '72' (máx. 127 B)</p>
+    <p>Campos E122 e E123 Specs POS. Tag &#145;71&#146; e/ou &#145;72&#146;. O byte inicial é
+    retirado no envio ao Terminal. Caso um emissor (VISA ou Europay) só envie um dos scripts,
+    o campo 886 só inclui esse script, não sendo incluídas referências aos sub-campos
+    relativos ao outro.</td>
+    <td class="dta">260</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>SCRIPT</td>
+  </tr>
+  <tr>
+    <td><a id="887" name="887">887</a></td>
+    <td class="esq"><u>EMV - DATA INÍCIO DA APLICAÇÃO</u> <p>Num cartão EMV este campo
+    indica a data a partir da qual a aplicação pode ser usada.<br />
+    Tratando-se de um campo opcional no interface com o Terminal, apenas estará preenchido
+    caso tenha sido recebido do mesmo.</p>
+    <p>Campo E014 Spec POS. Tag &#145;5F25&#146;</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>AAMMDD</td>
+    <td>DT-INI-APLIC</td>
+  </tr>
+  <tr>
+    <td><a id="888" name="888">888</a></td>
+    <td class="esq"><u>CARACTERÍSTICAS DO TERMINAL</u> <p>Este campo indica o tipo de
+    localização do terminal, as suas capacidades de comunicação e o seu controlo
+    operacional. É constituído por dois sub-campos com os seguintes valores possíveis:</p>
+    <p><em>1º dígito</em> (controlo operacional):<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 1 - Instituição financeira<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 2 - Comerciante<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 3 - Titular do cartão</p>
+    <table border="0" cellspacing="0" cellpadding="0" width="223">
+      <tr>
+        <td width="95" class="esq"><em>2º dígito</em>:</td>
+        <td>atendido</td>
+        <td>self-service</td>
+      </tr>
+      <tr>
+        <td class="esq" width="95">&nbsp;&nbsp; só online</td>
+        <td>1</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td class="esq" width="95">&nbsp;&nbsp; offline + online</td>
+        <td>2</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td class="esq" width="95">&nbsp;&nbsp; só offline</td>
+        <td>3</td>
+        <td>6</td>
+      </tr>
+    </table>
+    <p><u>Nota</u>: não são válidos os valores '31', '32' e '33'.</p>
+    <p>Campo E169 Spec POS. Tag &#145;9F35&#146;</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CAR-TERM</td>
+  </tr>
+  <tr>
+    <td><a id="889" name="889">889</a></td>
+    <td class="esq"><u>EMV - CAPACIDADES DO TERMINAL</u> <p>Campo 130 da mensagem ISO 8583.
+    Constituído por 3 bitmaps que indicam as capacidades do terminal.</p>
+    <p>Campo E163 Spec POS. Tag &#145;9F33&#146;</td>
+    <td class="dta">3</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>CAP-TERM</td>
+  </tr>
+  <tr>
+    <td><a id="890" name="890">890</a></td>
+    <td class="esq"><u>EMV - APPLICATION TRANSACTION COUNTER</u> <p>Campo 137 (ATC) da
+    mensagem ISO 8583. Contador de transacções mantido pela aplicação local do cartão
+    EMV.<br />
+    Este campo deve ser guardado pelo acquirer para utilização no caso de disputas.</p>
+    <p>Campo E029 Specs POS. Tag &#145;9F36&#146;</td>
+    <td class="dta">2</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>APP-COUNTER</td>
+  </tr>
+  <tr>
+    <td><a id="891" name="891">891</a></td>
+    <td class="esq"><u>EMV - APPLICATION INTERCHANGE PROFILE</u> <p>Campo 138 da mensagem ISO
+    8583. Indica a capacidade de um cartão EMV suportar determinadas funções específicas
+    da aplicação.<br>
+    No ficheiro de personalização de cartões EMV (<a href="../mglobal/l-iii/pemv.htm"
+    target="main">PEMV</a>), este campo é apresentado em notação Hexadecimal (4 posições
+    de comprimento).</p>
+    <p>Campo E019 Specs POS. Tag &#145;82&#146;</td>
+    <td class="dta">2</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>APP-PROFILE</td>
+  </tr>
+  <tr>
+    <td><a id="892" name="892">892</a></td>
+    <td class="esq"><u>EMV - UNPREDICTABLE NUMBER</u> <p>Campo 132 da mensagem ISO 8583.
+    Número aleatório entregue pelo Terminal ao cartão EMV por forma a garantir a
+    variabilidade e unicidade dos criptogramas.</p>
+    <p>Campo E192 Specs POS. Tag &#145;9F37&#146;</td>
+    <td class="dta">4</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>UNP-NR</td>
+  </tr>
+  <tr>
+    <td><a id="893" name="893">893</a></td>
+    <td class="esq"><u>EMV - CRYPTOGRAM TRANSACTION TYPE</u> <p>Campo 144 da mensagem ISO
+    8583. Indica o tipo de transacção efectuada. Corresponde aos dois primeiros dígitos do
+    Processing Code. Deve ser enviado ao emissor do cartão, para garantir que a validação
+    pelo emissor do ARQC enviado pelo cartão é efectuada correctamente.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; '00' - compras<br />
+    &nbsp;&nbsp; &#145;01&#146; ou '17' - Cash Advance</p>
+    <p>Campo E189 Specs POS. Tag &#145;9C&#146;</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPO-CRIP</td>
+  </tr>
+  <tr>
+    <td><a id="894" name="894">894</a></td>
+    <td class="esq"><u>EMV - CRIPTOGRAMA</u> <p>Campo 136 da mensagem ISO 8583. Inclui o
+    criptograma entregue pelo cartão chip (ARQC / TC / AAC).</p>
+    <p>Campo E008 Specs POS. Tag &#145;9F26&#146;</td>
+    <td class="dta">8</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>CRIPTOGRAMA</td>
+  </tr>
+  <tr>
+    <td><a id="895" name="895">895</a></td>
+    <td class="esq"><u>EMV - ISSUER APPLICATION DATA</u> <p>Campo 134 da mensagem ISO 8583.
+    Inclui informação proprietária, informada pelo cartão EMV para entrega ao emissor.<br
+    />
+    Constituído por 3 sub-campos: Derivation Key Index, Cryptogram Version Number e Card
+    Verification Results (CVR).<br />
+    Tratando-se de um campo opcional no interface com o Terminal, apenas estará preenchido
+    caso tenha sido recebido do mesmo. O primeiro byte indica o comprimento dos dados
+    enviados.</p>
+    <p>Campo E107 Specs POS. Tag &#145;9F10&#146;</td>
+    <td class="dta">33</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>ISS-AP-DATA</td>
+  </tr>
+  <tr>
+    <td><a id="896" name="896">896</a></td>
+    <td class="esq"><u>EMV - TERMINAL VERIFICATION RESULTS</u> <p>Campo 131 da mensagem ISO
+    8583. Informa, na perspectiva do terminal, o resultado das funções EMV executadas.</p>
+    <p>Campo E170 Spec POS. Tag &#145;95&#146;</td>
+    <td class="dta">5</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>TVR</td>
+  </tr>
+  <tr>
+    <td><a id="897" name="897">897</a></td>
+    <td class="esq"><u>EMV - ISSUER SCRIPT RESULTS</u> <p>Campo 143 da mensagem ISO 8583.
+    Informa o resultado do processamento dos scripts recebidos do emissor. O primeiro byte
+    indica o comprimento dos dados enviados.<br />
+    Este campo apenas estará preenchido, se recebido do terminal, nas mensagens de anulação
+    e nos correspondentes registos do ficheiro MEUNI.</p>
+    <p>Campo E121 Specs POS. Tag &#145;DF42&#146;</td>
+    <td class="dta">21</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>SCRIPT-RES</td>
+  </tr>
+  <tr>
+    <td><a id="898" name="898">898</a></td>
+    <td class="esq"><u>SEQUÊNCIA DO PAN DO CARTÃO</u> <p>Campo que permite diferenciar
+    diferentes cartões com o mesmo PAN.<br />
+    Este campo deve ser guardado pelo acquirer para utilização no caso de disputas.<br />
+    Tratando-se de um campo opcional no interface com o Terminal, apenas estará preenchido
+    caso tenha sido recebido do mesmo.</p>
+    <p>Campo E024 Specs POS Tag &#145;5F34&#146;</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRSEQPAN</td>
+  </tr>
+  <tr>
+    <td><a id="899" name="899">899</a></td>
+    <td class="esq"><u>INDICADOR DE SALDOS ENVIADOS</u> <p>Este campo indica, na mensagem de
+    resposta a uma consulta de saldos (<a target="main" href="../mglobal/l-iii/erln.htm">1262</a>),
+    quais os saldos devolvidos pelo Emissor, a apresentar no recibo a entregar ao cliente. É
+    constituído por um bitmap no qual:<br />
+    O 1º dígito indica se a primeira ocorrência de saldos da mensagem, correspondente ao
+    SAN1 do cartão, possui (=1) ou não (=0) valores significativos.<br />
+    O 2º dígito indica se a segunda ocorrência de saldos da mensagem, correspondente ao
+    SAN2 do cartão, possui (=1) ou não (=0) valores significativos.<br />
+    O 3º dígito indica se a terceira ocorrência de saldos da mensagem, correspondente à
+    conta crédito eventualmente associada ao cartão, possui (=1) ou não (=0) valores
+    significativos.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDSALDOS</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

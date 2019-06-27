@@ -1,0 +1,2254 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="_self">
+<script>top.captulos.location='indicea.htm#A';</script>
+
+<style>
+<!--
+#table1 tbody td { font-family: Tahoma; font-size: 8pt; vertical-align: middle;}	
+-->
+</style>
+<title>A.7 OPERAÇÃO DE COMPRA - FUNCIONALIDADES ADICIONAIS</title>
+</head>
+
+<body>
+
+<h1>A.7 OPERAÇÃO DE COMPRA - FUNCIONALIDADES ADICIONAIS</h1>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.7.1">A.7.1</a> INTRODUÇÃO</h2>
+
+<p><br>
+Neste ponto são apresentadas as características técnicas e a operativa de um conjunto
+de funcionalidades adicionais à função de meio de pagamento proporcionada pelos
+cartões nacionais. </p>
+
+<p>Estas funcionalidades são implementadas em paralelo com a emissão de cartões EMV, de
+forma a aproveitar as capacidades da tecnologia <i>chip</i>, ao mesmo tempo que se
+potencia a utilização dos cartões e se alarga o leque de funcionalidades disponíveis
+para os clientes, sem prejuízo da capacidade de diferenciação dos produtos dos
+diferentes Emissores. I.e., ainda que estas funcionalidades estejam disponíveis numa
+plataforma comum, utilizável por todos os Emissores de cartões nacionais, as
+possibilidades de costumização permitem a sua adaptação às necessidades dos Emissores
+para cada produto em particular.</p>
+
+<p>Nos pontos seguintes, apresenta-se o funcionamento e os aspectos relativos à
+caracterização e parametrização das diferentes funcionalidades: 
+
+<ul>
+  <li><a href="#A.7.2.2">Compra com Pagamento Fraccionado (Linha de Crédito)</a></li>
+  <li><a href="#A.7.2.3">Compra com Rebate de Pontos (Fidelização)</a></li>
+  <li><a href="#A.7.2.4">Compra com Detalhe (Programa de Emissor)</a></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.7.2">A.7.2</a> DESCRIÇÃO E FUNCIONAMENTO DAS FUNCIONALIDADES ADICIONAIS</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.7.2.1">A.7.2.1</a> DEFINIÇÕES REFERENTES ÀS TRÊS FUNCIONALIDADES
+ADICIONAIS</h3>
+
+<p><br>
+Apesar de cada funcionalidade possuir particularidades próprias, existem alguns aspectos
+em que partilham definições e outros em que são mutuamente exclusivas:</p>
+
+<p><br>
+<b>ASPECTOS COMUNS</b> 
+
+<ol TYPE="A">
+  <li>Não existe no <i>chip</i> de um cartão EMV uma aplicação distinta para comportar as
+    Funcionalidades Adicionais. Estas são implementadas através de campos (Tags)
+    proprietários e englobadas na(s) aplicação(ões) de pagamento existente(s) no cartão;<br>
+    <br>
+  </li>
+  <li>Os campos proprietários definidos existem sempre para todas as aplicações
+    posicionadas no <i>chip</i> de cartões EMV nacionais, assumindo valores nulos quando não
+    se pretende disponibilizar a funcionalidade respectiva.</li>
+</ol>
+
+<blockquote>
+  <p>Para suporte às diferentes funcionalidades, foram definidos três campos
+  proprietários:<ul>
+    <li>Funcionalidade Linha de Crédito - campo (<a href="../../Campos/camp1700.htm#1773"
+      target="explicac">1773</a>) LINHACRE </li>
+    <li>Funcionalidade Fidelização - campo (<a href="../../Campos/camp1700.htm#1774"
+      target="explicac">1774</a>) FIDELIZACAO</li>
+    <li>Funcionalidade Programa de Emissor - campo (<a href="../../Campos/camp1700.htm#1775"
+      target="explicac">1775</a>) PROGEMISSOR</li>
+  </ul>
+</blockquote>
+
+<ol TYPE="A" start="3">
+  <li>A associação ou caracterização das diferentes funcionalidades é alterável após
+    personalização do cartão, através do ficheiro de Gestão de Cartões e Contas (<a
+    href="../l-iii/egcc.htm">EGCC</a>);<br>
+    <br>
+  </li>
+  <li>Cada funcionalidade é vista como um tipo de programa distinto, possibilitando aos
+    Emissores flexibilidade de escolha para cada um dos seus produtos (BIN/cartão);<br>
+    <br>
+  </li>
+  <li>Ao nível da operativa do terminal, para garantir uma implementação com o menor
+    impacto possível sobre a rede de aceitação, as três funcionalidades possuem um modo de
+    funcionamento comum, coexistindo com acordos comerciais diferenciados:</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Aos elementos da compra, o terminal adiciona e transmite um conjunto de dados adicionais
+      (elementos enviados numa única transacção);</li>
+  </ul>
+</blockquote>
+
+<ol TYPE="A" start="6">
+  <li>As funcionalidades adicionais são utilizáveis apenas em operações de compra
+    realizadas por cartões nacionais com <i>chip</i> EMV em Terminais de Pagamento
+    Automático (TPAs) nacionais e EMV-compatíveis;<br>
+    <br>
+  </li>
+  <li>As funcionalidades adicionais são concretizadas sempre em <i>online</i> com a SIBS,
+    independentemente de o TPA possuir ou não a capacidade para processar operações de
+    compra em <i>offline</i>.<br>
+    <br>
+ </li>
+  <li >As funcionalidades adicionais estão disponíveis apenas para cartões
+    normais de clientes bancários. Não é possível associar qualquer das funcionalidades
+    adicionais a cartões emitidos com SEQPAN de valor superior
+    a 1. </li>
+</ol>
+
+<p><br>
+<b>UTILIZAÇÃO CONJUNTA DAS DIFERENTES FUNCIONALIDADES</b> 
+
+<ol TYPE="A">
+  <li>Uma transacção não pode ser simultaneamente uma Compra com Rebate de Pontos
+    (Fidelização) e uma Compra com Pagamento Fraccionado (Linha de Crédito):
+  </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Como consequência da alínea anterior, uma aplicação existente no <i>chip</i>
+  do cartão EMV não pode em nenhum momento estar associada simultaneamente às
+  funcionalidades Compra com Rebate de Pontos (Fidelização) e Compra com
+  Pagamento Fraccionado&nbsp; (Linha de Crédito);</li>
+  </ul>
+</blockquote>
+
+<ol TYPE="A" start="2">
+  <li>Uma Compra com Detalhe pode ser efectuada com Rebate de Pontos (Fidelização) ou com
+    Pagamento Fraccionado:</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>
+Assim, uma operação de compra pode transportar dois conjuntos de dados adicionais.</li>
+  </ul>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.7.2.2">A.7.2.2</a> COMPRA COM PAGAMENTO FRACCIONADO (LINHA DE CRÉDITO)</h3>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.7.2.2.1">A.7.2.2.1</a> DESCRIÇÃO</h5>
+
+<p>Esta funcionalidade disponibiliza ao cliente uma forma de pagamento adicional. No
+momento em que efectua uma compra, e verificando-se um conjunto pré-definido de
+condições, ao cliente é facultada a possibilidade de fraccionar o pagamento dessa mesma
+compra (pagamento &quot;em prestações&quot;).</p>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.7.2.2.2">A.7.2.2.2</a> ELEMENTOS NECESSÁRIOS À FUNCIONALIDADE (resumo)</h5>
+
+<p><br>
+Elementos guardados centralmente e colocados no cartão - campo (<a
+href="../../Campos/camp1700.htm#1773" target="explicac">1773</a>) LINHACRE 
+
+<ul>
+  <li>Indicador de funcionalidade Linha de Crédito (elemento para colocação no cartão;
+    indica se funcionalidade está activa ou inactiva);</li>
+  <li>Montante mínimo da compra a partir do qual a funcionalidade é aplicável;</li>
+  <li>Número máximo de prestações permitidas;</li>
+  <li>Valor mínimo para a prestação;</li>
+  <li>Texto pré-definido a apresentar ao cliente no <i>pinpad </i>(texto único, comum a
+    todos os Emissores).</li>
+</ul>
+
+<p style="page-break-before: always"><br>
+Elementos guardados centralmente, não existentes no cartão: 
+
+<ul>
+  <li><i>Plafond</i> para Pagamentos Fraccionados - duas ocorrências:</li>
+</ul>
+
+<blockquote>
+  <ul type="square">
+    <li><i>Plafond</i> para compras com pagamento fraccionado (campo (<a
+      href="../../Campos/camp2300.htm#2305" target="explicac">2305</a>) CRE-PLAFOND);</li>
+    <li><i>Plafond</i> disponível (campo (<a href="../../Campos/camp2300.htm#2307"
+      target="explicac">2307</a>) CRE-PLAFDIS) - calculado com base no <i>plafond</i> para
+      compras com pagamento fraccionado indicado pelo Emissor, actualizado transacção a
+      transacção.</li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>Dia de renovação do <i>plafond</i> para compras com pagamento fraccionado (campo (<a
+    href="../../Campos/camp2300.htm#2306" target="explicac">2306</a>) CRE-PLAFDIA) </li>
+</ul>
+
+<p><br>
+Elementos adicionalmente utilizados para decisão da transacção: 
+
+<ul>
+  <li>Tipo de pagamento, associado às funcionalidades adicionais à compra (campo (<a
+    href="../../Campos/camp2300.htm#2303" target="explicac">2303</a>) IND-TIP-PAG); </li>
+  <li>Número de prestações escolhidas pelo cliente (campo (<a
+    href="../../Campos/camp2300.htm#2304" target="explicac">2304</a>) CRE-PRESTCLI).</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.7.2.2.3">A.7.2.2.3</a> PARAMETRIZAÇÃO DOS ELEMENTOS NECESSÁRIOS À
+FUNCIONALIDADE</h5>
+
+<p><br>
+VERTENTE EMISSÃO </p>
+
+<p><br>
+<b>Caracterização de BIN</b></p>
+
+<p>O Emissor posiciona ao nível do produto, através do ponto 13.1 da respectiva <a
+href="i3.htm#I.3.16">Caracterização do BIN</a>, conjuntos de ocorrências para os
+seguintes elementos: 
+
+<ul>
+  <li>Montante mínimo a partir do qual é aplicável a funcionalidade</li>
+  <li>Número máximo de prestações permitidas</li>
+  <li>Valor mínimo para a prestação</li>
+</ul>
+
+<p>A cada conjunto destes elementos é atribuída uma identificação, correspondente à
+linha da tabela parametrizada na Caracterização do BIN. </p>
+
+<p><br>
+<b>Parametrizações no momento da emissão - novos cartões</b></p>
+
+<p>No momento da emissão de cartões com <i>chip</i> EMV, o Emissor identifica no
+ficheiro <a href="../l-iii/eecb.htm">EECB</a> (versão 03 ou 04) o <a href="a3.htm#2">Padrão
+EMV</a> correspondente à aplicação EMV a posicionar no cartão para a qual pretende
+permitir a utilização de uma Linha de Crédito nas compras em TPA. No <a
+href="../l-iii/eecb.htm">EECB</a>, identifica igualmente qual o conjunto de elementos que
+caracterizam a Linha de Crédito. </p>
+
+<p>O Emissor pode indicar que pretende que seja considerada:</p>
+<ol >
+  <li>
+    uma combinação
+    de elementos previamente definida ao nível do BIN - para este efeito, no
+    registo de parâmetros (tipo de registo 1) o Emissor indica qual a combinação
+    de elementos a considerar, através do campo (<a href="../../Campos/camp1700.htm#1735" target="explicac">1735</a>)
+    INDCAR-LINHACR;<br>
+    <br>
+  </li>
+  <li>uma combinação de elementos particular - possibilita-se a definição de
+    parâmetros ao nível do cartão a partir da versão 04 do ficheiro <a
+href="../l-iii/eecb.htm">EECB</a>. Neste caso, o Emissor indica quais os valores
+    a considerar nos registos de detalhe (tipo de registo 2) relativos aos cartões
+    para os quais pretende uma combinação de elementos distinta das
+    previamente parametrizadas ao nível do BIN. No tipo de registo 1, o campo (<a href="../../Campos/camp1700.htm#1735" target="explicac">1735</a>)
+    INDCAR-LINHACR tem que ser preenchido com um valor válido, ainda que
+    contrariado pela combinação de parâmetros indicada no tipo de registo 2.</li>
+</ol>
+
+<p style="page-break-before: always"> Os três elementos &quot;montante mínimo&quot;, &quot;número máximo
+de prestações&quot; e &quot;valor mínimo para a prestação&quot; são guardados
+centralmente e posicionados no <i>chip</i> do cartão (incluídos num campo proprietário,
+(<a href="../../Campos/camp1700.htm#1773" target="explicac">1773</a>) LINHACRE). </p>
+
+<p>No caso de existência de duas ou mais aplicações de pagamento no <i>chip</i> do
+cartão, os campos de suporte ao Pagamento Fraccionado ficam associados apenas a uma
+dessas aplicações (aplicação de crédito).</p>
+
+<p>Adicionalmente, quando o Emissor pretenda utilizar o cenário de <a
+href="a1.htm#A.1.3.3">Saldo para Compras com Pagamento Fraccionado</a> como cenário de
+degradação, deve indicar um conjunto de elementos adicionais, parametrizados por
+cartão: 
+
+<ul>
+  <li><i>Plafond</i> para compras com pagamento fraccionado (campo (<a
+    href="../../Campos/camp2300.htm#2305" target="explicac">2305</a>) CRE-PLAFOND)</li>
+  <li>Dia de renovação do <em>plafond</em> para compras com pagamento fraccionado (campo (<a
+    href="../../Campos/camp2300.htm#2306" target="explicac">2306</a>) CRE-PLAFDIA)</li>
+</ul>
+
+<p>A opção de definição de um <i>plafond</i> para compras com pagamento fraccionado no
+momento da emissão do cartão encontra-se disponível apenas a partir da versão 04 do ficheiro <a
+href="../l-iii/eecb.htm">EECB</a>. Se utilizar a versão 03 do <a href="../l-iii/eecb.htm">EECB</a>
+para emissão de cartões EMV para os quais pretende a utilização da funcionalidade de
+Linha de Crédito, o Emissor pode associar o <i>plafond</i> pretendido após a emissão,
+via ficheiro <a href="../l-iii/egcc.htm">EGCC</a>.</p>
+
+<p>Quando o conceito é utilizado pelo Emissor, o <i>plafond </i>é renovado no
+momento da primeira transacção realizada em TPA após o dia de renovação
+indicado.</p>
+
+<p><br>
+<b>Parametrizações no momento da emissão - renovações ou substituições de cartões</b></p>
+
+<p>Sempre que se efectue uma renovação ou substituição de um cartão EMV (campo (<a
+href="../../Campos/campos6.htm#518" target="explicac">518</a>) TIPEMICAR com um valor de 2
+a 7 e bloco de identificação do cartão anterior PAN e data de expiração preenchido),
+verifica-se se as aplicações EMV a incluir no novo cartão têm correspondência com as
+aplicações existentes no cartão anterior. </p>
+
+<p>Quando exista uma correspondência exacta entre a lista ordenada de padrões
+do cartão anterior e do novo cartão, os valores posicionados no cartão antigo para um
+conjunto determinado de elementos prevalecem sobre as parametrizações do produto e
+valores indicados no <a href="../l-iii/eecb.htm">EECB</a> no momento da emissão do novo
+cartão.</p>
+
+<p>Assim, numa renovação ou substituição, são transferidos para a aplicação
+respectiva no novo cartão os valores posicionados no cartão anterior para os elementos: 
+
+<ul>
+  <li>Indicador de funcionalidade Linha de Crédito</li>
+  <li>Montante mínimo aplicável</li>
+  <li>Número máximo de prestações</li>
+  <li>Valor mínimo para a prestação</li>
+  <li><i>Plafond</i> para compras com pagamento fraccionado</li>
+  <li>Dia de renovação do <i>plafond</i> para compras com pagamento fraccionado</li>
+  <li><i>Plafond</i> disponível para pagamentos fraccionados</li>
+</ul>
+
+<p>Quando os padrões indicados para o novo cartão, ou a sua ordem de
+prioridade, não coincidem com os existentes no cartão antigo, os valores para
+os elementos relativos à funcionalidade são calculados como se de uma emissão
+nova se tratasse.</p>
+
+<p><br>
+<b>Actualização após a emissão</b></p>
+
+<p>Em qualquer momento após a emissão, o Emissor pode activar ou desactivar a
+funcionalidade de Linha de Crédito para um determinado cartão. Tem igualmente a
+possibilidade de alterar individualmente os diversos elementos que caracterizam a Linha de
+Crédito a aplicar para um determinado cartão, utilizando para o efeito o código de
+gestão 13 do ficheiro <a href="../l-iii/egcc.htm">EGCC</a>. Com o processamento do
+código de gestão 13, é preparado um <i>script</i> para envio ao cartão, para
+actualização dos dados posicionados no <i>chip</i>.</p>
+
+<p style="page-break-before: always">Adicionalmente, os Emissores que pretendam utilizar o cenário <a href="a1.htm#A.1.3.3">Saldo
+para Compras com Pagamento Fraccionado</a> têm a possibilidade de definir e gerir um <i>plafond</i>
+associado à funcionalidade linha de crédito, por cartão, utilizando para o efeito o
+código de gestão 17 do ficheiro <a href="../l-iii/egcc.htm">EGCC</a>. </p>
+
+<p>Para informações adicionais
+sobre as validações efectuadas aos registos do <a href="../l-iii/egcc.htm">EGCC</a>
+com códigos de gestão 13 e 17 deve ser consultado o ponto <a href="#A.7.3">A.7.3</a>. </p>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.7.2.2.4">A.7.2.2.4</a> MODO DE FUNCIONAMENTO</h5>
+
+<p>À utilização da funcionalidade de Compra com Pagamento Fraccionado (Linha de
+Crédito) estão subjacentes os seguintes passos sequenciais: 
+
+<ol TYPE="A">
+  <li>O Emissor define parâmetros por produto (<a href="i3.htm#I.3.16">Caracterização do
+    BIN</a>);<br>
+    <br>
+  </li>
+  <li>No momento da emissão, os parâmetros definidos na Caracterização de BIN
+    ou um conjunto de elementos particular indicado pelo Emissor são
+    posicionados ao nível do cartão, centralmente e na aplicação contida no <i>chip</i> do
+    cartão;<br>
+    <br>
+  </li>
+  <li>No momento da emissão, o Emissor pode opcionalmente parametrizar um <i>plafond</i> de
+    utilização exclusiva em compras com pagamento fraccionado, guardado centralmente;<br>
+    <br>
+  </li>
+  <li>Ao efectuar uma compra num terminal que possua esta funcionalidade, o processamento
+    local da operação tem os seguintes passos adicionais:</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>TPA procura existência de indicadores de Linha de Crédito no cartão;</li>
+    <li>TPA valida que o valor da transacção de compra é igual
+      ou superior ao montante mínimo;</li>
+    <li>TPA valida que o valor da compra é igual ou superior ao dobro do valor da prestação mínima (a
+      funcionalidade de pagamento fraccionado não é utilizada se o valor da compra não
+      possibilitar a existência de pelo menos duas prestações);</li>
+  </ul>
+</blockquote>
+
+<ol TYPE="A" start="5">
+  <li>Se as perguntas anteriores tiverem uma resposta positiva, o cliente é questionado no <i>pinpad</i>
+    se pretende utilizar a Linha de Crédito, através de um texto pré-definido e comum a
+    todos os Emissores:</li>
+</ol>
+
+<ol TYPE="A" start="6">
+  <blockquote>
+    <p><b>Em quantas prestações?</b>;</p>
+  </blockquote>
+  <li>Para utilizar a Linha de Crédito, o cliente digita o número de prestações. Para não
+    utilizar a Linha de Crédito, pode indicar o valor 0, 1 ou pressionar a tecla Verde;<br>
+    <br>
+  </li>
+  <li>Se o cliente não optou pela utilização desta funcionalidade, a operação prossegue
+    normalmente; se o cliente optou pela utilização da funcionalidade, o terminal obriga a
+    que a transacção seja decidida <i>online</i>. Neste caso, o terminal envia:</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>elementos da compra</li>
+    <li>conjunto de dados adicionais;</li>
+  </ul>
+</blockquote>
+
+<ol TYPE="A" start="8">
+  <li>A indicação do cliente é validada centralmente; a operação é recusada com uma
+    mensagem explicativa se não for possível satisfazer o fraccionamento pretendido;<br>
+    <br>
+  </li>
+  <li>Se for possível satisfazer o fraccionamento pretendido, a decisão da transacção é
+    efectuada de acordo com o cenário de decisão aplicável;<br>
+    <br>
+  </li>
+  <li>A informação apresentada nos talões do terminal não sofre alterações, excepto se
+    existirem condições contratuais com o comerciante diferenciadas para esta
+    funcionalidade.</li>
+</ol>
+
+<p>&nbsp;</p>
+
+<h5 style="page-break-before: always"><a name="A.7.2.2.5">A.7.2.2.5</a> DECISÃO DAS TRANSACÇÕES</h5>
+
+<p>A transacção de compra com pagamento fraccionado pode ser decidida em <i>real-time</i>
+ou num cenário de degradação, quando indicado pelo Emissor:</p>
+
+<p><br>
+<b>Cenário de <i>Real-Time</i></b></p>
+
+<p>Uma operação de compra com pagamento fraccionado é enviada ao Emissor através de
+uma mensagem (<a href="../l-iii/116x316x.htm">1161</a>), com código de transacção 010
+(Rede MB) ou 015 (outras vertentes), com as seguintes características: 
+
+<ul>
+  <li>Indicador de aplicação de prestações (1º byte do campo (<a
+    href="../../Campos/camp2300.htm#2303" target="explicac">2303</a>) IND-TIP-PAG assume o
+    valor 1); </li>
+  <li>Número de prestações, escolhidas pelo cliente (campo (<a
+    href="../../Campos/camp2300.htm#2304" target="explicac">2304</a>) CRE-PRESTCLI). </li>
+</ul>
+
+<p align="center">Neste cenário, a transacção
+é enviada ao Emissor sem que exista qualquer validação dos saldos disponíveis
+no cenário de degradação que eventualmente esteja parametrizado. A decisão
+da transacção é efectuada pelo Emissor.</p>
+
+<p align="center"><br>
+<b>Cenários de Degradação</b></p>
+
+<p>O Emissor pode definir a aplicabilidade ou não de um cenário de degradação
+especificamente para compras realizadas com Pagamento Fraccionado. Esta definição é
+efectuada através da <a href="i3.htm#I.3.16">Caracterização do CPD</a>.&nbsp;</p>
+
+<p>O Emissor define a possibilidade de degradação para cada código de transacção: 
+
+<ul>
+  <li>CODTRN=010 - compras a prestações com/sem degradação;</li>
+  <li>CODTRN=015 - compras a prestações com/sem degradação. </li>
+</ul>
+
+<p><br>
+<u>Cenários de degradação aplicáveis</u>:</p>
+
+<p>O Emissor pode utilizar como cenário de degradação, a aplicar às compras com
+Pagamento Fraccionado, um dos seguintes: 
+
+<ul>
+  <li><a href="a1.htm#A.1.1.3">Saldo de Cartão</a></li>
+  <li><a href="a1.htm#A.1.3.2">Saldo de Crédito Disponível</a></li>
+  <li><a href="a1.htm#A.1.3.3">Saldo para Compras com Pagamento Fraccionado</a></li>
+  <li>Utilização conjunta dos cenários &quot;Saldo de Crédito Disponível&quot; e
+    &quot;Saldo para Compras com Pagamento Fraccionado&quot;</li>
+</ul>
+
+<p>Quando a decisão da transacção
+é efectuada num cenário em que se valide o &quot;Saldo de Crédito Disponível&quot;,
+o cartão utilizado tem que estar associado a uma Conta Crédito. Caso esta não
+exista, a transacção é rejeitada.</p>
+
+<p>O Emissor recebe a
+informação das compras com pagamento fraccionado decididas num dos cenários
+de degradação em <a href="../l-iii/dst-1.htm#= 1">registos
+de tipo 1</a>, no ficheiro de Destinos (MDST5).</p>
+
+<p><br>
+<b>Verificação de coerência entre dados do cartão e dados actuais</b></p>
+
+<p>Por ser necessário actualizar elementos na aplicação contida no <i>chip</i> do
+cartão quando o Emissor altera um conjunto de parâmetros associados à Linha de
+Crédito, existe a possibilidade de, para uma determinada transacção, os valores ainda
+existentes no cartão não estarem coerentes com a informação guardada centralmente
+(existem elementos pendentes para envio ao cartão).</p>
+
+<p style="page-break-before: always">Assim, é efectuada uma validação adicional, baseada na comparação dos dados
+recebidos do cartão com os dados ainda a guardar envio, na SIBS: 
+
+<ul>
+  <li>Se pedido e dados recebidos do terminal estão coerentes com a informação central:<br>
+    <br>
+  </li>
+  <ul type="square">
+    <li>A operação segue para decisão, no cenário aplicável.<br>
+      <br>
+    </li>
+  </ul>
+  <li>Se pedido e dados recebidos do terminal incoerentes com os dados actuais informados pelo
+    Emissor:<br>
+    <br>
+  </li>
+  <ul type="square">
+    <li>Se o pedido recebido também obedece aos novos parâmetros: </li>
+  </ul>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <p>–&nbsp; A operação segue para decisão, no cenário aplicável;<br>
+    –&nbsp; É enviado um <i>script</i> de actualização de dados ao cartão. </p>
+  </blockquote>
+  <ul type="square">
+    <li>Se o pedido recebido não obedece aos novos parâmetros:</li>
+  </ul>
+  <blockquote>
+    <p>–&nbsp; A operação é recusada e é enviada uma mensagem de erro ao terminal;<br>
+    –&nbsp; É enviado um <i>script</i> de actualização de dados ao cartão. </p>
+  </blockquote>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.7.2.3">A.7.2.3</a> COMPRA COM REBATE DE PONTOS (FIDELIZAÇÃO)</h3>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.7.2.3.1">A.7.2.3.1</a> DESCRIÇÃO</h5>
+
+<p>Os Emissores podem disponibilizar aos seus clientes um programa de pontos,
+incrementados por utilização do cartão e utilizáveis de acordo com o estabelecido
+entre o Emissor e os seus clientes. A funcionalidade Fidelização possibilita o crédito
+e rebate de pontos destes programas sobre uma plataforma comum a todos os Emissores.</p>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.7.2.3.2">A.7.2.3.2</a> ELEMENTOS
+NECESSÁRIOS À FUNCIONALIDADE (resumo)</h5>
+
+<p><br>
+Elementos guardados centralmente e colocados no cartão - campo (<a
+href="../../Campos/camp1700.htm#1774" target="explicac">1774</a>) FIDELIZACAO: 
+
+<ul>
+  <li>Indicador de funcionalidade Fidelização (elemento para colocação no cartão; indica
+    se funcionalidade está activa ou inactiva);</li>
+  <li>Identificação do programa de Fidelização;</li>
+  <li>Indicador de rebate de pontos (rebate desactivado ou activado);</li>
+  <li>Texto pré-definido a apresentar ao cliente no <i>pinpad</i> (texto único, comum a
+    todos os Emissores)</li>
+</ul>
+
+<p><br>
+Elementos guardados centralmente, não existentes no cartão: 
+
+<ul>
+  <li>Vale virtual:</li>
+</ul>
+
+<blockquote>
+  <ul type="square">
+    <li>pontos disponíveis no vale (campo (<a href="../../Campos/camp2300.htm#2309"
+      target="explicac">2309</a>) FID-PONTOSDIS)</li>
+    <li>contravalor dos pontos disponíveis no vale (campo (<a
+      href="../../Campos/camp2300.htm#2311" target="explicac">2311</a>) FID-VALORDISP)</li>
+    <li>data de expiração (<a href="../../Campos/camp2300.htm#2312" target="explicac">2312</a>)
+      FID-VALEEXP</li>
+  </ul>
+</blockquote>
+
+<p style="page-break-before: always"><br>
+Elementos adicionais enviados na transacção de compra: 
+
+<ul>
+  <li>Tipo de pagamento, associado às funcionalidades adicionais à compra (campo (<a
+    href="../../Campos/camp2300.htm#2303" target="explicac">2303</a>) IND-TIP-PAG)</li>
+  <li>Componente do valor da compra efectuada por rebate de pontos:</li>
+</ul>
+
+<blockquote>
+  <ul type="square">
+    <li>quantidade de pontos rebatidos (campo (<a href="../../Campos/camp2300.htm#2308"
+      target="explicac">2308</a>) FID-PONTOSREB)</li>
+    <li>quantidade de pontos ainda disponíveis no vale virtual, após a compra (campo (<a
+      href="../../Campos/camp2300.htm#2309" target="explicac">2309</a>) FID-PONTOSDIS)</li>
+    <li>contravalor dos pontos rebatidos (campo (<a href="../../Campos/camp2300.htm#2310"
+      target="explicac">2310</a>) FID-VALORPONT)</li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>Informação do valor remanescente da compra a efectuar por débito ao cartão (campo (<a
+    href="../../Campos/camp2300.htm#2313" target="explicac">2313</a>) FID-VALORREM)</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.7.2.3.3">A.7.2.3.3</a> PARAMETRIZAÇÃO DOS ELEMENTOS NECESSÁRIOS À
+FUNCIONALIDADE</h5>
+
+<p><br>
+VERTENTE EMISSÃO </p>
+
+<p><br>
+<b>Parametrizações no momento da emissão - novos cartões</b></p>
+
+<p>Para a utilização da funcionalidade de compra com rebate de pontos não são
+necessárias parametrizações prévias ao momento da emissão dos cartões com <i>chip</i>
+EMV, para os quais se pretende disponibilizar esta funcionalidade.</p>
+
+<p>No momento da emissão de cartões com <i>chip</i> EMV, o Emissor indica no ficheiro <a
+href="../l-iii/eecb.htm">EECB</a> (versão 03 ou 04) a identificação do programa de
+Fidelização a associar ao cartão e as aplicações de pagamento, às quais fica
+associado esse mesmo programa de fidelização.</p>
+
+<p>Para cada cartão, pode ser associado um único código de programa de Fidelização.</p>
+
+<p>O programa de Fidelização a que o cartão pode estar associado é: 
+
+<ul>
+  <li>O Programa Genérico - é possível efectuar o rebate de pontos em qualquer terminal que
+    possua a funcionalidade de Fidelização - ou;</li>
+  <li>Um Programa particular do Emissor - rebate apenas nos terminais que possuem a
+    funcionalidade de Fidelização e que reconheçam o código do programa.</li>
+</ul>
+
+<p><br>
+<b>Parametrizações no momento da emissão - renovações ou substituições de cartões</b></p>
+
+<p>Sempre que se efectue uma renovação ou substituição de um cartão EMV (campo (<a
+href="../../Campos/campos6.htm#518" target="explicac">518</a>) TIPEMICAR com um valor de 2
+a 7 e bloco de identificação do cartão anterior PAN e data de expiração preenchido),
+verifica-se se as aplicações EMV a incluir no novo cartão têm correspondência com as
+aplicações existentes no cartão anterior.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+<p>Quando exista uma correspondência exacta entre a lista ordenada de padrões
+do cartão anterior e do novo cartão, os valores posicionados no cartão antigo para um
+conjunto determinado de elementos prevalecem sobre os valores indicados no <a
+href="../l-iii/eecb.htm">EECB</a> no momento da emissão do novo cartão.</p>
+
+<p>Assim, numa renovação ou substituição, são transferidos para a aplicação
+respectiva no novo cartão os valores posicionados no cartão anterior para os elementos: 
+
+<ul>
+  <li>Indicador de funcionalidade Fidelização</li>
+  <li>Identificação do Programa de Fidelização</li>
+</ul>
+
+<p style="page-break-before: always">Os seguintes elementos não transitam para o novo cartão: 
+
+<ul>
+  <li>Valor do indicador de rebate de pontos (rebate desactivado no novo cartão)</li>
+  <li>Valores referentes ao vale virtual&nbsp;<br>
+    (pontos disponíveis, contravalor e data de expiração inicializados a zero no novo
+    cartão)</li>
+</ul>
+
+<p>Por existir um período de coexistência entre o cartão substituído e o novo cartão,
+a transferência para o novo cartão (no momento da emissão deste último) dos elementos
+que possibilitam o rebate de pontos implicaria um descontinuar da funcionalidade para o
+cliente. Assim: 
+
+<ul>
+  <li>O vale virtual morre com a expiração do cartão. O seu valor não é transferido para
+    o novo cartão;</li>
+  <li>O Emissor pode gerir o valor do vale no cartão a substituir, antes da sua expiração,
+    transferindo-o em todo ou em parte para o novo cartão;</li>
+  <li>O cliente pode abater no Caixa Automático (CA) o vale de pontos associado ao cartão a
+    substituir, antes da sua data de expiração.</li>
+</ul>
+
+<p><br>
+<b>Actualização após a emissão</b></p>
+
+<p>Em qualquer momento após a emissão, o Emissor pode activar ou desactivar a
+funcionalidade de Fidelização para um determinado cartão através do código de gestão
+14 do ficheiro <a href="../l-iii/egcc.htm">EGCC</a>. Com o processamento deste código de
+gestão (14) preparam-se <i>scripts</i> para envio ao cartão, para actualização dos
+dados posicionados no <i>chip</i>. São preparados tantos <i>scripts</i>&nbsp;<i>
+</i>quantas as aplicações EMV existentes no <i>chip</i> para as quais se
+pretende activar ou desactivar a funcionalidade.</p>
+
+<p>O Emissor tem igualmente a possibilidade de gerir os &quot;Vales Virtuais&quot; de
+pontos através dos seguintes meios: 
+
+<ul>
+  <li>ficheiro <a href="../l-iii/egcc.htm">EGCC</a></li>
+</ul>
+
+<blockquote>
+  <p>O código de gestão (16) permite a criação, abate ou alteração dos valores dos
+  elementos associados aos vales virtuais para um conjunto alargado de cartões.</p>
+</blockquote>
+
+<ul>
+  <li>canal próprio do Emissor</li>
+</ul>
+
+<blockquote>
+  <p>Através de mensagens <i>Host-to-Host,</i> são possibilitadas as seguintes acções:</p>
+</blockquote>
+
+<ul>
+  <ul type="square">
+    <li>Criar &quot;vale virtual&quot;;</li>
+    <li>Alterar valor do indicador de rebate de pontos;</li>
+    <li>Consultar pontos ainda disponíveis no &quot;vale virtual&quot;;</li>
+    <li>Alterar valor do &quot;vale virtual&quot;;</li>
+    <li>Anular &quot;vale virtual&quot;.</li>
+  </ul>
+</ul>
+
+<p>O cliente pode também actuar sobre o &quot;vale&quot; de pontos virtual: 
+
+<ul>
+  <li>Após a sua criação, o cliente pode anular o vale em CA;</li>
+  <li>É possível efectuar vários carregamentos consecutivos do &quot;vale virtual&quot;
+    (valor acumula).</li>
+</ul>
+
+<p>Os pontos são definidos e geridos por cartão. Assim, possibilita-se a existência de
+diferentes cartões com programas distintos (diferentes conversões entre valor e pontos)
+para a mesma conta.</p>
+
+<p style="page-break-before: always" >Para informações adicionais
+sobre as validações efectuadas aos registos do <a href="../l-iii/egcc.htm">EGCC</a>
+com códigos de gestão 14 ou 16 deve ser consultado o ponto <a href="#A.7.3">A.7.3</a>. </p>
+
+<p><br>
+VERTENTE ACEITAÇÃO </p>
+
+<p><br>
+O Emissor associa ou cancela os códigos de programas de Fidelização a disponibilizar
+nos terminais, via Terminal de Serviços SIBS, serviço <a href="i3.htm#I.3.2">Pagamento
+Automático e Terminais PMB</a>.</p>
+
+<p>Não existe informação residente nos TPAs para além da necessária identificação
+do(s) programa(s) suportados. Esta informação é enviada por <i>download</i> para o
+terminal.</p>
+
+<p>Também não existe nos TPAs uma operação de &quot;compra com rebate de pontos&quot;
+distinta da transacção de compra. O rebate é possível apenas no momento em que é
+efectuada uma compra (fica ao critério do Emissor a utilização de outras possibilidades
+de conversão de pontos, como por exemplo a disponibilização de créditos em conta ao
+cliente ou de vales de compras). </p>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.7.2.3.4">A.7.2.3.4</a> MODO DE FUNCIONAMENTO - CRÉDITO DE PONTOS</h5>
+
+<p>Para o efeito do crédito de pontos, a operação de Compra não sofre quaisquer
+alterações ao nível do terminal. </p>
+
+<p>Ao receber transacções por <i>real-time</i> ou ficheiros de Compensação Multibanco,
+o Emissor efectua a conversão em pontos e o respectivo crédito. A gestão do crédito de
+pontos é efectuada exclusivamente pelo Emissor. Não são guardados na SIBS parâmetros
+de conversão ou informação sobre os pontos a creditar ao cliente.</p>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.7.2.3.5">A.7.2.3.5</a> MODO DE FUNCIONAMENTO - REBATE DE PONTOS</h5>
+
+<p>O rebate implica carregamento prévio pelo cliente dos pontos que pretende rebater.
+Este carregamento pode ser efectuado: 
+
+<ul>
+  <li>Em Caixa Automático</li>
+  <li>Via canal próprio do Emissor </li>
+</ul>
+
+<p>As acções sequenciais que a seguir se apresentam traduzem o funcionamento de uma
+compra com rebate considerando o carregamento prévio efectuado pelo cliente em CA: 
+
+<ol TYPE="A">
+  <li>O cliente efectua uma consulta em CA dos pontos que possui. A consulta só é possível
+    quando exista <i>real-time</i> com o Emissor. Na resposta, o Emissor devolve a quantidade
+    de pontos disponível e o respectivo contravalor;<br>
+    <br>
+  </li>
+  <li>O cliente cria um &quot;vale virtual&quot;, indicando que pontos/valor pretende que
+    fique disponível para rebate. A operação de criação de vale virtual em CA obriga
+    igualmente a uma comunicação em <i>real-time</i> com o Emissor;<br>
+    <br>
+  </li>
+  <li>Esta operação actualiza um indicador no cartão, nas várias aplicações existentes
+    no <i>chip</i> que têm activa a funcionalidade de Fidelização, associado à
+    possibilidade de rebater pontos em próximas compras em TPA;<br>
+    <br>
+  </li>
+  <li>Os pontos e o respectivo contravalor indicados pelo
+    Emissor na resposta a pedido de criação de &quot;vale virtual&quot; são guardados
+    centralmente. Na resposta, o Emissor envia adicionalmente o total de pontos que ainda fica
+    disponível para próximos carregamentos de vales; a SIBS assume como factor de conversão
+    nas operações com rebate uma relação directa e proporcional entre o valor e pontos
+    indicados pelo Emissor;<br>
+    <br>
+  </li>
+  <li>Ao efectuar a próxima compra, se o terminal possui esta funcionalidade, o processamento
+    local da operação de compra tem passos adicionais (pontos seguintes);<br>
+    <br>
+  </li>
+  <li>O terminal efectua as seguintes validações:</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>O cartão tem um programa de Fidelização? Se sim, qual?</li>
+    <li>O programa de Fidelização detectado está disponível no terminal?</li>
+  </ul>
+  <blockquote>
+    <p><u>Nota</u>: os TPAs podem suportar até um máximo de 64 programas dos diferentes
+    Emissores.</p>
+  </blockquote>
+  <ul>
+    <li>O valor do indicador permite rebate de pontos?</li>
+  </ul>
+</blockquote>
+
+<ol TYPE="A" start="7">
+  <li>Se as perguntas anteriores tiverem uma resposta positiva, o cliente é questionado no <i>pinpad</i>
+    se pretende rebater pontos (não é solicitada a indicação da quantidade a rebater):</li>
+</ol>
+
+<ol TYPE="A" start="8">
+  <blockquote>
+    <p><b>Quer utilizar os pontos?</b></p>
+  </blockquote>
+  <li>Se o cliente indicar que pretende rebater pontos, a compra é obrigatoriamente <i>online</i>.
+    Centralmente, é rebatido o máximo de pontos possível - no limite, até ao total dos
+    pontos indicados pelo cliente no 2º ponto, ainda não utilizados em compras anteriores.</li>
+</ol>
+
+<blockquote>
+  <p>Neste caso, o terminal envia:<ul>
+    <li>elementos da compra;</li>
+    <li>conjunto de dados adicionais;</li>
+  </ul>
+</blockquote>
+
+<ol TYPE="A" start="9">
+  <li>Se o valor correspondente aos pontos posicionados para rebate exceder o valor da compra,
+    a possibilidade de rebate continua a ser solicitada ao cliente nas compras seguintes; se o
+    valor da compra for superior ao valor total dos pontos disponíveis, o pagamento utiliza a
+    totalidade dos pontos e o remanescente é debitado ao cartão;<br>
+    <br>
+  </li>
+  <li>Em tentativas inválidas de rebate de pontos, é apresentada no <i>pinpad</i> a mensagem
+    &quot;Transacção Inválida&quot;;<br>
+    <br>
+  </li>
+  <li>Quando se esgota o valor do &quot;vale virtual&quot; é enviado um <i>script</i> para
+    actualização do indicador de rebate no cartão; o cliente deixa de ser questionado até
+    nova operação em CA de criação de &quot;vale virtual&quot;.</li>
+</ol>
+
+<p><br>
+A SIBS não efectua qualquer gestão sobre o &quot;vale virtual&quot; não relacionada com
+o seu carregamento ou utilização por via de transacções de Compra com rebate. O
+Emissor tem contudo a possibilidade de utilizar mensagens de <i>Host-to-Host</i> para
+efectuar a gestão do &quot;vale virtual&quot; que entender adequada.</p>
+
+<p>O comerciante é creditado pelo valor total da compra, deduzido das comissões
+aplicáveis.</p>
+
+<p>O Emissor é informado do valor total da compra, do montante liquidado por conversão
+de pontos e do montante liquidado por débito ao cartão.</p>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.7.2.3.6">A.7.2.3.6</a> DECISÃO DAS
+TRANSACÇÕES</h5>
+
+<p>A transacção de compra com rebate pode ser decidida em <i>real-time</i> ou num dos
+cenários de degradação aplicáveis à compra sem utilização das funcionalidades
+adicionais.</p>
+
+<p>A criação do &quot;vale&quot; de pontos virtual e a gestão deste através do
+serviço disponível em CA obriga à existência de <i>real-time</i> com o Emissor.</p>
+
+<p><br>
+<b>Cenário de <i>real-time</i></b></p>
+
+<p><br>
+a) Compra com rebate</p>
+
+<p>Uma operação de compra com rebate é enviada ao Emissor através de uma mensagem (<a
+href="../l-iii/116x316x.htm">1161</a>), com código de transacção 010 (Rede MB) ou 015
+(outras vertentes), com os seguintes elementos: 
+
+<ul>
+  <li>Indicador de aplicação de rebate (1º byte do campo (<a target="explicac"
+    href="../../Campos/camp2300.htm#2303">2303</a>) IND-TIP-PAG assume o valor 2)</li>
+  <li>Identificação do programa de Fidelização (campo (<a target="explicac"
+    href="../../Campos/camp1700.htm#1742">1742</a>) FIDELIZACAO-ID)</li>
+</ul>
+
+<ul>
+  <ul type="square">
+    <li>Componente do valor da compra efectuada por rebate de pontos:</li>
+  </ul>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <ul>
+      <li>Informação da quantidade de pontos rebatidos (campo (<a target="explicac"
+        href="../../Campos/camp2300.htm#2308">2308</a>) FID-PONTOSREB)</li>
+      <li>Informação da quantidade de pontos ainda disponíveis no vale virtual, após a compra
+        (campo (<a target="explicac" href="../../Campos/camp2300.htm#2309">2309</a>)
+        FID-PONTOSDIS)</li>
+      <li>Informação do contravalor dos pontos rebatidos (campo (<a
+        href="../../Campos/camp2300.htm#2310" target="explicac">2310</a>) FID-VALORPONT)</li>
+      <li>Informação do valor remanescente da compra a efectuar por débito ao cartão (campo (<a
+        target="explicac" href="../../Campos/camp2300.htm#2313">2313</a>) FID-VALORREM)</li>
+    </ul>
+  </blockquote>
+</blockquote>
+
+<p><br>
+b) Criação ou actualização de &quot;Vale&quot; de pontos virtual em Caixa Automático 
+
+<ul>
+  <li>A criação ou actualização do vale em CA só é possível quando existe <em>real-time</em>
+    com o Emissor; </li>
+  <li>No momento da criação do &quot;vale&quot;, o Emissor envia à SIBS o contravalor dos
+    pontos indicados pelo cliente e os pontos que permanecem como disponíveis para novos
+    carregamentos do &quot;vale&quot;; </li>
+  <li>Os pontos utilizados na criação do vale bem como o seu contravalor (correspondência
+    directa) são guardados pela SIBS; </li>
+  <li>O Emissor pode, através de canal próprio, efectuar alterações ao &quot;vale&quot;,
+    gerindo as suas características;</li>
+</ul>
+
+<p><br>
+<strong>Cenários de degradação</strong></p>
+
+<p>As compras com rebate são decididas no cenário de degradação definido para a
+operação de compra (possibilidades de degradação definidas por Emissor/CPD), código
+de transacção 010 (Rede MB) ou 015 (outras vertentes). </p>
+
+<p>O saldo disponível aplicável é decrementado pelo valor da compra deduzido do
+montante correspondente aos pontos rebatidos.</p>
+
+<p>Quando a transacção é decidida em cenário de degradação, o Emissor recebe a
+informação das compras com rebate em <a href="../l-iii/dst-1.htm#= 1">registos de tipo
+1</a>, no ficheiro de Destinos (MDST5).</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.7.2.4">A.7.2.4</a> COMPRA COM DETALHE
+(PROGRAMA DE EMISSOR)</h3>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.7.2.4.1">A.7.2.4.1</a> DESCRIÇÃO</h5>
+
+<p>Quando existe um acordo entre um Emissor e um ou mais comerciantes para transmissão de
+detalhe das compras, esta funcionalidade permite que os últimos enviem informações
+sobre os produtos ou serviços adquiridos. Estes dados adicionais são incluídos e
+transmitidos na transacção de compra.</p>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.7.2.4.2">A.7.2.4.2</a> ELEMENTOS NECESSÁRIOS À FUNCIONALIDADE (resumo)</h5>
+
+<p><br>
+Elementos guardados centralmente e colocados no cartão - campo (<a target="explicac"
+href="../../Campos/camp1700.htm#1775">1775</a>) PROGEMISSOR: 
+
+<ul>
+  <li>Indicador de funcionalidade Programa de Emissor (elemento para colocação no cartão;
+    indica se funcionalidade está activa ou inactiva)</li>
+  <li>Identificação do programa do Emissor</li>
+</ul>
+
+<p><br>
+&nbsp;Elementos adicionais enviados na transacção de compra: 
+
+<ul>
+  <li>Tipo de pagamento, associado às funcionalidades adicionais à compra (campo (<a
+    target="explicac" href="../../Campos/camp2300.htm#2303">2303</a>) IND-TIP-PAG)</li>
+  <li>Dados adicionais informados pelo terminal - ocorrências (1 a 24) de grupos de
+    elementos:</li>
+</ul>
+
+<blockquote>
+  <ul type="square">
+    <li>Código de produto (campo (<a target="explicac" href="../../Campos/camp2300.htm#2314">2314</a>)
+      PROGEM-CODPRO)</li>
+    <li>Taxa de IVA (campo (<a href="../../Campos/campos5.htm#403" target="explicac">403</a>)
+      TAXAIVA)</li>
+    <li>Custo unitário (campo (<a target="explicac" href="../../Campos/camp2300.htm#2315">2315</a>)
+      PROGEM-CUSTOUN)</li>
+    <li>Quantidade (campo (<a target="explicac" href="../../Campos/camp2300.htm#2316">2316</a>)
+      PROGEM-QUANT)</li>
+    <li>Unidade de medida (campo (<a target="explicac" href="../../Campos/camp2300.htm#2317">2317</a>)
+      PROGEM-UNIDADE)</li>
+  </ul>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.7.2.4.3">A.7.2.4.3</a> PARAMETRIZAÇÃO DOS ELEMENTOS NECESSÁRIOS À
+FUNCIONALIDADE</h5>
+
+<p><br>
+VERTENTE EMISSÃO</p>
+
+<p><br>
+<strong>Parametrizações no momento da emissão - novos cartões</strong></p>
+
+<p>Para a utilização da funcionalidade de compra com detalhe não são necessárias
+parametrizações prévias à emissão dos cartões.</p>
+
+<p>No momento da emissão de cartões com <i>chip</i> EMV, o Emissor indica no ficheiro <a
+href="../l-iii/eecb.htm">EECB</a> (versão 03 ou 04) a identificação do programa de
+Emissor a associar ao cartão e as aplicações de pagamento às quais fica associado esse
+mesmo programa.</p>
+
+<p>Um cartão tem associado um único código de programa de Emissor.</p>
+
+<p><br>
+<strong>Parametrizações no momento da emissão - renovações ou substituições de
+cartões</strong></p>
+
+<p>Sempre que se efectue uma renovação ou substituição de um cartão EMV (campo (<a
+href="../../Campos/campos6.htm#518" target="explicac">518</a>) TIPEMICAR com um valor de 2
+a 7 e bloco de identificação do cartão anterior PAN e data de expiração preenchido),
+verifica-se se as aplicações EMV a incluir no novo cartão têm correspondência com as
+aplicações existentes no cartão anterior. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+<p>Quando exista uma correspondência exacta entre a lista ordenada de padrões
+do cartão anterior e do novo cartão, os valores posicionados no cartão antigo para um
+conjunto determinado de elementos prevalecem sobre os valores indicados no <a
+href="../l-iii/eecb.htm">EECB</a> no momento da emissão do novo cartão.</p>
+
+<p>Assim, numa renovação ou substituição, são transferidos para a aplicação
+respectiva no novo cartão os valores posicionados no cartão anterior para os elementos:</p>
+
+<ul>
+  <li>Indicador de funcionalidade Programa de Emissor</li>
+  <li>Identificação do Programa de Emissor</li>
+</ul>
+
+<p style="page-break-before: always"><br>
+<strong>Actualização após a emissão</strong></p>
+
+<p>Em qualquer momento após a emissão, o Emissor pode activar ou desactivar a
+funcionalidade de compra com detalhe para um determinado cartão através do código de
+gestão 15 do ficheiro <a href="../l-iii/egcc.htm">EGCC</a>. Com o processamento deste
+código de gestão (15) é preparado um <em>script</em> para envio ao cartão, para
+actualização dos dados posicionados no <i>chip</i>.</p>
+
+<p>Para informações adicionais
+sobre as validações efectuadas aos registos do <a href="../l-iii/egcc.htm">EGCC</a>
+com código de gestão 15 deve ser consultado o ponto <a href="#A.7.3">A.7.3</a>. </p>
+
+<p><br>
+VERTENTE ACEITAÇÃO </p>
+
+<p><br>
+A funcionalidade de compra com detalhe requer a existência prévia de um acordo
+específico entre o Emissor e o comerciante, para definir a forma de <em>input</em> para
+possibilitar a transmissão do conjunto de dados adicionais (detalhe).</p>
+
+<p>Existindo um acordo entre o Emissor e um ou vários comerciantes, é definida uma
+codificação própria que identifica cada programa (campo (<a target="explicac"
+href="../../Campos/camp1700.htm#1744">1744</a>) PROGEMISSOR-ID). </p>
+
+<p>O Emissor tem a possibilidade de associar ou cancelar os códigos de programas de
+Emissor disponíveis nos terminais de cada estabelecimento via Terminal de
+Serviços SIBS, serviço <a href="i3.htm#I.3.2">Pagamento Automático e
+Terminais PMB</a>.</p>
+
+<p>Não existe informação residente nos TPAs para além da necessária identificação
+do(s) programa(s) suportados. A tabela de programas suportados pelo TPA é enviada por <em>download</em>
+para o terminal.</p>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.7.2.4.4">A.7.2.4.4</a> MODO DE FUNCIONAMENTO</h5>
+
+<p>O funcionamento da funcionalidade de Compra com detalhe traduz-se nas seguintes
+acções sequenciais: 
+
+<ol TYPE="A">
+  <li>Ao efectuar uma compra, se o terminal possui esta funcionalidade, o processamento local
+    da operação tem passos adicionais:</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>TPA procura o valor para o campo que indica que um determinado cartão com <i>chip</i>
+      EMV tem um programa de Emissor associado;</li>
+    <li>quando o TPA reconhece o código de programa existente no cartão, procura obter os
+      dados adicionais (<em>data entry</em>, aplicação externa, etc.);</li>
+  </ul>
+</blockquote>
+
+<ol TYPE="A" start="2">
+  <li>O terminal envia os elementos da compra para decisão <em>online</em>, incluindo
+    adicionalmente um conjunto de dados com:</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>identificação do programa;</li>
+    <li>dados adicionais (detalhe).</li>
+  </ul>
+</blockquote>
+
+<p>Os dados adicionais transportados na compra são enviados ao Emissor e não ficam
+guardados na SIBS.</p>
+
+<p>&nbsp;</p>
+
+<h5 style="page-break-before: always"><a name="A.7.2.4.5">A.7.2.4.5</a> DECISÃO DAS
+TRANSACÇÕES</h5>
+
+<p>A transacção de compra com detalhe pode ser decidida em <em>real-time</em> ou num dos
+cenários de degradação aplicáveis à compra sem utilização das funcionalidades
+adicionais:</p>
+
+<p><br>
+<strong>Cenário de <em>real-time</em></strong></p>
+
+<p>Uma operação de compra com rebate é enviada ao Emissor através de uma mensagem (<a
+href="../l-iii/116x316x.htm">1161</a>), com código de transacção 010 (Rede MB) ou 015
+(outras vertentes), com os seguintes elementos: 
+
+<ul>
+  <li>Indicador de existência de detalhe (2º <em>byte</em> do campo (<a target="explicac"
+    href="../../Campos/camp2300.htm#2303">2303</a>) IND-TIP-PAG assume o valor 1)</li>
+  <li>Identificação do programa do Emissor (campo (<a target="explicac"
+    href="../../Campos/camp1700.htm#1744">1744</a>) PROGEMISSOR-ID)</li>
+  <li>Dados adicionais informados pelo terminal - ocorrências (1 a 24) do seguinte grupo de
+    elementos:</li>
+</ul>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="338">
+  <tr>
+    <td width="161"><strong>Elemento</strong></td>
+    <td width="165"><strong>Comprimento em bytes</strong></td>
+  </tr>
+  <tr>
+    <td width="161">Código de produto</td>
+    <td width="165">4</td>
+  </tr>
+  <tr>
+    <td width="161">Taxa de IVA</td>
+    <td width="165">3</td>
+  </tr>
+  <tr>
+    <td width="161">Custo unitário</td>
+    <td width="165">7</td>
+  </tr>
+  <tr>
+    <td width="161">Quantidade</td>
+    <td width="165">5</td>
+  </tr>
+  <tr>
+    <td width="161">Unidade de medida</td>
+    <td width="165">3</td>
+  </tr>
+  <tr>
+    <td width="161">&nbsp;</td>
+    <td width="165">22 bytes</td>
+  </tr>
+</table>
+</center></div>
+
+<p><br>
+<strong>Cenários de degradação</strong></p>
+
+<p>As compras com detalhe são decididas no cenário de degradação definido para a
+operação de compra (possibilidades de degradação definidas por Emissor/CPD), código
+de transacção 010 (Rede MB) ou 015 (outras vertentes). </p>
+
+<p>A decisão da transacção de Compra é independente da recepção ou não de quaisquer
+dados adicionais, incluindo nas situações em que seria expectável que existisse essa
+informação adicional.</p>
+
+<p>Quando a transacção é decidida em cenário de degradação, o Emissor recebe a
+informação financeira das compras com detalhe&nbsp; em <a href="../l-iii/dst-1.htm#= 1">registos de tipo
+1</a>, no ficheiro de Destinos (MDST5).</p>
+
+<p><br>
+<br>
+O detalhe da compra (informação não financeira) é enviado ao Emissor
+através do ficheiro <a href="../l-iii/det.htm">Detalhes</a> (MDET5).</p>
+
+<p>&nbsp;</p>
+<h2><a name="A.7.3">A.7.3</a> ACTUALIZAÇÃO APÓS A EMISSÃO - VALIDAÇÕES AO
+FICHEIRO EGCC</h2>
+<p>&nbsp;</p>
+<h3><a name="A.7.3.1">A.7.3.1</a> ASPECTOS COMUNS ÀS TRÊS FUNCIONALIDADES ADICIONAIS</h3>
+<p>&nbsp;</p>
+<p>
+<b>Processamento de <i> scripts</i> de actualização</b></p>
+<p>O Emissor tem a possibilidade de alterar os parâmetros operativos de
+qualquer das funcionalidades adicionais após a emissão do cartão, através do
+envio de códigos de gestão definidos para o efeito no ficheiro de Gestão de
+Cartões e Contas (<a href="../l-iii/egcc.htm">EGCC</a>).</p>
+<p style="page-break-before: always" >As alterações solicitadas através do ficheiro <a href="../l-iii/egcc.htm">EGCC</a>
+actualizam a
+informação existente no sistema central da SIBS. Adicionalmente, pode ser
+necessário actualizar dados existentes em uma ou mais aplicações EMV contidas
+no próprio <i> chip</i> do cartão.</p>
+<p>A alteração aos dados no <i> chip</i> é efectuada por envio de <i> scripts</i> ao cartão.
+Estes são enviados no momento em que o cartão efectua uma transacção <i>online</i>
+(ou seja, em comunicação com o sistema central), quando se verifique que para
+a aplicação EMV utilizada existe um ou mais <i> scripts</i> de actualização
+pendentes para tratamento.</p>
+<p>Assim, qualquer que seja a funcionalidade para a qual seja necessário
+actualizar elementos existentes no <i> chip</i> do cartão, a actualização processa-se
+em conformidade com os passos sequenciais que a seguir se apresentam:</p>
+<ol >
+  <li>
+    O Emissor envia ficheiro <a href="../l-iii/egcc.htm">EGCC</a> com o código de gestão
+    pretendido.<br>
+    <br>
+  </li>
+  <li>
+    No processamento do <a href="../l-iii/egcc.htm">EGCC</a>, determina-se se a alteração solicitada obriga
+à actualização de dados no <i>chip</i>, e qual a aplicação ou aplicações EMV a
+    actualizar.<br>
+    <br>
+  </li>
+  <li>
+    No processamento do <a href="../l-iii/egcc.htm">EGCC</a>, para a
+    funcionalidade em causa e para as aplicações EMV determinadas no ponto anterior, valida-se a existência de
+alterações anteriores que tenham determinado o envio de <i> scripts</i> ao cartão:</li>
+</ol>
+<blockquote >
+  <ul >
+    <li >
+      se existirem <i> scripts</i> já enviados ao cartão, mas não existe ainda uma
+    resposta sobre o seu processamento (<i>scripts</i> enviados por confirmar), o
+    registo do <a href="../l-iii/egcc.htm">EGCC</a> é rejeitado;<br>
+      <br>
+    </li>
+    <li>
+      se não existirem <i> scripts </i>enviados por confirmar, o registo do <a href="../l-iii/egcc.htm">EGCC</a>
+      é
+    aceite e é preparado um ou mais <i> scripts</i> de actualização para cada
+      aplicação EMV a actualizar. Consideram-se neste caso duas situações:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; –&nbsp; existem <i> scripts</i> pendentes mas nenhum foi ainda enviado ao cartão;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; –&nbsp; não existe qualquer <i> script</i> ou actualização pendente.</li>
+  </ul>
+</blockquote>
+<ol start="4">
+  <li >
+    Quando o cartão realiza uma transacção <i>online</i>, valida-se centralmente
+se existe algum <i> script</i> a enviar para a aplicação EMV em utilização:</li>
+</ol>
+<blockquote >
+  <ul >
+    <li >
+      se existir, o <i>script</i> é enviado ao cartão. Centralmente, o seu estado
+    de envio é alterado para &quot;<i>script</i> enviado por confirmar&quot;. O
+    cartão processa o <i> script</i> que lhe é enviado, para actualização dos dados
+    no <i>chip</i>.</li>
+  </ul>
+</blockquote>
+<ol start="5" >
+  <li >
+    Na transacção seguinte efectuada pelo cartão, são recepcionados no
+sistema central os &quot;<i>script results</i>&quot; (informação transmitida pelo
+cartão que indica se a actualização dos dados no <i> chip</i> teve ou não sucesso):</li>
+</ol>
+<blockquote >
+  <ul >
+    <li >
+      se o cartão indica que processou os <i> scripts</i> enviados no ponto
+    anterior, centralmente é efectuado o <i> reset</i> à informação sobre os
+      <i> scripts</i>
+    enviados (envio com sucesso);<br>
+      <br>
+    </li>
+    <li >
+      se o cartão indica que não processou correctamente os <i> scripts</i>
+    anteriormente enviados, estes são reenviados (mantêm-se como <i> scripts</i>
+    enviados por confirmar).</li>
+  </ul>
+</blockquote>
+    <p><br>
+    <b>Restrições à actualização das funcionalidades adicionais</b></p>
+<p>De
+forma a garantir a coerência dos dados existentes nas várias aplicações no <i>chip</i>,
+considerando o fluxo de processamento de <i>scripts</i> apresentado
+anteriormente e que as aplicações EMV contidas no <i> chip</i>
+são actualizadas separada e individualmente, não é possível efectuar alterações a
+funcionalidades adicionais para
+as quais exista um ou mais <i> scripts</i> já enviados ao cartão a aguardar uma
+confirmação. Nas situações em que se verifique esta condicionante, os
+registos do ficheiro <a href="../l-iii/egcc.htm">EGCC</a> são rejeitados.</p>
+<p>Esta restrição não abrange os registos do ficheiro <a href="../l-iii/egcc.htm">EGCC</a>
+através dos quais
+o Emissor indica que pretende desactivar uma funcionalidade.</p>
+<p>A desactivação de uma funcionalidade para uma aplicação não é causa de
+inconsistência nos dados contidos no <i>chip</i>. Independentemente dos valores que os
+elementos no <i> chip</i> possam assumir num determinado momento, o comportamento do
+cartão após a desactivação é constante, ou seja, para a aplicação ou
+aplicações para as quais se processe a desactivação, a funcionalidade
+respectiva fica indisponível.</p>
+<p>Assim, independentemente de existirem ou não <i> scripts</i> por confirmar, os
+registos do ficheiro <a href="../l-iii/egcc.htm">EGCC</a> para desactivação de funcionalidades adicionais são
+sempre aceites. Com o processamento destes registos, são preparados novos <i>
+scripts</i> para envio ao cartão.</p>
+<p><br>
+<b>Consulta ao estado das actualizações solicitadas</b></p>
+<p>Para possibilitar verificar se os elementos de uma funcionalidade são
+alteráveis num determinado momento, é disponibilizada ao Emissor, através do
+Terminal de Serviços SIBS, informação sobre a existência de <i> scripts</i>
+pendentes, na consulta aos dados EMV de um cartão (opção desencadeada a
+partir da &quot;Consulta Dados de Identificação de Cartão&quot;).</p>
+<p>&nbsp;</p>
+<h3><a name="A.7.3.2">A.7.3.2</a> COMPRA COM PAGAMENTO FRACCIONADO (LINHA DE CRÉDITO)</h3>
+<p><br>
+Estão disponíveis dois códigos para gestão de parâmetros relativos a
+esta funcionalidade:</p>
+<ul >
+  <li >CODGEST=13 - possibilita eliminar ou associar uma linha de crédito a
+  uma aplicação contida no cartão</li>
+  <li >CODGEST=17 - possibilita a gestão do valor de Saldo para Compras com
+  Pagamento Fraccionado</li></ul>
+<p><br>
+Relativamente a cada um destes códigos de gestão, são aplicáveis as
+validações que a seguir se apresentam.</p>
+<p>&nbsp;</p>
+<h5><a name="A.7.3.2.1">A.7.3.2.1</a> CODGEST=13</h5>
+<p>Para efeitos de análise, apresentam-se apenas os cenários em que o padrão
+que o Emissor indica para associação ou alteração da funcionalidade (campo (<a href="../../Campos/camp1700.htm#1734" target="explicac">1734</a>) LINHACRE-APLIC) assume valores válidos, ou seja, valores que têm
+correspondência com os padrões definidos para o cartão, no momento da sua
+emissão.&nbsp;<br>
+ Todos os registos do <a href="../l-iii/egcc.htm">EGCC</a> em que se indique um valor para o campo
+(<a href="../../Campos/camp1700.htm#1734" target="explicac">1734</a>) LINHACRE-APLIC que não tenha correspondência com um padrão do cartão
+são rejeitados, pelo que estas possibilidades não são apresentadas.</p>
+<p><br>
+O quadro que a seguir se apresenta resume a matriz de decisão e as
+validações efectuadas no processamento deste código de gestão:</p>
+<p><br>
+</p>
+<div align="center">
+  <center>
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" width="549" id="table1">
+  <tr>
+    <td class="fundo" width="139">
+      SITUAÇÃO ACTUAL
+    </td>
+    <td COLSPAN="3" class="fundo" width="396">
+      SITUAÇÃO
+      PRETENDIDA PELO EMISSOR
+    </td>
+  </tr>
+  <tr>
+    <td  width="139">Padrões que já possuem Linha de Crédito
+      associada </td>
+    <td  width="135">LINHACRE-APLIC='000'<br>
+      <br>
+      (desactivar<br>
+      &nbsp;funcionalidade)</td>
+    <td  width="126">LINHACRE-APLIC='nnn'<br>
+      <br>
+      (associar funcionalidade ou alterar parâmetros)</td>
+    <td  width="123">LINHACRE-APLIC='xxx'<br>
+      <br>
+      (associar funcionalidade ou alterar padrão)</td>
+  </tr>
+  <tr>
+    <td  width="139">Nenhum
+    </td>
+    <td  width="135">rejeição (<a href="#1">1</a>)
+    </td>
+    <td  width="126"><span class="wingding">ü</span>   (<a href="#3">3</a>)
+    </td>
+    <td  width="123"><span class="wingding">ü</span>   (<a href="#3">3</a>)
+    </td>
+  </tr>
+  <tr>
+    <td  width="139">Padrão 'nnn'
+    </td>
+    <td  width="135"><span class="wingding">ü</span>  (<a href="#2">2</a>)
+    </td>
+    <td  width="126"><span class="wingding">ü</span>    (<a href="#4">4</a>)
+    </td>
+    <td  width="123">rejeição (<a href="#5">5</a>)
+    </td>
+  </tr>
+</table>
+  </center>
+</div>
+  <p><br>
+</p>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" nowrap>(<a name="1">1</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> é
+      rejeitado.&nbsp;<br>
+      <br>
+      O Emissor indica que pretende abater a
+  funcionalidade Linha de Crédito, mas para o cartão indicado não
+  existe nenhum padrão ao qual já estivesse associada a funcionalidade.</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;<br>
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="2">2</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> é sempre
+      aceite.<br>
+      <br>
+      Pretende-se desactivar a
+  funcionalidade para o padrão 'nnn', ao qual se encontrava associada. É
+  preparado um <i>script</i> de actualização para posterior envio ao cartão. Se existir
+  um <i> plafond</i> de cartão para compras com pagamento fraccionado, este é também
+  eliminado, não sendo necessário o processamento de um CODGEST=17.</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;<br>
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="3">3</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> pode ser
+      aceite.
+      <ul class="nove">
+        <li>
+          O registo é aceite se não existir nenhum <i> script</i> já enviado ao
+    cartão por confirmar (ver ponto <a href="#A.7.3.1">A.7.3.1</a>) para a
+    funcionalidade Linha de Crédito. É preparado um <i>script</i> de actualização para
+    posterior envio ao cartão;</li>
+        <li>
+          O registo é rejeitado se existir algum <i> script</i> enviado por confirmar.
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="4">4</a>) -&nbsp;&nbsp;</td>
+    <td class="esq">
+  O registo do <a href="../l-iii/egcc.htm">EGCC</a> pode ser aceite.<br>
+  <br>
+  O Emissor pretende alterar parâmetros
+  de uma linha de crédito já associada ao cartão:
+  <ul class="nove">
+    <li class="nove">O registo é aceite se não existir nenhum <i> script</i> enviado por
+      confirmar para a funcionalidade. É preparado <i> script</i> de actualização
+      para posterior envio ao cartão;</li>
+    <li class="nove">O registo é rejeitado se existir algum script enviado por
+      confirmar.
+    </li>
+  </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="5">5</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a>  é
+      rejeitado.<br>
+      &nbsp;<br>
+      O Emissor indica que pretende alterar o padrão ao qual está associada a
+  funcionalidade mas esta alteração não é possível.<br>
+  Para alterar o padrão para o qual pretende disponibilizar a
+  funcionalidade, é necessário o envio de dois registos de alteração via <a href="../l-iii/egcc.htm">EGCC</a>:
+      <ul class="nove">
+        <li class="nove"> Em primeiro lugar, o Emissor tem que desactivar a funcionalidade
+para o padrão para o qual já está associada ('nnn');</li>
+        <li class="nove"> Após processada a alteração anterior, o Emissor envia um novo
+registo via <a href="../l-iii/egcc.htm">EGCC</a> para activar a funcionalidade para o novo padrão ('xxx').</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<h5><br>
+<a name="A.7.3.2.2">A.7.3.2.2</a> CODGEST=17</h5>
+<p>Para efeitos de análise, apresentam-se apenas os cenários em que o padrão
+que o Emissor indica para associação ou alteração da funcionalidade (campo (<a href="../../Campos/camp1700.htm#1734" target="explicac">1734</a>) LINHACRE-APLIC) assume valores válidos, ou seja, valores que têm
+correspondência com os padrões definidos para o cartão, no momento da sua
+emissão.&nbsp;<br>
+ Todos os registos do <a href="../l-iii/egcc.htm">EGCC</a> em que se indique um valor para o campo
+(<a href="../../Campos/camp1700.htm#1734" target="explicac">1734</a>) LINHACRE-APLIC que não tenha correspondência com um padrão do cartão
+são rejeitados, pelo que estas possibilidades não são apresentadas.</p>
+
+<p><br>
+O quadro que a seguir se apresenta resume a matriz de decisão e as
+validações efectuadas no processamento deste código de gestão:</p>
+<p><br>
+</p>
+<div align="center">
+  <center>
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" width="549" id="table1">
+  <tr>
+    <td class="fundo" width="139">
+      SITUAÇÃO ACTUAL
+    </td>
+    <td COLSPAN="3" class="fundo" width="396">
+      SITUAÇÃO
+      PRETENDIDA PELO EMISSOR
+    </td>
+  </tr>
+  <tr>
+    <td  width="139">Padrões que já possuem Linha de Crédito
+      associada </td>
+    <td  width="135">LINHACRE-APLIC='000'<br>
+      <br>
+      (desactivar<br>
+      &nbsp;funcionalidade)</td>
+    <td  width="126">LINHACRE-APLIC='nnn'<br>
+      <br>
+      (associar funcionalidade ou alterar parâmetros)</td>
+    <td  width="123">LINHACRE-APLIC='xxx'<br>
+      <br>
+      (associar funcionalidade ou alterar padrão)</td>
+  </tr>
+  <tr>
+    <td  width="139">Nenhum
+    </td>
+    <td  width="135">rejeição (<a href="#1b">1</a>)
+    </td>
+    <td  width="126">rejeição (<a href="#1b">1</a>)
+    </td>
+    <td  width="123">rejeição (<a href="#1b">1</a>)
+    </td>
+  </tr>
+  <tr>
+    <td  width="139">Padrão 'nnn'
+    </td>
+    <td  width="135">rejeição (<a href="#1b">1</a>)
+    </td>
+    <td  width="126"><span class="wingding">ü</span>   (<a href="#2b">2</a>)
+    </td>
+    <td  width="123">rejeição (<a href="#1b">1</a>)
+    </td>
+  </tr>
+</table>
+  </center>
+</div>
+  <p><br>
+</p>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" nowrap>(<a name="1b">1</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> é
+      rejeitado.&nbsp;<br>
+      <br>
+      O valor a indicar para o campo
+  (<a href="../../Campos/camp1700.htm#1734" target="explicac">1734</a>)
+  LINHACRE-APLIC tem que ser diferente de zero e corresponder à ocorrência de
+  EMV-PADRAO existente no cartão para a qual está parametrizada uma linha de
+  crédito.</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;<br>
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="2b">2</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> é
+      aceite.<br>
+      <br>
+      O Emissor indica que pretende alterar o
+  saldo associado à funcionalidade Linha de Crédito. Este saldo é gerido
+  centralmente, pelo que a aceitação deste código de gestão não implica a
+  geração de <i> scripts</i> para actualização de dados contidos no <i>chip</i>.</td>
+  </tr>
+</table>
+
+  <p>&nbsp;
+</p>
+<h3><a name="A.7.3.3">A.7.3.3</a> COMPRA COM REBATE DE PONTOS (FIDELIZAÇÃO)</h3>
+<p><br>
+Estão disponíveis dois códigos para gestão de parâmetros relativos a
+esta funcionalidade:</p>
+<ul >
+  <li >CODGEST=14 - possibilita eliminar ou associar um programa de
+    fidelização ao cartão</li>
+  <li >CODGEST=16 - possibilita a gestão de vales virtuais de pontos</li></ul>
+<p><br>
+Relativamente a cada um destes códigos de gestão, são aplicáveis as
+validações que a seguir se apresentam.</p>
+<p>&nbsp;</p>
+<h5><a name="A.7.3.3.1">A.7.3.3.1</a> CODGEST=14</h5>
+<p>Para efeitos de análise, apresentam-se apenas os cenários em que o padrão
+que o Emissor indica para associação ou alteração da funcionalidade (campo (<a href="../../Campos/camp1700.htm#1741" target="explicac">1741</a>)
+FIDELIZ-APLIC) assume valores válidos, ou seja, valores que têm
+correspondência com os padrões definidos para o cartão, no momento da sua
+emissão, ou o valor '999'.&nbsp;<br>
+ Todos os registos do <a href="../l-iii/egcc.htm">EGCC</a> em que se indique um valor para o campo (<a href="../../Campos/camp1700.htm#1741" target="explicac">1741</a>)
+FIDELIZ-APLIC que não tenha correspondência com um padrão do cartão
+são rejeitados, pelo que estas possibilidades não são apresentadas.</p>
+
+<p><br>
+O quadro que a seguir se apresenta resume a matriz de decisão e as
+validações efectuadas no processamento deste código de gestão:</p>
+<p><br>
+</p>
+<div align="center">
+  <center>
+<table BORDER="1" CELLSPACING="0" CELLPADDING="3" width="602" id="table1">
+  <tr>
+    <td class="fundo" width="106">
+      SITUAÇÃO ACTUAL
+    </td>
+    <td COLSPAN="4" class="fundo" width="482">
+      SITUAÇÃO
+      PRETENDIDA PELO EMISSOR
+    </td>
+  </tr>
+  <tr>
+    <td  width="106">Padrões que já possuem Fidelização associada </td>
+    <td  width="127">FIDELIZ-APLIC='000'<br>
+      <br>
+      (desactivar&nbsp;funcionalidade em todos os padrões)</td>
+    <td  width="156">FIDELIZ-APLIC='nnn'<br>
+      <br>
+      (associar funcionalidade a um único padrão)</td>
+    <td  width="152">FIDELIZ-APLIC='xxx'<br>
+      <br>
+      (associar funcionalidade a um único padrão)</td>
+    <td  width="158">FIDELIZ-APLIC='999'<br>
+      <br>
+      (associar funcionalidade a todos os padrão)</td>
+  </tr>
+  <tr>
+    <td  width="106">Nenhum
+    </td>
+    <td  width="127">rejeição (<a href="#1c">1</a>)
+    </td>
+    <td  width="156"><span class="wingding">ü</span>   (<a href="#3c">3</a>)
+    </td>
+    <td  width="152"><span class="wingding">ü</span>   (<a href="#3c">3</a>)
+    </td>
+    <td  width="158"><span class="wingding">ü</span>   (<a href="#3c">3</a>)
+    </td>
+  </tr>
+  <tr>
+    <td  width="106">Um padrão, 'nnn'
+    </td>
+    <td  width="127"><span class="wingding">ü</span>  (<a href="#2c">2</a>)
+    </td>
+    <td  width="156">rejeição (<a href="#4c">4</a>)
+    </td>
+    <td  width="152">rejeição (<a href="#6c">6</a>)
+    </td>
+    <td  width="158"><span class="wingding">ü</span>   (<a href="#7c">7</a>)
+    </td>
+  </tr>
+  <tr>
+    <td  width="106">Todos os padrões, '999'
+    </td>
+    <td  width="127"><span class="wingding">ü</span>  (<a href="#2c">2</a>)
+    </td>
+    <td  width="156"><span class="wingding">ü</span>    (<a href="#5c">5</a>)
+    </td>
+    <td  width="152"><span class="wingding">ü</span>    (<a href="#5c">5</a>)
+    </td>
+    <td  width="158">rejeição (<a href="#4c">4</a>)
+    </td>
+  </tr>
+</table>
+  </center>
+</div>
+
+  <p><br>
+</p>
+  <center>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" nowrap>(<a name="1c">1</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> é
+      rejeitado.&nbsp;<br>
+      <br>
+      O Emissor indica que pretende abater a
+  funcionalidade Fidelização, mas para o cartão indicado não
+  existe nenhum padrão ao qual já estivesse associada a funcionalidade.</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;<br>
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="2c">2</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> é sempre
+      aceite.<br>
+      <br>
+      Pretende-se desactivar a
+  funcionalidade para todos os padrões para os quais esteja associada. É
+  preparado um <i>script</i> de actualização por cada padrão, para posterior envio ao cartão.&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;<br>
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="3c">3</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> pode ser
+      aceite.
+      <ul class="nove">
+        <li>
+          O registo é aceite se não existir nenhum <i> script</i> já enviado ao
+    cartão por confirmar (ver ponto <a href="#A.7.3.1">A.7.3.1</a>) para a
+    funcionalidade Fidelização. É preparado um <i>script</i> de actualização
+          por cada padrão, para
+    posterior envio ao cartão;</li>
+        <li>
+          O registo é rejeitado se existir algum <i> script</i> enviado por confirmar.
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="4c">4</a>) -&nbsp;&nbsp;</td>
+    <td class="esq">
+  O registo do <a href="../l-iii/egcc.htm">EGCC</a>  é rejeitado.<br>
+  <br>
+  O Emissor indica que pretende associar a funcionalidade Fidelização a um
+  padrão (‘nnn’) ou todos (valor ‘999’), mas a associação pretendida
+  já existe. Independentemente do valor do campo (<a href="../../Campos/camp1700.htm#1742" target="explicac">1742</a>)
+  FIDELIZACAO-ID, o registo é rejeitado.<br>
+  <br>
+  Se o pretendido é a alteração do código de programa de Fidelização
+  associado, o Emissor tem que enviar via ficheiro <a href="../l-iii/egcc.htm">EGCC</a>
+  dois registos de alteração:
+      <ul class="nove">
+        <li class="nove"> Em primeiro lugar, o Emissor tem que desactivar a funcionalidade
+          (registo com FIDELIZ-APLIC = '000');</li>
+        <li class="nove"> Após processada a alteração anterior, o Emissor envia um novo
+registo via <a href="../l-iii/egcc.htm">EGCC</a> para activar a funcionalidade,&nbsp;
+          indicando o novo programa através do campo (<a href="../../Campos/camp1700.htm#1742" target="explicac">1742</a>)
+          FIDELIZACAO-ID e os padrões aos quais deve ser associado (a um
+          padrão específico, ‘nnn’, ou a todos os padrões, ‘999’).</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="5c">5</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a>   pode
+      ser aceite.<br>
+      &nbsp;<br>
+      O Emissor indicou anteriormente que pretendia disponibilizar a
+      funcionalidade para todos os padrões (FIDELIZ-APLIC = '999') mas indica
+      agora que pretende que a funcionalidade fique disponível apenas para um
+      padrão específico (FIDELIZ-APLIC = ‘nnn’), existente no cartão.<br>
+      <br>
+      A aceitação do registo do <a href="../l-iii/egcc.htm">EGCC</a> depende
+      do valor informado para o campo (<a href="../../Campos/camp1700.htm#1742" target="explicac">1742</a>)
+      FIDELIZACAO-ID.
+      <ul class="nove">
+        <li class="nove"> O Emissor indica o mesmo código de identificação de
+          programa de Fidelização (campo (<a href="../../Campos/camp1700.htm#1742" target="explicac">1742</a>) FIDELIZACAO-ID) já associado:
+          <ul class="nove">
+            <li type="square"> O registo é aceite se não existir nenhum <i>script</i>&nbsp;
+              já enviado ao cartão por confirmar para a funcionalidade Fidelização. É preparado um <i>script</i> de actualização por
+              cada padrão para o qual se pretende desactivar a funcionalidade,
+              para posterior envio ao cartão. Apenas um padrão (‘nnn’ ou
+              ‘xxx’, de acordo com as duas colunas do quadro) fica associado
+              à funcionalidade;</li>
+            <li type="square">O registo é rejeitado se existir algum <i>script</i>
+              enviado por confirmar.<br>
+              <br>
+            </li>
+          </ul>
+        </li>
+    <li class="nove"> O Emissor indica um código de identificação de
+          programa de Fidelização (campo (<a href="../../Campos/camp1700.htm#1742" target="explicac">1742</a>) FIDELIZACAO-ID)
+      diferente do já associado:
+      <ul class="nove">
+        <li type="square">O registo do EGCC é sempre rejeitado nesta
+          situação.</li>
+      </ul>
+    </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="6c">6</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> é
+      rejeitado.<br>
+      <br>
+      O Emissor indica que pretende associar a funcionalidade Fidelização ao
+      padrão ‘xxx’, mas a funcionalidade já está associada ao padrão
+      ‘nnn’. Independentemente do valor do campo (<a href="../../Campos/camp1700.htm#1742" target="explicac">1742</a>)
+      FIDELIZACAO-ID, o registo é rejeitado.&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;<br>
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="7c">7</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a>   pode
+      ser aceite.<br>
+      &nbsp;<br>
+      O Emissor indicou anteriormente que pretendia disponibilizar a
+      funcionalidade apenas para um
+      padrão específico (FIDELIZ-APLIC = ‘nnn’), mas indica
+      agora que pretende que a funcionalidade fique disponível&nbsp; para todos os padrões existentes no cartão (FIDELIZ-APLIC = '999').<br>
+      <br>
+      A aceitação do registo do <a href="../l-iii/egcc.htm">EGCC</a> depende
+      do valor informado para o campo (<a href="../../Campos/camp1700.htm#1742" target="explicac">1742</a>)
+      FIDELIZACAO-ID.
+      <ul class="nove">
+        <li class="nove"> O Emissor indica o mesmo código de identificação de
+          programa de Fidelização (campo (<a href="../../Campos/camp1700.htm#1742" target="explicac">1742</a>) FIDELIZACAO-ID) já associado:
+          <ul class="nove">
+            <li type="square"> O registo é aceite se não existir nenhum <i>script</i>&nbsp;
+              já enviado ao cartão por confirmar para a funcionalidade Fidelização. É preparado um <i>script</i> de actualização por
+              cada padrão para o qual se pretende adicionalmente associar a funcionalidade,
+              para posterior envio ao cartão. Após o processamento de todos os
+              <i>scripts</i>, todos os padrões ficam associados à
+              funcionalidade;</li>
+            <li type="square">O registo é rejeitado se existir algum <i>script</i>
+              enviado por confirmar.<br>
+              <br>
+            </li>
+          </ul>
+        </li>
+    <li style="page-break-before: always" class="nove"> O Emissor indica um código de identificação de
+          programa de Fidelização (campo (<a href="../../Campos/camp1700.htm#1742" target="explicac">1742</a>) FIDELIZACAO-ID)
+      diferente do já associado:
+      <ul class="nove">
+        <li type="square">O registo do <a href="../l-iii/egcc.htm">EGCC</a> é sempre rejeitado nesta
+          situação.</li>
+      </ul>
+    </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+  </center>
+<h5><br>
+<a name="A.7.3.3.2">A.7.3.3.2</a> CODGEST=16
+</h5>
+<p>O quadro que a seguir se apresenta resume a matriz de decisão e as
+validações efectuadas no processamento deste código de gestão:</p>
+<p><br>
+</p>
+<div align="center">
+  <center>
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" width="415" id="table1">
+  <tr>
+    <td class="fundo" width="127">
+      SITUAÇÃO ACTUAL
+    </td>
+    <td class="fundo" width="266">
+      SITUAÇÃO
+      PRETENDIDA PELO EMISSOR
+    </td>
+  </tr>
+  <tr>
+    <td  width="127">Padrões que já possuem Fidelização associada </td>
+    <td class="esq" width="266">Qualquer acção:<br>
+      - criação de um vale de pontos
+      <br>
+      - abate de um vale de pontos<br>
+      - alteração dos valores de um vale de pontos</td>
+  </tr>
+  <tr>
+    <td  width="127">Nenhum
+    </td>
+    <td  width="266">rejeição (1)
+    </td>
+  </tr>
+  <tr>
+    <td  width="127">Um padrão, 'nnn'
+    </td>
+    <td  width="266"><span class="wingding">ü</span>  (2)
+    </td>
+  </tr>
+  <tr>
+    <td  width="127">Todos os padrões, '999'
+    </td>
+    <td  width="266"><span class="wingding">ü</span>  (2)
+    </td>
+  </tr>
+</table>
+  </center>
+</div>
+
+  <p><br>
+</p>
+  <center>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" nowrap>(<a name="1c">1</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> é
+      rejeitado.&nbsp;<br>
+      <br>
+      O Emissor indica que pretende efectuar uma acção sobre um vale de pontos
+      de um cartão, mas esse mesmo cartão não tem associada a funcionalidade Fidelização.</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;<br>
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="2c">2</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> é sempre
+      aceite.<br>
+      <br>
+      Os valores guardados no sistema central da SIBS
+        relativos ao vale de pontos são actualizados. Adicionalmente, pode
+        existir necessidade de enviar <i> scripts</i> de actualização do indicador de
+        rebate posicionado no cartão, em função da acção pretendida:
+      <ul class="nove">
+        <li >Criação de um vale de pontos<br>
+          Quando um vale de pontos é criado, é necessário actualizar o
+          indicador existente no <i>chip</i> para possibilitar o rebate nas
+          compras e a consequente utilização dos pontos. Assim, são criados
+          tantos <i>scripts</i> quantas as aplicações do cartão que têm
+          associada a funcionalidade Fidelização (um padrão, ‘nnn’, ou
+          todos os padrões), para activar o indicador de rebate.<br>
+          <br>
+        </li>
+          <li >Abate de um vale de pontos<br>
+            Inversamente à criação do vale, é necessário
+          actualizar o indicador existente no <i> chip</i> para impedir o rebate nas
+          compras. Assim, são criados tantos <i> scripts</i> quantas as aplicações do
+          cartão que têm associada a funcionalidade Fidelização (um
+          padrão, ‘nnn’, ou todos os padrões), para desactivar o indicador
+          de rebate.<br>
+            <br>
+        </li>
+          <li >Alteração dos valores de um vale de pontos<br>
+            Os novos valores do vale são actualizados centralmente, mas não é
+      necessária qualquer actualização aos dados contidos no <i> chip</i> do cartão.</li>
+    
+      </ul>
+    </td>
+  </tr>
+</table>
+  </center>
+  <p>&nbsp;
+</p>
+<h3><a name="A.7.3.4">A.7.3.4</a> COMPRA COM DETALHE (PROGRAMA DE EMISSOR)</h3>
+<p><br>
+Está disponível o seguinte código para gestão desta funcionalidade:</p>
+<ul >
+  <li >CODGEST=15 - possibilita eliminar ou associar um programa de emissor ao cartão</li>
+</ul>
+<p><br>
+São aplicáveis a este código de gestão validações idênticas às
+aplicáveis ao CODGEST=14 (funcionalidade Fidelização).</p>
+<p>&nbsp;</p>
+<h5><a name="A.7.3.4.1">A.7.3.4.1</a> CODGEST=15</h5>
+<p>Para efeitos de análise, apresentam-se apenas os cenários em que o padrão
+que o Emissor indica para associação ou alteração da funcionalidade (campo (<a href="../../Campos/camp1700.htm#1743" target="explicac">1743</a>)
+PROGEMI-APLIC) assume valores válidos, ou seja, valores que têm
+correspondência com os padrões definidos para o cartão, no momento da sua
+emissão, ou o valor '999'.&nbsp;<br>
+ Todos os registos do <a href="../l-iii/egcc.htm">EGCC</a> em que se indique um valor para o campo (<a href="../../Campos/camp1700.htm#1743" target="explicac">1743</a>)
+PROGEMI-APLIC que não tenha correspondência com um padrão do cartão
+são rejeitados, pelo que estas possibilidades não são apresentadas.</p>
+<p ><br>
+O quadro que a seguir se apresenta resume a matriz de decisão e as
+validações efectuadas no processamento deste código de gestão:</p>
+<p><br>
+</p>
+<div align="center">
+  <center>
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" width="614" id="table1">
+  <tr>
+    <td class="fundo" width="85">
+      SITUAÇÃO ACTUAL
+    </td>
+    <td COLSPAN="4" class="fundo" width="511">
+      SITUAÇÃO
+      PRETENDIDA PELO EMISSOR
+    </td>
+  </tr>
+  <tr>
+    <td  width="85">Padrões que já possuem Programa Emissor associado </td>
+    <td  width="129">PROGEMI-APLIC='000'<br>
+      <br>
+      (desactivar funcionalidade em todos os padrões)</td>
+    <td  width="117">PROGEMI-APLIC='nnn'<br>
+      <br>
+      (associar funcionalidade a um único padrão)</td>
+    <td  width="124">PROGEMI-APLIC='xxx'<br>
+      <br>
+      (associar funcionalidade a um único padrão)</td>
+    <td  width="117">PROGEMI-APLIC='999'<br>
+      <br>
+      (associar funcionalidade a todos os padrões)</td>
+  </tr>
+  <tr>
+    <td  width="85">Nenhum
+    </td>
+    <td  width="129">rejeição (<a href="#1d">1</a>)
+    </td>
+    <td  width="117"><span class="wingding">ü</span>   (<a href="#3d">3</a>)
+    </td>
+    <td  width="124"><span class="wingding">ü</span>   (<a href="#3d">3</a>)
+    </td>
+    <td  width="117"><span class="wingding">ü</span>   (<a href="#3d">3</a>)
+    </td>
+  </tr>
+  <tr>
+    <td  width="85">Um padrão, 'nnn'
+    </td>
+    <td  width="129"><span class="wingding">ü</span>  (<a href="#2d">2</a>)
+    </td>
+    <td  width="117">rejeição (<a href="#4d">4</a>)
+    </td>
+    <td  width="124">rejeição (<a href="#6d">6</a>)
+    </td>
+    <td  width="117"><span class="wingding">ü</span>   (<a href="#7d">7</a>)
+    </td>
+  </tr>
+  <tr>
+    <td  width="85">Todos os padrões, '999'
+    </td>
+    <td  width="129"><span class="wingding">ü</span>  (<a href="#2d">2</a>)
+    </td>
+    <td  width="117"><span class="wingding">ü</span>    (<a href="#5d">5</a>)
+    </td>
+    <td  width="124"><span class="wingding">ü</span>    (<a href="#5d">5</a>)
+    </td>
+    <td  width="117">rejeição (<a href="#4d">4</a>)
+    </td>
+  </tr>
+</table>
+  </center>
+</div>
+  <p><br>
+</p>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" nowrap>(<a name="1d">1</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> é
+      rejeitado.&nbsp;<br>
+      <br>
+      O Emissor indica que pretende abater a
+  funcionalidade Programa de Emissor, mas para o cartão indicado não
+  existe nenhum padrão ao qual já estivesse associada a funcionalidade.</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;<br>
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="2d">2</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> é sempre
+      aceite.<br>
+      <br>
+      Pretende-se desactivar a
+  funcionalidade para todos os padrões para os quais esteja associada. É
+  preparado um <i>script</i> de actualização por cada padrão, para posterior envio ao cartão.&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;<br>
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="3d">3</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> pode ser
+      aceite.
+      <ul class="nove">
+        <li>
+          O registo é aceite se não existir nenhum <i> script</i> já enviado ao
+    cartão por confirmar (ver ponto <a href="#A.7.3.1">A.7.3.1</a>) para a
+    funcionalidade Programa de Emissor. É preparado um <i>script</i> de actualização
+          por cada padrão, para
+    posterior envio ao cartão;</li>
+        <li>
+          O registo é rejeitado se existir algum <i> script</i> enviado por confirmar.
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="4d">4</a>) -&nbsp;&nbsp;</td>
+    <td class="esq">
+  O registo do <a href="../l-iii/egcc.htm">EGCC</a>  é rejeitado.<br>
+  <br>
+  O Emissor indica que pretende associar a funcionalidade Programa de Emissor a um
+  padrão (‘nnn’) ou todos (valor ‘999’), mas a associação pretendida
+  já existe. Independentemente do valor do campo (<a href="../../Campos/camp1700.htm#1744" target="explicac">1744</a>)
+  PROGEMISSOR-ID, o registo é rejeitado.<br>
+  <br>
+  Se o pretendido é a alteração do código de Programa de Emissor associado, o Emissor tem que enviar via ficheiro <a href="../l-iii/egcc.htm">EGCC</a>
+  dois registos de alteração:
+      <ul class="nove">
+        <li class="nove"> Em primeiro lugar, o Emissor tem que desactivar a funcionalidade
+          (registo com PROGEMI-APLIC = '000');</li>
+        <li class="nove"> Após processada a alteração anterior, o Emissor envia um novo
+registo via <a href="../l-iii/egcc.htm">EGCC</a> para activar a funcionalidade,&nbsp;
+          indicando o novo programa através do campo (<a href="../../Campos/camp1700.htm#1744" target="explicac">1744</a>)
+          PROGEMISSOR-ID e os padrões aos quais deve ser associado (a um
+          padrão específico, ‘nnn’, ou a todos os padrões, ‘999’).</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="page-break-before: always" class="esq" nowrap>(<a name="5d">5</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a>   pode
+      ser aceite.<br>
+      &nbsp;<br>
+      O Emissor indicou anteriormente que pretendia disponibilizar a
+      funcionalidade para todos os padrões (PROGEMI-APLIC = '999') mas indica
+      agora que pretende que a funcionalidade fique disponível apenas para um
+      padrão específico (PROGEMI-APLIC = ‘nnn’), existente no cartão.<br>
+      <br>
+      A aceitação do registo do <a href="../l-iii/egcc.htm">EGCC</a> depende
+      do valor informado para o campo (<a href="../../Campos/camp1700.htm#1744" target="explicac">1744</a>)
+      PROGEMISSOR-ID.
+      <ul class="nove">
+        <li class="nove"> O Emissor indica o mesmo código de identificação de
+          Programa de Emissor (campo (<a href="../../Campos/camp1700.htm#1744" target="explicac">1744</a>)
+          PROGEMISSOR-ID) já associado:
+          <ul class="nove">
+            <li type="square"> O registo é aceite se não existir nenhum <i>script</i>&nbsp;
+              já enviado ao cartão por confirmar para a funcionalidade
+              Programa de Emissor. É preparado um <i>script</i> de actualização por
+              cada padrão para o qual se pretende desactivar a funcionalidade,
+              para posterior envio ao cartão. Apenas um padrão (‘nnn’ ou
+              ‘xxx’, de acordo com as duas colunas do quadro) fica associado
+              à funcionalidade;</li>
+            <li type="square">O registo é rejeitado se existir algum <i>script</i>
+              enviado por confirmar.<br>
+              <br>
+            </li>
+          </ul>
+        </li>
+    <li class="nove"> O Emissor indica um código de identificação do
+      Programa de Emissor (campo (<a href="../../Campos/camp1700.htm#1744" target="explicac">1744</a>)
+      PROGEMISSOR-ID)
+      diferente do já associado:
+      <ul class="nove">
+        <li type="square">O registo do <a href="../l-iii/egcc.htm">EGCC</a> é sempre rejeitado nesta
+          situação.</li>
+      </ul>
+    </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="6d">6</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a> é
+      rejeitado.<br>
+      <br>
+      O Emissor indica que pretende associar a funcionalidade Programa de
+      Emissor ao
+      padrão ‘xxx’, mas a funcionalidade já está associada ao padrão
+      ‘nnn’. Independentemente do valor do campo (<a href="../../Campos/camp1700.htm#1744" target="explicac">1744</a>)
+      PROGEMISSOR-ID, o registo é rejeitado.&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;<br>
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="7d">7</a>) -&nbsp;&nbsp;</td>
+    <td class="esq"> O registo do <a href="../l-iii/egcc.htm">EGCC</a>   pode
+      ser aceite.<br>
+      &nbsp;<br>
+      O Emissor indicou anteriormente que pretendia disponibilizar a
+      funcionalidade apenas para um
+      padrão específico (PROGEMI-APLIC = ‘nnn’), mas indica
+      agora que pretende que a funcionalidade fique disponível&nbsp; para todos os padrões existentes no cartão
+      (PROGEMI-APLIC = '999').<br>
+      <br>
+      A aceitação do registo do <a href="../l-iii/egcc.htm">EGCC</a> depende
+      do valor informado para o campo (<a href="../../Campos/camp1700.htm#1744" target="explicac">1744</a>)
+      PROGEMISSOR-ID.
+      <ul class="nove">
+        <li class="nove"> O Emissor indica o mesmo código de identificação do
+          Programa de Emissor (campo (<a href="../../Campos/camp1700.htm#1744" target="explicac">1744</a>)
+          PROGEMISSOR-ID) já associado:
+          <ul class="nove">
+            <li type="square"> O registo é aceite se não existir nenhum <i>script</i>&nbsp;
+              já enviado ao cartão por confirmar para a funcionalidade
+              Programa de Emissor. É preparado um <i>script</i> de actualização por
+              cada padrão para o qual se pretende adicionamente associar a funcionalidade,
+              para posterior envio ao cartão. Após o processamento de todos os
+              <i>scripts</i>, todos os padrões ficam associados à
+              funcionalidade;</li>
+            <li type="square">O registo é rejeitado se existir algum <i>script</i>
+              enviado por confirmar.<br>
+              <br>
+            </li>
+          </ul>
+        </li>
+    <li class="nove"> O Emissor indica um código de identificação do
+      Programa de Emissor (campo (<a href="../../Campos/camp1700.htm#1744" target="explicac">1744</a>)
+      PROGEMISSOR-ID)
+      diferente do já associado:
+      <ul class="nove">
+        <li type="square">O registo do <a href="../l-iii/egcc.htm">EGCC</a> é sempre rejeitado nesta
+          situação.</li>
+      </ul>
+    </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+<p class="dta"><br>
+<a target="main" href="a6.htm">Anterior</a>/<a href="a8.htm">Seguinte</a></p>
+</body>
+</html>

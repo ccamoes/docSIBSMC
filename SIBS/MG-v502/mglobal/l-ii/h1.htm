@@ -1,0 +1,280 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<link rel="stylesheet" type="text/css" href="../main.css">
+<title>H.1 SERVIÇO ESPECIAL NA REDE MULTIBANCO</title>
+<script>top.captulos.location='indiceh.htm#H';</script>
+</head>
+
+<body>
+
+<h1>H.1 SERVIÇO ESPECIAL NA REDE MULTIBANCO</h1>
+
+<p>&nbsp;</p>
+
+<p>A SIBS pretende disponibilizar através desta operação, a possibilidade de uma
+qualquer Entidade utilizar o Serviço Multibanco para proporcionar a prestação dos seus
+serviços aos clientes titulares de cartões cujos Emissores disponibilizem as respectivas
+operações.</p>
+
+<p><br>
+A sequencialidade da operação decorre de acordo com os procedimentos habituais, devendo
+o cliente utilizador do serviço: 
+
+<ul>
+  <li>Introduzir o cartão; </li>
+  <li>Digitar o código secreto; </li>
+  <li>Seleccionar a operação com a designação associada ao serviço.</li>
+</ul>
+
+<p><br>
+Os ecrãs a disponibilizar assim como o recibo a apresentar ao cliente, são formatados de
+acordo com as especificações próprias de cada serviço.</p>
+
+<p>No caso de serviços especiais disponibilizados a Empresas com sistemas informáticos
+que viabilizem o uso de um cenário em tempo real, a operação pode recorrer também a um
+diálogo entre o Processador Central (<em>Host</em>) da SIBS e o da Empresa.</p>
+
+<p class="center"><br>
+<u>Arquitectura Genérica dos Serviços Especiais</u></p>
+
+<p class="center"><img src="imagens2/h1-1.gif" alt="h1-1.gif" WIDTH="300" HEIGHT="251"></p>
+
+<p><strong>1</strong> - Transacções de diálogo entre o Terminal e o CPU da SIBS. <br>
+<strong>2</strong> - Transacção ou pedido de dados do CPU da SIBS feito ao CPU Empresa. <br>
+<strong>3</strong> - Resposta ao pedido de dados enviado pela Empresa. <br>
+<strong>4 </strong>e<strong> 5</strong> - Pedido de autorização e resposta para efectuar
+o pagamento solicitado pelo cartão. <br>
+<strong>6</strong> - Resposta para o Terminal, dos dados enviados pelo CPU da Empresa, ao
+cliente titular do cartão.</p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="H.1.1">H.1.1</a> SERVIÇO ESPECIAL EM CA </h2>
+
+<p><br>
+Os serviços especiais a disponibilizar na rede de Caixas Automáticos Multibanco, estão
+agrupados em três categorias: Serviços Genéricos, Serviços
+Parametrizáveis e Serviço Personalizados.</p>
+
+<p>Na categoria dos <strong>Serviços Genéricos</strong>, incluem-se os
+serviços especiais de cariz bancário. </p>
+
+<p>A categoria dos <strong>Serviços Especiais Parametrizáveis</strong> inclui os
+serviços com características padronizadas mas ajustáveis aos parâmetros do cliente e
+que possibilitam a implementação de um processo expedito de distribuição, através dos
+bancos, optimizando deste modo a capacidade de resposta da SIBS.&nbsp;<br>
+Pelas suas características, minimizam os esforços de desenvolvimento necessários à
+implementação de um novo serviço.<br>
+Para a sua adesão, a Empresa deve preencher o formulário de adesão ao serviço
+parametrizável, constante no anexo <a href="h_a2.pdf" target="main">H.AX.2</a>.</p>
+
+<p>Por último, os designados <strong>Serviços Especiais Personalizados</strong>. Estes
+tipos de serviços exigem um desenvolvimento específico para cada caso e, pelas suas
+particularidades, preservam a capacidade de resposta ao mercado, optimizando a captura de
+valor.<br>
+Apesar das particularidades inerentes a cada serviço, há no entanto a considerar que a
+operação não deve demorar mais do que uma operação de Depósito em CA, isto é, deve
+haver no máximo 5 ecrãs para a concretização da operação e não pode recorrer a
+dispositivos mais complexos, como, por exemplo, o dispensador ou módulo de depósito.</p>
+
+<p>A Entidade que solicita o serviço tem de efectuar um contrato com um Banco/<em>Acquirer</em>,
+assim como preencher o formulário constante no anexo <a href="h_a1.pdf" target="main">H.AX.1</a>.
+Em situações pontuais, esta negociação pode ocorrer directamente com a SIBS. </p>
+
+<p>A aceitação da implementação de um Serviço Especial Personalizado na Rede
+Multibanco é decidida pela SIBS caso a caso.</p>
+
+<p><br>
+Independentemente do tipo de serviço, todas as operações terminam com um ecrã, onde é
+solicitado ao cliente a confirmação dos dados indicados, antes de se concretizar o
+pedido ao Banco Emissor. </p>
+
+<p>Os montantes a movimentar contabilisticamente (débito ou a crédito), são
+transmitidos para o Banco de Apoio, posicionados pelas Entidades, através do Ficheiro
+Movimentos - <a href="../l-iii/mov-3.htm">tipo de registo 3</a>, tal como acontece, por
+exemplo, na operação de Pagamento de Serviços/Compras. Cada lançamento corresponde a
+um ficheiro de movimentos enviado à Empresa com os detalhes das diversas
+operações.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="H.1.2">H.1.2</a> SERVIÇOS EM VIGOR </h2>
+
+<p><br>
+Todos os serviços especiais encontram-se disponíveis na rede de Caixas Automáticos
+Multibanco. <br>
+Os serviços especiais genéricos indicados em seguida, encontram-se disponíveis para a
+maioria dos Emissores:</p>
+
+<p><br>
+
+<ul>
+  <li><strong>Consulta a NIB </strong></li>
+</ul>
+
+<blockquote>
+  <p>Este serviço faculta aos seus utilizadores, a emissão de um talão onde é
+  impresso o Número de Identificação Bancário (NIB), referente às contas associadas ao
+  cartão, que efectua a operação.<br>
+  A impressão do NIB é efectuada num formato BBBB AAAA CCCC CCCC CCCD D, em que:<br>
+  &nbsp;&nbsp;&nbsp; BB - Banco Emissor do cartão<br>
+  &nbsp;&nbsp;&nbsp; AA - Número de Agência<br>
+  &nbsp;&nbsp;&nbsp; CC - Número de Conta <br>
+  &nbsp;&nbsp;&nbsp; DD - Dígitos de Controlo</p>
+</blockquote>
+
+<p><br>
+
+<ul>
+  <li><strong>Consulta de Operações de Baixo Valor</strong></li>
+</ul>
+
+<blockquote>
+  <p>Esta operação de consulta permite aos utilizadores do serviço, uma
+  validação dos movimentos de Baixo Valor, realizados nos diferentes subsistemas da Rede
+  Multibanco, nomeadamente nas Portagens, Vias Verde, Telefones, e movimentados na conta
+  associada ao cartão que efectua a transacção.</p>
+</blockquote>
+
+<p><br>
+
+<ul>
+  <li><strong>Consulta de Movimentos de Cartão no Multibanco</strong></li>
+</ul>
+
+<blockquote>
+  <p>Este serviço possibilita uma consulta aos movimentos realizados nos
+  diferentes pontos da Rede Multibanco, sendo composto por 3 funcionalidades distintas.<br>
+  Nestas funções de consulta podem ser listados os últimos dez movimentos realizados pelo
+  cartão utilizado na operação; podem ser listados os dez últimos movimentos, anteriores
+  a uma data indicada pelo utilizador do serviço ou, ainda, podem ser seleccionados os
+  movimentos para os quais o utilizador pretenda a emissão duma segunda via de um talão
+  comprovativo.</p>
+</blockquote>
+
+<p><br>
+
+<ul>
+  <li><strong>Débitos Directos</strong></li>
+</ul>
+
+<blockquote>
+  <p>Serviço que permite aos utentes de cartões bancários,
+  autorizar electronicamente que sejam efectuados débitos na (1ª) conta bancária do seu
+  cartão, ordenados por uma Entidade credora e para um número de autorização definidos.<br>
+  São disponíveis outras operações relacionadas com a Autorização de Débito Directo
+  (ADD), tais como, consultas a autorizações, actualizações de parâmetros e
+  cancelamentos de ADDs.</p>
+</blockquote>
+
+<p><br>
+
+<ul>
+  <li><strong>Pedido de Cheques</strong></li>
+</ul>
+
+<blockquote>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="just10">O serviço especial Pedido de Cheques é disponibilizado com duas
+      variantes: uma primeira - designada de <em>opção standard </em>-, assenta numa solução
+      em que em final de dia, é enviado ao Banco Emissor, um pedido um livro de cheques, após
+      o utilizador seleccionar e confirmar a operação; a segunda possibilidade para
+      disponibilização deste serviço - designada de <em>opção personalizada</em> -, inclui
+      diversas opções para escolha, nomeadamente quanto ao tipo de cheques, à quantidade e ao
+      local de entrega dos mesmos. Esta opção é no entanto disponibilizada desde que exista <em>Real-Time</em>
+      com o Banco Emissor.</td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><br>
+
+<ul>
+  <li><strong>MBNet</strong></li>
+</ul>
+
+<blockquote>
+  <p>Serviço que disponibiliza aos utilizadores da rede de Caixas Automáticos
+  Multibanco e titulares de cartões cujos Emissores são aderentes ao serviço MBNet,
+  funcionalidades de adesão, alteração do código pessoal secreto e ainda, a alteração
+  ao montante máximo de compras por dia.</p>
+  <p><br>
+  </p>
+</blockquote>
+
+<ul >
+  <li><strong>Transferências Bancárias</strong><p>Este serviço especial
+    possibilita a execução de uma ordem de transferência para uma conta (NIB - Número de
+    Identificação Bancária) pertencente a uma Instituição de Crédito participante no
+    Sistema Multibanco ou participante no Sistema de Compensação TEI.</p>
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always">Além dos serviços genéricos descritos acima,
+estão também implementados os seguintes serviços:</p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="1" cellspacing="0" width="527" cellpadding="2">
+  <tr>
+    <th width="252">Serviços Parametrizáveis </th>
+    <th width="267">Serviço Personalizados </th>
+  </tr>
+  <tr>
+    <td width="252" class="esq">Carregamento TMN - TMN (*) </td>
+    <td width="267" class="esq">Venda de Bilhetes C.P. </td>
+  </tr>
+  <tr>
+    <td width="252" class="esq">Carregamentos Netpac - Telepac (*) </td>
+    <td width="267" class="esq">Via Verde - Via Verde Portugal</td>
+  </tr>
+  <tr>
+    <td width="252" class="esq">Pagamentos de Custas Judiciais - IGFPJ (*) </td>
+    <td width="267" class="esq">Pagamento ao Estado - DGT (*) </td>
+  </tr>
+  <tr>
+    <td width="252" class="esq">Pagamentos Sapo - PT Comunicações (*) </td>
+    <td width="267" class="esq">Pagamentos à Segurança Social - IGFSS (*) </td>
+  </tr>
+  <tr>
+    <td width="252" class="esq">Carregamentos Optimus - Optimus (*) </td>
+    <td width="267" class="esq">TeleMultibanco </td>
+  </tr>
+  <tr>
+    <td width="252" class="esq">Carregamento Vodafone - Vodafone (*) </td>
+    <td width="267" class="esq">Jogos Santa Casa - Dep. Jogos Santa Casa (*)</td>
+  </tr>
+  <tr>
+    <td width="252" class="esq">Pagamento Via Card - Lusoponte (*) </td>
+    <td width="267">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="252" class="esq">Venda de Bilhetes para Espectáculos </td>
+    <td width="267">&nbsp; </td>
+  </tr>
+</table>
+</center></div><div align="center"><center>
+
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr>
+    <td class="dez" nowrap colspan="2">&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>*&nbsp;</td>
+    <td class="esq">Serviço, ou componente do serviço, também disponível através de
+    mensagens <em>Host-to-Host</em> (Banco-SIBS).</td>
+  </tr>
+</table>
+</center></div>
+
+<p class="dta">&nbsp;</p>
+</body>
+</html>

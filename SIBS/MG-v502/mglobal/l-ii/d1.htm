@@ -1,0 +1,1739 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="main">
+<title>D.1 SERVIÇO MBNET</title>
+<script>top.captulos.location='indiced.htm#D';</script>
+</head>
+
+<body>
+
+<h1>D.1 SERVIÇO MBNet </h1>
+
+<p>&nbsp;</p>
+
+<p>O MBNet é um serviço prestado por entidades intervenientes no sistema de pagamentos
+português (Bancos Aderentes, SIBS e Unicre), que permite a realização de operações de
+autorização e de liquidação de compras na Internet, com garantias acrescidas de
+segurança para os clientes e comerciantes <em>online</em>. Indicam-se em seguida as
+entidades intervenientes no serviço. </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.1.1">D.1.1</a> INTERVENIENTES NO SERVIÇO MBNet </h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.1.1.1">D.1.1.1</a> CLIENTE </h3>
+
+<p><br>
+Indivíduo com acesso à Internet (loja virtual) que pretende efectuar pagamentos. Para
+tal, necessita de ser titular de um cartão emitido por uma instituição participante no
+sistema e ter aderido ao serviço MBNet. A adesão ao serviço pode ser efectuada ou
+utilizando os Caixas Automáticos da Rede Multibanco (CAs) através da operação serviço
+MBNet, ou directamente junto do Emissor. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.1.1.2">D.1.1.2</a> EMISSOR </h3>
+
+<p><br>
+Entidade que disponibiliza aos seus clientes o acesso ao MBNet, podendo efectuá-lo
+através de canais de distribuição próprios (ex.: Banca Telefónica, <em>Home Banking</em>)
+ou através da rede de CAs Multibanco. No caso de pretender utilizar canais internos,
+deverá implementar mensagens <em>real-time</em> com a SIBS (ver capítulo<a href="../l-iii/d4.htm"> D.4</a> - Livro III), ou utilizar o <a href="indicei.htm#I" target="captulos">Terminal de Serviços SIBS</a>. </p>
+
+<p>Para o processamento das operações efectuadas pelos seus clientes, utilizando este
+canal de pagamento, o Emissor deve implementar o tratamento das operações definidas no
+ficheiro<a href="../l-iii/dst-1.htm"> Destinos</a> (MDST5) e capítulo<a href="../l-iii/d32.htm"> D.3.2</a> do Livro III. </p>
+
+<p>À semelhança das restantes operações efectuadas no Sistema Multibanco, o Emissor do
+cartão deve enviar à SIBS a <a href="i3.htm#I.3.16">Caracterização do BIN</a> e a <a href="i3.htm#I.3.16">Caracterização do CPD</a> devidamente preeenchidas, caso pretenda
+possibilitar aos titulares dos cartões por si emitidos, a utilização deste canal de
+pagamento. </p>
+
+<p>Para que os seus clientes possam efectuar pagamentos seguros em comerciantes não
+aderentes, utilizando cartões temporários, o Emissor terá que solicitar um novo BIN ao
+sistema de pagamentos correspondente aos cartões em causa (MasterCard ou Visa), que será
+utilizado pela SIBS unicamente para a geração deste tipo de cartões, e preencher a <a href="i3.htm#I.3.16">Caracterização do BIN Temporário</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.1.1.3">D.1.1.3</a> COMERCIANTE ADERENTE </h3>
+
+<p><br>
+Entidade que possui um <em>site</em> na Internet (&quot;loja virtual&quot;) e pretende
+proporcionar aos titulares de cartões nacionais a opção de Pagamento MBNet. Para aderir
+ao serviço MBNet deve contactar com o Representante, para a celebração de um contrato
+de adesão a este novo serviço. Deve ainda implementar o serviço de acordo com as
+especificações definidas pelo sistema de pagamentos nacional. </p>
+
+<p style="page-break-before: always">O comerciante, ao exprimir a sua intenção de aderir
+ao serviço, deve receber um documento explicativo do processo de adesão, com a
+indicação dos requisitos mínimos necessários à sua implementação. Após a
+assinatura do contrato com o Representante, será disponibilizada documentação, com as
+especificações técnicas do serviço, a definição e calendarização da certificação
+e a indicação dos serviços de apoio. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.1.1.4">D.1.1.4</a> REPRESENTANTE - UNICRE </h3>
+
+<p><br>
+Entidade responsável pela contratação do comerciante no processo de adesão ao serviço
+MBNet. A Unicre tem também a responsabilidade de registar o comerciante no Sistema
+Multibanco via Terminal de Serviços SIBS, bem como de solicitar a emissão de um
+certificado digital para o Terminal de Pagamento Automático Virtual. </p>
+
+<p>Actualmente, a solicitação de emissão deste certificado digital é feita junto da
+Autoridade de Certificação MULTICERT. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.1.1.5">D.1.1.5</a> SIBS </h3>
+
+<p><br>
+Entidade encarregue da gestão técnica e operacional do serviço, garantindo a
+integridade e segurança dos dados transmitidos entre todos os intervenientes no processo.
+Atribui de forma automática a Identificação MBNet ao Cliente, garantindo a sua
+integridade e unicidade no sistema. </p>
+
+<p>Disponibiliza ao Representante a possibilidade de inserir comerciantes,
+estabelecimentos e TPAs virtuais através da utilização do Terminal de Serviços SIBS. <br>
+Atribui de forma automática, o(s) número(s) de TPA Virtual solicitado(s) para o
+comerciante aderente, garantindo a sua unicidade no sistema de pagamentos. <br>
+Disponibiliza aos Emissores (Bancos e Unicre) a possibilidade de efectuarem um conjunto de
+operações no serviço MBNet - adesão, consultas, alterações, <em>resets</em> e
+cancelamento de cartões - utilizando o Terminal de Serviços SIBS e/ou as mensagens <em>Host-to-Host</em>.
+</p>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="D.1.1.6">D.1.1.6</a> VISA, <em>3-D SECURE</em></h3>
+
+<p><br>
+O protocolo <em>3-D Secure</em> é um sistema da Visa que pretende acrescentar segurança
+na validação dos pagamentos efectuados na Internet. O <em>3-D Secure</em> é uma
+tecnologia de autenticação que usa encriptação SSL (<em>Secure Sockets Layer</em>) e
+um <em>Merchant Server Plug-in</em> para: 
+
+<ul >
+  <li>Enviar informação e solicitar aos participantes a autenticação do cliente quando
+    este efectuar uma compra <em>online</em>, e</li>
+  <li>Proteger a informação, do cartão utilizado na compra, transmitida via Internet.</li>
+</ul>
+
+<p>A denominação 3-D tem origem no modelo de repartição das entidades e
+funções, por estas assumidas, em três domínios. </p>
+
+<p><strong><br>
+Domínio do <em>Issuer</em></strong></p>
+
+<p>O <em>Issuer</em> é responsável por: 
+
+<ul >
+  <li>gerir a adesão dos seus clientes ao serviço (incluindo a verificação de identidade
+    do cliente) e a autenticação dos mesmos nas operações de pagamento via Internet.</li>
+</ul>
+
+<p><strong><br>
+Domínio do <em>Acquirer</em></strong></p>
+
+<p>O <em>Acquirer</em> é responsável por: 
+
+<ul >
+  <li>definir os procedimentos que asseguram que os comerciantes participantes em
+    transacções Internet estão a operar sob um <em>merchant agreement</em> com o <em>Acquirer</em>,
+    e</li>
+  <li>disponibilizar a infra-estrutura de processamento para as transacções de
+    autenticação.</li>
+</ul>
+
+<p><strong><br>
+Domínio de Interoperabilidade</strong></p>
+
+<p>Este domínio consiste, lato senso, na Internet, isto é, um conjunto de
+protocolos comuns e serviços partilhados que permite facilitar a troca de transacções
+(autenticação e pagamento) entre os dois domínios anteriores.<br>
+Para mais detalhe sobre o <em>3-D Secure</em> pode ser consultado o site <a href="http://international.visa.com">http://international.visa.com</a>.</p>
+
+<p>&nbsp;</p>
+
+<h5 ><a name="D.1.1.6.1">D.1.1.6.1</a><strong> IMPLEMENTAÇÃO DO 3-D SECURE NO
+MBNet</strong></h5>
+
+<p>A solução para a implementação do <em>3-D Secure</em> no MBNet compreende
+as duas fases do serviço: a Adesão e a Autenticação.</p>
+
+<p><br>
+<strong>Adesão ao Serviço MBNet <em>3-D Secure</em></strong></p>
+
+<p>A Visa não impõe uma solução <em>standard</em> para o processo de adesão
+ao serviço. Compete ao Emissor implementar uma solução que: 
+
+<ul >
+  <li>solicite ao cliente dados do seu cartão, passwords e/ou segredos partilhados,</li>
+  <li>disponha de um Servidor de Adesões (<em>Enrollment Server</em>), para gerir este
+    processo,</li>
+  <li>disponha de um Servidor de Controlo de Acessos (<em>Access Control Server</em>), para
+    que em cada operação de autenticação se possa verificar que de facto o cliente está
+    registado no serviço,</li>
+</ul>
+
+<p>assegurando a correcta identificação do cliente durante o processo de
+adesão.</p>
+
+<p>O processo de Adesão ao MBNet satisfaz estes requisitos.</p>
+
+<p><br>
+<strong>Autenticação MBNet <em>3-D Secure</em></strong></p>
+
+<p>A solução para o processo de Autenticação de uma transacção MBNet <em>3-D
+Secure</em> é ilustrada na seguinte figura.</p>
+
+<p class="center"><img src="imagens2/d1-13.gif" alt="d1-13.gif " WIDTH="553" HEIGHT="429"><br>
+<strong>SIBS PAYMENT GATEWAY - VISA <em>3D-SECURE</em></strong></p>
+
+<p>&nbsp;</p>
+
+<h5 ><a name="D.1.1.6.2">D.1.1.6.2</a><strong> PROCESSOS IMPLEMENTADOS PELA SIBS</strong></h5>
+
+<p>A SIBS obteve a certificação Visa do seu <em>Merchant Server Plug-in</em>
+(MPI) versão 1.0.2 do Protocolo <em>3-D Secure</em> e versão 2.9 MBNet em 1 de Abril
+2003. A certificação Visa do <em>Access Control Server </em>(ACS) versão 1.0.2 do
+Protocolo <em>3-D Secure</em> e versão 2.9 MBNet foi obtida em 15 de Dezembro 2003.</p>
+
+<p>&nbsp;</p>
+
+<h5 ><a name="D.1.1.6.3">D.1.1.6.3</a><strong> ADESÃO DOS EMISSORES AO VERIFIED
+BY VISA (3-D SECURE)</strong></h5>
+
+<p>Os emissores que participem no MBNet e que pretendam aderir ao VbV devem
+contactar a Visa Europa solicitando a sua adesão a este serviço. Dado que a SIBS
+desenvolveu o <em>Access Control Server</em> os emissores têm unicamente de efectuar o
+seguinte: 
+
+<ul >
+  <li>Carregamento dos BINs e cartões no VbV.</li>
+  <li>Obtenção dos certificados digitais para o serviço.</li>
+  <li>Emissão de uma <em>Authorisation Letter </em>para informar a VISA que a SIBS é a
+    entidade que processará os certificados digitais e as chaves privadas do Emissor.</li>
+</ul>
+
+<p>Para cada uma destas acções existem formulários próprios que são
+fornecidos aos emissores pela Visa Europa.</p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="D.1.2">D.1.2</a> COMPONENTES DO SERVIÇO </h2>
+
+<p><br>
+A matriz seguinte apresenta as diversas componentes do serviço.&nbsp; </p>
+
+<p class="center"><strong><br>
+MBNet - Quadro Resumo </strong></p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp; </td>
+  </tr>
+</table>
+
+<table BORDER="1" CELLSPACING="0" cellpadding="2" width="100%">
+  <tr>
+    <td class="fundo" width="9%"><table border="0" cellspacing="0" cellpadding="0" width="100%">
+      <tr>
+        <td width="100%" class="dta"><span class="tahoma">O QUÊ?</span></td>
+      </tr>
+      <tr>
+        <td width="100%" class="dta"><span class="oitodta">&nbsp; </span></td>
+      </tr>
+      <tr>
+        <td width="100%" class="esq"><span class="tahoma">QUEM?</span></td>
+      </tr>
+    </table>
+    </td>
+    <td class="fundomid" width="39%"><strong>REGISTO <br>
+    </strong><span class="tahoma7">(Inscrição, Alteração, Cancelamento)</span></td>
+    <td class="fundo" width="52%"><strong>OPERAÇÃO<br>
+    </strong><span class="tahoma7">(Autorização MBNet, Cancelamento autorização MBNet, <br>
+    Compra após autorização, Devolução)</span></td>
+  </tr>
+  <tr>
+    <td class="fundomid" width="9%"><strong><span class="tahoma">CLIENTE</span></strong></td>
+    <td class="tahoesq" width="39%">Na Rede MB-CA<br>
+    &nbsp;&nbsp; - Operação de Serviço Especial<br>
+    Junto do Emissor<br>
+    &nbsp;&nbsp; - A definir pelo Emissor</td>
+    <td class="tahoesq" width="52%"><table border="0" cellspacing="0" width="100%" cellpadding="0">
+      <tr>
+        <td class="tahoesq" nowrap>-&nbsp;</td>
+        <td class="tahoesq">Se Comerciante registado -&gt; introdução de Identificação e
+        Código Secreto para pedido de validação </td>
+      </tr>
+      <tr>
+        <td class="tahoesq" nowrap>-&nbsp;</td>
+        <td class="tahoesq">Se Comerciante não registado -&gt; introdução de Identificação e
+        Código Secreto para pedido de número de cartão temporário </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="fundomid" width="9%"><strong><span class="tahoma">EMISSOR</span></strong></td>
+    <td class="tahoesq" width="39%">Na Rede MB-CA<br>
+    &nbsp;&nbsp; - Caracterização de BINs / CPD<br>
+    &nbsp;&nbsp; - Mensagens <em>Real-Time</em> (opcional)&nbsp; <br>
+    &nbsp;&nbsp; - Registo Ficheiro<a href="../l-iii/dst-1.htm"> Destinos</a> (MDST5)<br>
+    Junto do Emissor<br>
+    &nbsp;&nbsp; - Mensagens <em>Real-Time</em><br>
+    &nbsp;&nbsp; - Utilização Terminal de Serviços SIBS </td>
+    <td class="tahoesq" width="52%"><table border="0" cellspacing="0" cellpadding="0" height="88">
+      <tr>
+        <td class="tahoesq" nowrap height="15">-&nbsp;</td>
+        <td class="tahoesq" height="15">Códigos de transacção MBNet </td>
+      </tr>
+      <tr>
+        <td class="tahoesq" nowrap height="28">-&nbsp;</td>
+        <td class="tahoesq" height="28">Mensagens para Autorização MBNet, Cancelamento
+        autorização MBNet, Compra após autorização, Devolução </td>
+      </tr>
+      <tr>
+        <td class="tahoesq" nowrap height="15">-&nbsp;</td>
+        <td class="tahoesq" height="15">Códigos de transacção no Ficheiro <a href="../l-iii/dst-1.htm">Destinos</a> (MDST5)</td>
+      </tr>
+      <tr>
+        <td class="tahoesq" nowrap height="15">-&nbsp;</td>
+        <td class="tahoesq" height="15">Pedido de BIN (Visa / MasterCard / AMEX) para cartões
+        temporários </td>
+      </tr>
+      <tr>
+        <td class="tahoesq" nowrap height="15">-&nbsp;</td>
+        <td class="tahoesq" height="15">Gestão de cativos em contas D.O. </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="fundomid" width="9%"><strong><span class="tahoma">COMERCIANTE</span></strong></td>
+    <td class="esqmid" width="39%"><span class="tahoma">Contrato com o <em>Acquirer</em>
+    (Unicre / AMEX) </span></td>
+    <td class="tahoesq" width="52%">- Implementação das especificações técnicas
+    (operações TPA) <br>
+    - Certificados<br>
+    - Certificação</td>
+  </tr>
+  <tr>
+    <td class="fundomid" width="9%"><span class="tahoma"><em><strong>ACQUIRER</strong></em><br>
+    (UNICRE)</span></td>
+    <td class="tahoesq" width="39%">Inscrição de Comerciantes, Estabelecimentos virtuais,
+    TPAs virtuais e condições contratuais (via Terminal de Serviços SIBS) </td>
+    <td class="esqmid" width="52%"><span class="tahoma">- Códigos de transacção nas
+    mensagens <em>Real-Time</em> <br>
+    - Códigos de transacção no ficheiro de movimentos </span></td>
+  </tr>
+  <tr>
+    <td class="fundomid" width="9%"><strong><span class="tahoma">SIBS</span></strong></td>
+    <td COLSPAN="2" class="tahoesq">Em acréscimo ao referido acima, nomeadamente:&nbsp; <br>
+    &nbsp;&nbsp; - Gestão da Base de Dados de aderentes ao MBNet&nbsp; <br>
+    &nbsp; &nbsp; - Disponibilização de mensagens a trocar entre o servidor MBNet e o <em>Host</em>
+    <br>
+    &nbsp; &nbsp; - Gestão dos cartões temporários </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.1.3">D.1.3</a> REGISTO </h2>
+
+<p><br>
+No serviço MBNet existem dois registos em função do tipo de aderente: </p>
+
+<p><br>
+
+<ul>
+  <li><strong>Registo do cliente <br>
+    </strong>O cliente de uma das instituições emissoras de cartões aderentes ao MBNet e
+    possuidor de um cartão reconhecido na rede de terminais MB, pode aderir ao serviço
+    MBNet, utilizando os Caixas Automáticos da Rede Multibanco ou através de canais
+    próprios disponibilizados pelo seu Emissor. </li>
+</ul>
+
+<ul>
+  <li><strong>Registo do comerciante </strong>(que é efectuado junto do Representante) <strong><br>
+    </strong>É da responsabilidade do Representante efectuar o registo do comerciante
+    aderente, através do Terminal de Serviços SIBS, no serviço Gestão de Pagamento
+    Automático. <br>
+    Ao matricular o comerciante no Sistema MB, e no caso deste ainda não existir, o
+    Representante deve inserir um novo estabelecimento do tipo Virtual, no qual só pode
+    matricular terminais de pagamento automático (TPAs) virtuais, e deve pedir a produção
+    de cartões de supervisor em euros para o TPA Virtual.<br>
+    Os Representantes devem inserir os seus acordos de representação. <br>
+    A descrição detalhada do impacto técnico para o Representante Unicre, encontra-se
+    descrita no documento &quot;MBNet - Documento Técnico - Interface Unicre&quot;. </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><a name="D.1.3.1">D.1.3.1</a> REGISTO DO CLIENTE NO
+SERVIÇO ESPECIAL DOS CAs MB </h3>
+
+<p><br>
+O serviço especial MBNet é disponibilizado nos CAs da Rede MB, aos clientes possuidores
+de cartões aceites na rede e cujos Emissores o autorizem. </p>
+
+<p>Na opção de Serviço MBNet, o Cliente tem ao seu dispor as seguintes operações: </p>
+
+<blockquote>
+  <ul>
+    <li>Adesão ao serviço </li>
+    <li>Alteração do Código Secreto MBNet </li>
+    <li>Alteração do montante máximo de compras por dia </li>
+    <li>Pedido de 2ª via de talão </li>
+    <li>Cancelamento do serviço </li>
+  </ul>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.1.3.2">D.1.3.2</a> REGISTO DO CLIENTE NOS CANAIS PRÓPRIOS DO EMISSOR </h3>
+
+<p><br>
+Sempre que o Emissor pretenda utilizar canais próprios de adesão (banca telefónica, <em>home
+banking</em>, etc.), deve implementar um conjunto de mensagens que são posteriormente
+trocadas entre o <em>Host</em> do Emissor e o da SIBS, designadas por mensagens <em>Host-to</em>-<em>Host</em>.
+Paralelamente e como <em>backup</em>, a SIBS também disponibiliza estas funções no
+Terminal de Serviços SIBS. </p>
+
+<p>A SIBS recomenda preferencialmente a utilização de mensagens <em>Host-to</em>-<em>Host</em>,
+devendo ficar reservada a utilização do Terminal de Serviços SIBS para situações de
+excepção. </p>
+
+<p>&nbsp;</p>
+
+<h5><a name="D.1.3.2.1">D.1.3.2.1</a>&nbsp;MENSAGENS HOST-TO-HOST DO SERVIÇO MBNet </h5>
+
+<p>As mensagens <em>Host-to</em>-<em>Host</em> permitem ao Emissor, ter acesso em <em>real-time</em>
+à base de dados central de identificação dos seus cartões no serviço MBNet. Só após
+a correcta identificação, o cliente pode efectuar as operações disponíveis para este
+serviço: aderir, consultar, alterar e cancelar. </p>
+
+<p>É de notar que o Código Secreto MBNet e a Identificação MBNet nunca estão
+presentes na mesma mensagem. </p>
+
+<p>Nas sessões <em>real-time</em> entre os Emissores e a SIBS, a manutenção do contexto
+e a gestão de não respostas (ou respostas fora de tempo) é da responsabilidade do
+Emissor dos pedidos, no caso vertente, o Banco. Desta forma, quando o Banco não recebe
+uma resposta a um pedido enviado à SIBS, de facto não sabe se o pedido chegou ao seu
+destino e se, tendo sido entregue, terá sido respondido positiva ou negativamente. Não
+pode portanto ter uma certeza para indicar ao cliente. </p>
+
+<p>Para obter essa certeza, o Emissor deve: 
+
+<ul>
+  <li>classificar do seu lado estas mensagens como recuperáveis </li>
+  <li>nos casos acima descritos assumir que a SIBS não recebeu o pedido </li>
+  <li>indicar ao cliente que o pedido não foi processado </li>
+  <li>esperar pela resposta da SIBS e enviar uma anulação </li>
+</ul>
+
+<p>Os Emissores que pretendam implementar estas mensagens devem formalizar o seu pedido
+junto da SIBS. </p>
+
+<p>Ver <a href="../l-iii/d4.htm#MBNet">Lista de Mensagens</a>.</p>
+
+<p>&nbsp;</p>
+
+<h5 style="page-break-before: always"><a name="D.1.3.2.2">D.1.3.2.2</a>&nbsp;TERMINAL DE
+SERVIÇOS SIBS </h5>
+
+<p>No Terminal de Serviços SIBS, as operações estão separadas em dois serviços: <a href="i3.htm#I.3.14">Adesão ao Serviço MBNet</a> e <a href="i3.htm#I.3.15">Gestão do
+Serviço MBNet</a>. Para que sejam reunidas as condições mínimas de confidencialidade,
+cada terminal só deve ter disponível um dos serviços referidos. </p>
+
+<p>A operação de Adesão está disponível em MBNet Adesão; as restantes operações
+estão disponíveis em MBNet Gestão. </p>
+
+<p>Os Emissores que pretendam utilizar o Terminal de Serviços SIBS devem indicar à SIBS,
+utilizando o impresso próprio, para que números de terminais pretendem os respectivos
+serviços de Adesão e Gestão MBNet. </p>
+
+<p>&nbsp;</p>
+
+<h5><a name="D.1.3.2.3">D.1.3.2.3</a>&nbsp;EMISSOR </h5>
+
+<p>O Emissor terá sempre conhecimento, por ficheiro de fim de dia enviado pela SIBS, das
+operações de adesão, alteração, consulta e cancelamento efectuadas pelos seus
+clientes no serviço MBNet, quer tenham sido efectuadas através de um Caixa Automático
+ou directamente pelos canais do Emissor (mensagem <em>Host-to-Host</em> ou Terminal de
+Serviços SIBS). </p>
+
+<p>A descrição detalhada do impacto técnico para os Emissores (Bancos e Unicre),
+encontra-se descrita no Modelo Global - Livro III - capítulo<a href="../l-iii/d4.htm">
+D.4</a> e capítulo<a href="../l-iii/e1.htm"> E</a>. </p>
+
+<p><br>
+<em>Ficheiro Destinos para os Bancos <br>
+</em>As operações de adesão, alteração, consulta e cancelamento efectuadas pelos seus
+clientes no serviço MBNet, são informadas ao Banco Emissor do cartão no ficheiro
+Destinos (MDST5), no <a href="../l-iii/dst-1.htm#= 1">tipo de registo 1</a>, como um
+Serviço Especial Bancário. </p>
+
+<p><em><br>
+Log<br>
+</em>Por cada operação efectuada na Rede MB é realizada a escrita de um registo no
+ficheiro de <em>Log</em> da SIBS. Esse registo pode ser consultado pelo serviço de
+Gestão da Rede da SIBS ou via Terminal de Serviços SIBS. </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.1.4">D.1.4</a> OPERAÇÕES </h2>
+
+<p><br>
+No MBNet as operações são efectuadas por vontade expressa do cliente aderente, são
+validadas pelo comerciante e pelas aplicações do Serviço MBNet e processadas pela SIBS,
+pelo Emissor e pelo Representante. </p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">CENÁRIOS DE UTILIZAÇÃO</p>
+
+<p>A utilização do serviço MBNet está disponível em dois cenários: 
+
+<ul>
+  <li><em>Utilização do serviço MBNet em Comerciantes Aderentes <br>
+    </em>O cliente utiliza a sua Identificação MBNet e Código Secreto MBNet para se
+    autenticar perante o sistema, que, em caso de aceitação, assegura a comunicação da
+    validade da mesma ao comerciante. </li>
+</ul>
+
+<ul>
+  <li><em>Utilização do serviço MBNet em Comerciantes Não Aderentes <br>
+    </em>O cliente utiliza a sua Identificação MBNet e Código Secreto MBNet para solicitar
+    um cartão temporário, cujos dados introduzirá no <em>site</em> do comerciante (podendo
+    utilizar funções de <em>copy/paste</em>). </li>
+</ul>
+
+<p><br>
+Com a integração do Sistema <em>3-D Secure</em> da Visa no MBNet, há que distinguir em
+cada um dos cenários, as operações efectuadas em comerciantes aderentes ou não a este
+sistema. Esta informação é fundamental na medida em que dela depende a possibilidade de
+se efectuarem repudiações de operações por incorrecta autenticação do cliente.</p>
+
+<p>Assim: 
+
+<ul>
+  <li>As operações efectuadas por um cliente MBNet num comerciante aderente ao MBNet, são
+    informadas como operações MBNet independentemente do comerciante ser ou não aderente ao
+    <em>3-D Secure</em> (o nível de segurança é o mesmo).</li>
+  <li>As operações efectuadas com cartão real aderente ao <em>3-D Secure</em> num
+    comerciante aderente ao <em>3-D Secure</em>, são informadas como operações <em>3-D
+    Secure</em>. </li>
+  <li>As operações efectuadas com cartão real não aderente ao <em>3-D Secure</em> num
+    comerciante aderente ao <em>3-D Secure</em>, são informadas como operações MO/TO
+    realizadas em comerciante seguro. </li>
+</ul>
+
+<p>É também possível a utilização do cartão temporário (MBNet) em comerciantes não
+seguros (MO/TO). Estas operações são igualmente inequivocamente identificadas, como
+operações seguras ao nível da autenticação do cliente.</p>
+
+<p>Ver <a href="../l-iii/dst-1.htm#Síntese">tabela de implementação</a>.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">EMISSORES</p>
+
+<p>Os Emissores aderentes ao serviço MBNet, devem indicar à SIBS quais os BINs cujos
+cartões têm acesso ao MBNet: 
+
+<ul>
+  <li>No caso de BINs Visa, devem solicitar à Visa um BIN para a criação de cartões
+    temporários;</li>
+  <li>No caso de BINs MasterCard, devem solicitar à MasterCard um BIN para a criação de
+    cartões temporários. </li>
+</ul>
+
+<p>Devem indicar que estes BINs têm a SIBS como <em>processing center</em> na vertente <em>online</em>
+(pedidos de autorização). </p>
+
+<p>Para os Emissores que pretendam ter mais do que uma entidade de <em>clearing</em>/<em>settlement</em>
+para o(s) BIN(s) de cartões temporários, têm que solicitar ao correspondente sistema de
+pagamento, tantos BINs quantas as entidades. </p>
+
+<p>Posteriormente devem informar a SIBS dos BINs atribuídos, os quais são utilizados
+unicamente na criação de cartões temporários. </p>
+
+<p>O serviço só está disponível para o Emissor, após a SIBS ter conhecimento da
+informação indicada no ponto anterior e a certificação técnica ter sido concluída
+com sucesso. </p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">CLIENTES</p>
+
+<p>Para utilizar o MBNet, o cliente necessita apenas de ter a possibilidade de aceder à
+Internet, ao <em>site</em> do comerciante para adquirir bens ou serviços e ao sistema
+MBNet para solicitar pedidos de autenticação (para efectuar pagamentos ou solicitar
+cartões temporários para utilizar em comerciantes não aderentes ao serviço). </p>
+
+<p>Não é requerida a instalação de qualquer <em>hardware</em>, sendo opcional a
+instalação do ícone MBNet através de um pequeno <em>software</em> (4 kb) assinado
+digitalmente pela SIBS. </p>
+
+<p>Tendo previamente efectuado a sua adesão, e após efectuar as encomendas no <em>site</em>
+do comerciante virtual, o cliente aderente deve aceder ao sistema MBNet e inserir a sua
+Identificação e Código Secreto MBNet. 
+
+<ul>
+  <li>Se o cliente estiver numa loja virtual de um comerciante<strong> aderente</strong>,
+    visualiza o nome do estabelecimento virtual, o montante e o código de moeda da
+    operação, devendo de seguida confirmar o pagamento carregando na tecla OK. No final da
+    operação obtem uma resposta positiva de pagamento efectuado com sucesso. </li>
+</ul>
+
+<ul>
+  <li>Se o cliente estiver numa loja virtual de um comerciante <strong>não aderente</strong>,
+    deve em primeiro lugar indicar o montante que pretende para o cartão temporário, obtendo
+    como resposta positiva o respectivo número, a data de expiração e o CVV2/CVC2, para
+    indicar no <em>site</em> do comerciante. </li>
+</ul>
+
+<p>O <em>pop up</em> MBNet, a Identificação e o Código Secreto MBNet são sempre
+comunicados entre o computador do cliente e o sistema central da SIBS recorrendo a cifras
+com base num algoritmo de segurança. </p>
+
+<p>O cliente pode errar o seu Código Secreto MBNet, no máximo, três vezes consecutivas,
+a partir da qual deve efectuar um <em>reset</em> desse Código Secreto. Pode fazer esse <em>reset</em>
+através da operação &quot;2ª via de Talão MBNet&quot; no serviço MBNet do Caixa
+Automático Multibanco ou solicitando directamente ao Emissor. </p>
+
+<p>Este procedimento pode ser executado no máximo nove vezes. A partir deste número, a
+sua Identificação MBNet fica inibida de utilização, tendo (se assim o pretender) de
+efectuar uma nova adesão para poder continuar a utilizar o serviço. </p>
+
+<p>&nbsp;</p>
+
+<p class="center"><strong>Matriz de utilização do Serviço</strong></p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%">&nbsp; </td>
+  </tr>
+</table>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="596">
+  <tr>
+    <td WIDTH="137" ROWSPAN="2">&nbsp;</td>
+    <th WIDTH="447" COLSPAN="2" class="fundo">Comerciante</th>
+  </tr>
+  <tr>
+    <td WIDTH="194" class="fundo">Aderente ao MBNet</td>
+    <td WIDTH="247" class="fundo">Não Aderente ao MBNet</td>
+  </tr>
+  <tr>
+    <th class="fundo">Cliente</th>
+    <td WIDTH="194"><table border="0" cellspacing="0" width="100%" cellpadding="0">
+      <tr>
+        <td width="100%" class="esq">Efectuado num TPA Virtual com Id. MBNet + Código Secreto </td>
+      </tr>
+    </table>
+    </td>
+    <td WIDTH="247"><table border="0" cellspacing="0" width="100%" cellpadding="0">
+      <tr>
+        <td width="100%" class="esq">Efectuado com Cartão Temporário, atribuído a uma Id. MBNet
+        + Código Secreto </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.1.4.1">D.1.4.1</a> DESCRIÇÃO DAS OPERAÇÕES EM COMERCIANTES ADERENTES </h3>
+
+<p>&nbsp;</p>
+
+<h5><a name="D.1.4.1.1">D.1.4.1.1</a> PEDIDO DE AUTENTICAÇÃO MBNet </h5>
+
+<p>Ocorre quando um cliente pretende efectuar um pagamento na Internet. É sempre
+efectuado directamente pelo cliente no <em>pop up</em> MBNet. <br>
+Só pode ser efectuado por um cliente que já tenha aderido ao serviço MBNet, caso
+contrário é recusado. </p>
+
+<p>Os dados do cliente (Identificação e Código Secreto MBNet) são comunicados do
+computador do cliente até ao sistema central sempre codificados. <br>
+O pedido de autenticação MBNet tem a validade de <strong>1 hora</strong>, durante a qual
+deve chegar um pedido de autorização, caso não ocorra, o pedido de autenticação é
+apagado do sistema. <br>
+Está sempre associado a um TPA virtual que tem um acordo de representação para
+aceitação da operação de autorização. </p>
+
+<p class="verdana8"><br>
+<em><strong>Exemplo de um pedido de autenticação MBNet: </strong></em>
+
+<ol>
+  <li>É solicitado ao cliente (ver <a href="#fig5">figura 5</a>):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - a Identificação MBNet<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - o Código Secreto MBNet</li>
+</ol>
+
+<ol start="2">
+  <li style="page-break-before: always">Os dados introduzidos pelo cliente (Identificação
+    MBNet e Código Secreto) são validados, assim como a situação que lhe está associada. </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Se os dados do cliente são aceites: <br>
+      O servidor aplicacional valida a existência dos dados do comerciante (TPA) aderente; </li>
+    <li>Se os dados do cliente são recusados: <br>
+      O servidor aplicacional recusa a autenticação, apresentando o motivo ao cliente. </li>
+  </ul>
+</blockquote>
+
+<ol start="3">
+  <li>Se os dados do cliente foram aceites, o sistema valida a existência e situação do TPA
+    virtual. </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Se o TPA está válido, o sistema apresenta no ecrã do computador do cliente, os
+      seguintes dados da operação: nome do estabelecimento virtual, referência e montante; </li>
+    <li>Se o TPA não está válido, o sistema apresenta uma mensagem de recusa, indicando o
+      motivo ao cliente. </li>
+  </ul>
+</blockquote>
+
+<ol start="4">
+  <li>Se os dados do TPA foram aceites, o sistema valida o montante máximo indicado pelo
+    cliente para a utilização da sua Identificação MBNet face ao valor da autorização. </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Se a operação foi aceite: <br>
+      O sistema responde com uma mensagem de aceitação, atribuindo uma referência única à
+      operação que não é visível para o cliente; </li>
+    <li>Se a operação foi recusada:&nbsp; <br>
+      O sistema responde com uma mensagem de erro, apresentando o motivo ao cliente. </li>
+  </ul>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h5><a name="D.1.4.1.2">D.1.4.1.2</a> AUTORIZAÇÃO MBNet </h5>
+
+<p>A autorização MBNet é processada após um correspondente pedido de autenticação
+MBNet aceite. Apresenta sempre o mesmo valor que o pedido de autenticação, caso
+contrário é recusada. </p>
+
+<p>Valida o montante máximo posicionado pelo cliente para a sua Identificação MBNet
+face ao valor da autorização e actualiza o montante que o cliente ainda pode usar no
+dia. </p>
+
+<p>O sistema de pagamentos atribui uma chave única à Autorização MBNet. </p>
+
+<p>Para o Emissor, gera um cativo na conta do cliente. Este cativo tem por objectivo
+garantir a não repudiação da operação por parte do cliente, quando ocorrer a
+operação de compra após autorização. </p>
+
+<p>Esta serve para uma única compra, que pode ter um valor igual ou inferior ao da
+autorização original. Se tiver um valor inferior, o sistema desencadeia automaticamente
+uma operação de cancelamento da autorização pelo total e permite que o comerciante
+efectue uma nova autorização pelo remanescente. </p>
+
+<p>A autorização deixa&nbsp; de ser válida quando: 
+
+<ul>
+  <li>A data da operação de autorização mais 30 dias de calendário, for superior à data
+    corrente; </li>
+  <li>Ocorrer uma operação de compra após autorização; </li>
+  <li>Ocorrer uma operação de cancelamento de autorização. </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h5><a name="D.1.4.1.3">D.1.4.1.3</a> CANCELAMENTO DE AUTORIZAÇÃO MBNet </h5>
+
+<p>O cancelamento só é possível após um correspondente pedido de autorização aceite.
+Se a autorização ainda não tiver nenhuma operação de compra, o valor do cancelamento
+deve ser igual ao da correspondente autorização, caso contrário, é o valor
+remanescente. </p>
+
+<p>&nbsp;</p>
+
+<h5 style="page-break-before: always"><a name="D.1.4.1.4">D.1.4.1.4</a> COMPRA APÓS
+AUTORIZAÇÃO MBNet </h5>
+
+<p>Um pedido de compra após autorização pode ser efectuado após um correspondente
+pedido de autorização aceite e não cancelado. O valor de uma compra após autorização
+pode ser igual ou inferior ao da correspondente autorização. </p>
+
+<p>&nbsp;</p>
+
+<h5><a name="D.1.4.1.5">D.1.4.1.5</a> DEVOLUÇÃO DE COMPRA APÓS AUTORIZAÇÃO </h5>
+
+<p>Um pedido de devolução de compra pode ser efectuado após um correspondente pedido de
+compra aceite. O valor da devolução pode ser igual ou inferior ao da correspondente
+compra após autorização. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.1.4.2">D.1.4.2</a> DESCRIÇÃO DAS OPERAÇÕES EM COMERCIANTES NÃO
+ADERENTES </h3>
+
+<p>&nbsp;</p>
+
+<h5><a name="D.1.4.2.1">D.1.4.2.1</a> PEDIDO DE AUTENTICAÇÃO PARA CARTÃO TEMPORÁRIO </h5>
+
+<p>Este pedido ocorre quando um cliente pretende realizar um pagamento na Internet e está
+perante um comerciante que não é aderente ao MBNet. É sempre efectuado directamente
+pelo cliente no <em>pop up</em> MBNet, desde que o mesmo já tenha aderido ao serviço
+MBNet, caso contrário é recusado. Ver <a href="#fig9">figura 9</a>.</p>
+
+<p>Os dados do cliente (Identificação e Código Secreto MBNet) são comunicados do
+computador do cliente até ao sistema central sempre codificados. </p>
+
+<p>Ao BIN temporário indicado pelo Emissor do cartão real é atribuído um número de
+cartão temporário. Este número é único para o BIN e é gerado de forma aleatória. <br>
+A este cartão temporário é atribuída uma data de expiração inferior ou igual à data
+de expiração do cartão real, num máximo de 30 dias de calendário a partir da data
+corrente da operação, e um CVV2/CVC2 utilizando as chaves de segurança do Emissor. </p>
+
+<p>&nbsp;</p>
+
+<h5><a name="D.1.4.2.2">D.1.4.2.2</a> AUTORIZAÇÃO COM CARTÃO TEMPORÁRIO </h5>
+
+<p>A autorização efectuada com cartão temporário é sempre processada <em>online</em>
+pela SIBS. Um cartão temporário tem a validade máxima de 30 dias, durante o qual deve
+chegar um pedido de autorização do sistema de pagamento correspondente; caso não
+ocorra, o cartão é apagado do sistema central. </p>
+
+<p>Um cartão temporário tem um máximo de 4 utilizações, ou seja, permite-se a
+existência de 4 autorizações para um mesmo cartão temporário. <br>
+Um cartão temporário tem um montante máximo obrigatório definido pelo cliente no
+momento do pedido, que é validado contra o montante máximo indicado para a sua
+Identificação MBNet. </p>
+
+<p>Um pedido de autorização com cartão temporário é automaticamente recusado pelo
+sistema se: 
+
+<ul>
+  <li>Já foi ultrapassado o tempo máximo permitido para a utilização (ou seja, se já se
+    encontra esgotado o tempo de utilização); </li>
+  <li>Já foi utilizado o montante máximo definido pelo cliente; </li>
+  <li>Já tem 4 utilizações aceites; </li>
+  <li>A data de expiração não for igual à fornecida ao cliente; </li>
+  <li>O CVV2/CVC2 não for igual ao indicado ao cliente; </li>
+  <li>O montante for superior ao indicado pelo cliente. </li>
+</ul>
+
+<p style="page-break-before: always" class="verdana8"><br>
+<strong><em>Exemplo de um pedido de autenticação para Cartão Temporário: </em></strong>
+
+<ol>
+  <li>É solicitado ao cliente:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - a Identificação MBNet<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - o Código Secreto MBNet</li>
+</ol>
+
+<ol start="2">
+  <li>Os dados introduzidos pelo cliente (Identificação MBNet e Código Secreto) são
+    validados, assim como a situação que lhe está associada. </li>
+</ol>
+
+<blockquote>
+  <ul type="square">
+    <li>Se os dados do cliente são aceites:<br>
+      Solicita-se que o cliente introduza um montante máximo para a utilização do cartão
+      temporário que vai ser atribuído. </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <ul>
+      <li>Se o montante indicado é aceite (o sistema valida que o montante máximo indicado pelo
+        cliente não ultrapassa o montante máximo disponível no dia para utilização no MBNet),
+        o sistema apresenta:<br>
+        &nbsp;&nbsp;&nbsp; - Um número de cartão temporário <br>
+        &nbsp;&nbsp;&nbsp; - Uma data de expiração&nbsp; <br>
+        &nbsp;&nbsp;&nbsp; - Um CVV2/CVC2 </li>
+      <li>Se o montante indicado não é aceite, o sistema apresenta: <br>
+        Uma mensagem de recusa, indicando o motivo ao cliente.&nbsp; </li>
+    </ul>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <ul type="square">
+    <li>Se os dados do cliente são recusados: <br>
+      O servidor aplicacional recusa a autenticação, apresentando o motivo ao cliente. </li>
+  </ul>
+</blockquote>
+
+<p><br>
+Para as operações efectuadas em comerciantes não aderentes (cartão temporário), os
+códigos de operação utilizados dependem das características do Emissor. </p>
+
+<p>&nbsp;</p>
+
+<p><strong>CÓDIGOS UTILIZADOS PARA CADA UM DOS GRUPOS POSSÍVEIS</strong></p>
+
+<p><br>
+Para Emissores com processamento de mensagens <em>Real-Time</em> e do ficheiro de <em>Clearing</em>
+dos Sistemas de Pagamento Internacionais na SIBS. </p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%">&nbsp; </td>
+  </tr>
+</table>
+<div align="center"><center>
+
+<table class="center" BORDER="1" CELLSPACING="0" CELLPADDING="2" width="573">
+  <tr>
+    <th class="fundo" width="69">ORIGEM</th>
+    <th class="fundo" width="55">CODTRN-E (<a href="../../Campos/campos7.htm#699" target="explicac">699</a>)</th>
+    <th class="fundo" width="59">TIPOTERM (<a href="../../Campos/campos1.htm#003" target="explicac">003</a>)</th>
+    <th class="fundo" width="55">TIPOAUT (<a href="../../Campos/campos1.htm#005" target="explicac">005</a>)</th>
+    <th class="fundo" width="150">DESCRIÇÃO</th>
+    <th class="fundo" width="150">INFORMAÇÃO RECEBIDA<br>
+    PELO EMISSOR</th>
+  </tr>
+  <tr>
+    <td width="69">SIBS - RT<br>
+    (msg <a href="../l-iii/116x316x.htm">1161</a>)</td>
+    <td class="mid" width="55">012</td>
+    <td class="mid" width="59">D</td>
+    <td class="mid" width="55">35 ou 38</td>
+    <td class="mid" width="150">Autorização</td>
+    <td width="150">Cartão real e cartão temporário </td>
+  </tr>
+  <tr>
+    <td width="69">SIBS - Batch<br>
+    (<a href="../l-iii/dst-1.htm#DADOS">MDST5</a>)</td>
+    <td class="mid" width="55">012</td>
+    <td class="mid" width="59">D</td>
+    <td class="mid" width="55">35 ou 38</td>
+    <td class="mid" width="150">Autorização</td>
+    <td width="150">Cartão real e cartão temporário </td>
+  </tr>
+  <tr>
+    <td width="69">SIBS - RT<br>
+    (msg <a href="../l-iii/216x.htm">2161</a>)</td>
+    <td class="mid" width="55">012</td>
+    <td class="mid" width="59">D</td>
+    <td class="mid" width="55">35 ou 38</td>
+    <td width="150" class="mid">Anulação de Autorização </td>
+    <td width="150">Cartão real e cartão temporário </td>
+  </tr>
+  <tr>
+    <td width="69">SIBS - Batch<br>
+    (<a href="../l-iii/dst-1.htm#DADOS">MDST5</a>)</td>
+    <td class="mid" width="55">012</td>
+    <td class="mid" width="59">D</td>
+    <td class="mid" width="55">35 ou 38</td>
+    <td width="150" class="mid">Anulação de Autorização </td>
+    <td width="150">Cartão real e cartão temporário </td>
+  </tr>
+  <tr>
+    <td width="69">SIBS - Batch<br>
+    (<a href="../l-iii/dst-1.htm#DADOS">MDST5</a>)</td>
+    <td class="mid" width="55">010</td>
+    <td class="mid" width="59">D</td>
+    <td class="mid" width="55">35 ou 38</td>
+    <td width="150" class="mid">Compra Após Autorização </td>
+    <td width="150">Cartão real e cartão temporário </td>
+  </tr>
+  <tr>
+    <td width="69">SIBS - Batch<br>
+    (<a href="../l-iii/dst-1.htm#DADOS">MDST5</a>)</td>
+    <td class="mid" width="55">0C0</td>
+    <td class="mid" width="59">D</td>
+    <td class="mid" width="55">35 ou 38</td>
+    <td width="150">Devolução Compra Após Autorização </td>
+    <td width="150">Cartão real e cartão temporário </td>
+  </tr>
+</table>
+</center></div>
+
+<p>Nota: <br>
+Para Emissores que não recebem o pedido de Autorização em <em>Real-Time</em> mas sim em
+mensagem de Consulta de Saldos e Movimentos, onde está &quot;(msg <a href="../l-iii/116x316x.htm">1161</a>)&quot; deve ler-se &quot;(msg <a href="../l-iii/116x316x.htm">1162</a>)&quot;.</p>
+
+<p>&nbsp;</p>
+
+<p>Para Emissores com processamento de mensagens de autorização na SIBS e processamento
+dos ficheiros de <em>Clearing</em> dos Sistemas de Pagamento Internacionais interno. </p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%">&nbsp; </td>
+  </tr>
+</table>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2">
+  <tr>
+    <th class="fundo" width="69">ORIGEM</th>
+    <th class="fundo" width="55">CODTRN-E (<a href="../../Campos/campos7.htm#699" target="explicac">699</a>)</th>
+    <th class="fundo" width="55">TIPOTERM (<a href="../../Campos/campos1.htm#003" target="explicac">003</a>)</th>
+    <th class="fundo" width="55">TIPOAUT (<a href="../../Campos/campos1.htm#005" target="explicac">005</a>)</th>
+    <th class="fundo" width="150">DESCRIÇÃO</th>
+    <th class="fundo" width="150">INFORMAÇÃO RECEBIDA<br>
+    PELO EMISSOR</th>
+  </tr>
+  <tr>
+    <td width="69">SIBS - RT<br>
+    (msg <a href="../l-iii/116x316x.htm">1161</a>)</td>
+    <td width="55" class="mid">012</td>
+    <td width="55" class="mid">D</td>
+    <td width="55" class="mid">35 ou 38</td>
+    <td width="150" class="mid">Autorização</td>
+    <td width="150">Cartão real e cartão temporário&nbsp; </td>
+  </tr>
+  <tr>
+    <td nowrap width="69">SIBS - Batch<br>
+    (<a href="../l-iii/dst-1.htm#DADOS">MDST5</a>)</td>
+    <td width="55" class="mid">012</td>
+    <td width="55" class="mid">D</td>
+    <td width="55" class="mid">35 ou 38</td>
+    <td width="150" class="mid">Autorização</td>
+    <td width="150">Cartão real e cartão temporário </td>
+  </tr>
+  <tr>
+    <td width="69">SIBS - RT<br>
+    (msg <a href="../l-iii/216x.htm">2161</a>)</td>
+    <td width="55" class="mid">012</td>
+    <td width="55" class="mid">D</td>
+    <td width="55" class="mid">35 ou 38</td>
+    <td width="150" class="mid">Anulação de Autorização </td>
+    <td width="150">Cartão real e cartão temporário </td>
+  </tr>
+  <tr>
+    <td width="69">SIBS - Batch<br>
+    (<a href="../l-iii/dst-1.htm#DADOS">MDST5</a>)</td>
+    <td width="55" class="mid">012</td>
+    <td width="55" class="mid">D</td>
+    <td width="55" class="mid">35 ou 38</td>
+    <td width="150" class="mid">Anulação de Autorização </td>
+    <td width="150">Cartão real e cartão temporário </td>
+  </tr>
+  <tr>
+    <td COLSPAN="4" class="esq">Sistema de Pagamento - <em>clearing</em><br>
+    (batch; ex: BASE II, ECCF) </td>
+    <td width="150">Compra <br>
+    Devolução </td>
+    <td width="150" class="mid">Cartão temporário</td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.1.4.3">D.1.4.3</a>&nbsp; DESCRIÇÃO DO FUNCIONAMENTO DAS OPERAÇÕES </h3>
+
+<p>&nbsp;</p>
+
+<h5><a name="D.1.4.3.1">D.1.4.3.1</a> UTILIZAÇÃO DO MBNet EM COMERCIANTES ADERENTES </h5>
+
+<p class="center"><br>
+<map name="FPMap0">
+<area href="#1-6" shape="rect" coords="149, 212, 162, 228">
+<area href="#1-4" shape="rect" coords="121, 233, 132, 245">
+<area href="#1-3" shape="rect" coords="90, 251, 103, 266">
+<area href="#1-1" shape="rect" coords="23, 242, 35, 256">
+<area href="#1-13" shape="rect" coords="20, 214, 32, 227">
+<area href="#1-9" shape="rect" coords="61, 135, 73, 151">
+<area href="#1-2" shape="rect" coords="62, 107, 73, 122">
+<area href="#1-7" shape="rect" coords="341, 145, 353, 160">
+<area href="#1-11" shape="rect" coords="345, 125, 361, 139">
+<area href="#1-15" shape="rect" coords="345, 97, 359, 111">
+<area href="#1-8" shape="rect" coords="214, 115, 229, 130">
+<area href="#1-5" shape="rect" coords="235, 96, 248, 110">
+<area href="#1-10" shape="rect" coords="266, 70, 283, 83">
+<area href="#1-16" shape="rect" coords="182, 29, 196, 44">
+<area href="#1-14" shape="rect" coords="141, 29, 159, 45">
+<area href="#1-12" shape="rect" coords="103, 32, 122, 43"></map><img rectangle="(90,251) (103,266) d1.htm#1-3" rectangle="(23,242) (35,256) d1.htm#1-1" rectangle="(20,214) (32,227) d1.htm#1-13" rectangle="(61,135) (73,151) d1.htm#1-9" rectangle="(62,107) (73,122) d1.htm#1-2" rectangle="(341,145) (353,160) d1.htm#1-7" rectangle="(345,125) (361,139) d1.htm#1-11" rectangle="(345,97) (359,111) d1.htm#1-15" rectangle="(214,115) (229,130) d1.htm#1-8" rectangle="(235,96) (248,110) d1.htm#1-5" rectangle="(266,70) (283,83) d1.htm#1-10" rectangle="(182,29) (196,44) d1.htm#1-16" rectangle="(141,29) (159,45) d1.htm#1-14" rectangle="(103,32) (122,43) d1.htm#1-12" src="imagens2/d1-01.gif" alt="d1-01.gif" border="0" usemap="#FPMap0" width="461" height="344"></p>
+
+<p class="center">Figura 1</p>
+
+<p>Legenda da figura 1: 
+
+<ol>
+  <li><a name="1-1">O</a> cliente estabelece uma ligação ao <em>site</em> do comerciante,
+    onde escolhe os produtos/serviços que pretende comprar/usufruir. </li>
+</ol>
+
+<ol start="2">
+  <li><a name="1-2">O</a> cliente termina as suas compras e o comerciante informa-o dos meios
+    de pagamento que aceita, onde apresenta também o MBNet. <br>
+    Após selecção do meio de pagamento MBNet pelo cliente, a página do comerciante envia
+    um <em>form</em> para o sistema MBNet, onde estão posicionados os seguintes parâmetros
+    (o comerciante pode posicionar mais): </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Número de TPA virtual</li>
+    <li>Referência da operação dada pelo comerciante </li>
+    <li>Montante da operação </li>
+    <li>Código de moeda do montante</li>
+    <li>URL do comerciante</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Com base no <em>form</em> recebido, o sistema MBNet envia os elementos da operação ao
+  cliente (para controlo da compra) e escreve uma <em>cookie</em> no disco do PC. </p>
+</blockquote>
+
+<ol start="3">
+  <li><a name="1-3">O</a> cliente acede ao MBNet (<em>pop up</em> de pagamento) mediante uma
+    das seguintes opções: </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Clicando no ícone MBNet previamente instalado no <em>browser</em> ou na barra de
+      ferramentas (sem necessidade de sair do <em>site</em> do comerciante); </li>
+    <li>Escolhendo a opção MBNet, que previamente colocou no menu <em>Favorites</em> do <em>browser</em>
+      Microsoft Internet&nbsp; Explorer ou no menu <em>Bookmark</em> do <em>browser</em>
+      Netscape Navigator; </li>
+    <li>Digitando o endereço do <em>site</em> MBNet na barra <em>Address</em> do <em>browser</em>.
+    </li>
+  </ul>
+</blockquote>
+
+<ol start="4">
+  <li><a name="1-4">No</a> <em>pop up</em> do MBNet é solicitada a introdução da
+    Identificação e Código Secreto MBNet. </li>
+</ol>
+
+<ol start="5">
+  <li><a name="1-5">Após</a> a resposta positiva do sistema, o MBNet disponibiliza ao cliente
+    a informação sobre a operação que pretende efectuar, exibindo: </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>O nome do estabelecimento virtual </li>
+    <li>A referência dada pelo comerciante à operação </li>
+    <li>O montante e o código de moeda da operação </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Solicita-lhe ainda que confirme a operação de <strong>Autenticação</strong> na
+  tecla OK. </p>
+</blockquote>
+
+<ol start="6">
+  <li><a name="1-6">Após</a> a confirmação na tecla OK, o <em>browser</em> do cliente envia
+    os dados para o <em>server</em> do MBNet. </li>
+</ol>
+
+<ol start="7">
+  <li><a name="1-7">O</a> sistema MBNet valida a consistência dos dados e trata a operação
+    de autenticação. </li>
+</ol>
+
+<ol start="8">
+  <li><a name="1-8">O</a> sistema envia a resposta para o <em>browser</em> do cliente. </li>
+</ol>
+
+<ol start="9">
+  <li><a name="1-9">Ao</a> receber uma resposta positiva, o <em>browser</em> do cliente faz
+    automaticamente o <em>link</em> para a URL da página de confirmação da encomenda,
+    indicada pelo comerciante. </li>
+  <p>Desta forma, o comerciante tem conhecimento do resultado da operação de
+  autenticação e pode apresentar ao cliente uma página do seu <em>site</em> onde lhe
+  confirma a encomenda e apresenta outros dados, tais como a data de entrega. </p>
+  <li><a name="1-10">O</a> comerciante recebe os dados e inicia uma sessão segura com o <em>server</em>
+    do MBNet, enviando uma mensagem de <strong>Autorização</strong> com os seguintes dados: </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>O número do TPA virtual</li>
+    <li>A referência da operação dada pelo comerciante </li>
+    <li>A referência MBNet da operação</li>
+    <li>O montante da operação</li>
+    <li>O código de moeda do montante</li>
+    <li>O certificado de comerciante</li>
+  </ul>
+</blockquote>
+
+<ol start="11">
+  <li><a name="1-11">O</a> <em>server</em> do MBNet recebe os dados e processa-os, tendo em
+    conta a operação de autenticação que tem pendente. <br>
+    O sistema central valida e trata a mensagem recebida de modo semelhante a uma
+    autorização num TPA &quot;normal&quot;. </li>
+</ol>
+
+<ol start="12">
+  <li><a name="1-12">O</a> <em>server</em> envia a mensagem de resposta (à Autorização) ao
+    comerciante - sem os dados do cliente. </li>
+</ol>
+
+<ol start="13">
+  <li><a name="1-13">O</a> comerciante dá conhecimento da resposta da operação de
+    Autorização ao cliente. </li>
+</ol>
+
+<ol start="14">
+  <li><a name="1-14">Após</a> o envio dos bens adquiridos para o cliente, o comerciante envia
+    a mensagem de <strong>compra após autorização</strong> para o <em>server</em> do MBNet,
+    repetindo-se os passos 11 a 13 na perspectiva da operação de compra após autorização.
+  </li>
+</ol>
+
+<ol start="15">
+  <li><a name="1-15">O</a> sistema MBNet recebe e trata a operação de compra após
+    autorização, tendo em conta a operação original de autorização. </li>
+</ol>
+
+<ol start="16">
+  <li><a name="1-16">Por</a> fim, o sistema responde o resultado da operação de compra ao
+    comerciante. </li>
+</ol>
+
+<p>&nbsp;</p>
+
+<h5><a name="D.1.4.3.2">D.1.4.3.2</a> UTILIZAÇÃO DO MBNet EM COMERCIANTES NÃO ADERENTES
+</h5>
+
+<p class="center"><br>
+<map name="FPMap1">
+<area href="#2-14" shape="rect" coords="185, 78, 202, 89">
+<area href="#2-12" shape="rect" coords="149, 77, 165, 91">
+<area href="#2-11" shape="rect" coords="336, 124, 352, 138">
+<area href="#2-7" shape="rect" coords="332, 143, 345, 159">
+<area href="#2-5" shape="rect" coords="230, 94, 243, 110">
+<area href="#2-8" shape="rect" coords="210, 112, 224, 130">
+<area href="#2-6" shape="rect" coords="145, 208, 158, 224">
+<area href="#2-4" shape="rect" coords="116, 229, 128, 242">
+<area href="#2-3" shape="rect" coords="89, 247, 100, 259">
+<area href="#2-1" shape="rect" coords="24, 236, 33, 252">
+<area href="#2-13" shape="rect" coords="64, 150, 79, 167">
+<area href="#2-9" shape="rect" coords="59, 125, 74, 138">
+<area href="#2-2" shape="rect" coords="61, 105, 76, 119">
+<area href="#2-10" shape="rect" coords="102, 29, 117, 43"></map><img rectangle="(336,124) (352,138) d1.htm#2-11" rectangle="(332,143) (345,159) d1.htm#2-7" rectangle="(230,94) (243,110) d1.htm#2-5" rectangle="(210,112) (224,130) d1.htm#2-8" rectangle="(145,208) (158,224) d1.htm#2-6" rectangle="(116,229) (128,242) d1.htm#2-4" rectangle="(89,247) (100,259) d1.htm#2-3" rectangle="(24,236) (33,252) d1.htm#2-1" rectangle="(64,150) (79,167) d1.htm#2-13" rectangle="(59,125) (74,138) d1.htm#2-9" rectangle="(61,105) (76,119) d1.htm#2-2" rectangle="(102,29) (117,43) d1.htm#2-10" src="imagens2/d1-02.gif" alt="d1-02.gif" border="0" usemap="#FPMap1" width="453" height="337"></p>
+
+<p class="center">Figura 2</p>
+
+<p>Legenda da figura 2: 
+
+<ol>
+  <li><a name="2-1">O</a> cliente estabelece uma ligação ao <em>site</em> do comerciante,
+    onde escolhe os produtos/serviços que pretende comprar/ usufruir. </li>
+</ol>
+
+<ol start="2">
+  <li><a name="2-2">O</a> cliente termina as suas compras e o comerciante informa-o dos meios
+    de pagamento que aceita, devendo aquele escolher a opção de pagamento com cartão de
+    crédito da marca do seu. </li>
+</ol>
+
+<ol start="3">
+  <li><a name="2-3">O</a> cliente acede ao MBNet (<em>pop up</em> de pagamento) mediante uma
+    das seguintes opções: </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Clicando no ícone MBNet previamente instalado no <em>browser</em> ou na barra de
+      ferramentas (sem necessidade de sair do <em>site</em> do comerciante); </li>
+    <li>Escolhendo a opção MBNet, que previamente colocou no menu <em>Favorites</em> do <em>browser</em>
+      Microsoft Internet Explorer ou no menu <em>Bookmark</em> do <em>browser</em> Netscape
+      Navigator; </li>
+    <li>Digitando o endereço do <em>site</em> MBNet na barra <em>Address</em> do <em>browser</em>.
+    </li>
+  </ul>
+</blockquote>
+
+<ol start="4">
+  <li><a name="2-4">No</a> <em>pop up</em> do MBNet, é solicitada a introdução da
+    Identificação e Código Secreto MBNet. </li>
+</ol>
+
+<ol start="5">
+  <li><a name="2-5">Após</a> a resposta positiva do sistema, o MBNet solicita ao cliente a
+    introdução do Limite de Utilização - para aquele pagamento - em euros. <br>
+    O cliente introduz o limite solicitado e confirma com a tecla OK. </li>
+</ol>
+
+<ol start="6">
+  <li><a name="2-6">Após</a> a confirmação na tecla OK, o browser do cliente envia os dados
+    para o <em>server</em> do MBNet. </li>
+</ol>
+
+<ol start="7">
+  <li><a name="2-7">O</a> sistema MBNet valida a consistência dos dados e, caso a operação
+    seja aceite, atribui um cartão temporário. </li>
+</ol>
+
+<ol start="8">
+  <li><a name="2-8">O</a> sistema envia a resposta positiva para o <em>browser</em> do
+    cliente, mostrando no <em>pop up</em>: </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Um número de cartão temporário </li>
+    <li>Uma data de expiração do cartão temporário </li>
+    <li>Um CVV2 / CVC2 </li>
+  </ul>
+</blockquote>
+
+<ol start="9">
+  <li><a name="2-9">O</a> cliente, tendo por base os dados recebidos no <em>pop up</em> MBNet,
+    introduz no <em>site</em> do comerciante o número de cartão temporário, a respectiva
+    data de expiração e o CVV2/CVC2 (nem todas as lojas virtuais solicitam a indicação do
+    CVV2/CVC2). </li>
+</ol>
+
+<ol start="10">
+  <li><a name="2-10">O</a> comerciante recebe os dados e envia uma mensagem de pedido de
+    autorização, através do seu <em>Acquirer</em>, para o Sistema de Pagamento
+    Internacional (Visa/MasterCard/AMEX) que por sua vez envia a mensagem de autorização
+    para a SIBS com os seguintes dados: </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Número de cartão temporário </li>
+    <li>Data de expiração do cartão </li>
+    <li>CVV2 / CVC2 (se indicado pelo cliente) </li>
+    <li>Montante da operação </li>
+    <li>Código de moeda do montante da operação </li>
+  </ul>
+</blockquote>
+
+<ol start="11">
+  <li><a name="2-11">A</a> SIBS recebe o pedido de autorização, valida que é um cartão
+    temporário válido que atribuiu a um determinado cartão real e processa o pedido de
+    autorização. </li>
+</ol>
+
+<ol start="12">
+  <li><a name="2-12">A</a> SIBS envia a resposta ao pedido de autorização para o sistema de
+    pagamento, que por sua vez a encaminha para o comerciante. </li>
+</ol>
+
+<ol start="13">
+  <li><a name="2-13">O</a> comerciante dá conhecimento da resposta da operação de
+    Autorização ao Cliente. </li>
+</ol>
+
+<ol start="14">
+  <li><a name="2-14">Após</a> o envio dos bens adquiridos para o cliente, o comerciante envia
+    a operação de compra após autorização para o <em>Acquirer</em>, sendo esta
+    encaminhada pelo Sistema de Pagamento Internacional através do ficheiro de <em>Clearing</em>
+    (ex: BASE II, EECF) para a entidade indicada pelo Emissor àquele sistema. </li>
+</ol>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="verdana8"><em><strong>EXEMPLO DA UTILIZAÇÃO
+DO SERVIÇO NUM COMERCIANTE ADERENTE: </strong></em></p>
+
+<p><br>
+O cliente define o seu cesto de compras no <em>site</em> do comerciante e confirma a
+encomenda, seleccionado de seguida o MBNet como forma de pagamento. </p>
+
+<p class="center"><img src="imagens2/d1-03.gif" alt="d1-03.gif " WIDTH="480" HEIGHT="363"></p>
+
+<p class="center">Figura 3</p>
+
+<p style="page-break-before: always"><br>
+Para efectuar o pagamento da encomenda, basta ao cliente fazer um clique no ícone MBNet
+previamente instalado no <em>browser</em> ou na barra de ferramentas (sem necessidade de
+sair do <em>site</em> do comerciante - em alternativa pode sempre aceder ao <em>site</em>
+MBNet e seleccionar o botão &quot;GO&quot;). </p>
+
+<p class="center"><img src="imagens2/d1-04.gif" alt="d1-04.gif " WIDTH="491" HEIGHT="361"></p>
+
+<p class="center">Figura 4</p>
+
+<p><br>
+Ao fazer um clique no ícone MBNet, abre-se uma pequena janela - <em>pop up</em> - onde se
+pode dar seguimento ao processo de pagamento. </p>
+
+<p>O cliente solicita a autenticação no sistema, através da sua Identificação e
+Código Secreto MBNet. </p>
+
+<p><a name="fig5">Após</a> a introdução dos dados, confirma na tecla OK. </p>
+
+<p class="center"><img src="imagens2/d1-05.gif" alt="d1-05.gif" WIDTH="483" HEIGHT="360"></p>
+
+<p class="center">Figura 5</p>
+
+<p><br>
+Como resposta positiva do sistema, o cliente visualiza no <em>pop up</em> a
+identificação da loja virtual, a referência da operação dada pelo comerciante, o
+montante e o código de moeda da operação. </p>
+
+<p>Caso os dados apresentados estejam correctos, o cliente deve confirmar através da
+tecla OK. </p>
+
+<p class="center"><img src="imagens2/d1-06.gif" alt="d1-06.gif" WIDTH="484" HEIGHT="360"></p>
+
+<p class="center">Figura 6</p>
+
+<p><br>
+Após o OK, o cliente visualiza um <em>pop up</em> de confirmação dos dados e retorna ao
+<em>site</em> do comerciante. </p>
+
+<p class="center"><img src="imagens2/d1-07.gif" alt="d1-07.gif " WIDTH="482" HEIGHT="361"></p>
+
+<p class="center">Figura 7</p>
+
+<p>&nbsp;</p>
+
+<h5 class="verdana8"><em><strong>EXEMPLO DA UTILIZAÇÃO DO SERVIÇO NUM COMERCIANTE NÃO
+ADERENTE: </strong></em></h5>
+
+<p><br>
+Num comerciante não aderente ao serviço MBNet, este apresenta ao cliente os meios de
+pagamento aceites e solicita a introdução dos dados do cartão. </p>
+
+<p>Para efectuar o pagamento da encomenda, basta ao cliente fazer um clique no ícone
+MBNet previamente instalado no <em>browser</em> ou na barra de ferramentas (sem
+necessidade de sair do <em>site</em> do comerciante - em alternativa pode sempre aceder ao
+<em>site</em> MBNet e seleccionar o botão &quot;GO&quot;). </p>
+
+<p class="center"><img src="imagens2/d1-08.gif" alt="d1-08.gif" WIDTH="465" HEIGHT="306"></p>
+
+<p class="center">Figura 8</p>
+
+<p><br>
+Ao fazer um clique no ícone MBNet, abre-se uma pequena janela - <em>pop up</em> - onde se
+pode dar seguimento ao processo de pagamento. </p>
+
+<p>O cliente solicita a autenticação no sistema, através da sua Identificação e
+Código Secreto MBNet. </p>
+
+<p><a name="fig9">Após</a> a introdução dos dados, confirma na tecla OK. </p>
+
+<p class="center"><img src="imagens2/d1-09.gif" alt="d1-09.gif" WIDTH="480" HEIGHT="362"></p>
+
+<p class="center">Figura 9</p>
+
+<p style="page-break-before: always"><br>
+O sistema MBNet identifica que a operação vai ser efectuada num comerciante não
+aderente e solicita ao cliente a introdução do montante máximo para o cartão
+temporário a ser gerado (em euros). Este montante é o limite máximo de pagamento que
+pode ser utilizado pelo comerciante onde o cliente pretende efectuar a operação. </p>
+
+<p class="center"><img src="imagens2/d1-10.gif" alt="d1-10.gif" WIDTH="453" HEIGHT="337"></p>
+
+<p class="center">Figura 10</p>
+
+<p><br>
+O cliente recebe como resposta do MBNet um número de cartão temporário, uma data de
+expiração e um CVV2. </p>
+
+<p class="center"><img src="imagens2/d1-11.gif" alt="d1-11.gif" WIDTH="228" HEIGHT="302"></p>
+
+<p class="center">Figura 11</p>
+
+<p><br>
+Ao cliente basta introduzir os dados obtidos (do <em>pop up</em> MBNet) no <em>site</em>
+do comerciante para que este efectue a operação de autorização. </p>
+
+<p>O comerciante efectua o pedido de autorização, através do seu <em>Acquirer</em>.
+Após obter a resposta do sistema, apresenta o resultado ao cliente. </p>
+
+<p>&nbsp;</p>
+
+<h2><br>
+<a name="D.1.5">D.1.5</a> SINOPSE DAS CONDIÇÕES DE PARTICIPAÇÃO NO SERVIÇO </h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.1.5.1">D.1.5.1</a>&nbsp; REGISTO DE CLIENTES NO MBNet </h3>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%">&nbsp; </td>
+  </tr>
+</table>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="590">
+  <tr>
+    <td COLSPAN="3" width="260">&nbsp;</td>
+    <th width="318">O que o Emissor tem que fazer </th>
+  </tr>
+  <tr>
+    <td COLSPAN="2" ROWSPAN="3" class="mid" width="161">No Caixa Automático Multibanco </td>
+    <td width="93">Disponibilização do serviço </td>
+    <td class="esqmid" width="318"><strong><em>Autorizar o Serviço Especial MBNet para os
+    seus BINs </em></strong></td>
+  </tr>
+  <tr>
+    <td width="93">Mensagens <br>
+    <em>real-time</em> com a SIBS</td>
+    <td class="esq" width="318"><strong><em>Opcional</em></strong><br>
+    <br>
+    Implementação da Mensagem <em>Real-Time </em></td>
+  </tr>
+  <tr>
+    <td class="mid" width="93">Ficheiro<a href="../l-iii/dst-1.htm#DADOS"> Destinos</a>
+    (MDST5) </td>
+    <td class="esq" width="318"><em><strong>Tratamento do registo no ficheiro Destinos</strong>
+    <br>
+    </em><br>
+    O registo é idêntico ao enviado para outros serviços especiais, pelo que, se o Emissor
+    não tiver um tratamento diferenciado para estas operações, não é necessário efectuar
+    desenvolvimento informático. </td>
+  </tr>
+  <tr>
+    <td ROWSPAN="2" class="mid" width="70">No Emissor<br>
+    <br>
+    <em>Opcional</em></td>
+    <td class="mid" width="85">Utilização do Terminal de Serviços SIBS </td>
+    <td class="mid" width="93">Ficheiro<a href="../l-iii/dst-1.htm#DADOS"> Destinos</a>
+    (MDST5) </td>
+    <td class="esq" width="318"><strong><em>Tratamento do registo no ficheiro Destinos</em> <br>
+    <br>
+    </strong>O registo é idêntico ao enviado para outros serviços especiais, pelo que, se o
+    Emissor não tiver um tratamento diferenciado para estas operações, não é necessário
+    efectuar desenvolvimento informático. </td>
+  </tr>
+  <tr>
+    <td width="85">Canal próprio do Banco </td>
+    <td width="93">Mensagens <br>
+    <em>Host-to-Host</em></td>
+    <td class="esqmid" width="318"><strong><em>Implementação das mensagens Host-to-Host</em></strong></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.1.5.2">D.1.5.2</a> OPERAÇÕES NO MBNet </h3>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%">&nbsp; </td>
+  </tr>
+</table>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="590">
+  <tr>
+    <td ROWSPAN="2" width="154">&nbsp;</td>
+    <th COLSPAN="2" width="424">O que o Emissor tem que fazer </th>
+  </tr>
+  <tr>
+    <td COLSPAN="2" class="esq" width="424"><strong><em>Gestão de Cativos nas contas D.O.</em></strong>
+    <br>
+    <br>
+    Caso não tenha já implementado essa funcionalidade.&nbsp; </td>
+  </tr>
+  <tr>
+    <td ROWSPAN="4" width="154" class="mid">Mensagens <em>real-time</em> <br>
+    com a SIBS</td>
+    <td COLSPAN="2" class="esq" width="424"><em><strong>Mensagens </strong><a href="../l-iii/116x316x.htm">1161</a><strong>, <a href="../l-iii/216x.htm">2161</a> e <a href="../l-iii/116x316x.htm">3161</a></strong></em></td>
+  </tr>
+  <tr>
+    <td ROWSPAN="3" width="204" class="esqmid"><strong><em>Códigos de transacção nas
+    mensagens </em></strong></td>
+    <td class="esq" width="214">Autorização Net&nbsp; - 094 </td>
+  </tr>
+  <tr>
+    <td class="esq" width="214">Cancelamento autorização Net&nbsp; - 095 </td>
+  </tr>
+  <tr>
+    <td class="esq" width="214">Compra após autorização - 027 </td>
+  </tr>
+  <tr>
+    <td ROWSPAN="3" width="154" class="mid">Ficheiro<a href="../l-iii/dst-1.htm#DADOS">
+    Destinos</a> <br>
+    (MDST5) </td>
+    <td ROWSPAN="3" width="204" class="esqmid"><strong><em>Códigos de transacção nos
+    ficheiros</em></strong></td>
+    <td class="esq" width="214">Autorização Net - 094 </td>
+  </tr>
+  <tr>
+    <td class="esq" width="214">Cancelamento autorização Net&nbsp; - 095 </td>
+  </tr>
+  <tr>
+    <td class="esq" width="214">Compra após autorização - 027 </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.1.5.3">D.1.5.3</a> OPERAÇÕES COM CARTÃO TEMPORÁRIO - PROCESSAMENTO NA
+SIBS </h3>
+
+<p><br>
+Para Emissores com processamento de ficheiros de <em>Clearing</em> na SIBS, S.A..</p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%">&nbsp; </td>
+  </tr>
+</table>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="590">
+  <tr>
+    <td ROWSPAN="2">&nbsp;</td>
+    <th>O que o Emissor tem que fazer </th>
+  </tr>
+  <tr>
+    <td class="esq">Solicitar um novo BIN para cartões temporários aos Sistemas de Pagamento
+    Internacionais. </td>
+  </tr>
+  <tr>
+    <td>Mensagens <em>real-time</em> <br>
+    com a SIBS </td>
+    <td class="esqmid">Nada </td>
+  </tr>
+  <tr>
+    <td>Ficheiro Destinos (MDST5) </td>
+    <td class="esqmid">Nada </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.1.5.4">D.1.5.4</a> OPERAÇÕES COM CARTÃO TEMPORÁRIO - PROCESSAMENTO
+INTERNO </h3>
+
+<p><br>
+Para Emissores com processamento de ficheiros de <em>Clearing</em> interno. </p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%">&nbsp; </td>
+  </tr>
+</table>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="590">
+  <tr>
+    <td ROWSPAN="2" width="135">&nbsp;</td>
+    <th width="443">O que o Emissor tem que fazer </th>
+  </tr>
+  <tr>
+    <td class="esq" width="443">Solicitar um novo BIN para cartões temporários aos Sistemas
+    de Pagamento Internacionais. </td>
+  </tr>
+  <tr>
+    <td width="135">&nbsp;</td>
+    <td class="esq" width="443"><em><strong>Gestão de Cativos nas contas D.O. <br>
+    <br>
+    </strong></em>Caso não tenha já implementado essa funcionalidade. </td>
+  </tr>
+  <tr>
+    <td width="135">Mensagens <em>real-time</em><br>
+    com a SIBS </td>
+    <td class="esqmid" width="443">Nada</td>
+  </tr>
+  <tr>
+    <td width="135" class="mid"><a href="../l-iii/dst-1.htm#DADOS">Ficheiro Destinos</a>
+    (MDST5) </td>
+    <td class="esq" width="443">Implementar tratamento da informação sobre cartão
+    temporário recebida no registo da autorização, para posterior utilização no
+    processamento do ficheiro de <em>Clearing</em> e nos posteriores casos de disputas (<em>chargebacks</em>).
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h3><a name="D.1.5.5">D.1.5.5</a> REQUISITOS PARA O <em>POP UP</em> E&nbsp; ÍCONE MBNet
+&nbsp; </h3>
+
+<p><br>
+O logotipo de cada Emissor a constar do <em>pop up</em>, deve ser personalizado por
+Emissor e por BIN (e extensão) do Emissor, ter as dimensões 108x40 <em>pixels</em> e ser
+em formato JPEG. A gestão/actualização dos JPEGs é sempre da responsabilidade do
+Emissor.</p>
+
+<p class="center"><img src="imagens2/d1-12.gif" alt="d1-12.gif" WIDTH="209" HEIGHT="273"></p>
+
+<p class="center">Figura 12</p>
+
+<h5><br>
+<a name="D.1.5.5.1">D.1.5.5.1</a> REQUISITOS PARA A INSTALAÇÃO, OU REMOÇÃO, DO ÍCONE
+MBNet A PARTIR DOS EMISSORES</h5>
+
+<p>Para as opções de instalação ou remoção do ícone MBNet, o Emissor deve incluir o
+seguinte <em>link</em> nas páginas de <em>download</em>:</p>
+
+<blockquote>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>https://www.mbnet.pt/cc/pop_install.html</em><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (aconselha-se a ser aberto numa
+  janela/área de 370 por 350 <em>pixels</em>)</p>
+</blockquote>
+
+<h5><br>
+<a name="D.1.5.5.2">D.1.5.5.2</a> REQUISITOS PARA A CONSULTA DE OPERAÇÕES MBNet A PARTIR
+DOS EMISSORES</h5>
+
+<p>Os <em>links</em> que possibilitam a consulta de operações MBNet a partir dos <em>sites</em>
+dos Emissores são: 
+
+<ul>
+  <li>Certificação <br>
+    <em>&nbsp;&nbsp;&nbsp;&nbsp; https://cer.pnet.multibanco.pt/cns/index.html</em></li>
+</ul>
+
+<ul>
+  <li>Produção&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; <em>https://www.mbnet.pt/cns/index.html</em></li>
+</ul>
+
+<p><br>
+Os Emissores podem optar por uma das duas formas de apresentação destas consultas. 
+
+<ul>
+  <li><strong>Opção 1 - Abrir um <em>pop up</em> com as seguintes características:</strong></li>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <p>- toolbar=no<br>
+    - location=no<br>
+    - status=yes<br>
+    - menubar=no<br>
+    - scrollbars=no<br>
+    - resizable=no<br>
+    - width=780<br>
+    - height=520</p>
+  </blockquote>
+  <p>Exemplo em <em>'</em>JavaScript'</p>
+  <table border="0" cellspacing="0" cellpadding="0" width="85%">
+    <tr>
+      <td class="verdaesq">window.open('https://www.mbnet.pt/cns/index.html','cnsmbnet','toolbar=no,location=no,<br>
+      status=yes,menubar=no,scrollbars=no, resizable=no,width=780,height=520')</td>
+    </tr>
+  </table>
+</blockquote>
+
+<ul>
+  <li><strong>Opção 2 - Abrir uma <em>frame</em> do <em>site</em> com as seguintes
+    características:</strong></li>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <p>- width=780<br>
+    - height=520</p>
+  </blockquote>
+</blockquote>
+
+<p class="dta"><br>
+<a href="d2.htm" target="main">Seguinte</a></p>
+</body>
+</html>

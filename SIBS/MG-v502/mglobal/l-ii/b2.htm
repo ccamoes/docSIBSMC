@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indiceb.htm#B';</script>
+
+<title>B.2 SERVIÇO EM CA A EMISSORES ESTRANGEIROS</title>
+</head>
+
+<body>
+
+<h1>B.2 SERVIÇO EM CA A EMISSORES ESTRANGEIROS</h1>
+
+<p>&nbsp;</p>
+
+<h2><a name="B.2.1">B.2.1</a> OPERAÇÕES DE CLIENTE ESTRANGEIRO EM CA </h2>
+
+<p><br>
+O Serviço CA da Rede Multibanco encontra-se também disponível para diversos cartões
+emitidos por Entidades estrangeiras, ao abrigo de acordos estabelecidos com Sistemas de
+Pagamento Internacionais. A descrição dos diferentes acordos
+estabelecidos com os Sistemas de Pagamento Internacionais é apresentada no capítulo <a
+href="#B.2.2">B.2.2</a>. </p>
+
+<p>A filosofia de aceitação de cartões nacionais, emitidos por Entidades não
+associadas na SIBS (ex.: cartão UNIBANCO) é semelhante à dos cartões internacionais. </p>
+
+<p>A realização de uma operação internacional processa-se de acordo com os seguintes
+passos: </p>
+
+<p>&nbsp;</p>
+
+<h6>1º Introdução do cartão no leitor</h6>
+
+<p>Ao efectuar a leitura do conteúdo das pistas, o CA não reconhece o cartão,
+encaminhando então os dados resultantes dessa leitura para o sistema central da SIBS. </p>
+
+<p>&nbsp;</p>
+
+<h6>2º Selecção do idioma</h6>
+
+<p>Caso se trate de um cartão aceite na rede, o ecrã seguinte permite ao cliente
+seleccionar o idioma com o qual pretende efectuar o diálogo com o serviço. <br>
+Pode optar por uma das seguintes possibilidades: Português, Francês, Inglês, Alemão ou
+Espanhol. Em alternativa, a Entidade responsável por um dado conjunto de cartões, pode
+ter indicado qual dos idiomas deve ser posicionado sempre que um dos seus cartões utilize
+a Rede de CA Multibanco. </p>
+
+<p class="center"><br>
+<img src="imagens2/b2-01.gif" alt="b2-01.gif " WIDTH="353" HEIGHT="267"></p>
+
+<p>&nbsp;</p>
+
+<h6 style="page-break-before: always">3º Introdução do código secreto</h6>
+
+<p>Na resposta à informação referida no 1º passo, a SIBS envia ao CA o número de
+dígitos de PIN a recolher (que pode ser 4, 5 ou 6 dígitos). No caso de o sistema central
+definir 4 ou 5 dígitos, não é necessário ao cliente seleccionar a tecla verde no final
+da indicação do seu código. No caso de serem definidos 6 dígitos, o cliente tem de
+confirmar no final, seleccionando a tecla verde. </p>
+
+<p>Apresenta-se, seguidamente, o ecrã para a introdução do código secreto na
+língua inglesa.</p>
+
+<p class="center"><br>
+<img src="imagens2/b2-02.gif" alt="b2-02.gif " WIDTH="355" HEIGHT="268"></p>
+
+<p>&nbsp;</p>
+
+<h6>4º Selecção da operação</h6>
+
+<p>De uma forma geral, os cartões internacionais dispõem apenas da possibilidade de
+efectuar levantamentos e carregamentos PMB (com excepção dos cartões
+AMEX), sendo portanto solicitado ao cliente que indique o montante que pretende
+levantar (no caso de existirem teclas com montante pré-definido, estas são inibidas nas
+operações internacionais). </p>
+
+<p>&nbsp;</p>
+
+<h6>5º Processamento central da operação</h6>
+
+<p>À semelhança das operações com clientes nacionais, o CA informa a conclusão com
+sucesso da operação, ou a ocorrência de algum problema no processamento da mesma. A
+autorização ou não da operação pode decorrer de acordo com cenários diversos,
+descritos no capítulo&nbsp;<a href="#B.2.2">B.2.2</a>. No caso do
+Emissor estrangeiro pretender que se efectue a captura do cartão, a SIBS indica no
+código de resposta ao CA os motivos da captura (por ordem do Emissor do cartão, em Lista
+Negra). </p>
+
+<h6><br>
+6º Expulsão do cartão </h6>
+
+<p>Modo normal da operação terminar, no caso de ter sido aprovada pelo Emissor. São
+efectuados os mesmos procedimentos e controlos de segurança que no momento da entrega do
+cartão nas operações nacionais. </p>
+
+<h6><br>
+7º Entrega do talão comprovativo</h6>
+
+<p>Impresso no idioma seleccionado pelo cliente ou no idioma seleccionado
+pela Entidade responsável pelo cartão. Em função da Entidade estrangeira do
+cartão em presença, o levantamento pode ser concluído ou não, no caso de inexistência
+de papel de talões. A decisão cabe ao sistema central que tem sempre conhecimento do
+estado dos periféricos dos CAs. </p>
+
+<h6><br>
+8º Entrega das notas (no caso do levantamento)</h6>
+
+<p>São efectuados os mesmos procedimentos e controlos de segurança que no momento da
+entrega de notas dos levantamentos nacionais. </p>
+
+<p>&nbsp;</p>
+
+<h2 ><a name="B.2.2">B.2.2</a> ACEITAÇÃO DOS CARTÕES INTERNACIONAIS NOS CAs</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="B.2.2.1">B.2.2.1</a> CARTÕES VISA E CARTÕES EUROCARD/MASTERCARD</h3>
+
+<p><br>
+O serviço de utilização dos CAs por cartões internacionais destas marcas ou de
+Emissores nacionais não aderentes ao Sistema Multibanco, está baseado num acordo entre a
+SIBS e a Unicre. 
+
+<ul>
+  <li>A SIBS assegura a ligação <em>online</em> do sistema central da Rede Multibanco ao
+    Sistema de Pagamento Internacional para obtenção das autorizações;</li>
+</ul>
+
+<ul>
+  <li>A Unicre representa estes utilizadores, assegurando a respectiva cobertura financeira, o
+    pagamento dos custos do serviço, e a preparação do Ficheiro de <em>Clearing</em>.</li>
+</ul>
+
+<p>Diariamente a Compensação MB cria um ficheiro de movimentos, com todas as operações
+de levantamento em CAs concretizadas na Rede MB e envia-o para a Unicre. Esta elabora os
+respectivos Ficheiros de <em>Clearing</em> de cada Sistema de Pagamento Internacional. A
+conta da Unicre existente num dos Bancos do Serviço MB é movimentada a débito pelo
+total das operações realizadas.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="B.2.2.2">B.2.2.2</a> CARTÕES CIRRUS E MAESTRO</h3>
+
+<p><br>
+O serviço de utilização dos CAs por este tipo de cartões internacionais está baseado
+num acordo entre a SIBS e o Banco de Apoio - Crédito Predial Português. 
+
+<ul>
+  <li>A SIBS assegura a ligação <em>online</em> do sistema central da Rede Multibanco ao
+    Sistema de Pagamento Internacional para obtenção das autorizações.</li>
+</ul>
+
+<ul>
+  <li>O CPP representa estes utilizadores, assegurando a respectiva cobertura financeira e os
+    custos do serviço.</li>
+</ul>
+
+<p>Diariamente a SIBS prepara um Ficheiro de <em>Clearing</em>, com todas as operações
+de levantamento em CAs efectivamente concretizadas e envia-o para o Sistema de Pagamento
+Internacional. A conta do CPP é movimentada a débito pelo total das operações
+realizadas.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="B.2.2.3">B.2.2.3</a> CARTÕES AMERICAN EXPRESS</h3>
+
+<p><br>
+Os cartões internacionais American Express são geridos pelos Acordos Bilaterais,
+descritos no capítulo <a href="../l-i/c3.htm#C.3.2">C.3.2</a> do Livro I.</p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="B.2.3">B.2.3</a> CARTÕES CAPTURADOS DE
+EMISSORES ESTRANGEIROS</h2>
+
+<p><br>
+Os clientes possuidores de cartões estrangeiros que os utilizem na Rede de CA Multibanco
+podem ficar com o seu cartão retido num equipamento devido às seguintes situações: 
+
+<ol TYPE="A">
+  <li>Se o Emissor, através do sistema central, der instruções ao CA para proceder à
+    captura do cartão, <u>por razões de segurança</u>. Neste caso podem ficar registados um
+    de dois motivos de captura:</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Cartão em Lista Negra;</li>
+    <li>Cartão internacional capturado por ordem do Emissor (via sistema central).</li>
+  </ul>
+</blockquote>
+
+<ol TYPE="A" start="2">
+  <li>Se o cliente não retirar o cartão do CA no tempo previsto (por <em>time out</em>).</li>
+</ol>
+
+<ol TYPE="A" start="3">
+  <li>Se houver uma avaria do CA e o cartão não for devolvido ao cliente, ficando retido no
+    interior do equipamento.</li>
+</ol>
+
+<p><br>
+O objectivo deste ponto é descrever a actuação da Agência Bancária responsável pelo
+equipamento nestas circunstâncias.</p>
+
+<p>Quando o CA captura o cartão, regista no seu diário de fundo em papel ou no diário
+digital (conforme configuração do CA), é informado também na Listagem de Cartões
+Capturados, o motivo da captura.</p>
+
+<p>Em função do motivo de captura verificado, os procedimentos a seguir são os
+seguintes:</p>
+
+<p><br>
+
+<ol>
+  <li>Os cartões capturados por razões de segurança (A) devem ser:</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>INUTILIZADOS pelo supervisor do CA, executando um corte ou furo no plástico do cartão,
+      de modo a abranger a banda magnética. No caso de cartões pertencentes a sistemas de
+      pagamento internacionais, o procedimento deve ser idêntico.</li>
+  </ul>
+  <ul>
+    <li>Enviados no dia seguinte ao da captura para o serviço do Banco responsável pelos
+      cartões capturados.<br>
+      Este, por sua vez, envia os cartões para a SIBS, que se encarrega de os expedir para o
+      país Emissor ou para a Unicre (Entidade representante da Visa e da MasterCard em
+      Portugal).</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Caso o cliente se apresente no Balcão reclamando um cartão capturado por estes
+  motivos, deve ser informado de que o cartão foi expedido para o seu País e que a
+  situação só pode ser esclarecida directamente com o seu Banco.</p>
+</blockquote>
+
+<p><br>
+
+<ol start="2">
+  <li>Os cartões internacionais capturados pelos outros motivos (B e C), devem permanecer na
+    Agência responsável pelo CA durante os três dias úteis seguintes ao da captura. O
+    cliente pode vir reclamá-lo e a Agência deve devolvê-lo, depois de:</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>solicitar ao cliente a apresentação do seu Passaporte ou Cartão Nacional de
+      Identidade, como meio de identificação do titular do cartão;</li>
+  </ul>
+  <ul>
+    <li>assinar um documento de entrega do cartão, cujo modelo consta no anexo <a
+      href="b_a5.pdf">B.AX.4</a>. O responsável da Agência deve verificar se a assinatura
+      executada é idêntica à que consta no cartão.</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Apenas depois destes procedimentos se deve devolver o cartão ao cliente.</p>
+</blockquote>
+
+<p><br>
+
+<ol start="3">
+  <li style="page-break-before: always">No caso de cartões capturados pelos motivos B e C que
+    não sejam reclamados no prazo indicado (3 dias), os cartões devem também:</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>ser inutilizados na Agência (com um corte ou furo na tarja, de modo a abranger a banda
+      magnética);</li>
+  </ul>
+  <ul>
+    <li>enviados ao serviço do Banco responsável pelos cartões capturados que os remete
+      posteriormente à SIBS.</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Estes são em seguida expedidos para o país de origem pela SIBS.</p>
+  <p>No caso de serem cartões Visa ou MasterCard, a SIBS encarrega-se de os entregar à
+  Unicre (Entidade representante em Portugal).</p>
+</blockquote>
+
+<p><br>
+Relativamente aos cartões emitidos pela Visa, este Sistema de Pagamento Internacional
+regulamenta ainda os seguintes procedimentos: 
+
+<ul >
+  <li>A rede aceitante deve comunicar a captura de um cartão de marca Visa ao respectivo
+    Emissor até final do dia útil seguinte ao da captura;</li>
+  <li>A rede aceitante deve devolver o cartão num prazo que não deve exceder os 5 dias
+    úteis após a data de captura;</li>
+  <li>No caso de cartões com <em>chip</em> (EMV), a rede aceitante deve inutilizar a pista
+    magnética, furando-a ou cortando o canto do cartão oposto ao que contém o <em>chip</em>.
+    O <em>chip</em> não deve ser danificado. Para cartões capturados no espaço da UE,
+    apenas deve ser utilizada a segunda opção (corte).</li>
+</ul>
+
+<p class="dta"><br>
+<a target="main" href="b1-b.htm">Anterior</a></p>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>RESUMO DE COMPENSAÇÃO (RMB5)</title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: &nbsp; RESUMO DE COMPENSAÇÃO</td>
+        <td class="fichdta">&quot;FICH&quot; = RMB5</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Este ficheiro destina-se aos Bancos de liquidação participantes no Sistema MB. É
+constituído e disponibilizado diariamente ao <em>file transfer</em> após o último fecho
+da Compensação MB do dia. Indica a origem dos valores, correspondentes ao <em>trailer</em>
+de cada um dos restantes ficheiros da Compensação dirigidos ao Banco, considerados para
+apurar o saldo a movimentar na conta de liquidação.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído por: 
+
+<ul>
+  <li>um registo de <em>Header</em> &quot;TIPREG=0&quot;; </li>
+</ul>
+
+<ul>
+  <li>registos de Detalhe &quot;TIPREG=1&quot;, que correspondem a cada ficheiro enviado pela
+    SIBS para o Banco na sessão;</li>
+</ul>
+
+<ul>
+  <li>um registo de <em>Trailer</em> &quot;TIPREG=9&quot;, que apresenta o total de débito e
+    o total de crédito apurado na sessão para o Banco, na denominação indicada no <em>header</em>
+    do ficheiro. O saldo destes valores é comunicado ao Banco de Portugal.</li>
+</ul>
+
+<p><br>
+O ficheiro é constituído por registos de comprimento fixo com 69
+bytes.</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= &#145;1&#146;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td class="esq" width="200">= &#145;<a href="ori.htm" target="main">ORI5</a>&#146;,
+    &#145;<a href="dst-1.htm" target="main">DST5</a>&#146;,'<a target="main" href="mov-0.htm">MOV5</a>'
+    ou &#145;<a href="cln.htm" target="main">CLN5</a>&#146;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">6</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#104">104</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">11</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTREG</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#107">107</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTDEB</td>
+    <td class="dta" width="45">16</td>
+    <td class="dta" width="45">30</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#108">108</a></td>
+    <td class="esq" width="200">na denominação do <em>header</em></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTCRED</td>
+    <td class="dta" width="45">16</td>
+    <td class="dta" width="45">46</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#109">109</a></td>
+    <td class="esq" width="200">na denominação do <em>header</em></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

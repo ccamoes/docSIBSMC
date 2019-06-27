@@ -1,0 +1,540 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>X-G - TRANSACÇÕES DO SERVIÇO MULTIBANCO</title>
+<script>top.captulos.location='indicex.htm#X';</script>
+</head>
+
+<body>
+
+<h2>G - TRANSACÇÕES </h2>
+
+<p>&nbsp;</p>
+
+<p>Neste grupo apuram-se todas as transacções, aceites e concluídas sem anomalias, que
+se encontrem registadas em cada <em>log</em> da SIBS (ficheiros que reflectem todos os
+movimentos processados no Serviço MB). </p>
+
+<p>A tarifação das transacções feitas na Rede Multibanco varia de acordo com escalões
+baseados na quantidade total de operações efectuadas ao longo do mês. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="G1">G1</a> - LEVANTAMENTOS - BANCO EMISSOR</h3>
+
+<p><br>
+<strong>G11 - De 1 a 50.000 <br>
+G12 - No excedente, de 50.001 a 200.000 <br>
+G13 - No excedente, de 200.001 a 500.000 <br>
+G14 - No excedente, de 500.001 a 1.200.000 <br>
+G15 - No excedente, de 1.200.001 a 2.500.000 <br>
+G16 - No excedente de 2.500.000 </strong></p>
+
+<p><br>
+A rubrica <strong>G1</strong> aplica-se aos levantamentos de numerário efectuados por
+cartões emitidos pelo Banco nos CA da rede MB, ou no estrangeiro. </p>
+
+<p><br>
+<em>Levantamentos em CAs do Banco com cartões não pertencentes ao Sistema MB:<br>
+</em>Engloba o número de levantamentos feitos em CA apoiado pelo Banco com cartões de
+Emissores que não sejam Bancos nacionais (ex.: cartões Unibanco, Visa Internacional,
+etc.).<br>
+As receitas destas transacções de cartões internacionais em CA, revertem a favor do
+Banco de Apoio do terminal, sendo a instituição creditada em 75% e a Entidade
+Representante em 25% da receita. </p>
+
+<p>Nota: Quando os levantamentos são em CAs apoiados pelo próprio Banco Emissor e dos
+tipos C (Atrib. Banco) ou D (Duplo Banco), aplica-se a rubrica <a href="x-g.htm#G6"><strong>G6</strong></a>,
+e não a <strong>G1</strong>. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Ver <a href="x-g.htm#FC">descrição</a> apresentada no fim deste grupo. </p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>Ver descrição apresentada na rubrica <a href="x-g.htm#A">G2</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="G2">G2</a> - OUTRAS OPERAÇÕES </h3>
+
+<p><br>
+<strong>G21 - De 1 a 40.000 <br>
+G22 - No excedente, de 40.001 a 120.000 <br>
+G23 - No excedente, de 120.001 a 300.000 <br>
+G24 - No excedente, de 300.001 a 600.000 <br>
+G25 - No excedente, de 600.001 a 1.200.000 <br>
+G26 - No excedente de 1.200.000 </strong></p>
+
+<p style="page-break-before: always"><br>
+Esta rubrica incide sobre todas as&nbsp;transacções efectuadas, por cartões emitidos
+pelo Banco excepto levantamentos (<a href="x-g.htm#G1">G1</a>/<a href="x-g.htm#G6">G6</a>)
+e compras (<a href="x-g.htm#G4">G4</a>). No Pagamento de Serviços/Compras, ou Serviço
+Especial, informado em <em>real-time</em> à entidade prestadora do serviço, o Banco
+Representante do prestador do serviço também paga à SIBS esta tarifa, em acréscimo do
+pago pelo BE do cartão utilizado no pagamento. Nas compras efectuadas por
+cartões nacionais no estrangeiro em que os Emissores processam os dois tempos da
+operação (autorização e movimento firme), a rubrica é aplicada duas vezes (uma por
+cada registo de <a href="../l-iii/dst-1.htm#= 1">tipo 1</a> ou <a
+href="../l-iii/dst-1.htm#= 2">tipo 2</a> do MDST5 e por cada <a
+href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>).</p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Ver <a href="x-g.htm#FC">descrição</a> apresentada no fim deste grupo. </p>
+
+<p><br>
+<strong><a name="A">A</a>presentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos2.htm#110">110</a>) data-valor (8)</li>
+  <li>(<a href="../../Campos/campos2.htm#101" target="explicac">101</a>)+(<a target="explicac"
+    href="../../Campos/campos2.htm#102">102</a>) aplicação e nome do ficheiro (1)+(4)</li>
+  <li>(<a href="../../Campos/campos1.htm#061" target="explicac">061</a>) identificação e
+    sequência do ficheiro (11)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica G1/G2</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+3G1 LEVANTAMENTOS-BAN.EMI.
+4G1120020204MEDST00020020204         DE 1 A 50000          000000000014000000000068030000000095242D
+&#133;
+4G1120020204MEDST00020020204         DE 1 A 50000          000000000014000000000330770000000463078D
+4G1220020204MEDST00020020204         EXC. 50001 A 200000   000000000011500000000280950000000323093D
+&#133;
+4G1220020204MEDST00020020204         EXC. 50001 A 200000   000000000011500000000244120000000280738D
+4G1320020204MEDST00020020204         EXC.200001 A 500 000  000000000010000000001401970000001401970D
+&#133;
+4G1320020205MEDST00020020205         EXC.200001 A 500 000  000000000010000000001564690000001564690D
+4G1420020205MEDST00020020205         EXC. 500 001  1200 000000000000008500000000958590000000814802D
+&#133;
+4G1420020209MEDST00020020209         EXC. 500 001  1200 000000000000008500000000015070000000012810D
+6G1 0000040486040D
+3G2 OUTR. TRANS. - BAN.EMI
+4G2120020204MEDST00020020204         DE 1 A 40 000         000000000012000000000069960000000083952D
+&#133;
+4G2120020204MEDST00020020204         DE 1 A 40 000         000000000012000000000250440000000300528D
+4G2220020204MEDST00020020204         EXC.40001 A 120000    000000000010000000000800000000000800000D
+&#133;
+4G2320020204MEDST00020020204         EXC.12001 A 300000    000000000008000000001319830000001055864D
+4G2320020204MEDST00020020204         EXC.12001 A 300000    000000000008000000000480170000000384136D
+4G2420020204MEDST00020020204         EXC.300001 A 600000   000000000006500000001433680000000931892D
+&#133;
+4G2420020204MEDST00020020204         EXC.300001 A 600000   000000000006500000001402440000000911586D
+6G2 0000060485947D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><a name="G4">G4</a> - COMPRAS TPA</h3>
+
+<p><br>
+<strong>G41 - De 1 a 200.000<br>
+G42 - No excedente, de 200.001 a 500.000<br>
+G43 - No excedente, de 500.001 a 1.200.000<br>
+G44 - No excedente, de 1.200.001 a 2.500.000<br>
+G45 - No excedente, de 2.500.000</strong></p>
+
+<p><br>
+Nesta rubrica são facturados ao Banco de Apoio do Comerciante ou <em>Acquirer</em>
+todos os movimentos feitos em TPA com valor contabilístico e bem concluídos (ex.: compra
+e devolução). </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Ver <a href="x-g.htm#FC">descrição</a> apresentada no fim deste grupo. </p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos2.htm#110">110</a>) data-valor (8)</li>
+  <li>(<a href="../../Campos/campos2.htm#101" target="explicac">101</a>)+(<a target="explicac"
+    href="../../Campos/campos2.htm#102">102</a>) aplicação e nome do ficheiro (1)+(4)</li>
+  <li>(<a href="../../Campos/campos1.htm#061" target="explicac">061</a>) identificação e
+    sequência do ficheiro (11)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica G4</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+3G4 TRANSA. TPA BAN. APOIO
+4G4120020204MEDST00020020204         DE 1 A 200000         000000000004000000000318890000000127556D
+&#133;
+4G4120020204MEDST00020020204         DE 1 A 200000         000000000004000000000258900000000103560D
+4G4220020204MEDST00020020204         EXCED. 200001 500000  000000000003500000000045060000000015771D
+&#133;
+4G4220020204MEDST00020020204         EXCED. 200001 500000  000000000003500000001056530000000369786D
+4G4320020204MEDST00020020204         EXCED. 500001 1200000 000000000003000000001117380000000335214D
+&#133;
+4G4320020206MEDST00020020206         EXCED. 500001 1200000 000000000003000000000995740000000298722D
+4G4420020206MEDST00020020206         EXCED.1200001 2500000 000000000002500000000654320000000163580D
+&#133;
+4G4420020211MEDST00020020211         EXCED.1200001 2500000 000000000002500000001651290000000412823D
+4G4520020211MEDST00020020211         EXCEDENTE DE 2500000  000000000002000000000230510000000046102D
+&#133;
+4G4520020301MEDST00020020301         EXCEDENTE DE 2500000  000000000002000000001605600000000321120D
+6G4 0000015818042D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><a name="G5">G5</a> - TRANSACÇÕES - BANCO DE APOIO
+DE COMERCIANTE PMB</h3>
+
+<p><br>
+<strong>G51 - Por lote de compras PMB depositado <br>
+G52 - Tarifa mínima por lote de compras PMB depositado <br>
+G53 - Tarifa máxima por lote de compras PMB depositado</strong></p>
+
+<p><br>
+Os Bancos de Apoio ao serviço PMB são facturados por cada lote de pagamentos PMB
+depositado numa conta residente no Banco. </p>
+
+<p>A tarifa <strong>G52</strong> aplica-se apenas quando o valor da tarifa <strong>G51</strong>
+apurado para o total das compras depositadas, numa mesma operação de depósito, lhe for
+inferior. A tarifa <strong>G53</strong> aplica-se apenas quando o valor da tarifa <strong>G51</strong>
+apurado para o total das compras depositadas, numa mesma operação de depósito, lhe for
+superior. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Ver <a href="x-g.htm#FC">descrição</a> apresentada no fim deste grupo. </p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos2.htm#110">110</a>) data-valor (8)</li>
+  <li>(<a href="../../Campos/campos2.htm#101" target="explicac">101</a>)+(<a target="explicac"
+    href="../../Campos/campos2.htm#102">102</a>) aplicação e nome do ficheiro (1)+(4)</li>
+  <li>(<a href="../../Campos/campos1.htm#061" target="explicac">061</a>) identificação e
+    sequência do ficheiro (11)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13) *</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13) *</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<blockquote>
+  <p>* Apenas para as rubricas <strong>G52</strong> e <strong>G53.</strong></p>
+</blockquote>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica G5</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+3G5 TRANSA.BAN.APOIO COMER
+4G5120020204MEDST00020020204         POR LOTE COMP.PMB DEP.000000000000000000000000000000000000060D
+&#133;
+4G5120020228MEDST00020020228         POR LOTE COMP.PMB DEP.000000000000000000000000000000000000005D
+4G5220020204MEDST00020020204         TAR.MIN.LOT.COMP.PMB  000000000005000000000000060000000000030D
+&#133;
+4G5220020301MEDST00020020301         TAR.MIN.LOT.COMP.PMB  000000000005000000000000400000000000200D
+6G5 0000000007250D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><a name="G6">G6</a> - TRANSACÇÕES CA COM TARIFA
+REDUZIDA </h3>
+
+<p><br>
+<strong>G61 &#150; CAs com mais de 1.000 operações <br>
+G62 &#150; CAs com menos de 1.000 operações</strong></p>
+
+<p><br>
+A rubrica <strong>G61</strong> aplica-se às operações realizadas por cartões emitidos
+pelo Banco de Apoio em CAs do tipo 3 ou 4 com mais de 1.000 operações realizadas por
+cartões emitidos por outros Bancos. A rubrica <strong>G62</strong> aplica-se também aos
+CAs do tipo 3 ou 4 com menos de 1.000 operações realizadas com cartões de outros
+Bancos, incidindo sobre a diferença entre 1.000 e o número de operações realizadas. </p>
+
+<p>Estas transacções não somam para o cálculo dos escalões das rubricas <a
+href="x-g.htm#G1"><strong>G1</strong></a> e <a href="x-g.htm#G2"><strong>G2</strong></a>. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Dada a particularidade de aplicação desta rubrica, o controlo a efectuar tem de
+recorrer ao ficheiro Origens (<a href="../l-iii/ori.htm">MORI5</a>) para além do
+indicado diariamente no ficheiro de Destinos (<a href="../l-iii/dst-1.htm">MDST5</a>)
+transacção a transacção (<strong>G6</strong>). O MORI5 inclui o campo (<a
+href="../../Campos/campos2.htm#148" target="explicac">148</a> - TIPO CA) no <a
+href="../l-iii/ori.htm#= 3">registo tipo 3</a>, de modo a possibilitar a identificação
+dos CAs que são propriedade do Banco.</p>
+
+<p>No fim do mês é apurado se no terminal ocorreram ou não mais de 1.000 transacções
+realizadas com cartões emitidos por outros Bancos, sendo assim definido se se aplica a
+rubrica G61 ou G62.</p>
+
+<p>Para o Banco controlar a aplicação da rubrica, deve totalizar para o CA em causa as
+rubricas <a href="x-o.htm#O21">O21</a> e <a href="x-o.htm#O22">O22</a> informadas no <a
+href="../l-iii/ori.htm#= 3">registo tipo 3</a> do MORI5. Estas identificam as
+transacções realizadas por clientes de outros Bancos no CA propriedade do Banco.</p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#408">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13) </li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13) </li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica G6</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+3G6 TRAN. CA C/ CUSTO RED.
+4G6120020228                         CAS 1000 OU MAIS OP.  000000000000000000006633050000000000000D
+4G6220020228                         CAS MENOS DE 1.000 OP.000000000005500000000217080000000119394D
+6G6 0000000119394D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><a name="G8">G8</a> - AUTORIZAÇÃO <em>ONLINE</em>
+EM TPA</h3>
+
+<p><br>
+<strong><a name="G81">G81</a> - De 1 a 200.000 <br>
+<a name="G82">G82</a> - No excedente, de 200.001 a 500.000 <br>
+<a name="G83">G83</a> - No excedente, de 500.001 a 1.200.000 <br>
+<a name="G84">G84</a> - No excedente, de 1.200.001 a 2.500.000 <br>
+<a name="G85">G85</a> - No excedente de 2.500.000 </strong></p>
+
+<p><br>
+A rubrica <strong>G8</strong> é aplicada no âmbito de operações TPA que se
+estabeleçam a dois tempos e em que a autorização de pagamento é efectuada em <em>online</em>,
+sendo o movimento firme contabilístico efectuado posteriormente. Esta rubrica incide
+sobre o <em>Acquirer</em> do cartão utilizado, sendo o movimento firme alvo de
+tarifação ao <em>Acquirer</em> ou ao Banco de Apoio (rubrica <a
+href="x-g.htm#G4"><strong>G4</strong></a>). Não são abrangidas as operações efectuadas
+em TPA no estrangeiro, bem como as que forem alvo de tarifação específica, decorrente
+de contratos entre a SIBS e o Comerciante. O serviço MBNet é alvo de
+aplicação desta rubrica nos moldes descritos.</p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Ver <a href="x-g.htm#FC">descrição</a> apresentada no fim deste grupo. </p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos2.htm#110">110</a>) data-valor (8)</li>
+  <li>(<a href="../../Campos/campos2.htm#101" target="explicac">101</a>)+(<a target="explicac"
+    href="../../Campos/campos2.htm#102">102</a>) aplicação e nome do ficheiro (1)+(4)</li>
+  <li>(<a href="../../Campos/campos1.htm#061" target="explicac">061</a>) identificação e
+    sequência do ficheiro (11)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica G8</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+3G8 AUTORIZAÇÃO TPA                                                      
+4G8120020204MEDST00020020204         DE 1 A 200000         000000000004000000000046780000000018712D
+&#133;
+4G8120020204MEDST00020020204         DE 1 A 200000         000000000004000000000013940000000005576D
+4G8220020204MEDST00020020204         EXCED. 200001 500000  000000000003500000000064810000000022684D
+&#133;
+4G8220020204MEDST00020020204         EXCED. 200001 500000  000000000003500000000251570000000088050D
+4G8320020204MEDST00020020204         EXCED. 500001 1200000 000000000003000000000635140000000190542D
+&#133;
+4G8320020207MEDST00020020207         EXCED. 500001 1200000 000000000003000000000091650000000027495D
+4G8420020207MEDST00020020207         EXCED.1200001 2500000 000000000002500000000355520000000088880D
+&#133;
+4G8420020213MEDST00020020213         EXCED.1200001 2500000 000000000002500000000304790000000076198D
+4G8520020213MEDST00020020213         EXCEDENTE DE 2500000  000000000002000000000537110000000107422D
+&#133;
+4G8520020301MEDST00020020301         EXCEDENTE DE 2500000  000000000002000000000831700000000166340D
+6G8 0000014652623D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p style="page-break-before: always"><br>
+<a name="FC"><strong>Forma de Controlo</strong></a></p>
+
+<p>Através do tratamento do ficheiro de Destinos (<a href="../l-iii/dst-1.htm">MDST5</a>),
+o Banco pode implementar mecanismos que permitam controlar o número de operações
+executadas na Rede Multibanco e a respectiva tarifa aplicada. </p>
+
+<p>Incluem-se no Ficheiro Destinos todas as operações que respeitem a cartões ou contas
+do Banco. Informam-se também as operações que, não tendo valor contabilístico, são
+objecto de tarifário interbancário ou de facturação pela SIBS (ex: Pedido de Livro de
+Cheques, Alteração de PIN, Consulta de Baixo Valor e Consulta a Movimentos MB). </p>
+
+<p>O campo (<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) <span
+>TARSIBS-E</span> permite ao Banco actualizar contadores por grupo de tarifário
+indicado, para que no final do mês possa validar a factura da SIBS. Assim, deve
+totalizar-se diariamente cada uma das operações realizadas e identificadas pela rubrica
+G. </p>
+
+<p>Deve também ser utilizado o ficheiro Origens (<a href="../l-iii/ori.htm">MORI5</a>),
+campo (<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) <span
+>TARSIBS-E</span>, de modo a controlar as seguintes operações: 
+
+<ul>
+  <li>Levantamentos efectuados por clientes &#145;<em>not-on-us</em>&#146; (internacionais) (<a
+    href="x-g.htm#G1"><strong>G1</strong></a>) </li>
+  <li>Outras operações efectuadas por clientes '<em>not-on-us</em>' (internacionais) (<a
+    href="x-g.htm#G2"><strong>G2</strong></a>) </li>
+</ul>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span> <br>
+    Para efeitos de apresentação e por uma questão prática mantém-se o layout anterior nas
+    tabelas auxiliares. </em></td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="x2.htm">Anterior</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

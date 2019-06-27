@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="_self">
+<script>top.captulos.location='indicea.htm#A';</script>
+
+<title>A.4 PORTA MOEDAS MULTIBANCO</title>
+</head>
+
+<body>
+
+<h1>A.4 PORTA MOEDAS MULTIBANCO</h1>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.4.1">A.4.1</a> INTRODUÇÃO </h2>
+
+<p><br>
+Porta Moedas Multibanco (PMB) é a designação de um produto que visa proporcionar o
+pagamento electrónico de operações de montante reduzido, ou para instalar em ambientes
+onde as anteriores formas de pagamento eram inadequadas. </p>
+
+<p>O serviço PMB implementado mantém-se, quer no que se refere à
+possibilidade de emissão de novos cartões como nos processamentos efectuados sobre os
+cartões com PMB já emitidos. No entanto, não serão efectuados desenvolvimentos
+adicionais à solução actual. </p>
+
+<p>Este capítulo inventaria as várias tarefas que um Emissor de cartões PMB ou Entidade
+de Apoio ao Comerciante devem conhecer. </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.4.2">A.4.2</a>&nbsp;SERVIÇO PMB NA ÓPTICA DE EMISSOR</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.4.2.1">A.4.2.1</a> ENCOMENDAS DE PLÁSTICOS</h3>
+
+<p><br>
+O serviço PMB é baseado na tecnologia de cartão com micro-circuito integrado (<i>chip</i>)
+no cartão. As condições de preços mais elevados para estes cartões, implicam que as
+suas encomendas sejam feitas ao fornecedor pela SIBS. Assim, os cartões PMB anónimos
+começaram a ser encomendados em 1993, segundo quantidades variáveis por cada Emissor, e
+com uma imagem uniforme onde apenas o logotipo variou.&nbsp; </p>
+
+<p>Os Emissores podem apresentar à SIBS Cartões encomendas com as
+suas próprias imagens, desde que se assegure o logotipo PMB. </p>
+
+<p>Quanto aos cartões combinados, os Emissores devem apresentar à SIBS
+Cartões as quantidades pretendidas juntamente com as imagens a utilizar. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.4.2.2">A.4.2.2</a>&nbsp; PRODUÇÃO DE CARTÃO </h3>
+
+<p><br>
+<strong>Cartões anónimos PMB</strong></p>
+
+<p>A produção de cartões PMB anónimos pode ser efectuada por envio do ficheiro de
+Cartões PMB Anónimos (<a href="../l-iii/epmb.htm">EPMB</a>), por teletransmissão. A
+produção de cartões inicia-se quando o representante do Emissor acede ao sistema. No
+caso de serem posicionados códigos de agência para o pedido dos cartões é emitida uma
+listagem que identifica as <i>tranches</i> produzidas para cada Agência (ver Livro III,
+capítulo <a href="../l-iii/e6.htm">E.6</a>). </p>
+
+<p><strong><br>
+Cartões combinados</strong></p>
+
+<p>Os cartões de débito/crédito com PMB integrado (chamados cartões combinados) são
+emitidos através do ficheiro de Emissão de Cartões (<a href="../l-iii/eecb.htm">EECB</a>).
+Para a emissão de cartões combinados é necessário definir um contrato próprio.&nbsp; </p>
+
+<p style="page-break-before: always" >A possibilidade de emissão de cartões
+combinados depende da tecnologia associada ao cartão. O serviço PMB actualmente
+existente não tem suporte nas especificações EMV. Assim, não pode ser efectuada a
+emissão de cartões com PMB integrado para cartões que possuam <i>chip</i> EMV. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.4.2.3">A.4.2.3</a> SERVIÇOS DISPONÍVEIS PARA O CLIENTE </h3>
+
+<p><br>
+O serviço PMB executa-se pelo &quot;carregamento&quot; do Porta Moedas a partir de um
+cartão de débito/crédito nacional ou &quot;<i>not-on-us&quot;</i>. Com essa
+importância previamente carregada, o cartão passa a poder efectuar operações de
+pagamento em terminais sem comunicação e munidos de módulos de pagamento (OM) do
+serviço PMB. </p>
+
+<p>Assim, a operação de carregamento PMB encontra-se disponível nos Caixas Automáticos
+Multibanco. </p>
+
+<p>O cartão que desencadeia a operação é debitado, pelo que há uma mensagem <i>real-time</i>
+(<a target="main" href="../l-iii/116x316x.htm">1161</a>), necessária para este serviço.
+Os outros cenários podem ser usados. </p>
+
+<p>O cliente pode consultar o seu saldo disponível sempre que introduza o seu cartão num
+terminal de pagamento. Porém disponibilizou-se um serviço mais completo principalmente
+para cartões combinados. A Consulta a PMB está disponível nos Caixas Automáticos
+Multibanco (ver Modelo Global, Livro II, capítulos <a href="b1-a.htm#B.1.5.4.20">B.1.5.4.20</a>
+e <a href="a6.htm#A.6.2" target="main">A.6.2</a>). </p>
+
+<p><br>
+O utilizador do serviço PMB encontra uma variada gama de terminais aceitantes do cartão:
+
+<ul>
+  <li>Terminais de Pagamento Automático com <em>pinpad</em> capacitado para leitura do <i>chip</i>,
+    onde o cliente pode optar entre o uso do cartão com a função de crédito, débito ou
+    pré-pago (PMB); </li>
+  <li>Terminais sem comunicação que funcionam com pilhas (ex.: em táxis); </li>
+  <li>Terminais em estabelecimentos com um terminal com comunicação e os outros sem
+    comunicações; </li>
+  <li>Terminais especializados para venda de bebidas, produtos alimentares, transportes,
+    parques, etc. (ver capítulo<a target="_self" href="b1-a.htm"> B</a> e anexo <a
+    target="main" href="c_a2.htm">C.AX.2</a>). </li>
+</ul>
+
+<p><br>
+O cliente também tem à sua disposição na rede de CAs, a operação &quot;descarga
+PMB&quot;. Esta corresponde à operação inversa do carregamento PMB, isto é, o saldo do
+PMB é creditado na conta do cartão de pagamento que o cliente utilizar e o saldo do
+cartão PMB fica a zeros. </p>
+
+<p>O crédito ao cliente é transmitido ao Emissor do cartão de pagamento através do
+ficheiro <a href="../l-iii/dst-1.htm">MDST5</a>, por contrapartida do débito à conta <em>float</em>
+do Emissor do PMB, enviada no mesmo ficheiro.</p>
+
+<p>Mesmo após a data de expiração do cartão PMB, o cliente ainda dispõe de 15 dias
+para efectuar a descarga do PMB num CA.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.4.3">A.4.3</a> SERVIÇO PMB NA ÓPTICA DE ENTIDADE DE APOIO</h2>
+
+<p><br>
+A Entidade de Apoio ao Comerciante pode actualizar as suas condições contratuais e
+definir tarifas para o serviço PMB através do Terminal de Serviços SIBS (ver capítulo <a
+href="i3.htm#I.3.3" target="main">I.3.3</a>). </p>
+
+<p>Os comerciantes que solicitarem a emissão de extracto e tenham o serviço PMB passam a
+ter a listagem acrescida com esses dados (ver exemplos no anexo <a target="main"
+href="c_a1.pdf">C.AX.1</a>). </p>
+
+<p>Os estabelecimentos que possuírem terminais sem comunicações ou utilizarem terminais
+que impliquem cartões de depósito devem solicitá-lo à sua Entidade de apoio. Na
+listagem de Marcas/Modelos TPA (anexo <a target="main" href="c_a2.htm">C.AX.2</a>) a SIBS
+indica aqueles que necessitam de cartão depósito. </p>
+
+<p>O depósito de operações no Sistema Multibanco faz-se pelo uso do cartão depósito
+nos Caixas Automáticos Multibanco (ver Livro II, capítulo <a target="main"
+href="b1-a.htm#B.1.5.4.21">B.1.5.4.21</a>)</p>
+
+<p><br>
+No caso dos TPAs, as compras com PMB são agrupadas em lotes, iniciados e terminados pela
+iniciativa do operador ou obrigatoriamente quando há um fecho de período local. Este
+lotes de operações são recebidos na SIBS e não são totalizados com o fecho local mas
+separadamente lote por lote. </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.4.4">A.4.4</a>&nbsp;ENCOMENDAS DE PLÁSTICO PARA CARTÕES DE DEPÓSITO</h2>
+
+<p><br>
+Como os cartões de depósito têm plásticos com características completamente
+diferentes dos cartões PMB, um preço mais elevado, e como se prevê que sejam
+necessários relativamente poucos cartões, a SIBS Cartões efectua
+encomendas pontuais com uma única imagem, em que a identificação do Banco é feita no <i>embossing</i>
+do cartão. </p>
+
+<p>Os cartões são vendidos às Entidades que forem apoiantes de terminais e Comerciantes
+que necessitem dos mesmos.&nbsp; </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.4.5">A.4.5</a> PRODUÇÃO DE CARTÃO</h2>
+
+<p><strong><br>
+Cartões de depósito</strong></p>
+
+<p>Os cartões de depósito necessários para os terminais sem comunicações são
+solicitados através do Terminal de Serviços SIBS na sua funcionalidade <a
+href="i3.htm#I.3.2">Pagamento Automático e Terminais PMB</a>, tal como os cartões de
+supervisor. </p>
+
+<p class="dta"><a target="main" href="a3.htm"><br>
+Anterior</a>/<a target="main" href="a5.htm">Seguinte</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

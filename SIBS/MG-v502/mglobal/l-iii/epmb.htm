@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>CARTÕES PMB ANÓNIMOS</title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: &nbsp; CARTÕES PMB ANÓNIMOS </td>
+        <td class="fichdta">&quot;FICH&quot; = EPMB </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Este ficheiro permite a emissão de cartões Porta Moedas MB anónimos.</p>
+
+<p>No caso do Banco emissor necessitar da Compensação repartida por Agência emissora do
+PMB, pode enviar este ficheiro com o número de cartões PMB necessários por cada
+agência.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registos: 
+
+<ul>
+  <li>um registo de <em>Header</em> &quot;TIPREG=0&quot;;</li>
+</ul>
+
+<ul>
+  <li>um registo de parâmetros &quot;TIPREG=1&quot;, único, serve para identificar o
+    plástico a usar e a aplicação do PMB;</li>
+</ul>
+
+<ul>
+  <li>um registo de detalhe &quot;TIPREG=2&quot;, pode ter uma única ocorrência no caso do
+    Banco não necessitar cartões PMB por agência, ou não pretender usar este processo para
+    a sua identificação; pode ter várias ocorrências no caso do Banco indicar o número de
+    PMB a produzir por cada agência;</li>
+</ul>
+
+<ul>
+  <li>o registo de <em>Trailer</em> &quot;TIPREG=9&quot;. </li>
+</ul>
+
+<p><br>
+O ficheiro é constituído por registos de comprimento fixo com 46 bytes.</p>
+
+<p><br>
+<strong>Nota: <br>
+</strong>O processamento de cada ficheiro MEPMB recebido pela SIBS, devolve ao Banco
+emissor o correspondente ficheiro de erros (<a href="eerr.htm" target="main">MEERR</a>).</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">EPMB - TIPO DE REGISTO = 1 (PMB ANÓNIMOS - PARÂMETROS)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">APLEXT</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#441">441</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTRATO</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#469">469</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">EPMB - TIPO DE REGISTO = 2 (PMB
+ANÓNIMOS - DETALHE)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODAGE</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#134">134</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">AGATRI</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">6</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#440">440</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARCLIPMB</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#439">439</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTPMB</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#436">436</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+Podem existir num ficheiro tantos registos de detalhe quantas as agências emissoras.</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

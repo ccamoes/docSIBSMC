@@ -1,0 +1,758 @@
+BODY, BLOCKQUOTE, P, OL, UL, DL, DT, DD {
+	font-family: Arial;
+	font-size: 10pt;
+	background-color: #ffffff;
+	color: #000080;
+	text-align: justify;
+}
+
+A:link {
+	font-family: Arial;
+	color : #0000ff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+A:active {
+	font-family: Arial;
+	color : #ff0000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+A:visited {
+	font-family: Arial;
+	color : #0000ff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+A:hover {
+	font-family: Arial;
+	color : #ff0000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+A.bookm:link {
+	font-family: Arial;
+	text-decoration: underline;
+}
+
+H1 {
+	font-family: Arial;
+	font-size: 16pt;
+	color: #000080;
+	text-align: left;
+}
+
+H2 {
+	font-family: Arial;
+	font-size: 13pt;
+	color: #000080;
+	text-align: left;
+}
+
+H3 {
+	font-family: Arial;
+	font-size: 11pt;
+	color: #000080;
+	text-align: left;
+}
+
+H4 {
+	font-family: Arial;
+	font-size: 11pt;
+	text-decoration: underline;
+	color: #000080;
+	text-align: left;
+}
+
+H5 {
+	font-family: Arial;
+	font-size: 10pt;
+	font-style: italic;
+	color: #000080;
+	text-align: left;
+}
+
+H6 {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #000080;
+	text-align: left;
+}
+
+TD {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+	text-align: center;
+	vertical-align: top;
+}
+
+TH {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+	text-align: center;
+	vertical-align: middle;
+}
+
+TD.a {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+	text-align: center;
+	vertical-align: top;
+}
+
+TH.a {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+	text-align: center;
+	vertical-align: middle;
+}
+
+TD.dez {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #000080;
+	text-align: center;
+	vertical-align: top;
+}
+
+TH.dez {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #000080;
+	text-align: center;
+	vertical-align: middle;
+}
+
+TD.deza {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #006400;
+	text-align: center;
+	vertical-align: top;
+}
+
+TH.deza {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #006400;
+	text-align: center;
+	vertical-align: middle;
+}
+
+TD.esq {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+	text-align: left;
+	vertical-align: top;
+}
+
+
+TH.esq {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+	text-align: left;
+	vertical-align: middle;
+}
+
+TD.esqa {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+	text-align: left;
+	vertical-align: top;
+}
+
+TH.esqa {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+	text-align: left;
+	vertical-align: middle;
+}
+
+TD.esq10 {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #000080;
+	text-align: left;
+	vertical-align: top;
+}
+
+TD.esq10a {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #006400;
+	text-align: left;
+	vertical-align: top;
+}
+
+
+TH.esq10 {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #000080;
+	text-align: left;
+	vertical-align: top;
+}
+
+TH.esq10a {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #006400;
+	text-align: left;
+	vertical-align: top;
+}
+
+TD.esqcor {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #0080C0;
+	text-align: left;
+	vertical-align: top;
+}
+
+TD.esqmid {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+	text-align: left;
+	vertical-align: middle;
+}
+
+TD.esqmida {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+	text-align: left;
+	vertical-align: middle;
+}
+
+TD.mid {
+	vertical-align: middle;
+}
+
+TD.mida {
+	vertical-align: middle;
+	color: #006400;
+}
+
+TD.dta {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+	text-align: right;
+	vertical-align: top;
+}
+
+TD.dtamid {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+	text-align: right;
+	vertical-align: middle;
+}
+
+
+TD.dtaa {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+	text-align: right;
+	vertical-align: top;
+}
+
+TD.dtamida {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+	text-align: right;
+	vertical-align: middle;
+}
+
+
+TD.dta10 {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #000080;
+	text-align: right;
+	vertical-align: top;
+}
+
+TD.dta10a {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #006400;
+	text-align: right;
+	vertical-align: top;
+}
+
+TD.just {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+	text-align: justify;
+	vertical-align: top;
+}
+
+TD.justa {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+	text-align: justify;
+	vertical-align: top;
+}
+
+TD.just8 {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+	text-align: justify;
+	vertical-align: top;
+}
+
+TD.just8a {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #006400;
+	text-align: justify;
+	vertical-align: top;
+}
+
+TD.just10 {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #000080;
+	text-align: justify;
+	vertical-align: top;
+}
+
+TD.just10a {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #006400;
+	text-align: justify;
+	vertical-align: top;
+}
+
+TD.oito {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+}
+
+TD.oitov {
+	font-family: Arial;
+	font-size: 8pt;
+	background-color: #D2FFD2;
+	color: #006400;
+}
+
+TD.oitoa {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #006400;
+}
+
+TD.oitoesq {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+	text-align: left;
+}
+
+TD.oitoesqa {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #006400;
+	text-align: left;
+}
+
+TD.oitodta {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+	text-align: right;
+}
+
+TD.oitomid {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+	vertical-align: middle;
+}
+
+TD.oitomida {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #006400;
+	vertical-align: middle;
+}
+
+TH.oitof {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #E7E7E7;
+}
+
+TD.oitof {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+	background-color: #E7E7E7;
+}
+
+TD.oitomidf {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+	vertical-align: middle;
+	background-color: #E7E7E7;
+}
+
+TD.fundo {
+	background-color: #E7E7E7;
+}
+
+TD.fundoa {
+	background-color: #E7E7E7;
+	color: #006400;
+}
+
+TD.fundoesq {
+	background-color: #E7E7E7;
+	text-align: left;
+}
+
+TD.fundomid {
+	background-color: #E7E7E7;
+	vertical-align: middle;
+}
+
+TH.fundo {
+	background-color: #E7E7E7;
+}
+
+TH.fundoa {
+	background-color: #E7E7E7;
+	color: #006400;
+}
+
+TD.times11 {
+	font-family: Times New Roman;
+	font-size: 11pt;
+	color: #000080;
+	text-align: left;
+}
+
+TH.times11 {
+	font-family: Times New Roman;
+	font-size: 11pt;
+	color: #000080;
+	background-color: #E7E7E7;
+}
+
+TD.titulo {
+	font-family: Arial;
+	font-size: 12pt;
+	color: #000080;
+	font-weight: bold;
+}
+
+TD.fichesq {
+	font-family: Arial;
+	font-size: 11pt;
+	color: #000080;
+	font-weight: bold;
+	text-align: left;
+}
+
+TD.fichdta {
+	font-family: Arial;
+	font-size: 11pt;
+	color: #000080;
+	font-weight: bold;
+	text-align: right;
+}
+
+TD.outfundo {
+	background-color: #EFEFEF;
+}
+
+TD.corfundo {
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: bold;
+	background-color: #E7E7E7;
+	color: #0080C0;
+	vertical-align: middle;
+	text-align: left;
+}
+
+.corfund2 {
+	font-size: 10pt;
+	font-weight: normal;
+	background-color: #E7E7E7;
+	color: #0080C0;
+	text-align: center;
+}
+
+.cor {
+	color: #0080C0;
+}
+
+.a {
+	color: #006400;
+}
+
+.v {
+	background-color: #D2FFD2;
+	color: #006400;
+}
+
+TD.esqv {
+	background-color: #D2FFD2;
+	color: #006400;
+	text-align: left;
+}
+
+TD.dtav {
+	background-color: #D2FFD2;
+	color: #006400;
+	text-align: right;
+}
+
+.dta { 
+	text-align: right;
+} 
+
+.center { 
+	text-align: center;
+} 
+
+.centerv { 
+	background-color: #D2FFD2;
+	text-align: center;
+} 
+
+.oito {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+}
+
+.oitoa {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #006400;
+}
+
+.oitov {
+	font-family: Arial;
+	font-size: 8pt;
+	background-color: #D2FFD2;
+	color: #006400;
+}
+
+.nove {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+}
+
+.novea {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+}
+
+.novev {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+	background-color: #D2FFD2;
+}
+
+.tipreg {
+	font-family: Trebuchet MS;
+	font-size: 10pt;
+	color: #000080;
+	text-align: left;
+	font-weight: bold;
+}
+
+.tiprega {
+	font-family: Trebuchet MS;
+	font-size: 10pt;
+	color: #006400;
+	font-weight: bold;
+	text-align: left;
+}
+
+.courier {
+	font-family: Courier New;
+	font-size: 9pt;
+	color: #000080;
+}
+
+.courier7 {
+	font-family: Courier New;
+	font-size: 7pt;
+	color: #000080;
+}
+
+.narrow {
+	font-family: Arial Narrow;
+	font-size: 10pt;
+	color: #000080;
+}
+
+.narrowa {
+	font-family: Arial Narrow;
+	font-size: 10pt;
+	color: #006400;
+}
+
+.symbol {
+	font-family: Symbol;
+	font-size: 9pt;
+}
+
+.symbola {
+	font-family: Symbol;
+	font-size: 9pt;
+	color: #006400;
+}
+
+.tahoma {
+	font-family: Tahoma, Arial Narrow;
+	font-size: 8pt;
+	color: #000080;
+}
+
+.tahoesq {
+	font-family: Tahoma, Arial Narrow;
+	font-size: 8pt;
+	color: #000080;
+	text-align: left;
+}
+
+.tahomaa {
+	font-family: Tahoma, Arial Narrow;
+	font-size: 8pt;
+	color: #006400;
+}
+
+.tahoesqa {
+	font-family: Tahoma, Arial Narrow;
+	font-size: 8pt;
+	color: #006400;
+	text-align: left;
+}
+
+.tahomaa7 {
+	font-family: Tahoma, Arial Narrow;
+	font-size:7pt;
+	color: #006400;
+}
+
+.tahoma7 {
+	font-family: Tahoma, Arial Narrow;
+	font-size:7pt;
+	color: #000080;
+}
+
+.times10 {
+	font-family: Times New Roman;
+	font-size: 10pt;
+	color: #000080;
+}
+
+.verdana8 {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	color: #000080;
+}
+
+.verda8a {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	color: #006400;
+}
+
+.verdaesq {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	text-align: left;
+	color: #000080;
+}
+
+.verdesqa {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	text-align: left;
+	color: #006400;
+}
+
+.wingding {
+	font-family: Wingdings;
+	font-size: 13pt;
+	color: #000080;
+}
+
+.wingdina {
+	font-family: Wingdings;
+	font-size: 13pt;
+	color: #006400;
+}
+
+.wingdinv {
+	font-family: Wingdings;
+	font-size: 13pt;
+	color: #006400;
+	background-color: #D2FFD2;
+}
+
+.axcor {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #0080C0;
+	font-weight: bold;
+	text-align: center;
+}
+
+.axcor9 {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #0080C0;
+	text-align: center;
+}
+
+OL.negro {
+	font-weight: bold; 
+}
+
+UL.negro { 
+	font-weight: bold; 
+}
+
+UL.bullet {
+	list-style: url("images/bullet.gif"); 
+}
+
+UL.bulleta {
+	list-style: url("images/bullet.gif"); 
+	color: #006400;
+}

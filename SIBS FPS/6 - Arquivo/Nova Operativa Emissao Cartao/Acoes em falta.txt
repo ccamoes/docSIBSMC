@@ -1,0 +1,79 @@
+Passagens Nova operativa em falta
+
+NEEDAC0 - bloqueado no acesso DOFID
+NEEDAC1 - bloqueado no acesso DOFID
+
+NECECB0 - bloqueado no acesso PRN
+NECECB1 - bloqueado no acesso PRN
+NECECB3 - bloqueado no declare MCACC
+
+
+Alterações pos produção
+
+Desactivar em PPOR e RPOR
+Jobs
+PCECB0
+PCECB1
+PCECB3
+PCECB3T0
+PCECB3T1
+PCECB3T2
+PCECB9
+PCECB9# 
+PCECB91#
+PDACB0
+PDACB9
+PDACB9#
+PEDAC0
+PEDAC1
+PEDAC9
+PEDAC9# 
+PEDAC91#
+PERAC0 
+PERAC0#
+PCCCF0
+PRACB0 
+PRACB0#
+
+Prgramas (source/dbrm)
+NECECB0
+NECECB1
+NECECB3
+NECECB9
+NEDACB0
+NEDACB9
+NEEDAC0
+NEEDAC1
+NEEDAC9
+NECCCF0
+NEERAC0
+NERACB0
+
+Copybook
+MCECB
+MDACB
+MCEDAC
+MCCCF
+MCERAC
+MCRACB
+
+CFT
+PMEECB
+PMDACB
+PEDAC
+PMRACB
+PERAC
+PMECCF
+PERAC0
+PRACB0
+PCECB9
+PEDAC9
+
+Alterar
+Jobs
+PCFTSR
+
+Programas
+NECFTSR
+
+

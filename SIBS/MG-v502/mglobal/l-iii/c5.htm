@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>C.5 SESSÃO, REGIMES E OPERAÇÕES EFECTUADAS DENTRO DE UMA SESSÃO</title>
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicec.htm#C';</script>
+</head>
+
+<body>
+
+<h1>C.5 SESSÃO, REGIMES E OPERAÇÕES EFECTUADAS DENTRO DE UMA SESSÃO</h1>
+
+<p>&nbsp;</p>
+
+<p>Apresenta-se aqui mais um conceito OSI, o de regime:</p>
+
+<p>Regime é o período durante o qual uma parte dos comandos ou troca de informação é
+válida. Os regimes tornam-se mais restritos à medida que se limita o tipo de
+comandos/informação admitida. Pelo inverso, cada comando tem um regime em que é
+válido.</p>
+
+<p><br>
+Também aqui simplificamos as definições do modelo OSI, tanto mais que não se pretende
+abranger as áreas de '<em>File Access</em>' e '<em>File Management</em>'.</p>
+
+<p><img src="imagens3/c5-1.gif" alt="c5-1.gif" WIDTH="546" HEIGHT="154"></p>
+
+<p><br>
+A máquina que abre a sessão tem o seu controle, não podendo a outra enviar qualquer
+comando por sua iniciativa.</p>
+
+<p>A máquina que abre a sessão pode enviar ficheiros e/ou pedir à outra que lhe envie
+ficheiros. O pedido de recepção é feito com um comando '<em>invite</em>' e este comando
+pode pedir de uma só vez que a segunda máquina envie todos os ficheiros que tem para
+enviar. É apenas neste caso que a segunda máquina fica com iniciativa de enviar
+ficheiros, só a perdendo quando terminar aquela operação.</p>
+
+<p>Compete à máquina que abriu a sessão, fechá-la.</p>
+
+<p>Numa só sessão podem ser efectuadas todas as operações que o protocolo prevê,
+podendo cada uma ser repetida várias vezes.</p>
+
+<p class="dta"><br>
+<a href="c4.htm">Anterior</a>/<a href="c6.htm">Seguinte</a></p>
+</body>
+</html>

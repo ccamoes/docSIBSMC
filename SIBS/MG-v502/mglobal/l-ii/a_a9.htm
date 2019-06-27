@@ -1,0 +1,1462 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>DESCRIÇÃO DAS PISTAS MAGNÉTICAS</title>
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicea.htm#A';</script>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="4" cellspacing="0" width="95%">
+  <tr>
+    <td class="titulo"><strong>FORMATO DA PISTA 3 MULTIBANCO </strong></td>
+  </tr>
+</table>
+</center></div>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="0" cellspacing="0" cellpadding="2" width="90%">
+  <tr>
+    <td><strong><u>N. CAMPO</u> </strong></td>
+    <td colspan="2"><strong><u>COMPR.</u> </strong></td>
+    <td><strong><u>CONTEÚDO</u> </strong></td>
+    <td class="esq"><strong><u>DESCRIÇÃO</u> </strong></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td colspan="2"></td>
+    <td>STX </td>
+    <td class="esq">START SENTINEL </td>
+  </tr>
+  <tr>
+    <td>2 </td>
+    <td class="dta">2 </td>
+    <td></td>
+    <td>&quot;01&quot; </td>
+    <td class="esq">Estrutura dos dados </td>
+  </tr>
+  <tr>
+    <td>3 </td>
+    <td class="dta">14 </td>
+    <td></td>
+    <td>59 BBB D XXXXXXX CD </td>
+    <td class="esq">PAN </td>
+  </tr>
+  <tr>
+    <td>4 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>&quot;D&quot; </td>
+    <td class="esq">Separador </td>
+  </tr>
+  <tr>
+    <td>5 </td>
+    <td class="dta">3 </td>
+    <td></td>
+    <td>&quot;620&quot; </td>
+    <td class="esq">Código do País </td>
+  </tr>
+  <tr>
+    <td>6 </td>
+    <td class="dta">3 </td>
+    <td></td>
+    <td>&quot;000&quot;, &quot;620&quot; e &quot;978&quot;</td>
+    <td class="esq">Código da moeda </td>
+  </tr>
+  <tr>
+    <td>7 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>&quot;1&quot; ou &quot;0&quot;</td>
+    <td class="esq">Multiplic. de moeda </td>
+  </tr>
+  <tr>
+    <td>8(*) </td>
+    <td class="dta">4 </td>
+    <td></td>
+    <td>XXXX </td>
+    <td class="esq">Montante p/ período </td>
+  </tr>
+  <tr>
+    <td>9 </td>
+    <td class="dta">4 </td>
+    <td></td>
+    <td>XXXX </td>
+    <td class="esq">Saldo do período </td>
+  </tr>
+  <tr>
+    <td>10(*) </td>
+    <td class="dta">4 </td>
+    <td></td>
+    <td>ADDD </td>
+    <td class="esq">Data de inic. período </td>
+  </tr>
+  <tr>
+    <td>11(*) </td>
+    <td class="dta">2 </td>
+    <td></td>
+    <td>&quot;83&quot;, &quot;80&quot; ou &quot;01&quot; </td>
+    <td class="esq">Duração do período </td>
+  </tr>
+  <tr>
+    <td>12 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>&quot;3&quot; </td>
+    <td class="esq">N. tentativas de PIN </td>
+  </tr>
+  <tr>
+    <td>13 </td>
+    <td class="dta">6 </td>
+    <td></td>
+    <td>&quot;00XXXX&quot; </td>
+    <td class="esq">PVV - Nacional </td>
+  </tr>
+  <tr>
+    <td>14 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>&quot;0&quot;, &quot;1&quot;, &quot;8&quot; ou &quot;9&quot; </td>
+    <td class="esq">Controlo de trocas </td>
+  </tr>
+  <tr>
+    <td>15 </td>
+    <td class="dta">2 </td>
+    <td></td>
+    <td>&quot;40&quot;,&quot;49&quot; </td>
+    <td class="esq">Tipo conta/restr.PAN </td>
+  </tr>
+  <tr>
+    <td>16(*) </td>
+    <td class="dta">2 </td>
+    <td></td>
+    <td>&quot;4X&quot; ou &quot;2X&quot; </td>
+    <td class="esq">Tipo conta/restr.SAN </td>
+  </tr>
+  <tr>
+    <td>17 </td>
+    <td class="dta">2 </td>
+    <td></td>
+    <td>&quot;00&quot; </td>
+    <td class="esq">&quot; &quot; SAN2 </td>
+  </tr>
+  <tr>
+    <td>18(*) </td>
+    <td class="dta">4 </td>
+    <td></td>
+    <td>AAMM </td>
+    <td class="esq">Data expiração cartão </td>
+  </tr>
+  <tr>
+    <td>19 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>0, 1, 2, 3, 4, 5, 6 </td>
+    <td class="esq">N. sequência cartão </td>
+  </tr>
+  <tr>
+    <td>20 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>&quot;D&quot; </td>
+    <td class="esq">Separador </td>
+  </tr>
+  <tr>
+    <td>21 </td>
+    <td class="dta">15 </td>
+    <td></td>
+    <td>N. de CONTA </td>
+    <td class="esq">SAN-1 </td>
+  </tr>
+  <tr>
+    <td>22 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>&quot;D&quot; </td>
+    <td class="esq">Separador </td>
+  </tr>
+  <tr>
+    <td>24 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>&quot;D&quot; </td>
+    <td class="esq">Separador </td>
+  </tr>
+  <tr>
+    <td>25 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>&quot;0&quot; </td>
+    <td class="esq">Envia campo 27 centro </td>
+  </tr>
+  <tr>
+    <td>26 </td>
+    <td class="dta">6 </td>
+    <td></td>
+    <td>XXXXXX </td>
+    <td class="esq">CCD </td>
+  </tr>
+  <tr>
+    <td >27</td>
+    <td class="dta">8 </td>
+    <td></td>
+    <td >BBBBBB EE</td>
+    <td class="esq">BIN e Entensão de BIN</td>
+  </tr>
+  <tr>
+    <td >28</td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td >&quot;0&quot; ou &quot;1&quot;</td>
+    <td class="esq">Tipo de Pista</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta">10 </td>
+    <td></td>
+    <td>Disponível p/ futuras aplicações </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td >29.1 </td>
+    <td class="dta">2 </td>
+    <td></td>
+    <td>XX </td>
+    <td class="esq">N. sequência do mov. </td>
+  </tr>
+  <tr>
+    <td >29.2 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>X </td>
+    <td class="esq">Código de chaves </td>
+  </tr>
+  <tr>
+    <td >30 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>ETX </td>
+    <td class="esq">Caracter de fim </td>
+  </tr>
+  <tr>
+    <td >31 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>X </td>
+    <td class="esq">LRC </td>
+  </tr>
+</table>
+</center></div>
+
+<p class="center"><br>
+(*) Campos passíveis de alteração por ordem do Banco após a emissão do cartão. </p>
+
+<p>&nbsp;</p>
+<div align="center"><center>
+
+<table border="0" cellspacing="0" width="90%" cellpadding="0">
+  <tr>
+    <td colspan="2" width="58"><strong><u>N.CAMPO</u></strong></td>
+    <td width="36"></td>
+    <td class="esq" width="15"></td>
+    <td class="esq" width="403"><strong><u>COMENTÁRIOS</u></strong></td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">2 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">&quot;01&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Significa que a estrutura dos dados da PISTA 3 está conforme
+    ISO 4909. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">3 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">59 BBB D XXXXXXX CD <br>
+    Check Digit (Módulo 10) <br>
+    Número de cartão <br>
+    Separador<br>
+    Código do Banco Emissor <br>
+    Código de Actividade </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">5 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">&quot;620&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Código de Portugal. Este campo é obrigatório devido ao
+    código de actividade 59. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">6 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">&quot;000&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Se o cartão não for válido para trocas internacionais. </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36">&quot;620&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Código da moeda portuguesa. Com este código o cartão
+    torna-se válido para trocas internacionais. <br>
+    Este campo articula-se com o campo 14. </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36">&quot;978&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Código da moeda da União Europeia. Com este código o
+    cartão torna-se válido para trocas internacionais. <br>
+    Este campo articula-se com o campo 14. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">7 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">&quot;1&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Potência de dez pela qual devem ser multiplicados os valores
+    aos campos 8 e 9. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">8 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">Há um montante <em>standard</em> se bem que os Bancos possam,
+    conforme o cliente, optar por outro valor. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">9 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">Saldo = Montante por período - Levant. do período </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">10 </td>
+    <td class="esq" colspan="2" width="52">- &quot;ADDD&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Data <em>Standard</em> podendo ser definida aquando da
+    produção do cartão; e actualizada em conformidade com o campo 11. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">11 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">&quot;83&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Período mensal, a começar na mesma data de cada mês em
+    conformidade com a data de início de período da emissão do cartão. (Renovação do
+    saldo mensal). </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36">&quot;80&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Período semana, actualizada com múltiplos de 7. (Renovação
+    do saldo semanal). </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36">&quot;01&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Período dia. (Renovação do saldo diário) </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">12 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">&quot;3&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Número de tentativas de que o cliente dispõe para introduzir
+    o PIN, findas as quais, o cartão é capturado ou rejeitado. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">13 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">XXXX</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Quatro dígitos que são comparados com o out-put do DES para
+    validação do PIN. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">14 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">&quot;0&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Não há restrições </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36">&quot;1&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Cartão impossibilitado de fazer trocas internacionais, mas
+    válido para trocas interbancárias nacionais. </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36">&quot;8&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Cartão polivalente aceite na rede SIBS. </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36">&quot;9&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Cartão limitado à rede do Banco Emissor. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">15 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">&quot;XX&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Tipo de conta (1º carácter) </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">Restrições de cartão (2º carácter) </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">15.1 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">&quot;4&quot;</td>
+    <td width="15" class="esq">-<br>
+    <br>
+    -</td>
+    <td width="403" class="esq">Tipo de conta - Número de conta comum aplicável a mais de um
+    tipo de conta. <br>
+    PAN </td>
+  </tr>
+  <tr>
+    <td width="42">15.2 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">&quot;0&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Não há restrições; as restrições são sempre a nível de
+    conta. </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36">&quot;9&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Todas as operações excepto transferência (cartão só com 1
+    conta) </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36">&quot;8&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Cartão interdito para uso em CA. Aceite em TPA. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">16 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">&quot;XX&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Tipo de conta (1º caracter) </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">Restrições de cartão (2º caracter) </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">16.1 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">&quot;4&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Número de conta comum aplicável a mais de um tipo de conta. </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36">&quot;2&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Conta à ordem </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">16.2 </td>
+    <td class="esq" width="14"></td>
+    <td width="36"></td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Restrições de utilização: </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">&nbsp;&nbsp;&nbsp; 0 - Não há restrições </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">&nbsp;&nbsp;&nbsp; 1 - Débitos interditos </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">&nbsp;&nbsp;&nbsp; 2 - Créditos interditos </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">&nbsp;&nbsp;&nbsp; 3 - Só operações de crédito são
+    autorizadas </td>
+  </tr>
+  <tr>
+    <td width="42"></td>
+    <td class="esq" width="14"></td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">&nbsp;&nbsp;&nbsp; 8 - Só operações de débito são
+    autorizadas </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">17 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">O valor &quot;00&quot; indica que o SAN-2 não se encontra na
+    pista-3 (daí a não existência do campo 23). </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">18 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">AAMM</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Esta data indica a validade do cartão por 2 anos. Para
+    cartões em lista negra ou por ordem do Banco não é revalidada. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">19 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">O número de sequência dos cartões Multibanco é sempre 1,
+    excepto no caso de cartões empresa em que o valor do campo pode ser 2, 3, 4, 5 ou 6. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">20 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">Este campo não é utilizado, razão pela qual está
+    preenchido com um separador. </td>
+  </tr>
+  <tr>
+    <td class="courier7" colspan="4" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">21 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">Número da conta. Campo com 15 dígitos que contém o número
+    de conta bancária do cliente encostado à direita. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">25 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">&quot;0&quot;</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Significa a possibilidade de envio dos campos descricionários
+    ao Centro Informático. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42">26 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">As 6 posições fornecem um meio de verificar a integridade
+    dos dados da pista 3 e evitar fraudes; são comparadas com um <em>out-put</em> do DES para
+    validação do cartão. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42" >27 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">Campo constituído por: <br>
+    &nbsp;&nbsp;&nbsp; BBBBBB - Bank Identifier Number (BIN) <br>
+    &nbsp;&nbsp;&nbsp; EE - Complemento de BIN, permite identificar famílias de cartões no <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mesmo BIN</td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42" >28 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">Tecnologia da pista magnética:<br>
+    &nbsp;&nbsp;&nbsp; 0 - Pista 3 de baixa coercividade (Low-Co), regravável<br>
+    &nbsp;&nbsp;&nbsp; 1 - Pista 3 de alta coercividade (Hi-Co), não regravável</td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42" >29.1 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36">XX</td>
+    <td width="15" class="esq">-</td>
+    <td width="403" class="esq">Número de sequência de movimentos cartão com incidência
+    contabilística. </td>
+  </tr>
+  <tr>
+    <td colspan="4" class="courier7" width="108">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="42" >29.2 </td>
+    <td class="esq" width="14">- </td>
+    <td width="36"></td>
+    <td width="15" class="esq"></td>
+    <td width="403" class="esq">Indica a combinação de chaves do Banco (Kn e Km) a usar para
+    validação do PIN e do CCD. </td>
+  </tr>
+</table>
+</center></div>
+
+<p class="nove"><br>
+<strong>NOTA:&nbsp; A utilização das posições disponíveis está sempre subordinada a
+normalização nacional.</strong></p>
+
+<p>&nbsp;</p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="1" cellpadding="4" cellspacing="0" width="95%">
+  <tr>
+    <td class="titulo"><strong>FORMATO DA PISTA 2 MULTIBANCO </strong></td>
+  </tr>
+</table>
+</center></div>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="0" cellspacing="0" cellpadding="2" width="90%">
+  <tr>
+    <td><strong><u>N. CAMPO</u> </strong></td>
+    <td colspan="2"><strong><u>COMPR.</u> </strong></td>
+    <td><strong><u>CONTEÚDO</u> </strong></td>
+    <td align="center"><strong><u>DESCRIÇÃO</u> </strong></td>
+  </tr>
+  <tr>
+    <td>1 </td>
+    <td class="dta">1 </td>
+    <td>&nbsp; </td>
+    <td>STX </td>
+    <td class="esq">START SENTINEL </td>
+  </tr>
+  <tr>
+    <td>2 </td>
+    <td class="dta">16 </td>
+    <td></td>
+    <td>BBBBBB EE XXXXXXX CD </td>
+    <td class="esq">PAN </td>
+  </tr>
+  <tr>
+    <td>3 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>&quot;D&quot; </td>
+    <td class="esq">Separador </td>
+  </tr>
+  <tr>
+    <td>4 </td>
+    <td class="dta">4 </td>
+    <td></td>
+    <td>&quot;AAMM&quot; </td>
+    <td class="esq">Data expira. cartão * </td>
+  </tr>
+  <tr>
+    <td>5 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>&quot;1&quot;, &quot;5&quot; ou &quot;7&quot; </td>
+    <td class="esq">Controlo de trocas </td>
+  </tr>
+  <tr>
+    <td>6 </td>
+    <td class="dta">2 </td>
+    <td></td>
+    <td>01, 02, 03 </td>
+    <td class="esq">Service Code </td>
+  </tr>
+  <tr>
+    <td>7 </td>
+    <td class="dta">4 </td>
+    <td></td>
+    <td>XXXX </td>
+    <td class="esq">PVV </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta">9 </td>
+    <td></td>
+    <td>Disponível p/ futuras aplicações </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>8 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>ETX </td>
+    <td class="esq">Caracter de fim </td>
+  </tr>
+  <tr>
+    <td>9 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>X </td>
+    <td class="esq">LCR </td>
+  </tr>
+</table>
+</center></div>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" width="100%">
+  <tr>
+    <td width="13" class="esq">* </td>
+    <td class="esq">Este formato é aplicado aos cartões que usam complemento de BIN. O mesmo
+    BIN (6 posições iniciais) não pode ser usado em cartões com PAN de 14 caracteres de
+    comprimento simultaneamente com cartões cujo PAN seja de 16 caracteres. No caso de
+    cartões Multibanco, a data de expiração é preenchida com 4912. </td>
+  </tr>
+</table>
+
+<p class="esq">&nbsp;</p>
+
+<h3 align="center"><strong><br>
+ANEXO À PISTA 2 MULTIBANCO</strong></h3>
+
+<p><strong><br>
+</strong></p>
+<div align="center"><center>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%">
+  <tr>
+    <td colspan="3" width="95"><strong><u>N.CAMPO</u> </strong></td>
+    <td width="15"></td>
+    <td width="438" class="esq"><strong><u>COMENTÁRIOS</u> </strong></td>
+  </tr>
+  <tr>
+    <td colspan="5" class="courier7" width="548"><strong>&nbsp; </strong></td>
+  </tr>
+  <tr>
+    <td class="dta" width="53">2 </td>
+    <td width="17">- </td>
+    <td width="25"></td>
+    <td width="15"></td>
+    <td width="438" class="esq">O PAN é constituído por: <br>
+    &nbsp;&nbsp;&nbsp; BBBBBB - Bank Identifier Number atribuído pela ISO ao Emissor <br>
+    &nbsp;&nbsp;&nbsp; EE - Complemento de BIN, permite identificar famílias de cartões no<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mesmo BIN <br>
+    &nbsp;&nbsp;&nbsp; NNNNNNN - Número do cartão idêntico ao campo 3, da pista 3 <br>
+    &nbsp;&nbsp;&nbsp; CD - Cheque dígito (módulo 10) </td>
+  </tr>
+  <tr>
+    <td colspan="5" class="courier7" width="548">&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="dta" width="53">4 </td>
+    <td width="17">- </td>
+    <td width="25"></td>
+    <td width="15"></td>
+    <td width="438" class="esq">No cartão Multibanco a data de expiração do cartão é
+    preenchida com &quot;4912&quot;. </td>
+  </tr>
+  <tr>
+    <td colspan="5" class="courier7" width="548">&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="dta" width="53">5 </td>
+    <td width="17">- </td>
+    <td width="25">&quot;1&quot;</td>
+    <td width="15">-</td>
+    <td width="438" class="esq">Cartão válido para uso internacional. </td>
+  </tr>
+  <tr>
+    <td width="53"></td>
+    <td width="17"></td>
+    <td width="25">&quot;5&quot;</td>
+    <td width="15">-</td>
+    <td width="438" class="esq">Cartão válido para trocas interbancárias nacionais. </td>
+  </tr>
+  <tr>
+    <td width="53"></td>
+    <td width="17"></td>
+    <td width="25">&quot;7&quot;</td>
+    <td width="15">-</td>
+    <td width="438" class="esq">Cartão válido apenas para rede do Banco Emissor. </td>
+  </tr>
+  <tr>
+    <td colspan="5" class="courier7" width="548">&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="dta" width="53">6 </td>
+    <td width="17">-</td>
+    <td width="25"></td>
+    <td width="15"></td>
+    <td width="438" class="esq">SERVICE CODE </td>
+  </tr>
+  <tr>
+    <td width="53"></td>
+    <td width="17"></td>
+    <td width="25"></td>
+    <td width="15"></td>
+    <td width="438" class="esq">Presentemente as pistas 2 do cartão Multibanco e Polivalentes
+    encontram-se totalmente compatíveis com a norma ISO 7813 - IDENTIFICATION CARDS -
+    FINANCIAL TRANSACTION CARDS </td>
+  </tr>
+  <tr>
+    <td width="53"></td>
+    <td width="17"></td>
+    <td width="25"></td>
+    <td width="15"></td>
+    <td width="438" class="esq">&nbsp;&nbsp;&nbsp;&nbsp; 01 - Sem restrições </td>
+  </tr>
+  <tr>
+    <td width="53"></td>
+    <td width="17"></td>
+    <td width="25"></td>
+    <td width="15"></td>
+    <td width="438" class="esq">&nbsp;&nbsp;&nbsp;&nbsp; 02 - Sem serviço CA </td>
+  </tr>
+  <tr>
+    <td width="53"></td>
+    <td width="17"></td>
+    <td width="25"></td>
+    <td width="15"></td>
+    <td width="438" class="esq">&nbsp;&nbsp;&nbsp;&nbsp; 03 - Só serviço em CA </td>
+  </tr>
+  <tr>
+    <td colspan="5" class="courier7" width="548">&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="dta" width="53">8 </td>
+    <td width="17">-</td>
+    <td width="25"></td>
+    <td width="15"></td>
+    <td width="438" class="esq">PVV </td>
+  </tr>
+</table>
+</center></div>
+
+<p><br>
+<strong>NOTA: A utilização das posições disponíveis está sempre subordinada a
+normalização nacional.</strong></p>
+
+<p>&nbsp;</p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="1" cellpadding="4" cellspacing="0" width="95%">
+  <tr>
+    <td class="titulo"><strong>FORMATO DA PISTA 2 - VISA </strong></td>
+  </tr>
+</table>
+</center></div>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+  <tr>
+    <td nowrap><strong><u>N. CAMPO</u> </strong></td>
+    <td colspan="2"><strong><u>COMPR.</u> </strong></td>
+    <td><strong><u>CONTEÚDO</u> </strong></td>
+    <td class="esq"><strong><u>DESCRIÇÃO</u> </strong></td>
+  </tr>
+  <tr>
+    <td>1 </td>
+    <td class="dta">1 </td>
+    <td>&nbsp; </td>
+    <td>ETX </td>
+    <td class="esq">START SENTINEL </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta"></td>
+    <td></td>
+    <td></td>
+    <td class="esq">Caracter de início </td>
+  </tr>
+  <tr>
+    <td>2 </td>
+    <td class="dta">16 </td>
+    <td></td>
+    <td>PAN </td>
+    <td class="esq">PRIMARY ACCOUNT NUMBER </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta"></td>
+    <td></td>
+    <td></td>
+    <td class="esq"><img src="imagens2/a-a3.gif" WIDTH="375" HEIGHT="100"></td>
+  </tr>
+  <tr>
+    <td>3 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>SEPARADOR </td>
+    <td class="esq">&quot;D&quot;. </td>
+  </tr>
+  <tr>
+    <td>4 </td>
+    <td class="dta">4 </td>
+    <td></td>
+    <td nowrap>DATA DE EXPIR. </td>
+    <td class="esq">YYMM </td>
+  </tr>
+  <tr>
+    <td>5 </td>
+    <td class="dta">3 </td>
+    <td></td>
+    <td nowrap>SERVICE CODE </td>
+    <td class="esq">101 - válido p/uso internacional s/ restrições </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta"></td>
+    <td></td>
+    <td></td>
+    <td class="esq">102 - válido p/uso internacional apenas p/ compras </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta"></td>
+    <td></td>
+    <td></td>
+    <td class="esq">120 - válido p/uso internacional c/ pedido de autorização obrigatório.
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta"></td>
+    <td></td>
+    <td></td>
+    <td class="esq">126 - Uso internacional c/pedido de autorização obrigatório e uso de<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PIN se o terminal tiver
+    capacidades. </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta"></td>
+    <td></td>
+    <td></td>
+    <td class="esq">501 - cartão válido só no país emissor </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta"></td>
+    <td></td>
+    <td></td>
+    <td class="esq">502 - cartão válido só no país emissor apenas para compras </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta"></td>
+    <td></td>
+    <td></td>
+    <td class="esq">520 - cartão válido só no país emissor dependendo de autorização<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mandatária. PIN
+    obrigatório. </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta"></td>
+    <td></td>
+    <td></td>
+    <td class="esq">799 - válido só na rede do emissor (não na pool) </td>
+  </tr>
+  <tr>
+    <td colspan="5" class="courier7">&nbsp; </td>
+  </tr>
+  <tr>
+    <td>6 </td>
+    <td class="dta">5 </td>
+    <td></td>
+    <td>PVF </td>
+    <td class="esq">PIN VERIFICATION FIELD<br>
+    xxxxx </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta"></td>
+    <td></td>
+    <td></td>
+    <td class="esq">PVKI Pin verification key indicator </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta"></td>
+    <td></td>
+    <td></td>
+    <td class="esq">1 a 6 verificar PIN com combinação de chaves indicada </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta"></td>
+    <td></td>
+    <td></td>
+    <td class="esq">PVV-VISA </td>
+  </tr>
+  <tr>
+    <td>7 </td>
+    <td class="dta">3 </td>
+    <td></td>
+    <td>CVV </td>
+    <td class="esq">CARD VERIFICATION VALUE </td>
+  </tr>
+  <tr>
+    <td>8 </td>
+    <td class="dta">5 </td>
+    <td></td>
+    <td></td>
+    <td class="esq">Dados Descricionários </td>
+  </tr>
+  <tr>
+    <td>9 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>ETX </td>
+    <td class="esq">Caracter de Fim. </td>
+  </tr>
+  <tr>
+    <td>10 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>LRC </td>
+    <td class="esq">LONGITUDINAL REDUNDANCY CHECK </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="1" cellpadding="4" cellspacing="0" width="95%">
+  <tr>
+    <td class="titulo"><strong>FORMATO DA PISTA 1 DOS CARTÕES: <br>
+    VISA, MASTERCARD </strong></td>
+  </tr>
+</table>
+</center></div>
+
+<p><br>
+</p>
+
+<p>A partir do ficheiro <a href="../l-iii/eecb.htm" target="main">EECB</a>, é aplicada na
+pista 1 dos referidos cartões o formato definido pela documentação dos respectivos
+sistemas de pagamento.</p>
+
+<p>De acordo com aquela norma o formato é:</p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+  <tr>
+    <td><strong><u>CAMPO</u> </strong></td>
+    <td colspan="2"><strong><u>COMP.</u> </strong></td>
+    <td><strong><u>CONTEÚDO</u> </strong></td>
+    <td class="esq"><strong><u>DESCRIÇÃO</u> </strong></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta">1 </td>
+    <td>&nbsp; </td>
+    <td>STX </td>
+    <td class="esq">Caracter de início </td>
+  </tr>
+  <tr>
+    <td>1 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>&quot;B&quot; </td>
+    <td class="esq">Indicador de formato </td>
+  </tr>
+  <tr>
+    <td>2 </td>
+    <td class="dta">16 </td>
+    <td></td>
+    <td>PAN </td>
+    <td class="esq">Mesmo valor da pista 2 </td>
+  </tr>
+  <tr>
+    <td>3 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>Separator </td>
+    <td class="esq">&quot;^&quot; </td>
+  </tr>
+  <tr>
+    <td>4 </td>
+    <td class="dta">26 </td>
+    <td></td>
+    <td>Name <br>
+    (surname/name.title) </td>
+    <td class="esq">Preenchido de acordo com parágrafo seguinte </td>
+  </tr>
+  <tr>
+    <td>5 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>Separator </td>
+    <td class="esq">&quot;^&quot; </td>
+  </tr>
+  <tr>
+    <td>6 </td>
+    <td class="dta">4 </td>
+    <td></td>
+    <td>Expiration date </td>
+    <td class="esq">Mesmo valor da pista 2 </td>
+  </tr>
+  <tr>
+    <td>7 </td>
+    <td class="dta">3 </td>
+    <td></td>
+    <td>Service code </td>
+    <td class="esq">Mesmo valor da pista 2 </td>
+  </tr>
+  <tr>
+    <td>9 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>PIN Verif.Field </td>
+    <td class="esq">Código de combinação de chaves </td>
+  </tr>
+  <tr>
+    <td>10 </td>
+    <td class="dta">4 </td>
+    <td></td>
+    <td>PVV Visa </td>
+    <td class="esq"></td>
+  </tr>
+  <tr>
+    <td>11 </td>
+    <td class="dta">8 </td>
+    <td></td>
+    <td>Discretionary data </td>
+    <td class="esq">Zeros </td>
+  </tr>
+  <tr>
+    <td>12 </td>
+    <td class="dta">2 </td>
+    <td></td>
+    <td></td>
+    <td class="esq">Campo reservado Visa </td>
+  </tr>
+  <tr>
+    <td>13 </td>
+    <td class="dta">3 </td>
+    <td></td>
+    <td></td>
+    <td class="esq">Campo reservado Visa-CVV </td>
+  </tr>
+  <tr>
+    <td>14 </td>
+    <td class="dta">6 </td>
+    <td></td>
+    <td></td>
+    <td class="esq">Campo reservado Visa </td>
+  </tr>
+  <tr>
+    <td>15 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>ETX </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>16 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>LRC </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta">--- </td>
+    <td></td>
+    <td>---- </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta">79 </td>
+    <td></td>
+    <td>TOTAL </td>
+    <td></td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="1" cellpadding="4" cellspacing="0" width="95%">
+  <tr>
+    <td class="titulo"><strong>FORMATO DA PISTA 1 DOS CARTÕES: <br>
+    MULTIBANCO E PROPRIETÁRIO </strong></td>
+  </tr>
+</table>
+</center></div>
+
+<p><br>
+Em simultâneo com o novo formato de ficheiro <a href="../l-iii/eecb.htm" target="main">EECB</a>,
+passa a ser aplicado na pista 1 dos referidos cartões o formato definido pela norma ISO
+7813.</p>
+
+<p>De acordo com aquela norma o formato é:</p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="0" cellspacing="0" cellpadding="2" width="100%">
+  <tr>
+    <td><strong><u>CAMPO</u> </strong></td>
+    <td colspan="2"><strong><u>COMP.</u> </strong></td>
+    <td><strong><u>CONTEÚDO </u></strong></td>
+    <td class="esq"><strong><u>DESCRIÇÃO</u> </strong></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta">1 </td>
+    <td>&nbsp; </td>
+    <td>Start Sentinel </td>
+    <td class="esq"></td>
+  </tr>
+  <tr>
+    <td>1 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>&quot;B&quot; </td>
+    <td class="esq">Caracter de início </td>
+  </tr>
+  <tr>
+    <td>2 </td>
+    <td class="dta">14/16 </td>
+    <td></td>
+    <td>PAN </td>
+    <td class="esq">Mesmo valor da pista 2 </td>
+  </tr>
+  <tr>
+    <td>3 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>Separator </td>
+    <td class="esq">&quot;^&quot; </td>
+  </tr>
+  <tr>
+    <td>4 </td>
+    <td class="dta">26 </td>
+    <td></td>
+    <td>Name </td>
+    <td class="esq">Preenchido de acordo com parágrafo seguinte </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta"></td>
+    <td></td>
+    <td>(surname/name.title) </td>
+    <td class="esq"></td>
+  </tr>
+  <tr>
+    <td>5 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>Separator </td>
+    <td class="esq">&quot;^&quot; </td>
+  </tr>
+  <tr>
+    <td>6 </td>
+    <td class="dta">4 </td>
+    <td></td>
+    <td>Expiration date </td>
+    <td class="esq">Mesmo valor da pista 2 (campo 4) </td>
+  </tr>
+  <tr>
+    <td>7 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>Controlo de trocas </td>
+    <td class="esq">Mesmo valor da pista 2 (campo 5) </td>
+  </tr>
+  <tr>
+    <td>8 </td>
+    <td class="dta">2 </td>
+    <td></td>
+    <td>Service code </td>
+    <td class="esq">Mesmo valor da pista 2 (campo 6) </td>
+  </tr>
+  <tr>
+    <td>9 </td>
+    <td class="dta">26/24 </td>
+    <td></td>
+    <td>Discretionary data </td>
+    <td class="esq">Zeros </td>
+  </tr>
+  <tr>
+    <td>10 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>ETX </td>
+    <td class="esq">Caracter de Fim </td>
+  </tr>
+  <tr>
+    <td>11 </td>
+    <td class="dta">1 </td>
+    <td></td>
+    <td>LRC </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta">--- </td>
+    <td></td>
+    <td>---- </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="dta">79 </td>
+    <td></td>
+    <td>TOTAL </td>
+    <td></td>
+  </tr>
+</table>
+</center></div>
+
+<p><br>
+Neste formato não é colocado o nome do cliente pela ordem,
+&quot;sobrenome/nome.título&quot;, mas sim o formato original que o campo <a target="explicac" href="../../Campos/campos2.htm#137">NOMECLI1</a> apresentar.</p>
+
+<p>Se o Banco desejar aquele formato na pista 1, é apenas necessário que preencha <a target="explicac" href="../../Campos/campos2.htm#137">NOMECLI1</a>, com o mesmo formato
+que em cartões VISA (com separador &quot;/&quot; entre título e nome e entre nome e
+sobrenome). </p>
+
+<p>&nbsp;</p>
+</body>
+</html>

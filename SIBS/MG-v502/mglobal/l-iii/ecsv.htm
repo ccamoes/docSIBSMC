@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>COMUNICAÇÃO SALDOS VÉSPERA</title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: &nbsp; COMUNICAÇÃO SALDOS VÉSPERA</td>
+        <td class="fichdta">&quot;FICH&quot; = ECSV</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+É um ficheiro que o Emissor envia à SIBS para actualizar os saldos de véspera e o saldo
+contabilístico dos dados da conta D.O. a que estão associados os cartões de débito.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ORDENAÇÃO</u></h6>
+
+<table border="0" cellspacing="0" width="178">
+  <tr>
+    <td width="65">&nbsp; </td>
+    <td width="109">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="65" class="dez">TIPREG</td>
+    <td class="esq10" width="109">(campo <a href="../../Campos/campos2.htm#111">111</a>) </td>
+  </tr>
+  <tr>
+    <td width="65" class="dez">CONTA</td>
+    <td class="esq10" width="109">(campo <a href="../../Campos/campos2.htm#132">132</a>) </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de <em>Header</em> do ficheiro &quot;TIPREG=0&quot;, em que o campo (<a
+    href="../../Campos/campos2.htm#110">110</a>) DATAVALOR deve estar preenchido com a hora de
+    produção do ficheiro no Emissor, com o formato '00HHMMSS';</li>
+</ul>
+
+<ul>
+  <li>o registo de Detalhe &quot;TIPREG=1&quot;;</li>
+</ul>
+
+<ul>
+  <li>o registo de <em>Trailer</em> &quot;TIPREG=9&quot;, em que o campo (<a
+    href="../../Campos/campos2.htm#109">109</a>) TOTCRED deve estar preenchido com o
+    somatório do campo (<a href="../../Campos/campos2.htm#162">162</a>) SVESP de sinal
+    positivo e o campo (<a href="../../Campos/campos2.htm#108">108</a>) TOTDEB deve estar
+    preenchido com o somatório do campo (<a href="../../Campos/campos2.htm#162">162</a>)
+    SVESP de sinal negativo.</li>
+</ul>
+
+<p><br>
+O ficheiro é constituído por registos de comprimento fixo com 52 bytes.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">ECSV - TIPO DE REGISTO = 1 (SALDOS CONTAS D.O.)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTA</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td class="esq" width="200">= SAN1 ou SAN2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">17</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SVESP (a)</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">18</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#162">162</a></td>
+    <td class="esq" width="200">na denominação do <em>Header</em></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DTSCONT </td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">31</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#163">163</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">39</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SCONT  (a)</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">40</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#164">164</a></td>
+    <td class="esq" width="200">na denominação do <em>Header</em></td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" nowrap>(a) -&nbsp; </td>
+    <td class="just">Nos talões de Caixa Automático ou Terminal de Pagamento Automático,
+    os campos de montantes suportam apenas 11 dígitos. Assim, valores superiores a
+    &quot;999999999,99&quot; são truncados.</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

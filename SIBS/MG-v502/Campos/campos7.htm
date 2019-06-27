@@ -1,0 +1,1502 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos7 (600-699)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.</td>
+    <td class="fundo">REP.</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="600" name="600">600</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO REGISTO DE LOG LISTAGEM</u> <p>É a identificação
+    de um registo de detalhe no <em>Log</em> de listagem de cartão. É um número composto
+    pelo número de lote onde está incluído o registo, o número do registo dentro do lote.</td>
+    <td class="dta">12</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="601" name="601">601</a></td>
+    <td class="esq"><u>REFERÊNCIA PERGUNTA SIBS</u> <p>É a identificação no sistema da
+    SIBS da pergunta enviada para um terminal e referente a um pedido de esclarecimento
+    pendente.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="602" name="602">602</a></td>
+    <td class="esq"><u>DATA DA PERGUNTA SIBS</u> <p>Indica o ano, mês e dia em que a pergunta
+    a um pedido de esclarecimento pendente foi efectuada no Sistema da SIBS.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="603" name="603">603</a></td>
+    <td class="esq"><u>CÓDIGO RESPOSTA A PERGUNTA SIBS</u> <p>É o código que define a
+    resposta inserida no terminal à pergunta efectuada pela SIBS a um pedido de
+    esclarecimento pendente. </p>
+    <p>Pode assumir os valores:<br />
+    &nbsp;&nbsp; 1 - Resposta Afirmativa<br />
+    &nbsp;&nbsp; 9 - Resposta Negativa</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="604" name="604">604</a></td>
+    <td class="esq"><u>CÓDIGO DO DESTINO DA RESPOSTA SIBS</u> <p>É o código que identifca o
+    destinatário da resposta efectuada pela SIBS a um pedido de esclarecimento pendente. Pode
+    assumir os valores:<br />
+    &nbsp;&nbsp; 1 - Banco<br />
+    &nbsp;&nbsp; 2 - Centro Clearing<br />
+    &nbsp;&nbsp; 3 - Comerciante/Empresa</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="605" name="605">605</a></td>
+    <td class="esq"><u>REFERÊNCIA DA RESPOSTA SIBS À RECLAMAÇÃO</u> <p>É a
+    identificação da resposta efectuada pela SIBS a um pedido de esclarecimento pendente.</td>
+    <td class="dta">6</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="606" name="606">606</a></td>
+    <td class="esq"><u>DATA DA REFERÊNCIA DA RESPOSTA À RECLAMAÇÃO</u> <p>Indica o ano,
+    mês e dia em que a resposta a um pedido de esclarecimento pendente foi lançada no
+    Sistema da SIBS.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="607" name="607">607</a></td>
+    <td class="esq"><u>CÓDIGO TEXTO TIPO RECLAMAÇÕES</u> <p>Código que identifica o texto
+    tipo associado à resposta da SIBS a um pedido de esclarecimento.</td>
+    <td class="dta">10</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="608" name="608">608</a></td>
+    <td class="esq"><u>TIPO DE RESPOSTA SIBS AO PEDIDO DE ESCLARECIMENTO (RECLAMAÇÃO)</u> <p>Código
+    associado à resposta efectuada pela SIBS a um pedido de esclarecimento.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td colspan="2" class="esq">Assume os valores:</td>
+      </tr>
+      <tr>
+        <td nowrap>&nbsp;&nbsp; A -&nbsp;</td>
+        <td class="esq">Com regularização (débito à conta SIBS com justificação técnica)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; B -&nbsp;</td>
+        <td class="esq">Com regularização (não afecta conta SIBS)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; C -&nbsp;</td>
+        <td class="esq">Com regularização (casos pendentes - débito/crédito à conta SIBS)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; D -&nbsp;</td>
+        <td class="esq">Sem regularização (não afecta conta SIBS)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; E -&nbsp;</td>
+        <td class="esq">Com regularização (débito à conta SIBS sem justificação técnica)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; F -&nbsp;</td>
+        <td class="esq">Fim de processo estrangeiro (débito ao cliente e crédito à conta
+        regularização Banco)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; G -&nbsp;</td>
+        <td class="esq">Conclusão de processo estrangeiro, com perda para o gestor (exclusivo da
+        Aplicação de Cartão de Crédito)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; H -&nbsp;</td>
+        <td class="esq">Conclusão de processo estrangeiro, com perda para o comerciante
+        estrangeiro (exclusivo da Aplicação de Cartão de Crédito)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; I -&nbsp;</td>
+        <td class="esq">Início de processo estrangeiro (débito à conta regularização Banco e
+        crédito ao cliente)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; J -&nbsp;</td>
+        <td class="esq">Conclusão de processo estrangeiro, sem impacto no cliente/Gestor
+        (exclusivo da Aplicação de Cartão de Crédito)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; K -&nbsp;</td>
+        <td class="esq">Conclusão de processo estrangeiro, com perda para o cliente (exclusivo da
+        Aplicação de Cartão de Crédito)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; Z -&nbsp;</td>
+        <td class="esq">Fim de processo estrangeiro (sem valor contabilístico)</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="609" name="609">609</a></td>
+    <td class="esq"><u>CUSTOS DA EMISSÃO DE LISTAGEM</u> <p>É o valor suportado pela
+    entidade requisitante e referente a cada pedido de listagem efectuado através de um
+    terminal remoto.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>6 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="610" name="610">610</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO INTERNA DA RECLAMAÇÃO</u> <p>É a identificação
+    gerada pelo sistema da SIBS ao pedido de esclarecimento efectuado remotamente.</td>
+    <td class="dta">12</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="611" name="611">611</a></td>
+    <td class="esq"><u>DATA DO PEDIDO DE LISTAGEM</u> <p>É a data em que um pedido de
+    listagem com os movimentos de um Cartão ou de um TPA, é efectuado através de um
+    Terminal Bancário.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="612" name="612">612</a></td>
+    <td class="esq"><u>USER IDENTIFICATION</u> <p>Campo que identifica o utilizador que
+    efectuou uma operação de inserção ou alteração de dados.<br>
+      Nos casos
+      de pedidos com origem na SIBS, será preenchido o valor &quot;SIBS&quot;.
+      Sempre que o pedido tenha origem num terminal externo, será informado o
+      respectivo número.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>USERID</td>
+  </tr>
+  <tr>
+    <td><a id="613" name="613">613</a></td>
+    <td class="esq"><u>TIPO DE TERMINAL DE REGULARIZAÇÕES</u> <p>Indica o tipo de terminal
+    que está a efectuar a transacção.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; 1 - Terminal de Regularizações Débito<br />
+    &nbsp;&nbsp; 2 - Terminal de Regularizações Crédito</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="614" name="614">614</a></td>
+    <td class="esq"><u>TIPO DE LOG</u> <p>Designação referente ao tipo de LOG utilizado nas
+    Aplicações de Regularizações, para inserção de reclamações.</p>
+    <p>Pode assumir os valores:<br />
+    &nbsp;&nbsp; 1 - Log Multibanco<br />
+    &nbsp;&nbsp; 2 - Log Listagem de Movimentos</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="615" name="615">615</a></td>
+    <td class="esq"><u>TIPO DE INSERÇÃO</u> <p>É o código que poderá ser atribuído na
+    inserção de uma reclamação a um movimento N.E.:</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 1 -&nbsp;</td>
+          <td class="esq">Insere Processo e credita Cliente</td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 2 -&nbsp;</td>
+          <td class="esq">Insere Processo e não credita Cliente</td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 3 -&nbsp;</td>
+          <td class="esq">P/CBK Parcial - Insere Processo e credita Cliente</td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 4 -&nbsp;</td>
+          <td class="esq">P/CBK Parcial - Insere Processo e não credita Cliente</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="616" name="616">616</a></td>
+    <td class="esq"><u>NÚMERO DE PROCESSO</u> <p>É o número sequencial que o Sistema da
+    SIBS atribui por Sistema de Pagamento, a uma determinada reclamação.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NR-PROC</td>
+  </tr>
+  <tr>
+    <td><a id="617" name="617">617</a></td>
+    <td class="esq"><u>TIPO DE CHAVE DA RECLAMAÇÃO</u> <p>Código para consultar uma
+    reclamação:</p>
+    <p>&nbsp;&nbsp; 0 - Consulta por Identificação Interna da Reclamação<br />
+    &nbsp;&nbsp; 1 - Consulta por Número de Processo</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="618" name="618">618</a></td>
+    <td class="esq"><u>REFERÊNCIA DE ENTRADA NA SIBS DA RECLAMAÇÃO</u> <p>Referência
+    atribuída pela SIBS a um pedido de esclarecimento inserido no Sistema.</td>
+    <td class="dta">6</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="619" name="619">619</a></td>
+    <td class="esq"><u>DATA DE ENTRADA NA SIBS DA RECLAMAÇÃO</u> <p>Indica o ano, mês e dia
+    em que o pedido de esclarecimento deu entrada no Sistema da SIBS.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="620" name="620">620</a></td>
+    <td class="esq"><u>DETALHE DO TIPO DE OPERAÇÃO</u> <p>Indica o código de operação
+    realizada no estrangeiro. Poderão ser operações de compra ou de cash e assumem os
+    seguintes valores:</p>
+    <p>&nbsp; 10 - QUASI-CASH<br />
+    &nbsp; 11 - ATM CASH<br />
+    &nbsp; 12 - CASH ADVANCE-MEMBER<br />
+    &nbsp; 13 - CASH ADVANCE-QUALIFIED MERCHANT<br />
+    &nbsp; 14 - CASH OTHER<br>
+    &nbsp; 16 - VISA CFT<br>
+    &nbsp; 17 - VISA AFT (serviço acquirer)<br />
+    &nbsp; 20 - QUASI-CASH<br />
+    &nbsp; 21 - MAIL/PHONE ORDER<br />
+    &nbsp; 22 - MAIL/PHONE ORDER-RECURRING<br />
+    &nbsp; 23 - MAIL/PHONE ORDER-INSTALLMENT<br />
+    &nbsp; 24 - TELEPHONE - MAGNETIC STRIPE<br />
+    &nbsp; 25 - VISAPHONE TRANSACTION<br />
+    &nbsp; 26 - AIRLINE<br />
+    &nbsp; 27 - CAR RENTAL<br />
+    &nbsp; 28 - HOTEL<br />
+    &nbsp; 29 - OUTRAS COMPRAS<br>
+    &nbsp; 30 - OPERAÇÃO EM COMERCIANTE 3-D SECURE</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DET_OPE</td>
+  </tr>
+  <tr>
+    <td><a id="621" name="621">621</a></td>
+    <td class="esq"><u>ENTIDADE ORIGEM DA RECLAMAÇÃO</u> <p>Indica qual a Entidade que deu
+    origem à reclamação.<p>Assume os valores seguintes:<br>
+      &nbsp;&nbsp; 1 - Banco (Terminal de Serviços)<br>
+      &nbsp;&nbsp; 2 - Banco (papel)<br>
+      &nbsp;&nbsp; 3 - SIBS (NEs - Batch)<br>
+      &nbsp;&nbsp; 4 - SIBS (GATM)<br>
+      &nbsp;&nbsp; 5 - SIBS (NEs - Automáticas)<br>
+      &nbsp;&nbsp; 6 - Banco (Caixa Automático)</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="622" name="622">622</a></td>
+    <td class="esq"><u>CÓDIGO DA ACÇÃO NO PROCESSO DE RECLAMAÇÃO</u> <p>Indica o código
+    da acção que foi efectuada num determinado processo de reclamação. Ver <a
+    href="622.htm" target="main">tabela</a>.</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MORTER</td>
+  </tr>
+  <tr>
+    <td><a id="623" name="623">623</a></td>
+    <td class="esq"><u>DATA DA ACÇÃO</u> <p>É a data associada à acção no processo de
+    reclamação.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="624" name="624">624</a></td>
+    <td class="esq"><u>NÚMERO SEQUÊNCIA ACÇÃO NO PROCESSO</u> <p>É o número sequencial
+    que o sistema da SIBS atribui a uma determinada acção num processo de reclamação.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="625" name="625">625</a></td>
+    <td class="esq"><u>NÚMERO DIAS DE PRAZO</u> <p>É o número de dias disponíveis até à
+    data limite, para a execução de um chargeback ou de uma outra acção qualquer (seguinte
+    à executada) num processo de reclamação.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="626" name="626">626</a></td>
+    <td class="esq"><u>MONTANTE DA FEE</u> <p>É o valor da comissão para uma operação
+    nacional no estrangeiro.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>MNT_FEE</td>
+  </tr>
+  <tr>
+    <td><a id="627" name="627">627</a></td>
+    <td class="esq"><u>SALDO DO PROCESSO</u> <p>É o montante (devedor ou credor) que o
+    processo apresenta no decurso das diversas acções executadas na reclamação.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="628" name="628">628</a></td>
+    <td class="esq"><u>MOTIVO PEDIDO DOCUMENTO</u> <p>Código que indica qual o motivo
+    apresentado para o pedido de documento.&nbsp; Ver <a href="628.htm" target="main">tabela</a> dos valores possíveis.</p>
+    </td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MOTDOC</td>
+  </tr>
+  <tr>
+    <td><a id="629" name="629">629</a></td>
+    <td class="esq"><u>MOTIVO DO CHARGEBACK</u> <p>Código que indica a razão do chargeback.
+    Ver <a href="629.htm" target="main">tabela</a> dos valores possíveis.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MOTCBK</td>
+  </tr>
+  <tr>
+    <td><a id="630" name="630">630</a></td>
+    <td class="esq"><u>TIPO DOCUMENTO PEDIDO RET. REQ.</u> <p>Valores possíveis:</p>
+    <p>- Se Sistema de Pagamento VISA<br>
+    &nbsp;&nbsp;&nbsp; 1 - ORIGINAL<br>
+    &nbsp;&nbsp;&nbsp; 2 - CÓPIA</p>
+    <p>- Se Sistema de Pagamento MASTERCARD<strong><br>
+    </strong>&nbsp;&nbsp;&nbsp; 1 - HARDCOPY<br>
+    &nbsp;&nbsp;&nbsp; 2 - REPRODUCTION (MICROFILM)<br>
+    &nbsp;&nbsp;&nbsp; 4 - SUSBTITUTE DRAFT</p>
+    <p>- Se Sistema de Pagamento AMEX<strong><br>
+    </strong>&nbsp;&nbsp;&nbsp; 1 - ORIGINAL ROC<br />
+    &nbsp;&nbsp;&nbsp; 6 - SUBSTITUTE ROC<br />
+    &nbsp;&nbsp;&nbsp; 7 - ITEMIZED DOC<br />
+    &nbsp;&nbsp;&nbsp; 8 - COPY<br />
+    &nbsp;&nbsp;&nbsp; 9 - TRANSACTION LOG</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIPDOC</td>
+  </tr>
+  <tr>
+    <td><a id="631" name="631">631</a></td>
+    <td class="esq"><u>TIPO RESPOSTA NUM RET. REQ.</u> <p>Pode assumir os seguintes valores:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">- Se Sistema de Pagamento VISA</td>
+      </tr>
+      <tr>
+        <td class="dta">&nbsp;&nbsp; 0 -&nbsp;</td>
+        <td class="esq">Papel</td>
+      </tr>
+      <tr>
+        <td class="dta">&nbsp;&nbsp; 1 -&nbsp;</td>
+        <td class="esq">Imagem</td>
+      </tr>
+      <tr>
+        <td class="esq" colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td class="esq" colspan="2">- Se Sistema de Pagamento MASTERCARD</td>
+      </tr>
+      <tr>
+        <td class="dta">&nbsp;&nbsp;&nbsp; -&nbsp;</td>
+        <td class="esq">Sem utilização de MASTERCOM</td>
+      </tr>
+      <tr>
+        <td class="dta">&nbsp;&nbsp; E -&nbsp;</td>
+        <td class="esq">Acquirer e Issuer utilizam MASTERCOM</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIPRES</td>
+  </tr>
+  <tr>
+    <td><a id="632" name="632">632</a></td>
+    <td class="esq"><u>INDICADOR DE DOCUMENTO CHARGEBACK</u> <p>
+    Ver <a href="632.htm" target="main">tabela</a> dos valores possíveis.</p>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>INDDOC</td>
+  </tr>
+  <tr>
+    <td><a id="633" name="633">633</a></td>
+    <td class="esq"><u>TEXTO DE REAPRESENTAÇÃO / CBK</u> <p>Texto descritivo do motivo para
+    a realização da reapresentação ou de um chargeback de uma reclamação.</td>
+    <td class="dta">50</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="634" name="634">634</a></td>
+    <td class="esq"><u>TIPO DE FRAUDE</u> <p>
+    Ver <a href="634.htm" target="main">tabela</a> dos valores possíveis.</p>
+    </td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MOTRISK</td>
+  </tr>
+  <tr>
+    <td><a id="635" name="635">635</a></td>
+    <td class="esq"><u>INDICADOR DE DUPLICADO</u> <p>Campo que indica se a transacção sobre
+    a qual se efectua uma reclamação deve ser considerada como duplicada ou não.</p>
+    <p>Pode assumir os seguintes valores:<br />
+    &nbsp;&nbsp; 0 - Não<br>
+    &nbsp;&nbsp; 1 - Sim</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>IND_DUP</td>
+  </tr>
+  <tr>
+    <td><a id="636" name="636">636</a></td>
+    <td class="esq"><u>NÚMERO DE PROCESSO NO RISK</u> <p>Número sequencial atribuído pela
+    VISA, por cartão, a uma reclamação.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="637" name="637">637</a></td>
+    <td class="esq"><u>DATA DE EXPIRAÇÃO DO CARTÃO EXPANDIDA<br />
+    (FORMATO 4 DÍGITOS ANO)</u> <p>Último mês e ano em que o cartão ainda é válido.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>AAAAMM</td>
+    <td>DATEXP-E</td>
+  </tr>
+  <tr>
+    <td><a id="638" name="638">638</a></td>
+    <td class="esq"><u>INDICADOR DE FEE</u> <p>Campo que indica o tipo de consulta pretendida:</p>
+    <p>&nbsp;&nbsp; D - A Aguardar Confirmação de Devolução<br>
+    &nbsp;&nbsp; R - Recebidas<br>
+    &nbsp;&nbsp; C - Devolvidas Confirmadas<br>
+    &nbsp;&nbsp; J - Devolvidas Rejeitadas<br>
+    &nbsp;&nbsp; I - Enviadas Confirmadas</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="639" name="639">639</a></td>
+    <td class="esq"><u>MOTIVO DA FEE</u> <p>Código que indica o motivo de Fee. Ver <a
+    target="main" href="639.htm">tabela</a> dos valores possíveis.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MOT-FEE</td>
+  </tr>
+  <tr>
+    <td><a id="640" name="640">640</a></td>
+    <td class="esq"><u>CÓDIGO IMPUTAÇÃO FEE</u> <p>Código que indica a quem foi imputada a
+    FEE.</p>
+    <p>&nbsp;&nbsp; 1 - Imputada ao Cliente<br />
+    &nbsp;&nbsp; 2 - Imputada ao Banco</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD-IMP-FEE</td>
+  </tr>
+  <tr>
+    <td><a id="641" name="641">641</a></td>
+    <td class="esq"><u>TIPO CONSULTA</u> <p>Código que indica o âmbito da pesquisa numa
+    reclamação.</p>
+    <p>Assume os valores:<br />
+    &nbsp;&nbsp; 1 - Pendentes<br />
+    &nbsp;&nbsp; 2 - Por Situação</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="642" name="642">642</a></td>
+    <td class="esq"><u>DETALHE DO TIPO DE CONSULTA</u> <p>Código que indica dentro do âmbito
+    seleccionado no campo TIPO DE CONSULTA (<a href="campos7.htm#641">641</a>) a opção em
+    detalhe seleccionada.</p>
+    <p>Assume os valores:<br>
+    <br>
+    <em>Se Campo 641=&quot;1&quot; - Pendentes</em>:<br>
+    &nbsp;&nbsp; 1 - Sequencial<br />
+    &nbsp;&nbsp; 2 - Processos sem acções<br />
+    &nbsp;&nbsp; 3 - Operações suspeitas<br />
+    &nbsp;&nbsp; 4 - Rejeições de pedidos de documento<br />
+    &nbsp;&nbsp; 5 - Rejeições de envio de primeiro chargeback<br />
+    &nbsp;&nbsp; 6 - Rejeições de envio de arbitration / second chargeback<br />
+    &nbsp;&nbsp; 7 - Respostas a pedidos de documentos<br />
+    &nbsp;&nbsp; 8 - Reapresentações<br />
+    &nbsp;&nbsp; 9 - Esgotado prazo de resposta<br />
+    &nbsp;&nbsp; A - Esgotado prazo de confirmação envio<br />
+    &nbsp;&nbsp; B - Maus encaminhamentos<br />
+    &nbsp;&nbsp; C - Rejeições de envio para RISK<br>
+    &nbsp;&nbsp; D - Rejeições de envio de Fee<br>
+    <br>
+    <em>Se Campo 641=&quot;2&quot; - Por situação<br />
+    </em>&nbsp;&nbsp; 1 - Sequencial<br />
+    &nbsp;&nbsp; 2 - A aguardar confirmação de envio<br />
+    &nbsp;&nbsp; 3 - A aguardar resposta do acquirer<br />
+    &nbsp;&nbsp; 4 - A aguardar documentação<br />
+    &nbsp;&nbsp; 5 - Em processo administrativo<br />
+    &nbsp;&nbsp; 6 - A aguardar decisão sistema pagamento<br />
+    &nbsp;&nbsp; 7 - Concluídas<br />
+    &nbsp;&nbsp; 8 - Reportadas no sistema de fraude</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="643" name="643">643</a></td>
+    <td class="esq"><u>NOME COMERCIANTE ORIGEM TRANSACÇÃO</u> <p>Campo destinado à
+    identificação do comerciante onde teve origem a transacção estrangeiro.</td>
+    <td class="dta">25</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="644" name="644">644</a></td>
+    <td class="esq"><u>LOCALIDADE DO COMERCIANTE ORIGEM TRANSACÇÃO</u> <p>Campo destinado à
+    localidade do endereço do comerciante onde teve origem a transacção estrangeiro.</td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="645" name="645">645</a></td>
+    <td class="esq"><u>INDICADOR DE FLOOR LIMIT</u> <p>Campo destinado a informar se a
+    transacção no estrangeiro foi efectuada acima ou abaixo do Floor Limit posicionado por
+    tipo de comerciante, tipo de PAN e tipo de transacção.<br />
+    Pode assumir os valores seguintes:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="dta" nowrap>Espaço -&nbsp;</td>
+        <td class="esq">Não foi feita validação de Floor Limit</td>
+      </tr>
+      <tr>
+        <td class="dta">I&nbsp; -&nbsp;</td>
+        <td class="esq">Inform. insuficiente p/ determinar o Floor Limit</td>
+      </tr>
+      <tr>
+        <td class="dta">Z -&nbsp;</td>
+        <td class="esq">Floor Limit zero</td>
+      </tr>
+      <tr>
+        <td class="dta">A -&nbsp;</td>
+        <td class="esq">Acima do Floor Limit em + de 20%</td>
+      </tr>
+      <tr>
+        <td class="dta">B -&nbsp;</td>
+        <td class="esq">Abaixo do Floor Limit em + de 20%</td>
+      </tr>
+      <tr>
+        <td class="dta">C -&nbsp;</td>
+        <td class="esq">Acima do Floor Limit em 20% ou menos</td>
+      </tr>
+      <tr>
+        <td class="dta">D -&nbsp;</td>
+        <td class="esq">Abaixo do Floor Limit em 20% ou menos ou no Floor Limit</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="646" name="646">646</a></td>
+    <td class="esq"><u>PISTA ENVIADA PELO ACQUIRER</u> <p>Indica qual foi a pista que foi lida
+    pelo acquirer da transacção.</p>
+    <p>Poderá ter os seguintes valores:<br>
+    &nbsp;&nbsp; 1 - Pista 1<br>
+    &nbsp;&nbsp; 2 - Pista 2<br>
+    &nbsp;&nbsp; 3 - Pista 3<br>
+    &nbsp;&nbsp; 9 - Sem pista</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="647" name="647">647</a></td>
+    <td class="esq"><u>NÚMERO AUTORIZAÇÃO DO PROCESSO</u> <p>Número atribuído pelo
+    sistema, para uma autorização de uma transacção efectuada com um cartão nacional no
+    estrangeiro.</td>
+    <td class="dta">7</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="648" name="648">648</a></td>
+    <td class="esq"><u>NÚMERO PERÍODO CUT-OFF</u> <p>Número sequencial atribuído por
+    período, entre cada abertura e fecho, que contempla as transacções realizadas para o
+    Cut-Off.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="649" name="649">649</a></td>
+    <td class="esq"><u>INDICADOR DO TIPO DE PRESTAÇÃO DE SERVIÇO</u> <p>Código que indica
+    o tipo de serviço prestado pela Empresa participante na Compensação de TEIs.</p>
+    <p>Poderá ter os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Transferências Exclusivas da Empresa<br />
+    &nbsp;&nbsp;&nbsp; 1 - Empresa Prestadora de Serviços</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="650" name="650">650</a></td>
+    <td class="esq"><u>INDICADOR DE TRANSACÇÃO T&amp;E</u> <p>Campo que indica se a
+    transacção é considerada como Travel &amp; Entertainment:</p>
+    <p>Espaço - Não especificado<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 - Não especificado<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 - Travel &amp; Entertainment</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="651" name="651">651</a></td>
+    <td class="esq"><u>DATA PARTIDA / CHECK IN / CHECK OUT</u> <p>Campo que indica a data em
+    função do detalhe da operação, de acordo com os valores:</p>
+    <p>&nbsp;&nbsp; 26 - Airline: Data da Partida<br />
+    &nbsp;&nbsp; 27 - Car Rental: Data do Check Out<br />
+    &nbsp;&nbsp; 28 - Hotel: Data do Check In</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="652" name="652">652</a></td>
+    <td class="esq"><u>INDICADOR TRANSACÇÃO NOSHOW</u> <p>Campo que informa que o cliente
+    não utilizou uma reserva num hotel ou num aluguer de automóvel.</p>
+    <p>&nbsp;&nbsp; 0 - Sem informação<br />
+    &nbsp;&nbsp; 1 - Noshow<br />
+    &nbsp;&nbsp; 2 - Não aplicável</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="653" name="653">653</a></td>
+    <td class="esq"><u>EXTRA CHARGES</u> <p>Campo composto pelas possíveis despesas
+    adicionais ocorridas em hotéis ou no aluguer de automóveis.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="654" name="654">654</a></td>
+    <td class="esq"><u>INDICADOR CATEGORIA ESPECIAL COMERCIANTE</u> <p>Campo que indica de
+    acordo com as tabelas POS1 e POS2 a categoria do comerciante (MCC).</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">Valores possíveis para tabela POS1:</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap>&nbsp; Espaço -&nbsp; </td>
+        <td class="esq">RISK indicator not required for this merchant</td>
+      </tr>
+      <tr>
+        <td class="dta">1 -&nbsp;</td>
+        <td class="esq">Zero floor limit required</td>
+      </tr>
+      <tr>
+        <td class="dta">2 -&nbsp;</td>
+        <td class="esq">Terminal capable of reading and transmitting the full unaltered contents
+        of the magnetic stripe</td>
+      </tr>
+      <tr>
+        <td class="dta">3 -&nbsp;</td>
+        <td class="esq">Zero floor limit and terminal capable of reading and transmitting the full
+        unaltered contents of the magnetic stripe</td>
+      </tr>
+    </table>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td class="esq" colspan="2">Valores possíveis para tabela POS2:</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap>&nbsp; Espaço -&nbsp; </td>
+        <td class="esq">None of the specified conditions are present</td>
+      </tr>
+      <tr>
+        <td class="dta">B -&nbsp;</td>
+        <td class="esq">Hotel qualifying for a special Floor Limit of $1000 and permitted to use
+        Status Check Procedure</td>
+      </tr>
+      <tr>
+        <td class="dta">D -&nbsp;</td>
+        <td class="esq">Hotel permitted to use Status Check Procedure with a floor limit of $500</td>
+      </tr>
+      <tr>
+        <td class="dta">F -&nbsp;</td>
+        <td class="esq">Facsimile Draft provided</td>
+      </tr>
+      <tr>
+        <td class="dta">H -&nbsp;</td>
+        <td class="esq">Visa Lodging Services &#150; Hotel qualifies for the special floor limit</td>
+      </tr>
+      <tr>
+        <td class="dta">L -&nbsp;</td>
+        <td class="esq">Visa Lodging Services Merchant</td>
+      </tr>
+      <tr>
+        <td class="dta">S -&nbsp;</td>
+        <td class="esq">Hotel or restaurant merchant qualifies for a special floor limit of $1500
+        and permitted to use Status Check Procedure</td>
+      </tr>
+      <tr>
+        <td class="dta">8 -&nbsp;</td>
+        <td class="esq">Quasi-cash/online gambling</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="655" name="655">655</a></td>
+    <td class="esq"><u>POS CONDITION CODE</u> <table border="0" cellspacing="0"
+    cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2"><br>
+        <br>
+        Pode assumir os seguintes valores:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>Espaço -&nbsp; </td>
+        <td class="esq">Sem informação</td>
+      </tr>
+      <tr>
+        <td class="dta" nowrap>00 -&nbsp;</td>
+        <td class="esq">Normal transaction of this type</td>
+      </tr>
+      <tr>
+        <td class="dta">01 -&nbsp;</td>
+        <td class="esq">Customer not present</td>
+      </tr>
+      <tr>
+        <td class="dta">02 -&nbsp;</td>
+        <td class="esq">Unattended terminal, customer operated (for ex. ATM)</td>
+      </tr>
+      <tr>
+        <td class="dta">03 -&nbsp;</td>
+        <td class="esq">Merchant suspicious of transaction (or card)</td>
+      </tr>
+      <tr>
+        <td class="dta">05 -&nbsp;</td>
+        <td class="esq">Customer present, card not present</td>
+      </tr>
+      <tr>
+        <td class="dta">08 -&nbsp;</td>
+        <td class="esq">Mail/phone order</td>
+      </tr>
+      <tr>
+        <td class="dta">10 -&nbsp;</td>
+        <td class="esq">Customer identify verified</td>
+      </tr>
+      <tr>
+        <td class="dta">51 -&nbsp;</td>
+        <td class="esq">Request for acc.nr.verif without autorization</td>
+      </tr>
+      <tr>
+        <td class="dta">55 -&nbsp;</td>
+        <td class="esq">Request for telecode verification without verification</td>
+      </tr>
+      <tr>
+        <td class="dta">56 -&nbsp;</td>
+        <td class="esq">Visa check writing feature (epay only)</td>
+      </tr>
+      <tr>
+        <td class="dta">57 -&nbsp;</td>
+        <td class="esq">PIN/Password validation (epay only)</td>
+      </tr>
+      <tr>
+        <td class="dta">58 -&nbsp;</td>
+        <td class="esq">On-us payment request or account verification (epay only)</td>
+      </tr>
+      <tr>
+        <td class="dta">59 -&nbsp;</td>
+        <td class="esq">E-commerce request (through public network)</td>
+      </tr>
+      <tr>
+        <td class="dta">71 -&nbsp;</td>
+        <td class="esq">Card present, magnetic stripe cannot be read (key-entered)</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="656" name="656">656</a></td>
+    <td class="esq"><u>TIPO DE LISTAGEM</u> <p>Indica de que tipo é a listagem pretendida,
+    aquando da inserção do pedido.</p>
+      <p>Estas listagens podem assumir os seguintes tipos:<br>
+      &nbsp;&nbsp; 1 - CARTÃO NACIONAL<br />
+    &nbsp;&nbsp; 2 - CARTÃO INTERNACIONAL<br />
+    &nbsp;&nbsp; 3 - PERÍODO DE POS<br />
+    &nbsp;&nbsp; 4 - PERÍODO DE ATM<br>
+      &nbsp;&nbsp; 5 - FECHOS DE POS<br>
+      &nbsp;&nbsp; 6 - LOG SIBS DE POS<br>
+      &nbsp;&nbsp; 7 - PERÍODO DE ATM INEXISTENTE<br>
+      &nbsp;&nbsp; 8 - HISTÓRICO DE IDENTIFICADOR VIA VERDE<br>
+      &nbsp;&nbsp; 9 - CARTÃO PORTA MOEDAS<br>
+      &nbsp;&nbsp; A - DEPÓSITOS DE LOTE PMB<br>
+      &nbsp;&nbsp; B - MOVIMENTOS DE GASÓLEO POR CARTÃO<br>
+      &nbsp;&nbsp; C - MOVIMENTOS DE&nbsp; GASÓLEO POR POS<br>
+      &nbsp;&nbsp; D - PAGAMENTOS POR ENTIDADE/REFERÊNCIA</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="657" name="657">657</a></td>
+    <td class="esq"><u>DETALHE AUXILIAR DO TIPO DE CONSULTA</u> <p>Código auxiliar para
+    paginação, que indica a opção em detalhe seleccionada, quando o&nbsp; campo TIPO DE
+    CONSULTA (<a href="campos7.htm#641">641</a>) for igual a &quot;1&quot; - Pendentes.</p>
+    <p>Assume os valores:<br />
+    &nbsp;&nbsp; 0 - Sequencial<br />
+    &nbsp;&nbsp; 1 - Processos sem acções<br />
+    &nbsp;&nbsp; 2 - Operações suspeitas<br />
+    &nbsp;&nbsp; 3 - Rejeições de pedidos de documento<br />
+    &nbsp;&nbsp; 4 - Rejeições de envio de primeiro chargeback<br />
+    &nbsp;&nbsp; 5 - Rejeições de envio de arbitration / second chargeback<br />
+    &nbsp;&nbsp; 6 - Respostas a pedidos de documentos<br />
+    &nbsp;&nbsp; 7 - Reapresentações<br />
+    &nbsp;&nbsp; 8 - Esgotado prazo de resposta<br />
+    &nbsp;&nbsp; 9 - Esgotado prazo de confirmação envio<br />
+    &nbsp;&nbsp; A - Maus encaminhamentos<br />
+    &nbsp;&nbsp; B - Rejeições de envio para RISK<br>
+    &nbsp;&nbsp; C - Rejeições de envio de Fee</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="658" name="658">658</a></td>
+    <td class="esq"><u>INDICADOR DE PEDIDO AUXILIAR</u> <p>Código auxiliar para paginação,
+    que indica o tipo de pedido efectuado na transacção de Consulta a FEEs.</p>
+    <p>Nota: Mantêm-se os mesmos códigos.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="659" name="659">659</a></td>
+    <td class="esq"><u>ÂMBITO DA PERGUNTA</u> <p>Campo que indica o âmbito seleccionado na
+    pesquisa, para perguntas efectuadas pela SIBS aos terminais de regularizações dos
+    bancos.</p>
+    <p>Assume os seguintes valores:<br />
+    &nbsp;&nbsp; 0 - Sequencial (Respondidas e Pendentes)<br />
+    &nbsp;&nbsp; 1 - Pendentes</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="660" name="660">660</a></td>
+    <td class="esq"><u>CÓDIGO DE ANOMALIA DE UM PERIFÉRICO DO CAIXA AUTOMÁTICO</u> <p>Campo
+    que apresenta o código da anomalia dum periférico do Caixa Automático. Poderão ser
+    anomalias aos níveis dos seguintes dispositivos periféricos:</p>
+    <p>&nbsp;&nbsp; BDG - Leitor de Cartões<br />
+    &nbsp;&nbsp; CDM - Dispensador de Notas<br />
+    &nbsp;&nbsp; DEP - Módulo de Depósitos<br />
+    &nbsp;&nbsp; DRC - Disco Rígido<br />
+    &nbsp;&nbsp; PRJ - Impressora de Jornal<br />
+    &nbsp;&nbsp; PRR - Impressora de Recibos<br />
+    &nbsp;&nbsp; EXL - Comunicações</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="661" name="661">661</a></td>
+    <td class="esq"><u>COMERCIANTE/LOCAL DE ORIGEM DA TRANSACÇÃO</u> <p>Campo destinado à
+    identificação do comerciante e à localidade do endereço do comerciante onde teve
+    origem a transacção no estrangeiro. A informação deste atributo corresponde ao contido
+    no campo LOG-XLC-01-LOC-NOM-LOC e os seus dados são subdivididos em função do sistema
+    de pagamento de origem.</td>
+    <td class="dta">51</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="662" name="662">662</a></td>
+    <td class="esq"><u>MORADA DO TERMINAL (ABREVIADA)</u> <p>Descritivo do endereço que
+    deverá ser remetido pelo Banco para informar a entidade cobradora da morada (abreviada)
+    da operação.</td>
+    <td class="dta">25</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MORTER</td>
+  </tr>
+  <tr>
+    <td><a id="663" name="663">663</a></td>
+    <td class="esq"><u>MONTANTE DA OPERAÇÃO NA MOEDA DO ACQUIRER</u> <p>Indica o montante da
+    operação na moeda do <em>acquirer</em>.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>IMPORT-ACQ</td>
+  </tr>
+  <tr>
+    <td><a id="664" name="664">664</a></td>
+    <td class="esq"><u>CÓDIGO MOTIVO GENÉRICO</u> <p>Indica o código do motivo que originou
+    para as transacções recebidas via Ficheiro do representante do Sistema de Pagamento e
+    via Ficheiro <em>Clearing</em>, uma rejeição.<br />
+    Nestas casos a SIBS valida se o movimento recebido pode ter alguma anomalia (operação
+    suspeita). </p>
+    <p>É um campo idêntico ao atributo <a href="camp1100.htm#1165">1165</a> e assume os
+    seguintes valores:<br />
+    &nbsp;&nbsp; 01 - Cartão/Emissor inexistente<br />
+    &nbsp;&nbsp; 02 - Cartão expirado<br />
+    &nbsp;&nbsp; 03 - Cartão expirado e em Lista Negra<br />
+    &nbsp;&nbsp; 04 - Cartão expirado e conta inibida<br />
+    &nbsp;&nbsp; 05 - Cartão anulado<br />
+    &nbsp;&nbsp; 06 - Cartão em Lista Negra<br />
+    &nbsp;&nbsp; 07 - Cartão L. N. após Termo Resp.<br />
+    &nbsp;&nbsp; 08 - Conta por caracterizar<br />
+    &nbsp;&nbsp; 09 - Situação da conta irregular<br />
+    &nbsp;&nbsp; 10 - Situação na dívida -&gt; 3 atrasos<br />
+    &nbsp;&nbsp; 11 - Cartão sem vertente de crédito<br />
+    &nbsp;&nbsp; 12 - Cartão com vertente de crédito inibida<br />
+    &nbsp;&nbsp; 13 - Limite crédito excedido, conta normal<br />
+    &nbsp;&nbsp; 14 - Limite crédito excedido, conta inibida<br />
+    &nbsp;&nbsp; 15 - Actividade conta excedida no dia<br />
+    &nbsp;&nbsp; 16 - Actividade conta excedida 4 dias<br />
+    &nbsp;&nbsp; 17 - Cartão capturado<br />
+    &nbsp;&nbsp; 18 - Tentativas PIN esgotadas<br />
+    &nbsp;&nbsp; 19 - Limite crédito excedido cartão, conta normal<br />
+    &nbsp;&nbsp; 20 - Limite crédito excedido cartão, conta inibida<br />
+    &nbsp;&nbsp; 21 - Cheque dígito inválido<br />
+    &nbsp;&nbsp; 22 - Montante trans. inválido ou zero<br />
+    &nbsp;&nbsp; 23 - Autorização inexistente<br />
+    &nbsp;&nbsp; 24 - Autorização recusada<br />
+    &nbsp;&nbsp; 25 - Autorização Unicre e 1 operação firme<br />
+    &nbsp;&nbsp; 26 - Autorização Outrem &lt; operação firme<br />
+    &nbsp;&nbsp; 27 - Autorização duplicada<br />
+    &nbsp;&nbsp; 28 - Chargeback / Tipo doc. corrigido<br />
+    &nbsp;&nbsp; 29 - Cartão ainda não válido<br />
+    &nbsp;&nbsp; 30 - TC inválida para tipo de cartão<br />
+    &nbsp;&nbsp; 31 - POS entry mode inválido p/ tipo cartão<br />
+    &nbsp;&nbsp; 32 - Operação não permitida p/ classe cartão<br />
+    &nbsp;&nbsp; 33 - PIN inválido<br />
+    &nbsp;&nbsp; 34 - Outros motivos<br />
+    &nbsp;&nbsp; 35 - Reapresentação sem TCR1<br />
+    &nbsp;&nbsp; 36 - Reapresentação sem nº processo<br />
+    &nbsp;&nbsp; 37 - Montante autorizado -&gt; Floor Limit<br />
+    &nbsp;&nbsp; 38 - <em>(Sem descritivo atribuído)<br />
+    &nbsp;&nbsp;</em> 39 - Trans. não permitida no SPG<br />
+    &nbsp;&nbsp; 40 - Apresentação tardia<br />
+    &nbsp;&nbsp; 41 - Reapresentação tardia<br />
+    &nbsp;&nbsp; 42 - Discrepância reapresentação e original<br />
+    &nbsp;&nbsp; 43 - Montante acq. = 0 com dif. montante set.<br />
+    &nbsp;&nbsp; 44 - Aviso fraude rejeitado<br />
+    &nbsp;&nbsp; 45 - Aviso de fraude com anomalia<br />
+    &nbsp;&nbsp; 50 - Resp. Neg. a pedido documento</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="665" name="665">665</a></td>
+    <td class="esq"><u>DATA DO REGISTO LOG</u> <p>É a data que está associada ao registo de
+    log central da SIBS.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="666" name="666">666</a></td>
+    <td class="esq"><u>TIPO DE ACTUALIZAÇÃO</u> <p>Indica o tipo de actualização a
+    efectuar na Base de Dados.</p>
+    <p>&nbsp;&nbsp; 0 - Inserção<br>
+    &nbsp;&nbsp; 1 - Abate<br>
+    &nbsp;&nbsp; 2 - Alteração</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="667" name="667">667</a></td>
+    <td class="esq"><u>TIPO DE PROMOÇÃO</u> <p>Indica o tipo de promoção definida para o
+    cliente.</p>
+    <p>&nbsp;&nbsp; 6 - prestações</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIP-PROM</td>
+  </tr>
+  <tr>
+    <td><a id="668" name="668">668</a></td>
+    <td class="esq"><u>NÚMERO DE FAMÍLIA DA PROMOÇÃO</u> <p>Indica o número da família
+    de promoções.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FAM-PROM</td>
+  </tr>
+  <tr>
+    <td><a id="669" name="669">669</a></td>
+    <td class="esq"><u>NÚMERO DE PROMOÇÃO</u> <p>Indica o número da promoção dentro da
+    família de promoções.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NR-PROM</td>
+  </tr>
+  <tr>
+    <td><a id="670" name="670">670</a></td>
+    <td class="esq"><u>NÚMERO DE ENCOMENDA</u> <p>Indica o número atribuído pelo GF à
+    encomenda enviada no ficheiro.</td>
+    <td class="dta">10</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NR-ENCOM</td>
+  </tr>
+  <tr>
+    <td><a id="671" name="671">671</a></td>
+    <td class="esq"><u>MONTANTE ENCOMENDA</u> <p>Indica o montante associado à encomenda
+    enviada pelo GF no ficheiro e referenciada no campo <a href="#670">670</a>.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>MONT-ENCOM</td>
+  </tr>
+  <tr>
+    <td><a id="672" name="672">672</a></td>
+    <td class="esq"><u>NÚMERO DE CLIENTE ALHEIO</u> <p>Número do cliente definido para a
+    empresa e indicado nos dados do cliente crédito.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDCOT-CR-ALH</td>
+  </tr>
+  <tr>
+    <td><a id="673" name="673">673</a></td>
+    <td class="esq"><u>NÚMERO DE REGISTOS A CRÉDITO</u> <p>Número de registos a crédito
+    recebidos no ficheiro.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td nowrap="nowrap">TOT-REG-CRED</td>
+  </tr>
+  <tr>
+    <td><a id="674" name="674">674</a></td>
+    <td class="esq"><u>NÚMERO DE REGISTOS A CRÉDITO</u> <p>Número de registos a crédito
+    recebidos no ficheiro.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOT-REG-DEB</td>
+  </tr>
+  <tr>
+    <td><a id="675" name="675">675</a></td>
+    <td class="esq"><u>SEQUÊNCIA DO REGISTO</u> <p>Número sequencial do registo informado no
+    ficheiro.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SEQ-REG</td>
+  </tr>
+  <tr>
+    <td><a id="676" name="676">676</a></td>
+    <td class="esq"><u>REFERÊNCIA DO SERVIÇO</u> <p>Referência do serviço atribuída pelo
+    Gestor Financeiro e indicada no ficheiro de serviços.</td>
+    <td class="dta">10</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>REF-SERV</td>
+  </tr>
+  <tr>
+    <td><a id="677" name="677">677</a></td>
+    <td class="esq"><u>CÓDIGO DE ERRO DO CRÉDITO</u> <p>Indica o erro registado no
+    processamento de um ficheiro recepcionado na SIBS, para a aplicação de crédito
+    bancário e não bancário. (Ver <a href="677.htm" target="main">tabela</a>).</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD-ERRO-CR</td>
+  </tr>
+  <tr>
+    <td><a id="678" name="678">678</a></td>
+    <td class="esq"><u>DATA DA RESPOSTA A PERGUNTA SIBS</u> <p>Indica o ano, mês e dia em que
+    foi efectuada a resposta a uma pergunta SIBS. É uma informação atribuída pelo
+    utilizador da Aplicação de Regularizações.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="679" name="679">679</a></td>
+    <td class="esq"><u>REFERÊNCIA DA RESPOSTA A PERGUNTA SIBS</u> <p>É a informação
+    atribuída pelo utilizador da Aplicação de Regularizações para identificar a resposta
+    que efectuou a uma pergunta SIBS.</td>
+    <td class="dta">6</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="680" name="680">680</a></td>
+    <td class="esq"><u>TIPO DE PERGUNTA</u> <p>Campo que indica o tipo de pergunta efectuada
+    pela SIBS aos terminais de regularizações dos Bancos.</p>
+    <p>Assume os seguintes valores:<br />
+    &nbsp;&nbsp; 1 - Caixa Automático<br />
+    &nbsp;&nbsp; 2 - TPA<br />
+    &nbsp;&nbsp; 3 - Cartão</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="681" name="681">681</a></td>
+    <td class="esq"><u>TIPO DE ALTERAÇÃO</u> <p>Campo que indica o tipo de alteração a
+    efectuar na dívida duma conta corrente.</p>
+    <p>Pode assumir os seguintes valores:<br />
+    &nbsp;&nbsp; 1 - Alteração da situação da dívida para 8;<br />
+    &nbsp;&nbsp; 2 - Alteração parcial de juros;<br />
+    &nbsp;&nbsp; 3 - Eliminação da totalidade dos juros.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="682" name="682">682</a></td>
+    <td class="esq"><u>DESCRITIVO DO ERRO</u> <p>Descritivo do erro ocorrido no
+    processamentode um ficheiro associado ao código do campo <a href="campos6.htm#590">590</a>
+    - Código de Erro.</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="683" name="683">683</a></td>
+    <td class="esq"><u>DATA DE SITUAÇÃO DO BENEFICIÁRIO</u> <p>Campo que indica qual a data
+    da situação do beneficiário, no âmbito do Serviço Especial &quot;Pagamento à
+    Segurança Social&quot;.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>AAAAMM</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="684" name="684">684</a></td>
+    <td class="esq"><u>NÚMERO FACTURA / RECIBO</u> <p>Campo que indica qual o número da
+    factura / recibo atribuído pela SIBS, quando uma transacção é correctamente concluída
+    no âmbito do Serviço Especial &quot;Pagamento à Segurança Social&quot;.<br />
+    Tem um formato AASSSSSSS, em que AA é o ano presente à data da transacção e SSSSSSS é
+    um número sequencial gerido pela SIBS, inicializado a zeros sempre que exista uma
+    mudança de ano.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>AASSSSSSS</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="685" name="685">685</a></td>
+    <td class="esq"><u>CÓDIGO DE PRIORIDADE</u> <p>Tabela do serviço especial venda de
+    bilhetes para espectáculo, que indica a prioridade na atribuição dos lugares dentro de
+    uma determinada zona de vendas.</p>
+    <p>Tem os seguintes valores:<br />
+    &nbsp;&nbsp; 1 - Menor para Maior<br />
+    &nbsp;&nbsp; 2 - Maior para Menor<br />
+    &nbsp;&nbsp; 3 - Meio para Extremos</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="686" name="686">686</a></td>
+    <td class="esq"><u>NÚMERO DE FACTURA DO SERVIÇO</u><p>É o número atribuído pela SIBS
+    após a conclusão da transacção. Esta numeração poderá ser fornecida pela empresa
+    prestadora do serviço ou gerida pelo sistema da SIBS.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="687" name="687">687</a></td>
+    <td class="esq"><u>TIPO DE PAGAMENTO / SERVIÇO</u> <p>Campo que indica o tipo de
+    pagamento dentro dum serviço especial duma empresa.</p>
+    <p>Assume os seguintes valores:<br />
+    &nbsp;&nbsp; 001 - Pagamento de IRS<br />
+    &nbsp;&nbsp; 002 - Pagamento de IRC<br />
+    &nbsp;&nbsp; 003 - Pagamento de IVA<br />
+    &nbsp;&nbsp; 004 - Pagamento de Contribuição Autárquica<br />
+    &nbsp;&nbsp; 005 - Pagamento de Imposto de Circulação<br />
+    &nbsp;&nbsp; 006 - Pagamento de Imposto de Selo<br>
+    &nbsp;&nbsp; 007 - Pagamento de Imposto de Camionagem<br>
+    &nbsp;&nbsp; 008 - Pagamento Multi-Imposto<br />
+    &nbsp;&nbsp; 009 - Pagamento de Imposto Especial sobre o Consumo<br>
+    &nbsp;&nbsp; 011 - Pagamento Imposto Municipal sobre Transmissões<br>
+    &nbsp;&nbsp; 012 - Pagamento Imposto Municipal sobre Imóveis<br />
+    &nbsp;&nbsp; 010 - Carregamento TMN<br>
+    &nbsp;&nbsp; 015 - Carregamento Netpac<br />
+    &nbsp;&nbsp; 020 - Pagamento Sapo<br>
+    &nbsp;&nbsp; 040 - Pagamentos Via Card<br>
+    &nbsp;&nbsp; 050 - Carregamentos Optimus<br>
+    &nbsp;&nbsp; 060 - Carregamentos Vodafone</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="688" name="688">688</a></td>
+    <td class="esq"><u>REFERÊNCIA MB SERVIÇO ESPECIAL H-&gt;H</u> <p>Campo que identifica o
+    movimento efetuado pelo cliente na Rede Multibanco, podendo ser associado a uma operação
+    de débito ou de crédito.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="689" name="689">689</a></td>
+    <td class="esq"><u>REFERÊNCIA ADICIONAL SERVIÇO ESPECIAL H-&gt;H</u> <p>Campo que indica
+    a entidade liquidadora e o balcão liquidador da receita do Estado.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="690" name="690">690</a></td>
+    <td class="esq"><u>TIPO DE CARREGAMENTO DO CA</u> <p>Indica o tipo de carregamento a
+    efectuar num Caixa Automático.</p>
+      <p>Pode assumir os seguintes valores:<br />
+    &nbsp;&nbsp; 0 - Substituição/Não envia<br />
+    &nbsp;&nbsp; 1 - Reforço/Não envia<br>
+    &nbsp;&nbsp; 2 - Substituição/Envia<br />
+    &nbsp;&nbsp; 3 - Reforço/Envia</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPCARREG</td>
+  </tr>
+  <tr>
+    <td><a id="691" name="691">691</a></td>
+    <td class="esq"><u>NÚMERO DE CAMPO</u> <p>Identificação do campo que se vai informar
+    seguidamente. Esta identificação tem de ser idêntica à da SIBS. Começa em 01 e
+    termina em NUM. OCORR.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="692" name="692">692</a></td>
+    <td class="esq"><u>COMPRIMENTO DO CAMPO</u> <p>Indica o número de caracteres de
+    comprimento do campo. Deve ser coerente com os dados da SIBS. Poderá estar informado a
+    zeros caso não pretenda a apresentação desse campo nesse caso particular.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="693" name="693">693</a></td>
+    <td class="esq"><u>DADOS CAMPO</u> <p>Apresenta os dados que devem figurar no cartão.</td>
+    <td class="dta">~</td>
+    <td>var</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="694" name="694">694</a></td>
+    <td class="esq"><u>TOTAL CARTÕES</u> <p>Número de cartões que se pretendem produzir.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>TOTCAR</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="695" name="695">695</a></td>
+    <td class="esq"><u>TOTAL CARTÕES RECUSADOS</u> <p>Número de cartões que foram recusados
+    pela SIBS.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="696" name="696">696</a></td>
+    <td class="esq"><u>TOTAL DO DÉBITO</u> <p>Montante que será facturado pela SIBS
+    resultante do produto de &quot;Total de Cartões Aceites e Produzidos&quot; (<a
+    href="campos4.htm#384">384</a>), pelo custo de cada cartão indicado no contrato com a
+    entidade, no momento da produção.<br />
+    Trata-se de um campo meramente informativo com o qual o Banco poderá verificar a factura
+    mensal enviada pela SIBS, relativa à produção de cartões.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="697" name="697">697</a></td>
+    <td class="esq"><u>DATA DO PROCESSAMENTO</u> <p>É a data em que foi emitido o ficheiro
+    acrescentando três dígitos que correspondem à sequência do ficheiro no dia - Ex:
+    &quot;20040430001&quot;.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>AAAAMMDDSSS<br />
+    (SSS sequência)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="698" name="698">698</a></td>
+    <td class="esq"><u>CÓDIGO DE MOVIMENTO</u> <table border="0" cellspacing="0"
+    cellpadding="0">
+      <tr>
+        <td colspan="2" class="esq"><br>
+        Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap">&nbsp;&nbsp;&nbsp; a -&nbsp;</td>
+        <td class="esq">alteração dados</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; s -&nbsp;</td>
+        <td class="esq">alteração situação - para qualquer uma das situações do campo <a
+        href="camp1300.htm#1396">1396</a> (SITCLISHELL)</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODMOV</td>
+  </tr>
+  <tr>
+    <td><a id="699" name="699">699</a></td>
+    <td class="esq"><u>CÓDIGO DE TRANSACÇÃO EXPANDIDO</u> <p>Identifica o tipo de
+    transacção realizada. Ver <a target="main" href="120-699.htm">tabela</a>.</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODTRN-E</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

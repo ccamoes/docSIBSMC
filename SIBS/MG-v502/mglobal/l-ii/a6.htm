@@ -1,0 +1,2936 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="_self">
+<script>top.captulos.location='indicea.htm#A';</script>
+
+<title>A.6 OPERAÇÕES NO SISTEMA MULTIBANCO</title>
+<style>
+<!--
+TD {
+	font-family: Tahoma, Arial Narrow;
+	font-size: 8pt;
+	vertical-align: middle;
+}
+
+TD.top {
+	font-family: Tahoma, Arial Narrow;
+	font-size: 8pt;
+	vertical-align: top;
+}
+
+-->
+</style>
+</head>
+
+<body>
+
+<h1>A.6 OPERAÇÕES NO SISTEMA MULTIBANCO</h1>
+
+<p>&nbsp;</p>
+
+<p>Neste capítulo apresentam-se os princípios de funcionamento da Rede MB e descrevem-se
+as operações disponíveis no Sistema MB do ponto de vista do Emissor do cartão. Nos
+capítulos <a href="b1-a.htm">B.1</a> e <a href="c1.htm">C.1</a> explica-se o modo como
+cada terminal executa a operação. </p>
+
+<p><br>
+Este capítulo é composto pelos seguintes pontos: 
+
+<ul >
+  <li>princípios gerais de funcionamento da Rede Multibanco (<a href="#A.6.1">A.6.1</a>)</li>
+  <li>operações disponíveis por marca (<a href="#A.6.2">A.6.2</a>)</li>
+  <li>operações disponíveis por cenário de funcionamento (<a href="#A.6.3">A.6.3</a>)</li>
+  <li>descrição das operações (<a href="#A.6.4">A.6.4</a>)</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2 ><a name="A.6.1">A.6.1</a> PRINCÍPIOS GERAIS DE FUNCIONAMENTO DA REDE
+MULTIBANCO</h2>
+
+<p><br>
+Por forma a materializar os objectivos subjacentes à criação do sistema, a Rede
+Multibanco apresenta os seguintes princípios base de funcionamento: 
+
+<ul >
+  <li>Disponibilização do serviço 24 horas por dia, sete dias por semana, em qualquer ponto
+    de acesso (podem existir limitações horárias que resultam da localização do terminal,
+    por exemplo, CA instalados em empresas e na generalidade dos TPAs);<br>
+    <br>
+  </li>
+  <li>Disponibilização do serviço <i>online</i> (permitindo o acesso dos clientes à sua
+    conta nas condições em que esta se encontra no momento da operação) e utilização de
+    saldos de véspera ou de cartão como forma de minimizar as consequências de dificuldades
+    na comunicação com o Emissor;<br>
+    <br>
+  </li>
+  <li>Troca da informação entre a SIBS e as Entidades participantes por via electrónica;<br>
+    <br>
+  </li>
+  <li>Maximização da segurança do cliente na comunicação com o Emissor do seu cartão,
+    através do acesso aos serviços apenas mediante inserção do código pessoal secreto, ou
+    de identificação e código pessoal (MBNet) (excepção: operações de baixo valor e
+    PMB);<br>
+    <br>
+  </li>
+  <li>Operações disponibilizadas numa lógica de simplicidade para o cliente;<br>
+    <br>
+  </li>
+  <li>O acesso a serviços disponibilizados através da rede de terminais Multibanco é
+    imprescindivelmente realizado através de um cartão válido, emitido pelos Aderentes ou
+    por Emissores internacionais com os quais exista acordo Multibanco.</li>
+</ul>
+
+<p><br>
+Em alguns casos, o cartão é essencial para a disponibilização/activação de
+determinado serviço ao seu titular, embora não seja utilizado fisicamente na
+realização das operações (vd. operações Via Verde, TeleMultibanco ou MBNet). </p>
+
+<p>Adicionalmente, existem canais próprios dos Emissores que podem desencadear
+operações no Sistema Multibanco baseadas no NIB do cliente (caso do Pagamento de
+Serviços/Compras). Para estas operações, a componente de validação de segurança é
+garantida pelo Emissor. </p>
+
+<p>&nbsp; </p>
+
+<h2 style="page-break-before: always" ><a name="A.6.2">A.6.2</a> OPERAÇÕES
+DISPONÍVEIS POR MARCA </h2>
+
+<p><br>
+As operações disponibilizadas no Sistema Multibanco são função de um conjunto
+diversificado de factores: 
+
+<ul >
+  <li>Marca associada ao cartão (MB, Visa, MasterCard, AMEX, outras);</li>
+  <li>Características do produto cartão;</li>
+  <li>Emissor do cartão;</li>
+  <li>Caracteristicas e parametrizações do terminal.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h6 >Cartões Bancários Nacionais: selecção da marca que suporta a
+realização de uma transacção </h6>
+
+<p>No caso de cartões bancários de Emissores nacionais, a possibilidade de
+emissão de cartões com mais do que uma marca associada (a marca de um Sistema de
+Pagamento Internacional coexiste no cartão com a marca MB) constitui um factor adicional
+a considerar. Especificamente para estas situações, as operações disponíveis são
+função da marca predominante para realização de uma operação num determinado
+terminal. </p>
+
+<p>Podem ser identificadas três tipologias de cartões, em função da
+respectiva parametrização efectuada pelo Emissor via Caracterização do BIN: 
+
+<ul >
+  <li>Cartões com uma marca de um Sistema de Pagamento Internacional e marca Multibanco;</li>
+  <li>Cartões apenas com uma marca de um Sistema de Pagamento Internacional;</li>
+  <li>Cartões apenas com marca Multibanco.</li>
+</ul>
+
+<p><br>
+No primeiro caso, a realização da transacção pressupõe uma selecção prévia da
+marca que a suporta, de acordo com as seguintes regras genéricas: 
+
+<ul class="nove">
+  <li><b>Operações realizadas em Terminais de Pagamento Automático (TPAs)</b></li>
+</ul>
+
+<blockquote>
+  <p>A marca internacional tem sempre predominância sobre a marca Multibanco.
+  Quando o terminal possua as condições contratuais (acordo) que suportam a aceitação da
+  marca internacional, a operação é realizada no âmbito desta.</p>
+</blockquote>
+
+<ul class="nove">
+  <li><b>Operações realizadas em Caixas Automáticos (CAs)</b></li>
+</ul>
+
+<blockquote>
+  <p>Nos CAs, a marca predominante é a Multibanco. Quando esta exista, a
+  transacção é sempre realizada no âmbito da marca Multibanco, sendo ignoradas outras
+  marcas que existam no cartão.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h6 >Aceitação de Cartões em Portagens </h6>
+
+<p>Nos postos de portagem, são aceites cartões emitidos por entidades
+nacionais ou estrangeiras, nomeadamente: 
+
+<ul >
+  <li>Cartões bancários nacionais (marca MB);</li>
+  <li>Cartões emitidos pela Unicre;</li>
+  <li>Cartões frota emitidos por empresas gasolineiras ou de transportes;</li>
+  <li>Cartões internacionais representados pela Unicre (excepção para cartões Electron e
+    Maestro);</li>
+  <li>Cartões internacionais representados pela Amex.</li>
+</ul>
+
+<p><br>
+Genericamente, as operações disponibilizadas no Sistema MB em função da marca do
+cartão e respectivo Emissor (não considerando eventuais restrições que caracterizem um
+produto cartão específico) são as indicadas a seguir. Note-se que a sua possível
+realização depende da existência de contrato de aceitação da marca do cartão no
+canal (CA, TPA, etc.) em causa. </p>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="100%">
+  <tr>
+    <th rowspan="2" class="tahoma7">Código</th>
+    <th rowspan="2" class="tahoma7">Operação</th>
+    <th colspan="3" class="tahoma7">&nbsp;Cartões Nacionais </th>
+    <th colspan="2" class="tahoma7">Cartões Internacionais</th>
+  </tr>
+  <tr>
+    <td class="tahoma7">Bancários,<br>
+    Marca MB </td>
+    <td class="tahoma7">Marca de <br>
+    Sistema Pag.&nbsp;<br>
+    Internacional</td>
+    <td class="tahoma7">Redes&nbsp;<br>
+    Privadas </td>
+    <td class="tahoma7">Marca&nbsp;de<br>
+    Sistema Pag.&nbsp;<br>
+    Internacional</td>
+    <td class="tahoma7">Cartões Frota</td>
+  </tr>
+  <tr>
+    <td><a href="#001">001</a></td>
+    <td class="tahoesq">Levantamento</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#002">002</a></td>
+    <td class="tahoesq">Pedido de livro de cheques</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#003">003</a></td>
+    <td class="tahoesq">Consulta de saldos</td>
+    <td class="tahoma">X</td>
+    <td >X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#004">004</a></td>
+    <td class="tahoesq">Consulta de movimentos</td>
+    <td class="tahoma">X</td>
+    <td >X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#005">005</a></td>
+    <td class="tahoesq">Alteração de PIN</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td nowrap><a href="#006">006</a><br>
+    <a href="#036">036</a></td>
+    <td class="tahoesq">Aviso de depósito em numerário e <br>
+    Depósito em numerário confirmado</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#007">007</a></td>
+    <td class="tahoesq">Aviso de depósito em valores</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#502">502</a></td>
+    <td class="tahoesqa">Emissão de cheques</td>
+    <td class="tahomaa">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#506">506</a><br>
+    <a href="#536">536</a><br>
+      <a href="#537">537</a></td>
+    <td class="tahoesq">Depósito de notas com validação<br>
+    Depósito de notas - confirmação notas suspeitas<br>
+    Depósito de notas - validação Banco de Portugal</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#507">507</a></td>
+    <td class="tahoesq">Aviso de depósito de cheques com validação</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#008">008</a></td>
+    <td class="tahoesq">Transferência entre contas do cartão</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#009">009</a></td>
+    <td class="tahoesq" nowrap>Pagamentos de serviços/compras (MB)</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#010">010</a></td>
+    <td class="tahoesq">Compra (MB)</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">(<a href="#a">a</a>)</td>
+    <td>&nbsp;</td>
+    <td class="tahoma">(<a href="#a">a</a>)</td>
+    <td class="tahoma">(<a href="#b">b</a>)</td>
+  </tr>
+  <tr>
+    <td><a href="#011">011</a></td>
+    <td class="tahoesq">Devolução de compra (MB)</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#013">013</a><br>
+    <a href="#025">025</a></td>
+    <td class="tahoesq">Autorização <em>outdoor</em> (MB) e<br>
+    Compra <em>outdoor</em> (MB)</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#015">015</a></td>
+    <td class="tahoesq">Compra (outras vertentes)</td>
+    <td>&nbsp;</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#016">016</a></td>
+    <td class="tahoesq">Devolução de compra (outras vertentes)</td>
+    <td>&nbsp;</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#017">017</a></td>
+    <td class="tahoesq">Autorização (outras vertentes)</td>
+    <td>&nbsp;</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#018">018</a><br>
+    <a href="#026">026</a></td>
+    <td class="tahoesq">Autorização <em>outdoor</em> (outras vertentes) e<br>
+    Compra <em>outdoor</em> (outras vertentes)</td>
+    <td>&nbsp;</td>
+    <td class="tahoma">X</td>
+    <td class="tahomaa">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#019">019</a></td>
+    <td class="tahoesq" nowrap>Cancelamento de autorização (outras vertentes)</td>
+    <td>&nbsp;</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#022">022</a></td>
+    <td class="tahoesq">Serviço Especial bancário</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#023">023</a></td>
+    <td class="tahoesq">Serviço Especial não bancário</td>
+    <td class="tahoma">X</td>
+    <td class="oito">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#027">027</a><br>
+    <a href="#094">094</a><br>
+    <a href="#095">095</a></td>
+    <td class="tahoesq" nowrap>Compra após autorização (MBNet)<br>
+    Autorização MBNet<br>
+    Cancelamento de autorização MBNet</td>
+    <td>&nbsp;</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#031">031</a></td>
+    <td class="tahoesq">Levantamento a crédito</td>
+    <td class="tahoma">X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#032">032</a></td>
+    <td class="tahoesq">Depósito (em agência bancária)</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#034">034</a></td>
+    <td class="tahoesq">Adiantamento de dinheiro (MB)</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#037">037</a><br>
+    <a href="#042">042</a><br>
+    <a href="#052">052</a><br>
+    <a href="#058">058</a></td>
+    <td class="tahoesq">Transferência bancária (ordenante)<br>
+    Devolução de transferência bancária (ordenante)<br>
+    Transferência bancária (destinatário)<br>
+    Devolução de transferência bancária (destinatário)</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#038">038</a></td>
+    <td class="tahoesq">Pagamento de letra/recibo</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#039">039</a></td>
+    <td class="tahoesq" nowrap>Adiantamento de dinheiro (outras vertentes)</td>
+    <td class="tahoma">&nbsp;</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td nowrap><a href="#043">043<br>
+    </a><a href="#046">046</a></td>
+    <td class="tahoesq">Carregamento de PMB<br>
+    Consulta a PMB</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td nowrap ><a href="#081">081</a></td>
+    <td class="tahoesq">Levantamento a crédito (sem vertente MB)</td>
+    <td >&nbsp;</td>
+    <td >X</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#0CN">0CN</a></td>
+    <td class="tahoesq" nowrap>Consulta a NIB destinatário</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#0P0">0P0</a></td>
+    <td class="tahoesq" nowrap>Pagamentos de serviços/compras (outras marcas)</td>
+    <td>&nbsp;</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="48">
+  <tr>
+    <td height="28" class="tahoesq"><br>
+    &nbsp;&nbsp; (<a name="a">a</a>) Pagamentos de Baixo Valor (portagens e telefones)</td>
+  </tr>
+  <tr>
+    <td height="20" class="tahoesq">&nbsp;&nbsp; (<a name="b">b</a>) Pagamentos em Postos de
+    Portagem </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="A.6.3">A.6.3</a> OPERAÇÕES DISPONÍVEIS
+POR CENÁRIO DE FUNCIONAMENTO</h2>
+
+<p><br>
+As operações disponíveis para um cartão de débito/crédito (definido por um BIN)
+dependem do cenário de funcionamento do Centro de Processamento de Dados (CPD) ao qual
+aquele se encontra associado. </p>
+
+<p>O CPD do Emissor possui um conjunto de operações que estão disponíveis em função
+do seu cenário de funcionamento e que podem ser disponibilizadas na sua totalidade (ou
+não) para os diferentes produtos-cartão (identificado por um BIN) que aí se encontrem
+residentes. </p>
+
+<p>Deste modo, o Emissor necessita definir que operações pretende disponibilizar: 
+
+<ul>
+  <li>em cada um dos seus CPDs na <a href="i3.htm#I.3.16">Caracterização do CPD</a>; </li>
+  <li>para cada um dos produtos-cartão que possui na <a href="i3.htm#I.3.16">Caracterização
+    do BIN</a>. </li>
+</ul>
+
+<p>Uma operação apenas pode prosseguir com sucesso se estiver definida nestes dois
+âmbitos.</p>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" BORDER="1" CELLSPACING="0" CELLPADDING="2"
+WIDTH="100%">
+  <tr>
+    <td class="tahoma7"><b>Código</b></td>
+    <td class="tahoma7"><b>Operação</b></td>
+    <td class="tahoma7"><b><i>Real-Time</i></b> </td>
+    <td class="tahoma7"><b>Saldo de Conta</b></td>
+    <td class="tahoma7"><b>Saldo de Cartão</b> </td>
+    <td class="tahoma7"><b>Saldo de Conta-crédito</b></td>
+    <td class="tahoma7"><b>Serviço<br>
+    Reduzido</b></td>
+  </tr>
+  <tr>
+    <td><a href="#001">001</a></td>
+    <td class="tahoesq">Levantamento</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td class="tahoma">X</td>
+  </tr>
+  <tr>
+    <td><a href="#002">002</a></td>
+    <td class="tahoesq">Pedido de livro de cheques</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#003">003</a></td>
+    <td class="tahoesq">Consulta de saldos</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#004">004</a></td>
+    <td class="tahoesq">Consulta de movimentos</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#005">005</a></td>
+    <td class="tahoesq">Alteração de PIN</td>
+    <td>X</td>
+    <td COLSPAN="3">X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td nowrap><a href="#006">006</a><br>
+    <a href="#036">036</a></td>
+    <td class="tahoesq">Aviso de depósito em numerário e <br>
+    Depósito em numerário confirmado</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#007">007</a></td>
+    <td class="tahoesq">Aviso de depósito em valores</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#502">502</a></td>
+    <td class="tahoesqa">Emissão de cheques</td>
+    <td class="tahomaa">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#506">506</a><br>
+    <a href="#536">536</a><br>
+      
+      <a href="#537">537</a></td>
+    <td class="tahoesq">Depósito de notas com validação<br>
+    Depósito de notas - confirmação notas suspeitas<br>
+    Depósito de notas - validação Banco de Portugal</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#507">507</a></td>
+    <td class="tahoesq">Aviso de depósito de cheques com validação</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#008">008</a></td>
+    <td class="tahoesq">Transferência entre contas do cartão</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#009">009</a></td>
+    <td class="tahoesq" nowrap>Pagamentos de serviços/compras (MB)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#010">010</a></td>
+    <td class="tahoesq">Compra (MB) (<a href="#a2">a</a>)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td class="tahoma">X</td>
+  </tr>
+  <tr>
+    <td><a href="#011">011</a></td>
+    <td class="tahoesq">Devolução de compra (MB)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#013">013</a><br>
+    <a href="#025">025</a></td>
+    <td class="tahoesq">Autorização <em>outdoor</em> (MB) e<br>
+    Compra <em>outdoor</em> (MB)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#015">015</a></td>
+    <td class="tahoesq">Compra (outras vertentes) (<a href="#a2">a</a>)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td class="tahoma">X</td>
+  </tr>
+  <tr>
+    <td><a href="#016">016</a></td>
+    <td class="tahoesq">Devolução de compra (outras vertentes)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#017">017</a></td>
+    <td class="tahoesq">Autorização (outras vertentes)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#018">018</a><br>
+    <a href="#026">026</a></td>
+    <td class="tahoesq">Autorização <em>outdoor</em> (outras vertentes) e<br>
+    Compra <em>outdoor</em> (outras vertentes)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#019">019</a></td>
+    <td class="tahoesq" nowrap>Cancelamento de autorização (outras vertentes)</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#022">022</a></td>
+    <td class="tahoesq">Serviço Especial bancário</td>
+    <td class="tahoma">(<a href="#b2">b</a>)</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#023">023</a></td>
+    <td class="tahoesq">Serviço Especial não bancário</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#027">027</a><br>
+    <a href="#094">094</a><br>
+    <a href="#095">095</a></td>
+    <td class="tahoesq" nowrap>Compra após autorização (MBNet)<br>
+    Autorização MBNet<br>
+    Cancelamento de autorização MBNet</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#031">031</a></td>
+    <td class="tahoesq">Levantamento a crédito</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td class="tahoma">X</td>
+  </tr>
+  <tr>
+    <td><a href="#032">032</a></td>
+    <td class="tahoesq">Depósito (em agência bancária)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#034">034</a></td>
+    <td class="tahoesq">Adiantamento de dinheiro (MB)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#037">037</a></td>
+    <td class="tahoesq">Transferência bancária (ordenante)&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#038">038</a></td>
+    <td class="tahoesq">Pagamento de letra/recibo</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#039">039</a></td>
+    <td class="tahoesq" nowrap>Adiantamento de dinheiro (outras vertentes)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#042">042</a></td>
+    <td class="tahoesq">Devolução de transferência bancária (ordenante)</td>
+    <td>&nbsp;</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td nowrap><a href="#043">043</a></td>
+    <td class="tahoesq">Carregamento de PMB</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#046">046</a></td>
+    <td class="tahoesq">Consulta a PMB</td>
+    <td COLSPAN="4">X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#052">052</a></td>
+    <td class="tahoesq">Transferência bancária (destinatário)&nbsp;</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#058">058</a></td>
+    <td class="tahoesq">Devolução de transferência bancária (destinatário)&nbsp;</td>
+    <td class="tahoma" colspan="4">(<a href="#c2">c</a>)</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td nowrap ><a href="#081">081</a></td>
+    <td class="esq">Levantamento a crédito (sem vertente MB)</td>
+    <td >X</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td><a href="#0CN">0CN</a></td>
+    <td class="tahoesq">Consulta a NIB destinatário</td>
+    <td class="tahoma">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="#0P0">0P0</a></td>
+    <td class="tahoesq" nowrap>Pagamentos de serviços/compras (outras marcas)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="top"><br>
+    &nbsp;(<a name="a2">a</a>) &nbsp;</td>
+    <td class="tahoesq"><br>
+    Os cenários especificamente utilizáveis para Compras com Pagamento Fraccionado (código
+    de transacção 010 ou 015), definidos na Caracterização do CPD, são os seguintes:<br>
+    &nbsp;&nbsp; - <i>Real-Time</i><br>
+    &nbsp;&nbsp; - Saldo de Cartão<br>
+    &nbsp;&nbsp; - Saldo de Crédito Disponível<br>
+    &nbsp;&nbsp; - Saldo para Compras com Pagamento Fraccionado<br>
+    &nbsp;&nbsp; - Utilização conjunta dos cenários Saldo de Crédito Disponível e Saldo
+    para Compras com Pagamento Fraccionado&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="page-break-before: always" class="top" nowrap>&nbsp;&nbsp;<br>
+      &nbsp;(<a name="b2">b</a>) &nbsp; </td>
+    <td class="tahoesq"><br>
+      As transacções de Serviços Especiais bancários processadas em cenário
+      de <em>Real-Time</em>
+      não são enviadas ao Emissor com o código de transacção 022. Nas
+      mensagens de <em>Real-Time</em>, é informado um código de transacção
+      específico do Serviço Especial, o qual é do conhecimento do Emissor.</td>
+  </tr>
+  <tr>
+    <td class="top" nowrap>&nbsp;&nbsp;<br>
+      &nbsp;(<a name="c2">c</a>) &nbsp; </td>
+    <td class="tahoesq"><br>
+      Devolução gerada pelo Banco destinatário por utilização do Terminal
+      de Serviços SIBS ou envio de mensagem <i>Host-to-Host.</i> </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.6.4">A.6.4</a> DESCRIÇÃO DAS OPERAÇÕES</h2>
+
+<p><br>
+A disponibilidade ou não de cada operação descrita em seguida em cada um dos canais
+existentes no Sistema Multibanco encontra-se na tabela do capítulo <a
+href="../l-iii/d32.htm#seguida">D.3.2</a> do Livro III.</p>
+
+<p>&nbsp;</p>
+
+<h3>LEVANTAMENTO (<a name="001">001</a>)</h3>
+
+<p><br>
+Esta operação permite a entrega de numerário, em forma de notas, ao detentor do
+cartão, em contrapartida do respectivo débito da conta associada ao cartão. </p>
+
+<h5><br>
+Limite Mínimo para Levantamento
+ </h5>
+
+<p>Actualmente, o montante mínimo por levantamento, definido para
+todos os cartões é 10 euros. </p>
+
+<h5><br>
+Limite Máximo diário para Levantamento</h5>
+
+<p>Por outro lado e com o objectivo de: 
+
+<ul>
+  <li>evitar o rápido esvaziamento dos CAs,</li>
+  <li>desincentivar roubos, e</li>
+  <li>limitar a quantidade de dinheiro retirado das contas, </li>
+</ul>
+
+<p>foi definido um limite por operação de 200 euros, enquanto que o
+limite diário para levantamentos é de 400 euros. Estes limites
+são
+aplicados para todos os cartões, nacionais ou internacionais. </p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Emissor recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a>) indicando
+a importância da operação e à qual deve responder (<a href="../l-iii/126x.htm">1261</a>),
+segundo os seus critérios internos. </p>
+
+<p>A mensagem de resposta do Emissor deve indicar sempre o saldo disponível da conta
+principal do cartão, inclusivamente quando a operação é recusada por insuficiência de
+saldo, para que o cliente possa reformular o seu pedido. </p>
+
+<p><br>
+<em>Anulações</em></p>
+
+<p>Quando por qualquer razão anómala, o CA não pode concretizar uma operação de
+levantamento, para a qual o Emissor já deu resposta positiva, a operação é anulada. </p>
+
+<p>A comunicação desta anulação ao Emissor pode ocorrer de imediato ou não, podendo
+mesmo em condições excepcionais vir a ser incluída em período de Compensação
+diferente daquele em que foi incluída a operação original, se o Sistema Multibanco não
+for informado imediatamente da anomalia (porque ocorreu uma interrupção ou porque existe
+uma demora na ligação entre o CA e a SIBS, ou entre a SIBS e o CPD do Emissor). </p>
+
+<p style="page-break-before: always"><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<h5><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão) </h5>
+
+<p>Nos cenários de <a href="a1.htm#A.1.1.2">Saldo de Conta</a> e de <a
+href="a1.htm#A.1.1.3">Saldo de Cartão</a>, o Emissor recebe a informação dos
+levantamentos em <a href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a>, no ficheiro
+Destinos (MDST5). </p>
+
+<h5><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.1">B.1.5.4.1</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3>PEDIDO DE LIVRO DE CHEQUES (<a name="002">002</a>)</h3>
+
+<p><br>
+Esta operação permite o pedido de um livro de cheques para a(s) conta(s) associada(s) ao
+cartão. </p>
+
+<p>No caso do cartão estar associado a mais do que uma conta, o cliente tem de
+seleccionar a conta para a qual pretende requisitar o livro de cheques. </p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Banco recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a> ou <a
+href="../l-iii/116x316x.htm">3161</a>) indicando a conta para qual o cliente pediu o livro
+de cheques. </p>
+
+<p>Uma vez recebida a mensagem no CPD do Banco ou com base no ficheiro Destinos (<a
+href="../l-iii/dst-1.htm">MDST5</a>), o Banco deve desencadear o procedimento interno com
+vista à impressão da caderneta de cheques. </p>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<h5><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão)</h5>
+
+<p>No cenário de <a href="a1.htm#A.1.1.2">Saldo de Conta</a> e de <a
+href="a1.htm#A.1.1.3">Saldo de Cartão</a>, o Banco deve desencadear o procedimento
+interno com vista à impressão da caderneta de cheques com base nos <a
+href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a>, no ficheiro Destinos (MDST5). </p>
+
+<h5><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.17">B.1.5.4.17</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3>CONSULTA DE SALDOS (<a name="003">003</a>)</h3>
+
+<p><br>
+Esta operação fornece os saldos contabilístico e disponível da(s) conta(s)
+associada(s) ao cartão. </p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Emissor recebe uma mensagem (<a href="../l-iii/116x316x.htm">1162</a>) onde se
+indicam os números de conta associados ao cartão e à qual deve responder (<a
+href="../l-iii/126x.htm">1262</a>), enviando os seguintes saldos e respectivas datas-valor
+(para cada uma das contas): 
+
+<ul>
+  <li>Saldo disponível - define o montante máximo que a SIBS pode autorizar até nova
+    comunicação, no caso de não existir <i>Real-Time</i> com o Emissor; e </li>
+  <li>Saldo contabilístico - apresenta o valor consolidado da conta do cliente. </li>
+</ul>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT: </em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<h5><br>
+Cenário Saldo de Conta </h5>
+
+<p>Se o cenário de <a href="a1.htm#A.1.1.2">Saldo de Conta</a> é utilizado como cenário
+principal, o Emissor necessita transmitir periodicamente a informação relativa ao saldo
+disponível das contas que sofreram variações através do ficheiro de Comunicação de
+Saldos de Véspera (<a href="../l-iii/ecsv.htm">ECSV</a>). </p>
+
+<p>Se este é o cenário de degradação quando ocorrem interrupções no <i>Real-Time</i>,
+a SIBS utiliza o saldo disponível residente no seu sistema central e que é actualizado: 
+
+<ul>
+  <li>pelo envio de ficheiros de Comunicação de Saldos de Véspera (<a
+    href="../l-iii/ecsv.htm">ECSV</a>); </li>
+  <li>por opção do Emissor (Caracterização do CPD), pelas mensagens de resposta <i>Real-Time</i>
+    que contenham o campo Saldo Disponível (<a href="../../Campos/campos1.htm#027"
+    target="explicac">027</a>) provenientes de CAs. </li>
+</ul>
+
+<h5><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.3">B.1.5.4.3</a>. </p>
+
+<p><u>Nota</u>: <br>
+Esta operação pode estar também disponível para um Emissor cujo cenário único seja o
+de <a href="a1.htm#A.1.1.3">Saldo de Cartão</a>, embora este não seja o objectivo dos
+dados a transmitir. Neste caso, os dados visualizados são apenas os respeitantes ao Saldo
+Disponível, correspondente ao saldo de cartão que se encontra disponível no momento. </p>
+
+<p>&nbsp;</p>
+
+<h3>CONSULTA DE MOVIMENTOS (<a name="004">004</a>)</h3>
+
+<p><br>
+Esta operação apresenta, no máximo, os últimos dez movimentos e os saldos
+contabilístico e disponível de uma das possíveis contas associadas ao cartão. </p>
+
+<p>No caso do cartão estar associado a mais do que uma conta, o cliente tem de
+seleccionar a conta para a qual pretende consultar os movimentos. </p>
+
+<h5 style="page-break-before: always"><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Emissor recebe uma mensagem (<a href="../l-iii/116x316x.htm">1162</a>) onde se
+indica o número da conta escolhida e à qual deve responder (<a href="../l-iii/126x.htm">1262</a>),
+enviando a seguinte informação: 
+
+<ul>
+  <li>referências, descritivos, datas e valores dos últimos movimentos da conta, </li>
+  <li>saldo disponível e respectiva data-valor, e </li>
+  <li>saldo contabilístico e respectiva data-valor. </li>
+</ul>
+
+<p>No caso de um CPD ter o <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a> como cenário
+principal e ocorrer uma interrupção temporária no funcionamento da sessão, o cliente
+consegue visualizar a operação nas opções de escolha, mas o serviço não é prestado
+por falta de resposta do Emissor. </p>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<h5><br>
+Cenário Saldo de Conta </h5>
+
+<p>Em casos pontuais e depois de aprovação pela SIBS, é possível disponibilizar esta
+operação com base na consulta à informação previamente enviada no ficheiro Movimentos
+de Conta (<a href="../l-iii/emvc.htm">EMVC</a>). </p>
+
+<h5><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.4">B.1.5.4.4</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3>ALTERAÇÃO DE PIN (<a name="005">005</a>)</h3>
+
+<p><br>
+Esta operação permite a alteração do código secreto (PIN) por iniciativa do cliente. </p>
+
+<p>Para cartões que apenas possuem pista magnética de baixa coercividade (regravável na
+Rede MB), é efectuada a reescrita da banda magnética, para actualização dos Personal
+Validation Values (PVVs) das pistas 2 e 3 (<a href="../../Campos/campos1.htm#028"
+target="explicac">PVV2</a> e <a target="explicac" href="../../Campos/campos1.htm#029">PVV3</a>)
+do cartão antes da devolução deste ao cliente. </p>
+
+<p>Para cartões com banda magnética de alta coercividade (inclui os cartões
+EMV nacionais), a operação de Alteração de PIN actualiza apenas a informação
+guardada centralmente. Adicionalmente, para cartões com <i>chip</i> EMV, é necessário
+actualizar elementos contidos no <i>chip</i> sempre que o cartão suporte o método de
+autenticação de PIN <i>Offline</i>, ou seja, sempre que existam elementos relativos ao
+PIN posicionados no próprio cartão (aplicável exclusivamente a cartões EMV nacionais
+que suportem DDA-<i>Dynamic Data Authentication</i>).</p>
+
+<p>Assim, no caso de alterações de PIN efectuadas com cartões EMV DDA, são
+actualizados os seguintes campos contidos no <i>chip</i>: 
+
+<ul >
+  <li><i>Track 2 Equivalent Data</i> - elemento no <i>chip</i> que equivale aos dados da pista
+    2 do cartão (inclui <a href="../../Campos/campos1.htm#028" target="explicac">PVV2</a>)</li>
+  <li><i>Pinblock</i> posicionado no <i>chip</i>&nbsp;</li>
+</ul>
+
+<p>De referir também que a validação de PVV nos cartões com pistas de alta
+coercividade é efectuada apenas considerando o valor guardado centralmente, e não o
+valor presente na pista física do cartão, uma vez que esta não é actualizável na Rede
+MB. </p>
+
+<h5 style="page-break-before: always"><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada, o CPD do Emissor recebe uma mensagem
+(<a href="../l-iii/116x316x.htm">1161</a>
+ou <a
+href="../l-iii/116x316x.htm">3161</a>) onde se indicam os novos PVVs das pistas 2 e 3. </p>
+
+<h5><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão)</h5>
+
+<p>Nos cenários de <a href="a1.htm#A.1.1.2">Saldo de Conta</a> e de <a
+href="a1.htm#A.1.1.3">Saldo de Cartão</a>, o Emissor recebe a informação dos novos PVVs
+em <a href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a>, no ficheiro Destinos (MDST5).
+</p>
+
+<h5><br>
+Talão</h5>
+
+<p>Não é emitido talão na alteração de PIN. </p>
+
+<p>&nbsp;</p>
+
+<h3>AVISO DE DEPÓSITO EM NUMERÁRIO (<a name="006">006</a>) e<br>
+DEPÓSITO EM NUMERÁRIO CONFIRMADO (<a name="036">036</a>)</h3>
+
+<p><br>
+Embora esta operação tivesse sido desenvolvida para o ambiente interbancário da rede de
+Caixas Automáticos (CAs), nunca foi possível disponibilizá-la segundo essa filosofia
+por implicar a afectação de considerável parte do tempo do supervisor (ou tesoureiro)
+na contagem das notas. </p>
+
+<p>Deste modo, a operação está disponível apenas nos CAs em que o Banco de apoio e o
+Banco emissor do cartão sejam a mesma entidade. </p>
+
+<p>Esta operação permite o depósito de numerário dentro de um envelope fornecido pelo
+CA ou pelo cliente (ou seja, a inexistência de envelopes não impede a disponibilização
+da operação), podendo o cliente escolher a conta pretendida, caso o cartão esteja
+associado a mais do que uma conta. </p>
+
+<p>A operação pode não estar disponível se: 
+
+<ul>
+  <li>o periférico não funcionar correctamente; ou </li>
+  <li>o supervisor retirou o cacifo de depósitos para contagem das notas (operação prévia
+    ao fecho contabilístico do CA). </li>
+</ul>
+
+<p>No fecho contabilístico do CA desse dia, o supervisor verifica a importância
+existente no envelope e confirma ou corrige a mesma. Só após esta confirmação é que a
+operação adquire valor contabilístico. </p>
+
+<p>Actualmente, todos os CAs da Rede MB disponibilizam a operação de depósito
+de numerário com envelope. Esta transacção vai passar a ter como alternativa a nova
+operação de depósito de notas com validação. Os dois formatos para a operação de
+depósito irão coexistir na Rede MB. Refira-se no entanto que cada CA pode disponibilizar
+apenas um dos formatos. </p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>No cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>, a mensagem de aviso de
+depósito (<a href="../l-iii/116x316x.htm">3161</a> e <a
+href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=006)
+a enviar ao CPD do Banco emissor é desencadeada pela primeira mensagem de pedido (1xxx)
+após a operação de depósito. Depois do fecho contabilístico do CA e da confirmação
+dos depósitos efectuados, o CA envia um nova mensagem (<a href="../l-iii/116x316x.htm">3161</a>
+e <a href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=036)
+a confirmar o depósito em numerário, apresentando a mesma identificação da mensagem do
+aviso e indicando a importância confirmada pelo supervisor. </p>
+
+<p>O Banco emissor recebe <a href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a>, no
+ficheiro Destinos (MDST5), relativos aos avisos de depósito e da sua confirmação
+comunicados em RT, mas se ambos ocorreram no mesmo período de Compensação, a SIBS só
+envia o segundo registo (o aviso de depósito tem objectivos meramente informativos). </p>
+
+<p><br>
+<em>Anulação de Depósito</em></p>
+
+<p>A operação de depósito em numerário não gera mensagens de anulação. Se a
+mensagem de confirmação de depósito tiver a importância do depósito preenchida a
+zeros, o aviso de depósito correspondente não tem efeitos contabilísticos. </p>
+
+<h5><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão) </h5>
+
+<p>Nos cenários de <a href="a1.htm#A.1.1.2">Saldo de Conta</a> e de <a
+href="a1.htm#A.1.1.3">Saldo de Cartão</a>, o Banco emissor recebe <a
+href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a>, no ficheiro Destinos (MDST5),
+relativos aos avisos de depósito e da sua confirmação comunicados em RT, mas se ambos
+ocorreram no mesmo período de Compensação, a SIBS só envia o segundo registo (o aviso
+de depósito tem objectivos meramente informativos). </p>
+
+<h5><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.8">B.1.5.4.8</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3>AVISO DE DEPÓSITO EM VALOR (<a name="007">007</a>)</h3>
+
+<p><br>
+Esta operação concretiza-se de forma idêntica ao descrito para o Aviso de Depósito em
+Numerário (<a href="#006">006</a>), mas para o acolhimento de cheques a depositar numa
+das contas do cartão. </p>
+
+<p>A principal diferença é a de o supervisor do CA não confirmar o depósito através
+do Sistema MB. </p>
+
+<p>Deste modo, a agência do CA tem de encaminhar os envelopes para o Serviço Central de
+cada Banco emissor dos cartões (que efectuaram esta operação). </p>
+
+<p>Por outro lado, os Serviços Centrais dos Bancos emissores (por exemplo, o serviço
+responsável pelo acolhimento dos cartões capturados do Banco) têm de listar os avisos
+de depósito, a partir dos registos do ficheiro Destinos (<a href="../l-iii/dst-1.htm">MDST5</a>),
+para controlarem os envelopes de depósito a receber dos Bancos de apoio dos CAs
+utilizados pelos clientes. </p>
+
+<p>Na recepção dos envelopes, estes devem ser abertos e incluídos no circuito normal do
+Banco para realização dos depósitos. </p>
+
+<p>Actualmente, todos os CAs da Rede MB disponibilizam a operação de depósito
+de cheques e outros valores com envelope. Esta transacção vai passar a ter como
+alternativa a nova operação de depósito de cheques com validação. Os dois formatos
+para a operação de depósito irão coexistir na Rede MB. Refira-se no entanto que cada
+CA pode disponibilizar apenas um dos formatos. </p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>No cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>, é enviada uma mensagem
+de aviso de depósito (<a href="../l-iii/116x316x.htm">3161</a>) ao Banco. Este recebe
+também um <a href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>, no ficheiro Destinos
+(MDST5), relativo ao aviso de depósito. </p>
+
+<h5><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão) </h5>
+
+<p>Nos cenários de <a href="a1.htm#A.1.1.2">Saldo de Conta</a> e de <a
+href="a1.htm#A.1.1.3">Saldo de Cartão</a>, o Banco recebe um <a
+href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>, no ficheiro Destinos (MDST5),
+relativo ao aviso de depósito. </p>
+
+<h5 style="page-break-before: always"><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.9">B.1.5.4.9</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3>TRANSFERÊNCIA (ENTRE CONTAS DO CARTÃO) (<a name="008">008</a>) </h3>
+
+<p><br>
+Esta operação permite a transferência de fundos entre as duas contas associadas ao
+cartão (cuja natureza, à ordem ou outra, depende unicamente do Emissor): da primeira
+conta para a segunda ou vice-versa. </p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Emissor recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a>) onde se
+indicam as contas a debitar e a creditar e o valor da transferência e à qual deve
+responder (<a href="../l-iii/126x.htm">1261</a>), enviando os saldos disponíveis e
+contabilísticos e respectivas datas-valor (para cada uma das contas). </p>
+
+<h5><br>
+Cenário de Saldo de Conta</h5>
+
+<p>No cenário de <a href="a1.htm#A.1.1.2">Saldo de Conta</a>, a SIBS: 
+
+<ul>
+  <li>valida os dados das contas contra a informação que tem residente, actualizada pelo
+    Emissor através do envio de ficheiros de Comunicação de Saldos de Véspera (<a
+    href="../l-iii/ecsv.htm">ECSV</a>), </li>
+  <li>actualiza os saldos disponíveis e contabilísticos das contas associadas ao cartão e </li>
+  <li>envia a informação relativa às transferências em <a href="../l-iii/dst-1.htm#= 1">registos
+    de tipo 1</a>, no ficheiro Destinos (MDST5). </li>
+</ul>
+
+<h5><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.15">B.1.5.4.15</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3>PAGAMENTO DE SERVIÇOS/COMPRAS (MB) (<a name="009">009</a>)</h3>
+
+<p><br>
+Nesta operação, o cliente pode efectuar o pagamento de uma factura (ou outro débito),
+enviada ao cliente pela empresa prestadora do serviço, onde constam os seguintes campos
+que devem ser inseridos nesta operação: </p>
+
+<blockquote>
+  <ul>
+    <li>referência da empresa,</li>
+    <li>referência do pagamento, e</li>
+    <li>montante a pagar.</li>
+  </ul>
+</blockquote>
+
+<p>Na Compensação, a SIBS envia um crédito para a conta da empresa, através do seu
+Banco de apoio, pelo total dos pagamentos recebidos e envia-lhe directamente um ficheiro,
+com o detalhe de cada pagamento. </p>
+
+<h5 style="page-break-before: always"><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Banco recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a>) onde se
+indica a referência da empresa, a referência do pagamento e o montante a pagar, e à
+qual deve responder (<a href="../l-iii/126x.htm">1261</a>), segundo os seus critérios
+internos. </p>
+
+<p>O Banco recebe <a href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a>, no ficheiro
+Destinos (MDST5), relativos aos pagamentos de serviços/compras efectuados. </p>
+
+<p>A SIBS envia um <a href="../l-iii/mov-3.htm">registo de tipo 3</a> no ficheiro
+Movimentos (MMOV5) pelo total de pagamentos de serviço de uma entidade para o
+Banco de apoio da entidade/empresa. </p>
+
+<h5><br>
+Operação originada de um sistema de informação do Banco </h5>
+
+<p>Esta operação pode ter origem no <em>host</em> do Banco e ser enviada numa sessão
+Banco-SIBS, onde não existe a presença de um cartão, mas apenas do NIB da conta a
+debitar e que pertence ao Banco. </p>
+
+<p>A SIBS aceita a operação se a cobrança pretendida estiver válida e envia um <a
+href="../l-iii/dst-1.htm#= 2">registo de tipo 2</a> no ficheiro Destinos (MDST5).&nbsp; </p>
+
+<h5><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.12">B.1.5.4.12</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3>COMPRA (Rede MB) (<a name="010">010</a>)</h3>
+
+<p><br>
+Esta operação permite a aquisição de um bem ou serviço&nbsp;no âmbito da marca MB.
+Esta transacção pode ocorrer nas seguintes situações: 
+
+<ul >
+  <li>o cartão possui apenas a marca MB ou esta coexiste com uma marca de um Sistema de
+    Pagamento Internacional, o BIN do cartão tem esta operação disponível, e o cartão é
+    utilizado num local onde exista um Terminal de Pagamento Automático (TPA) da Rede MB que
+    possua apenas o acordo geral para aceitação de serviços MB; ou</li>
+  <li>independentemente dos acordos de aceitação existentes no TPA, o cartão possui apenas
+    a marca MB e esta operação foi disponibilizada na Caracterização do BIN.</li>
+</ul>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Banco recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a>) indicando a
+importância da operação e à qual deve responder (<a href="../l-iii/126x.htm">1261</a>),
+segundo os seus critérios internos. </p>
+
+<p>No caso do Banco recusar a operação por insuficiência de saldo, a mensagem de
+resposta deve indicar o saldo disponível e este é apresentado ao cliente no visor do <i>pinpad</i>.
+</p>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<h5 style="page-break-before: always"><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão) </h5>
+
+<p>No cenário de <a href="a1.htm#A.1.1.2">Saldo de Conta</a> e de <a
+href="a1.htm#A.1.1.3">Saldo de Cartão</a>, o Banco recebe a informação das compras em <a
+href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a>, no ficheiro Destinos (MDST5). </p>
+
+<h5><br>
+Talão</h5>
+
+<p>O talão apresenta os dados mínimos descritos no início do capítulo, porém, nas
+operações TPA, a identificação do terminal é completada pelo: 
+
+<ul>
+  <li>nome e morada do estabelecimento; </li>
+  <li>número de movimento do cartão (usado apenas para operações em TPAs e Baixo Valor,
+    com numeração distinta). </li>
+</ul>
+
+<p>Ver capítulo <a href="c1.htm#recibo">C.1</a>. </p>
+
+<h5><br>
+Compras de Baixo Valor</h5>
+
+<p>Existem certos ambientes de funcionamento que não apresentam condições para o
+funcionamento típico da operação de Compra, porque: </p>
+
+<blockquote>
+  <p>- os montantes a pagar são baixos;<br>
+  - não é viável a aceitação de introdução do código secreto. </p>
+</blockquote>
+
+<blockquote>
+  <p><br>
+  <em>a) Portagens</em></p>
+</blockquote>
+
+<blockquote>
+  <p>O critério para aceitação das operações baseia-se:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>no 'Limite em Pagamentos de Baixo Valor' definido na <a href="i3.htm#I.3.16">Caracterização
+      do BIN</a> e </li>
+    <li>Lista Negra existente em cada ponto de aceitação; os cartões cujo saldo de cartão é
+      zero, são incluídos nesta LN para que o serviço lhes seja inibido. </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p><em>b) Telefones públicos</em></p>
+</blockquote>
+
+<blockquote>
+  <p>Os critérios de aceitação da operação realiza-se após o de uma mensagem de
+  consulta enviada pelo telefone à SIBS, onde se valida a situação do cartão e
+  baseia-se: </p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>no 'Limite em Pagamentos de Baixo Valor' definido na <a href="i3.htm#I.3.16">Caracterização
+      do BIN</a> e </li>
+    <li>no montante máximo por telefonema, definido pela SIBS em 10 euros. </li>
+  </ul>
+</blockquote>
+
+<p><br>
+Estas operações de Baixo Valor, são reunidas e enviadas num <a
+href="../l-iii/dst-1.htm#= 1">único registo</a> do ficheiro Destinos (MDST5): 
+
+<ul>
+  <li>uma vez por semana;</li>
+  <li>logo que atingir o montante máximo para operações de Baixo Valor; </li>
+  <li>quando já existirem 15 movimentos de detalhe.</li>
+</ul>
+
+<h5 style="page-break-before: always" ><br>
+Compras com Pagamento Fraccionado (aplicável apenas a cartões EMV) </h5>
+
+<p>As operações de compra realizadas no âmbito de programas de Linha de
+Crédito (compras com pagamento fraccionado) são decididas de acordo com os cenários de
+decisão especificamente destinados às mesmas, os quais são definidos pelo Banco na <a
+href="i3.htm#I.3.16">Caracterização do CPD</a>. </p>
+
+<p>O Banco tem a possibilidade de definir se pretende que estas compras em
+particular sejam realizadas apenas em <i>Real-Time</i> ou se deseja possibilitar a
+decisão no âmbito de um cenário de degradação. Opcionalmente, pode utilizar um
+cenário de degradação específico para estas compras, o <a href="a1.htm#A.1.3.3">Saldo
+para Compras com Pagamento Fraccionado</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3>DEVOLUÇÃO DE COMPRA (Rede MB) (<a name="011">011</a>)</h3>
+
+<p><br>
+Esta operação permite que o comerciante execute a devolução de uma compra, total ou
+parcial, sob o acordo MB e apenas é possível nos terminais parametrizados com esta
+função. </p>
+
+<p>Apesar da operação de Devolução de Compra estar associada a uma operação de
+Compra, não existe emparelhamento entre ambas, visto que esta última pode ter ocorrido
+num período contabilístico anterior. Deste modo, a Devolução de Compra é considerada
+como uma operação a crédito da conta do cliente. </p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Banco recebe uma mensagem (<a href="../l-iii/116x316x.htm">3161</a>) indicando a
+importância devolvida ao cliente. </p>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<h5><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão)</h5>
+
+<p>Nos cenários de <a href="a1.htm#A.1.1.2">Saldo de Conta</a> e de <a
+href="a1.htm#A.1.1.3">Saldo de Cartão</a>, o Banco recebe a informação do valor
+relativo à devolução num <a href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>, no
+ficheiro Destinos (MDST5). </p>
+
+<h5><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="c1.htm#recibo">C.1</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always">AUTORIZAÇÃO <em>OUTDOOR</em> e COMPRA <em>OUTDOOR</em>
+(Rede MB) (<a name="013">013</a>) e (<a name="025">025</a>) </h3>
+
+<p><br>
+Esta operação permite a aquisição de bens em máquinas que funcionem em regime de
+auto-serviço e quando se verifique que: 
+
+<ul >
+  <li>a marca MB coexiste no cartão com uma marca de um Sistema de Pagamento Internacional, o
+    BIN do cartão tem esta operação disponível, e o cartão é utilizado num local onde
+    exista um Terminal de Pagamento Automático (TPA) da Rede MB que possua apenas o acordo
+    geral para aceitação de serviços MB; ou</li>
+  <li>o cartão possui apenas a marca MB e esta operação foi disponibilizada na
+    Caracterização do BIN (a existência no TPA de outros acordos de aceitação é neste
+    caso irrelevante, uma vez que a transacção apenas se pode realizar no âmbito do acordo
+    geral para aceitação de serviços MB).</li>
+</ul>
+
+<p>Nos terminais em causa, a compra efectua-se em duas fases: 
+
+<ol>
+  <li>O terminal envia um pedido de autorização à SIBS; esta efectua os procedimentos de
+    segurança e retorna o montante máximo da compra, em função do cenário existente; </li>
+  <li>Se a autorização foi positiva e se o bem foi adquirido, o terminal envia o valor final
+    da transacção. </li>
+</ol>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Banco recebe uma mensagem (<a href="../l-iii/116x316x.htm">1162</a>) onde se
+indicam os números de conta associados ao cartão e à qual deve responder (<a
+href="../l-iii/126x.htm">1262</a>), enviando os seguintes saldos e respectivas datas-valor
+(para cada uma das contas): 
+
+<ul>
+  <li>Saldo disponível - define o montante máximo que a SIBS pode autorizar até nova
+    comunicação, no caso de não existir <i>Real-Time</i> com o Banco; </li>
+  <li>Saldo contabilístico - apresenta o valor consolidado da conta do cliente. </li>
+</ul>
+
+<p>A SIBS calcula o montante a devolver para o terminal, baseando-se: 
+
+<ul>
+  <li>no montante máximo de abastecimento do Sistema Multibanco; </li>
+  <li>no saldo disponível do cliente, obtido na resposta à mensagem Consulta de Saldos. </li>
+</ul>
+
+<p>O processo de decisão do pedido de autorização é o seguinte: 
+
+<ul>
+  <li>se o montante máximo de abastecimento for inferior ao saldo disponível, aquela é
+    autorizada e o terminal envia uma mensagem (<a href="../l-iii/116x316x.htm">3161</a>) onde
+    se indica o valor final da compra; </li>
+  <li>em caso contrário, aquela é recusada.</li>
+</ul>
+
+<h5><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão)</h5>
+
+<p>No cenário de <a href="a1.htm#A.1.1.2">Saldo de Conta</a> e de <a
+href="a1.htm#A.1.1.3">Saldo de Cartão</a>, o Banco recebe a informação das compras <i>outdoor</i>
+em <a href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a>, no ficheiro Destinos (MDST5).
+</p>
+
+<h5><br>
+Talão</h5>
+
+<p>Apresenta os mesmos dados relativos a uma operação de compra, acrescido informações
+relativas ao abastecimento efectuado. </p>
+
+<p>Ver capítulo <a href="c1.htm#recibo">C.1</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always">COMPRA (Outras vertentes) (<a name="015">015</a>)</h3>
+
+<p><br>
+Esta operação é tecnicamente idêntica à operação Compra (Vertente MB) (<a
+href="#010">010</a>) mas sob o acordo para aceitação de uma determinada marca de um
+sistema de pagamento que não a MB (por exemplo, um cliente paga com um cartão Visa num
+TPA pertencente à Rede MB, e a operação realiza-se no âmbito de um acordo de
+aceitação da marca Visa). </p>
+
+<p>Os cenários de funcionamento da operação dependem da posição do Emissor face ao
+representante do cartão: 
+
+<ul>
+  <li>Se o Emissor for autónomo, a operação é enviada pela SIBS ao Emissor em <i>Real-Time</i>
+    (quando aplicável) e nos ficheiros de Compensação; </li>
+  <li>No caso do Emissor não ser autónomo, esta operação é encaminhada para o centro de
+    autorizações escolhido (Unicre). Neste caso, o Emissor recebe os dados da operação
+    através dos ficheiros desta entidade e não da SIBS directamente.</li>
+</ul>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Emissor recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a>) indicando
+a importância da operação e à qual deve responder (<a href="../l-iii/126x.htm">1261</a>),
+segundo os seus critérios internos. </p>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<h5><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão)</h5>
+
+<p><br>
+No cenário de <a href="a1.htm#A.1.1.2">Saldo de Conta</a> e de <a href="a1.htm#A.1.1.3">Saldo
+de Cartão</a>, um Emissor autónomo recebe a informação das compras em <a
+href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a>, no ficheiro Destinos (MDST5). </p>
+
+<h5><br>
+Talão</h5>
+
+<p>Apresenta todos os dados mínimos do talão acrescido dos seguintes elementos: 
+
+<ul>
+  <li>Data de expiração do cartão;</li>
+  <li>Montante da operação;</li>
+  <li>Área para a assinatura do cliente, no caso da autenticação não ser com o código
+    secreto; </li>
+  <li>Texto disponível para mensagens obrigatórias, por exemplo, se forem aplicadas tarifas
+    extras. </li>
+</ul>
+
+<p>Existem alguns terminais que conseguem efectuar a apresentação do nome do cliente no
+talão. </p>
+
+<p>Ver capítulo <a href="c1.htm#recibo">C.1</a>. </p>
+
+<h5 ><br>
+Compras com Pagamento Fraccionado (aplicável apenas a cartões EMV) </h5>
+
+<p>As operações de compra com pagamento fraccionado realizadas no âmbito de
+outras vertentes processam-se de forma idêntica às compras na vertente Multibanco (<a
+href="#010">010</a>). </p>
+
+<p>O Emissor define na <a href="i3.htm#I.3.16">Caracterização do CPD</a> qual
+o cenário ou cenários aplicáveis para decisão destas transacções. </p>
+
+<p>&nbsp;</p>
+
+<h3>DEVOLUÇÃO DE COMPRA (Outras vertentes) (<a name="016">016</a>)</h3>
+
+<p><br>
+Esta operação é tecnicamente idêntica à operação Devolução de Compra (Rede MB) (<a
+href="#011">011</a>) mas sob o acordo para aceitação de uma determinada marca de um
+sistema de pagamento que não a MB. </p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Emissor recebe uma mensagem (<a href="../l-iii/116x316x.htm">3161</a>) indicando
+a importância devolvida ao cliente. </p>
+
+<p>O Emissor recebe um <a href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>, no
+ficheiro Destinos (MDST5), relativo à devolução da compra. </p>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<h5><br>
+Talão</h5>
+
+<p>Apresenta os mesmos dados do talão da compra. </p>
+
+<p>Ver capítulo <a href="c1.htm#recibo">C.1</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3>AUTORIZAÇÃO (Outras vertentes) (<a name="017">017</a>)</h3>
+
+<p><br>
+Trata-se de uma operação destinada apenas a cartões que não têm operações puramente
+electrónicas, por exemplo, cartões Visa ou MasterCard. </p>
+
+<p>Estas operações podem ser realizadas em: 
+
+<ul>
+  <li>Comerciantes da rede comercial de um representante (por exemplo, Unicre) que, não tendo
+    TPA, efectue uma chamada telefónica para autorização. O operador do terminal (situado
+    no representante) introduz o pedido de autorização e a SIBS envia-o ao Emissor do
+    cartão ou decide noutro cenário. A resposta é entregue no terminal do representante e
+    comunicada ao comerciante. Posteriormente o comerciante apresenta uma factura ao
+    representante.<br>
+    <br>
+  </li>
+  <li>Comerciantes com TPA cuja actividade comercial implique um pedido de autorização antes
+    da concretização da compra (ex.: hotéis: <i>checkin</i> (autorização); <i>checkout</i>
+    (compra)).<br>
+    <br>
+  </li>
+  <li>Terminais que só efectuam pedidos de autorização (SARA). </li>
+</ul>
+
+<p>Esta operação não tem valor contabilístico. Porém o montante de autorizações
+efectuado para um dado cartão deve ser controlado, visto que existe desfasamento entre o
+momento do pedido de autorização e o débito correspondente. </p>
+
+<p>A operação só está disponível no caso dos cartões referidos e se o Emissor for
+utilizador da rede de comerciantes da Unicre, em que a posição do Emissor face ao
+representante do cartão influencia o tipo de cenário de funcionamento da operação. </p>
+
+<h5 style="page-break-before: always"><br>
+Talão</h5>
+
+<p>Apresenta os dados de identificação mínimos acrescidos de: 
+
+<ul>
+  <li>data de expiração do cartão;</li>
+  <li>número da autorização; e</li>
+  <li>valor da operação.</li>
+</ul>
+
+<p>Ver capítulo <a href="c1.htm#recibo">C.1</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3>AUTORIZAÇÃO <i>OUTDOOR</i> e COMPRA <i>OUTDOOR</i> (Outras vertentes) (<a name="018">018</a>
+e <a name="026">026</a>) </h3>
+
+<p><br>
+Estas operações são tecnicamente idênticas às operações Autorização Outdoor e
+Compra Outdoor (Rede MB) (<a href="#013">013</a> e <a href="#025">025</a>) mas sob o
+acordo para aceitação de uma determinada marca de um sistema de pagamento que não a MB
+(por exemplo, um cliente paga com um cartão Visa num TPA pertencente à Rede MB, e a
+operação realiza-se no âmbito de um acordo de aceitação da marca Visa). </p>
+
+<h5><br>
+Cenários de Real-Time e Limite de Crédito</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Emissor recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a>), à qual
+deve responder (<a href="../l-iii/126x.htm">1261</a>), enviando montante máximo de
+abastecimento. </p>
+
+<p>Após o abastecimento, a SIBS envia uma mensagem (<a href="../l-iii/116x316x.htm">3161</a>),
+informando o valor final da compra. </p>
+
+<h5><br>
+Talão</h5>
+
+<p>O <a href="c1.htm#recibo">talão</a> é idêntico aos descritos para a compra a
+crédito. </p>
+
+<p>&nbsp;</p>
+
+<h3>CANCELAMENTO DE AUTORIZAÇÃO (Outras vertentes) (<a name="019">019</a>) </h3>
+
+<p><br>
+Operação utilizada apenas para cartões Visa, MasterCard. </p>
+
+<p>Deve ser usada quando for realizado um pedido de autorização ao Emissor de um
+cartão, por parte do comerciante, e no caso da respectiva compra não se concretizar. </p>
+
+<p>Com o cancelamento, o Emissor deve repor a capacidade de crédito do cliente anterior
+ao pedido de autorização. </p>
+
+<p>Nesta operação, o comerciante indica qual o número da autorização original que
+pretende cancelar. É o sistema do Emissor (ou da sua central de autorizações) que
+garante este emparelhamento. </p>
+
+<p>A operação não tem valor contabilístico para o comerciante e para o Emissor do
+cartão. </p>
+
+<p>Esta operação pode realizar-se a partir da introdução de dados manuais, no caso do
+cartão do cliente estar danificado e não poder ser lido, ou em certos estabelecimentos
+comerciais. </p>
+
+<h5 style="page-break-before: always"><br>
+Talão</h5>
+
+<p>Apresenta os dados idênticos aos da operação <a href="#017">Autorização (Outras
+vertentes)</a>. </p>
+
+<p>Ver capítulo <a href="c1.htm#recibo">C.1</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3 >SERVIÇO ESPECIAL BANCÁRIO (<a name="022">022</a>)</h3>
+
+<p><br>
+O código de transacção (022) não corresponde a uma operação específica. Constitui
+um elemento agregador de um conjunto diversificado de transacções, genericamente
+identificadas como &quot;Serviços Especiais bancários&quot;. </p>
+
+<p>Este conjunto de transacções, disponibilizadas na rede de terminais
+Multibanco no âmbito de aceitação da marca MB, inclui: 
+
+<ol type="A" >
+  <li>Serviços disponibilizáveis para quaisquer cartões de Emissores de cartões que
+    incluam marca MB;</li>
+  <li>Serviços especiais desenvolvidos para cada Emissor em particular.</li>
+</ol>
+
+<p>Os serviços genericamente disponíveis a todos os Emissores incluem os
+seguintes (lista não exaustiva): 
+
+<ul >
+  <li>Consulta pagamentos de baixo valor</li>
+  <li>Consulta de movimentos MB</li>
+  <li>Consulta ao NIB</li>
+  <li>MBNet</li>
+  <li>Autorizações de Débitos Directos</li>
+</ul>
+
+<p>A utilização deste código agregador (022) possibilita que novos serviços
+sejam disponibilizados na Rede MB com um impacto reduzido para os Emissores.</p>
+
+<p>Para disponibilizar um qualquer Serviço Especial bancário, o Emissor deve
+assinalar o respectivo código nas caracterizações de Emissor e BIN e, adicionalmente,
+deve assinalar o código (022).</p>
+
+<h5 ><br>
+Cenário de Real-Time</h5>
+
+<p>O código de transacção (022) não é enviado ao Emissor nas mensagens de <em>real-rime</em>.
+Quando uma operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Emissor recebe uma mensagem de acordo com o Serviço Especial em causa, a qual
+identifica um código de transacção específico, do conhecimento do Emissor, e os
+elementos adicionais necessários à decisão da operação.</p>
+
+<p>A mensagem enviada é normalmente uma <a href="../l-iii/116x316x.htm">1161</a>
+ou <a href="../l-iii/116x316x.htm">3161</a> (Operação com Cartão) ou alternativamente
+uma <a href="../l-iii/11823182.htm">1182</a> ou <a href="../l-iii/11823182.htm">3182</a>
+(Serviço Especial Proprietário do Emissor). </p>
+
+<p>O Emissor recebe <a href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a> no
+ficheiro Destinos (MDST5), relativos às operações de Serviço Especial bancário
+efectuadas, em que o campo (<a href="../../Campos/campos7.htm#699" target="explicac">699</a>)
+CODTRN-E é preenchido com o valor &#145;022&#146; e os dados adicionais transportam
+informação que caracteriza o serviço utilizado.</p>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> -
+Livro III. </p>
+
+<h5 style="page-break-before: always" ><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão) </h5>
+
+<p>No cenário de <a href="a1.htm#A.1.1.2">Saldo de Conta</a> e de <a
+href="a1.htm#A.1.1.3">Saldo de Cartão</a>, o Emissor recebe a informação das
+transacções em <a href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a>, no ficheiro
+Destinos (MDST5), em que o campo (<a href="../../Campos/campos7.htm#699" target="explicac">699</a>)
+CODTRN-E é preenchido com o valor &#145;022&#146; e, nos dados adicionais, são
+informados os elementos que caracterizam o serviço, os quais incluem a identificação
+atribuída ao mesmo, informada no campo (<a target="explicac"
+href="../../Campos/camp2300.htm#2351">2351</a>) CODSE-E.</p>
+
+<h5 ><br>
+Talão</h5>
+
+<p>Variável, em função do Serviço Especial em causa. </p>
+
+<p>&nbsp;</p>
+
+<h3 >SERVIÇO ESPECIAL NÃO BANCÁRIO (<a name="023">023</a>)</h3>
+
+<p><br>
+O código de transacção (023) não corresponde a uma operação específica. É
+utilizado como agregador de um conjunto diversificado de transacções, genericamente
+designadas por &quot;Serviços Especiais não bancários&quot;. </p>
+
+<p>Este conjunto de transacções, disponibilizadas na rede de terminais
+Multibanco no âmbito de aceitação da marca MB, inclui os seguintes serviços (lista
+não exaustiva): 
+
+<ul >
+  <li>TeleMultiBanco</li>
+  <li>Venda de bilhetes CP</li>
+  <li>Via Verde</li>
+  <li>Venda de bilhetes para espectáculos</li>
+  <li>Pagamentos ao Estado</li>
+  <li>Carregamento TMN</li>
+  <li>Carregamento Netpac</li>
+  <li>Pagamentos de Custas Judiciais</li>
+  <li>Pagamentos à Segurança Social</li>
+  <li>Pagamentos Sapo</li>
+  <li>Pagamentos Via Card</li>
+  <li>Pagamentos Optimus</li>
+  <li>Carregamento Vodafone</li>
+</ul>
+
+<p>A utilização deste código agregador (023) possibilita que novos serviços
+sejam disponibilizados na Rede MB com um impacto reduzido para os Emissores.</p>
+
+<p>Para disponibilizar um qualquer Serviço Especial não bancário, o Emissor
+deve assinalar o respectivo código nas caracterizações de Emissor e BIN e,
+adicionalmente, deve assinalar o código (023).</p>
+
+<h5 ><br>
+Cenário de Real-Time</h5>
+
+<p>Quando uma operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Emissor recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a> ou <a
+href="../l-iii/116x316x.htm">3161</a>) em que o campo (<a
+href="../../Campos/campos7.htm#699" target="explicac">699</a>) CODTRN-E é preenchido com
+o valor &#145;023&#146; e os dados adicionais transportam elementos de carácter
+informativo relativos ao serviço utilizado.</p>
+
+<p><em><br>
+Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> -
+Livro III. </p>
+
+<h5 style="page-break-before: always" ><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão) </h5>
+
+<p>No cenário de <a href="a1.htm#A.1.1.2">Saldo de Conta</a> e de <a
+href="a1.htm#A.1.1.3">Saldo de Cartão</a>, o Emissor recebe a informação das
+transacções em <a href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a>, no ficheiro
+Destinos (MDST5), em que o campo (<a href="../../Campos/campos7.htm#699" target="explicac">699</a>)
+CODTRN-E é preenchido com o valor &#145;023&#146; e, nos dados adicionais, são
+informados os elementos que caracterizam o serviço.</p>
+
+<h5 ><br>
+Talão</h5>
+
+<p>Variável, em função do Serviço Especial em causa. </p>
+
+<p>&nbsp;</p>
+
+<h3 >COMPRA APÓS AUTORIZAÇÃO (MBNet) (<a name="027">027</a>)</h3>
+
+<p><br>
+Esta transacção&nbsp;é desencadeada por uma acção de um comerciante, para o qual
+existiu previamente uma autorização MBNet (<a href="#094">094</a>) aceite e que não foi
+cancelada.</p>
+
+<p>O valor da compra após autorização pode ser igual ou inferior ao da
+autorização realizada previamente.</p>
+
+<p>Com a recepção e processamento desta transacção, o Emissor deve
+regularizar o cativo previamente gerado aquando da autorização. </p>
+
+<h5 ><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a
+href="a1.htm#A.1.1.1"><i>Real-Time</i></a>, o CPD do Emissor recebe uma mensagem (<a
+href="../l-iii/116x316x.htm">3161</a>), que já inclui o montante definitivo a considerar
+e à qual deve responder com uma mensagem (<a href="../l-iii/22xx32xx.htm">3261</a>). </p>
+
+<p>O Emissor recebe um <a href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>,
+no ficheiro Destinos (MDST5), relativo à operação de compra. </p>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> -
+Livro III. </p>
+
+<p>&nbsp;</p>
+
+<h3>LEVANTAMENTO A CRÉDITO (<a name="031">031</a>)</h3>
+
+<p><br>
+Esta operação é tecnicamente idêntica à operação Levantamento (Rede MB) (<a
+href="#001">001</a>) mas disponível apenas para cartões de crédito (por exemplo,
+pertencentes aos Sistemas de Pagamento Internacionais) de BINs que
+possuem
+o &quot;sistema de pagamento: Multibanco&quot; parametrizado na respectiva
+caracterização. </p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Emissor recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a>) indicando
+a importância do levantamento. </p>
+
+<p>O Emissor recebe um <a href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>, no
+ficheiro Destinos (MDST5), relativo ao levantamento realizado pelo cartão de crédito. </p>
+
+<p style="page-break-before: always"><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<h5><br>
+Talão</h5>
+
+<p>Apresenta os dados mínimos do talão, acrescentando: 
+
+<ul>
+  <li>identificação da conta-crédito,</li>
+  <li>número de sequência do movimento do cartão, e</li>
+  <li>importância da operação.</li>
+</ul>
+
+<p>Não são incluídos saldos. </p>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.2">B.1.5.4.2</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3>DEPÓSITO (EM AGÊNCIA BANCÁRIA) (<a name="032">032</a>)</h3>
+
+<p><br>
+Esta operação permite o depósito para qualquer cliente bancário numa agência
+bancária onde exista um Terminal de Pagamento Automático (TPA); inclusivamente, uma
+agência poderia receber depósitos em contrapartida do crédito de contas de clientes de
+outras instituições de crédito. </p>
+
+<p>Esta operação é a inversa da operação Adiantamento em Dinheiro (<a href="#034">034</a>).
+</p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Banco recebe uma mensagem (<a href="../l-iii/116x316x.htm">3161</a>) indicando a
+importância depositada pelo cliente. </p>
+
+<p>O Banco recebe um <a href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>, no ficheiro
+Destinos (MDST5), relativo ao depósito. </p>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<h5><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão)</h5>
+
+<p>Nos cenários de <a href="a1.htm#A.1.1.2">Saldo de Conta</a> e de <a
+href="a1.htm#A.1.1.3">Saldo de Cartão</a>, o Banco recebe um <a
+href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>, no ficheiro Destinos (MDST5),
+relativo ao depósito. </p>
+
+<h5><br>
+Talão</h5>
+
+<p>Apresenta os dados mínimos do talão, acrescido de: 
+
+<ul>
+  <li>número de sequência do movimento e</li>
+  <li>montante da operação.</li>
+</ul>
+
+<p>Ver capítulo <a href="c1.htm#recibo">C.1</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3>ADIANTAMENTO DE DINHEIRO (Rede MB) (<a name="034">034</a>)</h3>
+
+<p><br>
+Esta operação permite a entrega de numerário a um cliente com cartão num local onde
+exista um Terminal de Pagamento Automático (TPA) da Rede MB (comerciante ou agência
+bancária) que possua apenas o acordo geral para aceitação de Serviços MB. </p>
+
+<p>Esta operação é tecnicamente idêntica à operação Compra (Rede MB) (<a
+href="#010">010</a>) mas neste caso, o &#145;bem&#146; entregue ao cliente é numerário. </p>
+
+<h5><br>
+Talão</h5>
+
+<p>Apresenta os dados mínimos do talão, acrescido de: 
+
+<ul>
+  <li>número de sequência do movimento e</li>
+  <li>montante da operação.</li>
+</ul>
+
+<p>Ver capítulo <a href="c1.htm#recibo">C.1</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3>TRANSFERÊNCIA BANCÁRIA (ORDENANTE) (<a name="037">037</a>)</h3>
+
+<p><br>
+Esta operação permite transferir um montante da conta associada ao cartão para uma
+outra pertencente a um Banco participante no Sistema MB ou no Sistema de Compensação
+TEI, bastando indicar o valor da transferência e o número interbancário (NIB) da conta
+de destino. </p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada em CA, e no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Banco ordenante recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a>)
+onde se indica o montante, o NIB da conta para onde o cliente pretende transferir esse
+valor e a forma de crédito ao destinatário, e à qual deve responder (<a
+href="../l-iii/126x.htm">1261</a>), podendo o Banco estabelecer internamente limites de
+autorização para esta operação. O Banco recebe um <a href="../l-iii/dst-1.htm#= 1">registo
+de tipo 1</a>, no ficheiro Destinos (MDST5), relativo ao débito da transferência. </p>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<h5><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão) </h5>
+
+<p>Quando a operação é desencadeada em CA, nos cenários de <a href="a1.htm#A.1.1.2">Saldo
+de Conta</a> e de <a href="a1.htm#A.1.1.3">Saldo de Cartão</a>, o Banco recebe um <a
+href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>, no ficheiro Destinos (MDST5),
+relativo ao débito da transferência. </p>
+
+<p>Quando o Banco ordenante desencadeia a operação de Transferência Bancária
+via Terminal de Serviços SIBS ou mensagem <i>Host-to-Host</i>, recebe um <a
+href="../l-iii/dst-1.htm#= 2">registo de tipo 2</a> no ficheiro Destinos (MDST5),
+correspondente ao débito em causa. </p>
+
+<h5 style="page-break-before: always"><br>
+Cenários possíveis para o crédito da conta (NIB) destinatária</h5>
+
+<p>A transferência só pode ser feita para uma conta (NIB) de um Banco que participe nas
+TEIs (Transferências Electrónicas Interbancárias) e/ou na Compensação MB, e se o <em>check
+digit</em> do NIB estiver correcto. </p>
+
+<p>A operação inicia-se utilizando a Compensação MB (para debitar o ordenante)
+através da conta D.O. do cartão.&nbsp;</p>
+
+<p>Se o Banco destinatário disponibilizar a operação opcional Consulta a NIB
+destinatário (<a href="#0CN">0CN</a>), recebe uma mensagem em <i>Real-Time</i> sem valor
+contabilístico para autorização da Transferência Bancária e obtenção de dados do
+cliente destinatário. </p>
+
+<p>Para o crédito ao destinatário, existem dois cenários possíveis: 
+
+<ul>
+  <li>Através da Compensação MB,&nbsp; se o Banco destinatário tiver a operação
+    Transferência Bancária (<a href="#052">052</a>) disponível a nível do seu(s) CPD(s). O
+    Banco destinatário recebe o crédito através de uma mensagem <i>Real-Time</i> ou via
+    MDST5 (<a href="../l-iii/dst-1.htm#= 2">registo de tipo 2</a>) em que <a
+    href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=052.
+  </li>
+</ul>
+
+<ul>
+  <li>Se o Banco destinatário não tem disponível a operação <a href="#052">052</a> no seu
+    CPD, o crédito é enviado ao destinatário através da Compensação das TEIs, pela
+    apresentação de um ficheiro ETR expedido pela SIBS para crédito de todos os
+    destinatários das ordens de transferência. O <a href="../../Campos/campos3.htm#214"
+    target="explicac">CODSER</a> utilizado é sempre o 02 (Transferência). <br>
+    No caso de existirem devoluções, estas são encaminhadas das TEIs para a Compensação
+    MB onde o cliente-cartão recebe uma devolução de transferência (<a
+    href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=042).
+  </li>
+</ul>
+
+<h5><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.14">B.1.5.4.14</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3>PAGAMENTO DE LETRA/RECIBO (<a name="038">038</a>)</h3>
+
+<p><br>
+Esta operação, inserida no sistema de Cobranças Interbancárias de Efeitos, dissemina o
+local de cobrança de efeitos (letras, recibos, etc.): mediante a recepção de um aviso
+emitido pelo Banco tomador do efeito, o pagador pode efectuar a correspondente
+liquidação em qualquer agência bancária ou na Rede Multibanco, não sendo possível
+realizá-la no cenário de <a href="a1.htm#A.1.1.4">Serviço Reduzido</a>. </p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Emissor recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a>) onde se
+indica o número do efeito que o cliente pretende pagar e o respectivo montante, e à qual
+deve responder (<a href="../l-iii/126x.htm">1261</a>), podendo o Emissor estabelecer
+internamente limites de autorização para esta operação. O Emissor recebe um <a
+href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>, no ficheiro Destinos (MDST5),
+relativo ao débito do pagamento do efeito. </p>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<h5 style="page-break-before: always"><br>
+Cenário Saldo de Conta </h5>
+
+<p>No cenário de <a href="a1.htm#A.1.1.2">Saldo de Conta</a>, a operação é limitada
+pelo saldo disponível na conta e pelo 'Limite em TPA no cenário de degradação',
+definido pelo Emissor na Caracterização de BIN ou, na sua omissão, o limite diário
+estabelecido no Sistema Multibanco (600 euros). O Emissor recebe um <a
+href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>, no ficheiro Destinos (MDST5),
+relativo ao débito do pagamento do efeito. </p>
+
+<h5><br>
+Cenário Saldo de Cartão</h5>
+
+<p>No cenário de <a href="a1.htm#A.1.1.3">Saldo de Cartão</a>, a operação é limitada
+pelo saldo geral de cartão e pelo 'Limite em TPA no cenário de degradação', definido
+pelo Emissor na <a href="i3.htm#I.3.16">Caracterização de BIN</a> ou, na sua omissão, o
+limite diário estabelecido no Sistema Multibanco (600 euros). O Emissor recebe um <a
+href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>, no ficheiro Destinos (MDST5),
+relativo ao débito do pagamento do efeito. </p>
+
+<h5><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.13">B.1.5.4.13</a>. </p>
+
+<p>&nbsp;</p>
+
+<h3>ADIANTAMENTO DE DINHEIRO (Outras vertentes) (<a name="039">039</a>)</h3>
+
+<p><br>
+Esta operação é tecnicamente idêntica à operação Adiantamento de dinheiro (Rede MB)
+(<a href="#034">034</a>) mas sob o acordo para aceitação de uma determinada marca de um
+sistema de pagamento que não a MB, e encontra-se disponível em TPAs: 
+
+<ul>
+  <li>com acordo com um representante (ex.: Unicre)</li>
+  <li>do Estrangeiro.</li>
+</ul>
+
+<h5><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="c1.htm#recibo">C.1</a>. </p>
+
+<p>&nbsp; </p>
+
+<h3>DEVOLUÇÃO DE TRANSFERÊNCIA BANCÁRIA (ORDENANTE) (<a name="042">042</a>)</h3>
+
+<p><br>
+Esta operação só é aplicável quando o Banco emissor de um cartão realizou uma
+Transferência Bancária (<a href="#037">037</a>) e esta foi devolvida pelo Banco
+destinatário. </p>
+
+<p>A operação de devolução pode ter origem: 
+
+<ul >
+  <li>No sistema de TEIs - o Banco destinatário recebeu um registo para creditar um NIB
+    através do sistema de TEIs. Se por qualquer motivo necessita efectuar uma devolução do
+    movimento (por inexistência do NIB indicado como destinatário, por exemplo), tem que
+    desencadear essa operação no âmbito da Compensação das TEIs e dentro dos calendários
+    previstos para a devolução.&nbsp;<br>
+    <br>
+  </li>
+  <li>No Sistema MB - o Banco destinatário recebeu o registo para creditar um NIB via Sistema
+    MB. Se pretender efectuar uma devolução, tal é efectuado igualmente via Sistema
+    Multibanco. O Banco destinatário desencadeia a devolução da Transferência Bancária
+    através do Terminal de Serviços SIBS ou mensagem <i>Host-to-Host</i> (<a
+    href="../../MSG/msg/h021v02.htm">H021</a>).</li>
+</ul>
+
+<p style="page-break-before: always" >O Banco ordenante recebe um registo no
+ficheiro Destinos (<a href="../l-iii/dst-1.htm#= 1">MDST5</a>) com
+o crédito ao Emissor do cartão que ordenou a transferência. Este pode ser: 
+
+<ul >
+  <li>Um <a href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>, se o canal origem da
+    transferência foi o Caixa Automático;</li>
+  <li>Um <a href="../l-iii/dst-1.htm#= 2">registo de tipo 2</a>, se o canal origem da
+    transferência foi o <i>Host-to-Host</i> ou Terminal de Serviços SIBS.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3>CARREGAMENTO DE PMB (<a name="043">043</a>) </h3>
+
+<p><br>
+Esta operação está disponível para cartões de débito/crédito, desde que o Emissor
+tenha definido esta operação como possível na <a href="i3.htm#I.3.16">Caracterização
+do BIN</a>, permitindo carregar um PMB (Porta Moedas Multibanco). </p>
+
+<p>Este PMB pode ser um cartão anónimo (o PMB reside noutro plástico), pode ser o PMB
+de outro cartão de débito/crédito ou do próprio cartão do utilizador. </p>
+
+<h5><br>
+Limite Máximo por operação</h5>
+
+<p>O montante máximo que o PMB pode armazenar é de 300 euros. O montante mínimo que o
+utilizador pode solicitar é parametrizável no Sistema MB e assume o valor de 5 euros. </p>
+
+<h5><br>
+Limite Máximo diário</h5>
+
+<p>O montante do carregamento é adicionado ao total de levantamentos solicitado pelo
+cartão de débito/crédito no dia e portanto limitado a 200 euros (ou seja, o valor
+máximo diário para levantamentos na Rede MB), e pelo <a href="a1.htm#A.1.1.3">Saldo de
+Cartão</a> ou <a href="a1.htm#A.1.1.2">Saldo de Conta</a> desde que estes sejam
+inferiores ao limite máximo diário. </p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Emissor recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a> ou <a
+href="../l-iii/116x316x.htm">3161</a>) onde se indica o valor da operação, e à qual
+deve responder (<a href="../l-iii/126x.htm">1261</a>), segundo os seus critérios
+internos. </p>
+
+<p>O Banco recebe um <a href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>, no ficheiro
+Destinos (MDST5), relativo ao valor carregado e as respectivas tarifas são incrementadas
+para o total do dia do Emissor de PMB e enviadas num <a href="../l-iii/dst-2.htm#= 6">registo
+de tipo 6</a> no ficheiro Destinos (MDST5). </p>
+
+<p><br>
+<em>Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> - Livro III.
+</p>
+
+<h5><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão)</h5>
+
+<p>Nos cenários de <a href="a1.htm#A.1.1.2">Saldo de Conta</a> e de <a
+href="a1.htm#A.1.1.3">Saldo de Cartão</a>, o Banco recebe a informação dos valores
+carregados e as respectivas tarifas são incrementadas para o total do dia do Emissor de
+PMB e enviadas num <a href="../l-iii/dst-2.htm#= 6">registo de tipo 6</a> no ficheiro
+Destinos (MDST5). </p>
+
+<h5><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.19">B.1.5.4.19</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3>CONSULTA A PMB (<a name="046">046</a>)</h3>
+
+<p><br>
+A operação está disponível nos Caixas Automáticos para consultar o PMB (Porta Moedas
+Multibanco) incorporado no próprio cartão de débito/crédito, desde que o Emissor do
+cartão tenha definido a operação como válida na <a href="i3.htm#I.3.16">Caracterização
+do BIN</a>. </p>
+
+<p>Nesta operação não é gerada nenhuma transacção <i>Real-Time</i> com o Banco, pois
+o serviço é apenas informativo.&nbsp; </p>
+
+<p>Esta operação apresenta os últimos 12 movimentos efectuados pelo PMB. </p>
+
+<h5><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.20">B.1.5.4.20</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3>DEVOLUÇÃO DE ADIANTAMENTO DE DINHEIRO (Outras vertentes) (<a name="047">047</a>)</h3>
+
+<p><br>
+Esta operação permite que uma agência bancária reembolse o cliente do montante total
+ou parcial, quando a entrega de numerário não se concretize, sob o acordo de um
+determinado sistema de pagamento. </p>
+
+<p>A operação passa-se fora do controlo do Serviço MB e é informada a partir do
+ficheiro de <em>Clearing</em> do respectivo Sistema de Pagamento Internacional (BASE II no
+caso da Visa ou ECCF no caso da MasterCard Europe).&nbsp; </p>
+
+<h5><br>
+Talão</h5>
+
+<p>Não é emitido talão na devolução de adiantamento. </p>
+
+<p>&nbsp;</p>
+
+<h3 >TRANSFERÊNCIA BANCÁRIA (DESTINATÁRIO) (<a name="052">052</a>)</h3>
+
+<p><br>
+Ao disponibilizar esta operação na <a href="i3.htm#I.3.16">Caracterização do CPD</a>,
+o Banco determina que todos os créditos que lhe são informados enquanto destinatário de
+operações de transferências bancárias (contrapartida da transacção <a href="#037">037</a>),
+sejam enviados e compensados no âmbito do Sistema MB.</p>
+
+<h5 ><br>
+Cenário de Real-Time</h5>
+
+<p>Se o Banco ordenante e o Banco destinatário de uma operação de
+Transferência Bancária são o mesmo, é enviada ao Banco (enquanto destinatário da
+transferência) uma mensagem (<a href="../l-iii/11633163.htm">1163</a> em que <a
+href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=052) à qual deve
+responder (<a href="../l-iii/126x.htm">1263</a>).&nbsp;</p>
+
+<p><em><br>
+Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> -
+Livro III. </p>
+
+<h5 style="page-break-before: always" ><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão)</h5>
+
+<p>Se o Banco ordenante for distinto do Banco destinatário, ou se não é
+possível a comunicação em <i>Real-Time</i>, o crédito é enviado ao destinatário
+apenas na Compensação, através de um <a href="../l-iii/dst-1.htm#= 2">registo de tipo
+2</a> do ficheiro Destinos (MDST5).</p>
+
+<p>&nbsp;</p>
+
+<h3 >DEVOLUÇÃO DE TRANSFERÊNCIA BANCÁRIA (DESTINATÁRIO) (<a name="058">058</a>)</h3>
+
+<p><br>
+Esta operação traduz uma devolução de uma Transferência Bancária (<a href="#037">037</a>)
+gerada pelo Banco destinatário dessa mesma transferência.</p>
+
+<p>Quando o Banco destinatário tem a transacção de Transferência bancária (<a
+href="#052">052</a>) disponível no(s) seu(s) CPD(s), e verificando a necessidade de
+efectuar a devolução de uma operação em concreto, pode utilizar o Terminal de
+Serviços SIBS ou uma mensagem <i>Host-to-Host</i> (<a href="../../MSG/msg/h021v02.htm">H021</a>)
+para efectuar a devolução. Neste caso, o Banco ordenante recebe como contrapartida uma
+devolução de transferência (<a href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=042)
+via ficheiro MDST5.</p>
+
+<p>O Banco destinatário recebe um <a href="../l-iii/dst-1.htm#= 2">registo de
+tipo 2</a> do ficheiro Destinos (MDST5), para confirmar o débito na conta do
+cliente.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h3 >LEVANTAMENTO A CRÉDITO (SEM
+VERTENTE MB) (<a name="081">081</a>)&nbsp;
+</h3>
+<p><br>
+Esta operação é tecnicamente idêntica à operação Levantamento (Rede MB) (<a href="#001">001</a>) mas disponível apenas para cartões de crédito que não possuam vertente
+Multibanco (por exemplo, pertencentes aos Sistemas de Pagamento Internacionais).&nbsp;</p>
+<p>Assim, esta operação
+encontra-se disponível apenas para BINs que não possuem o &quot;sistema de
+pagamento: Multibanco&quot; parametrizado na respectiva caracterização.&nbsp;</p>
+<h5 ><br>
+Cenário de Real-Time&nbsp;</h5>
+<p>Quando esta operação é
+desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Emissor recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a>) indicando a importância do levantamento.&nbsp;</p>
+<p>O Emissor recebe um <a href="../l-iii/dst-1.htm#= 1">registo
+de tipo 1</a>, no
+ficheiro Destinos (MDST5), relativo ao levantamento realizado pelo cartão de crédito.&nbsp;&nbsp;</p>
+<p><i>Mensagens
+utilizadas no cenário de RT:&nbsp;</i></p>
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a>
+- Livro III.&nbsp;&nbsp;</p>
+<h5><br>
+Talão&nbsp;</h5>
+<p>Apresenta os dados mínimos do
+talão, acrescentando:&nbsp;</p>
+<ul >
+  <li >
+    identificação da conta-crédito,&nbsp;</li>
+  <li >
+    número de sequência do movimento do cartão, e</li>
+  <li >
+    importância da operação.&nbsp;&nbsp;</li>
+</ul>
+<p>
+Não são incluídos saldos. &nbsp;</p>
+
+
+<p>&nbsp;</p>
+
+<h3 >AUTORIZAÇÃO (MBNet) (<a name="094">094</a>) </h3>
+
+<p><br>
+Esta transacção é desencadeada no âmbito do serviço MBNet, por utilização do
+serviço num comerciante aderente ao MBNet.</p>
+
+<p>A autorização MBNet valida o montante diário definido pelo cliente para o
+serviço MBNet. Verificando-se se o valor em causa não ultrapassa o limite definido, a
+transacção é enviada em <em>real-time</em> ao Emissor ou decidida no cenário de
+degradação aplicável.</p>
+
+<p>Esta operação consiste apenas num pedido de autorização, ou seja, não é
+uma operação &quot;firme&quot; (que apresente valores definitivos), pelo que a SIBS
+considera que não tem valor contabilístico. Com a recepção e processamento de uma
+autorização, o Emissor deve gerar um cativo temporário na respectiva conta do cliente. </p>
+
+<p>A autorização é válida por um período de 30 dias de calendário,
+período no qual pode ocorrer uma compra após autorização (<a href="#027">027</a>) ou
+um cancelamento de autorização (<a href="#095">095</a>). </p>
+
+<h5 ><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a
+href="a1.htm#A.1.1.1"><i>Real-Time</i></a>, o CPD do Emissor recebe uma mensagem (<a
+href="../l-iii/116x316x.htm">1161</a>) de pedido de autorização. A decisão da
+transacção depende das validações do Emissor, e é comunicada por este através da
+respectiva mensagem de resposta (<a href="../l-iii/126x.htm">1261</a>).</p>
+
+<p>O Emissor recebe <a href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a>, no
+ficheiro Destinos (MDST5), relativos às às autorizações MBNet processadas.</p>
+
+<p><em><br>
+Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> -
+Livro III. </p>
+
+<p>&nbsp;</p>
+
+<h3 >CANCELAMENTO DE AUTORIZAÇÃO (MBNet) (<a name="095">095</a>)</h3>
+
+<p><br>
+O cancelamento só é possível após um correspondente pedido de autorização MBNet (<a
+href="#094">094</a>) aceite. </p>
+
+<p>O valor do cancelamento depende da existência de operações de compra após
+autorização MBNet (<a href="#027">027</a>): 
+
+<ul >
+  <li>Se ainda não existir uma compra após autorização, o valor do cancelamento deve ser
+    igual ao da autorização;</li>
+</ul>
+
+<ul>
+  <li >Se já existir uma compra após autorização, o cancelamento deve ser
+    realizado pelo valor remanescente.</li>
+</ul>
+
+<p>Com a recepção e processamento desta transacção, o Emissor deve
+regularizar o cativo previamente gerado aquando da autorização. </p>
+
+<h5 ><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a
+href="a1.htm#A.1.1.1"><i>Real-Time</i></a>, o CPD do Emissor recebe uma mensagem (<a
+href="../l-iii/116x316x.htm">3161</a>), que inclui o montante a considerar para o
+cancelamento e à qual deve responder com uma mensagem (<a href="../l-iii/22xx32xx.htm">3261</a>).</p>
+
+<p>O Emissor recebe um <a href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a>,
+no ficheiro Destinos (MDST5), relativo à operação de cancelamento. </p>
+
+<p><em><br>
+Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> -
+Livro III. </p>
+
+<p>&nbsp;</p>
+
+<h3 class="a">EMISSÃO DE CHEQUES (<a name="502">502</a>)</h3>
+<p class="a"><br>
+Esta operação permite a obtenção imediata de cheques emitidos no Caixa
+Automático. Os cheques são emitidos sobre a primeira conta associada ao
+cartão.</p>
+<h5 class="a"><br>
+Cenário de Real-Time</h5>
+<p class="a">Esta operação é sempre realizada no cenário de <a
+href="a1.htm#A.1.1.1"><i>Real-Time</i></a>, o CPD do Banco recebe uma mensagem (<a
+href="../l-iii/116x316x.htm">1161</a>) indicando a tipologia e a quantidade de
+cheques solicitada pelo cliente.</p>
+<p class="a">Uma vez recebida a mensagem no CPD do Banco, este responde com a
+mensagem (<a href="../l-iii/126x.htm">1261</a>) informando os elementos
+necessários à personalização dos cheques:</p>
+<ul class="A">
+  <li>Conteúdo para preenchimento das linhas de impressão da Zona Livre</li>
+  <li>Linhas ópticas</li>
+  <li>Custo da operação</li>
+</ul>
+<p class="a"><br>
+<i>Mensagens utilizadas no cenário de RT:</i></p>
+<p class="a">Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> 
+- Livro III.</p>
+<h5 class="a"><br>
+Restantes cenários (Saldo de Conta e Saldo de Cartão)</h5>
+<p class="a">Não aplicável.</p>
+<h5 class="a"><br>
+Talão</h5>
+<p class="a">Ver capítulo <a href="b1-a.htm#B.1.5.4.23">B.1.5.4.23</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3 >DEPÓSITO DE NOTAS COM VALIDAÇÃO (<a name="506">506</a>),<br>
+DEPÓSITO DE NOTAS - CONFIRMAÇÃO NOTAS SUSPEITAS (<a name="536">536</a>) e<br>
+DEPÓSITO DE NOTAS - VALIDAÇÃO BANCO DE PORTUGAL (<a name="537">537</a>)</h3>
+
+<p><br>
+A operação de depósito de notas com validação possibilita o depósito de numerário
+num CA por inserção directa das notas (sem envelope), as quais são validadas
+individualmente pelo terminal.</p>
+
+<p>A operação encontra-se implementada por forma a possibilitar que o Banco
+de Apoio do CA seja distinto do Emissor/Destinatário do depósito, sendo que o Emissor e
+o Destinatário são obrigatoriamente a mesma entidade. No entanto, numa primeira fase,
+esta operação é disponibilizada apenas para as situações em que o Emissor do cartão
+que desencadeia a operação, o Banco de Apoio do CA e o Banco Destinatário do depósito
+são o mesmo Banco.</p>
+
+<p>Após selecção da operação no CA, o cliente tem a possibilidade de
+indicar se pretende efectuar um depósito para uma das contas associadas ao cartão ou
+para uma outra conta. Neste último caso, é solicitada a inserção de um NIB de destino.
+A operação prossegue com a inserção pelo cliente das notas no CA. </p>
+
+<p>O caixa automático efectua uma validação a cada nota inserida,
+classificando-a em uma de quatro categorias:</p>
+
+<blockquote>
+  <ul >
+    <li>Cat. 1 - não é reconhecida como nota</li>
+    <li>Cat. 2 - nota falsa</li>
+    <li>Cat. 3 - nota suspeita</li>
+    <li>Cat. 4 - nota válida </li>
+  </ul>
+</blockquote>
+
+<p>O Banco Emissor/Destinatário recebe em <em>real-time</em> informação sobre
+os valores depositados, por categoria e denominação. O processamento deste detalhe possibilita uma
+eventual afectação imediata da conta do cliente que, para além do montante relativo às
+notas válidas, pode incluir os valores relativos às notas suspeitas, em função das
+regras pré-definidas pelo próprio Banco.</p>
+
+<p>Em fim de dia, na Compensação Multibanco, o Emissor/Destinatário é
+creditado pelo total das notas válidas e suspeitas, sendo o Banco de Apoio debitado por
+igual valor.</p>
+
+<p>As notas consideradas como suspeitas pelo CA têm que ser analisadas pelo
+Banco de Apoio, no momento da supervisão do CA. Desta análise
+pode resultar uma confirmação de notas suspeitas (536), que
+desencadeia, a partir da aplicação de regularizações da SIBS, o envio de um crédito ao Banco de Apoio por contrapartida de um débito ao
+Banco Emissor/Destinatário referente às notas efectivamente confirmadas como
+suspeitas/falsas.
+Estas notas são enviadas para análise pelo Banco de Portugal, que decide se são
+válidas ou falsas (537). </p>
+
+<p>Nos capítulos <a href="j2.htm#J.2.2.4">J.2.2.4</a> e <a
+href="j2.htm#J.2.2.5">J.2.2.5</a>  descrevem-se em maior detalhe as operações de
+regularização associadas à confirmação de depósitos de notas com validação.</p>
+
+<p>O depósito de notas com validação constitui uma alternativa à
+funcionalidade já existente de depósito de numerário em envelope. Os dois formatos para
+a operação de depósito vão coexistir na Rede MB. No entanto, cada CA pode
+disponibilizar apenas um dos formatos. </p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>No cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>, é enviada uma
+mensagem (<a href="../l-iii/116x316x.htm">3161</a> em que <a
+href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=506) de informação de
+depósito efectuado ao CPD do Banco Emissor/Destinatário. Esta mensagem inclui detalhe
+dos valores depositados por categoria atribuída pelo CA e por denominação das notas. </p>
+
+<p>O crédito ao Banco Emissor/Destinatário é efectuado em fim de dia,
+através de <a href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a> do ficheiro Destinos
+(MDST5) relativos às notas de tipo 3 (suspeitas) e 4 (válidas) depositadas. O Banco de
+Apoio ao Terminal é debitado através de <a href="../l-iii/ori.htm#= 2">registos de tipo
+2</a> no ficheiro Origens (MORI5) relativos a essas mesmas notas.</p>
+
+<h5 ><br>
+Anulação de Depósito</h5>
+
+<p>A operação de depósito de notas com validação não gera mensagens de
+anulação. </p>
+
+<h5 ><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.10">B.1.5.4.10</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always" >AVISO DEPÓSITO DE CHEQUES COM VALIDAÇÃO (<a name="507">507</a>)</h3>
+
+<p><br>
+A operação de depósito de cheques com validação possibilita o depósito num CA por
+inserção directa dos cheques (sem envelope), os quais são tratados individualmente pelo
+terminal.</p>
+
+<p>A operação é disponibilizada admitindo como único cenário que o Emissor
+do cartão que desencadeia a operação, o Banco de Apoio do CA e o Banco Destinatário do
+depósito são o mesmo Banco (i.e., a operação é intrabancária).</p>
+
+<p>Após selecção da operação no CA, o cliente tem a possibilidade de
+indicar se pretende efectuar um depósito para uma das contas associadas ao cartão ou
+para uma outra conta. Neste último caso, é solicitada a inserção de um NIB de destino.
+A operação prossegue com a inserção pelo cliente dos cheques no CA. </p>
+
+<p>O CA lê a linha óptica e digitaliza a imagem de cada cheque. Ao cliente é
+apresentado um ecrã de validação com a imagem do cheque, sendo solicitada a inserção
+do valor respectivo, cheque a cheque. Após inserção de todos os cheques, é apresentado
+ao cliente um ecrã para confirmação de totais a depositar. </p>
+
+<p>O Banco Emissor/Destinatário recebe em <em>real-time</em> informação sobre
+o depósito efectuado.</p>
+
+<p>A compensação dos valores relativos ao depósito é efectuada através da
+Compensação de Cheques.</p>
+
+<p>O depósito de cheques com validação constitui uma alternativa à
+funcionalidade já existente de depósito de cheques em envelope. Os dois formatos para a
+operação de depósito vão coexistir na Rede MB. No entanto, cada CA pode disponibilizar
+apenas um dos formatos. </p>
+
+<h5 ><br>
+Cenário de Real-Time</h5>
+
+<p>No cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>, é enviada uma
+mensagem (<a href="../l-iii/116x316x.htm">3161</a>) de aviso de depósito efectuado ao CPD
+do Banco Emissor/Destinatário. Esta mensagem inclui detalhe relativo a cada um dos
+cheques incluídos no depósito.</p>
+
+<p >Em fim de dia, o banco recebe um <a href="../l-iii/dst-1.htm#= 1">registo de
+tipo 1</a> no ficheiro Destinos (MDST5), o qual não tem valor contabilístico.</p>
+
+<h5 ><br>
+Anulação de Depósito</h5>
+
+<p>A operação de depósito de notas com validação não gera mensagens de
+anulação. </p>
+
+<h5 ><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.11">B.1.5.4.11</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3 >CONSULTA A NIB DESTINATÁRIO (<a name="0CN">0CN</a>)</h3>
+
+<p>Esta operação permite solicitar a autorização para a realização de uma
+Transferência Bancária junto do Banco destinatário e obter informação do nome do
+destinatário da transferência, permitindo nomeadamente que num CA o cliente que ordena a
+transferência possa ver o nome do destinatário antes de efectuar a confirmação final.</p>
+
+<p>A operação (0CN) não tem valor contabilístico.&nbsp;</p>
+
+<p>A Consulta a NIB Destinatário é opcional. Os Bancos que pretendam
+disponibilizar esta operação podem fazê-lo parametrizando-a na Caracterização do CPD.</p>
+
+<h5 ><br>
+Cenário de Real-Time</h5>
+
+<p>Se os dados da transferência são válidos, o sistema central da SIBS envia
+uma Consulta a NIB ao Banco destinatário através de uma mensagem (<a
+href="../l-iii/11633163.htm">1163</a> em que <a href="../../Campos/campos7.htm#699"
+target="explicac">CODTRN-E</a>=0CN) à qual deve responder (<a href="../l-iii/126x.htm">1263</a>).
+Se existir algo que impeça o concretizar da operação (por exemplo, um problema de
+comunicação), a SIBS autoriza a operação com base na validação do <i>check digit</i>
+do NIB do destinatário.</p>
+
+<p><em><br>
+Mensagens utilizadas no cenário de RT:</em></p>
+
+<p>Consultar tabela no capítulo <a href="../l-iii/d32.htm#seguida">D.3.2</a> -
+Livro III. </p>
+
+<p>&nbsp;</p>
+
+<h3>PAGAMENTO DE SERVIÇOS/COMPRAS (Outras marcas) (<a name="0P0">0P0</a>)</h3>
+
+<p><br>
+Nesta operação, o cliente pode efectuar o pagamento de uma factura (ou outro débito),
+enviada ao cliente pela empresa prestadora do serviço, onde constam os seguintes campos
+que devem ser inseridos nesta operação: 
+
+<ul>
+  <li>referência da empresa,</li>
+  <li>referência do pagamento, e</li>
+  <li>montante a pagar.</li>
+</ul>
+
+<p>No fim do dia, a SIBS desencadeia um crédito à conta da empresa em nome do <em>Acquirer</em>,
+através do seu Banco de apoio, pelo total dos pagamentos recebidos e envia um ficheiro
+directamente à empresa, com o detalhe de cada pagamento. </p>
+
+<h5><br>
+Cenário de Real-Time</h5>
+
+<p>Quando esta operação é desencadeada no cenário de <a href="a1.htm#A.1.1.1"><i>Real-Time</i></a>,
+o CPD do Banco recebe uma mensagem (<a href="../l-iii/116x316x.htm">1161</a>) onde se
+indica a referência da empresa e do pagamento, bem como do montante a pagar, e à qual
+deve responder (<a href="../l-iii/126x.htm">1261</a>), segundo os seus critérios
+internos. </p>
+
+<p>O Banco recebe <a href="../l-iii/dst-1.htm#= 1">registos de tipo 1</a>, no ficheiro
+Destinos (MDST5), relativos aos pagamentos de serviços/compras efectuados. </p>
+
+<p>A SIBS envia um <a href="../l-iii/mov-3.htm">registo de tipo 3</a> no ficheiro
+Movimentos (MMOV5) pelo total de pagamentos de uma entidade para o Banco de apoio
+da entidade/empresa. </p>
+
+<h5><br>
+Operação originada de um sistema de informação do Banco </h5>
+
+<p>Esta operação pode ter origem no <em>host</em> do Banco e ser enviada numa sessão
+Banco-SIBS. </p>
+
+<p>A SIBS aceita a operação se a cobrança pretendida estiver válida e envia um <a
+href="../l-iii/dst-1.htm#= 1">registo de tipo 1</a> no ficheiro Destinos (MDST5). Ver
+mais detalhes o capítulo <a href="g1.htm">G.1</a> do Livro II, do Modelo Global. </p>
+
+<h5><br>
+Talão</h5>
+
+<p>Ver capítulo <a href="b1-a.htm#B.1.5.4.12">B.1.5.4.12</a>. </p>
+
+<p class="dta"> 
+
+<br>
+<a target="main" href="a5.htm">Anterior</a>/<a target="main" href="a7.htm">Seguinte</a></p>
+</body>
+</html>

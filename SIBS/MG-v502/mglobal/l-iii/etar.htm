@@ -1,0 +1,311 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>TARIFÁRIO</title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: &nbsp;TARIFÁRIO</td>
+        <td class="fichdta">&quot;FICH&quot; = ETAR </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+É o ficheiro que a SIBS envia para os Participantes sempre que há uma nova versão de
+tarifário, necessário ao processamento da facturação da SIBS. Apresenta o Tarifário
+da SIBS que se encontra aprovado pela Assembleia Geral e o utilizado para a emissão de
+factura em presença e as seguintes. É sempre enviado na sua totalidade e
+com a maior antecipação possível entre a assembleia que o definiu e a data de início
+da aplicação.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído por: 
+
+<ul>
+  <li>um registo de <em>Header</em> do ficheiro &quot;TIPREG=0&quot;;</li>
+</ul>
+
+<ul>
+  <li>um registo de Identificação do Tarifário &quot;TIPREG=1&quot;;</li>
+</ul>
+
+<ul>
+  <li>registos de identificação de grupo &quot;TIPREG=2&quot;;</li>
+</ul>
+
+<ul>
+  <li>registos de identificação de subgrupo &quot;TIPREG=3&quot;;</li>
+</ul>
+
+<ul>
+  <li>registo de detalhe de valores &quot;TIPREG=4&quot;;</li>
+</ul>
+
+<ul>
+  <li>registo de <em>Trailer</em> &quot;TIPREG=9&quot;.</li>
+</ul>
+
+<p><br>
+O ficheiro é constituído por registos de comprimento fixo de 53
+bytes.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">ETAR - TIPO DE REGISTO = 1 (IDENTIFICAÇÃO DO TARIFÁRIO) -
+V01</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VERTAR </td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#400">400</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SEQTAR </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#423">423</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DTVERTAR </td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">5</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#401">401</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TAXAIVA </td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#403">403</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">ETAR - TIPO DE REGISTO = 2 E 3
+(IDENTIFICAÇÃO DE GRUPO E SUB-GRUPO) - V01</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200" colspan="2">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td width="100" class="esq">= 2</td>
+    <td width="100" class="esq">= 3</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARSIBS</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2300">2300</a></td>
+    <td width="100" class="esq">&nbsp;</td>
+    <td width="100" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="dta" width="160">GRUPO</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2302">2302</a></td>
+    <td width="100" class="esq">preenchido</td>
+    <td width="100" class="esq">preenchido</td>
+  </tr>
+  <tr>
+    <td class="dta" width="160">SUBGRUPO1</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2302">2302</a></td>
+    <td width="100" class="esq">= espaço</td>
+    <td width="100" class="esq">preenchido</td>
+  </tr>
+  <tr>
+    <td class="dta" width="160">SUBGRUPO2</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2302">2302</a></td>
+    <td width="100" class="esq">= espaço</td>
+    <td width="100" class="esq">= espaço</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DESCRUB</td>
+    <td class="dta" width="45">22</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos5.htm#405">405</a></td>
+    <td width="100" class="esq">preenchido</td>
+    <td width="100" class="esq">preenchido</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">ETAR - TIPO DE REGISTO = 4 (LIMITE DE ESCALÃO) - V01</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 4</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARSIBS</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2300">2300</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="dta" width="160">GRUPO</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2302">2302</a></td>
+    <td class="esq" width="200">preenchido</td>
+  </tr>
+  <tr>
+    <td class="dta" width="160">SUBGRUPO1</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2302">2302</a></td>
+    <td class="esq" width="200">preenchido</td>
+  </tr>
+  <tr>
+    <td class="dta" width="160">SUBGRUPO2</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2302">2302</a></td>
+    <td class="esq" width="200">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DESCRUB</td>
+    <td class="dta" width="45">22</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos5.htm#405">405</a></td>
+    <td class="esq" width="200">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VAL_RUB</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">30</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2100.htm#2113">2113</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LIMESCAL</td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">43</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#407">407</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">52</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">INDTAR</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">53</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#443">443</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span></em></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>X.1 FACTURAÇÃO</title>
+<script>top.captulos.location='indicex.htm#X';</script>
+</head>
+
+<body>
+
+<h1>X.1 FACTURAÇÃO</h1>
+
+<p>&nbsp;</p>
+
+<h2><a name="1">TARIFÁRIO</a> SIBS</h2>
+
+<p>A facturação processada pela SIBS é relativa aos diversos serviços prestados por
+esta Entidade aos Bancos aderentes ao sistema: Serviço Multibanco (MB),
+Telecompensações, Sistema de Pagamento de Grandes Transacções, <em>Forward</em> de
+Ficheiros, etc. Esta é emitida no início de cada mês e é relativa ao apuramento dos
+serviços prestados no mês anterior. </p>
+
+<p>O processamento da facturação SIBS é baseado no Tarifário Multibanco que é
+apresentado e discutido na Assembleia Geral de Accionistas, após a aprovação do
+Orçamento e Plano de Actividades da Empresa. No caso do Serviço MB, o Tarifário
+apresenta-se estruturado em três vertentes principais: Utilização de Cartões, Caixas
+Automáticos e Terminais de Pagamento Automático. O tarifário pode ter actualizações
+sempre que novos serviços impliquem a inclusão de novas rubricas.&nbsp; </p>
+
+<p>O processamento da facturação do Serviço Multibanco é realizado de forma
+automática a partir dos diversos ficheiros produzidos pelo sistema. A Compensação
+diária do Serviço Multibanco consubstancia-se em ficheiros que são enviados ao Banco
+que incluem&nbsp; informação sobre as tarifas aplicadas a cada operação através da
+respectiva referência à rubrica do tarifário aplicado. Para além dos ficheiros
+relativos à Compensação, deve-se recorrer também a outros, utilizados no âmbito de
+diferentes serviços, de modo a permitir a auditabilidade da factura.</p>
+
+<p><br>
+Relação de ficheiros necessários para auditar a factura SIBS:</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="3" width="100%">
+  <tr>
+    <th>Compensação</th>
+    <th>Cartões e Contas</th>
+    <th>Estatísticas e Facturação</th>
+  </tr>
+  <tr>
+    <td class="mid"><a href="../l-iii/dst-1.htm">MDST5</a>; <a href="../l-iii/mov-0.htm">MMOV5</a>;
+    <a href="../l-iii/ori.htm">MORI5</a>; <a href="../l-iii/cln.htm">MCLN5</a></td>
+    <td class="mid"><a href="../l-iii/easc.htm">MEASC</a>; <a href="../l-iii/eecb.htm">MEECB</a>;
+    <a href="../l-iii/eerr.htm">MEERR</a>; <a href="../l-iii/eerc.htm">MEERC</a></td>
+    <td><a href="../l-iii/trmf.htm">MTRMF</a>; <a href="../l-iii/ecst.htm">MECST</a>; <a
+    href="../l-iii/efac.htm">MEFAC</a>; <a href="../l-iii/etar.htm">METAR</a>;<br>
+    <strong>CFCE</strong>;<strong> RFCT</strong></td>
+  </tr>
+</table>
+
+<p><br>
+A descrição apresentada neste capítulo tem por base a última Tabela de Tarifário
+aprovada pela Assembleia Geral de Accionistas e os ficheiros detalhados na presente
+versão do Modelo Global Multibanco. </p>
+
+<p>A emissão da factura papel do Serviço Multibanco é complementada pelos ficheiros de
+Facturação (<a href="../l-iii/efac.htm">MEFAC</a>) e de Tarifário (<a
+href="../l-iii/etar.htm">METAR</a>), metodologia que possibilita uma análise mais rápida
+e eficiente, e com a vantagem de permitir a distribuição da informação pelas áreas do
+Banco com intervenção sobre os serviços prestados pela SIBS. </p>
+
+<p>Deste modo, a facturação da SIBS é composta por dois elementos distintos: a factura
+resumo em papel, que contém apenas o valor agregado de cada uma das rubricas, e o
+ficheiro <a href="../l-iii/efac.htm">MEFAC</a> que discrimina todos detalhes, rubrica a
+rubrica, facturados ao Banco. O total de cada grupo na factura papel é igual ao indicado
+no registo tipo 7, apresentado no ficheiro de facturação. O ficheiro <a
+href="../l-iii/efac.htm">MEFAC</a> é enviado todos os meses após o apuramento da
+facturação; o ficheiro <a href="../l-iii/etar.htm">METAR</a> é apenas remetido quando
+se verificam alterações no tarifário, e tipicamente com um mês de antecedência, de
+modo a permitir a alteração dos sistemas de controlo de facturação.</p>
+
+<p>O endereçamento da factura para o serviço ou departamento mais apropriado do Banco e
+a indicação da entidade de <em>file-transfer</em> para o <a href="../l-iii/efac.htm">MEFAC</a>
+é formalizado no ponto 4 do anexo <a href="i3.htm#I.3.16">Caracterização do
+Emissor</a>.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="2">FACTURA</a> - RESUMO EM PAPEL</h2>
+
+<p>A factura-resumo em papel é um documento de apresentação bastante simples (ver <a
+href="x1.htm#ex">exemplo</a>). É emitida em 3 vias, que são carimbadas, assinadas e
+enviadas aos Bancos, ficando o triplicado em poder da SIBS. </p>
+
+<p style="page-break-before: always"><br>
+O documento factura apresenta os dados organizados segundo os grupos definidos no
+tarifário (clicar no código da rubrica para aceder ao respectivo detalhe):</p>
+
+<blockquote>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="esq10" width="15"><a href="x-a.htm">A</a> </td>
+      <td class="esq10">&nbsp;- LIGAÇÃO CENTRAL</td>
+    </tr>
+    <tr>
+      <td class="esq10" width="15"><a href="x-b.htm">B</a> </td>
+      <td class="esq10">&nbsp;- LIGAÇÃO DE EQUIPAMENTO</td>
+    </tr>
+    <tr>
+      <td class="esq10" width="15"><a href="x-e.htm">E</a> </td>
+      <td class="esq10">&nbsp;- UTILIZAÇÃO DE CARTÕES</td>
+    </tr>
+    <tr>
+      <td class="esq10" width="15"><a href="x-f.htm">F</a> </td>
+      <td class="esq10">&nbsp;- PRODUÇÃO DE CARTÕES</td>
+    </tr>
+    <tr>
+      <td class="esq10" width="15"><a href="x-g.htm">G</a> </td>
+      <td class="esq10">&nbsp;- TRANSACÇÕES</td>
+    </tr>
+    <tr>
+      <td class="esq10" width="15"><a href="x-h.htm">H</a> </td>
+      <td class="esq10">&nbsp;- COMISSÕES</td>
+    </tr>
+    <tr>
+      <td class="esq10" width="15"><a href="x-i.htm">I</a> </td>
+      <td class="esq10">&nbsp;- ENCARGOS DE SERVIÇO TPA</td>
+    </tr>
+    <tr>
+      <td class="esq10" width="15"><a href="x-j.htm">J</a> </td>
+      <td class="esq10">&nbsp;- TRANSMISSÃO DE FICHEIROS</td>
+    </tr>
+    <tr>
+      <td class="esq10" width="15"><a href="x-n.htm">N</a> </td>
+      <td class="esq10">&nbsp;- TELECOMPENSAÇÃO</td>
+    </tr>
+    <tr>
+      <td class="esq10" width="15"><a href="x-r.htm">R</a> </td>
+      <td class="esq10">&nbsp;- REEMBOLSO DE PORTES DE CORREIO</td>
+    </tr>
+    <tr>
+      <td class="esq10" width="15"><a href="x-s.htm">S</a> </td>
+      <td class="esq10">&nbsp;- SISTEMA DE PAGAMENTOS DE GRANDES TRANSACÇÕES</td>
+    </tr>
+    <tr>
+      <td class="esq" width="15"><a href="x-v.htm"><font size="2">V</font></a> </td>
+      <td class="esq">&nbsp;<font size="2">- LISTAGENS DE MOVIMENTOS</font></td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><br>
+Pode ainda haver lugar à emissão de uma nota de crédito caso existam valores a creditar
+ao Banco. </p>
+
+<p>&nbsp;</p>
+
+<p class="center"><a name="ex">&nbsp;</a><img src="imagens2/x1.gif" alt="x1.gif"
+WIDTH="540" HEIGHT="590"></p>
+
+<p>&nbsp;</p>
+
+<h2><a name="3">FICHEIRO</a> DE FACTURAÇÃO</h2>
+
+<p>Do mesmo modo que o documento em papel, o ficheiro é enviado sempre no início de cada
+mês com os dados da facturação do mês anterior. Este ficheiro pode conter mais do que
+um documento lógico: </p>
+
+<blockquote>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="esq10">- &nbsp;</td>
+      <td class="esq10">Factura a cobrar ao Banco com os detalhes dos diversos serviços MB;</td>
+    </tr>
+    <tr>
+      <td class="esq10">- &nbsp;</td>
+      <td class="esq10">Nota de Crédito, caso existam créditos a efectuar ao Banco.</td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><br>
+Cada documento transmitido no ficheiro <a href="../l-iii/efac.htm">MEFAC</a> é
+constituído por um conjunto de vários registos: 
+
+<ul>
+  <li>um registo Tipo 0 de <strong>Header do Ficheiro</strong>;</li>
+</ul>
+
+<ul>
+  <li>um registo Tipo 1 com a <strong>Identificação da versão do Tarifário, a
+    identificação do cliente, o número fiscal e a designação do serviço de controlo da
+    facturação</strong>;</li>
+</ul>
+
+<ul>
+  <li>um registo Tipo 2 com a <strong>Identificação do Grupo de Tarifário</strong>;</li>
+</ul>
+
+<ul>
+  <li>um registo Tipo 3 com a <strong>Identificação do Sub-Grupo</strong> (caso exista);</li>
+</ul>
+
+<ul>
+  <li>um registo Tipo 4 com os elementos de <strong>Detalhe de Factura</strong>;</li>
+</ul>
+
+<ul>
+  <li>um registo Tipo 5 de <strong>Dados Informativos dos Elementos Considerados no Detalhe da
+    Factura</strong>;</li>
+</ul>
+
+<ul>
+  <li>um registo Tipo 6 de <strong>Total de Sub-Grupo</strong> (caso exista um Header de
+    subgrupo);</li>
+</ul>
+
+<ul>
+  <li>um registo Tipo 7 de <strong>Total de Grupo</strong>;</li>
+</ul>
+
+<ul>
+  <li>um registo Tipo 8 de <strong>Total de Documento</strong> (total da factura ou nota de
+    crédito);</li>
+</ul>
+
+<ul>
+  <li>um registo Tipo 9 de <strong>Trailer do Ficheiro</strong>.</li>
+</ul>
+
+<p><br>
+O total de cada documento (tipo registo 8) apresenta o total a pagar (ou receber) à SIBS.
+</p>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" BORDER="1" CELLSPACING="0" CELLPADDING="4"
+WIDTH="551">
+  <tr>
+    <td class="fundoesq" width="541"><em>MEFAC &#150; Exemplo do Layout</em></td>
+  </tr>
+  <tr>
+    <td class="esq" width="541"><pre class="tahoma">…
+0MEFAC0100331200203060012002020700120020306978
+12002022802102690400000010501999999DEPARTAMENTO QUE TRATA DA FACTURACAO    210
+2A  CONEXAO CPU
+3A1 BANCOS
+4A112002022800011                    CPU CONECTADO REALTIME000000100000000000000000010000000100000D
+4A112002022800012                    CPU CONECTADO REALTIME000000100000000000000000010000000100000D
+…
+6A1 0000001100000D
+7A  0000000001100000D
+2B  LIGACAO EQUIPAMENTO
+3B1 REDE BASICA TERMINAIS
+4B1120020228                          DE 1 A 50 TERMINAIS  000000030000000000000000500000001500000D
+5B11001001
+…
+5B11020101
+4B1220020228                          EXCED. 51 A 150      000000020000000000000001000000002000000D
+5B12022201
+…
+5B16940352
+6B1 0000013340000D
+…
+7B  0000000017482500D
+…
+2G  TRANSACCOES
+3G1 LEVANTAMENTOS-BAN.EMI.
+4G1120020204MEDST00020020204         DE 1 A 50000          000000000014000000000068030000000095242D
+4G1220020204MEDST00020020204         EXC. 50001 A 200000   000000000011500000000280950000000323093D
+4G1320020204MEDST00020020204         EXC.200001 A 500 000  000000000010000000001401970000001401970D
+4G1420020204MEDST00020020204         EXC. 500 001  1200 000000000000008500000000958590000000814802D
+4G1520020208MEDST00020020208         EXC.1200 001  2500 000000000000007500000000252630000000189473D
+4G1620020215MEDST00020020215         EXCEDENTE DE  2500 000000000000007000000000266530000000186571D
+6G1 0000040486040D
+…
+80000000000002744D0000000000000000D0000000000002744D
+90000032500000000003220510000000000000000
+…</pre>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"> <span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span> </span> <br>
+    Para efeitos de apresentação e por uma questão prática mantém-se o layout anterior nas
+    tabelas auxiliares. </em></td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a target="main" href="x2.htm">Seguinte</a></p>
+</body>
+</html>

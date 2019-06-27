@@ -1,0 +1,1546 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos 2800 (2800-2899)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.&nbsp;</td>
+    <td class="fundo">REP.&nbsp;</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="2800" name="2800">2800</a></td>
+    <td class="esq"><u>NÚMERO DO LOTE PMB</u>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td nowrap>N_LOT_PMB</td>
+  </tr>
+  <tr>
+    <td><a id="2801" name="2801">2801</a></td>
+    <td class="esq"><u>CÓDIGO DA AMEX PT NA AMEX INTERNACIONAL</u>
+      <p>= 955</p>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD_AMX_PT</td>
+  </tr>
+  <tr>
+    <td><a id="2802" name="2802">2802</a></td>
+    <td class="esq"><u>CHECKSUM FLAG</u>
+      <p>Indicador da validade do <i>checksum</i> do contrato.</p>
+      <p>&nbsp;&nbsp; 0 - <i>Checksum</i> válido<br>
+      &nbsp;&nbsp; 1 - <i>Checksum</i> inválido</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2803" name="2803">2803</a></td>
+    <td class="esq"><u>CÓDIGO DE RECUSA DA MENSAGEM</u>
+      <p>Código de recusa do Servidor a uma mensagem na sessão Sistema Central
+      &#8594; Servidor, utilizado pelo Sistema Central para a identificação do
+      ecrã de erro e respectivo texto a apresentar pelo CA-MB ao cliente para a
+      situação de erro verificada.</p>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td class="esq" nowrap>01 -&nbsp;</td>
+          <td class="esq">Rede de Transportes não identificada: apresentar o
+            ecrã de erro EE01 com o texto<br>
+            “Cartão de transportes inválido<br>
+            Contacte o seu Operador de Transportes”</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>02 -&nbsp;</td>
+          <td class="esq">Não existe nenhum SAM disponível para o serviço, ou
+            o SAM previamente alocado para o serviço já não se encontra
+            disponível devido a <i>timeout</i> de utilização ou o SAM
+            previamente alocado para o serviço retorna um erro na execução
+            dos comandos: apresentar o ecrã de erro EE01 com o texto&nbsp;<br>
+            “Serviço temporariamente indisponível<br>
+            Por favor tente mais tarde”</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>03 -&nbsp;</td>
+          <td class="esq">Cartão de transportes invalidado: apresentar o ecrã
+            de erro EE01 com o texto<br>
+            “O cartão de transportes foi invalidado<br>
+            Contacte o seu Operador de Transportes”</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2804" name="2804">2804</a></td>
+    <td class="esq"><u>RATIFICATION FLAG</u>
+      <p>Indicador do preenchimento do campo <i>Ratification</i>.</p>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 0 -&nbsp;</td>
+          <td class="esq"> <i>Ratification</i> não significativo, o campo <i>Ratification</i>
+      deve ser preenchido a zeros</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 1 -&nbsp;</td>
+          <td class="esq"> <i>Ratification</i> significativo</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td nowrap>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2805" name="2805">2805</a></td>
+    <td class="esq"><u>REFERÊNCIA DA LINHA</u></td>
+    <td class="dta">31</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>REF_LINHA</td>
+  </tr>
+  <tr>
+    <td><a id="2806" name="2806">2806</a></td>
+    <td class="esq"><u>NÚMERO DE UTILIZAÇÕES DA AUTORIZAÇÃO DE DÉBITO EM
+      CONTA</u>
+      <p>Trata-se de um contador da utilização da Autorização de Débito em Conta no processo de validação de Instruções de Débito Directo ou Reversões. É um valor
+      cumulativo por cada utilização.</p>
+    </td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUM-UTILZ</td>
+  </tr>
+  <tr>
+    <td><a id="2807" name="2807">2807</a></td>
+    <td class="esq"><u>DATA DA ÚLTIMA UTILIZAÇÃO DA AUTORIZAÇÃO DE DÉBITO
+      EM CONTA (ADC)</u>
+      <p>Indica o dia em que a ADC presente na base de dados da SIBS foi utilizada no processo de validação de Instruções de Débito Directo ou Reversões.</p>
+    </td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>DDMMAAAA</td>
+    <td>DT-ULT-UTILZ</td>
+  </tr>
+  <tr>
+    <td><a id="2808" name="2808">2808</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2809" name="2809">2809</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2810" name="2810">2810</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2811" name="2811">2811</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2812" name="2812">2812</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2813" name="2813">2813</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2814" name="2814">2814</a></td>
+    <td class="esq">
+<u>
+DESTINATÁRIO DO FICHEIRO DE MOVIMENTOS
+      (MOV5)</u>&nbsp;
+<p> 
+Indica se o ficheiro de
+      Movimentos criado é enviado ao <i> Acquirer</i> respectivo.&nbsp;</p>
+<p>
+
+Valores possíveis:&nbsp;<br>
+&nbsp;&nbsp; A (<i>Acquirer</i>) - o ficheiro MOV5
+      é enviado ao <i> Acquirer</i>&nbsp;<br>
+&nbsp;&nbsp; S (SIBS) - o ficheiro MOV5 não é
+      enviado ao <i> Acquirer</i>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(MOV5 é enviado para <i> BACKUP</i> da SIBS)</p>
+      
+  
+    </td>
+    <td class="dta">
+1
+      
+  
+    </td>
+    <td>
+A
+      
+   
+    </td>
+    <td>&nbsp;</td>
+    <td nowrap>
+MOV5-ACQ-SIBS
+      
+    
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2815" name="2815">2815</a></td>
+    <td class="esq">
+<u>
+ENVIO DE SUBTOTAIS DE ACQUIRING
+      (OPCIONAIS)&nbsp;</u>
+<p>
+      
+Indica se um <i> Acquirer</i> de transacções
+      pretende receber subtotais de negócio.&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td colspan="2" class="esq"> 
+      
+Valores possíveis:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>&nbsp;&nbsp; S - Sim&nbsp; –&nbsp;&nbsp;</td>
+    <td class="esq"> são enviados subtotais de <i> Acquiring</i> em registos do
+      ficheiro de Movimentos (MOV5) enviado ao Banco de Suporte do <i> Acquirer</i></td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>&nbsp;&nbsp; N - Não&nbsp; –&nbsp;&nbsp;</td>
+    <td class="esq">a SIBS não envia subtotais de <i> Acquiring</i></td>
+  </tr>
+</table>
+      
+
+    </td>
+    <td class="dta">
+
+
+    1
+
+
+    </td>
+    <td>
+      
+
+    A
+      
+
+    </td>
+    <td>&nbsp;</td>
+    <td>
+      ACQ-SUBTOT
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2816" name="2816">2816</a></td>
+    <td class="esq">
+<u>
+PROCESSAMENTO DE TOTAIS DE CUTOFF OU
+      CLEARING</u>&nbsp;
+<p>
+      
+Indica se a SIBS dialoga com o
+      Sistema de Pagamento, enviando a este totais de <i> Cutoff</i> ou processando
+      ficheiros de <i>Clearing</i>.&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" colspan="2">Valores possíveis:&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;&nbsp; 0 -&nbsp;</td>
+    <td class="esq"> SIBS não dialoga com Sistema de Pagamento. A apresentação
+      de transacções ao Sistema de Pagamento é efectuada autonomamente pelo <i>
+      Acquirer</i>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>&nbsp;&nbsp; 1 -&nbsp;</td>
+    <td class="esq"> SIBS dialoga com Sistema de Pagamento; SIBS envia totais de
+      Cutoff (“formato” Savings Banks)</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;&nbsp; 2 -&nbsp;</td>
+    <td class="esq"> SIBS dialoga com Sistema de Pagamento; SIBS processa ficheiros
+      de <i> Clearing</i></td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;&nbsp; 3
+      -&nbsp;</td>
+    <td class="esq"> SIBS dialoga com Sistema de Pagamento; SIBS envia totais de
+      <i> Cutoff</i>
+      (“formato” acordo bilateral) e processa ficheiros de <i> Clearing</i></td>
+  </tr>
+</table>
+      
+    
+    </td>
+    <td class="dta">
+1
+      
+
+    </td>
+    <td>
+A
+      
+  
+    </td>
+    <td>&nbsp;</td>
+    <td>
+SIBS-SPI
+      
+  
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2817" name="2817">2817</a></td>
+    <td class="esq">
+<u>
+ÂMBITO DE MOVIMENTAÇÃO</u>&nbsp;
+<p> 
+      
+Identifica o âmbito específico
+      de valores referentes a:&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" nowrap>&nbsp; -&nbsp;</td>
+    <td class="esq">
+      transacções de cartões not-on-us utilizados domesticamente
+      (genericamente identificadas por “INTs”)</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp; -&nbsp;</td>
+    <td class="esq">
+      transacções de cartões nacionais utilizados no estrangeiro
+      (genericamente identificadas por “NEs”)</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp; -&nbsp;</td>
+    <td class="esq">
+      outros valores, nomeadamente Fees indicadas por um Sistema de Pagamento</td>
+  </tr>
+</table>
+<p>Valores possíveis:&nbsp;<br>
+&nbsp;&nbsp; 01 -&nbsp;INTs - Apresentações
+      enviadas&nbsp;<br>
+&nbsp;&nbsp; 02 -&nbsp;INTs - Confirmação
+      de apresentações enviadas&nbsp;<br>
+&nbsp;&nbsp; 03 -&nbsp;INTs - Confirmação
+      de reapresentações enviadas&nbsp;<br>
+&nbsp;&nbsp; 04 -&nbsp;INTs - <i> Chargebacks</i>
+      recebidos&nbsp;<br>
+&nbsp;&nbsp; 05 -&nbsp;NEs - Apresentações
+      recebidas&nbsp;<br>
+&nbsp;&nbsp; 06 - NEs - Reapresentações recebidas&nbsp;<br>
+&nbsp;&nbsp; 07 -&nbsp;NEs - <i> Chargebacks</i>
+      enviados&nbsp;<br>
+&nbsp;&nbsp; 08 -&nbsp;Fees diversas do
+      Sistema de Pagamento</p>
+      
+
+    </td>
+    <td class="dta">
+2
+      
+
+    </td>
+    <td>
+A
+    </td>
+    <td>&nbsp;</td>
+    <td>
+SPI-AMBITO
+      
+
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2818" name="2818">2818</a></td>
+    <td class="esq">
+<u>
+SEQUÊNCIA DE FICHEIRO DE CLEARING</u>
+<p>&nbsp;</p>
+      
+
+    </td>
+    <td class="dta">
+22
+      
+
+    </td>
+    <td>
+A
+    </td>
+    <td>&nbsp;</td>
+    <td>
+  SPI-IDFICH
+      
+
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2819" name="2819">2819</a></td>
+    <td class="esq">
+    <u>
+    REFERÊNCIA DE ENTIDADE PARA O SISTEMA
+      DE PAGAMENTO</u>
+    <p>&nbsp;</p>
+      
+ 
+    </td>
+    <td class="dta">
+11
+      
+   
+    </td>
+    <td>
+A
+      
+
+    </td>
+    <td>&nbsp;</td>
+    <td>
+SPI-ENTFILE
+      
+  
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2820" name="2820">2820</a></td>
+    <td class="esq">
+      <p><u>TIPO DE PESQUISA</u></p>
+      <p>Campo que identifica o tipo de pesquisa a efectuar pelo
+      utilizador da Aplicação.</p>
+      <p>Assume os seguintes códigos:<br>
+      &nbsp;&nbsp; 1 - Comerciante<br>
+      &nbsp;&nbsp; 2 - Reason Code<br>
+      &nbsp;&nbsp; 3 - Código de Operação</td>
+    <td class="dta">
+      <p>1</td>
+    <td>
+      <p>A</td>
+    <td>&nbsp;</td>
+    <td>
+      <p>TIP_PESQ</td>
+  </tr>
+  <tr>
+    <td><a id="2821" name="2821">2821</a></td>
+    <td class="esq">
+      <p><u>TIPO DE PROCESSO</u></p>
+      <p>Indica se o processo administrativo foi enviado ou
+      recebido.</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; 1 - Processo Enviado<br>
+      &nbsp;&nbsp; 2 - Processo Recebido</td>
+    <td class="dta">
+      <p>1</td>
+    <td>
+      <p>A</td>
+    <td>&nbsp;</td>
+    <td>
+      <p>TIP_PROC</td>
+  </tr>
+  <tr>
+    <td><a id="2822" name="2822">2822</a></td>
+    <td class="esq">
+      <p><u>OBSERVAÇÕES</u></p>
+      <p>Campo reservado a observações referentes ao processo
+      administrativo.</td>
+    <td class="dta">
+      <p>70</td>
+    <td>
+      <p>A</td>
+    <td>&nbsp;</td>
+    <td>
+      <p>OBS_70</td>
+  </tr>
+  <tr>
+    <td><a id="2823" name="2823">2823</a></td>
+    <td class="esq">
+      <p><u>TEXTO VARIÁVEL</u></p>
+      <p>Texto com observações referentes ao Comerciante e que
+      complementam os dados da reclamação.</td>
+    <td class="dta">
+      <p>400</td>
+    <td>
+      <p>A</td>
+    <td>&nbsp;</td>
+    <td>
+      <p>TXT_V400</td>
+  </tr>
+  <tr>
+    <td><a id="2824" name="2824">2824</a></td>
+    <td class="esq">
+      <p><u>INDICADOR DE OBSERVAÇÕES</u></p>
+      <p>Código que indica se a reclamação tem, ou não,
+      observações associadas.</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; 0 - Não tem observações associadas<br>
+      &nbsp;&nbsp; 1 - Tem observações associadas</td>
+    <td class="dta">
+      <p>1</td>
+    <td>
+      <p>N</td>
+    <td>&nbsp;</td>
+    <td>
+      <p>IND_OBS</td>
+  </tr>
+  <tr>
+    <td><a id="2825" name="2825">2825</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2826" name="2826">2826</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2827" name="2827">2827</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2828" name="2828">2828</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2829" name="2829">2829</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2830" name="2830">2830</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2831" name="2831">2831</a></td>
+    <td class="esq"><u>INDICADOR DA ACÇÃO DO DEPOSITANTE</u>
+      <p>Indica se o Depositante confirmou ou cancelou o depósito em numerário
+      com validação.</p>
+      <p>&nbsp;&nbsp; 0 - Depositante confirmou depósito<br>
+      &nbsp;&nbsp; 1 - Depositante cancelou depósito</p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDACCAO</td>
+  </tr>
+  <tr>
+    <td><a id="2832" name="2832">2832</a></td>
+    <td class="esq"><u>INDICADOR OPERAÇÃO SUPERVISÃO CHEQUES</u>
+      <p>Indica se o supervisor na operação de gestão de stocks dos cacifos
+      dos cheques para emissão no CA MB, efectuou um carregamento ou uma
+      remoção de cheques.</p>
+      <p>&nbsp;&nbsp; 0 - Carregamento de cheques<br>
+      &nbsp;&nbsp; 1 - Remoção de cheques</p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDSUPCHEQ</td>
+  </tr>
+  <tr>
+    <td><a id="2833" name="2833">2833</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2834" name="2834">2834</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2835" name="2835">2835</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2836" name="2836">2836</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2837" name="2837">2837</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2838" name="2838">2838</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2839" name="2839">2839</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2840" name="2840">2840</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2841" name="2841">2841</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2842" name="2842">2842</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2843" name="2843">2843</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td nowrap>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2844" name="2844">2844</a></td>
+    <td class="esq">&nbsp;
+    </td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2845" name="2845">2845</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2846" name="2846">2846</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2847" name="2847">2847</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2848" name="2848">2848</a></td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2849" name="2849">2849</a></td>
+    <td class="esq">
+      <p><u>ESTADO (DA REFERÊNCIA)</u></p>
+      <p>Define o tipo de pagamento disponível para a
+      respectiva referência.</p>
+      <p>Pode assumir os seguintes valores:<br>
+      &nbsp;&nbsp; 1 - Activação<br>
+      &nbsp;&nbsp; 5 - Carregamento</p>
+
+    </td>
+    <td class="dta">
+      <p>1</td>
+    <td>
+      <p>N</td>
+    <td>&nbsp;</td>
+    <td>
+      <p>EST_REF</td>
+  </tr>
+  <tr>
+    <td><a id="2850" name="2850">2850</a></td>
+    <td class="esq">
+      <p><u>INDICADOR DE PAGAMENTO</u></p>
+      <p>Indica à empresa o tipo de pagamento efectuado.</p>
+      <p>Pode assumir os seguintes valores:<br>
+      &nbsp;&nbsp; 1 - Activação<br>
+      &nbsp;&nbsp; 5 - Carregamento</p>
+    </td>
+    <td class="dta">
+      <p>1</td>
+    <td>
+      <p>N</td>
+    <td>&nbsp;</td>
+    <td>
+      <p>IND_PAG</td>
+  </tr>
+  <tr>
+    <td><a id="2851" name="2851">2851</a></td>
+    <td class="esq"><u>TOKEN DE SESSÃO</u>
+      <p>Identificador do contexto de sessão com o SAM, em conjunto com o campo
+      (<a href="camp2700.htm#2779">2779</a>) Identificador do <i> SAM</i>.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOKEN</td>
+  </tr>
+  <tr>
+    <td><a id="2852" name="2852">2852</a></td>
+    <td class="esq"><u>ORIGEM DO INDICADOR DE RISCO</u>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; 1 - Host-to-Host<br>
+      &nbsp;&nbsp; 2 - Terminal de Serviços SIBS<br>
+      &nbsp;&nbsp; 3 - SIBS</p>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ORI_IND_RIS</td>
+  </tr>
+  <tr>
+    <td><a id="2853" name="2853">2853</a></td>
+    <td class="esq"><u>IDENTIFICADOR DE UTILIZADOR</u>
+      <p>Identificador do utilizador que efectua a alteração do indicador de
+      risco.<br>
+      &nbsp;&nbsp; - Identificação da sessão RT<br>
+      &nbsp;&nbsp; - Número do Terminal de Serviços SIBS<br>
+      &nbsp;&nbsp; - UserID (caso alteração SIBS)&nbsp;</p>
+    </td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ID_UTL_RIS</td>
+  </tr>
+  <tr>
+    <td><a id="2854" name="2854">2854</a></td>
+    <td class="esq">
+      <u>
+      CHAVE DE ACESSO À BASE DE DADOS DE CARTÕES&nbsp;</u>
+      <p>
+      Elemento que identifica o cenário para um Emissor de
+      cartões em termos de estrutura da Base de Dados.&nbsp;</p>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td colspan="2" class="esq">
+      Valores possíveis:</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>1 -&nbsp;</td>
+          <td class="esq">
+          <p> Número de cartão único por Emissor (cenário base)</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>2 -&nbsp;</td>
+          <td class="esq">
+          <p> Número de cartão único por BIN identificado pelo PAN</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>3 -&nbsp;</td>
+          <td class="esq">
+          <p> Número de cartão único composto por PAN e Data expiração</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">
+      1</td>
+    <td>
+      N</td>
+    <td>&nbsp;</td>
+    <td>
+      PAN_KEY_VER</td>
+  </tr>
+  <tr>
+    <td><a id="2855" name="2855">2855</a></td>
+    <td class="esq">
+      <u>
+      MONTANTE GASTO NO DIA CA</u>&nbsp;
+      <p>
+      Indica o montante total de levantamentos efectuado
+      durante o dia para um determinado cartão na rede de Caixas Automáticos.
+      O valor encontra-se expresso em Escudos ou em Euros em
+      função da moeda do cartão.</p>
+    </td>
+    <td class="dta">
+      11</td>
+    <td>
+      N</td>
+    <td>
+      9 int.<br>
+      2 dec.</td>
+    <td>
+      ATM_GST_DIA</td>
+  </tr>
+  <tr>
+    <td><a id="2856" name="2856">2856</a></td>
+    <td class="esq">
+      <u>
+      MONTANTE GASTO NO DIA TPA</u>&nbsp;
+      <p>
+      Indica o montante total de compras efectuado durante o
+      dia para um determinado cartão, na rede de Terminais de Pagamento
+      Automático.
+      O valor encontra-se expresso em Escudos ou em Euros em
+      função da moeda do cartão.</p>
+    </td>
+    <td class="dta">
+      11</td>
+    <td>
+      N</td>
+    <td>
+      9 int.<br>
+      2 dec.</td>
+    <td>
+      POS_GST_DIA</td>
+  </tr>
+  <tr>
+    <td><a id="2857" name="2857">2857</a></td>
+    <td class="esq">
+      <u>
+      MONTANTE TOTAL DE LEVANTAMENTOS NO ANO</u>&nbsp;
+      <p>
+      Indica o montante total de levantamentos efectuado
+      durante o ano para um determinado cartão.
+      O valor encontra-se expresso em Escudos ou em Euros em
+      função da moeda do cartão.</p>
+    </td>
+    <td class="dta">
+      11</td>
+    <td>
+      N</td>
+    <td>
+      9 int.<br>
+      2 dec.</td>
+    <td>
+      MNT_LEV_ANO</td>
+  </tr>
+  <tr>
+    <td><a id="2858" name="2858">2858</a></td>
+    <td class="esq">
+      <u>
+      MONTANTE TOTAL DE COMPRAS NO ANO</u>&nbsp;
+      <p>
+      Indica o montante total de compras efectuadas durante o
+      ano para um determinado cartão.
+      O valor encontra-se expresso em Escudos ou em Euros em
+      função da moeda do cartão.</p>
+    </td>
+    <td class="dta">
+      11</td>
+    <td>
+      N</td>
+    <td>
+      9 int.<br>
+      2 dec.</td>
+    <td>
+      MNT_CPR_ANO</td>
+  </tr>
+  <tr>
+    <td><a id="2859" name="2859">2859</a></td>
+    <td class="esq">
+      <u>
+      NÚMERO DE DIAS ATÉ ACTIVAÇÃO</u>&nbsp;
+      <p>
+      Para cartões emitidos na situação “0D-Por Activar”,
+      este campo indica o número de dias que decorreram desde a emissão do
+      cartão até à passagem para uma situação diferente de “0D”.&nbsp;</p>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td class="esq" colspan="2">
+      Valores possíveis:</td>
+        </tr>
+        <tr>
+          <td class="dta">000 -&nbsp;&nbsp;</td>
+          <td class="esq">
+            <p> cartão foi emitido em estado “02-Normal”</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="dta" nowrap>001 a 254 -&nbsp;&nbsp;</td>
+          <td class="esq">
+            <p> número de dias decorridos entre a emissão “0D-Por
+            activar” e o momento de colocação do cartão noutra situação</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="dta">255 -&nbsp;&nbsp;</td>
+          <td class="esq">
+            <p>cartão aguarda confirmação (encontra-se em estado “0D-Por
+            Activar”)</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">
+      3</td>
+    <td>
+      N</td>
+    <td>&nbsp;</td>
+    <td>
+      NUM_DIA_ACT</td>
+  </tr>
+  <tr>
+    <td><a id="2860" name="2860">2860</a></td>
+    <td class="esq">
+      <u>
+      TIPO DE CONTA</u>&nbsp;
+      <p>
+      Código que indica o tipo de conta associada a um
+      cartão. Poderá referir-se à primeira ou à segunda conta do cartão.&nbsp;</p>
+      <p>
+      Valores possíveis:<br>
+      &nbsp;&nbsp;
+          2 - Conta corrente&nbsp;<br>
+      &nbsp;&nbsp;
+          4 - Qualquer tipo de conta
+    </td>
+    <td class="dta">
+      1</td>
+    <td>
+      N</td>
+    <td>&nbsp;</td>
+    <td>
+      TIP_CONTA</td>
+  </tr>
+  <tr>
+    <td><a id="2861" name="2861">2861</a></td>
+    <td class="esq">
+      <u>
+      NÚMERO DO PRIMEIRO PIN LIVRE</u>&nbsp;
+      <p>
+      Número do primeiro PIN por utilizar (livre), para carta de
+      PIN ou cartão com PIN aleatório.</p>
+    </td>
+    <td class="dta">
+      9</td>
+    <td>
+      N</td>
+    <td>
+      &nbsp;</td>
+    <td>
+      PIN_LIV_INI</td>
+  </tr>
+  <tr>
+    <td><a id="2862" name="2862">2862</a></td>
+    <td class="esq">
+      <u>
+      NÚMERO DE PINS LIVRES</u>&nbsp;
+      <p>
+      Número de PINs por utilizar (livres), para carta de
+      PIN ou cartão com PIN aleatório.</p>
+    </td>
+    <td class="dta">
+      9</td>
+    <td>
+      N</td>
+    <td>
+      &nbsp;</td>
+    <td>
+      PIN_LIV_NUM</td>
+  </tr>
+  <tr>
+    <td><a id="2863" name="2863">2863</a></td>
+    <td class="esq">
+      <u>
+      DATA DA ÚLTIMA VALIDAÇÃO DE PINS</u>&nbsp;
+      <p>
+      Data da última validação de PINs efectuada pelo
+      processo mensal de validação de PINs.</p>
+    </td>
+    <td class="dta">
+      8</td>
+    <td>
+      N</td>
+    <td>
+      AAAAMMDD&nbsp;</td>
+    <td>
+      PIN_VAL_DTA
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2864" name="2864">2864</a></td>
+    <td class="esq">
+      <u>
+      MODALIDADE DE PIN</u>&nbsp;
+      <p>
+      Indicador que identifica a modalidade de PIN.</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; A - Aleatório<br>
+      &nbsp;&nbsp; 1 - PIN de cartão<br>
+      &nbsp;&nbsp; 2 - PIN de carta</p>
+    </td>
+    <td class="dta">
+      1</td>
+    <td>
+      A</td>
+    <td>
+      &nbsp;</td>
+    <td>
+      PIN_MOD_COD
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2865" name="2865">2865</a></td>
+    <td class="esq">
+      <u>
+      ORIGEM DO PIN</u>&nbsp;
+      <p>
+      Indicador da origem do PIN.&nbsp;</p>
+      <p>
+      Valores possíveis:<br>
+      &nbsp;&nbsp; B - Importado de um Emissor<br>
+      &nbsp;&nbsp; R - Capturado na Rede MB<br>
+      &nbsp;&nbsp; S - Calculado na SIBS<br>
+      &nbsp;&nbsp;
+        T - Calculado na SIBS para um outro Emissor
+    </td>
+    <td class="dta">
+      1</td>
+    <td>
+      A</td>
+    <td>
+      &nbsp;</td>
+    <td>
+      PIN_INI_ORI
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2866" name="2866">2866</a></td>
+    <td class="esq">
+      <u>
+      COMPRIMENTO DO PIN</u>
+      &nbsp;&nbsp;
+      <p>
+      Elemento que indica o número de dígitos que compõem
+      o PIN.&nbsp;<br>
+      Pode assumir os valores 4, 5 ou 6.</p>
+    </td>
+    <td class="dta">
+      1</td>
+    <td>
+      N</td>
+    <td>&nbsp;</td>
+    <td>
+      PIN_LGT</td>
+  </tr>
+  <tr>
+    <td><a id="2867" name="2867">2867</a></td>
+    <td class="esq">
+      <u>
+      DATA DA CRIAÇÃO DO PIN</u>&nbsp;
+      <p>
+      Data da geração, importação ou captura do PIN.</p>
+    </td>
+    <td class="dta">
+      8</td>
+    <td>
+      N</td>
+    <td>
+      AAAAMMDD</td>
+    <td>
+      PIN_INI_DTA
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2868">2868</a></td>
+    <td class="esq">
+      <u>
+      ESTADO DO PIN</u>&nbsp;
+      <p>
+      Indicador de estado do PIN.&nbsp;</p>
+      <p>
+      Valores possíveis:<br>
+      &nbsp;&nbsp; 0 - Livre (não usado)<br>
+      &nbsp;&nbsp; 1 - Normal<br>
+      &nbsp;&nbsp; 6 - Abatido pela BD de PINs<br>
+      &nbsp;&nbsp; 8 - Abatido pelo Emissor<br>
+      &nbsp;&nbsp; 9 - Outros erros<br>
+      &nbsp;&nbsp; C - A capturar na Rede MB
+    </td>
+    <td class="dta">
+      1</td>
+    <td>
+      A</td>
+    <td>
+      &nbsp;</td>
+    <td>
+      PIN_EST_COD
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2869" name="2869">2869</a></td>
+    <td class="esq">
+      <u>
+      DATA DA ÚLTIMA MUDANÇA DE ESTADO DO PIN</u>&nbsp;
+      <p>
+      Data da última mudança do estado do PIN.</p>
+    </td>
+    <td class="dta">
+      8</td>
+    <td>
+      N</td>
+    <td>
+      AAAAMMDD</td>
+    <td>
+      PIN_EST_DTA
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2870" name="2870">2870</a></td>
+    <td class="esq">
+      <u>
+      NÚMERO DE ALTERAÇÕES DE PIN</u>&nbsp;
+      <p>
+      Número de alterações de PIN efectuadas para o
+      PINBLOCK associado, com o cartão actual e cartões substituídos por este.</p>
+    </td>
+    <td class="dta">
+      4</td>
+    <td>
+      N</td>
+    <td>&nbsp;</td>
+    <td>
+      PIN_ALT_NUM
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2871" name="2871">2871</a></td>
+    <td class="esq">
+      <u>
+      DATA DA ÚLTIMA ALTERAÇÃO DE PIN</u>
+      <p><i>Timestamp</i> da última alteração de PIN. Serve para
+      encadear no CA as alterações de PIN feitas pelo mesmo cartão no OLO01
+      e OLO02.</p>
+    </td>
+    <td class="dta">
+      20</td>
+    <td>
+      N</td>
+    <td>
+      AAAAMMDDHH<br>
+      MMSSssssss</td>
+    <td>
+      PIN_ALT_DTA
+      &nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2872" name="2872">2872</a></td>
+    <td class="esq"><u>NÚMERO DO EQUIPAMENTO NO SAP</u>
+      <p>Número de Equipamento SAP (atribuído sequencialmente pelo SAP). Campo
+      utilizado para ordenação dos registos comunicados ao SC.&nbsp;</p>
+    </td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NEQSAP_N</td>
+  </tr>
+  <tr>
+    <td><a id="2873" name="2873">2873</a></td>
+    <td class="esq"><u>RESERVED</u>
+      <p>Constant field containing zeros.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>RESERVED_2</td>
+  </tr>
+  <tr>
+    <td><a id="2874" name="2874">2874</a></td>
+    <td class="esq"><u>RESERVED</u>
+      <p>Constant field containing zeros.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>RESERVED_4</td>
+  </tr>
+  <tr>
+    <td><a id="2875" name="2875">2875</a></td>
+    <td class="esq"><u>ACCOUNT PERIOD NUMBER</u>
+      <p>Local account period number, sent from Host when a new accounting
+      period is opened.<br>
+      When coded in 2 bytes BCD format the leftmost nibble of the leftmost byte
+      is zero.</td>
+    <td class="dta">3</td>
+    <td>BCD</td>
+    <td>&nbsp;</td>
+    <td>ACC_PER_NBR</td>
+  </tr>
+  <tr>
+    <td><a id="2876" name="2876">2876</a></td>
+    <td class="esq"><u>TRANSACTION SEQUENCE NUMBER</u>
+      <p>Local POS number that identifies all online transactions that may be
+      reversed and all offline payment transactions. Starts in 001 for each A031
+      Accounting Period and is incremented by one for each transaction that is
+      to be numbered.</td>
+    <td class="dta">3</td>
+    <td>BCD</td>
+    <td>&nbsp;</td>
+    <td>TRANS_SEQ_NBR</td>
+  </tr>
+  <tr>
+    <td><a id="2877" name="2877">2877</a></td>
+    <td class="esq"><u>PINBLOCK</u>
+      <p>Result of enciphering the client PIN by the PIN key in the PINPAD or
+      zeros if the client presses OK without entering the PIN in the PINPAD.</td>
+    <td class="dta">16</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>PINBLOCK</td>
+  </tr>
+  <tr>
+    <td><a id="2878" name="2878">2878</a></td>
+    <td class="esq"><u>RESPONSE MESSAGE DATE/TIME</u>
+      <p>Date and time calculated by SIBS Host that may be included in response
+      messages.<br>
+      Format YYYYMMDDHHMMSS</td>
+    <td class="dta">14</td>
+    <td>BCD</td>
+    <td>&nbsp;</td>
+    <td>RESP_DT</td>
+  </tr>
+  <tr>
+    <td><a name="2879">2879</a></td>
+    <td class="esq"><u>ADDITIONAL TERMINAL CAPABILITIES</u>
+      <p>Equivalent to EMV Additional Terminal Capabilities (E002 and 2895) but
+      hard coded in the POS and only used to inform SIBS about the real physical
+      capabilities of the terminal.&nbsp;<br>
+      It shall not be used in place of the Additional Terminal Capabilities
+      (E002 and 2895) downloaded from SIBS Host to perform EMV transactions.</td>
+    <td class="dta">5</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>ADD_TERM_CAP</td>
+  </tr>
+  <tr>
+    <td><a name="2880">2880</a></td>
+    <td class="esq"><u>AMOUNT AUTHORISED</u>
+      <p>Maximum value that may be spent by the client in the Merchant Base
+      Currency.&nbsp;<br>
+      In Fuel self-service environment the POS should subtract to this amount a
+      security value in order to avoid a situation where the pump may dispense
+      more fuel than authorised. The format of this field is the same as A061.</td>
+    <td class="dta">8</td>
+    <td>BCD</td>
+    <td>&nbsp;</td>
+    <td>AM_AUTH</td>
+  </tr>
+  <tr>
+    <td><a name="2881">2881</a></td>
+    <td class="esq"><u>AMOUNT IN MERCHANT CURRENCY</u>
+      <p>Amount of the transaction. The number of decimals implied is always 2.<br>
+      &nbsp;&nbsp; Ex: 00001245 stands for 000012,45 EUR</td>
+    <td class="dta">8</td>
+    <td>BCD</td>
+    <td>&nbsp;</td>
+    <td>AM_MERCH_CURR</td>
+  </tr>
+  <tr>
+    <td><a name="2882">2882</a></td>
+    <td class="esq"><u>TEXT FOR CLIENT RECEIPT</u>
+      <p>Text to be printed in the client receipt using the same format of
+      A101.&nbsp;<br>
+      The minimum length of this field is 1 character containing X'0C', which
+      stands for end of printable field. The maximum length of this field
+      depends on terminal capabilities informed in column 3 of A012.</td>
+    <td class="dta">Var</td>
+    <td>T
+      <p>LV</td>
+    <td>&nbsp;</td>
+    <td>TEXT_RECEIPT</td>
+  </tr>
+  <tr>
+    <td><a name="2883">2883</a></td>
+    <td class="esq"><u>CLIENT IDENTIFICATION ORIGIN</u>
+      <p>Informs the source and format of data included in field A091 (Client
+      Identification) or A589 (Online Client Identification).</td>
+    <td class="dta">1</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>CLIENT_ID_OR</td>
+  </tr>
+  <tr>
+    <td><a name="2884">2884</a></td>
+    <td class="esq"><u>COMMISSION</u>
+      <p>Contains the numerical value of the commission that will be applied to
+      the Merchant account together with the amount sign (A149).&nbsp;<br>
+      Coded as a numeric field in the transaction currency. If by any reason the
+      commission is not known by the system that authorizes the transaction,
+      then this field will be filled with spaces.&nbsp;<br>
+      This information is not to be printed or stored individually, and should
+      be used for accumulation purposes. It is the POS program responsibility to
+      use this information in a proper way. The HOST informs the totals of
+      commissions since the beginning of the period in the CLOSE PERIOD
+      transaction.</td>
+    <td class="dta">7</td>
+    <td>C</td>
+    <td>&nbsp;</td>
+    <td>COMM</td>
+  </tr>
+  <tr>
+    <td><a name="2885">2885</a></td>
+    <td class="esq"><u>MERCHANT BASE CURRENCY</u>
+      <p>Indicates the Merchant currency code and exponent according to prEN
+      1546-3 and ISO 4217.</td>
+    <td class="dta">4</td>
+    <td>BCD</td>
+    <td>&nbsp;</td>
+    <td>MERCH_CURR</td>
+  </tr>
+  <tr>
+    <td><a name="2886">2886</a></td>
+    <td class="esq"><u>TRANSACTION CURRENCY CODE</u>
+      <p>Indicates the transaction currency code and exponent according to prEN
+      1546-3 and ISO 4217.</td>
+    <td class="dta">4</td>
+    <td>BCD</td>
+    <td>&nbsp;</td>
+    <td>TRANS_CURR</td>
+  </tr>
+  <tr>
+    <td><a name="2887">2887</a></td>
+    <td class="esq"><u>MAINTENANCE CARD DATA</u>
+      <p>Data structure contained in magnetic track 2 and in record 1 of file 1
+      of AID 501649FF12.<br>
+      When in BCD format the rightmost nibble is filled with a trailing hex
+      digit ‘F’.</td>
+    <td class="dta">37</td>
+    <td>BCD</td>
+    <td>&nbsp;</td>
+    <td>MAINT_DATA&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2888">2888</a></td>
+    <td class="esq"><u>FUEL PURCHASE INDICATOR</u>
+      <p>Indicator used to inform the Host if the transaction is being used to
+      pay for fuel products.<br>
+      The terminal must behave according to the value of A157.</td>
+    <td class="dta">1</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>FUEL_IND</td>
+  </tr>
+  <tr>
+    <td><a name="2889">2889</a></td>
+    <td class="esq"><u>POS BLOCK LABEL</u>
+      <p>Identifies the type of an Information Block contained in a POS
+      Update/Audit Block (A121).<br>
+      Update Blocks are sent by Host to update terminal data. Audit blocks are
+      sent by Terminal to inform Host about terminal resident data or update
+      versions of the update blocks received from Host. Audit block labels have
+      the leftmost bit set to 1. Update blocks use the same label of the
+      corresponding Audit blocks with leftmost bit set to 0.</td>
+    <td class="dta">2</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>BLK_LABEL</td>
+  </tr>
+  <tr>
+    <td><a name="2890">2890</a></td>
+    <td class="esq"><u>NUMBER OF LINES</u>
+      <p>Number of times a repeating block is included in the message.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NBR_LINES_1</td>
+  </tr>
+  <tr>
+    <td><a name="2891">2891</a></td>
+    <td class="esq"><u>NUMBER OF LINES</u>
+      <p>Number of times a repeating block is included in the message.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NBR_LINES_2</td>
+  </tr>
+  <tr>
+    <td><a name="2892">2892</a></td>
+    <td class="esq"><u>TERMINAL CAPABILITIES</u>
+      <p>Obtained from the value field of E163.</td>
+    <td class="dta">6</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>TERM_CAP</td>
+  </tr>
+  <tr>
+    <td><a name="2893">2893</a></td>
+    <td class="esq"><u>TRANSACTION DATE</u>
+      <p>Obtained from the value field of E181.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TRANS_DATE</td>
+  </tr>
+  <tr>
+    <td><a name="2894">2894</a></td>
+    <td class="esq"><u>TRANSACTION TIME</u>
+      <p>Obtained from the value field of E188.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TRANS_TIME</td>
+  </tr>
+  <tr>
+    <td><a name="2895">2895</a></td>
+    <td class="esq"><u>ADDITIONAL TERMINAL CAPABILITIES</u>
+      <p>Obtained from the value field of E002.</td>
+    <td class="dta">10</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>ADD_TERM_CAP</td>
+  </tr>
+  <tr>
+    <td><a name="2896">2896</a></td>
+    <td class="esq">T<u>ERMINAL COUNTRY CODE</u>
+      <p>Obtained from the value field of E164.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TCC</td>
+  </tr>
+  <tr>
+    <td><a name="2897">2897</a></td>
+    <td class="esq"><u>TERMINAL TYPE</u>
+      <p>Obtained from the value field of E169.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TERM_TYPE</td>
+  </tr>
+  <tr>
+    <td><a name="2898">2898</a></td>
+    <td class="esq"><u>TRANSACTION TYPE</u>
+      <p>Obtained from the value field of E189.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TRANS_TYPE</td>
+  </tr>
+  <tr>
+    <td><a name="2899">2899</a></td>
+    <td class="esq"><u>AUTHORISATION RESPONSE CODE</u>
+      <p>Obtained from the value field of E034.</td>
+    <td class="dta">
+      <p>2</td>
+    <td>
+      C</td>
+    <td>&nbsp;</td>
+    <td>ARC</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+<center></center>
+</body>
+</html>

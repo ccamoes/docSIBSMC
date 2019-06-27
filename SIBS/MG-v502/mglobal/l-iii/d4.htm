@@ -1,0 +1,538 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta http-equiv="content-type" content="text/html" ; charset="ISO-8859-1">
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indiced.htm#D';</script>
+
+<title>D.4 MENSAGENS PARTICIPANTE -&gt; SIBS</title>
+</head>
+
+<body>
+
+<h1>D.4 MENSAGENS PARTICIPANTE -&gt; SIBS</h1>
+
+<p>&nbsp;</p>
+
+<p>Neste capítulo descrevem-se as mensagens <em>real-time</em> trocadas com a SIBS, nas
+sessões em que um Participante no Sistema MB (um Banco, um Emissor, um <em>Acquirer</em>)
+é Emissor de pedidos e a SIBS destinatária dos mesmos. </p>
+
+<p>Nestas sessões, designadas no Sistema MB por <em>Host-to-Host</em> (ou H2H),
+são trocadas mensagens do âmbito do Sistema MB, referidas no capítulo <a
+target="captulos" href="../l-ii/indicee.htm#E">E</a> do Livro II e descritas no presente
+capítulo, e mensagens do âmbito de outros subsistemas interbancários, como a
+Telecompensação de Efeitos (Pagamento de Letra/Recibo) ou o Sistema de Débitos Directos
+(Gestão de ADDs - Autorizações de Débito Directo), descritas nos Manuais de
+Funcionamento do respectivo subsistema. </p>
+
+<p>As mensagens do âmbito do Sistema MB podem ou não ter impacto
+contabilístico na Compensação Multibanco, dependendo da sua função ser a de permitir
+a concretização de pagamentos (ex.: Pagamentos ao Estado) ou a de facilitar
+consultas/gestão de acessos a diferentes serviços (ex.: Serviço MBNet ou Gestão de
+Cartões). </p>
+
+<p>De acordo com o referido no capítulo <a target="captulos"
+href="../l-ii/indicee.htm#E">E</a>, acima referido, algumas mensagens estão disponíveis
+via Terminal de Serviços SIBS (também conhecido como Terminal Bancário), além do canal
+H2H.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.4.1">D.4.1</a> ESTRUTURA DAS MENSAGENS </h2>
+
+<p>&nbsp;</p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="555">
+  <tr>
+    <th width="58" class="fundo">Nº do <br>
+    Campo </th>
+    <th width="142" class="fundo">DESCRITIVO </th>
+    <th width="50" class="fundo">COMP. </th>
+    <th width="59" class="fundo">REP. </th>
+    <th width="59" class="fundo">Pedido </th>
+    <th width="66" class="fundo">Resposta<br>
+    Aceite </th>
+    <th width="79" class="fundo">Resposta <br>
+    Recusada </th>
+  </tr>
+  <tr>
+    <td width="58">&nbsp;</td>
+    <td width="142" class="esq"><em>HEADER</em> </td>
+    <td width="50">&nbsp;</td>
+    <td width="59">&nbsp;</td>
+    <td width="59">&nbsp;</td>
+    <td width="66">&nbsp;</td>
+    <td width="79">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="58"><a href="../../Campos/campos5.htm#470">470</a></td>
+    <td width="142" class="esq">CODMSG-BS </td>
+    <td width="50" class="dta">4 </td>
+    <td width="59">A </td>
+    <td width="59"><strong>S </strong></td>
+    <td width="66"><strong>S </strong></td>
+    <td width="79"><strong>S </strong></td>
+  </tr>
+  <tr>
+    <td width="58"><a href="../../Campos/campos1.htm#002">002</a></td>
+    <td width="142" class="esq">VERMSG</td>
+    <td width="50" class="dta">2 </td>
+    <td width="59">N </td>
+    <td width="59"><strong>S </strong></td>
+    <td width="66"><strong>S </strong></td>
+    <td width="79"><strong>S </strong></td>
+  </tr>
+  <tr>
+    <td width="58"><a href="../../Campos/campos5.htm#471">471</a></td>
+    <td width="142" class="esq">IDMSGBAN</td>
+    <td width="50" class="dta">14 </td>
+    <td width="59">A </td>
+    <td width="59"><strong>S </strong></td>
+    <td width="66"><strong>S </strong></td>
+    <td width="79"><strong>S </strong></td>
+  </tr>
+  <tr>
+    <td width="58"><a href="../../Campos/campos1.htm#004">004</a></td>
+    <td width="142" class="esq">DHMSG</td>
+    <td width="50" class="dta">14 </td>
+    <td width="59">N </td>
+    <td width="59">&nbsp;</td>
+    <td width="66"><strong>S </strong></td>
+    <td width="79"><strong>S </strong></td>
+  </tr>
+  <tr>
+    <td width="58"><a href="../../Campos/campos5.htm#492">492</a></td>
+    <td width="142" class="esq">CODRESPS</td>
+    <td width="50" class="dta">3 </td>
+    <td width="59">N </td>
+    <td width="59">&nbsp;</td>
+    <td width="66"><strong>S </strong></td>
+    <td width="79"><strong>S </strong></td>
+  </tr>
+  <tr>
+    <td width="58">&nbsp;</td>
+    <td width="142" class="esq"><em>DADOS DO PEDIDO</em> </td>
+    <td width="50">variável </td>
+    <td width="59">variável </td>
+    <td width="59"><strong>C </strong></td>
+    <td width="66">&nbsp;</td>
+    <td width="79">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="58">&nbsp;</td>
+    <td width="142" class="esq"><em>DADOS DA RESPOSTA</em></td>
+    <td width="50">&nbsp;</td>
+    <td width="59">&nbsp;</td>
+    <td width="59">&nbsp;</td>
+    <td width="66">&nbsp;</td>
+    <td width="79">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="58"><a href="../../Campos/camp1700.htm#1709">1709</a></td>
+    <td width="142" class="esq">APLIC_N</td>
+    <td width="50" class="dta">2 </td>
+    <td width="59" >A </td>
+    <td width="59">&nbsp;</td>
+    <td width="66" ><strong>S </strong></td>
+    <td width="79">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="58"><a href="../../Campos/campos4.htm#320">320</a></td>
+    <td width="142" class="esq">IDLOG</td>
+    <td width="50" class="dta">4 </td>
+    <td width="59">N </td>
+    <td width="59">&nbsp;</td>
+    <td width="66"><strong>S </strong></td>
+    <td width="79">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="58"><a href="../../Campos/campos2.htm#117">117</a></td>
+    <td width="142" class="esq">NRLOG</td>
+    <td width="50" class="dta">8 </td>
+    <td width="59">N </td>
+    <td width="59">&nbsp;</td>
+    <td width="66"><strong>S </strong></td>
+    <td width="79">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="58">&nbsp;</td>
+    <td width="142" class="esq"><em>RESTANTE TEXTO</em></td>
+    <td width="50">variável </td>
+    <td width="59">variável </td>
+    <td width="59">&nbsp;</td>
+    <td width="66"><strong>C </strong></td>
+    <td width="79">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="58"><a href="../../Campos/campos5.htm#493">493</a></td>
+    <td width="142" class="esq">CODRECS</td>
+    <td width="50" class="dta">8 </td>
+    <td width="59">A </td>
+    <td width="59">&nbsp;</td>
+    <td width="66">&nbsp;</td>
+    <td width="79"><strong>S </strong></td>
+  </tr>
+  <tr>
+    <td width="58"><a href="../../Campos/campos5.htm#472">472</a></td>
+    <td width="142" class="esq">TEXTRESP</td>
+    <td width="50" class="dta">45 </td>
+    <td width="59">A </td>
+    <td width="59">&nbsp;</td>
+    <td width="66">&nbsp;</td>
+    <td width="79"><strong>S </strong></td>
+  </tr>
+  <tr>
+    <td width="58"><a href="../../Campos/campos5.htm#472">472</a></td>
+    <td width="142" class="esq">TEXTRESP</td>
+    <td width="50" class="dta">45 </td>
+    <td width="59">A </td>
+    <td width="59">&nbsp;</td>
+    <td width="66">&nbsp;</td>
+    <td width="79"><strong>S </strong></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><strong>Notas relativas a mensagens de pagamento:</strong> 
+
+<ul>
+  <li>Não existem anulações para operações de Pagamento de Serviços/Compras, Serviços
+    Especiais ou Pagamentos com Dados Adicionais, que tenham sido
+    concretizadas. </li>
+</ul>
+
+<ul>
+  <li>No caso das Entidades que não aceitam pagamentos duplicados, a SIBS efectua o controlo
+    de operações repetidas, rejeitando um segundo pagamento para uma mesma
+    entidade/referência.</li>
+</ul>
+
+<ul>
+  <li>No caso dos Pagamentos de Serviços/Compras, o Emissor pode considerar que um pagamento
+    foi realizado na sequência de uma mensagem que enviou (caso não tenha obtido resposta),
+    efectuando uma operação de &quot;Consulta ao Pagamento de Serviços/Compras&quot;, se
+    obtiver, nos dados da &quot;última mensagem&quot;, os campos chave da mensagem de
+    pagamento. Assim, pode saber se a operação consta (ou vai constar) ou não, no ficheiro <a
+    target="main" href="dst-1.htm">Destinos</a> (MDST5 - Compensação MB). </li>
+</ul>
+
+<ul>
+  <li>Nas sessões <em>real-time</em> entre os Emissores e a SIBS, a manutenção do contexto
+    e a gestão de não respostas (ou respostas fora de tempo) é da responsabilidade do
+    emitente dos pedidos. Quando não recebe resposta, o Participante não sabe de facto se o
+    pedido chegou à SIBS e se, tendo sido entregue, terá sido respondido positiva ou
+    negativamente. Não existindo portanto uma certeza para indicar ao cliente, um caminho
+    pode ser:<ul type="square">
+      <li>classificar estas mensagens como recuperáveis;</li>
+      <li>assumir que a SIBS não recebeu o pedido;</li>
+      <li>indicar ao cliente que o pedido não foi processado;</li>
+      <li>esperar pela resposta da SIBS e enviar uma anulação caso esta seja possível no
+        serviço em causa.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.4.2">D.4.2</a> DESCRIÇÃO DAS MENSAGENS</h2>
+
+<p><br>
+As mensagens previstas neste canal destinam-se a diferentes tipos de Participantes no
+Sistema MB.</p>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="D.4.2.1">D.4.2.1</a> MENSAGENS PARA EMISSORES DE CARTÕES</h3>
+
+<p>&nbsp;</p>
+
+<h6 >PAGAMENTOS/CONSULTAS A PAGAMENTOS</h6>
+
+<p>As mensagens seguintes permitem ao Emissor efectuar pedidos de pagamento e de consulta
+para os seguintes serviços (ver capítulo <a href="../l-ii/e2.htm"
+target="main">E.2</a> - Operações Cliente Disponíveis, do Livro II): 
+
+<ul>
+  <li>Pagamentos de Serviços/Compras&nbsp; <span class="oito">(H001/S001 e H002/S002)</span></li>
+  <li>Pagamentos ao Estado <span class="oito">(H003/S003 e H004/S004)</span></li>
+  <li>Carregamentos TMN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="oito">(
+    &nbsp;&nbsp; &quot;&nbsp;&nbsp; )</span></li>
+  <li>Carregamentos NETPAC&nbsp; <span class="oito">(&nbsp;&nbsp; &quot;&nbsp;&nbsp; )</span></li>
+  <li>Pagamentos Sapo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+    class="oito">(&nbsp;&nbsp; &quot;&nbsp;&nbsp; )</span></li>
+  <li>Pagamentos Via Card&nbsp; <span class="oito">&nbsp;&nbsp;&nbsp;&nbsp; ( &nbsp;&nbsp;
+    &quot;&nbsp;&nbsp; )</span></li>
+  <li>Carregamentos Optimus&nbsp; <span class="oito">(&nbsp;&nbsp; &quot;&nbsp;&nbsp; )</span></li>
+  <li>Carregamentos Vodafone&nbsp; <span class="oito">(&nbsp;&nbsp; &quot;&nbsp;&nbsp; )</span></li>
+  <li >
+    Pagamento de Prémios Jogos Santa Casa&nbsp; <span class="oito">(H007/S007)</span></li>
+  <li>Detalhe de Movimentos de Baixo Valor&nbsp; <span class="oito">(H008/S008 e H009/S009)</span></li>
+  <li>Pagamento de Custas Judiciais&nbsp; <span class="oito">(H016/S016 e H017/S017)</span></li>
+  <li>Pagamentos à Segurança Social&nbsp;&nbsp; <span class="oito">(&nbsp;&nbsp; &quot;
+    &nbsp;&nbsp; )</span></li>
+  <li>
+    Venda de Bilhetes para Espectáculos <span class="oito">(H040/S040,
+    H041/S041 e H042/S042)</span></li>
+  <li>Activação/Substituição de Dispositivo de Via Verde&nbsp; <span class="oito">(H515/S515)</span></li>
+</ul>
+
+<ul class="bullet">
+  <li><a target="main" href="../../MSG/msg/h001v02.htm">H001/S001</a> - Pagamento
+    de Serviços/Compras (V02) </li>
+  <li>
+    <a target="main" href="../../MSG/msg/h002v03.htm">H002/S002</a> - Consulta
+    a Pagamento de Serviços/Compras (V03) </li>
+  <li>
+    <a target="main" href="../../MSG/msg/h003v02.htm">H003/S003</a> -
+    Pagamento de Serviços Especiais (V02)</li>
+  <li><a target="main" href="../../MSG/msg/h004.htm">H004/S004</a> - Consulta a Pagamento de
+    Serviços Especiais </li>
+  <li>
+    <a target="main" href="../../MSG/msg/h007.htm">H007/S007</a> - Pagamento
+    de Prémios Jogos Santa Casa</li>
+  <li><a target="main" href="../../MSG/msg/h008.htm">H008/S008</a> - Consulta
+    a Movimentos de Baixo Valor</li>
+  <li><a target="main" href="../../MSG/msg/h009.htm">H009/S009</a> - Consulta
+    Detalhe de Movimentos de Baixo Valor</li>
+  <li><a target="main" href="../../MSG/msg/h016.htm">H016/S016</a> - Consulta
+    de Pagamentos com Dados Adicionais</li>
+  <li><a target="main" href="../../MSG/msg/h017.htm">H017/S017</a> -
+    Pagamentos com Dados Adicionais</li>
+  <li>
+    <a target="main" href="../../MSG/msg/h040.htm">H040/S040</a> -&nbsp;Actualização
+    de Catálogo de Espectáculos</li>
+  <li>
+    <a target="main" href="../../MSG/msg/h041.htm">H041/S041</a> -&nbsp;Pedido
+    de Informação de Bilhetes para Espectáculos</li>
+  <li>
+    <a target="main" href="../../MSG/msg/h042.htm">H042/S042</a> -&nbsp;Confirmação
+    de Reserva de Bilhetes para Espectáculos</li>
+  <li><a href="../../MSG/msg/h515.htm" target="main">H515/S515</a> -
+    Activação/Substituição de Dispositivo de Via Verde</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h6>GESTÃO DE CARTÕES</h6>
+<font FACE="Arial">
+
+<p></font>Consultar descrição das funcionalidades no capítulo <a
+href="../l-ii/i3.htm" target="main">I.3</a> - Serviços Disponíveis do Livro II. 
+
+<ul class="bullet">
+  <li><a target="main" href="../../MSG/msg/h015.htm">H015/S015</a> -
+    Personalização de Cartões</li>
+  <li><a target="main" href="../../MSG/msg/h315v03.htm">H315/S315</a> - Alteração de
+    Situação de Cartão (V03)</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h6><a name="MBNet">SERVIÇO</a> MBNET</h6>
+
+<p>Consultar descrição das funcionalidades no capítulo <a
+href="../l-ii/i3.htm" target="main">I.3</a> do Livro II. 
+
+<ul class="bullet">
+  <li><a target="main" href="../../MSG/msg/h450v02.htm">H450/S450</a> - Adesão ao MBNet (V02)</li>
+  <li><a target="main" href="../../MSG/msg/h451v02.htm">H451/S451</a> - Consulta ao MBNet
+    (V02)</li>
+  <li><a target="main" href="../../MSG/msg/h452.htm">H452/S452</a> - Alteração de Montante
+    Máximo de Compras por Dia do MBNet</li>
+  <li><a target="main" href="../../MSG/msg/h453v02.htm">H453/S453</a> - Alteração ao Código
+    Secreto do MBNet (V02)</li>
+  <li><a target="main" href="../../MSG/msg/h454.htm">H454/S454</a> - Reset de Código Secreto
+    do MBNet</li>
+  <li><a target="main" href="../../MSG/msg/h455.htm">H455/S455</a> - Cancelamento do MBNet</li>
+  <li><a target="main" href="../../MSG/msg/h456.htm">H456/S456</a> - Anulação da Alteração
+    de Montante Máximo de Compras por Dia&nbsp;</li>
+  <li><a target="main" href="../../MSG/msg/h464v02.htm">H464/S464</a> - Anulação da
+    Alteração ao Código Secreto do MBNet&nbsp;(V02)</li>
+  <li><a target="main" href="../../MSG/msg/h465v02.htm">H465/S465</a> - Consulta ao Cartão
+    Real de um Cartão Temporário (V02)</li>
+  <li><a target="main" href="../../MSG/msg/h466-2.htm">H466/S466</a> - Consulta aos Cartões
+    Temporários de um Cartão Real</li>
+  <li><a target="main" href="../../MSG/msg/h467v02.htm">H467/S467</a> - Consulta aos Dados do
+    Cartão Temporário (V02)</li>
+  <li><a target="main" href="../../MSG/msg/h468.htm">H468/S468</a> - Cancelamento de Cartão
+    Temporário</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="D.4.2.2">D.4.2.2</a> MENSAGENS PARA INSTITUIÇÕES DE CRÉDITO COM
+CONTAS D.O.</h3>
+<font FACE="Arial">
+
+<p></font><br>
+Consultar descrição das funcionalidades no capítulo <a href="../l-ii/i3.htm"
+target="main">I.3</a> do Livro II. </p>
+
+<p>&nbsp;</p>
+
+<h6 >TRANSFERÊNCIAS BANCÁRIAS</h6>
+
+<ul class="bullet">
+  <li><a href="../../MSG/msg/h006v02.htm" target="main">H006/S006</a> - Transferência
+    Bancária (Sessão Banco-SIBS) (V02)</li>
+  <li><a href="../../MSG/msg/h020v02.htm" target="main">H020/S020</a> - Consulta a
+    Transferência Bancária (V02)</li>
+  <li><a href="../../MSG/msg/h021v02.htm" target="main">H021/S021</a> - Devolução de
+    Transferência Bancária</li>
+</ul>
+
+<p style="page-break-before: always">&nbsp;</p>
+
+<h3 ><a name="D.4.2.3">D.4.2.3</a> MENSAGENS PARA BANCOS DE APOIO A CAs</h3>
+
+<p><br>
+Consultar descrição das funcionalidades no capítulo <a href="../l-ii/i3.htm"
+target="main">I.3</a> do Livro II. </p>
+
+<p>&nbsp;</p>
+
+<h6 >GESTÃO DE CAs</h6>
+
+<ul class="bullet">
+  <li><a href="../../MSG/msg/h201.htm" target="main">H201/S201</a> - Consulta Dados Fecho do
+    Caixa Automático</li>
+  <li>
+    <a href="../../MSG/msg/h202v02.htm" target="main">H202/S202</a> - Consulta Estado
+    Funcionamento do Caixa Automático (V02)</li>
+  <li><a href="../../MSG/msg/h203.htm" target="main">H203/S203</a> - Consulta Operação
+    Carregamento Caixa Automático</li>
+  <li><a href="../../MSG/msg/h205.htm" target="main">H205/S205</a> - Actualização do
+    Ficheiro Local de Caixas Automáticos</li>
+  <li>
+    <a href="../../MSG/msg/h351v02.htm" target="main">H351/S351</a> - Consulta a Fecho de
+    Caixas Automáticos (V02)</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h6 >RECLAMAÇÕES - DIFERENÇAS DE CAIXA NO FECHO DO CA</h6>
+
+<ul class="bullet">
+  <li>
+    <a href="../../MSG/msg/h352v02.htm" target="main">H352/S352</a> - Inserção de
+    Reclamação de Caixa Automático (V02)</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h6 >DEPÓSITOS - BANCOS DEPOSITÁRIOS COM VALIDAÇÃO CENTRAL DE NOTAS</h6>
+
+<p class="a">De acordo com o descrito no Livro II, capítulo <a target="main"
+href="../l-ii/b1-b.htm#B.1.6.2.1">B.1.6.2.1</a> Recolha de Depósitos com
+Validação, nas situações em que é possível identificar o depositante e a
+nota suspeita, o BAT envia ao sistema central da SIBS a mensagem H210 com o
+campo (<a href="../../Campos/camp2300.htm#2353">2353</a>) REGOPERCA com o valor
+“3”. O BAT é creditado e o Banco Emissor/Depósito debitado.&nbsp;<br>
+É possível efectuar esta operação até 3 dias úteis após a data do
+depósito.
+<p class="a">Quando a nota suspeita foi enviada ao Banco de Portugal e foi
+considerada boa, o BAT envia esta mensagem com o campo (<a href="../../Campos/camp2300.htm#2353">2353</a>)
+REGOPERCA com o valor “4”. Quando o CA MB considerou uma nota falsa e o BAT
+validou-a como boa, também pode ser utilizada esta mensagem com o valor “4”.
+O BAT é debitado e o Banco Emissor/Depósito creditado.</p>
+<p class="a">Esta mensagem origina um processo de regularização na aplicação
+de reclamações.</p>
+
+<ul class="bullet">
+  <li><a target="main" href="../../MSG/msg/h210.htm">H210/S210</a> - Confirmação Depósitos
+    de Notas Suspeitas</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="D.4.2.4">D.4.2.4</a> MENSAGENS PARA ENTIDADES DE APOIO A TPAs</h3>
+<font FACE="Arial">
+
+<p></font><br>
+Consultar descrição das funcionalidades no capítulo <a href="../l-ii/i3.htm"
+target="main">I.3</a> do Livro II. 
+
+<ul class="bullet">
+  <li><a href="../../MSG/msg/h101.htm" target="main">H101/S101</a> - Inserção de Comerciante</li>
+  <li><a href="../../MSG/msg/h102.htm" target="main">H102/S102</a> - Consulta a Comerciante</li>
+  <li><a href="../../MSG/msg/h103.htm" target="main">H103/S103</a> - Alteração de Comerciante</li>
+  <li><a href="../../MSG/msg/h104v02.htm" target="main">H104/S104</a> - Inserção de Estabelecimento</li>
+  <li><a href="../../MSG/msg/h105v02.htm" target="main">H105/S105</a> - Consulta a Estabelecimento</li>
+  <li><a href="../../MSG/msg/h106v02.htm" target="main">H106/S106</a> - Alteração de Estabelecimento</li>
+  <li><a href="../../MSG/msg/h107.htm" target="main">H107/S107</a> - Lista de Comerciantes</li>
+  <li><a href="../../MSG/msg/h108.htm" target="main">H108/S108</a> - Lista de Estabelecimentos por Comerciante</li>
+  <li><a href="../../MSG/msg/h109-2.htm" target="main">H109/S109</a> - Inserção de Acordo PMB</li>
+  <li><a href="../../MSG/msg/h110-2.htm" target="main">H110/S110</a> - Alteração de Acordo PMB</li>
+  <li><a href="../../MSG/msg/h111-2.htm" target="main">H111/S111</a> - Consulta ao Acordo PMB</li>
+  <li><a href="../../MSG/msg/h112-2.htm" target="main">H112/S112</a> - Inserção de TPA</li>
+  <li><a href="../../MSG/msg/h113-2.htm" target="main">H113/S113</a> - Consulta a TPA</li>
+  <li><a href="../../MSG/msg/h114.htm" target="main">H114/S114</a> - Consulta a Estado de Funcionamento de TPA</li>
+  <li><a href="../../MSG/msg/h115-2.htm" target="main">H115/S115</a> - Alteração a TPA</li>
+  <li><a href="../../MSG/msg/h116.htm" target="main">H116/S116</a> - Abate de TPA</li>
+  <li><a href="../../MSG/msg/h117v02.htm" target="main">H117/S117</a> - Consulta a Acordos dum Estabelecimento</li>
+  <li><a href="../../MSG/msg/h118-2.htm" target="main">H118/S118</a> - Lista de Terminais de Pagamento Automático</li>
+  <li><a href="../../MSG/msg/h119v01.htm" target="main">H119/S119</a> - Pedido de Produção de Cartão</li>
+  <li><span class="a"><a href="../../MSG/msg/h120.htm" target="main">H120/S120</a> - Consulta a Cartão de Estabelecimento</li>
+  <li><a href="../../MSG/msg/h121.htm" target="main">H121/S121</a> - Alteração de Situação de Cartão</li>
+  <li><a href="../../MSG/msg/h122.htm" target="main">H122/S122</a> - Lista de Cartões de Estabelecimento</li>
+  <li><a href="../../MSG/msg/h123.htm" target="main">H123/S123</a> - Lista TPAs da Entidade de Apoio do Terminal</li>
+  <li><a href="../../MSG/msg/h124v03.htm" target="main">H124/S124</a> - Inserção de Acordo de Representação</li>
+  <li><a href="../../MSG/msg/h125v03.htm" target="main">H125/S125</a> - Consulta ao Acordo de Representação</li>
+  <li><a href="../../MSG/msg/h126v03.htm" target="main">H126/S126</a> - Alteração ao Acordo de Representação</li>
+  <li><a href="../../MSG/msg/h128.htm" target="main">H128/S128</a> - Consulta a Operações Supervisão TPA</li>
+  <li><a href="../../MSG/msg/h129v02.htm" target="main">H129/S129</a> - Consulta a Estabelecimento por Chave de Representante</li>
+  <li><a href="../../MSG/msg/h132.htm" target="main">H132/S132</a> - Inserção de Acordo de Representação com Padrão</li>
+  <li><a href="../../MSG/msg/h133.htm" target="main">H133/S133</a> - Alteração de Acordo de Representação com Padrão</li>
+  <li><a href="../../MSG/msg/h134.htm" target="main">H134/S134</a> - Inserção de Acordo Padrão</li>
+  <li><a href="../../MSG/msg/h135.htm" target="main">H135/S135</a> - Lista de Acordo Padrão do Representante</li>
+  <li><a href="../../MSG/msg/h136.htm" target="main">H136/S136</a> - Consulta de Acordo Padrão</li>
+  <li><a href="../../MSG/msg/h137.htm" target="main">H137/S137</a> - Alteração de Acordo Padrão</li>
+  <li><a href="../../MSG/msg/h138.htm" target="main">H138/S138</a> - Abate de Acordo Padrão</li>
+  <li><a href="../../MSG/msg/h139.htm" target="main">H139/S139</a> - Inserção Dados Operacionais de Estabelecimento</li>
+  <li><a href="../../MSG/msg/h140.htm" target="main">H140/S140</a> - Consulta Dados Operacionais de Estabelecimento</li>
+  <li><a href="../../MSG/msg/h141.htm" target="main">H141/S141</a> - Alteração Dados Operacionais de Estabelecimento</li>
+  <li><a href="../../MSG/msg/h142.htm" target="main">H142/S142</a> - Abate Dados Operacionais de Estabelecimento</span></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="D.4.2.5">D.4.2.5</a> MENSAGENS
+PARA <em>ACQUIRERS</em></h3>
+
+<p><br>
+Pedidos de autorização provenientes de canais próprios do <em>Acquirer</em> (ex.:
+autorizações de voz), destinadas ao envio aos Emissores, quer através das ligações
+entre a SIBS e o Sistema de Pagamento Internacional do cartão, quer directamente ao
+Emissor, caso este seja um Participante no Sistema MB: 
+
+<ul class="bullet">
+  <li><a href="../../MSG/msg/ap01.htm" target="main">AP01/AR01</a> - Pedido de Autorização (<em>Acquirer</em>)</li>
+  <li><a href="../../MSG/msg/ap02.htm" target="main">AP02/AR02</a> - Anulação de Pedido de
+    Autorização (<em>Acquirer</em>)</li>
+  <li><a target="main" href="../../MSG/msg/ap03.htm">AP03/AR03</a> - Informação de
+    Autorização (<em>Acquirer</em>)</li>
+</ul>
+
+<p class="dta"><br>
+<a href="d34.htm" target="main">Anterior</a>/<a href="d5.htm" target="main">Seguinte</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

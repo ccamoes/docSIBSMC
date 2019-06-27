@@ -1,0 +1,398 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>PRODUÇÃO E RENOVAÇÃO DE CARTÕES</title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME FICHEIRO:&nbsp; PRODUÇÃO E RENOVAÇÃO DE
+        CARTÕES</td>
+        <td class="fichdta">&quot;FICH&quot; = PCRT </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Este ficheiro tem como objectivo permitir o carregamento de cartões Euroshell no Sistema
+da SIBS.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído por: 
+
+<ul>
+  <li>um registo de <i>Header</i> do ficheiro, &quot;TIPREG=0&quot;;</li>
+</ul>
+
+<ul>
+  <li>registos de inserção de novos cartões, &quot;TIPREG=1&quot;;</li>
+</ul>
+
+<ul>
+  <li>registos de renovação de cartões, &quot;TIPREG=2&quot;;</li>
+</ul>
+
+<ul>
+  <li>o registo de <i>Trailer</i> do ficheiro, &quot;TIPREG=9&quot;. </li>
+</ul>
+
+<p><br>
+O ficheiro é constituído por registos de comprimento fixo com 116 bytes.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">PCRT - TIPO DE REGISTO = 0 (<i>HEADER</i>)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 0</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">APLIC</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#101">101</a></td>
+    <td width="200" class="esq">= 'M'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">3</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td width="200" class="esq">= 'PCRT'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDCLIFAC (Inst. Origem)</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#412">412</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDCLIFAC (Inst. Destino)</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#412">412</a></td>
+    <td width="200" class="esq">= 0000001</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATA DE CRIAÇÃO</td>
+    <td class="dta" width="45">10</td>
+    <td class="dta" width="45">21</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1478">1478</a></td>
+    <td width="200" class="esq">AAAAMMDDss</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID-FICHANT</td>
+    <td class="dta" width="45">10</td>
+    <td class="dta" width="45">31</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1479">1479</a></td>
+    <td width="200" class="esq">AAAAMMDDss</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">PCRT- TIPO DE REGISTO = 1 (PRODUÇÃO INICIAL)<br>
+PCRT- TIPO DE REGISTO = 2 (RENOVAÇÃO DE CARTÃO)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1 ou 2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BINSHELL</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1300.htm#1394">1394</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CÓDIGO COMPANHIA</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">6</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1300.htm#1398">1398</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">RELEASE CODE</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1300.htm#1399">1399</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID. CLIENTE EUROSHELL</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1300.htm#1392">1392</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">N.º CARTÃO</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1404">1404</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CHECK DIGIT</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">20</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1405">1405</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">COMBINAÇÃO DE CHAVES</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">21</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1407">1407</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DURAÇÃO DO PERÍODO</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1408">1408</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATA DE EXPIRAÇÃO</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATA INÍCIO PERÍODO</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">28</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1409">1409</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">MONTANTE MÁX. PERÍODO</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">36</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1410">1410</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTROLO DE TROCAS</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">41</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1456">1456</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">PURCHASE CATEGORY</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">42</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1411">1411</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IND. RECOLHA DE KM</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">43</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1412">1412</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IND. MATRÍCULA VEÍCULO</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">44</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1413">1413</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">1ª LINHA DO EMBOSSING</td>
+    <td class="dta" width="45">27</td>
+    <td class="dta" width="45">45</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1414">1414</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">2ª LINHA DO EMBOSSING</td>
+    <td class="dta" width="45">16</td>
+    <td class="dta" width="45">72</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1416">1416</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">3ª LINHA DO EMBOSSING</td>
+    <td class="dta" width="45">16</td>
+    <td class="dta" width="45">88</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1416">1416</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CÓDIGO DE LÍNGUA</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">104</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1417">1417</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">MARCA DO VEÍCULO</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">105</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1418">1418</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">MODELO VEÍCULO</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">108</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1420">1420</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CATEGORIA DO VEÍCULO</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">110</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1400.htm#1421">1421</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">N.º CONTRATO</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">112</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#469">469</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">PCRT - TIPO DE REGISTO = 9 (<i>TRAILER</i>)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 9</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">N.º DE REGISTOS</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#107">107</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><strong>Observações:</strong> 
+
+<ul>
+  <li>Se tipo de registo = &#146;1&#146; - produção inicial, todos os campos do registo de
+    detalhe têm de estar preenchidos com valores válidos.</li>
+</ul>
+
+<ul>
+  <li>Se tipo de registo = &#145;2&#146; - renovação, os 6 campos que constituem o PAN (n.º
+    completo) do cartão têm de ser iguais aos valores existentes num dos registos da BD. Dos
+    restantes, o único campo que tem de estar preenchido com valor válido é:<p><span
+    class="wingding">ü</span> Data de expiração.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Os restantes campos do registo de detalhe vão preenchidos com valores <em>default</em>,
+  isto é, zeros ou espaços, consoante o formato do campo. Assim, não deve ser processada
+  por esta via qualquer alteração aos dados de um cartão, que não a data de expiração.</p>
+</blockquote>
+
+</body>
+</html>

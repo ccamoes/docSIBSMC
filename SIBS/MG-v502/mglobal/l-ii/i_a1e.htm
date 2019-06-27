@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="subject" content="MODELO GLOBAL">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Caracterização do Padrão EMV</title>
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicei.htm#I';</script>
+</head>
+
+<body>
+
+<h1><br>
+Para visualizar o formulário, clique <a href="i_a1e.doc">aqui</a>. </h1>
+
+<h1>Para preencher o formulário, siga as <a href="i_a1e.htm#*">instruções</a>.</h1>
+
+<p>&nbsp;</p>
+
+<h3>CARACTERIZAÇÃO DO PADRÃO EMV</h3>
+
+<p><br>
+Para possibilitar a emissão de cartões EMV, é necessária uma parametrização prévia
+de um ou vários Padrões EMV. </p>
+
+<p>A definição de um novo Padrão EMV ou a alteração de parâmetros de um
+Padrão EMV já existente é efectuada pelo Emissor através da funcionalidade de <a
+href="i3.htm#I.3.16">Pedido de Caracterização de Emissores</a> disponibilizada no
+Terminal de Serviços SIBS. Para situações de excepção em que tal não seja possível,
+o Emissor deve preencher e enviar à SIBS este formulário. </p>
+
+<p class="a">Uma vez que a identificação de um Padrão EMV é atribuída sequencialmente, de forma a garantir a coerência da informação no sistema do Emissor e na SIBS, a inserção ou alteração de parâmetros de um Padrão EMV tem efeito simultâneo nos ambientes de Pré-Produção e Produção. </p>
+
+<p><strong><br>
+1 . CÓDIGO DO EMISSOR</strong></p>
+
+<p>Preencher com o código numérico atribuído ao Emissor.</p>
+
+<p><strong><br>
+2. APLICAÇÃO EMV</strong></p>
+
+<p><em><strong>SUF.</strong></em></p>
+
+<p>A coluna &quot;Suf&quot; diz respeito ao sufixo da aplicação que está a ser
+parametrizada, quando exista (aplicável apenas para Sistema de Pagamento
+&quot;Visa&quot;).<br>
+Este campo permite diferenciar duas aplicações semelhantes (i.e., que possuem o mesmo
+AID) para, por exemplo, parametrizar duas vertentes distintas de 'Crédito' e 'Débito'.<br>
+Todos os Sufixos de AID têm que ser caracterizados individualmente, por este mesmo
+formulário. </p>
+
+<p><strong><em>PREFERRED NAME</em></strong></p>
+
+<p>O &quot;<em>Application Preferred Name</em>&quot; é apresentado nos terminais ao
+cliente, em substituição do &quot;<em>Application Label</em>&quot;, sempre que exista a
+possibilidade de escolha entre várias aplicações para realização de uma determinada
+transacção, e sempre que as características do terminal o permitam.</p>
+
+<p>O Emissor pode escolher uma curta mnemónica, com um máximo de 6 caracteres.
+Estes 6 caracteres, em conjunto com um valor parcial retirado do elemento &quot;<em>Application
+Label</em>&quot;, são utilizados para formar o conteúdo do campo &quot;<em>Application
+Preferred Name</em>&quot;. </p>
+
+<p>O &quot;<em>Application Preferred Name</em>&quot; permite a rápida identificação
+pelo cliente de duas vertentes diferentes para o mesmo cartão, produto &quot;CREDIT&quot;
+ou &quot;DEBITO&quot;, por exemplo.</p>
+
+<p class="center"><br>
+Exemplo da relação entre &quot;<em>Application Label</em>&quot; e &quot;<em>Preferred
+Name</em>&quot;:</p>
+<div align="center"><center>
+
+<table border="1" cellspacing="0" width="300" cellpadding="2">
+  <tr>
+    <td width="119"><em><strong>Application Label</strong></em></td>
+    <td width="169"><em><strong>Application Preferred Name</strong></em></td>
+  </tr>
+  <tr>
+    <td width="119"><table border="0" cellspacing="0">
+      <tr>
+        <td class="courier">VISA</td>
+      </tr>
+      <tr>
+        <td class="courier">VISA ELECTRON</td>
+      </tr>
+    </table>
+    </td>
+    <td width="169"><table border="0" cellspacing="0">
+      <tr>
+        <td class="courier">VISA xxxxxx</td>
+      </tr>
+      <tr>
+        <td class="courier">VISA ELEC xxxxxx</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center" class="center">'xxxxxx&#146; corresponde ao texto determinado pelo
+Emissor</p>
+
+<p><br>
+<strong>3. LINGUAGENS SUPORTADAS PELA APLICAÇÃO EMV</strong></p>
+
+<p>As aplicações EMV nos cartões nacionais têm suporte para duas linguagens, sendo a
+principal obrigatoriamente o português.</p>
+
+<p>A existência de uma segunda linguagem suportada pela aplicação EMV é opcional. O
+emissor pode determinar a existência de uma segunda linguagem preenchendo este ponto,
+utilizando para tal uma representação de 2 caracteres alfabéticos, de acordo com a
+norma ISO 639.</p>
+
+<p class="a">Para a definição de um padrão associado a uma Aplicação de Autenticação, não é considerada uma segunda linguagem, pelo que o ponto 3 não deve ser preenchido.</p>
+
+<p><br>
+<strong>NÚMERO DO PADRÃO EMV ATRIBUÍDO</strong></p>
+
+<p>A identificação do Padrão EMV é atribuída automática e sequencialmente
+pela SIBS no momento de inserção desse mesmo Padrão no sistema.</p>
+
+<p>Valores disponíveis para caracterização pelo Emissor: de 002 a 989<br>
+(valor &quot;001&quot; reservado para padrão de caracterização da Aplicação
+Multibanco; o padrão &quot;001&quot; não é parametrizável por Emissor)</p>
+
+<p>&nbsp;</p>
+
+<p><strong><a name="*">Instruções</a> de preenchimento: </strong>
+
+<ul>
+  <li>Clique <a href="i_a1e.doc">aqui</a> com o botão do lado direito do rato;</li>
+  <li>Escolha a opção &quot;Save target as...&quot; (ou &quot;Guardar destino
+    como...&quot;);</li>
+  <li>Grave o ficheiro num directório;</li>
+  <li>Preencha o formulário, utilizando o Microsoft Word.</li>
+</ul>
+
+<p>O envio do documento deve efectuar-se alguns dias antes da data pretendida para a
+entrada em funcionamento por e-mail para o <span class="a">Departamento de Produção
+da SIBS, Área de Regularizações (regularizacoes@sibs.pt).</span> </p>
+
+<p>Alternativamente pode imprimi-lo e envia-lo por correio/fax para o destinatário acima
+referido.</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,1412 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos1 (001-099)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.</td>
+    <td class="fundo">REP.</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="001" name="001">001</a></td>
+    <td class="esq"><u>CÓDIGO DA MENSAGEM</u> <p>Trata-se do campo que identifica o objectivo
+    da mensagem e a natureza dos dados que são transmitidos: pedido de levantamento, resposta
+    a pedido de levantamento, etc., bem como o tipo de mensagem: operação com cartão,
+    operação com NIB, operação comerciante.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODMSG</td>
+  </tr>
+  <tr>
+    <td><a id="002" name="002">002</a></td>
+    <td class="esq"><u>VERSÃO DE MENSAGEM</u> <p>Identifica a versão da mensagem indicada no
+    campo <a href="campos1.htm#001" target="explicac">001</a> ou no campo <a href="campos5.htm#470">470</a>. Identifica a versão da
+    mensagem que está em uso com o Banco; permite que a SIBS possa suportar mensagens com
+    formatos diferentes relativas ao mesmo serviço.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>VERMSG</td>
+  </tr>
+  <tr>
+    <td><a id="003" name="003">003</a></td>
+    <td class="esq"><u>TIPO DE TERMINAL</u> <p>Identifica o Tipo de Terminal usado.</p>
+    <p>&nbsp;&nbsp; A - Caixa Automático (CA)<br />
+    &nbsp;&nbsp; B - Pagamento Automático (POS)<br />
+    &nbsp;&nbsp; C - Caixa Automático do estrangeiro<br />
+    &nbsp;&nbsp; D - Pagamento Automático estrangeiro<br />
+    &nbsp;&nbsp; E - Terminal Baixo Valor<br />
+    &nbsp;&nbsp; F - Terminal Unicre<br />
+    &nbsp;&nbsp; G - Terminal Bancário<br />
+    &nbsp;&nbsp; H - Terminal Empresa<br />
+    &nbsp;&nbsp; I - Porta Moedas MB<br />
+    &nbsp;&nbsp; J - Acesso ao Multibanco<br />
+    &nbsp;&nbsp; K - TeleMultibanco<br />
+    &nbsp;&nbsp; L - Host do Banco<br />
+    &nbsp;&nbsp; M - Internet<br />
+    &nbsp;&nbsp; N, O, Q, R, S, T - reservados para uso interno SIBS<br />
+    &nbsp; V - Vouchers (AMEX)</p>
+    <p>Ver <a href="3-6-7.htm" target="main">tabela</a>.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIPOTERM</td>
+  </tr>
+  <tr>
+    <td><a id="004" name="004">004</a></td>
+    <td class="esq"><u>DATA/HORA DA TRANSMISSÃO</u> <p>Campo que contém a data e a hora em
+    que se efectuou a transmissão da mensagem do CPU da SIBS para o CPU do Banco.<br>
+      Não aplicável a registos correspondentes a mensagens trocadas no canal
+      Host-to-Host.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>AAAAMMDD<br />
+    HHMMSS</td>
+    <td>DHMSG</td>
+  </tr>
+  <tr>
+    <td><a id="005" name="005">005</a></td>
+    <td class="esq"><u>TIPO DE AUTENTICAÇÃO</u> <p>Identifica o tipo de autenticação da
+    operação. Trata-se de um campo composto, com os seguintes valores possíveis:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="bottom" colspan="2" class="esq"><em>1º dígito (instrumento)</em></td>
+      </tr>
+      <tr>
+        <td valign="bottom" nowrap>&nbsp;&nbsp; 0 -&nbsp; </td>
+        <td valign="bottom" class="esq">sem indicação.</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 1 -&nbsp; </td>
+        <td class="esq">c/leitura pista cartão (P2 ou P2 e 3 ou P1 no estrangeiro).</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 2 -&nbsp; </td>
+        <td class="esq"><em>key entered</em> (introdução manual dados cartão)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 3 -&nbsp; </td>
+        <td class="esq">sem leitura do cartão</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 4 -&nbsp; </td>
+        <td class="esq">c/leitura <em>chip</em> cartão (<em>track2 equivalent data</em>)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 5 -&nbsp; </td>
+        <td class="esq">c/leitura <em>chip</em> cartão (PAN+Data exp.+Seq.)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 6 -&nbsp; </td>
+        <td class="esq">c/leitura apenas da pista 2 de cartão c/ vertente MB em CA MB</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 7 -&nbsp; </td>
+        <td class="esq"><em>Fallback</em> para pista (transacção decidida sobre pista por não
+        ter sido possível leitura dos dados do <em>chip</em>).</td>
+      </tr>
+    </table>
+    <p><em>2º dígito (autorização)</em><u><br />
+    </u>&nbsp;&nbsp; 0 - sem indicação<br />
+    &nbsp;&nbsp; 1 - c/PIN<br />
+    &nbsp;&nbsp; 2 - c/assinatura<br />
+    &nbsp;&nbsp; 3 - mail/telephone<br />
+    &nbsp;&nbsp; 4 - telecódigo/telemóvel<br />
+    &nbsp;&nbsp; 5 - Pagamento Seguro (MBNet)<br />
+    &nbsp;&nbsp; 6 - s/PIN - operação encadeada<br />
+    &nbsp;&nbsp; 8 - MBNet / 3D Secure<br />
+    &nbsp;&nbsp; 9 - PIN Supervisor</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPOAUT</td>
+  </tr>
+  <tr>
+    <td><a id="006" name="006">006</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO TERMINAL</u> <p>Este campo identifica o terminal no
+    qual a transacção teve lugar. A estrutura deste campo depende do campo <a
+    href="campos1.htm#003">003</a> - TIPO DE TERMINAL, constante na mensagem ou no registo.
+    Ver <a href="3-6-7.htm" target="main">tabela</a>.</td>
+    <td class="dta">10</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>IDTERMINAL</td>
+  </tr>
+  <tr>
+    <td><a id="007" name="007">007</a></td>
+    <td class="esq"><u>LOCALIZAÇÃO DO TERMINAL</u> <p>Identifica a localização onde se
+    encontra instalado o terminal no qual foi efectuada a operação do cliente. A
+    informação incluída neste campo depende do campo <a href="campos1.htm#003"
+    target="explicac">003</a> -TIPOTERM. Ver <a href="3-6-7.htm" target="main">tabela</a>.</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>LOCTERM</td>
+  </tr>
+  <tr>
+    <td><a id="008" name="008">008</a></td>
+    <td class="esq"><u>MONTANTE</u> <p>Indica o valor da transacção. Se o código de
+    transacção referir uma operação sem valor contabilístico (pedido livro de cheques,
+    alteração de PIN, etc.), então este campo está a zeros.<br />
+    No caso de operações comerciante, indica o total facturado no fecho contabilístico
+    local do TPA (total bruto).<br />
+    No caso de uma operação no estrangeiro, ou de um eurocheque papel, corresponde ao
+    produto do valor total da operação (campo <a href="campos3.htm#238">238</a>) pelo
+    câmbio (campo <a href="campos3.htm#236">236</a>), acrescido do valor do imposto de venda
+    de moeda (campo <a href="campos3.htm#240">240</a>) se este estiver preenchido.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>MONTANTE</td>
+  </tr>
+  <tr>
+    <td><a id="009" name="009">009</a></td>
+    <td class="esq"><u>DATA-HORA DA TRANSMISSÃO DA MENSAGEM ORIGEM</u> <p>Campo que numa
+    mensagem ou registo correspondente a uma anulação, indica qual a data-hora com que foi
+    enviada a transacção a anular pelo Banco (valor do campo <a href="campos1.htm#004">004</a>
+    enviado ao Banco na transacção a anular).</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>AAAAMMDD<br />
+    HHMMSS</td>
+    <td>DHMSG-O</td>
+  </tr>
+  <tr>
+    <td><a id="010" name="010">010</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO LOG CENTRAL DA MENSAGEM ORIGEM</u> <p>Campo que numa
+    mensagem ou registo correspondente a uma anulação, indica qual a identificação do log
+    central da transacção a anular pelo Banco (valor do campo <a href="campos4.htm#320">320</a>
+    da transacção a anular). <br>
+    Preenchido na transacção original quando esta corresponde ao segundo tempo de uma
+    operação a dois tempos, com o valor presente no registo de &quot;Autorização&quot;
+    (CODTRN=012), caso tenha sido possível efectuar o respectivo emparelhamento.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDLOG-O</td>
+  </tr>
+  <tr>
+    <td><a id="011" name="011">011</a></td>
+    <td class="esq"><u>NÚMERO DE REGISTO CENTRAL DA MENSAGEM ORIGEM</u> <p>Campo que numa
+    mensagem ou registo correspondente a uma anulação, indica qual o número de registo de
+    log central da transacção a anular pelo Banco (valor do campo <a href="campos2.htm#117">117</a>
+    da transacção a anular).<br>
+    Preenchido na transacção original quando esta corresponde ao segundo tempo de uma
+    operação a dois tempos, com o valor presente no registo de &quot;Autorização&quot;
+    (CODTRN=012), caso tenha sido possível efectuar o respectivo emparelhamento.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRLOG-O</td>
+  </tr>
+  <tr>
+    <td><a id="012" name="012">012</a></td>
+    <td class="esq"><u>CÓDIGO DE RESPOSTA</u> <p>Campo que informa a resposta do Banco a um
+    pedido de operação. Valores possíveis:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td colspan="2" class="esq">Código - Descrição da Resposta</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 0 -&nbsp;</td>
+        <td class="esq">Transação aprovada</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 1 -&nbsp;</td>
+        <td class="esq">Pedido de degradação de Cenário</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 4 -&nbsp;</td>
+        <td class="esq">Transacção não aprovada por razões várias</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 5 -&nbsp;</td>
+        <td class="esq">Transacção não aprovada; o campo SALDO indica o máximo que poderia ter
+        sido pago na transacção que finda</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 6 -&nbsp;</td>
+        <td class="esq">Erro aplicacional</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 7 -&nbsp;</td>
+        <td class="esq">Captura do cartão no CA</td>
+      </tr>
+      <tr>
+        <td class="esq" colspan="2">&nbsp; </td>
+      </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" height="47">
+      <tr>
+        <td colspan="2" height="16">Códigos válidos apenas nas mensagens de pedido de autorização:</td>
+      </tr>
+      <tr>
+        <td nowrap height="15">&nbsp;&nbsp; 8 -&nbsp;</td>
+        <td class="esq" height="15">Recusada. Captura cartão. Suspeita fraude.</td>
+      </tr>
+      <tr>
+        <td height="16">&nbsp;&nbsp; 9 -&nbsp;</td>
+        <td class="esq" height="16">Autorizado com pedido de identificação.</td>
+      </tr>
+    </table><p>
+Não aplicável a registos correspondentes a mensagens trocadas no canal 
+Host-to-Host.</p>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODRESP</td>
+  </tr>
+  <tr>
+    <td><a id="013" name="013">013</a></td>
+    <td class="esq"><u>NÚMERO IDENTIFICAÇÃO DA RESPOSTA</u> <p>Identificação da
+    transacção no sistema do Banco.<br>
+No caso de transacções realizadas no canal Host-to-Host, informa o conteúdo
+      do campo (<a href="campos5.htm#471">471</a>) IDMSGBAN trocado nas
+      mensagens.</td>
+    <td class="dta">14</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NRIDRESP</td>
+  </tr>
+  <tr>
+    <td><a id="014" name="014">014</a></td>
+    <td class="esq"><u>NÚMERO DE IDENTIFICAÇÃO NO BANCO DA MENSAGEM ORIGEM</u> <p>Campo
+    que, numa mensagem ou registo, indica qual a identificação com que a transacção a
+    anular ficou no Banco (valor do campo <a href="campos1.htm#013">013</a> fornecido pelo
+    Banco na transacção a anular).</td>
+    <td class="dta">14</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NRIDRESP-O</td>
+  </tr>
+  <tr>
+    <td><a id="015" name="015">015</a></td>
+    <td class="esq"><u>MOTIVO DA ANULAÇÃO</u> <p>Código que identifica a causa que provoca
+    a anulação da transacção origem.</p>
+    <p>&nbsp;&nbsp; 1 - Gerada pelo Terminal<br />
+    &nbsp;&nbsp; 2 - Time-out recepção<br />
+    &nbsp;&nbsp; 3 - Gerada pela SIBS<br />
+    &nbsp;&nbsp; 4 - Gerada pelo acquirer</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MOTANUL</td>
+  </tr>
+  <tr>
+    <td><a id="016" name="016">016</a></td>
+    <td class="esq"><u>CÓDIGO DE RESPOSTA ADICIONAL</u> <p>Campo presente nas mensagens de
+    resposta do Banco. Só poderá conter valores diferentes de zeros no caso de respostas
+    negativas (campo <a href="campos1.htm#012">012</a> - CODRESP diferente de &#145;0&#146;) e
+    de terem sido acordados com o Banco textos específicos a apresentar no Terminal no qual
+    teve origem a operação enviada na mensagem de pedido.<br />
+    Tabela a definir caso a caso.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODRESPAD</td>
+  </tr>
+  <tr>
+    <td><a id="017" name="017">017</a></td>
+    <td class="esq"><u>VALOR DA AUTORIZAÇÃO</u> <p>Este campo é utilizado nas mensagens e
+    registos relativos a autorizações, com origem nacional ou no estrangeiro, e indica o
+    valor original para o qual foi solicitada a autorização. Dado que as autorizações não
+    têm impacto contabilístico na compensação MB, este campo permite aos Emissores
+    nacionais que processam autorizações desencadear os respectivos lançamentos internos.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>VALAUT-O</td>
+  </tr>
+  <tr>
+    <td><a id="018" name="018">018</a></td>
+    <td class="esq"><u>VALOR FINAL DA AUTORIZAÇÃO</u> <p>Este campo é utilizado no
+    cancelamento de uma autorização, quer tenha tido origem nacional ou no estrangeiro. O
+    cancelamento pode ser pelo total ou apenas parcial.<br />
+    No primeiro caso este campo será preenchido a zeros. No segundo terá o valor real da
+    autorização.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>VALAUT-F</td>
+  </tr>
+  <tr>
+    <td><a id="019" name="019">019</a></td>
+    <td class="esq"><u>SALDO DE EXTRACTO (SAN1 OU SAN2)</u> <p>Valor do saldo de extracto
+    (saldo contabilístico) da primeira conta (1ª - SAN1) ou da segunda conta (2ª - SAN2)
+    associada ao cartão.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>SALDOCONT</td>
+  </tr>
+  <tr>
+    <td><a id="020" name="020">020</a></td>
+    <td class="esq"><u>DATA DO SALDO DO EXTRACTO</u> <p>Data de referência do saldo do
+    extracto da conta informado no campo <a href="campos1.htm#019">019</a>.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATASALDO</td>
+  </tr>
+  <tr>
+    <td><a id="021" name="021">021</a></td>
+    <td class="esq"><u>NÚMEROS DE MOVIMENTOS DE EXTRACTO QUE SE SEGUEM</u> <p>Campo com o
+    número de movimentos da conta que são enviados como resposta a consulta de movimentos ou
+    enviados no registo (<a href="../mglobal/l-iii/emvc.htm" target="main">Ficheiro de
+    Movimentos de Conta</a>).<br />
+    No caso da mensagem de pedido de consulta de saldos e movimentos alargada, indica o
+    número máximo de ocorrências que o Banco deve devolver na resposta.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRMOV</td>
+  </tr>
+  <tr>
+    <td><a id="022" name="022">022</a></td>
+    <td class="esq"><u>REFERÊNCIA DO MOVIMENTO</u> <p>Campo que indica o tipo de operação
+    bancária que originou o movimento na conta.</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>REFMOV</td>
+  </tr>
+  <tr>
+    <td><a id="023" name="023">023</a></td>
+    <td class="esq"><u>DESCRIÇÃO DO MOVIMENTO</u> <p>Campo que identifica a operação
+    bancária que originou o movimento na conta.</td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DESCMOV</td>
+  </tr>
+  <tr>
+    <td><a id="024" name="024">024</a></td>
+    <td class="esq"><u>DATA DO MOVIMENTO</u> <p>Campo que indica a data do movimento da conta.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATAMOV</td>
+  </tr>
+  <tr>
+    <td><a id="025" name="025">025</a></td>
+    <td class="esq"><u>VALOR DO MOVIMENTO</u> <p>Valor do movimento da conta.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>VALORMOV</td>
+  </tr>
+  <tr>
+    <td><a id="026" name="026">026</a></td>
+    <td class="esq"><u>NÚMERO DE CHEQUES</u> <p>Campo que informa a quantidade de cheques
+    requisitados.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NCHEQ</td>
+  </tr>
+  <tr>
+    <td><a id="027" name="027">027</a></td>
+    <td class="esq"><u>SALDO DISPONÍVEL NA CONTA</u> <p>Valor do saldo da conta. Apresentará
+    o valor depois de executada a operação, caso a resposta seja afirmativa. Se a resposta
+    for negativa, o saldo só será preenchido para o código de resposta = 5 (Campo <a
+    href="campos1.htm#012">012</a>)</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>SALDODISP</td>
+  </tr>
+  <tr>
+    <td><a id="028" name="028">028</a></td>
+    <td class="esq"><u>PVV 2</u> <p><em>&quot;Personal Validation Value&quot; </em>da pista 2.
+    Trata-se do valor que é escrito sobre a pista 2 do cartão e que participa na validação
+    do PIN. É necessário ao Banco no caso deste validar o PIN.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PVV2</td>
+  </tr>
+  <tr>
+    <td><a id="029" name="029">029</a></td>
+    <td class="esq"><u>PVV 3</u> <p><em>&quot;Personal Validation Value&quot;</em> da pista 3.
+    Trata-se do valor escrito sobre a pista 3 e que participa na validação do PIN. Só é
+    necessário ao Banco emissor no caso deste validar o PIN.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PVV3</td>
+  </tr>
+  <tr>
+    <td><a id="030" name="030">030</a></td>
+    <td class="esq"><u>NÚMERO DE OPERAÇÕES REALIZADAS NA SESSÃO</u> <p>Número de
+    transacções enviadas da SIBS para o Banco desde que a sessão <em>Real Time</em> abriu
+    até ao momento em que se executou o fecho da sessão com o Banco. Devem ser totalizadas
+    todas as mensagens, quer tenham sido aceites ou recusadas pelo Banco.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NROPER-S</td>
+  </tr>
+  <tr>
+    <td><a id="031" name="031">031</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COM CARTÃO (VERTENTE MB) REALIZADAS NA
+    SESSÃO - MONTANTES A DÉBITO</u> <p>Somatório dos valores de operações efectuadas por
+    cartões de clientes do Banco, na vertente MB, enviadas pela SIBS desde o início da
+    sessão RT até ao fecho da sessão com o Banco. Corresponde ao somatório, em valor
+    absoluto dos campos <a href="campos1.htm#008">008</a>-MONTANTE na denominação (1) e com
+    o campo <a href="campos4.htm#318">318</a>-SINAL = &#145;D&#146;, incluídos nas mensagens
+    1161 e 3161, para as quais foi recebida pela SIBS uma resposta positiva do Banco (campo <a
+    href="campos1.htm#012">CODRESP</a> = &#145;0&#146;). O valor das anulações não
+    afectarão este totalizador.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPDMB-S</td>
+  </tr>
+  <tr>
+    <td><a id="032" name="032">032</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COM CARTÃO (VERTENTE MB) REALIZADAS NA
+    SESSÃO - MONTANTES A CRÉDITO</u> <p>Somatório dos valores de operações efectuadas por
+    cartões de clientes do Banco, na vertente MB, enviadas pela SIBS desde o início da
+    sessão RT até ao fecho da sessão com o Banco. Corresponde ao somatório, em valor
+    absoluto dos campos <a href="campos1.htm#008">008</a>-MONTANTE na denominação (1) e com
+    o campo <a href="campos4.htm#318">318</a>-SINAL = &#145;C&#146;, incluídos nas mensagens
+    1161 e 3161, para as quais foi recebida pela SIBS uma resposta positiva do Banco (campo <a
+    href="campos1.htm#012">CODRESP</a> = &#145;0&#146;). O valor das anulações não
+    afectarão este totalizador.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPCMB-S</td>
+  </tr>
+  <tr>
+    <td><a id="033" name="033">033</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COM CARTÃO (OUTRAS VERTENTES) REALIZADAS
+    NA SESSÃO - MONTANTES A DÉBITO</u> <p>Somatório dos valores de operações efectuadas
+    por cartões de clientes do Banco, em vertentes não MB, enviadas pela SIBS desde o
+    início da sessão RT até ao fecho da sessão com o Banco. Corresponde ao somatório em
+    valor absoluto dos campos <a href="campos1.htm#008">008</a>-MONTANTE na denominação (1)
+    e com o campo <a href="campos4.htm#318">318</a>-SINAL = &#145;D&#146;, incluídos nas
+    mensagens 1161, 1162, 1163 e 3161, para as quais foi recebida pela SIBS uma resposta
+    positiva do Banco (campo <a href="campos1.htm#012">CODRESP</a> = &#145;0&#146;). O valor
+    das anulações não afectarão este totalizador.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPDOU-S</td>
+  </tr>
+  <tr>
+    <td><a id="034" name="034">034</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COM CARTÃO (OUTRAS VERTENTES) REALIZADAS
+    NA SESSÃO - MONTANTES A CRÉDITO</u> <p>Somatório dos valores de operações efectuadas
+    por cartões de clientes do Banco, em vertentes não MB, enviadas pela SIBS desde o
+    início da sessão RT até ao fecho da sessão com o Banco. Corresponde ao somatório em
+    valor absoluto dos campos <a href="campos1.htm#008">008</a>-MONTANTE na denominação (1)
+    e com o campo <a href="campos4.htm#318">318</a>-SINAL = &#145;C&#146;, incluídos nas
+    mensagens 1161, 1162, 1163 e 3161, para as quais foi recebida pela SIBS uma resposta
+    positiva do Banco (campo <a href="campos1.htm#012">CODRESP</a> = &#145;0&#146;). O valor
+    das anulações não afectarão este totalizador.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPCOU-S</td>
+  </tr>
+  <tr>
+    <td><a id="035" name="035">035</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COM NIB REALIZADAS NA SESSÃO - MONTANTES
+    A DÉBITO</u> <p>Somatório dos valores de operações efectuadas para NIBs do Banco,
+    enviadas pela SIBS desde o início da sessão RT até ao fecho da sessão com o Banco.
+    Corresponde ao somatório em valor absoluto dos campos <a href="campos1.htm#008">008</a>-MONTANTE
+    na denominação (1) e com o campo <a href="campos4.htm#318">318</a>-SINAL =
+    &#145;D&#146;, incluídos nas mensagens 1195 e 3195, para as quais foi recebida pela SIBS
+    uma resposta positiva do Banco (campo <a href="campos1.htm#012">CODRESP</a> =
+    &#145;0&#146;). O valor das anulações não afectarão este totalizador.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPDNIB-S</td>
+  </tr>
+  <tr>
+    <td><a id="036" name="036">036</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COM NIB REALIZADAS NA SESSÃO - MONTANTES
+    A CRÉDITO</u> <p>Somatório dos valores de operações efectuadas para NIBs do Banco,
+    enviadas pela SIBS desde o início da sessão RT até ao fecho da sessão com o Banco.
+    Corresponde ao somatório em valor absoluto dos campos <a href="campos1.htm#008">008</a>-MONTANTE
+    na denominação (1) e com o campo <a href="campos4.htm#318">318</a>-SINAL =
+    &#145;C&#146;, incluídos nas mensagens 1195 e 3195, para as quais foi recebida pela SIBS
+    uma resposta positiva do Banco (campo <a href="campos1.htm#012">CODRESP</a> =
+    &#145;0&#146;). O valor das anulações não afectarão este totalizador.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPCNIB-S</td>
+  </tr>
+  <tr>
+    <td><a id="037" name="037">037</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COMERCIANTE REALIZADAS NA SESSÃO -
+    MONTANTES A DÉBITO</u> <p>Somatório dos valores de operações para comerciantes
+    apoiados pelo Banco, enviadas pela SIBS desde o início da sessão RT até ao fecho da
+    sessão com o Banco. Corresponde ao somatório em valor absoluto dos campos <a
+    href="campos1.htm#008">008</a>-MONTANTE na denominação (1) e com o campo <a
+    href="campos4.htm#318">318</a>-SINAL = &#145;D&#146;, incluídos nas mensagens 3190, para
+    as quais foi recebida pela SIBS uma resposta positiva do Banco (campo <a
+    href="campos1.htm#012">CODRESP</a> = &#145;0&#146;).</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPDCOM-S</td>
+  </tr>
+  <tr>
+    <td><a id="038" name="038">038</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COMERCIANTE REALIZADAS NA SESSÃO -
+    MONTANTES A CRÉDITO</u> <p>Somatório dos valores de operações para comerciantes
+    apoiados pelo Banco, enviadas pela SIBS desde o início da sessão RT até ao fecho da
+    sessão com o Banco. Corresponde ao somatório em valor absoluto dos campos <a
+    href="campos1.htm#008">008</a>-MONTANTE na denominação (1) e com o campo <a
+    href="campos4.htm#318">318</a>-SINAL = &#145;C&#146;, incluídos nas mensagens 3190, para
+    as quais foi recebida pela SIBS uma resposta positiva do Banco (campo <a
+    href="campos1.htm#012">CODRESP</a> = &#145;0&#146;).</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPCCOM-S</td>
+  </tr>
+  <tr>
+    <td><a id="039" name="039">039</a></td>
+    <td class="esq"><u>TOTAL DO VALOR ABSOLUTO DE TODAS AS ANULAÇÕES DE OPERAÇÕES
+    EXECUTADAS NA SESSÃO</u> <p>Total do valor das operações anuladas que envolveram contas
+    pertencentes ao Banco. Estas anulações dizem respeito a operações executadas desde o
+    início da sessão RT até ao fecho da sessão com o Banco.<br />
+    Corresponde ao somatório em valor absoluto dos campos <a href="campos1.htm#008">008</a>-MONTANTE
+    na denominação (1) incluídos nas mensagens 2100, 2152, 2153, 2160 e 2195, para as quais
+    foi recebida pela SIBS uma resposta positiva do Banco (campo <a href="campos1.htm#012">CODRESP</a>
+    = &#145;0&#146;).<br />
+    Os valores, assumidos sem sinal, serão adicionados para efeitos de controlo apenas e não
+    para correcção dos acumulados de cada um dos totais anteriormente descritos.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VANUL-S</td>
+  </tr>
+  <tr>
+    <td><a id="040" name="040">040</a></td>
+    <td class="esq"><u>NÚMERO DE OPERAÇÕES RECEBIDAS PELO BANCO NA SESSÃO</u> <p>Número
+    de transacções recebidas e tratadas pelo CPU do Banco desde o início da sessão<em>
+    real-time</em> (RT) até ao fecho da sessão.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NROPER-B</td>
+  </tr>
+  <tr>
+    <td><a id="041" name="041">041</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COM CARTÃO (VERTENTE MB) RECEBIDAS NA
+    SESSÃO - MONTANTES A DÉBITO</u> <p>O mesmo conceito definido em <a
+    href="campos1.htm#031">031</a>, mas respeitante ao valor recebido e tratado pelo CPU do
+    Banco.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPDMB-B</td>
+  </tr>
+  <tr>
+    <td><a id="042" name="042">042</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COM CARTÃO (VERTENTE MB) RECEBIDAS NA
+    SESSÃO - MONTANTES A CRÉDITO</u> <p>O mesmo conceito definido em <a
+    href="campos1.htm#032">032</a>, mas respeitante ao valor recebido e tratado pelo CPU do
+    Banco.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPCMB-B</td>
+  </tr>
+  <tr>
+    <td><a id="043" name="043">043</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COM CARTÃO (OUTRAS VERTENTES) RECEBIDAS
+    NA SESSÃO - MONTANTES A DÉBITO</u> <p>O mesmo conceito definido em <a
+    href="campos1.htm#033">033</a>, mas respeitante ao valor recebido e tratado pelo CPU do
+    Banco.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPDOU-B</td>
+  </tr>
+  <tr>
+    <td><a id="044" name="044">044</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COM CARTÃO (OUTRAS VERTENTES) RECEBIDAS
+    NA SESSÃO - MONTANTES A CRÉDITO</u> <p>O mesmo conceito definido em <a
+    href="campos1.htm#034">034</a>, mas respeitante ao valor recebido e tratado pelo CPU do
+    Banco.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPCOU-B</td>
+  </tr>
+  <tr>
+    <td><a id="045" name="045">045</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COM NIB RECEBIDAS NA SESSÃO - MONTANTES
+    A DÉBITO</u> <p>O mesmo conceito definido em <a href="campos1.htm#035">035</a>, mas
+    respeitante ao valor recebido e tratado pelo CPU do Banco.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPDNIB-B</td>
+  </tr>
+  <tr>
+    <td><a id="046" name="046">046</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COM NIB RECEBIDAS NA SESSÃO - MONTANTES
+    A CRÉDITO</u> <p>O mesmo conceito definido em <a href="campos1.htm#036">036</a>, mas
+    respeitante ao valor recebido e tratado pelo CPU do Banco.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPCNIB-B</td>
+  </tr>
+  <tr>
+    <td><a id="047" name="047">047</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COMERCIANTE RECEBIDAS NA SESSÃO -
+    MONTANTES A DÉBITO</u> <p>O mesmo conceito definido em <a href="campos1.htm#037">037</a>,
+    mas respeitante ao valor recebido e tratado pelo CPU do Banco.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPDCOM-B</td>
+  </tr>
+  <tr>
+    <td><a id="048" name="048">048</a></td>
+    <td class="esq"><u>TOTAL DO VALOR DE OPERAÇÕES COMERCIANTE RECEBIDAS NA SESSÃO -
+    MONTANTES A CRÉDITO</u> <p>O mesmo conceito definido em <a href="campos1.htm#038">038</a>,
+    mas respeitante ao valor recebido e tratado pelo CPU do Banco.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VOPCCOM-B</td>
+  </tr>
+  <tr>
+    <td><a id="049" name="049">049</a></td>
+    <td class="esq"><u>TOTAL DO VALOR ABSOLUTO DE TODAS AS ANULAÇÕES DE OPERAÇÕES
+    EXECUTADAS NA SESSÃO</u> <p>O mesmo conceito definido em <a href="campos1.htm#039">039</a>,
+    mas respeitante ao valor recebido e tratado pelo CPU do Banco.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>VANUL-B</td>
+  </tr>
+  <tr>
+    <td><a id="050" name="050">050</a></td>
+    <td class="esq"><u>COMISSÃO DO EMISSOR</u> <p>O campo é preenchido com o valor da
+    comissão interbancária recebida ou paga pelo/ao Emissor do cartão que efectuou a
+    operação.<br>
+    Pode também indicar a importância a creditar ao Banco emissor de um cartão nacional da
+    família da Unicre (a débito da Unicre), e que resultou da repartição do campo <a
+    href="#052">052</a>.<br />
+    Pode também ser preenchido com a comissão ou taxa acordada com uma entidade com quem a
+    SIBS tenha acordado a prestação de um Serviço Especial.<br />
+    (ex. Brisa - alteração cartão - 0,50 euros ; CP - venda de bilhetes - 5% custo).</p>
+    <p><strong>Nota: </strong>Para efeitos de estatísticas inclui todas as comissões
+    referentes ao Emissor independentemente da sua origem.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>COMEMI</td>
+  </tr>
+  <tr>
+    <td><a id="051" name="051">051</a></td>
+    <td class="esq"><u>COMISSÃO DO PROPRIETÁRIO/BANCO DE APOIO</u> <p>O campo é preenchido
+    com o valor da comissão interbancária recebida ou paga pelo/ao Proprietário do Terminal
+    no qual se efectuou a operação. No caso dos CAs, o proprietário corresponde ao Banco de
+    Apoio; no caso dos TPAs poderá ser o Banco de Apoio ou outra entidade (ex: Unicre).<br />
+    No caso de registos destinados a conta de entidades com operações de pagamentos de
+    serviços ou serviços especiais, inclui valores a creditar ou debitar ao respectivo Banco
+    de Apoio.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>COMPROP</td>
+  </tr>
+  <tr>
+    <td><a id="052" name="052">052</a></td>
+    <td class="esq"><u>COMISSÃO DO REPRESENTANTE</u> <p>O campo é preenchido com o valor das
+    comissões pagas pelo Comerciante a representantes de cartões, relativas a operações de
+    produtos não MB (ex: acordo VISA).</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>COMREP</td>
+  </tr>
+  <tr>
+    <td><a id="053" name="053">053</a></td>
+    <td class="esq"><u>COMISSIONAMENTO A COMERCIANTES (MB)</u> <p>O campo é preenchido com o
+    somatório dos valores da Tarifa de Serviço Comerciantes (TSC) aplicada a operações na
+    vertente MB, paga pelo comerciante ao proprietário do Terminal, relativamente a um fecho
+    local do Terminal.<br />
+    No caso de registos relativos a totais destinados a empresas com pagamentos de serviços
+    ou serviços especiais, inclui a importância paga pela Entidade ao respectivo Banco de
+    Apoio.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br />
+    2 dec.</td>
+    <td>COMMB</td>
+  </tr>
+  <tr>
+    <td><a id="054" name="054">054</a></td>
+    <td class="esq"><u>TOTAL COMERCIANTE</u> <p>Indica o valor líquido a creditar ou debitar
+    ao comerciante, cliente do Banco. Corresponde ao somatório das compras e outras
+    operações contabilísticas efectuadas desde que houve a última abertura do período do
+    Terminal, deduzido das comissões devidas a representantes de cartões (MB e outros
+    acordos).</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>TOTCLI</td>
+  </tr>
+  <tr>
+    <td><a id="055" name="055">055</a></td>
+    <td class="esq"><u>DADOS VARIÁVEIS - A</u> <p>Este campo é usado nas mensagens <em>real-time
+    </em>nas sessões SIBS-&gt;Banco, e o seu conteúdo, descrito no capítulo<a target="main"
+    href="../mglobal/l-iii/216x.htm#DADOSV-A"> D</a>, depende do tipo de operação (Campo <a
+    href="campos2.htm#120">120</a>-CODTRN) enviado na mensagem de pedido.</td>
+    <td class="dta">30</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DADOSV-A</td>
+  </tr>
+  <tr>
+    <td><a id="056" name="056">056</a></td>
+    <td class="esq"><u>DADOS VARIÁVEIS - B</u> <p>Este campo é usado nas mensagens <em>real-time</em>
+    nas sessões SIBS-&gt;Banco, e o seu conteúdo, descrito no capítulo<a target="main"
+    href="../mglobal/l-iii/126x.htm#DADOSV-B"> D</a>, depende do tipo de operação (Campo <a
+    href="campos2.htm#120">120</a>-CODTRN) enviado na mensagem de pedido.</td>
+    <td class="dta">17</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DADOSV-B</td>
+  </tr>
+  <tr>
+    <td><a id="057" name="057">057</a></td>
+    <td class="esq"><u>DADOS VARIÁVEIS - C</u> <p>Este campo é usado nas mensagens<em>
+    real-time</em> nas sessões SIBS-&gt;Banco, e o seu conteúdo, descrito no capítulo<a
+    target="main" href="../mglobal/l-iii/2160.htm#DADOSV-C"> D</a>, depende do tipo de
+    operação (Campo <a href="campos2.htm#120">120</a>-CODTRN) enviado na mensagem de pedido.</td>
+    <td class="dta">26</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DADOSV-C</td>
+  </tr>
+  <tr>
+    <td><a id="058" name="058">058</a></td>
+    <td class="esq"><u>DADOS VARIÁVEIS - D</u> <p>Este campo é usado nas mensagens <em>real-time</em>
+    nas sessões SIBS-&gt;Banco, e o seu conteúdo, descrito no capítulo<a target="main"
+    href="../mglobal/l-iii/126x.htm#DADOSV-D"> D</a>, depende do tipo de operação (Campo <a
+    href="campos2.htm#120">120</a>-CODTRN) enviado na mensagem de pedido.</td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DADOSV-D</td>
+  </tr>
+  <tr>
+    <td><a id="059" name="059">059</a></td>
+    <td class="esq"><u>DADOS VARIÁVEIS - E</u> <p>Este campo é usado nas mensagens<em>
+    real-time</em> nas sessões SIBS-&gt;Banco, e o seu conteúdo, descrito no capítulo<a
+    target="main" href="../mglobal/l-iii/2195.htm#DADOSV-E"> D</a>, depende do tipo de
+    operação (Campo <a href="campos2.htm#120">120</a>-CODTRN) enviado na mensagem de pedido.</td>
+    <td class="dta">48</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DADOSV-E</td>
+  </tr>
+  <tr>
+    <td><a id="060" name="060">060</a></td>
+    <td class="esq"><u>DADOS VARIÁVEIS - F</u> <p>Este campo é usado nas mensagens <em>real-time</em>
+    nas sessões SIBS-&gt;Banco, e o seu conteúdo, descrito no capítulo<a target="main"
+    href="../mglobal/l-iii/1295.htm#DADOSV-F"> D</a>, depende do tipo de operação (Campo <a
+    href="campos2.htm#120">120</a>-CODTRN) enviado na mensagem de pedido.</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DADOSV-F</td>
+  </tr>
+  <tr>
+    <td><a id="061" name="061">061</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO FICHEIRO</u> <p>Identificação única atribuída a
+    cada ficheiro. Tem o formato: AAAAMMDDsss em que AAAAMMDD indica a data de produção do
+    ficheiro e sss o número de sequência do ficheiro no dia [001,999].<br />
+    O destinatário deve validar que ainda não processou um ficheiro do mesmo tipo com esta
+    identificação.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDFICH</td>
+  </tr>
+  <tr>
+    <td><a id="062" name="062">062</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO FICHEIRO ANTERIOR</u> <p>Identifica o ficheiro do
+    mesmo tipo expedido anteriormente. O controlo da sequencialidade dos ficheiros permite
+    detectar a falta de transmissão de ficheiros ou a sua produção em duplicado. O formato
+    é idêntico ao do campo anterior.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDFICHANT</td>
+  </tr>
+  <tr>
+    <td><a id="063" name="063">063</a></td>
+    <td class="esq"><u>TIPO DE MOVIMENTO</u> <p>Identifica o tipo de movimento, nos registos
+    de detalhe do ficheiro <a href="../mglobal/l-iii/dst-1.htm" target="main">Destinos</a>.<br>
+    No caso de TIPREG=6, relativo à função de Banco emissor de PMB, o campo indica o
+    movimento contabilístico efectuado:</p>
+    <p>&nbsp;&nbsp; 0001 - carregamento PMB<br />
+    &nbsp;&nbsp; 0002 - compras PMB<br />
+    &nbsp;&nbsp; 0003 - abandono PMB<br />
+    &nbsp;&nbsp; 0004 - abates PMB</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPMOV</td>
+  </tr>
+  <tr>
+    <td><a id="064" name="064">064</a></td>
+    <td class="esq"><u>VERSÃO DO FICHEIRO</u> <p>Identifica, no <em>header</em> dos
+    ficheiros, a versão do ficheiro indicado no campo (<a href="campos2.htm#102"
+    target="explicac">102</a>) FICH. Permite que possam ser suportados ficheiros com formatos
+    diferentes para o mesmo serviço.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>VERFICH</td>
+  </tr>
+  <tr>
+    <td><a id="065" name="065">065</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO INSTITUIÇÃO ACEITANTE</u> <p>Código que identifica a
+    instituição que originou o pedido. No caso da UNICRE o valor é:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 00000454898<br />
+    No caso da VISA INT. podem ser diferentes BIN's das entidades aceitantes do cartão.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDACEITANTE</td>
+  </tr>
+  <tr>
+    <td><a id="066" name="066">066</a></td>
+    <td class="esq"><u>MONTANTE DE OPERAÇÕES MB</u> <p>Indica o montante das operações
+    efectuadas com acordo Multibanco no fecho local do Terminal ou incluídas no lote PMB.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>MONTOPMB</td>
+  </tr>
+  <tr>
+    <td><a id="067" name="067">067</a></td>
+    <td class="esq"><u>MONTANTE INDICADO</u> <p>Trata-se da importância indicada pelo cliente
+    na operação de depósito em numerário. O campo <a href="campos1.htm#008">008</a> é
+    preenchido com a importância confirmada pelo supervisor da Agência.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>MONTIND</td>
+  </tr>
+  <tr>
+    <td><a id="068" name="068">068</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO PROPRIETÁRIO</u> <p>Identifica a entidade que, do
+    ponto de vista do tarifário SIBS e interbancário, corresponde ao 'Banco de Apoio do
+    Terminal' para o Terminal&nbsp; indicado no campo <a href="campos1.htm#006">006</a>
+    IDTERMINAL. Corresponde ao número de comerciante com que o&nbsp; 'Banco de Apoio do
+    Terminal - BAT' se encontra matriculado no sistema Multibanco. Pode estar preenchido a
+    zeros (ex: no caso dos Caixas Automáticos - campo <a href="campos1.htm#003">003</a>
+    TIPOTERM = A).</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDPROP</td>
+  </tr>
+  <tr>
+    <td><a id="069" name="069">069</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DEPÓSITO EM ESCUDOS</u> <p>Indica o total em euros dos
+    depósitos em numerário confirmados efectuados em escudos num dado período ou fracção
+    de período contabilístico (normalmente estará associada ao sinal &quot;D&quot;).</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>IMPDEPESC</td>
+  </tr>
+  <tr>
+    <td><a id="070" name="070">070</a></td>
+    <td class="esq"><u>RETRIEVAL REFERENCE</u> <p>Identif. assignada pelo <em>acquirer</em> no
+    momento em que desencadeou o pedido. Em princípio serve para o acasalamento com o <em>clearing</em>.<br
+    />
+    No caso da UNICRE os 6 primeiros <em>bytes</em> (esquerda) correspondem ao número de
+    autorização. Este campo é completado a espaços.</td>
+    <td class="dta">12</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>RETREF</td>
+  </tr>
+  <tr>
+    <td><a id="071" name="071">071</a></td>
+    <td class="esq"><u>NATUREZA DA OPERAÇÃO</u> <p>Código atribuído à natureza da
+    operação que implica o pedido:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td nowrap="nowrap">&nbsp; 01 -&nbsp;</td>
+        <td class="esq">adiantamento dinheiro ATM</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 30 -&nbsp;</td>
+        <td class="esq">compra POS</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 31 -&nbsp;</td>
+        <td class="esq">compra POS c/ identif. manual</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 32 -&nbsp;</td>
+        <td class="esq">adiantamento / dinheiro POS</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 33 -&nbsp;</td>
+        <td class="esq">adiantamento / dinheiro POS c/ introdução manual</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 34 -&nbsp;</td>
+        <td class="esq">devolução POS</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 35 -&nbsp;</td>
+        <td class="esq">devolução POS c/ introd. manual</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 40 -&nbsp;</td>
+        <td class="esq">autorização bens e serviços</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 41 -&nbsp;</td>
+        <td class="esq"><em>cash advance</em></td>
+      </tr>
+      <tr>
+        <td>&nbsp; 42 -&nbsp;</td>
+        <td class="esq"><em>mail order</em></td>
+      </tr>
+      <tr>
+        <td>&nbsp; 43 -&nbsp;</td>
+        <td class="esq"><em>Quasi-Cash</em></td>
+      </tr>
+      <tr>
+        <td>&nbsp; 50 -&nbsp;</td>
+        <td class="esq">autorização POS</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 51 -&nbsp;</td>
+        <td class="esq">autorização POS c/ introdução manual</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 54 -&nbsp;</td>
+        <td class="esq">cancelamento autorizado</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 55 -&nbsp;</td>
+        <td class="esq">cancelamento autorizado manual</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NATOPER</td>
+  </tr>
+  <tr>
+    <td><a id="072" name="072">072</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO NO REPRESENTANTE</u> <p>Identificação do
+    estabelecimento/comerciante de um POS na nomenclatura de um Representante (ex. número do
+    estabelecimento para a rede Unicre).</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDESTREP</td>
+  </tr>
+  <tr>
+    <td><a id="073" name="073">073</a></td>
+    <td class="esq"><u>SUSPEITO</u> <p>Indica a classificação do comerciante efectuada pela
+    entidade contratante do mesmo (acquirer) ou pela entidade encarregada da Detecção de
+    Fraude que actue em seu nome:</p>
+    <p>&nbsp;&nbsp; 0 - normal<br />
+    &nbsp;&nbsp; 1 - suspeito</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SUSPEITO</td>
+  </tr>
+  <tr>
+    <td><a id="074" name="074">074</a></td>
+    <td class="esq"><u>NIB DA TRANSFERÊNCIA</u> <p>Identifica o NIB da conta do titular que
+    será usada para o pagamento por Transferência Bancária.</td>
+    <td class="dta">21</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NIBTRF</td>
+  </tr>
+  <tr>
+    <td><a id="075" name="075">075</a></td>
+    <td class="esq"><u>SALDO INICIAL PMB</u> <p>Saldo inicial carregado no cartão PMB, no
+    processo de personalização de cartões, por contrapartida do Banco.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>5 int.<br />
+    2 dec.</td>
+    <td>SALDINPMB</td>
+  </tr>
+  <tr>
+    <td><a id="076" name="076">076</a></td>
+    <td class="esq"><u>NÚMERO DE CARTÕES DE DEPÓSITO</u> <p>Indica o número de cartões de
+    depósito (terminais PMB) emitidos até ao momento.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NCARDEP</td>
+  </tr>
+  <tr>
+    <td><a id="077" name="077">077</a></td>
+    <td class="esq"><u>NÚMERO DE CARTÕES DE DEPÓSITO ACTIVOS</u> <p>Indica o número de
+    cartões de depósito que efectuaram pelo menos uma operação de depósito de lote PMB no
+    período considerado.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NCARDEPA</td>
+  </tr>
+  <tr>
+    <td><a id="078" name="078">078</a></td>
+    <td class="esq"><u>TIPO OPERAÇÃO SERVIÇO ESPECIAL</u> <p>Indica o tipo de operação do
+    serviço especial. </p>
+    <p>Pode apresentar os seguintes valores, no caso do serviço MBNet:<br>
+    &nbsp;&nbsp; 01 - Adesão<br>
+    &nbsp;&nbsp; 02 - Alteração de Montante<br>
+    &nbsp;&nbsp; 03 - Alteração de código secreto<br>
+    &nbsp;&nbsp; 04 - Cancelamento<br>
+    &nbsp;&nbsp; 05 - Pedido de 2ª via / <em>Reset</em><br>
+    &nbsp;&nbsp; 06 - Autenticação<br>
+    &nbsp;&nbsp; 07 - Pedido de cartão temporário<br>
+    &nbsp;&nbsp; 08 - Alteração de data de expiração</p>
+    <p>Campo que identifica a versão dos Dados Adicionais no caso das Mensagens com Dados
+    Adicionais.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPOPSE</td>
+  </tr>
+  <tr>
+    <td><a id="079" name="079">079</a></td>
+    <td class="esq"><u>CHAVE DE POSICIONAMENTO</u> <p>Campo incluído nas mensagens da
+    consulta de movimentos alargada. Na primeira mensagem enviada pela SIBS vai preenchido a
+    espaços e nas seguintes transporta o valor posicionado na mensagem de resposta anterior
+    do Banco.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CHVPOSMTO</td>
+  </tr>
+  <tr>
+    <td><a id="080" name="080">080</a></td>
+    <td class="esq"><u>NOME CLIENTE</u> <p>Nome do titular da conta. Esta informação será
+    utilizada para endereçar a encomenda efectuada através de serviços de venda
+    electrónica (em ATM ou POS).</td>
+    <td class="dta">30</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="081" name="081">081</a></td>
+    <td class="esq"><u>MORADA CLIENTE</u> <p>Campo destinado a ter o endereço da morada (rua,
+    praça, nº de porta, andar, etc.) do cliente.<br />
+    Utilizada nomeadamente quando se pretende o endereçamento da carta de PIN e/ou a
+    expedição do cartão (na produção ou renovações).</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ENDER_CLI</td>
+  </tr>
+  <tr>
+    <td><a id="082" name="082">082</a></td>
+    <td class="esq"><u>LOCALIDADE</u> <p>Campo destinado à localidade do endereço do cliente
+    (titular da conta ou do cartão). Este campo é de preenchimento opcional, devendo apenas
+    ser usado quando existe uma localidade, associada&nbsp; à morada, diferente da Localidade
+    Postal (campo <a href="campos1.htm#084">084</a>).</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>LOC_CLI</td>
+  </tr>
+  <tr>
+    <td><a id="083" name="083">083</a></td>
+    <td class="esq"><u>CÓDIGO POSTAL</u> <p>Campo destinado ao código postal:<br>
+    &nbsp;&nbsp; - do endereço do titular da conta ou do cartão<br>
+    &nbsp;&nbsp; - do domicílio ou da Agência bancária (balcão)</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>C_POST_CLI</td>
+  </tr>
+  <tr>
+    <td><a id="084" name="084">084</a></td>
+    <td class="esq"><u>LOCALIDADE POSTAL</u> <p>Campo destinado à localidade de
+    distribuição postal associada ao código postal indicado no campo <a
+    href="campos1.htm#083">083</a> (Código Postal).</td>
+    <td class="dta">25</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>L_POST_CLI</td>
+  </tr>
+  <tr>
+    <td><a id="085" name="085">085</a></td>
+    <td class="esq"><u>NÚMERO DA CONTA CRÉDITO</u> <p>Número de conta crédito (ou conceito
+    idêntico) posicionado pelo Banco e associada ao Serviço de crédito do Cartão. Trata-se
+    de um campo estruturado.<br />
+    No âmbito da aplicação de cartão de crédito da SIBS, as seis primeiras posições
+    são preenchidas com o BIN (<a href="campos3.htm#261">261</a>), as duas seguintes com a
+    extensão de BIN (<a href="campos4.htm#319">319</a>) e as sete posições da direita
+    incluem o número da conta crédito (<a href="campos1.htm#086">086</a>).<br />
+    No caso de contas crédito geridas pelo Banco, informadas no Ficheiro <a
+    href="../mglobal/l-iii/escd.htm" target="main">ESCD</a>, as quatro primeiras posições
+    devem estar a zeros, as sete seguintes indicam o número da conta (<a
+    href="campos1.htm#086">086</a>) e as quatro restantes indicam eventuais extensões da
+    conta crédito (<a href="camp1700.htm#1787">1787</a>) (ex: número empregado em produtos
+    empresa). As quatro posições da direita podem estar a zeros se esse conceito não for
+    usado.<br />
+    Nos recibos das operações efectuadas no cenário de limite de crédito ou de saldo
+    disponível da conta crédito, o número de conta apresentado é sempre:</p>
+    <p>(<a href="campos3.htm#261">261</a>) BIN + (<a href="campos4.htm#319">319</a>) EXBIN + (<a
+    href="campos1.htm#086">086</a>) IDCONTACR</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRCONTACR</td>
+  </tr>
+  <tr>
+    <td><a id="086" name="086">086</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DA CONTA CRÉDITO</u> <p>Identificação da conta
+    crédito, única no âmbito de cada produto financeiro.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDCONTACR</td>
+  </tr>
+  <tr>
+    <td><a id="087" name="087">087</a></td>
+    <td class="esq"><u>SALDO DISPONÍVEL CONTA CRÉDITO GERAL</u> <p>Preenchido com o montante
+    que servirá para acolher: levantamentos em ATM (nacionais ou no estrangeiro); compras
+    nacionais; autorizações originadas na Unicre; autorizações originadas no estrangeiro (
+    no caso de operações<em> on-line</em> com a Visa ou Europay).<br />
+    No cenário de funcionamento Real Time entre a SIBS e o Banco, a SIBS actualizará este
+    campo substituindo-o pelo informado na resposta recebida do Host do Banco no campo (<a
+    href="campos1.htm#027">027</a>) Saldo Disponível na Conta.<br />
+    No cenário de funcionamento &quot;Saldo disponível da conta crédito&quot;, a SIBS
+    decrementará o campo pelo montante das operações referidas, e incrementará pelas
+    anulações, devoluções ou outras operações a crédito.<br />
+    Sempre que haja uma recepção do ficheiro <a href="../mglobal/l-iii/escd.htm"
+    target="main">ESCD</a>, o valor do campo é novamente actualizado pelo correspondente
+    montante informado pelo Banco.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>SDISPGER</td>
+  </tr>
+  <tr>
+    <td><a id="088" name="088">088</a></td>
+    <td class="esq"><u>SALDO DISPONÍVEL CONTA CRÉDITO PARA CASH</u> <p>Preenchido com o
+    montante que servirá para acolher operações cash, isto é, que implicaram entrega de
+    dinheiro ao cliente: Levantamentos em ATM (nacionais ou estrangeiros); Adiantamentos de
+    dinheiro (nacionais ou estrangeiro).<br />
+    Este campo será sempre actualizado pela SIBS, quer as operações tenham sido realizadas
+    no cenário <em>Real-Time</em> ou sobre Saldo disponível da conta crédito, utilizando o
+    montante da operação.<br />
+    Sempre que haja uma recepção do ficheiro <a href="../mglobal/l-iii/escd.htm"
+    target="main">ESCD</a>, o valor do campo é novamente actualizado pelo correspondente
+    montante informado pelo Banco.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>SDISPCASH</td>
+  </tr>
+  <tr>
+    <td><a id="089" name="089">089</a></td>
+    <td class="esq"><u>FAMÍLIA DE CARTÃO</u> <p>Indica o grupo em que se insere o tipo de
+    produção do cartão.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 00 - Não existe informação<br>
+    &nbsp;&nbsp; 01 - Multibanco não personalizado<br />
+    &nbsp;&nbsp; 02 - Multibanco personalizado<br />
+    &nbsp;&nbsp; 03 - Eurocheque<br />
+    &nbsp;&nbsp; 04 - Visa<br />
+    &nbsp;&nbsp; 05 - MasterCard<br />
+    &nbsp;&nbsp; 06 - Eurocard<br />
+    &nbsp;&nbsp; 07 - Proprietário<br />
+    &nbsp;&nbsp; 08 - AMEX<br>
+    &nbsp;&nbsp; 09 - Gasolineiros<br>
+    &nbsp;&nbsp; 10 - Bilaterais<br>
+    &nbsp;&nbsp; 11 - SB<br>
+    &nbsp;&nbsp; 12 - Unicre<br>
+    &nbsp;&nbsp; 13 - Diners<br>
+    &nbsp;&nbsp; 14 - Maestro<br>
+    &nbsp;&nbsp; 0A - Cirrus<br>
+    &nbsp;&nbsp; 0B - Rede Privada<br>
+    &nbsp;&nbsp; 0C - Visa Electron<br>
+    &nbsp;&nbsp; 0D - Visa Electron/Multibanco<br>
+    &nbsp;&nbsp; 0E - Visa/Multibanco<br>
+    &nbsp;&nbsp; 0F - MasterCard/Multibanco<br>
+    &nbsp;&nbsp; 1A - Maestro/Multibanco<br>
+    &nbsp;&nbsp; 2A - AMEX/Multibanco</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>FAMCAR</td>
+  </tr>
+  <tr>
+    <td><a id="090" name="090">090</a></td>
+    <td class="esq"><u>TECNOLOGIA DE CARTÃO BANCÁRIO</u> <p>Indica o tipo de processo de
+    gravação dos dados bancários.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 1 - Pista magnética<br />
+    &nbsp;&nbsp; 2 - Chip<br />
+    &nbsp;&nbsp; 3 - Pista magnética e chip (PMB)</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TECNCAR</td>
+  </tr>
+  <tr>
+    <td><a id="091" name="091">091</a></td>
+    <td class="esq"><u>NÚMERO DE CARTÕES PORTA MOEDAS</u> <p>Indica o número de cartões
+    PMB emitidos, não expirados ou abatidos.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NPMB</td>
+  </tr>
+  <tr>
+    <td><a id="092" name="092">092</a></td>
+    <td class="esq"><u>NÚMERO DE CARTÕES PMB COM SALDO</u> <p>Indica o número de cartões
+    PMB já utilizados e que possuem saldo disponível.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NPMBCSLD</td>
+  </tr>
+  <tr>
+    <td><a id="093" name="093">093</a></td>
+    <td class="esq"><u>NÚMERO DE CARTÕES PMB SEM SALDO</u> <p>Indica o número de cartões
+    PMB que não têm saldo disponível (saldo a zeros).</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NPMBSSLD</td>
+  </tr>
+  <tr>
+    <td><a id="094" name="094">094</a></td>
+    <td class="esq"><u>NÚMERO DE CARTÕES PMB ACTIVOS</u> <p>Indica o número de cartões PMB
+    que efectuaram operações compensadas no período indicado.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NPMBACT</td>
+  </tr>
+  <tr>
+    <td><a id="095" name="095">095</a></td>
+    <td class="esq"><u>NÚMERO DE CARTÕES PMB COM CARREGAMENTOS</u> <p>Indica o número de
+    cartões PMB que efectuaram pelo menos um carregamento no período indicado.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NPMBCARR</td>
+  </tr>
+  <tr>
+    <td><a id="096" name="096">096</a></td>
+    <td class="esq"><u>NÚMERO DE CARTÕES PMB COM CONSULTAS</u> <p>Indica o número de
+    cartões PMB que efectuaram pelo menos uma consulta no período indicado.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NPMBCONS</td>
+  </tr>
+  <tr>
+    <td><a id="097" name="097">097</a></td>
+    <td class="esq"><u>NÚMERO DE CARTÕES PMB COM PAGAMENTOS</u> <p>Indica o número de
+    cartões PMB que efectuaram pelo menos um pagamento no período indicado.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NPMBPAG</td>
+  </tr>
+  <tr>
+    <td><a id="098" name="098">098</a></td>
+    <td class="esq"><u>NÚMERO DE CARREGAMENTOS</u> <p>Indica o número carregamentos
+    efectuados para cartões PMB no período indicado.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NCARR</td>
+  </tr>
+  <tr>
+    <td><a id="099" name="099">099</a></td>
+    <td class="esq"><u>NÚMERO DE PAGAMENTOS</u> <p>Indica o número pagamentos depositados,
+    efectuados por cartões PMB no período indicado.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NPAGDEP</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

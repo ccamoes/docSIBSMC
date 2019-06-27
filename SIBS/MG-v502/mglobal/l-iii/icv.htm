@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+
+
+<title>IMAGENS DE CHEQUES PARA VALIDAÇÃO (ICV5) </title>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME FICHEIRO:&nbsp; IMAGENS DE CHEQUES PARA
+        VALIDAÇÃO</td>
+        <td class="fichdta">&quot;FICH&quot; = ICV </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Após a confirmação do depósito de cheques o CA-MB cria dois ficheiro de imagens dos
+cheques depositados. A partir da informação do CA-MB o sistema central da SIBS
+disponibiliza ao Banco de Apoio do Terminal (BAT) esses dois ficheiros.</p>
+
+<p>O ICV destina-se a permitir a conferência, pelo BAT, do montante escrito no cheque
+versus o montante indicado pelo cliente depositante, da assinatura e do eventual endosso
+do cheque. Trata-se de um ficheiro com imagens a preto e branco (formato TIF) e é
+transmitido ao longo do dia para a rede interna do Banco via SIBS.&nbsp;</p>
+
+<p>O Banco deve instalar na rede interna <i>software</i> compatível para a transmissão
+pela SIBS do ficheiro ICV e indicar qual o endereço a utilizar para essa transmissão. A
+responsabilidade do desenvolvimento de funcionalidades para consulta e confirmação é do
+Banco. </p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído por: 
+
+<ul>
+  <li>um registo de <em>Header</em> &quot;TIPREG=0&quot;; </li>
+</ul>
+
+<ul>
+  <li>registos de Detalhe &quot;TIPREG=1&quot;; </li>
+</ul>
+
+<ul>
+  <li>um registo de <em>Trailer</em> &quot;TIPREG=9&quot;.</li>
+</ul>
+
+<p><br>
+O comprimento deste ficheiro é variável porque depende do tamanho dos campos das imagens
+de cheques.</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">ICV - TIPO DE
+REGISTO = 1&nbsp;(IMAGENS DE CHEQUES PARA VALIDAÇÃO)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '1'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">AGATM</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#178">178</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDPERLOCAL</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#118">118</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">11</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">COMP-PAN</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">15</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2324">2324</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">PAN</td>
+    <td class="dta" width="45">19</td>
+    <td class="dta" width="45">&nbsp;17</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2325">2325</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">REFDEPVAL</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">36</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2342">2342</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMOCORR-E</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">&nbsp;51</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2350">2350</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">MNTCHQIND *</td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">54</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2346">2346</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPIMG *</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">&nbsp;63</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2357">2357</a></td>
+    <td width="200" class="esq">= '1' (TIF)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">REFERIMG *</td>
+    <td class="dta" width="45">18</td>
+    <td class="dta" width="45">&nbsp;64</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2358">2358</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ZIB *</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">&nbsp;82</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#256">256</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NCONTA *</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">&nbsp;90</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#257">257</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NCHQ *</td>
+    <td class="dta" width="45">10</td>
+    <td class="dta" width="45">&nbsp;101</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#258">258</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPCHQ *</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">&nbsp;111</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#260">260</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPRIMG1 *</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">&nbsp;113</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2359">2359</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPRIMG2 *</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">&nbsp;119</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2360">2360</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IMG1 *</td>
+    <td class="dta" width="45">var</td>
+    <td class="dta" width="45">&nbsp;125</td>
+    <td width="45">TIF</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2361">2361</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IMG2 *</td>
+    <td class="dta" width="45">var</td>
+    <td class="dta" width="45">var</td>
+    <td width="45">TIF</td>
+    <td width="85"><a href="../../Campos/camp2300.htm#2362">2362</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTAL</td>
+    <td class="dta" width="45">var</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,122 @@
+
+BODY, BLOCKQUOTE, P, OL, UL {
+	font-family: Arial;
+	font-size: 8pt;
+	background-color: #ffffff;
+	color: #000080;
+}
+
+A:link {
+	font-family: Arial;
+	color : #0000ff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+A:active {
+	font-family: Arial;
+	color : #ff0000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+A:visited {
+	font-family: Arial;
+	color : #0000ff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+A:hover {
+	font-family: Arial;
+	color : #ff0000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+H1 {
+	font-family: Arial;
+	font-size: 16pt;
+	color: #000080;
+}
+
+H3 {
+	font-family: Arial;
+	font-size: 11pt;
+	color: #000080;
+}
+
+H4 {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #000080;
+}
+
+TD {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+	text-align: center;
+	vertical-align: top;
+}
+
+TH {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+	text-align: center;
+	vertical-align: middle;
+}
+
+TD.esq {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+	text-align: justify;
+	vertical-align: top;
+}
+
+TD.esqa {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #006400;
+	text-align: justify;
+	vertical-align: top;
+}
+
+TD.dta {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+	text-align: right;
+	vertical-align: top;
+}
+
+TD.dtaa {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #006400;
+	text-align: right;
+	vertical-align: top;
+}
+
+TD.oitoa {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #006400;
+}
+
+TD.fundo {
+	color: #000080;
+	background-color: #E7E7E7;
+	vertical-align: middle;
+}
+
+.a {
+	color: #006400;
+}
+
+.cor {
+	color: #0080C0;
+}
+

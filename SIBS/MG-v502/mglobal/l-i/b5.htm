@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="_self">
+<script>top.captulos.location='indiceb.htm#B';</script>
+
+
+<title>B.5 SERVIÇOS PARA CONTRATANTES DE COMERCIANTES (ACEITAÇÃO OU
+ACQUIRING)</title>
+</head>
+
+<body>
+
+<h1>B.5 SERVIÇOS PARA CONTRATANTES DE COMERCIANTES (ACEITAÇÃO OU <i>ACQUIRING</i>)</h1>
+
+<p>&nbsp;</p>
+
+<h2><a name="B.5.1">B.5.1</a> RECONHECIMENTO DOS CARTÕES NO SISTEMA MB
+
+</h2>
+<p><br>
+Cartões não parqueados no Sistema da SIBS para os quais o <i> Acquirer</i>
+respectivo, enquanto participante no Sistema MB, pretenda a aceitação de
+transacções na Rede MB (por exemplo, os cartões de uma marca internacional
+emitidos mundialmente), podem ser reconhecidos e aceites na rede desde que
+previamente seja parametrizado no Sistema um conjunto de dados sobre os mesmos.
+
+</p>
+<p>O <i> Acquirer</i> disponibiliza à SIBS informação sobre a lista de BINs
+(Bank
+Identifier Number) a considerar e o tipo de serviço pretendido: em Caixas Automáticos,
+em Terminais de Pagamento Automático, em Portagens ou em Telefones Públicos,
+bem como outras informações de ordem técnica (por exemplo, sobre a pista magnética
+dos cartões), para que a parametrização dos mesmos seja possível. 
+
+</p>
+<p>&nbsp; 
+
+</p>
+<h2><a name="B.5.2">B.5.2</a> GESTÃO DE SITUAÇÃO DOS CARTÕES
+
+</h2>
+<p><br>
+Para os cartões parametrizados no Sistema de acordo com o descrito no ponto
+anterior, o <i> Acquirer</i> pode gerir a sua situação, de forma a que o Sistema impeça
+que realizem transacções quando o <i> Acquirer</i> assim o entenda, através da
+implementação de:
+
+</p>
+<ul>
+  <li><a href="../l-iii/ecln.htm"> Ficheiro de Lista Negra</a> - a enviar à
+SIBS, possibilitando alterações massivas ou individuais à situação dos cartões.</li>
+</ul>
+<p>Assim, caso o <i> Acquirer</i> pretenda algum nível de autenticação por parte da
+SIBS, pode ser realizada uma validação, prévia à autorização, da situação
+dos cartões.
+
+</p>
+<p>&nbsp;
+
+</p>
+<h2><a name="B.5.3">B.5.3</a> PROCESSAMENTO DAS OPERAÇÕES
+
+</h2>
+<p>&nbsp;
+
+</p>
+<h3><a name="B.5.3.1">B.5.3.1</a> AUTENTICAÇÃO
+
+</h3>
+<p><br>
+Independentemente do cenário de funcionamento, e previamente ao processo de
+autorização, o Sistema pode validar, por exemplo, se: 
+
+</p>
+<ul>
+  <li> O BIN do cartão consta da lista facultada
+pelo <i>Acquirer</i>;</li>
+  <li> O código secreto (PIN) inserido pelo
+cliente está correcto;</li>
+  <li> A situação do cartão é admissível para
+o cartão efectuar a operação escolhida;</li>
+  <li> O cartão não está expirado;</li>
+  <li> A operação está autorizada para o cartão.</li>
+</ul>
+<p>Caso alguma das validações anteriores não seja ultrapassada com sucesso a
+transacção é finalizada com a mensagem de erro prevista para o efeito. Se
+todas as validações forem bem sucedidas segue-se o processo de autorização.
+
+</p>
+<p>&nbsp;
+
+</p>
+<h3 style="page-break-before: always"><a name="B.5.3.2">B.5.3.2</a> AUTORIZAÇÃO
+
+</h3>
+<p><br>
+A realização de operações com cartões de pagamento está dependente da
+sua autorização. Para tal, o Sistema MB possibilita a existência de vários
+cenários de funcionamento, de modo a adequar o modo de decisão à estratégia
+individual de cada <i>Acquirer</i>.
+
+</p>
+<p>Cabe-lhe a decisão sobre o nível de serviço que pretende, relativamente à
+autorização das transacções. De uma forma resumida, pode optar por:
+
+</p>
+<ul>
+  <li> que a SIBS encaminhe as transacções
+para o centro de autorização acordado entre o <i> Acquirer</i> e a SIBS (pode ser, por
+exemplo, o próprio <i> Acquirer</i> ou o Sistema de Pagamento Internacional, quando
+aplicável);</li>
+  <li> delegar na SIBS as autorizações
+das transacções, com base em parâmetros pré-definidos.</li>
+</ul>
+<p>Num cenário mais completo, o <i> Acquirer</i> pode optar pelo encaminhamento das
+transacções para o centro de autorização acordado e, como meio alternativo
+de decisão, no caso de ocorrerem interrupções da sessão <i>Real-Time</i>, delegar
+na SIBS as autorizações, com base nos parâmetros definidos.
+
+</p>
+<p>&nbsp;
+
+</p>
+<h5><a name="B.5.3.2.1">B.5.3.2.1</a> &nbsp;AUTORIZAÇÕES NO CENTRO DE
+AUTORIZAÇÃO
+
+</h5>
+<p>Neste caso o centro de autorização do <i> Acquirer</i> ou do Sistema de Pagamento
+Internacional tem de assegurar as condições de comunicação necessárias à
+troca das mensagens de <i> Real-Time</i> com a SIBS.
+
+</p>
+<p>Para decidir as autorizações, em tempo real, o centro de autorizações tem
+de implementar:
+
+</p>
+<ul>
+  <li> Mensagens <i>Real-Time</i>, de pedido de Operação
+com Cartão (<i>Acquirer</i>) autorização, anulação e pendente - a receber da
+SIBS;</li>
+  <li> Respectivas mensagens de resposta - a
+enviar à SIBS.</li>
+</ul>
+<p>&nbsp;
+
+</p>
+<h5><a name="B.5.3.2.2">B.5.3.2.2</a>&nbsp; AUTORIZAÇÕES NA SIBS E CENÁRIOS
+DE DEGRADAÇÃO
+
+</h5>
+<p>Se optar pela delegação de todas as autorizações na SIBS, ou por delegá-las
+apenas em momentos de impossibilidade temporária de as decidir, o <i> Acquirer</i> deve
+acordar com a SIBS os parâmetros a validar pela SIBS para autorizar ou recusar
+as transacções.
+
+</p>
+<p>Exemplo de parâmetros que podem ser validados pela SIBS: 
+
+</p>
+<ul>
+  <li> Montante máximo transaccionado
+por dia por cada cartão (limite definido para todos os cartões);</li>
+  <li>Número de tentativas erradas de
+PIN (i.e., código secreto associado ao cartão);</li>
+  <li> Tipo de produto, no caso de
+transacções de “compra com detalhe”, versus uma tabela de produtos do <i>Acquirer</i>.</li>
+</ul>
+<p>&nbsp;
+
+</p>
+<h2><a name="B.5.4">B.5.4</a> CONTRATAÇÃO DE COMERCIANTES DA REDE MB
+
+</h2>
+<p><br>
+Quando um <i> Acquirer</i> acorda com a SIBS a prestação do pacote destes serviços
+passa a efectuar a contratação de Comerciantes da Rede MB para a aceitação
+de cartões por si representados.
+
+</p>
+Através da aplicação mencionada no capítulo&nbsp; <a href="b7.htm">B.7</a>, o
+<i> Acquirer</i> matricula na SIBS dados dos comerciantes/estabelecimentos por si
+contratados, incluindo as condições contratuais para a aceitação das transacções
+com os cartões que representa na Rede MB, caso pretenda a respectiva liquidação
+pelo Sistema MB.
+
+<p class="dta">
+<a target="main" href="b4.htm"><br>
+Anterior</a>/<a href="b6.htm">Seguinte</a> </p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+</html>

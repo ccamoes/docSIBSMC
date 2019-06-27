@@ -1,0 +1,347 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>C.4 SESSION LEVEL ( Abertura e Fecho )</title>
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicec.htm#C';</script>
+</head>
+
+<body>
+
+<h1>C.4 <em>SESSION LEVEL</em> (Abertura e Fecho)</h1>
+
+<p>&nbsp;</p>
+
+<p>Este nível tem por função identificar e validar os interlocutores e estabelecer
+parâmetros de transmissão.</p>
+
+<p>Ele estabelece comandos próprios para serem trocados no início e no fim de qualquer
+diálogo, e ainda um comando <em>Abort</em> que termina abruptamente uma sessão. </p>
+
+<p>Os dados de utilizador são trocados através de comandos '<em>Data</em>', entre a
+abertura e o fecho ou <em>Abort</em> da sessão.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.4.1">C.4.1</a> ESTABELECIMENTO E FECHO DE SESSÃO NAS LIGAÇÕES SÍNCRONAS</h2>
+
+<h4><br>
+<em>Cenário A :</em></h4>
+
+<p><img src="imagens3/c4-1.gif" alt="c4-1.gif" WIDTH="535" HEIGHT="511"></p>
+
+<h4><br style="page-break-before: always">
+<em>Cenário B :</em></h4>
+
+<p><img src="imagens3/c4-2.gif" alt="c4-2.gif" WIDTH="539" HEIGHT="415"></p>
+
+<p><br>
+De notar que se houver um <em>Abort</em>, não há fecho de sessão, mas para restabelecer
+o diálogo deve ser feita nova abertura.</p>
+
+<p>Parâmetros de sessão a acordar bilateralmente: 
+
+<ul>
+  <li>Endereços de máquina a usar. </li>
+  <li>Tamanho máximo das mensagens. </li>
+  <li>Código de caracteres usado. </li>
+  <li>Iniciativa de abertura da sessão.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="C.4.2">C.4.2</a> <em>HEADER</em> NOS
+COMANDOS DE SESSÃO</h2>
+
+<p><br>
+O <em>header</em> aplica-se a todas as mensagens trocadas a este nível, ocupa a primeira
+posição da mensagem e tem tamanho fixo de 1 <em>byte</em>, com o formato a seguir
+definido :</p>
+
+<blockquote>
+  <blockquote>
+    <p><img src="imagens3/c4-3.gif" alt="c4-3.gif" WIDTH="367" HEIGHT="319"></p>
+  </blockquote>
+</blockquote>
+
+<h2 style="page-break-before: always"><br>
+<a name="C.4.3">C.4.3</a> CODIFICAÇÃO DOS COMANDOS DE SESSÃO</h2>
+
+<p><br>
+Os parâmetros dos comandos de sessão são codificados em formato <em>display</em>,
+usando o código de caracteres que ambos os interlocutores acordarem previamente como
+parâmetro fixo (ASCII ou EBCDIC).<br>
+</p>
+
+<p>São os seguintes os comandos e respectivos parâmetros :</p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="563">
+  <tr>
+    <th align="left" class="times11" width="71">Comandos</th>
+    <th align="left" class="times11" width="126">Parâmetros </th>
+    <th class="times11" width="38">Bytes</th>
+    <th align="left" class="times11" width="304">Formato, valores e regras de preenchimento </th>
+  </tr>
+  <tr>
+    <td class="times11" width="71">OPEN</td>
+    <td class="times11" width="126">Source_ Address </td>
+    <td class="times11" width="38">8</td>
+    <td class="times11" width="304">Alfanumérico. Identificação do sistema chamador
+    (endereço máquina). Normalmente só usados os primeiros 4 bytes. </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">&nbsp;</td>
+    <td class="times11" width="126">Destination_Address </td>
+    <td class="times11" width="38">8</td>
+    <td class="times11" width="304">Alfanumérico. Identificação do sistema chamado
+    (endereço máquina). <br>
+    Normalmente são usados só os primeiros 4 bytes. </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">&nbsp;</td>
+    <td class="times11" width="126">Session_id </td>
+    <td class="times11" width="38">2</td>
+    <td class="times11" width="304">Alfanumérico. Identificação da Sessão ou da
+    aplicação (poderá ser usado para distinguir diferentes Sessões FT). </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">&nbsp;</td>
+    <td class="times11" width="126">Window_ <br>
+    size </td>
+    <td class="times11" width="38">2</td>
+    <td class="times11" width="304">Numérico. Indica o número de Data_Messages
+    sucessivamente enviadas, ao fim do qual tem que ser recebido um Data_Ack. </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">&nbsp;</td>
+    <td class="times11" width="126">Command_ <br>
+    seq_number </td>
+    <td class="times11" width="38">2</td>
+    <td class="times11" width="304">Numérico. Começa com o valor 1 e deve ser incrementado
+    sempre que o comando é repetido. </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">&nbsp;</td>
+    <td class="times11" width="126">Security_ <br>
+    Level </td>
+    <td class="times11" width="38">1</td>
+    <td class="times11" width="304">0 - Nulo (não há segurança) <br>
+    1 - Usa-se o Pin block (de um cartão) <br>
+    2 - Usa-se Mac da mensagem <br>
+    3 - Pin block + Mac <br>
+    4 - Password. </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">&nbsp;</td>
+    <td class="times11" width="126">Autentication </td>
+    <td class="times11" width="38">var</td>
+    <td class="times11" width="304">Informação de segurança (a definir posteriormente em
+    apêndice, de acordo com os níveis de segurança). </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">ROPEN</td>
+    <td class="times11" width="126">Resp_Code </td>
+    <td class="times11" width="38">1</td>
+    <td class="times11" width="304">0 - Ok. <br>
+    1 - Erro de sequência ou de iniciativa do comando. <br>
+    2 - Erro nos endereços indicados. <br>
+    3 - Endereço destino indisponível de momento. <br>
+    4 - Nível de segurança não aceite. <br>
+    5 - Autenticação errada. <br>
+    9 - Outros motivos. </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">&nbsp;</td>
+    <td class="times11" width="126">Window_ <br>
+    size_Resp. </td>
+    <td class="times11" width="38">2</td>
+    <td class="times11" width="304">Numérico. Deve ser igual ou menor que o proposto no Open.
+    </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">&nbsp;</td>
+    <td class="times11" width="126">Command_ <br>
+    seq_number </td>
+    <td class="times11" width="38">2</td>
+    <td class="times11" width="304">Numérico, deve ter o mesmo valor que no correspondente
+    comando Open. </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">&nbsp;</td>
+    <td class="times11" width="126">Autentication </td>
+    <td class="times11" width="38">var</td>
+    <td class="times11" width="304">Informação de segurança (a definir posteriormente em
+    apêndice). </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">DATA_ <br>
+    MESSAGE </td>
+    <td class="times11" width="126">---</td>
+    <td class="times11" width="38">var </td>
+    <td class="times11" width="304">Dados de utilizador (nível F.T.). </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">DATA_ <br>
+    ACK </td>
+    <td class="times11" width="126">---</td>
+    <td class="times11" width="38">--- </td>
+    <td class="times11" width="304">NÃO tem parâmetros ou dados. </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">CLOSE</td>
+    <td class="times11" width="126">&nbsp;</td>
+    <td class="times11" width="38">---</td>
+    <td class="times11" width="304">NÃO tem parâmetros. </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">RCLOSE</td>
+    <td class="times11" width="126">Resp_Code </td>
+    <td class="times11" width="38">1</td>
+    <td class="times11" width="304">0 - Ok. <br>
+    1 - Erro de sequência ou de iniciativa do comando. <br>
+    9 - Outros motivos. <br>
+    (Com resposta negativa a sessão considera-se abortada). </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">ABORT</td>
+    <td class="times11" width="126">Diagnostic_ <br>
+    Code </td>
+    <td class="times11" width="38">1</td>
+    <td class="times11" width="304">0 - Sem informação adicional. <br>
+    1 - Erro de Protocolo. <br>
+    2 - Recebido comando ou resposta impróprio no presente regime ou estado da sessão. <br>
+    3 - Erro interno. <br>
+    4 - Erro no número de sequência do comando. <br>
+    5 - Erro na validação de segurança. <br>
+    6 - Ultrapassado o tamanho de ficheiro indicado no <br>
+    Open. <br>
+    7 - Abort por comando de operador. <br>
+    8 - Erro nos parâmetros do comando ou resposta <br>
+    recebido/a. <br>
+    9 - Timeout na recepção de uma resposta. </td>
+  </tr>
+  <tr>
+    <td class="times11" width="71">RABORT</td>
+    <td class="times11" width="126">--- </td>
+    <td class="times11" width="38">---</td>
+    <td class="times11" width="304">NÃO tem parâmetros ou dados. </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.4.4">C.4.4</a> FUNCIONAMENTO DA JANELA </h2>
+
+<p><br>
+O Window_size é o número de Data_Messages que qualquer máquina pode enviar seguidamente
+sem ter recebido nenhuma.</p>
+
+<p>Este valor é negociado na abertura de sessão, sendo proposto um valor no comando <em>Open</em>,
+e respondido um valor = ou &lt; no <em>ROpen</em>. Fica fixado para a sessão o valor do <em>ROpen</em>.</p>
+
+<p>Assim uma máquina pode enviar de seguida um número máximo de Data_Messages = ao
+window_size, após o que deve parar o envio e esperar, até receber um Data_Ack ou outra
+Data_Message. A recepção de uma Data_Message antes de atingido o window_size, leva a
+contagem de Data_Messages enviadas a 0.</p>
+
+<p>A máquina que recebe Data_Messages, ao receber um número seguido igual ao
+window_size, deve enviar um Data_Ack, a fim de poder continuar a receber novas
+Data_Messages. </p>
+
+<p>O Data_Ack quando atingido o window_size é opcional, se em seguida houver uma
+Data_Message para enviar.</p>
+
+<p>Significa isto que a janela é &quot;aberta&quot; de novo, tanto por um Data_Ack como
+por qualquer Data_Message.</p>
+
+<p>Em resumo, qualquer máquina deve incrementar o contador de mensagens enviadas, sempre
+que envia uma msg-Data e fazer-lhe <em>reset</em> sempre que receber uma msg-Data ou
+Data_Ack. Por outro lado, deve incrementar o contador de recebidas, sempre que recebe uma
+msg-Data e fazer-lhe <em>reset</em> sempre que envia um Data ou Data_Ack.</p>
+
+<p style="page-break-before: always"><br>
+Procedimentos nas situações mais típicas de recepção de mensagens impróprias ou
+outros erros :</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0" class="times11" width="100%">
+  <tr>
+    <th colspan="8" class="times11">Recebido</th>
+  </tr>
+  <tr>
+    <th class="times11">Enviado</th>
+    <td class="times11">Open</td>
+    <td class="times11">ROpen </td>
+    <td class="times11">Close</td>
+    <td class="times11">RClose</td>
+    <td class="times11">Data </td>
+    <td class="times11">Abort</td>
+    <td class="times11">RAbort</td>
+  </tr>
+  <tr>
+    <td class="times11">Open</td>
+    <td class="times11">ROpen(-)</td>
+    <td class="times11">Ok </td>
+    <td class="times11">Abort</td>
+    <td class="times11">Abort</td>
+    <td class="times11">Abort </td>
+    <td class="times11">Abort</td>
+    <td class="times11">Abort</td>
+  </tr>
+  <tr>
+    <td class="times11">Close</td>
+    <td class="times11">Abort</td>
+    <td class="times11">Abort </td>
+    <td class="times11">Abort</td>
+    <td class="times11">Ok</td>
+    <td class="times11">Abort </td>
+    <td class="times11">Abort</td>
+    <td class="times11">Abort</td>
+  </tr>
+  <tr>
+    <td class="times11">Data</td>
+    <td class="times11">Abort</td>
+    <td class="times11">Abort </td>
+    <td class="times11">RClose *</td>
+    <td class="times11">Abort</td>
+    <td class="times11">Ok </td>
+    <td class="times11">RAbort</td>
+    <td class="times11">Abort</td>
+  </tr>
+  <tr>
+    <td class="times11">Abort</td>
+    <td class="times11">---</td>
+    <td class="times11">--- </td>
+    <td class="times11">---</td>
+    <td class="times11">---</td>
+    <td class="times11">--- </td>
+    <td class="times11">---</td>
+    <td class="times11">---</td>
+  </tr>
+</table>
+
+<p>* Assume-se neste caso que estão terminadas as operações de nível superior. Caso
+contrário, o próprio nível F.T. envia o <em>Abort</em>.</p>
+
+<p>&nbsp;</p>
+
+<table border="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq10"><em>Timeout</em>:&nbsp; </td>
+    <td class="esq10">O comando <em>Open</em> deve ser repetido, até um máximo de três
+    vezes, após o que é aconselhável enviar um comando <em>Abort</em>. No <em>Close</em>
+    não é aconselhável a repetição mas sim o <em>Abort</em>, logo após o primeiro <em>timeout</em>.</td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="c3.htm">Anterior</a>/<a href="c5.htm">Seguinte</a></p>
+</body>
+</html>

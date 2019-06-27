@@ -1,0 +1,379 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>X-N - TELECOMPENSAÇÃO</title>
+<script>top.captulos.location='indicex.htm#X';</script>
+</head>
+
+<body>
+
+<h2>N - TELECOMPENSAÇÃO</h2>
+
+<p>&nbsp;</p>
+
+<h3>N1 - TELECOMPENSAÇÃO DE CHEQUES</h3>
+
+<p><br>
+<strong>N1A - Por registo, até 250.000 registos/mês<br>
+N1B - Por registo, de 250.001 a 1.000.000 registos<br>
+N1C - Por registo, de 1.000.001 a 3.000.000 registos<br>
+N1D - Por registo, no excedente de 3.000.000 registos<br>
+N1I - Por imagem de cheque apresentado<br>
+N1J - Por imagem de cheque devolvido<br>
+N1K - Resposta a pedido de imagem de cheque</strong><br>
+<strong>N12 - Registo devolvido<br>
+N13 - Pedido de imagem de cheque<br>
+N19 - Facturação mínima</strong></p>
+
+<p><br>
+Para além dos cheques propriamente ditos, são facturados nesta rubrica outros documentos
+apresentados na Telecompensação de Cheques (ex.: Ordens de Pagamento da Segurança
+Social, Avisos de Pagamento, Cheques Especiais, etc.). <br>
+A Entidade tarifada nas rubricas <strong>N1A</strong> a <strong>N13</strong>
+é o Banco Sacado. A rubrica <strong>N19</strong> corresponde a um valor mínimo por
+participante. Para efeitos de processamento, as tarifas <strong>N1A</strong>
+a <strong>N1D</strong> são informadas aos Bancos como <strong>N11</strong>.</span></p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Através dos ficheiros de controlo da facturação (CFCE)
+correspondentes a esta compensação. É disponibilizado um ficheiro após cada fecho
+realizado. O total apresentado na factura da SIBS resume o apuramento realizado ao longo
+do mês neste subsistema de Compensação.</p>
+
+<p><br>
+<strong>Apresentação no <a HREF="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2">
+  <tr>
+    <td WIDTH="561" class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica N1</em></td>
+  </tr>
+  <tr>
+    <td WIDTH="561" class="esq"><pre class="tahoma">&#133;
+2N  TELECOMPENSACAO
+3N1 TELECOMPENS. CHEQUES
+4N1AAAAAMMDD             POR REG. ATE 250.000  000000000000500000002500000000000125000D
+4N1BAAAAMMDD             DE 250.001 A 1000.000 000000000000400000007500000000000300000D
+4N1CAAAAMMDD             DE 1000.001 A 3000.000000000000000300000017765300000000532959D
+4N1IAAAAMMDD              IM.CHQ. NAO TRUNC. APR000000000004000000000666540000000266616D
+4N1JAAAAMMDD              IM.CHQ.TRUNC. DEVOLVI.000000000004000000000124040000000049616D
+4N1KAAAAMMDD              IMAGEM CHQ. TRUNCADO  000000000004000000000006610000000002644D
+4N12AAAAMMDD              CHEQUE DEVOLVIDO      000000000000500000000153460000000007673D
+4N13AAAAMMDD              PEDIDO FOTOCOP. CHEQUE000000000000500000000011110000000000556D
+6N1 0000001285064D 
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3>N2 - TELECOMPENSAÇÃO DE EFEITOS</h3>
+
+<p><br>
+<strong>N22 - Efeito não Domiciliado Cobrado </strong><br>
+<strong>N23 - Por movimento inserção em carteira, até 20.000
+inserções/mês<br>
+N24 - Por movimento inserção em carteira, de 20.001 a 40.000 inserções<br>
+N25 - Por movimento inserção em carteira, de 40.001 a 70.000 inserções<br>
+N26 - Por movimento inserção em carteira, de 70.001 a 100.000 inserções<br>
+N27 - Por movimento inserção em carteira, no excedente de 100.000<br>
+N29 - Facturação mínima </strong></p>
+
+<p><br>
+O Banco é tarifado com base no número de efeitos que o Banco remeteu para outros <strong>N23</strong> a <strong>N27</strong>). Porém, o serviço está
+sujeito a um mínimo de facturação que é o definido em <strong>N29</strong>. A data
+apresentada na facturação corresponde à última sessão de efeitos do mês. Para efeitos de processamento, as tarifas <strong>N23</strong> a <strong>N27</strong>
+são informadas como <strong>N21</strong>.<br>
+A entidade tarifada nas rubricas <strong>N22</strong> e <strong>N27</strong>
+é o Banco Tomador. A rubrica <strong>N29</strong> corresponde a um valor mínimo por
+participante. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Para controlo desta rubrica deve-se contabilizar por data de processamento o: 
+
+<ul>
+  <li>número de registos do ficheiro INS aceites, multiplicados pela respectiva tarifa (<span
+    ><strong>N23</strong> a <strong>N27</strong></span>);</li>
+  <li>número de registos do ficheiro RCC com o &quot;TIP-MOV&quot; igual a &quot;12&quot;,
+    &quot;13&quot; e &quot;14&quot; e &quot;REF-DET&quot; igual a &quot;1&quot;, multiplicados
+    pela respectiva tarifa.</li>
+</ul>
+
+<p>Nota: devem ser excluídas as anulações e rejeições, e realizar a
+validação pelo registo resumo.</p>
+
+<p><br>
+<strong>Apresentação no <a HREF="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2">
+  <tr>
+    <td WIDTH="561" class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica N2</em></td>
+  </tr>
+  <tr>
+    <td WIDTH="561" class="esq"><pre class="tahoma">&#133;
+3N2 TELECOMP. DE EFEITOS
+4N22 AAAAMMDD EFEITO NAO DOMIC.COBR.000000000010000000000032860000000032860D
+4N23 AAAAMMDD MOV.INS.CART.ATE20.000000000000002500000000200000000000050000D
+4N24 AAAAMMDD DE 20.001 A 40.000    000000000002000000000200000000000040000D
+4N25 AAAAMMDD DE 40.001 A 70.000    000000000001500000000297120000000044568D
+6N2 0000000167428D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always">N4 - TRANSFERÊNCIAS ELECTRÓNICAS INTERBANCÁRIAS</h3>
+
+<p><br>
+<strong>N4A - Por pedido de devolução<br>
+N4B - Por transferência, até 100.000 registos/mês<br>
+N4C - Por transferência, de 100.001 a 200.000 registos<br>
+N4D - Por transferência, de 200.001 a 300.000 registos<br>
+N4E - Por transferência, de 300.001 a 450.000 registos<br>
+N4F - Por transferência, no excedente de 450.000 registos<br>
+N43 - Anulação de transferência e/ou lote</strong><br>
+<strong>N44 - Resposta a pré-notificação<br>
+N45 - Tarifa de urgência de registos contabilísticos<br>
+N46 - Alteração da informação residente na SiBS<br>
+N47 - Permanência da informação na SIBS<br>
+N48 - Consulta com ou sem conversão<br>
+N49 - Facturação mínima</strong></p>
+
+<p><br>
+As rubricas <strong>N41</strong> a <strong>N45</strong> correspondem às tarifas acordadas
+no subsistema de Telecompensação de TEIs. </p>
+
+<p>As rubricas <strong>N46</strong> a <strong>N48</strong> são aplicadas numa óptica de
+banco destinatário, no âmbito do serviço de normalização do número de conta. <span
+>Para efeitos de processamento, as tarifas <strong>N4B</strong> a <strong>N4F</strong>
+são informadas aos Bancos como <strong>N41</strong>.</span></p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Através dos ficheiros de controlo da facturação (RFCT)
+correspondentes à compensação das TEIs. É disponibilizado um ficheiro após cada fecho
+realizado. O total apresentado na factura da SIBS resume o apuramento realizado ao longo
+do mês neste subsistema de Compensação.</p>
+
+<p><br>
+<strong>Apresentação no <a HREF="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2">
+  <tr>
+    <td WIDTH="561" class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica N4</em></td>
+  </tr>
+  <tr>
+    <td WIDTH="561" class="esq"><pre class="tahoma">&#133;
+3N4 TRANSFER. INTERBANC.
+4N45 AAAAMMDD TAR.URG.REG.CONTABIL. 000000000100000000000000350000000003500D
+4N4A AAAAMMDD TARIF. POR PEDIDO DEV.000000000075000000000000590000000004425D
+4N4B AAAAMMDD TRANS. 100.000 REG.MES000000000000800000001000000000000080000D
+4N4C AAAAMMDD DE 100.001 A 200.000  000000000000700000001000000000000070000D
+4N4D AAAAMMDD DE 200.001 A 300.000  000000000000600000001000000000000060000D
+4N4E AAAAMMDD DE 300.001 A 450.000  000000000000500000001500000000000075000D
+4N4F AAAAMMDD EXCED. 450.000        000000000000400000003201810000000128072D
+4N43 AAAAMMDD ANUL.TRANSF.E/OU LOTE 000000000050000000000000090000000000450D
+4N47 AAAAMMDD PERMAN.INFORM.SIBS    000000000001500000000260920000000039138D
+4N48AAAAMMDD  CONS. C/ OU S/ CONV.  000000000002500000000005840000000001460D
+6N4 0000000462045D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3>N7 - DÉBITOS DIRECTOS</h3>
+
+<p><br>
+<strong>N7A - Por registo na BD de ADC, até 250.000 registos<br>
+N7B - Por registo na BD de ADC, de 250.001 a 500.000 registos<br>
+N7C - Por registo na BD de ADC, de 500.001 a 1.500.000 registos<br>
+N7D - Por registo na BD de ADC, de 1.500.001 a 3.000.000 registos <br>
+N7E - Por registo na BD de ADC, no excedente de 3.000.000 registos<br>
+N7H - Por registo de IDD ou de reversão, até 125.000 registos <br>
+N7I - Por registo de IDD ou de reversão, de 125.001 a 250.000 registos <br>
+N7J - Por registo de IDD ou de reversão, de 250.001 a 750.000 registos <br>
+N7K - Por registo de IDD ou de reversão, de 750.001 a 1.500.000 registos<br>
+N7L - Por registo de IDD ou de reversão, no excedente de 1.500.000 <br>
+N74 - Resposta a Pré-notificações comunicadas no ficheiro RSP<br>
+N75 - Anulação de Lotes comunicadas no ficheiro ANL<br>
+N76 - Rejeições de IDD comunicadas no ficheiro RSP<br>
+N77 - Anulação de IDD (ex-revogação) comunicada no ficheiro RSP<br>
+N79 - Facturação mínima</strong></p>
+
+<p><br>
+A rubrica <strong>N71</strong> incide sobre as ADC existentes na Base de Dados residente
+na SIBS, no final do mês a que reporta a facturação. Para efeitos de
+processamento, as tarifas <strong>N7A</strong> a <strong>N7E</strong> são informadas aos
+Bancos como <strong>N71</strong> e as tarifas <strong>N7H</strong> a <strong>N7L</strong>
+são informadas como <strong>N72</strong>.</p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Os ficheiros da Compensação dos Débitos Directos contêm registos específicos de
+facturação, pelo que o controlo desta rubrica deve recorrer aos mesmos. O total
+apresentado na factura da SIBS resume o apuramento realizado ao longo do mês neste
+subsistema de Compensação.</p>
+
+<p><br>
+<strong>Apresentação no <a HREF="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="560">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica N7</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+3N7 DEBITOS DIRECTOS
+4N7A AAAAMMDD REG. ADC ATE 250.000  000000000001800000002500000000000450000D
+4N7B AAAAMMDD DE 250.000 A 500.000  000000000001400000002500000000000350000D
+4N7C AAAAMMDD DE 500.001 A 1500.000 000000000001000000010000000000001000000D
+4N7D AAAAMMDD DE 1500.001 A 3000.000000000000000700000014047600000000983332D
+4N7H AAAAMMDD REG. IDD ATE 125.000  000000000002500000001250000000000312500D
+4N7I AAAAMMDD DE 125.001 A 250.000  000000000002000000001250000000000250000D
+4N7J AAAAMMDD DE 250.001 A 750.000  000000000001500000002116390000000317459D
+4N76 AAAAMMDD REJEIÇÃO              000000000002500000000178150000000044538D
+4N77AAAAMMDD ANULAÇÃO DE IDD       000000000002500000000014220000000003555D
+6N7 0000003711384D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" border="0" cellspacing="0" cellpadding="0"
+width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span> <br>
+    Para efeitos de apresentação e por uma questão prática mantém-se o layout anterior nas
+    tabelas auxiliares. </em></td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="x2.htm">Anterior</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

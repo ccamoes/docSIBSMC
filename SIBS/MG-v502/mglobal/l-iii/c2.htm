@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>C.2 ALGUNS CONCEITOS GENÉRICOS USADOS NESTE PROTOCOLO</title>
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicec.htm#C';</script>
+</head>
+
+<body>
+
+<h1>C.2 ALGUNS CONCEITOS GENÉRICOS USADOS NESTE PROTOCOLO</h1>
+
+<p>&nbsp;</p>
+
+<p>Começamos por definir alguns conceitos, que de alguma forma são usados em <em>standards</em>
+internacionais e que por certo se aplicam ao ambiente Multibanco. </p>
+
+<p><br>
+<strong>Ficheiro:</strong> <br>
+É uma colecção de informação estruturada e manipulada como um todo, à qual se
+aplicam atributos comuns. <br>
+Um ficheiro é produzido por uma entidade e destina-se a outra entidade. É enviado de uma
+máquina para outra, podendo eventualmente ser enviado desta para uma terceira e assim
+sucessivamente.</p>
+
+<p><br>
+<strong>Atributos de um ficheiro: </strong><br>
+Identificação (nome, origem, destino, data e hora de criação), características e
+tamanho.</p>
+
+<p><br>
+<strong>Entidade: </strong><br>
+É uma aplicação, departamento, empresa ou banco, que produz e emite ficheiros e/ou
+recebe ficheiros.<br>
+Uma entidade pode usar mais do que uma máquina para enviar ficheiros (um banco com
+vários PCs) e várias entidades podem usar a mesma máquina para enviar/receber ficheiros
+(vários departamentos de um banco usando o computador central).</p>
+
+<p><br>
+<strong>Endereço de máquina: </strong><br>
+'File Transfer Machine' é um sistema capaz de efectuar file transfer, usando circuitos
+X.25 ou ligações assíncronas. Pode ser única no hardware em que está instalada (PCs
+por exemplo) ou coexistir com outras (por exemplo máquina de testes e máquina de
+produção). Cada máquina tem pois um endereço único, 4 bytes, cujo formato e conteúdo
+deve ser acordado bilateralmente entre os sistemas que vão dialogar.</p>
+
+<p><br>
+<strong>Primitivas: </strong><br>
+São os comandos enviados pela entidade &quot;F.T.&quot; ao nível inferior, para requerer
+qualquer serviço deste (abertura de sessão, fecho, abort, etc.).</p>
+
+<p><br>
+<strong>Window:</strong> <br>
+Este conceito estabelece um valor limite para o envio de mensagens, ao fim do qual a
+máquina que está a recebê-las deve enviar uma resposta (<em>acknowledgement</em>) e a
+máquina que está a enviar deve parar o envio até receber aquela resposta, para que
+possa recomeçá-lo de novo. O conceito de <em>Window</em> pode ser usado
+independentemente a vários níveis da comunicação, e tem normalmente funções de '<em>pacing</em>'.
+Usá-lo-emos aqui a nível de sessão, nas mensagens de dados, que abrangem todo o dialogo
+F.T., exactamente com este objectivo.</p>
+
+<p class="dta"><br>
+<a href="c1.htm">Anterior</a>/<a href="c3.htm">Seguinte</a></p>
+</body>
+</html>

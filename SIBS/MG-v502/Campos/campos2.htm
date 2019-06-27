@@ -1,0 +1,1444 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos2 (100-199)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.</td>
+    <td class="fundo">REP.</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="100" name="100">100</a></td>
+    <td class="esq"><u>DATA DA ASSOCIAÇÃO</u> <p>Campo que indica a data em que o cartão do
+    cliente foi associado ao telefone celular.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="101" name="101">101</a></td>
+    <td class="esq"><u>APLICAÇÃO</u> <p>Trata-se de uma informação presente nos <em>headers</em>
+    dos ficheiros e que identifica a aplicação em que se insere. No âmbito Serviço
+    Multibanco vale &quot;M&quot;.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>APLIC</td>
+  </tr>
+  <tr>
+    <td><a id="102" name="102">102</a></td>
+    <td class="esq"><u>FICHEIRO</u> <p>Identifica o ficheiro em que se insere. Dentro da
+    aplicação é único.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>FICH</td>
+  </tr>
+  <tr>
+    <td><a id="103" name="103">103</a></td>
+    <td class="esq"><u>BANCO</u> <p>Este é um campo que designa a Instituição de Crédito
+    origem ou destino da informação. Neste campo usamos o código Banco de Portugal. O
+    código BANCO usado pela SIBS é &quot;500&quot;.<br />
+    Pode também indicar o Banco de Apoio de um dado terminal ou o Banco onde reside a conta
+    da UNICRE que foi movimentada.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODBAN</td>
+  </tr>
+  <tr>
+    <td><a id="104" name="104">104</a></td>
+    <td class="esq"><u>CENTRO DE PROCESSAMENTO (CPD)</u> <p>Código atribuído ao Centro de
+    processamento de dados do Banco. O centro principal deverá ser codificado com 1.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CPD</td>
+  </tr>
+  <tr>
+    <td><a id="105" name="105">105</a></td>
+    <td class="esq"><u>DATA/HORA</u> <p>Identifica a data e hora a que foi produzida a
+    informação.<br />
+    Esta poderá ser o momento em que foi feito um processamento (por exemplo, fecho no CPU da
+    SIBS) ou em que foi feita uma determinada operação (por exemplo, uma operação cliente,
+    um fecho local no ATM, o processamento do ficheiro de <em>Clearing</em> do país origem). <br>
+    No caso de operações em TPAs EMV indica a data/hora do terminal.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>AAAAMMDD<br />
+    HHMMSS</td>
+    <td>DTHORA</td>
+  </tr>
+  <tr>
+    <td><a id="106" name="106">106</a></td>
+    <td class="esq"><u>PISTA 3</u> <p>Inclui dados da pista 3 necessários à emissão física
+    do cartão pelo Banco.</td>
+    <td class="dta">104</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PISTA3</td>
+  </tr>
+  <tr>
+    <td><a id="107" name="107">107</a></td>
+    <td class="esq"><u>NÚMERO DE REGISTOS</u> <p>Este campo presente no <em>Trailer</em> é
+    um contador dos registos de detalhe (tipo de registo diferente de '0' e '9') presentes no
+    ficheiro.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOTREG</td>
+  </tr>
+  <tr>
+    <td><a id="108" name="108">108</a></td>
+    <td class="esq"><u>TOTAL DE DÉBITOS</u> <p>Este campo contém o total dos valores de
+    débito presentes no detalhe.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>TOTDEB</td>
+  </tr>
+  <tr>
+    <td><a id="109" name="109">109</a></td>
+    <td class="esq"><u>TOTAL DE CRÉDITOS</u> <p>Este campo contém o total dos valores de
+    crédito presentes no detalhe.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>TOTCRED</td>
+  </tr>
+  <tr>
+    <td><a id="110" name="110">110</a></td>
+    <td class="esq"><u>DATA/VALOR</u> <p>Quando informado no header dos <a target="main"
+    href="../mglobal/l-iii/e4.htm">Ficheiros da Compensação Multibanco</a>, é a data da
+    compensação financeira correspondente aos movimentos contabilísticos transmitidos no
+    ficheiro. Campo preenchido apenas nos ficheiros com impacto contabilístico (<a
+    href="../mglobal/l-iii/ori.htm" target="main">Origens</a>, <a
+    href="../mglobal/l-iii/dst-1.htm" target="main">Destinos</a>, <a
+    href="../mglobal/l-iii/cln.htm" target="main">Capturas e Lista Negra</a> e <a
+    href="../mglobal/l-iii/rmb.htm" target="main">Resumo da Compensação</a>).<br />
+    Corresponde à data com a qual o Banco de Portugal movimentará as contas D.O. da I.C. É
+    normalmente o dia útil seguinte ao da data da emissão do ficheiro, caso a compensação
+    conclua correctamente até às 23h59 do dia útil, Domingo ou Feriado.<br />
+    Nos registos do Ficheiro <a href="../mglobal/l-iii/dst-1.htm" target="main">Destinos</a>
+    correspondentes a totais de clearing, indica a data valor com que se deverá movimentar a
+    conta do Sistema de Pagamento ou a data valor informada do estrangeiro com que foi (ou
+    será) movimentada a conta do Banco de Apoio no estrangeiro.<br />
+    No caso dos ficheiros <a href="../mglobal/l-iii/escd.htm" target="main">ESCD</a> e <a
+    href="../mglobal/l-iii/ecsv.htm" target="main">ECSV</a> (campo <a href="#102">FICH</a>),
+    este campo deve ser preenchido com a hora de produção do ficheiro no Banco, com o
+    formato '00HHMMSS'.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATAVALOR</td>
+  </tr>
+  <tr>
+    <td><a id="111" name="111">111</a></td>
+    <td class="esq"><u>TIPO DE REGISTO</u> <p>Código que distingue os tipos de registos de um
+    ficheiro: <em>Header</em> (0), e <em>Trailer</em> (9) e detalhe com valores numéricos
+    (1), (2), (3), etc.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPREG</td>
+  </tr>
+  <tr>
+    <td><a id="112" name="112">112</a></td>
+    <td class="esq"><u>DATA</u> <p>Indica o ano, mês e dia em que a transacção se realizou.
+    Indica também a data do atributo <a href="campos2.htm#105">105</a>.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATA</td>
+  </tr>
+  <tr>
+    <td><a id="113" name="113">113</a></td>
+    <td class="esq"><u>NÚMERO DE CONTAS ASSOCIADAS</u> <p>Informa o número de contas
+    bancárias associadas ao telefone celular, num máximo de 5 contas.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>N-CONTAS-A</td>
+  </tr>
+  <tr>
+    <td><a id="114" name="114">114</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DE LEVANTAMENTOS</u> <p>Indica o montante dos
+    levantamentos efectuados num dado período, ou fracção de período contabilístico
+    (normalmente estará associado ao sinal &quot;C&quot;).</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>IMPORTLEV</td>
+  </tr>
+  <tr>
+    <td><a id="115" name="115">115</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DEPÓSITO</u> <p>Indica o total, em escudos, dos
+    depósitos em numerário confirmados efectuados, em euros e escudos, num dado período ou
+    fracção de período contabilístico (normalmente estará associada ao sinal
+    &quot;D&quot;).</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>IMPORTDEP</td>
+  </tr>
+  <tr>
+    <td><a id="116" name="116">116</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DEPÓSITO EM EUROS</u> <p>Indica o total em euros dos
+    depósitos em numerário confirmados efectuados também em euros num dado período ou
+    fracção de período contabilístico (normalmente estará associada ao sinal
+    &quot;D&quot;).</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>IMPDEP</td>
+  </tr>
+  <tr>
+    <td><a id="117" name="117">117</a></td>
+    <td class="esq"><u>NÚMERO DE REGISTO LOG CENTRAL</u> <p>Identifica o número do registo
+    no Ficheiro de <i> Log</i> do CPU-SIBS referente à transacção. Conjugado com os campos <a
+    href="campos4.htm#312">312</a> (Aplicação) e <a href="campos4.htm#320">320</a> (Nº Log)
+      ou <a href="camp1700.htm#1709">1709</a> (Aplic_N), identifica univocamente um registo no Sistema Multibanco.&nbsp;<br>
+ No caso das autorizações, a
+    identificação posicionada para o <em>Acquirer</em> será feita utilizando as 6
+    posições da direita do registo do <em>log</em> central.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRLOG</td>
+  </tr>
+  <tr>
+    <td><a id="118" name="118">118</a></td>
+    <td class="esq"><u>NÚMERO DO PERÍODO CONTABILÍSTICO LOCAL</u> <p>Indica o número do
+    período local do terminal em que se executaram as transacções.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDPERLOCAL</td>
+  </tr>
+  <tr>
+    <td><a id="119" name="119">119</a></td>
+    <td class="esq"><u>NÚMERO DE MOVIMENTO DO CARTÃO</u> <p>Número atribuído ao movimento
+    executado no ATM pelo cartão e que o identificará no extracto do Banco. Nas operações
+    POS este campo será preenchido também, mas a partir de uma nova sequência aplicável
+    só às operações POS (ou <em>online</em>). É impresso no recibo do POS e destina-se ao
+    controlo da operação nos extractos bancários.<br />
+    A primeira operação do cartão é 00 e incrementada de 1 em 1 até 99, voltando a 00.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SEQMOV</td>
+  </tr>
+  <tr>
+    <td><a id="120" name="120">120</a></td>
+    <td class="esq"><u>CÓDIGO DA TRANSACÇÃO</u> <p>Identifica o tipo de transacção
+    realizada. Ver <a href="120-699.htm" target="main">tabela</a>.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODTRN</td>
+  </tr>
+  <tr>
+    <td><a id="121" name="121">121</a></td>
+    <td class="esq"><u>TIPO DE PROCESSO</u> <p>Indica se a transação foi:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 1 - </td>
+        <td class="esq">em <em>Real-Time</em></td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 2 - </td>
+        <td class="esq">Saldo Conta</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 3 -&nbsp; </td>
+        <td class="esq">Saldo Cartão</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 4 - </td>
+        <td class="esq">autorizada pela Unicre</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 5 - </td>
+        <td class="esq">por autorização da SIBS</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 8 - </td>
+        <td class="esq">por decisão (<em>stand-in</em>) de um Sistema de Pagamento Internacional</td>
+      </tr>
+    </table><p>Não aplicável a registos correspondentes a mensagens trocadas no canal 
+Host-to-Host.</p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TPROC</td>
+  </tr>
+  <tr>
+    <td><a id="122" name="122">122</a></td>
+    <td class="esq"><u>TIPO DE PRODUÇÃO</u> <p>Trata-se de um campo pertencente ao grupo de
+    dados que caracteriza a emissão de cartões pretendida pelo banco.<br />
+    A SIBS atribuirá um código a cada família de cartões que o Banco pretende produzir. A
+    atribuição de novo código é efectuada sempre que o Banco pretende ter um plástico
+    diferente dos anteriores, ou se pretender ter embossing diferentes. Cada banco será
+    informado dos códigos a usar. Ver tabela dos <a href="122.htm" target="main">códigos</a>.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIPROD</td>
+  </tr>
+  <tr>
+    <td><a id="123" name="123">123</a></td>
+    <td class="esq"><u>CÓDIGO COMBINAÇÃO DE CHAVES DE PIN E CCD</u> <p>É o número de 1 a
+    6 correspondente à combinação de chaves K1 e K2, K3 e K4, que o Banco pretende utilizar
+    nessa emissão de cartões e que constará na P3 do cartão para validação do PIN e
+    garantia de integridade dos dados da tarja magnética (CCD).</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COMBCH</td>
+  </tr>
+  <tr>
+    <td><a id="124" name="124">124</a></td>
+    <td class="esq"><u>DURAÇÃO DO PERÍODO DA P3 DO CARTÃO</u> <p>Este campo indica a
+    periodicidade de renovação do saldo disponível do cartão para uso no cenário de Saldo
+    de Cartão (zona 11, norma ISO 4909). A mesma periodicidade é aplicada para a renovação
+    do &quot;Saldo geral de cartão&quot;.<br />
+    Se o campo estiver preenchido a zeros significa que não se pretende alterar o valor já
+    existente na P3.</p>
+    <p>Os valores admitidos são:<br>
+    &nbsp;&nbsp; 01 - Diário<br />
+    &nbsp;&nbsp; 80 - Semanal<br />
+    &nbsp;&nbsp; 83 - Mensal</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DURPER</td>
+  </tr>
+  <tr>
+    <td><a id="125" name="125">125</a></td>
+    <td class="esq"><u>DATA DE INÍCIO DO PERÍODO</u> <p>Este campo define a data em que
+    começou o período que corresponde ao saldo constante na Pista 3 (zona 10 - Norma ISO
+    4909). Esta data é dada na forma juliana, AADDD (dígitos anos e dia do ano).<br />
+    Quando se comunicam alterações a P3 poderá preencher-se este campo a zeros para
+    significar que a data de início de período é a mesma.<br />
+    Se a data indicada corresponder a um dos dias 29, 30 ou 31 do mês e se o período for
+    mensal (83) então, na produção de cartões, assume-se a data correspondente ao dia 28
+    desse mês. Esta mesma data será utilizada para o início do período aplicada ao
+    conceito Saldo geral de cartão.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>AADDD</td>
+    <td>DATINI</td>
+  </tr>
+  <tr>
+    <td><a id="126" name="126">126</a></td>
+    <td class="esq"><u>DATA DE EXPIRAÇÃO DO CARTÃO</u> <p>Último mês e ano em que o
+    cartão ainda é válido (zona 18 - Norma ISO 4909).</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>AAMM</td>
+    <td>DATEXP</td>
+  </tr>
+  <tr>
+    <td><a id="127" name="127">127</a></td>
+    <td class="esq"><u>CARTA DE PIN</u> <p>Indica a estrutura da morada de endereçamento da
+    carta de PIN.</p>
+    <p>&nbsp;&nbsp; 0 - nacional<br>
+    &nbsp;&nbsp; 1 - estrangeiro</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CARPIN</td>
+  </tr>
+  <tr>
+    <td><a id="128" name="128">128</a></td>
+    <td class="esq"><u>NÚMERO DO CARTÃO</u> <p>Número identificativo do cartão.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMCAR</td>
+  </tr>
+  <tr>
+    <td><a id="129" name="129">129</a></td>
+    <td class="esq"><u>NÚMERO DE SEQUÊNCIA DO CARTÃO</u> <p>Este campo destina-se a
+    completar a identificação do cartão. Pode assumir os seguintes valores:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 0 -&nbsp;</td>
+        <td class="esq">Não existe informação</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 1 -&nbsp;</td>
+        <td class="esq">Cartão normal de Cliente bancário.</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 2 -&nbsp;</td>
+        <td class="esq">Cartão de serviço Universal - acesso em ATM+POS p/ Cartões Empresa.</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 3 -&nbsp;</td>
+        <td class="esq">Cartão de Serviço Pagamento Automático - acesso a POS p/ Cartões
+        Empresa.</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 4 -&nbsp;</td>
+        <td class="esq">Cartão Serviço ATM - acesso a ATM p/ Cartões Empresa.</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 5 -&nbsp;</td>
+        <td class="esq">Cartão Serviço Sector - acesso a POS pertencente a estabelecimentos do
+        mesmo sector de actividade.<br />
+        (62071 - Gasolineiros)<br />
+        (71161 - Portagens).</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 6 -&nbsp;</td>
+        <td class="esq">Cartão Serviço Comerciante - acesso a POS pertencentes a
+        estabelecimentos de um Comerciante específico.</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 7 -&nbsp;</td>
+        <td class="esq">Cartão Serviço Terminal - acesso a terminal de Acesso ao MB para
+        serviços proprietários do Banco.</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 8 -&nbsp;</td>
+        <td class="esq">Cartão Rede Privada.</td>
+      </tr>
+    </table>
+    <p>Ver descrição Livro II,&nbsp; <a target="main" href="../mglobal/l-ii/a2.htm">Capítulo
+    A.2</a>.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SEQPAN</td>
+  </tr>
+  <tr>
+    <td><a id="130" name="130">130</a></td>
+    <td class="esq"><u>ERROS TELECÓDIGO</u> <p>Indica o número de tentativas de digitação
+    de telecódigo executadas sem êxito.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="131" name="131">131</a></td>
+    <td class="esq"><u>NÚMERO DE CONTAS</u> <p>Campo que se destina a indicar o número de
+    contas a que o cartão estará associado. </p>
+    <p>Valores do campo:<br>
+    &nbsp;&nbsp; 1 - a uma só conta<br />
+    &nbsp;&nbsp; 2 - a duas contas</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMCON</td>
+  </tr>
+  <tr>
+    <td><a id="132" name="132">132</a></td>
+    <td class="esq"><u>CONTA (SAN1) ou (SAN2)</u> <p>Identificação do número da primeira
+    (SAN1) ou da segunda (SAN2) conta bancária a que o cartão está associado. Pode também
+    ser utilizada para referir o número de conta do cliente mesmo que não tenha cartão
+    associado (Ex. Conta do Comerciante POS, da Central de Clearing, etc).<br />
+    No caso de novos Bancos, é aconselhável preencher as quatro posições da esquerda com o
+    Código de Agência (<a href="campos2.htm#134">134</a>) e os restantes com o número de
+    conta tal como vem na linha óptica do cheque.<br />
+    Poderá ser equacionada a possibilidade de passar a uma estrutura NIB, caso os Bancos
+    pretendam migrar as contas Multibanco para esse formato, sendo incluídos neste campo os
+    campos Balcão + Conta do NIB (o código de Banco é implícito e o cheque dígito
+    calculável).<br>
+    No caso das mensagens e registos que correspondem a operações com cartão, este campo é
+    normalmente preenchido pela SIBS com o SAN1 informado pelo Banco na emissão ou
+    personalização do cartão; nos produtos cartão que tenham como cenário possível
+    (principal ou de degradação) o 'Saldo Disponível da Conta Crédito', sempre que a
+    operação em causa tem este cenário como possível, a SIBS envia, neste campo, o número
+    da Conta Crédito (campo <a href="campos1.htm#085">085</a> - NRCONTACR, enviado pelo Banco
+    nos ficheiros <a href="../mglobal/l-iii/eecb.htm" target="main">EECB</a> e <a
+    href="../mglobal/l-iii/escd.htm" target="main">ESCD</a>).</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CONTA</td>
+  </tr>
+  <tr>
+    <td><a id="133" name="133">133</a></td>
+    <td class="esq"><u>TIPO DE CONTA E RESTRIÇÃO DE UTILIZAÇÃO</u> <p>Código com 2
+    caracteres em que o primeiro indica o tipo de conta e o segundo as restrições de
+    utilização que a conta assume para aquele cartão. Poderá referir-se à primeira conta
+    ou à segunda conta do cartão.</p>
+    <p>Valores possíveis para &quot;Tipo de Conta&quot;:<br />
+    &nbsp;&nbsp; 2 - Conta corrente<br />
+    &nbsp;&nbsp; 4 - Qualquer tipo de conta</p>
+    <p>Restrições de utilização:<br />
+    &nbsp;&nbsp; 0 - Sem restrições<br />
+    &nbsp;&nbsp; 1 - Débitos interditos<br />
+    &nbsp;&nbsp; 2 - Créditos interditos<br />
+    &nbsp;&nbsp; 3 - Só créditos (sem acesso a consultas)<br />
+    &nbsp;&nbsp; 8 - Só débitos (sem acesso a consultas)</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TCRU</td>
+  </tr>
+  <tr>
+    <td><a id="134" name="134">134</a></td>
+    <td class="esq"><u>CÓDIGO DA AGÊNCIA</u> <p>Código identificativo da agência do Banco.
+    Pode ser a agência emissora a que pertence a conta e que no caso da primeira conta (SAN1)
+    será a entidade responsável por todos os circuitos de contacto CLIENTE-EMISSOR.<br />
+    &nbsp;&nbsp; (CODAGE1 - SAN1) (CODAGE2 - SAN2).<br />
+    Pode ser o código da agência que Apoia um Caixa Automático ou associada a um cartão
+    PMB.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODAGE</td>
+  </tr>
+  <tr>
+    <td><a id="135" name="135">135</a></td>
+    <td class="esq"><u>VALOR LIMITE MENSAL (DA CONTA 1 OU CONTA 2)</u> <p>De acordo com o
+    processo de autorização de levantamentos no &quot;cenário saldo-Conta&quot;, este é o
+    limite máximo do valor dos débitos sobre a conta durante o mês.<br />
+    O limite é renovado num dia determinado do mês. Este valor é expresso em dezenas de
+    euros. Se não pretender usar o conceito, o Emissor deve preencher o campo com
+    &quot;9999&quot;.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>LIMES</td>
+  </tr>
+  <tr>
+    <td><a id="136" name="136">136</a></td>
+    <td class="esq"><u>DIA DO MÊS (DA CONTA 1 OU CONTA 2)</u> <p>Dia do mês em que se renova
+    o saldo da conta, com o &quot;VALOR DO LIMITE MENSAL&quot; para os processos de decisão
+    para levantamento no cenário &quot;Saldo Conta&quot;. Se o Banco não usar o conceito vem
+    a zeros (DIA1 - SAN1) (DIA2 - SAN2).</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DIA</td>
+  </tr>
+  <tr>
+    <td><a id="137" name="137">137</a></td>
+    <td class="esq"><u>NOME DO CLIENTE</u> <p>Campo a preencher com o nome do cliente que
+    constará no visual dos cartões personalizados e no endereço das cartas de PIN. Nos
+    cartões Eurocheque Uniformes, apenas 23 caracteres devem ser preenchidos, sendo o
+    restante colocado em NOMECLI2 (campo <a href="campos2.htm#172">172</a>).<br />
+    Nos cartões Visa e Europay, o título, nome e sobrenome, devem ser separados por
+    &quot;/&quot;. No caso da Visa devem ser preenchidas apenas 26 posições, no caso da
+    Europay apenas 21. Se o cliente não tem título, o campo deve começar &quot;/&quot;,
+    seguido do nome. No caso de pretender colocar apenas o sobrenome, deve começar por
+    &quot;//&quot;. Existe um conjunto de caracteres limitado para o preenchimento do campo.<br
+    />
+    Ver <a href="137.htm" target="main">tabela</a>.</td>
+    <td class="dta">27</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NOMECLI</td>
+  </tr>
+  <tr>
+    <td><a id="138" name="138">138</a></td>
+    <td class="esq"><u>DATA DE ESTATÍSTICAS</u> <p>Campo que indica a data em que foi
+    realizada a primeira operação no telefone celular, mesmo que recusada, a partir da qual
+    serão incrementadas as estatísticas relativas ao telefone.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="139" name="139">139</a></td>
+    <td class="esq"><u>ANO DE NASCIMENTO DO CLIENTE</u> <p>Ano de nascimento do cliente.
+    Preenchido a zeros no caso do cartão empresa. Também é preenchido a zeros caso se
+    desconheça esta data ou ano.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ANONASC</td>
+  </tr>
+  <tr>
+    <td><a id="140" name="140">140</a></td>
+    <td class="esq"><u>SEXO</u> <p>Código de identificação do sexo do cliente, excepto se
+    tratar de um cartão empresa, onde este campo não seria relevante.</p>
+    <p>Valores do campo:<br>
+    &nbsp;&nbsp; H - Masculino<br>
+    &nbsp;&nbsp; M - Feminino<br>
+    &nbsp;&nbsp; E - Empresa<br>
+    &nbsp;&nbsp; espaço se desconhecido</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>SEXO</td>
+  </tr>
+  <tr>
+    <td><a id="141" name="141">141</a></td>
+    <td class="esq"><u>DATA DA ÚLTIMA OPERAÇÃO</u> <p>Campo que indica a data em que foi
+    realizada a última operação no telefone celular ou TPA, quer tenha sido aceite ou
+    recusada.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DT-ULT-TRN</td>
+  </tr>
+  <tr>
+    <td><a id="142" name="142">142</a></td>
+    <td class="esq"><u>NÚMERO DE OPERAÇÕES REALIZADAS</u> <p>Número de transacções
+    realizadas num telefone celular, independentemente do número de contas associadas. Devem
+    ser totalizadas todas as mensagens, quer tenham sido aceites ou recusadas.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="143" name="143">143</a></td>
+    <td class="esq"><u>TIPO DE CONSULTA</u> <p>É o código utilizado para definir o tipo de
+    consulta ao serviço telemultibanco.</p>
+    <p>Valores possíveis de consulta:<br>
+    &nbsp;&nbsp; 1 - Telefone Celular<br />
+    &nbsp;&nbsp; 2 - Cartão Associado<br />
+    &nbsp;&nbsp; 3 - Conta Associada</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="144" name="144">144</a></td>
+    <td class="esq"><u>NOVA SITUAÇÃO DO CARTÃO</u> <p>Trata-se de um código associado às
+    situações em que um cartão se passará a encontrar após indicação enviada do Banco.
+    Este campo é composto por 2 dígitos.</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2" class="esq">Valores do campo:</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 02 -&nbsp;</td>
+        <td class="esq">em situação normal</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 06 -&nbsp;</td>
+        <td class="esq">em Lista Negra</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 07 -&nbsp;</td>
+        <td class="esq">em Lista Cinzenta</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 08 -&nbsp;</td>
+        <td class="esq">capturado a devolver</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 09 -&nbsp;</td>
+        <td class="esq">a anular (por já se encontar na posse do Banco)</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 13 -&nbsp;</td>
+        <td class="esq">por activar</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NSITCAR</td>
+  </tr>
+  <tr>
+    <td><a id="145" name="145">145</a></td>
+    <td class="esq"><u>SITUAÇÃO DE REVALIDAÇÃO</u> <p>Trata-se de um campo que identifica
+    o motivo pelo qual o cartão é incluído no ficheiro <a href="../mglobal/l-iii/ecre.htm"
+    target="main">ECRE</a>, quando atingir a sua data de expiração no processo de
+    revalidação de CARTÕES MULTIBANCO.</p>
+    <p>Valores do campo:<br>
+    &nbsp;&nbsp; 1 - cartão revalidado<br />
+    &nbsp;&nbsp; 2 - cartão expirado sem revalidação</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SITREV</td>
+  </tr>
+  <tr>
+    <td><a id="146" name="146">146</a></td>
+    <td class="esq"><u>DATA DO ÚLTIMO MOVIMENTO</u> <p>Campo com a data do último movimento
+    executado com o cartão e que justifica a não revalidação automática habitual para os
+    cartões MULTIBANCO.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>AAAADDD</td>
+    <td>DTULTMOV</td>
+  </tr>
+  <tr>
+    <td><a id="147" name="147">147</a></td>
+    <td class="esq"><u>MODO DE INSERÇÃO</u> <p>É o código que indica o processo que
+    originou a inserção do cartão na Lista Negra.<br />
+    Pedido feito directamente ao sistema a partir de:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 1 -&nbsp; </td>
+        <td class="esq">pedido do cliente, da Agência ou por Terminal Bancário;</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 2 -&nbsp; </td>
+        <td class="esq">originado pelos processos de segurança do Sistema MB; </td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 3 -&nbsp; </td>
+        <td class="esq">detectado pelo Sistema Internacional. Ex. Eurocheque, Unicre.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MODINS</td>
+  </tr>
+  <tr>
+    <td><a id="148" name="148">148</a></td>
+    <td class="esq"><u>TIPO DE CA</u> <p>Código de classificação do CA na Rede MB.<br />
+    Permite também determinar qual a rubrica do Tarifário para as operações dos clientes do Banco
+    neste CA. Para obter a relação entre o tipo e a correspondente
+      facturação, consulte o anexo do tarifário SIBS.<p>Valores possíveis:<br>
+      &nbsp;&nbsp; A - Atribuição SIBS<br>
+      &nbsp;&nbsp; B - Duplo SIBS<br>
+      &nbsp;&nbsp; C - Atribuição Banco<br>
+      &nbsp;&nbsp; D - Duplo Banco<br>
+      &nbsp;&nbsp; E - Atribuição SIBS temporário<br>
+      &nbsp;&nbsp; F - Duplo SIBS temporário</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIPOCA</td>
+  </tr>
+  <tr>
+    <td><a id="149" name="149">149</a></td>
+    <td class="esq"><u>DESCRIÇÃO ALARGADA DO MOVIMENTO</u> <p>Campo que identifica a
+    operação bancária que originou o movimento na conta.</td>
+    <td class="dta">50</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DESCMOV-A</td>
+  </tr>
+  <tr>
+    <td><a id="150" name="150">150</a></td>
+    <td class="esq"><u>DATA INÍCIO DOS MOVIMENTOS</u> <p>Campo que identifica na consulta de
+    movimentos alargada a data início do período a que dizem respeito os movimentos.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTINI</td>
+  </tr>
+  <tr>
+    <td><a id="151" name="151">151</a></td>
+    <td class="esq"><u>DATA FIM DOS MOVIMENTOS</u> <p>Campo que identifica na consulta de
+    movimentos alargada a data fim do período a que dizem respeito os movimentos. Pode estar
+    preenchido a zeros</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTFIM</td>
+  </tr>
+  <tr>
+    <td><a id="152" name="152">152</a></td>
+    <td class="esq"><u>CÓDIGO DE ERRO</u> <p>Campo que identifica o(s) motivo(s) que
+    provocou(aram) a invalidade do registo de cartão. Indicamos até 10 erros por cada
+    registo. Se a primeira posição for:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>&nbsp;&nbsp; C -&nbsp;</td>
+        <td class="esq">o processamento é Cancelado.</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; A -&nbsp;</td>
+        <td class="esq">o dado indicado pelo banco é Alterado para ficar dentro das
+        características gerais anteriormente comunicadas.</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; R -&nbsp;</td>
+        <td class="esq">o registo é Rejeitado e vem informado no fich. de erros do cartão.</td>
+      </tr>
+      <tr>
+        <td nowrap>&nbsp;&nbsp; <a id="W" name="W">W</a> -&nbsp;</td>
+        <td class="esq">o cartão não é produzido, mas fica à espera dos dados complementares
+        (ex.: Imagem ou <a href="campos5.htm#465">IDEXTIT</a>) e o motivo vem informado no
+        ficheiro de erros do cartão.</td>
+      </tr>
+    </table>
+    <p>O segundo e terceiro bytes completam a identificação do erro.<br />
+    Ver <a href="152-a.htm" target="main">tabela A</a> dos códigos.</p>
+    <p ALIGN="JUSTIFY">No interface entre o SAP e o Sistema Central (Gestão de ATM), o
+    Código de Erro informa o emissor sobre o resultado do processamento de validação
+    realizado na entidade de destino. <br>
+    O valor &quot;0000&quot; significa que não foi detectado qualquer erro no ficheiro em
+    causa.<br>
+    Ver <a href="152-b.htm" target="main">tabela B</a> dos códigos.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODERRO</td>
+  </tr>
+  <tr>
+    <td><a id="153" name="153">153</a></td>
+    <td class="esq"><u>VALOR DOS DADOS INVÁLIDOS</u> <p>Campo que conterá a cópia dos
+    valores enviados no registo individual do ficheiro do Banco e que provocou a invalidade
+    referida em '<a href="campos2.htm#152">CÓDIGO ERRO</a>'.<br />
+    Este campo estará preenchido da esquerda para a direita e terá um de dois comprimentos,
+    consoante se trata de um registo relativo a informação de cartão (<a
+    href="../mglobal/l-iii/eerr.htm" target="main">EERR</a>) ou a informação de conta (<a
+    href="../mglobal/l-iii/eerc.htm" target="main">EERC</a>).</p>
+    <p>05 VALDADIN<br />
+    &nbsp; PIC X(230) (erro de registo de cartão)<br />
+    &nbsp; PIC X(50) (erro de registo de conta)</td>
+    <td class="dta">230</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>VALDADIN</td>
+  </tr>
+  <tr>
+    <td><a id="154" name="154">154</a></td>
+    <td class="esq"><u>MONTANTE POR PERÍODO DA P3</u> <p>Montante (em euros) atribuído a um
+    cartão, que permite renovar automaticamente o saldo disponível deste no fim do período
+    identificado na P3 (zona 8 Norma ISO 4909).<br />
+    Se preenchido a zeros no processo de produção de cartões (<a
+    href="../mglobal/l-iii/eecb.htm" target="main">EECB</a>), significa que não se pretende
+    que o cartão ao ser produzido tenha saldo em movimentos off-line.<br />
+    No ficheiro <a href="../mglobal/l-iii/egcc.htm" target="main">EGCC</a> devem ser usados os
+    valores 0000 e 9999 para, respectivamente, não alterar o original ou colocar a zeros.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MONTP3</td>
+  </tr>
+  <tr>
+    <td><a id="155" name="155">155</a></td>
+    <td class="esq"><u>DATA DE NASCIMENTO</u> <p>Data de nascimento do titular da conta.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="156" name="156">156</a></td>
+    <td class="esq"><u>NÚMERO DE PRODUTO FINANCEIRO</u> <p>Número atribuído ao Produto
+    Financeiro na Aplicação de Cartão de Crédito da SIBS.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NPRODFIN</td>
+  </tr>
+  <tr>
+    <td><a id="157" name="157">157</a></td>
+    <td class="esq"><u>MERCHANT CATEGORY CODE</u> <p>Campo que identifica, no âmbito dos
+    sistemas de pagamento internacionais (Visa, Mastercard) o tipo de comerciante.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MCC</td>
+  </tr>
+  <tr>
+    <td><a id="158" name="158">158</a></td>
+    <td class="esq"><u>DISTRITO E CONCELHO DO TERMINAL</u> <p>Código do distrito e concelho
+    da localização do terminal. No caso dos cartões capturados devem ser trocados entre os
+    Bancos, conforme organização interna de cada Banco, na praça de Lisboa ou Porto ou na
+    própria localidade.<br />
+    Ver a descrição do <a href="158.htm" target="main">código</a>.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DISTCONC</td>
+  </tr>
+  <tr>
+    <td><a id="159" name="159">159</a></td>
+    <td class="esq"><u>SITUAÇÃO DE CARTÃO CAPTURADO</u> <p>Indica a situação de um
+    cartão, nacional ou internacional, capturado num CA da Rede Multibanco.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp;&nbsp;0 - capturado<br />
+    &nbsp;&nbsp;&nbsp;1 - entregue ao Titular<br />
+    &nbsp;&nbsp;&nbsp;2 - devolvido ao Emissor<br>
+    &nbsp;&nbsp; 3 - sem significado&nbsp;</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SITCC</td>
+  </tr>
+  <tr>
+    <td><a id="160" name="160">160</a></td>
+    <td class="esq"><u>MOTIVO DA CAPTURA</u> <p>Razão porque o cartão foi capturado.</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2" class="esq"> Identificamos os seguintes valores:</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 1 -&nbsp;</td>
+        <td class="esq">Presença na Lista Negra</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 2 -&nbsp;</td>
+        <td class="esq">Excedidas 3 tentativas</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 3 -&nbsp;</td>
+        <td class="esq">Cartão expirado</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 4 -&nbsp;</td>
+        <td class="esq">CCD inválido</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 5 -&nbsp;</td>
+        <td class="esq">Ataques contra sistema</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 6 -&nbsp;</td>
+        <td class="esq">Esquecimento (time-out de recolha no ATM)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 7 -&nbsp;</td>
+        <td class="esq">Avaria do ATM</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 8 -&nbsp;</td>
+        <td class="esq">Ordem de captura em RT</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MOTCAPT</td>
+  </tr>
+  <tr>
+    <td><a id="161" name="161">161</a></td>
+    <td class="esq"><u>SITUAÇÃO DO CARTÃO</u> <p>Indica qual a situação corrente do
+    cartão, por exemplo, no momento em que ocorreu uma captura.</p>
+    <p>&nbsp;&nbsp; 01 - Aguarda produção<br />
+    &nbsp;&nbsp; 02 - Normal<br />
+    &nbsp;&nbsp; 03 - Por personalizar<br />
+    &nbsp;&nbsp; 05 - Capturado a devolver&nbsp;<br />
+    &nbsp;&nbsp; 06 - Lista Negra<br />
+    &nbsp;&nbsp; 07 - Lista Cinzenta<br />
+    &nbsp;&nbsp; 08 - Capturado a não devolver<br />
+    &nbsp;&nbsp; 09 - Anulado<br />
+    &nbsp;&nbsp; 0A - Capturado e em Lista Negra<br />
+    &nbsp;&nbsp; 0B - Anulado e em Lista Negra<br />
+    &nbsp;&nbsp; 0D/13 - Por activar<br />
+    &nbsp;&nbsp; 0E - Capturado a devolver após Fecho CA</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>SITCAR</td>
+  </tr>
+  <tr>
+    <td><a id="162" name="162">162</a></td>
+    <td class="esq"><u>SALDO DE VÉSPERA</u> <p>De acordo com o cenário de Saldo Conta, este
+    campo indica o máximo valor das operações de débito sobre a conta, até ser comunicado
+    um novo saldo.<br />
+    No caso do Banco funcionar no cenário RT, este campo poderá ser usado para comunicar o
+    valor do saldo disponível que vigorará na próxima interrupção programada do <em>Real-time</em>,
+    isto é, no fim de semana.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>SVESP</td>
+  </tr>
+  <tr>
+    <td><a id="163" name="163">163</a></td>
+    <td class="esq"><u>DATA DO SALDO CONTABILÍSTICO</u> <p>Data do saldo comunicado para fins
+    de &quot;<em>inquiry</em>&quot;.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTSCONT</td>
+  </tr>
+  <tr>
+    <td><a id="164" name="164">164</a></td>
+    <td class="esq"><u>SALDO CONTABILÍSTICO</u> <p>Saldo contabilístico comunicado para fins
+    de &quot;<em>inquiry</em>&quot;.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>SCONT</td>
+  </tr>
+  <tr>
+    <td><a id="165" name="165">165</a></td>
+    <td class="esq"><u>CÓDIGO ERRO CONTA</u> <p>Erro encontrado num ficheiro de dados
+    relativos a contas comunicado à SIBS. Pode assumir alguns dos valores indicados para <a
+    href="campos2.htm#152">CODERRO</a>.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODERC</td>
+  </tr>
+  <tr>
+    <td><a id="166" name="166">166</a></td>
+    <td class="esq"><u>INDICADOR DE VALOR DE IVA</u> <p>Este campo indica se o valor da
+    comissão do Banco Emissor enviada na mensagem ou no registo inclui IVA ou não. </p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp;&nbsp; 0 - não inclui IVA<br />
+    &nbsp;&nbsp;&nbsp; 1 - inclui IVA</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDVALIVA</td>
+  </tr>
+  <tr>
+    <td><a id="167" name="167">167</a></td>
+    <td class="esq"><u>TOTAL COMISSÕES EMISSOR</u> <p>O campo é preenchido com o valor total
+    das comissões interbancárias recebidas ou pagas pelos/aos Emissores de cartões no
+    período considerado.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>TCOMEMI</td>
+  </tr>
+  <tr>
+    <td><a id="168" name="168">168</a></td>
+    <td class="esq"><u>TOTAL COMISSÕES PROPRIETÁRIO/BANCO APOIO</u> <p>O campo é preenchido
+    com o valor total das comissões interbancárias recebidas ou pagas pelos/aos
+    Proprietários de Terminais no período considerado. No caso dos CAs, o proprietário
+    corresponde ao Banco de Apoio; no caso dos TPAs poderá ser o Banco de Apoio ou outra
+    entidade (ex.: Unicre).</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>TCOMPROP</td>
+  </tr>
+  <tr>
+    <td><a id="169" name="169">169</a></td>
+    <td class="esq"><u>TOTAL COMISSÕES REPRESENTANTE</u> <p>O campo é preenchido com o valor
+    total das comissões pagas pelo Comerciante a representantes de cartões, relativas a
+    operações de produtos não MB (ex.: acordo VISA), no período considerado.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>TCOMREP</td>
+  </tr>
+  <tr>
+    <td><a id="170" name="170">170</a></td>
+    <td class="esq"><u>TOTAL COMISSÕES COMERCIANTE (TSC)</u> <p>O campo é preenchido com o
+    valor total da Tarifa de Serviço Comerciante (TSC) aplicada a operações na vertente MB,
+    paga pelo comerciante ao proprietário do Terminal, no período considerado.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>TCOMMB</td>
+  </tr>
+  <tr>
+    <td><a id="171" name="171">171</a></td>
+    <td class="esq"><u>TOTALIZADOR</u> <p>Número do totalizador na Aplicação de Cartão de
+    Crédito da SIBS.<br />
+    Ver Lista Totalizadores - <a target="main" href="171-a.htm">Crédito Bancário</a>.<br />
+    Ver Lista Totalizadores - <a href="171-b.htm" target="main">Crédito Não Bancário</a>.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOTALIZADOR</td>
+  </tr>
+  <tr>
+    <td><a id="172" name="172">172</a></td>
+    <td class="esq"><u>NOME DO CLIENTE 2</u> <p>Pode conter o nome da Empresa. Será aplicado
+    na carta do Código Secreto e poderá sê-lo no embossing do cartão, se o Banco o
+    desejar. Em cartões Eurocheque deve conter a segunda parte do nome do cliente, utilizando
+    os 23 caracteres iniciais.<br />
+    No caso da Visa devem ser preenchidos apenas 26 caracteres, no caso da Europay apenas 21.</td>
+    <td class="dta">27</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NOMECLI2</td>
+  </tr>
+  <tr>
+    <td><a id="173" name="173">173</a></td>
+    <td class="esq"><u>NÚMERO DE CONTA CONTABILÍSTICA</u> <p>Identificação da conta
+    (rubrica contabilística) no Plano Contabilístico do Gestor Financeiro.</td>
+    <td class="dta">12</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NR-POC-GF</td>
+  </tr>
+  <tr>
+    <td><a id="174" name="174">174</a></td>
+    <td class="esq"><u>DESCRITIVO DE CONTA CONTABILÍSTICA</u> <p>Descritivo atribuído pela
+    SIBS ao Totalizador indicado no campo <a href="campos2.htm#171">171</a> ou pelo Gestor
+    Financeiro ao número de conta indicado no campo <a href="campos2.htm#173">173</a>.</td>
+    <td class="dta">30</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DESCRITIVO</td>
+  </tr>
+  <tr>
+    <td><a id="175" name="175">175</a></td>
+    <td class="esq"><u>CÓDIGO DE ACTIVIDADE CLIENTE</u> <p>Trata-se de um código que
+    indicará a situação do titular perante a sua profissão, o sector de actividade e o
+    nível habilitacional do mesmo. A composição decimal do campo a formatar deve ser a
+    seguinte:</p>
+    <p>O primeiro caracter indica o nível de habilitações literárias:<br>
+    &nbsp;&nbsp; 1 - Escolaridade obrigatória<br />
+    &nbsp;&nbsp; 2 - Ensino Secundário<br />
+    &nbsp;&nbsp; 3 - Curso Médio Form. Profis.<br />
+    &nbsp;&nbsp; 4 - Curso Superior</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq">O segundo e terceiros caracteres indicam a situação profissional: </td>
+      </tr>
+    </table>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 10 -&nbsp;</td>
+        <td class="esq">Liberal/Quadro superior</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 11 -&nbsp;</td>
+        <td class="esq">Peq./médio empresário</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 12 -&nbsp;</td>
+        <td class="esq">Quadro médio</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 13 -&nbsp;</td>
+        <td class="esq">Emp. escritório/comércio/serviços</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 14 -&nbsp;</td>
+        <td class="esq">Operário especializado</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 15 -&nbsp;</td>
+        <td class="esq">Operário não especializado</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 16 -&nbsp;</td>
+        <td class="esq">Estudante</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 17 -&nbsp;</td>
+        <td class="esq">Doméstica</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 90 -&nbsp;</td>
+        <td class="esq">Outros</td>
+      </tr>
+    </table>
+    <p>O quarto caracter é '0'.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ACTCLI</td>
+  </tr>
+  <tr>
+    <td><a id="176" name="176">176</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DE AGÊNCIA DA CONTA</u> <p>Identificação do Código
+    de Agência em que foi inserida a Conta Crédito.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ID-AGE-CTA</td>
+  </tr>
+  <tr>
+    <td><a id="177" name="177">177</a></td>
+    <td class="esq"><u>SITUAÇÃO DO CLIENTE NA DÍVIDA</u> <p>Código atribuído ao cliente
+    conforme o pagamento da dívida incide sobre o todo ou a parte, ou se está em atraso:<br
+    />
+    <br />
+    &nbsp;&nbsp; 0 - Sem dívida<br />
+    &nbsp;&nbsp; 1 - Pagamento pela totalidade do saldo<br />
+    &nbsp;&nbsp; 2 - Pagamentos parciais<br />
+    &nbsp;&nbsp; 3 - Pagamento em atraso (30 dias)<br />
+    &nbsp;&nbsp; 4 - Pagamento em atraso (60 dias)<br />
+    &nbsp;&nbsp; 5 - Pagamento em atraso (90 dias)<br />
+    &nbsp;&nbsp; 6 - Pré-contencioso (120 dias)<br />
+    &nbsp;&nbsp; 7 - Pré-contencioso<br />
+    &nbsp;&nbsp; 8 - Contencioso</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SIT-CLI-DIV</td>
+  </tr>
+  <tr>
+    <td><a id="178" name="178">178</a></td>
+    <td class="esq"><u>ATM ORIGEM DE TRANSACÇÕES</u> <p>Este campo identifica o ATM a cargo
+    do Banco e relativamente ao qual se reporta um dado total de transacções no registo em
+    que o campo se insere.</p>
+    <p>Formato AAAANN, em que:<br>
+    &nbsp;&nbsp; AAAA - Campo <a href="campos2.htm#134">134</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NN - Campo <a href="campos4.htm#300">300</a></td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>AGATM</td>
+  </tr>
+  <tr>
+    <td><a id="179" name="179">179</a></td>
+    <td class="esq"><u>NOME DO ESTABELECIMENTO</u> <p>Nome do estabelecimento ou do
+    Departamento onde se encontre instalado o POS ou outro Terminal.</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NOMEST</td>
+  </tr>
+  <tr>
+    <td><a id="180" name="180">180</a></td>
+    <td class="esq"><u>MORADA DO ESTABELECIMENTO</u> <p>Morada do estabelecimento ou
+    Departamento onde se encontra instalado o POS ou Terminal.</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MOREST</td>
+  </tr>
+  <tr>
+    <td><a id="181" name="181">181</a></td>
+    <td class="esq"><u>LOCAL DO ESTABELECIMENTO</u> <p>Local do estabelecimento ou
+    Departamento onde se encontra instalado o POS ou Terminal.</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>LOCEST</td>
+  </tr>
+  <tr>
+    <td><a id="182" name="182">182</a></td>
+    <td class="esq"><u>CAE</u> <p>Código de Actividade Económica principal do
+    estabelecimento onde se encontra o POS ou Terminal.<br />
+    Ver <a href="182.htm" target="main">tabela</a>.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CAE</td>
+  </tr>
+  <tr>
+    <td><a id="183" name="183">183</a></td>
+    <td class="esq"><u>DATA E HORA DA COMUNICAÇÃO PARA COLOCAÇÃO DO CARTÃO EM LISTA NEGRA
+    URGENTE</u> <p>É a data e hora em que foi desencadeado o processo de colocação de um
+    cartão em Lista Negra cuja comunicação foi feita por um cliente do Banco directamente
+    para a SIBS.</td>
+    <td class="dta">12</td>
+    <td>N</td>
+    <td>AAAAMMDD<br />
+    HHMM</td>
+    <td>DTHORLN</td>
+  </tr>
+  <tr>
+    <td><a id="184" name="184">184</a></td>
+    <td class="esq"><u>NÚMERO DE REFERÊNCIA COMUNICADO PELA SIBS</u> <p>É a referência
+    comunicada pela SIBS ao cliente, quando este informa telefonicamente da necessidade de
+    colocação de um cartão em Lista Negra urgente.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SENHA</td>
+  </tr>
+  <tr>
+    <td><a id="185" name="185">185</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO PEDIDO LISTAGEM</u> <p>É um número sequencial diário
+    atribuído pelo sistema da SIBS a um pedido de listagem executado pelo
+      Serviço de Gestão
+    de Reclamações.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="186" name="186">186</a></td>
+    <td class="esq"><u>MODO DE ENVIO DA COMUNICAÇÃO</u> <p>O campo pode assumir os seguintes
+    valores:</p>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td nowrap>&nbsp;&nbsp; 0 -&nbsp;</td>
+        <td class="esq">Informação nunca transmitida</td>
+      </tr>
+      <tr>
+        <td nowrap>&nbsp;&nbsp; 1 -&nbsp;</td>
+        <td class="esq">Informação já transmitida ao Banco na sessão RT.</td>
+      </tr>
+      <tr>
+        <td nowrap>&nbsp;&nbsp; 2 -&nbsp;</td>
+        <td class="esq">Informação transmitida ao Banco a frio, mas sem resposta até à
+        Compensação MB do dia.</td>
+      </tr>
+      <tr>
+        <td nowrap>&nbsp;&nbsp; 3 -&nbsp;</td>
+        <td class="esq">Informação transmitida ao Banco a frio (cód. msg=3xxx, 2xxx) com recusa
+        pelo Banco.</td>
+      </tr>
+    </table><p>Não aplicável a registos correspondentes a mensagens trocadas no canal 
+Host-to-Host.</p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MODENV</td>
+  </tr>
+  <tr>
+    <td><a id="187" name="187">187</a></td>
+    <td class="esq"><u>DATA INÍCIO DO PEDIDO DE LISTAGEM</u> <p>É a data que inicia o
+    intervalo de movimentos no pedido de listagem de um Cartão ou de um TPA, efectuado
+    através de um Terminal de Serviços SIBS.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DT_INI_LIS</td>
+  </tr>
+  <tr>
+    <td><a id="188" name="188">188</a></td>
+    <td class="esq"><u>DATA FIM DO PEDIDO DE LISTAGEM</u> <p>É a data que encerra o período
+    de movimentos pretendido no pedido de listagem de um Cartão ou para um TPA, efectuado
+    através de um Terminal de Serviços SIBS.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DT_FIM_LIS</td>
+  </tr>
+  <tr>
+    <td><a id="189" name="189">189</a></td>
+    <td class="esq"><u>DATA DO FECHO CONTABILÍSTICO</u> <p>Identifica a data em que foi
+    executada a operação de fecho local no Caixa Automático.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="190" name="190">190</a></td>
+    <td class="esq"><u>ANTIGUIDADE NA DÍVIDA</u> <p>Indica se o Cliente possui (cód. 01) ou
+    não (cód. 00) dívida em atraso.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND-ANT-DIV</td>
+  </tr>
+  <tr>
+    <td><a id="191" name="191">191</a></td>
+    <td class="esq"><u>OUTROS CARTÕES</u> <p>Indicador de que o POS aceita outros cartões
+    além dos MB (poderão ser da Unicre, Shell, Amex, etc).</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>OUTROSCAR</td>
+  </tr>
+  <tr>
+    <td><a id="192" name="192">192</a></td>
+    <td class="esq"><u>MONTANTE DISTRIBUÍDO SIBS</u> <p>Informação residente no sistema
+    central da SIBS sobre o montante total distribuído pelo CA durante um determinado
+    período contabilístico.&nbsp; Este montante é sempre informado em unidades, quer esteja
+    em Escudos ou em Euros.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="193" name="193">193</a></td>
+    <td class="esq"><u>REFERÊNCIA DO DEPÓSITO</u> <p>Número do envelope (ou depósito) do
+    período local do CA e que fica também marcado na referência do envelope e da listagem
+    de depósitos do CA.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>REFDEP</td>
+  </tr>
+  <tr>
+    <td><a id="194" name="194">194</a></td>
+    <td class="esq"><u>MONTANTE CARREGADO EM CA</u> <p>Informação residente no sistema
+    central da SIBS sobre o montante total carregado no CA (Abertura + Carregamentos) durante
+    um determinado período contabilístico.&nbsp; Este montante é sempre informado em
+    unidades, quer esteja em Escudos ou em Euros.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="195" name="195">195</a></td>
+    <td class="esq"><u>ACTUALIZAÇÃO DE CONTA CRÉDITO</u> <p>Código que indica as acções
+    que devem ser efectuadas sobre os dados de conta:</p>
+    <p>&nbsp;&nbsp;&nbsp;01 - Inserir dados conta crédito<br />
+    &nbsp;&nbsp;&nbsp;02 - Inserir dados pessoais<br />
+    &nbsp;&nbsp;&nbsp;03 - Inserir serviços<br />
+    &nbsp;&nbsp;&nbsp;10 - Alterar situação conta crédito<br />
+    &nbsp;&nbsp;&nbsp;11 - Aumentar limite de crédito<br />
+    &nbsp;&nbsp;&nbsp;12 - Diminuir limite de crédito<br />
+    &nbsp;&nbsp;&nbsp;13 - Posicionar limite crédito temporário<br />
+    &nbsp;&nbsp;&nbsp;14 - Retirar limite crédito temporário<br />
+    &nbsp;&nbsp;&nbsp;15 - Alterar tipo de pagamento<br />
+    &nbsp;&nbsp;&nbsp;16 - Alterar nome e endereço<br />
+    &nbsp;&nbsp;&nbsp;17 - Valor da segunda linha de <em>embossing</em> cliente</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ACTCONTCR</td>
+  </tr>
+  <tr>
+    <td><a id="196" name="196">196</a></td>
+    <td class="esq"><u>SITUAÇÃO DA CONTA CRÉDITO</u> <p>Código que identifica a situação
+    da conta crédito. </p>
+    <p>Pode assumir os valores:<br>
+    &nbsp;&nbsp;&nbsp; 1 - Normal<br />
+    &nbsp;&nbsp;&nbsp; 2 - Inibida (suspensa para operação de crédito)<br />
+    &nbsp;&nbsp; &nbsp;8 - Por caracterizar<br />
+    &nbsp;&nbsp; &nbsp;9 - Conta crédito anulada</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NSITCTCR</td>
+  </tr>
+  <tr>
+    <td><a id="197" name="197">197</a></td>
+    <td class="esq"><u>CÓDIGO DE AGÊNCIA DA CONTA CRÉDITO</u> <p>Código da Agência que
+    controla a conta Crédito.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODAGECR</td>
+  </tr>
+  <tr>
+    <td><a id="198" name="198">198</a></td>
+    <td class="esq"><u>LIMITE CRÉDITO</u> <p>Limite de Crédito concedido à conta Crédito
+    pelo Banco (expresso em euros).</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>LIMCR</td>
+  </tr>
+  <tr>
+    <td><a id="199" name="199">199</a></td>
+    <td class="esq"><u>INDICADOR EMPRESA</u> <p>Código que identifica o tipo de titular da
+    conta.</p>
+    <p>&nbsp;&nbsp; P - Particular<br>
+    &nbsp;&nbsp; E - Empresa</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>IDEMP</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

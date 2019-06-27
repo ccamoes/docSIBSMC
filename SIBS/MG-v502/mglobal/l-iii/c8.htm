@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>C.8 LIGAÇÕES ASSÍNCRONAS (Assyncronous Communications Interface) </title>
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicec.htm#C';</script>
+</head>
+
+<body>
+
+<h1>C.8 LIGAÇÕES ASSÍNCRONAS <br>
+(<em>Assyncronous Communications Interface</em>) </h1>
+
+<p>&nbsp;</p>
+
+<p>As comunicações assíncronas revestem-se de algumas particularidades que implicam o
+uso adicional de um protocolo de envelopagem e validação das mensagens, que evite a
+introdução de eventuais erros de transmissão nos dados transmitidos.</p>
+
+<p>Vamos assim descrever os procedimentos adicionais que se enquadram no <a
+href="c3.htm#Cenário C :" target="main">cenário C</a>, atrás referido.</p>
+
+<p>Em ambiente assíncrono pressupõe-se sempre a ligação entre um computador pessoal e
+um <em>Host</em>, usando normalmente a rede pública de comunicação de dados, em que
+apenas o primeiro tem iniciativa de estabelecer a chamada X.25 e abrir a sessão.</p>
+
+<p>O acesso do PC à rede faz-se através de X.28 (PAD), podendo ser usada linha dedicada
+para este ou a rede telefónica.</p>
+
+<p>O nível ACI tem funções complementares do nível de rede (sinalização do
+estabelecimento e fecho de chamada, e detecção e correcção de erros de transmissão).
+Para tal usa os seguintes mecanismos:</p>
+
+<h5><br>
+No envio de mensagens: </h5>
+
+<ul>
+  <li>Envelopagem das mensagens com dois caracteres no início e outros 2 no fim ; DLE STX e
+    DLE ETX. </li>
+  <li>No caso de se encontrarem no conteúdo da mensagem caracteres DLE, cada um deles é
+    duplicado, por forma a evitar a ocorrência de uma configuração de fim de mensagem (DLE
+    ETX) no interior da mesma. </li>
+  <li>Geração um caracter LRC, usando para o seu cálculo toda a mensagem mais o DLE ETX,
+    sendo colocado a seguir a este.</li>
+</ul>
+
+<h5><br>
+Na recepção de mensagens: </h5>
+
+<ul>
+  <li>Validação da mensagem recebida, através de idêntico cálculo do caracter LRC e
+    comparação com o recebido. A procura do caracter LRC recebido deve ter em conta, a
+    possível existência de pares de caracteres DLE, que não contam para a configuração de
+    fim de mensagem. </li>
+  <li>Resposta a todas as mensagens recebidas, com um caracter ACK, caso a validação do LRC
+    tenha sucesso. </li>
+  <li>No caso de detecção de erros, devolução de um caracter NACK, devendo neste caso o
+    outro interlocutor repetir a mensagem. </li>
+  <li>A repetição deve fazer-se até um máximo de três vezes, após o que deve ser
+    abortada a sessão. </li>
+  <li>Eliminação de um caracter DLE em cada 2 consecutivos encontrados na mensagem. </li>
+  <li>Retirada das configurações de início e fim (DLE STX e DLE ETX), passando a mensagem
+    limpa ao nível superior.</li>
+</ul>
+
+<h5><br>
+Formato das mensagens:</h5>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <th width="48" class="times11">DLE</th>
+    <th width="48" class="times11">STX</th>
+    <td width="282" class="times11">MENSAGEM</td>
+    <th width="48" class="times11">DLE</th>
+    <th width="48" class="times11">ETX</th>
+    <th width="48" class="times11">LRC</th>
+  </tr>
+</table>
+
+<h5><br>
+Estabelecimento da sessão: </h5>
+
+<p>Cabe ainda a este nível uma operação de envelopagem da sessão. Assim o PC, após
+feita a chamada para o <em>Host</em>, deve aguardar um caracter ENQ, que este envia para
+indicação de que o circuito está estabelecido. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (A ligação ao PAD deve funcionar em perfil 6)</p>
+
+<p>Só depois de recebido este caracter, pode o PC enviar o comando de abertura de
+sessão.</p>
+
+<p>Compete também ao <em>Host</em>, logo após o fecho da sessão, enviar um caracter
+EOT, seguido do fecho do circuito. Este caracter tem também por função indicar ao PC
+que o circuito vai ser desligado.</p>
+
+<p><br>
+Vejamos assim a sequência de intervenções deste nível:</p>
+
+<p><img src="imagens3/c8-1.gif" alt="c8-1.gif " WIDTH="529" HEIGHT="440"></p>
+
+<p><br>
+Frisamos pois que há 3 comandos que são sempre da iniciativa do <em>Host</em>: ENQ , EOT
+e CLEAR ao circuito.</p>
+
+<p style="page-break-before: always"><br>
+A figura seguinte mostra o posicionamento das camadas e respectiva intervenção no
+processamento da informação. Repare-se que os detalhes relativos a comunicações
+assíncronas estão concentrados num único nível (A.C.I.), pelo que, retirando esse
+nível, temos a restante parte que corresponde à versão usada em comunicações
+síncronas. </p>
+
+<p><br>
+<img src="imagens3/c8-2.gif" alt="c8-2.gif" WIDTH="564" HEIGHT="317"></p>
+
+<p class="dta"><br>
+<a href="c7.htm">Anterior</a>/<a href="c9.htm">Seguinte</a></p>
+</body>
+</html>

@@ -1,0 +1,1295 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos 1300 (1300-1399)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.</td>
+    <td class="fundo">REP.</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="1300" name="1300">1300</a></td>
+    <td class="esq"><u>NÚMERO OPERAÇÕES POR LOTE</u> <p>Define o número de transacções
+    que são transmitidas à SIBS por cada comunicação que é efectuada.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NROPELOT</td>
+  </tr>
+  <tr>
+    <td><a id="1301" name="1301">1301</a></td>
+    <td class="esq"><u>NÚMERO MÁXIMO DE DIAS EM OFFLINE</u> <p>Número máximo de dias que o
+    POS (Pinpad) efectua operações de carregamentos de pontos SMART sem comunicar com a
+    SIBS.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRMAXDIAOFF</td>
+  </tr>
+  <tr>
+    <td><a id="1302" name="1302">1302</a></td>
+    <td class="esq"><u>NÚMERO DIAS PARA RENOVAÇÃO</u> <p>Número de dias em que a
+    aplicação faz nova leitura automática dos dados constantes no acordo.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRDIAREN</td>
+  </tr>
+  <tr>
+    <td><a id="1303" name="1303">1303</a></td>
+    <td class="esq"><u>NÚMERO MÍNIMO DE DIAS PARA RENOVAÇÃO</u> <p>Quando se está a este
+    número de dias da data stop da aplicação, a aplicação faz uma renovação automática
+    dos dados informados nos outros campos.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRMINDIAREN</td>
+  </tr>
+  <tr>
+    <td><a id="1304" name="1304">1304</a></td>
+    <td class="esq"><u>DATA ÚLTIMA ACTUALIZAÇÃO POS</u> <p>Data do último envio de dados
+    para o POS (Pinpad). Pode ser provocado por uma alteração de dados, ou por uma
+    actualização automática.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DATULTACTPOS</td>
+  </tr>
+  <tr>
+    <td><a id="1305" name="1305">1305</a></td>
+    <td class="esq"><u>DATA STOP APLICAÇÃO</u> <p>Se não estiver definido o número de dias
+    mínimo para renovação, a aplicação pára neste dia, não permitindo que se efectuem
+    mais operações.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DATSTOPAPL</td>
+  </tr>
+  <tr>
+    <td><a id="1306" name="1306">1306</a></td>
+    <td class="esq"><u>OPERAÇÕES AUTORIZADAS PARA O PINPAD</u> <p>Operações autorizadas
+    para o Pinpad.</p>
+    <p>Podem ser:<br />
+    &nbsp;&nbsp;&nbsp; AWARD OFFLINE - dá pontos mesmo estando em off-line<br />
+    &nbsp;&nbsp;&nbsp; REDEMPTION - troca pontos por prémios<br />
+    &nbsp;&nbsp;&nbsp; TRANSFER - tranfere pontos de um cartão para outro<br />
+    &nbsp;&nbsp;&nbsp; AWARD ONLINE - dá pontos estando em on-line.<br />
+    São possíveis várias combinações de operações autorizadas.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>OPEAUTPINPAD</td>
+  </tr>
+  <tr>
+    <td><a id="1307" name="1307">1307</a></td>
+    <td class="esq"><u>NÚMERO MÁXIMO DE PONTOS EM OFFLINE</u> <p>Número máximo de pontos
+    que o POS (Pinpad) está autorizado a atribuir quando está sem comunicar com a SIBS. Este
+    campo existe em duplicado, um reflectindo os pontos a débito, outro os pontos a crédito.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MAXPONOFF</td>
+  </tr>
+  <tr>
+    <td><a id="1308" name="1308">1308</a></td>
+    <td class="esq"><u>NÚMERO MÁXIMO DE PONTOS POR TRANSACÇÃO</u> <p>Número máximo de
+    pontos que o POS (Pinpad) está autorizado a dar por cada transacção efectuada. Este
+    campo existe em duplicado, um reflectindo os pontos a débito, outro os pontos a crédito.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MAXPONTRAN</td>
+  </tr>
+  <tr>
+    <td><a id="1309" name="1309">1309</a></td>
+    <td class="esq"><u>NÚMERO MÍNIMO DE PONTOS PARA RENOVAÇÃO</u> <p>Número de pontos com
+    os quais o Pinpad despoleta uma nova actualização de todos os dados definidos na
+    aplicação para o efeito. Este campo existe em duplicado, um reflectindo os pontos a
+    débito, outro os pontos a crédito.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MINPONREN</td>
+  </tr>
+  <tr>
+    <td><a id="1310" name="1310">1310</a></td>
+    <td class="esq"><u>BITMAP DE SERVIÇOS</u> <p>Campo que indica os serviços que o
+    comerciante/empresa Multibanco têm autorizados.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>BITMAP-SER</td>
+  </tr>
+  <tr>
+    <td><a id="1311" name="1311">1311</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DA ENTIDADE CREDORA NO SDD</u> <p>Trata-se de um
+    número único no SDD, atribuído pelo Sistema MB por ordem crescente e sequencial, quando
+    é inserido um acordo de débitos directos para uma empresa credora, matriculada no
+    sistema MB (CEC) e que tem posicionado o serviço de DD.<br />
+    Esta identificação tem uma relação unívoca com a empresa credora (IDCOMEMP-<a
+    href="campos4.htm#327">327</a>), mas uma empresa poderá ter mais que uma entidade
+    credora.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDCRED</td>
+  </tr>
+  <tr>
+    <td><a id="1312" name="1312">1312</a></td>
+    <td class="esq"><u>NOME DA ENTIDADE CREDORA NO SDD</u> <p>Este campo apresenta o nome dado
+    pela empresa ao acordo identificado pelo IDCRED-<a href="#1311">1311</a>.<br />
+    Este nome aparece em alguns talões e ecrãs dos terminais MB (CA's e TB's), que
+    disponibilizam operações no âmbito do SDD. Tem como objectivo, uma melhor
+    identificação do cliente face à 'empresa' a quem autorizou o débito em conta.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NOME-IDCRED</td>
+  </tr>
+  <tr>
+    <td><a id="1313" name="1313">1313</a></td>
+    <td class="esq"><u>TIPO DE VALIDAÇÃO PARA ADDs</u> <p>Campo que indica qual o tipo de
+    validação que a SIBS deverá efectuar nas ADDs desta entidade (IDCRED-<a href="#1311">1311</a>).</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp;&nbsp; 1 - Validação por Cheque Dígito<br />
+    &nbsp;&nbsp;&nbsp; 2 - Validação por Ficheiro PAD</p>
+    <p><u>NOTAS:</u><br />
+    <br />
+    <em><strong>- Se 1</strong></em>, validamos o Cheque Dígito presente nos dois últimos
+    dígitos do campo Número de Autorização (NUM-AUT-<a href="#1328">1328</a>).<br />
+    Neste caso, a empresa não envia ficheiro de Pré-ADDs - PAD.<br />
+    O Cheque Dígito é calculado como o do Pagamento de Serviços (módulo 97-10), utilizando
+    os campos IDCRED-<a href="#1311">1311</a> e os 9 primeiros dígitos do NUM-AUT-<a
+    href="#1328">1328</a>.</p>
+    <p><em><strong>- Se 2</strong></em>, validamos a existência do Número de Autorização
+    (NUM-AUT-<a href="#1328">1328</a>) no ficheiro de Pré-ADDs (PAD) que a empresa
+    previamente enviou para a SIBS.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIP-VAL-ADD</td>
+  </tr>
+  <tr>
+    <td><a id="1314" name="1314">1314</a></td>
+    <td class="esq"><u>NOTIFICAÇÃO PARA ADD</u> <p>Este campo indica qual a entidade que vai
+    ser notificada pelas actualizações as ADDs (envio do ficheiro RAD).</p>
+    <p>Poderá ser a entidade ou o banco indicado como responsável pelas ADDs.<br />
+    &nbsp;&nbsp; 1 - Entidade<br />
+    &nbsp;&nbsp; 2 - Banco</p>
+    <p>Caso a notificação seja para o Banco, esta IDCRED-<a href="#1311">1311</a> não
+    poderá enviar nem receber ficheiros de débitos.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NOTIF-ADD</td>
+  </tr>
+  <tr>
+    <td><a id="1315" name="1315">1315</a></td>
+    <td class="esq"><u>BANCO RESPONSÁVEL PELAS ADDs</u> <p>Este campo indica o banco, que
+    tendo um acordo com a entidade (IDCRED-<a href="#1311">1311</a>),&nbsp;&nbsp; também
+    assume a responsabilidade das ADDs.<br />
+    Caso a notificação de ADDs, seja enviada ao banco (NOTIF-ADD = 2) é este que recebe as
+    actualizações das ADD's (ficheiro RAD).<br />
+    É este banco que pode definir as tarifas para as ADDs.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IC-RESP-ADD</td>
+  </tr>
+  <tr>
+    <td><a id="1316" name="1316">1316</a></td>
+    <td class="esq"><u>ENDEREÇO DE FILE TRANSFER ADDs</u> <p>Indica o endereço de FT, para
+    envio do ficheiro de Recepção de Autorizações de Débito (RAD).</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>END-MFT</td>
+  </tr>
+  <tr>
+    <td><a id="1317" name="1317">1317</a></td>
+    <td class="esq"><u>SITUAÇÃO DO ACORDO DD</u> <p>Indica a situação do acordo de
+    Débitos Directos no sistema.<br />
+    Este campo poderá ser actualizado automaticamente pelo sistema ou pelos utilizadores
+    (SIBS ou BC)</p>
+    <p>As situações possíveis são:</p>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq" nowrap="nowrap"><em>0 -&nbsp;</em> </td>
+        <td class="esq"><em>Por Activar</em> <br />
+        Quando o acordo é inserido fica nesta situação, pode ser alterado para Activo (1) ou
+        Anulado (9) pelos utilizadores.<br />
+        (A alteração para Activo, só é possível quando existir pelo menos um acordo com um
+        banco e quando a empresa estiver certificada para o SDD)</td>
+      </tr>
+      <tr>
+        <td class="esq"><em>1 -&nbsp;</em> </td>
+        <td class="esq"><em>Activo</em> <br />
+        Situação normal de um acordo, que está vigente.<br />
+        (Pode passar para Inibido (2) ou Anulado (9)).</td>
+      </tr>
+      <tr>
+        <td class="esq"><em>2 -&nbsp;</em> </td>
+        <td class="esq"><em>Inibido</em> <br />
+        Situação temporária indicada pelo BC ou SIBS. Esta situação também é posicionada
+        pelo Sistema, quando detecta automaticamente que o último acordo com um BC foi abatido.<br
+        />
+        (Pode passar para Anulado (9) ao fim de 1 mês ou ser Activada (1))</td>
+      </tr>
+      <tr>
+        <td class="esq"><em>9 -&nbsp;</em> </td>
+        <td class="esq"><em>Cancelado</em> <br />
+        Situação definitiva indicada pelo BC ou pela SIBS. (Não muda de estado).<br />
+        Na componente dos débitos, quando este acordo for inibido tem que ficar 'presente'
+        durante os 5 dias úteis seguintes, para podermos enviar as reversões. Após esse
+        período é automaticamente cancelado e todos os números de autorização de débito que
+        lhe estão associados são limpos do sistema.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SIT-IDCRED</td>
+  </tr>
+  <tr>
+    <td><a id="1318" name="1318">1318</a></td>
+    <td class="esq"><u>DATA/HORA DA SITUAÇÃO DO ACORDO DD</u> <p>Indica a data e a hora, em
+    que a situação apresentada para o acordo (SIT-IDCRED-<a href="#1317">1317</a>) foi
+    posicionada.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>AAAAMMDD<br />
+    HHMMSS</td>
+    <td>DH-SIT-IDCRED</td>
+  </tr>
+  <tr>
+    <td><a id="1319" name="1319">1319</a></td>
+    <td class="esq"><u>ORIGEM DA ACTUALIZAÇÃO SDD</u> <p>Indica qual a entidade que efectuou
+    a actualização.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" nowrap="nowrap" colspan="2">Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap">&nbsp; 1 -&nbsp;</td>
+        <td class="esq">Rede MB (CAs, etc)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp; 2 -&nbsp;</td>
+        <td class="esq">Terminal Bancário (O descritivo deve ter BANCO e deverá indicar o
+        Número do TB que posicionou a situação)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp; 3 -&nbsp;</td>
+        <td class="esq">Ficheiro (O descritivo deve identificar o ficheiro)</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap">&nbsp; 4 -&nbsp;</td>
+        <td class="esq">RT do banco</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp; 5 -&nbsp;</td>
+        <td class="esq">Empresa Credora (O descritivo deve ter EMPRESA e deverá indicar o Número
+        do TB que posicionou a situação)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp; 6 -&nbsp;</td>
+        <td class="esq">SIBS (GATM) (O descritivo deve ter SIBS e deve indicar o UserID que
+        posicionou a situação)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp; 7 -&nbsp;</td>
+        <td class="esq">Na SIBS automaticamente</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ORIG-ACT</td>
+  </tr>
+  <tr>
+    <td><a id="1320" name="1320">1320</a></td>
+    <td class="esq"><u>DATA DE INSERÇÃO DO ACORDO DD</u> <p>Indica a data em que o acordo DD
+    foi inserido no sistema.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DT-INS-IDCRED</td>
+  </tr>
+  <tr>
+    <td><a id="1321" name="1321">1321</a></td>
+    <td class="esq"><u>SITUAÇÃO DO ACORDO DE DD REPRESENTADO POR UMA IC</u> <p>Indica a
+    situação do acordo de DD com uma IC no sistema.</p>
+    <p>As situações possíveis são:</p>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq" nowrap="nowrap"><em>1 -&nbsp;</em> </td>
+        <td class="esq"><em>Activo</em> <br />
+        Situação normal de um acordo que está vigente.<br />
+        (Pode passar para Inibido (2) ou Anulado (9)).</td>
+      </tr>
+      <tr>
+        <td class="esq"><em>2 -&nbsp;</em> </td>
+        <td class="esq"><em>Inibido</em> <br />
+        Situação temporária indicada pelo BC ou SIBS.</td>
+      </tr>
+      <tr>
+        <td class="esq"><em>9 -&nbsp;</em> </td>
+        <td class="esq"><em>Cancelado</em> <br />
+        Situação definitiva indicada pelo BC ou pela SIBS. (Não muda de estado).</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SIT-ICREP</td>
+  </tr>
+  <tr>
+    <td><a id="1322" name="1322">1322</a></td>
+    <td class="esq"><u>DATA DA SITUAÇÃO DO ACORDO</u> <p>Indica a data associada à
+    situação do acordo de representação (SIT-ICREP - <a href="#1321">1321</a>).</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DT-SIT-IDCREP</td>
+  </tr>
+  <tr>
+    <td><a id="1323" name="1323">1323</a></td>
+    <td class="esq"><u>DURAÇÃO DO PLAFOND SDD</u> <p>Trata-se de um código que indica a
+    periodicidade com que o plafond de SDD deve ser renovado na SIBS. Foram utilizados os
+    códigos da Norma ISO 4909 (Montante Autorizado, Saldo de Período, Início do Período e
+    Duração).</p>
+    <p>Os códigos são os seguintes:</p>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq" nowrap="nowrap">00 -&nbsp;</td>
+        <td class="esq">Saldo não actualizado. Ao ficar a zeros não permite mais débitos.</td>
+      </tr>
+      <tr>
+        <td class="esq">01 -&nbsp;</td>
+        <td class="esq">Saldo renovado diariamente.</td>
+      </tr>
+      <tr>
+        <td class="esq">81 -&nbsp;</td>
+        <td class="esq">Saldo renovado de duas em duas semanas. Período de 14 dias. Será
+        renovado no mesmo dia da semana conforme data de início de saldo.</td>
+      </tr>
+      <tr>
+        <td class="esq">82 -</td>
+        <td class="esq">Saldo renovado no primeiro e décimo quinto dias de cada mês.</td>
+      </tr>
+      <tr>
+        <td class="esq">83 -&nbsp;</td>
+        <td class="esq">Saldo renovado mensalmente. Será renovado no mesmo dia de cada mês,
+        conforme data de início do saldo.</td>
+      </tr>
+      <tr>
+        <td class="esq">84 -&nbsp;</td>
+        <td class="esq">Saldo renovado trimestralmente. Será renovado no mesmo dia do mês,
+        conforme data de início do saldo.</td>
+      </tr>
+      <tr>
+        <td class="esq">85 -&nbsp;</td>
+        <td class="esq">Saldo renovado semestralmente. Será renovado no mesmo dia do mês,
+        conforme data de início do saldo.</td>
+      </tr>
+      <tr>
+        <td class="esq">86 -&nbsp;</td>
+        <td class="esq">Saldo renovado anualmente. Será renovado na mesma data de início de
+        saldo, todos os anos.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DURACAO-PLF</td>
+  </tr>
+  <tr>
+    <td><a id="1324" name="1324">1324</a></td>
+    <td class="esq"><u>DATA DE INÍCIO DO PLAFOND DD</u> <p>Trata-se da data, a partir da qual
+    passará a vigorar a importância pretendida para o plafond.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DT-INIC-PLF</td>
+  </tr>
+  <tr>
+    <td><a id="1325" name="1325">1325</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DO PLAFOND SDD</u> <p>É a importância do plafond
+    posicionado para uma EC, para um período. Com 2 casas decimais se for euros e sem casas
+    decimais se for em escudos. Pode ser zeros.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IMPORT-PLF</td>
+  </tr>
+  <tr>
+    <td><a id="1326" name="1326">1326</a></td>
+    <td class="esq"><u>SITUAÇÃO DO PLAFOND</u> <p>Este campo indica a situação do plafond.</p>
+    <table border="0" cellspacing="0" width="100%" cellpadding="0">
+      <tr>
+        <td class="esq" nowrap="nowrap"><em>0 -&nbsp;</em> </td>
+        <td class="esq"><em>Por Atribuir</em> <br />
+        A empresa não tem plafond posicionado.</td>
+      </tr>
+      <tr>
+        <td class="esq"><em>1 -&nbsp;</em> </td>
+        <td class="esq"><em>Activo</em> <br />
+        A empresa tem um plafond atribuído. É verificado sempre que a empresa envia directamente
+        para a SIBS, os ficheiros de OD's.</td>
+      </tr>
+      <tr>
+        <td class="esq"><em>9 -&nbsp;</em> </td>
+        <td class="esq"><em>Cancelado</em> <br />
+        O plafond indicado foi cancelado pelo banco.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SIT-PLF</td>
+  </tr>
+  <tr>
+    <td><a id="1327" name="1327">1327</a></td>
+    <td class="esq"><u>DATA DA SITUAÇÃO DO PLAFOND</u> <p>Indica a data associada a
+    situação do Plafond (campo <a href="#1326">1326</a>) posicionado.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DT-SIT-PLF</td>
+  </tr>
+  <tr>
+    <td><a id="1328" name="1328">1328</a></td>
+    <td class="esq"><u>NÚMERO AUTORIZAÇÃO DE ADD</u> <p>Número da autorização de débito
+    directo atribuído pelo credor, específico do SDD e que constitui, juntamente com a
+    identificação do credor (campo IDCRED-<a href="#1311">1311</a>), a chave de
+    identificação da autorização.<ul>
+      <li>Este número pode ser informado à SIBS no ficheiro de Pré-mandatos (PAD) pela empresa
+        ou banco credor; nesse caso é uma Pré-ADD.</li>
+      <li>Ou pode ser um número composto, em que os 9 primeiros dígitos são o número de
+        mandato e os dois últimos são o cheque dígito.</li>
+    </ul>
+    <p>O cheque dígito é calculado sobre os 9 primeiros dígitos e sobre a Identificação
+    do credor (IDCRED-<a href="#1311">1311</a>) utilizando o módulo 97-10.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUM-AUT</td>
+  </tr>
+  <tr>
+    <td><a id="1329" name="1329">1329</a></td>
+    <td class="esq"><u>DESCRIÇÃO DO NÚMERO DE AUTORIZAÇÃO</u> <p>Este campo apresenta o
+    descritivo do Número de Autorização de Débito Directo, ou seja, a descrição do
+    contrato que existe entre o devedor e o credor representado pelo NUM-AUT-<a href="#1328">1328</a>.
+    Deverá aparecer nos ecrãs e talões dos CAs, para as entidades que tenham ficheiro PAD.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DESC-NUM-AUT</td>
+  </tr>
+  <tr>
+    <td><a id="1330" name="1330">1330</a></td>
+    <td class="esq"><u>CÓDIGO DE OPERAÇÃO</u> <p>Apresenta o código de operação
+    associado à ADD.<br />
+    Este campo é apresentado em alguns ecrãs do SDD e nos talões do serviço especial SDD.
+    Ver <a href="1330.htm" target="main">tabela</a> de Códigos de Operação.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODOPER</td>
+  </tr>
+  <tr>
+    <td><a id="1331" name="1331">1331</a></td>
+    <td class="esq"><u>MONTANTE MÁXIMO ADD</u> <p>Apresenta o montante máximo definido pelo
+    cliente devedor, para cada ordem de débito efectuada sobre a ADD. Sem casas decimais.</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2" class="esq">Trata-se de um campo opcional.</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap"><em><strong>-&gt;&nbsp;</strong></em> </td>
+        <td class="esq">Se não for indicado pelo cliente, todas as OTs, cujo montante seja
+        superior a 0$00 e inferior ao montante definido para o SPGT (100.000 contos ou 500 mil
+        euros) são autorizadas pela SIBS.</td>
+      </tr>
+      <tr>
+        <td class="esq"><em><strong>-&gt;&nbsp;</strong></em> </td>
+        <td class="esq">Se o montante for indicado pelo cliente, então a SIBS rejeita as OTs
+        superiores ao indicado pelo cliente.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MONT-MAX-ADD</td>
+  </tr>
+  <tr>
+    <td><a id="1332" name="1332">1332</a></td>
+    <td class="esq"><u>DATA LIMITE DA ADD</u> <p>Apresenta a data limite definida pelo cliente
+    devedor, para a SIBS autorizar as OTs efectuadas sobre a ADD.</p>
+    <p>Trata-se de um campo opcional.<br />
+    <em><strong>-&gt;</strong></em> Se for indicada pelo cliente, todas as OTs efectuadas
+    após a data indicada, são rejeitadas pela SIBS e a situação da ADD passa a expirada.<br
+    />
+    <em><strong>-&gt;</strong></em>&nbsp; Se não for indicada, então a SIBS não valida este
+    campo.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>AAAAMM</td>
+    <td>DT-LIM-ADD</td>
+  </tr>
+  <tr>
+    <td><a id="1333" name="1333">1333</a></td>
+    <td class="esq"><u>SITUAÇÃO DA ADD</u> <p>Indica a situação da Autorização de
+    Débito Directo.</p>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq" nowrap="nowrap">&nbsp; 1 -&nbsp;</td>
+        <td class="esq">Activa (quando tem cliente (NIB) associado e está dentro da data limite
+        indicada).</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp; 2 -&nbsp;</td>
+        <td class="esq">Expirada (quando a data limite indicada pelo cliente foi ultrapassada).</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp; 9 -&nbsp;</td>
+        <td class="esq">Cancelada (quando o cliente, o BD ou a empresa cancelaram a ADD).</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SIT-ADD</td>
+  </tr>
+  <tr>
+    <td><a id="1334" name="1334">1334</a></td>
+    <td class="esq"><u>DATA/HORA DA SITUAÇÃO DA ADD</u> <p>Indica a Data e Hora associada à
+    situação da ADD.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>AAAAMMDD<br />
+    HHMMSS</td>
+    <td>DT-SIT-ADD</td>
+  </tr>
+  <tr>
+    <td><a id="1335" name="1335">1335</a></td>
+    <td class="esq"><u>TIPO DE CONSULTA</u> <p>É o código utilizado para definir o tipo de
+    consulta.</p>
+    <p>Valores possíveis de consulta:<br />
+    &nbsp;&nbsp;&nbsp; 1 - Consulta Geral<br />
+    &nbsp;&nbsp;&nbsp; 2 - Consulta por Comerciante<br />
+    &nbsp;&nbsp;&nbsp; 3 - Consulta por Banco<br />
+    &nbsp;&nbsp;&nbsp; 4 - Consulta por NIB<br />
+    &nbsp;&nbsp;&nbsp; 5 - Consulta por Banco/Cartão</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPCONSULTA</td>
+  </tr>
+  <tr>
+    <td><a id="1336" name="1336">1336</a></td>
+    <td class="esq"><u>TOTAL PMB'S INFORMADOS</u> <p>Total de porta-moedas informados nos
+    registos de tipo 1 do ficheiro de confirmação de PMB's emitidos (EPME).</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOTNPMB</td>
+  </tr>
+  <tr>
+    <td><a id="1337" name="1337">1337</a></td>
+    <td class="esq"><u>NÚMERO DE PMB</u> <p>Estruturado como linha OCR se o porta-moedas for
+    de 2ª geração (EGPV).</p>
+    <p>Caso contrário, terá o número de PMB (campo <a href="campos5.htm#431">431</a> -
+    IDPMB).</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>OCRPMB</td>
+  </tr>
+  <tr>
+    <td><a id="1338" name="1338">1338</a></td>
+    <td class="esq"><u>NÚMERO DE APLICAÇÕES ADICIONAIS NO CHIP</u> <p>Número de
+    aplicações exteriores adicionais.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>APLNUM</td>
+  </tr>
+  <tr>
+    <td><a id="1339" name="1339">1339</a></td>
+    <td class="esq"><u>SERVICE PROVIDER</u> <p>Identificação do fornecedor da aplicação
+    exterior que está personalizada no cartão PMB (código atribuído pela SIBS).</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SRVPRV</td>
+  </tr>
+  <tr>
+    <td><a id="1340" name="1340">1340</a></td>
+    <td class="esq"><u>APPLICATION PROVIDER</u> <p>Identificação da aplicação exterior que
+    está personalizada no cartão PMB (código atribuído pela SIBS).</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>APLPRV</td>
+  </tr>
+  <tr>
+    <td><a id="1341" name="1341">1341</a></td>
+    <td class="esq"><u>APPLICATION VERSION</u> <p>Versão da aplicação exterior que está
+    personalizada no cartão PMB.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>APLVER</td>
+  </tr>
+  <tr>
+    <td><a id="1342" name="1342">1342</a></td>
+    <td class="esq"><u>APPLICATION RELEASE</u> <p>Release da aplicação exterior que está
+    personalizada no cartão PMB.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>APLREL</td>
+  </tr>
+  <tr>
+    <td><a id="1343" name="1343">1343</a></td>
+    <td class="esq"><u>ITEMIZED DOC</u> <p>Sempre que o tipo de documento (atributo <a
+    href="campos7.htm#630">630</a>) assumir o valor <strong>7</strong> e o Sistema de
+    Pagamento = <strong>3</strong> (AMEX), é obrigatório o preenchimento deste campo com um
+    dos seguintes valores:</p>
+    <p>(a espaços)&nbsp;&nbsp; NO DOCUMENTATION REQUIRED<br />
+    &nbsp;&nbsp; 00&nbsp;&nbsp; RESERVED<br />
+    &nbsp;&nbsp; 01&nbsp;&nbsp; SIGNED SUPPORT<br />
+    &nbsp;&nbsp; 02&nbsp; ITEMIZED SUPPORT<br />
+    &nbsp;&nbsp; 03&nbsp; PROOF OF DELIVERY<br />
+    &nbsp;&nbsp; 04&nbsp; LODGING FOLIO<br />
+    &nbsp;&nbsp; 05&nbsp; COPY OF RENTAL AGREEMENT<br />
+    &nbsp;&nbsp; 06&nbsp; COPY OF S/E RETURN POLICY<br />
+    &nbsp;&nbsp; 07&nbsp; COPY OF S/E CANCELATION POLICY<br />
+    &nbsp;&nbsp; 08&nbsp; IMPRINT<br />
+    &nbsp;&nbsp; 09&nbsp; SIGNED ACKNOWLEDG. OF RESPONSABILITY<br />
+    &nbsp;&nbsp; 10&nbsp;&nbsp; COPY OF MEMBERSHIP CONTRACT</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ITMDOC</td>
+  </tr>
+  <tr>
+    <td><a id="1344" name="1344">1344</a></td>
+    <td class="esq"><u>GRUPO DE DADOS A DO CARTÃO</u> <p>Este campo inclui um conjunto de
+    dados associados a um cartão, utilizados em funções de segurança efectuadas no
+    processamento das operações que o mesmo realiza no Sistema MULTIBANCO.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CARTAO-GA</td>
+  </tr>
+  <tr>
+    <td><a id="1345" name="1345">1345</a></td>
+    <td class="esq"><u>GRUPO DE DADOS B&nbsp; DO CARTÃO</u> <p>Este campo inclui um conjunto
+    de dados associados a um cartão, utilizados em funções de segurança efectuadas no
+    processamento das operações que o mesmo realiza no Sistema MULTIBANCO.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CARTAO-GB</td>
+  </tr>
+  <tr>
+    <td><a id="1346" name="1346">1346</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DE MBNET</u> <p>Campo que indica a Identificação
+    MBNet atribuída a um cartão para utilização nesse serviço.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>IDMBNET</td>
+  </tr>
+  <tr>
+    <td><a id="1347" name="1347">1347</a></td>
+    <td class="esq"><u>CÓDIGO SECRETO MBNET</u> <p>Campo que indica o código secreto
+    escolhido pelo cliente para utilizar com a sua identificação MBNet.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODSMBNET</td>
+  </tr>
+  <tr>
+    <td><a id="1348" name="1348">1348</a></td>
+    <td class="esq"><u>MONTANTE MÁXIMO DE COMPRAS POR DIA DO MBNET</u> <p>Campo que apresenta
+    o montante máximo de compras por dia, parametrizado pelo cliente, para utilização no
+    MBNet (sem decimais).</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MMAXMBNET</td>
+  </tr>
+  <tr>
+    <td><a id="1349" name="1349">1349</a></td>
+    <td class="esq"><u>SITUAÇÃO DO MBNET</u> <p>Indica a situação da identificação
+    MBNet.</p>
+    <p>As situações possíveis são:<br />
+    &nbsp;&nbsp; 1 - normal<br />
+    &nbsp;&nbsp; 9 - cancelado<br />
+    &nbsp;&nbsp; 2 - inibido por código errado<br />
+    &nbsp;&nbsp; 3 - expirado</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SITMBNET</td>
+  </tr>
+  <tr>
+    <td><a id="1350" name="1350">1350</a></td>
+    <td class="esq"><u>TIPO DE CARTÃO ASSOCIADO AO MBNET</u> <p>Este campo indica o tipo de
+    cartão utilizado nas operações de adesão, consulta, alterações e cancelamentos para
+    o MBNet.</p>
+    <p>&nbsp;&nbsp; Se = 1 cartão Not-On-Us<br />
+    &nbsp;&nbsp; Se = 2 cartão On-Us</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPCARMBNET</td>
+  </tr>
+  <tr>
+    <td><a id="1351" name="1351">1351</a></td>
+    <td class="esq"><u>DATA DE ADESÃO AO MBNET</u> <p>Indica a data em que foi efectuada a
+    adesão ao MBNet.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DTADSMBNET</td>
+  </tr>
+  <tr>
+    <td><a id="1352" name="1352">1352</a></td>
+    <td class="esq"><u>DATA DE SITUAÇÃO DA IDENTIFICAÇÃO DO MBNET</u><p>Apresenta a data
+    em que a situação indicada para o MBNet foi posicionada.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DTSITMBNET</td>
+  </tr>
+  <tr>
+    <td><a id="1353" name="1353">1353</a></td>
+    <td class="esq"><u>NÚMERO DE TENTATIVAS ERRADAS DE CÓDIGO SECRETO</u> <p>Indica o
+    número de tentativas sucessivas de códigos secretos errados (máximo de 3 vezes, após a
+    qual fica inibido).</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRCSERR</td>
+  </tr>
+  <tr>
+    <td><a id="1354" name="1354">1354</a></td>
+    <td class="esq"><u>NÚMERO DE RESETS DE CÓDIGO SECRETO</u> <p>Indica o número de vezes
+    que o código secreto que o contador 1355 foi limpo. Tem um máximo de 9 vezes.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRRESCS</td>
+  </tr>
+  <tr>
+    <td><a id="1355" name="1355">1355</a></td>
+    <td class="esq"><u>INDICADOR DE 1ª UTILIZAÇÃO DO MBNET</u> <p>Este campo indica se é a
+    primeira vez que uma identificação de MBNet é usada no sistema.</p>
+    <p>&nbsp;&nbsp; Se = 1 é a primeira vez<br />
+    &nbsp;&nbsp; Se = 2 não é a primeira vez</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND1UTMBNET</td>
+  </tr>
+  <tr>
+    <td><a id="1356" name="1356">1356</a></td>
+    <td class="esq"><u>TOKEN MBNET</u> <p>Este campo é a chave única da operação para o
+    sistema. Trata-se de um campo composto pelos campos <a href="campos4.htm#312">312</a>
+    (Aplicação PDD) + <a href="campos4.htm#320">320</a> (IDLOG) + <a href="campos2.htm#117">117</a>
+    (NRLOG) incluindo um caracter de cardinal&nbsp; (#) no início e no fim do campo.<br />
+    &nbsp;&nbsp;&nbsp; (ex: #AALLLLNNNNNNNN# )</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TOKENMBNET</td>
+  </tr>
+  <tr>
+    <td><a id="1357" name="1357">1357</a></td>
+    <td class="esq"><u>NÚMERO DE CARTÃO TEMPORÁRIO NO MBNET</u> <p>Indica o número do
+    cartão (PAN) temporário atribuído a um pedido de autenticação efectuado por um
+    cliente aderente num comerciante não aderente.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PANTPMBNET</td>
+  </tr>
+  <tr>
+    <td><a id="1358" name="1358">1358</a></td>
+    <td class="esq"><u>MONTANTE INDICATIVO PARA CARTÃO TEMPORÁRIO</u> <p>Montante indicado
+    pelo cliente no pedido de autenticação com cartão temporário, para o sistema validar
+    contra a autorização correspondente.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br>
+    2 dec.</td>
+    <td>MTCARTTEMP</td>
+  </tr>
+  <tr>
+    <td><a id="1359" name="1359">1359</a></td>
+    <td class="esq"><u>NÚMERO DIAS PARA UTILIZAÇÃO CARTÃO TEMPORÁRIO</u> <p>Número de
+    dias indicado pelo cliente num pedido de autenticação com cartão temporário, para o
+    sistema validar o número de dias que o cartão temporário é válido para a
+    autorização. O default é 30 dias.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRDIASAUTT</td>
+  </tr>
+  <tr>
+    <td><a id="1360" name="1360">1360</a></td>
+    <td class="esq"><u>NÚMERO DE PAGAMENTOS CARTÃO TEMPORÁRIO</u> <p>Número de pagamentos
+    (autorizações) indicado pelo cliente num pedido de autorização com cartão
+    temporário, para o sistema validar o número máximo de autorizações que podem ocorrer
+    para o cartão temporário. O default é 4 utilizações.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRPAGTEMP</td>
+  </tr>
+  <tr>
+    <td><a id="1361" name="1361">1361</a></td>
+    <td class="esq"><u>MONTANTE GASTO NO DIA NO MBNET</u> <p>Indica o montante que o cliente
+    já gastou no dia, utlizando o MBNet. Apresenta o mesmo código de moeda que o campo <a
+    href="#1348">1348</a>. Sem decimais se for escudos e 2 decimais se for euros.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MTGASTMBNET</td>
+  </tr>
+  <tr>
+    <td><a id="1362" name="1362">1362</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DE COMERCIANTE 3D</u><p>Identificação do Comerciante
+    definida pelo Acquirer no âmbito do sistema 3D Secure da Visa (Merchant ID).</td>
+    <td class="dta">24</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>IDCOM3D</td>
+  </tr>
+  <tr>
+    <td><a id="1363" name="1363">1363</a></td>
+    <td class="esq"><u>SITUAÇÃO DO CARTÃO TEMPORÁRIO</u> <p>Apresenta a descrição da
+    situação do cartão temporário.</p>
+    <p>Descrições possíveis:<br />
+    &nbsp;&nbsp;&nbsp; - Autenticação (01)<br>
+    &nbsp;&nbsp;&nbsp; - Autorização (02)<br>
+    &nbsp;&nbsp;&nbsp; - Compra efectuada (03)<br>
+    &nbsp;&nbsp;&nbsp; - Autorização cancelada (04)<br>
+    &nbsp;&nbsp;&nbsp; - Autenticação abatida (09) *<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Ver detalhe desta
+    descrição no campo <a href="#1364">1364</a>.
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>SIT_PANTEMP</td>
+  </tr>
+  <tr>
+    <td><a id="1364" name="1364">1364</a></td>
+    <td class="esq"><u>MOTIVO DO ABATE</u> <p>Campo complementar do campo <a href="#1363">1363</a>.
+    Quando o campo <a href="#1363">1363</a> apresenta a descrição&nbsp; &quot;autenticação
+    abatida&quot;, este campo apresenta as seguintes descrições possíveis:</p>
+    <p>&nbsp; - CVV inválido (01)<br>
+    &nbsp; - Data de expiração inválida (02)<br>
+    &nbsp; - Montante excedido (03)<br>
+    &nbsp; - Expirada (04)<br>
+    &nbsp; - Pelo Emissor (05)</td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MOTABATE</td>
+  </tr>
+  <tr>
+    <td><a id="1365" name="1365">1365</a></td>
+    <td class="esq"><u>CÓDIGO DA SITUAÇÃO DO CARTÃO TEMPORÁRIO</u> <p>Apresenta os
+    seguintes valores possíveis para a situação do cartão temporário:</p>
+    <p>&nbsp;&nbsp;&nbsp; 01 - Autenticação<br>
+    &nbsp;&nbsp;&nbsp; 02 - Autorização<br>
+    &nbsp;&nbsp;&nbsp; 03 - Compra efectuada<br>
+    &nbsp;&nbsp;&nbsp; 04 - Autorização cancelada<br>
+    &nbsp;&nbsp;&nbsp; 09 - Autenticação abatida </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD_SITEMP</td>
+  </tr>
+  <tr>
+    <td><a id="1366" name="1366">1366</a></td>
+    <td class="esq"><u>CÓDIGO DO MOTIVO DO ABATE</u> <p>Quando o campo <a href="#1365">1365</a>
+    apresenta o valor '09 - Autenticação abatida', este campo apresenta os seguintes
+    códigos possíveis:<br>
+    &nbsp;&nbsp;&nbsp; 1 - CVV inválido<br>
+    &nbsp;&nbsp;&nbsp; 2 - Data de expiração inválida<br>
+    &nbsp;&nbsp;&nbsp; 3 - Montante excedido<br>
+    &nbsp;&nbsp;&nbsp; 4 - Expirada<br>
+    &nbsp;&nbsp;&nbsp; 5 - Pelo emissor </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD_MOTABATE</td>
+  </tr>
+  <tr>
+    <td><a id="1367" name="1367">1367</a></td>
+    <td class="esq"><u>MONTANTE INFORMADO AO CLIENTE</u><p>Montante da compra que o
+    comerciante na sua loja virtual na internet exibe ao cliente (Display amount).</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MONTCLI3D</td>
+  </tr>
+  <tr>
+    <td><a id="1368" name="1368">1368</a></td>
+    <td class="esq"><u>MONTANTE DA COMPRA</u><p>Montante da compra enviado pelo comerciante no
+    âmbito do sistema 3D Secure da Visa (Purchase Amount).</p>
+    <p>Exemplo:<br>
+    &nbsp;&nbsp; - Display amount: $125.45<br>
+    &nbsp;&nbsp; - Purchase amount: 12545</td>
+    <td class="dta">12</td>
+    <td>N</td>
+    <td>sem decimais</td>
+    <td>MONTCOMP3D</td>
+  </tr>
+  <tr>
+    <td><a id="1369" name="1369">1369</a></td>
+    <td class="esq"><u>CASAS DECIMAIS DA MOEDA</u><p>Indicação da unidade mínima aceite por
+    moeda, de acordo com a norma ISO 4217. Por exemplo, o dólar americano tem o valor 2; o
+    iene tem o valor 0.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DECMOEDA</td>
+  </tr>
+  <tr>
+    <td><a id="1370" name="1370">1370</a></td>
+    <td class="esq"><u>NÚMERO DE IDENTIFICADOR VIA VERDE</u> <p>Número do identificador Via
+    Verde sem incluir o check digit.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRTAGVV</td>
+  </tr>
+  <tr>
+    <td><a id="1371" name="1371">1371</a></td>
+    <td class="esq"><u>EMPRESA CLIENTE</u> <p>Nome da empresa cliente Via Verde. </td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMPCLIVV</td>
+  </tr>
+  <tr>
+    <td><a id="1372" name="1372">1372</a></td>
+    <td class="esq"><u>NOME DO CLIENTE</u> <p>Nome do titular do dispositivo Via Verde. </td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NOMCLIVV</td>
+  </tr>
+  <tr>
+    <td><a id="1373" name="1373">1373</a></td>
+    <td class="esq"><u>ENDEREÇO DO CLIENTE</u> <p>É a morada do cliente Via Verde.</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ENDCLIVV</td>
+  </tr>
+  <tr>
+    <td><a id="1374" name="1374">1374</a></td>
+    <td class="esq"><u>LOCALIDADE DO ENDEREÇO</u> <p>Localidade que compõe a morada do
+    cliente Via Verde.</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>LOCCLIVV</td>
+  </tr>
+  <tr>
+    <td><a id="1375" name="1375">1375</a></td>
+    <td class="esq"><u>CÓDIGO POSTAL DO ENDEREÇO</u> <p>Código Postal do cliente Via Verde.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODPOSCLIVV</td>
+  </tr>
+  <tr>
+    <td><a id="1376" name="1376">1376</a></td>
+    <td class="esq"><u>LOCALIDADE POSTAL DO ENDEREÇO</u> <p>Localidade Postal do endereço do
+    cliente Via Verde</td>
+    <td class="dta">25</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>LOCPOSCLIVV</td>
+  </tr>
+  <tr>
+    <td><a id="1377" name="1377">1377</a></td>
+    <td class="esq"><u>NÚMERO FISCAL DO CLIENTE</u> <p>Número de contribuinte do cliente Via
+    Verde. </td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NIFCLIVV</td>
+  </tr>
+  <tr>
+    <td><a id="1378" name="1378">1378</a></td>
+    <td class="esq"><u>NÚMERO DE CONTRATO</u> <p>Número que identifica o contrato assinado
+    entre a VVP e o seu cliente e que pode agregar n dispositivos desse cliente.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NCONTVV</td>
+  </tr>
+  <tr>
+    <td><a id="1379" name="1379">1379</a></td>
+    <td class="esq"><u>DATA DÉBITO IDENTIFICADOR</u> <p>Data de pagamento do identificador
+    Via Verde.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATDEBTAG</td>
+  </tr>
+  <tr>
+    <td><a id="1380" name="1380">1380</a></td>
+    <td class="esq"><u>DATA ÚLTIMO MOVIMENTO</u> <p>Data do último movimento efectuado pelo
+    identificador Via Verde.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td nowrap="nowrap">DATULTMOVVV</td>
+  </tr>
+  <tr>
+    <td><a id="1381" name="1381">1381</a></td>
+    <td class="esq"><u>SITUAÇÃO DO DISPOSITIVO NA VIA VERDE</u> <p>Situação do dispositivo
+    na Via Verde.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp;&nbsp; 1 - Normal<br />
+    &nbsp;&nbsp;&nbsp; 2 - Inibido</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SITDISVV</td>
+  </tr>
+  <tr>
+    <td><a id="1382" name="1382">1382</a></td>
+    <td class="esq"><u>DATA DA SITUAÇÃO</u> <p>Data da situação do dispositivo na Via
+    Verde.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATSITTAG</td>
+  </tr>
+  <tr>
+    <td><a id="1383" name="1383">1383</a></td>
+    <td class="esq"><u>INDICADOR DE SERVIÇO VIA VERDE</u> <p>Indica o tipo de serviço que a
+    Via Verde disponibiliza, através do identificador, ao seu cliente. </p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp;&nbsp; 1 - Serviço Portagens<br />
+    &nbsp;&nbsp;&nbsp; 2 - Serviço Carregamento de Identificador<br />
+    &nbsp;&nbsp;&nbsp; 3 - Serviço de Portagens e Carregamento de Identificador</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDSERVV</td>
+  </tr>
+  <tr>
+    <td><a id="1384" name="1384">1384</a></td>
+    <td class="esq"><u>DATA INÍCIO DE EXTRACTO POR FICHEIRO</u> <p>Esta data aparecerá
+    preenchida sempre que o cliente tenha iniciado o serviço solicitando extracto em
+    ficheiro, ou sempre que, ainda que tenha iniciado o serviço com outro tipo de extracto,
+    ou sem extracto, tenha solicitado a alteração para o extracto em ficheiro.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATEXTFICVV</td>
+  </tr>
+  <tr>
+    <td><a id="1385" name="1385">1385</a></td>
+    <td class="esq"><u>MÊS INÍCIO</u> <p>Mês em que se inicia o período pretendido para a
+    emissão de segundas vias de extractos.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MESINI</td>
+  </tr>
+  <tr>
+    <td><a id="1386" name="1386">1386</a></td>
+    <td class="esq"><u>ANO INÍCIO</u> <p>Ano ao qual pertence o mês indicado como início do
+    período para o pedido de 2ª via de extractos.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ANOINI</td>
+  </tr>
+  <tr>
+    <td><a id="1387" name="1387">1387</a></td>
+    <td class="esq"><u>MÊS FIM</u> <p>Mês no qual termina o período considerado para a
+    emissão de segundas vias de extracto.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MESFIM</td>
+  </tr>
+  <tr>
+    <td><a id="1388" name="1388">1388</a></td>
+    <td class="esq"><u>ANO FIM</u> <p>Ano ao qual corresponde o mês que marca o fim do
+    período para o qual se pretende a emissão segundas vias de extractos.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ANOFIM</td>
+  </tr>
+  <tr>
+    <td><a id="1389" name="1389">1389</a></td>
+    <td class="esq"><u>ANO / MÊS DO PEDIDO DE 2ª VIA DE EXTRACTO</u> <p>Ano e mês para os
+    quais existe pedido de 2ª via de extracto para determinado dispositivo.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ANOMESEXT</td>
+  </tr>
+  <tr>
+    <td><a id="1390" name="1390">1390</a></td>
+    <td class="esq"><u>DESTINO DAS 2ª VIAS DE EXTRACTO</u> <p>Destino postal dos envelopes
+    contendo as 2ª vias solicitadas.</p>
+    <p>Deverão existir dois valores possíveis:&nbsp;&nbsp;&nbsp;</p>
+    <table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" nowrap="nowrap">0 -&nbsp;</td>
+        <td class="esq">original (morada da empresa/cliente)</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap">1 -&nbsp;</td>
+        <td class="esq">Via Verde (morada previamente informada pela VVP para este efeito)</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DESSEGVIA</td>
+  </tr>
+  <tr>
+    <td><a id="1391" name="1391">1391</a></td>
+    <td class="esq"><u>DATA DE SITUAÇÃO CLIENTE EUROSHELL</u> <p>Data da última alteração
+    efectuada à situação do cliente Euroshell.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DATSITCLI</td>
+  </tr>
+  <tr>
+    <td><a id="1392" name="1392">1392</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO CLIENTE EUROSHELL</u> <p>Número de identificação do
+    cliente Shell no sistema daquela.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDCLISHELL</td>
+  </tr>
+  <tr>
+    <td><a id="1393" name="1393">1393</a></td>
+    <td class="esq"><u>PAN CARTÃO EUROSHELL</u> <p>Número completo do cartão Euroshell. É
+    composto por:</p>
+    <p>&nbsp;&nbsp; - BIN (4 bytes)<br />
+    &nbsp;&nbsp; - Código de companhia (2 bytes)<br />
+    &nbsp;&nbsp; - Release code (1 byte)<br />
+    &nbsp;&nbsp; - N.º cliente (8 bytes)<br />
+    &nbsp;&nbsp; - N.º cartão (3 bytes)<br />
+    &nbsp;&nbsp; - Check digit (1 byte)</td>
+    <td class="dta">19</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>PANSHELL</td>
+  </tr>
+  <tr>
+    <td><a id="1394" name="1394">1394</a></td>
+    <td class="esq"><u>BIN EUROSHELL</u> <p>Define o tipo de cartão Shell:</p>
+    <p>&nbsp;&nbsp; 7002 - Fleet<br />
+    &nbsp;&nbsp; 7027 - Private<br />
+    &nbsp;&nbsp; 7077 - CRT</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>BINSHELL</td>
+  </tr>
+  <tr>
+    <td><a id="1395" name="1395">1395</a></td>
+    <td class="esq"><u>TIPO DE SERVIÇO SIBS</u> <p>Posicionamento da entidade face aos
+    diferentes níveis de serviços facultados pela SIBS. Assume o valor &#145;8&#146; para o
+    serviço &quot;Cliente Shell&quot;.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIPSERSIBS</td>
+  </tr>
+  <tr>
+    <td><a id="1396" name="1396">1396</a></td>
+    <td class="esq"><u>SITUAÇÃO CLIENTE SHELL</u> <p>&nbsp;&nbsp; 2 - normal<br />
+    &nbsp;&nbsp; 4 - lista negra nacional</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>SITCLISHELL</td>
+  </tr>
+  <tr>
+    <td><a id="1397" name="1397">1397</a></td>
+    <td class="esq"><u>NÚMERO DE CONTRIBUINTE</u> <p>Campo presente no ficheiro CEC, que pode
+    apresentar valor distinto do campo N.º de identificação fiscal. Ao contrário do NIF,
+    este campo não é chave.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMCONT</td>
+  </tr>
+  <tr>
+    <td><a id="1398" name="1398">1398</a></td>
+    <td class="esq"><u>CÓDIGO DE COMPANHIA EUROSHELL</u> <p>Assume diferentes valores
+    consoante o país. Por exemplo:</p>
+    <p>&nbsp;&nbsp; 20 - Portugal<br />
+    &nbsp;&nbsp; 16 - Itália<br />
+    &nbsp;&nbsp; 21 - Espanha<br />
+    &nbsp;&nbsp; &#133;</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODCOMSHELL</td>
+  </tr>
+  <tr>
+    <td><a id="1399" name="1399">1399</a></td>
+    <td class="esq"><u>RELEASE CODE EUROSHELL</u> <p>É o 7º dígito do número de cartão.
+    Assume o valor 1.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>RELCODSHELL</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

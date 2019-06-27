@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>ACUMULADOS DE AGÊNCIA (PMB) (EAGE) </title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: &nbsp; ACUMULADOS DE AGÊNCIA (PMB) </td>
+        <td class="fichdta">&quot;FICH&quot; = EAGE </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+A SIBS pode produzir um ficheiro para o Banco emissor dos cartões Porta Moedas (PMB), com
+os totais dos respectivos movimentos dos cartões emitidos por cada Agência do Banco. </p>
+
+<p>O Banco tem que solicitar formalmente à SIBS que pretende este nível de detalhe da
+Compensação PMB, através da Caracterização do Emissor. Neste caso o ficheiro é
+enviado diariamente.</p>
+
+<p>O ficheiro apresenta a decomposição por Agência emissora, dos totais de carregamento
+e de pagamentos apresentados no <a href="dst-2.htm#= 6" target="main">tipo de registo 6</a>
+do ficheiro Destinos (função de Banco Emissor PMB). Como consequência este ficheiro é
+apenas informativo, não participando no total da Compensação. </p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído por: 
+
+<ul>
+  <li>um registo de <em>Header</em> &quot;TIPREG=0&quot;; </li>
+</ul>
+
+<ul>
+  <li>um registo de Detalhe &quot;TIPREG=1&quot;, correspondente ao total dos movimentos do
+    dia, dos cartões PMB emitidos por uma Agência correspondente a carregamentos, ou compras
+    PMB ou a montantes abandonados; </li>
+</ul>
+
+<ul>
+  <li>um registo de <em>Trailer</em> &quot;TIPREG=9&quot;; que apresenta o total de débito e
+    total de crédito correspondentes aos <a href="dst-2.htm#= 6" target="main">tipos de
+    registo 6</a> do ficheiro Destinos, nas funções de Banco Emissor de PMB. </li>
+</ul>
+
+<p><br>
+O ficheiro é constituído por registos de comprimento fixo com 75 bytes.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ORDENAÇÃO</u></h6>
+
+<p><br>
+O ficheiro é enviado ordenado por CODAGE (campo <a href="../../Campos/campos2.htm#134">134</a>)</p>
+
+<p>&nbsp;</p>
+
+<h6><u>OBSERVAÇÕES</u></h6>
+
+<p><br>
+O campo (<a href="../../Campos/campos2.htm#134">134</a>) CODAGE é preenchido com o
+código da Agência emissora dos cartões PMB, que contribuíram para os totais
+apresentados no registo. Este código é informado à SIBS através de uma função de
+Terminal Bancário, onde o Banco informou as <em>tranches</em> de cartões PMB que foram
+enviadas para cada agência para venda aos clientes, ou pelo ficheiro no momento da
+produção de cartões PMB.</p>
+
+<p>No caso de haver uma falha técnica de um terminal de Pagamento PMB, um lote de
+operações pode apresentar-se sem o detalhe por cartão e, neste caso, não é possível
+à SIBS apresentar os detalhes dos totais desagregados por Agência. Assim, o código de
+Agência &quot;9999&quot; é reservado para informar esses totais.</p>
+
+<p style="page-break-before: always">No caso do Banco não ter posicionado o código de
+Agência para um dado cartão até ao momento do seu primeiro carregamento, já não é
+possível posicionar este código, ficando o cartão permanentemente codificado na
+agência &quot;9999&quot;. </p>
+
+<p>Caberao Banco fazer o &quot;rateio&quot; da informação prestada, associada ao código
+de agência, pelas agências.</p>
+
+<p>É de salientar que este ficheiro não apresenta dados rigorosos e que o cálculo das
+comissões e tarifas deve ser feito também pelo Banco.</p>
+
+<p><br>
+O campo (<a href="../../Campos/campos5.htm#439">439</a>)TARCLIPMB apresenta a
+identificação do &quot;TARIFÁRIO CLIENTE&quot; posicionado pelo Banco na SIBS (ex.: 1 -
+PMB Anónimo, 2 - PMB Duais). </p>
+
+<p>O campo (<a href="../../Campos/campos1.htm#063">063</a>)TIPMOV informa a natureza da
+movimentação contabilística (0001 - carregamentos, 0002 - compras PMB, 0003 - abandono
+PMB). </p>
+
+<p>O campo (<a href="../../Campos/campos1.htm#008">008</a>)MONTANTE apresenta o capital
+associado à movimentação contabilística. </p>
+
+<p>O campo (<a href="../../Campos/campos4.htm#340">340</a>)VALCOM preenche-se com as
+comissões pagas pelo Banco de Apoio do Comerciante e somatório das tarifas
+(carregamento, consultas, reclamações, etc.) que foram definidas pelo Banco para serem
+cobradas ao cliente. </p>
+
+<p>O campo (<a href="../../Campos/campos4.htm#331">331</a>)TOTOPER apresenta o número de
+operações incluídas. </p>
+
+<p>O campo (<a href="../../Campos/campos1.htm#008">008</a>)MONTANTE e (<a
+href="../../Campos/campos4.htm#340">340</a>)VALCOM actualizam o registo trailer deste
+ficheiro de acordo com o SINAL(<a href="../../Campos/campos4.htm#318">318</a>), associado
+a cada um dos campos. </p>
+
+<p>O campo (<a href="../../Campos/campos3.htm#233">233</a>)CODMOEDA indica qual a conta <em>float</em>
+do Banco (em escudos ou euros) movimentada.</p>
+
+<p>O <em>Trailer</em> deste ficheiro é idêntico ao total dos registos do ficheiro
+Destinos, <a href="dst-2.htm#= 6" target="main">tipo de registo 6</a>, correspondentes ao
+serviço PMB e, portanto, este ficheiro não participa nos totais da Compensação.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">EAGE - TIPO DE REGISTO = 1&nbsp; (ACUMULADOS PMB POR AGÊNCIA)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODAGE</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#134">134</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPMOV</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">6</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#063">063</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">MONTANTE (a)</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#008">008</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VALCOM (a)</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#340">340</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">37</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">MONTANTE (b)</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">38</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#008">008</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">51</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VALCOM (b)</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">52</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#340">340</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">65</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODMOEDA</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">66</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARCLIPMB</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">69</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#439">439</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTOPER</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">71</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#331">331</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,295 @@
+
+BODY, BLOCKQUOTE, P, OL, UL {
+	font-family: Arial;
+	font-size: 10pt;
+	background-color: #ffffff;
+	color: #000080;
+}
+
+A:link {
+	color : #0000ff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+A:active {
+	color : #ff0000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+A:visited {
+	color : #0000ff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+A:hover {
+	color : #ff0000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+H1 {
+	font-family: Arial;
+	font-size: 16pt;
+	color: #000080;
+}
+
+H2 {
+	font-family: Arial;
+	font-size: 13pt;
+	color: #000080;
+}
+
+H3 {
+	font-family: Arial;
+	font-size: 11pt;
+	color: #000080;
+}
+
+H4 {
+	font-family: Arial;
+	font-size: 11pt;
+	text-decoration: underline;
+	color: #000080;
+}
+
+H5 {
+	font-family: Arial;
+	font-size: 10pt;
+	font-style: italic;
+	color: #000080;
+}
+
+H6 {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #000080;
+}
+
+TD {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+	text-align: center;
+	vertical-align: top;
+}
+
+TD.a {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+	text-align: center;
+	vertical-align: top;
+}
+
+TD.10 {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+	text-align: center;
+	vertical-align: top;
+}
+
+TD.10a {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+	text-align: center;
+	vertical-align: top;
+}
+
+TH {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+	text-align: center;
+	vertical-align: middle;
+}
+
+TH.10 {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #000080;
+	text-align: center;
+	vertical-align: middle;
+}
+
+TD.esq {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+	text-align: left;
+	vertical-align: top;
+}
+
+TD.esqa {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+	text-align: left;
+	vertical-align: top;
+}
+
+TD.esq10 {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #000080;
+	text-align: left;
+	vertical-align: top;
+}
+
+TD.esq10a {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #006400;
+	text-align: left;
+	vertical-align: top;
+}
+
+TD.dta {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+	text-align: right;
+	vertical-align: top;
+}
+
+TD.dtaa {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+	text-align: right;
+	vertical-align: top;
+}
+
+TD.oito {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+}
+
+TD.oitomid {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+	vertical-align: middle;
+}
+
+TH, TD.oitof {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+	background-color: #E7E7E7;
+}
+
+TD.oitoa {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #006400;
+}
+
+TD.fundo {
+	background-color: #E7E7E7;
+}
+
+TH.fundo {
+	background-color: #E7E7E7;
+}
+
+TH.fundoa {
+	background-color: #E7E7E7;
+	color: #006400;
+}
+
+TD.fundoesq {
+	background-color: #E7E7E7;
+	text-align: left;
+}
+
+TD.fundomid {
+	background-color: #E7E7E7;
+	vertical-align: middle;
+}
+.cor {
+	color: #0080C0;
+}
+
+.a {
+	color: #006400;
+}
+
+.ab {
+	font-family: Arial;
+	color: #006400;
+	font-weight: bold;
+}
+
+.oito {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #000080;
+}
+
+.oitoa {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #006400;
+}
+
+.nove {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000080;
+}
+
+.novea {
+	font-family: Arial;
+	font-size: 9pt;
+	color: #006400;
+}
+
+.narrow {
+	font-family: Arial Narrow;
+	font-size: 10pt;
+	color: 000080;
+}
+
+.narrowa {
+	font-family: Arial Narrow;
+	font-size: 10pt;
+	color: #006400;
+}
+
+.tahoma {
+	font-family: Tahoma, Arial Narrow;
+	font-size: 8pt;
+	color: #000080;
+}
+
+.tahoesq {
+	font-family: Tahoma, Arial Narrow;
+	font-size: 8pt;
+	color: #000080;
+	text-align: left;
+}
+.verdana8 {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	color: #000080;
+}
+
+.wingdings {
+	font-family: Wingdings;
+	font-size: 13pt;
+	color: #000080;
+}
+
+.wingdingsa {
+	font-family: Wingdings;
+	font-size: 13pt;
+	color: #006400;
+}
+
+

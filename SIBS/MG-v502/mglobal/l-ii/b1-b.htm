@@ -1,0 +1,956 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indiceb.htm#B';</script>
+
+<title>B.1 SERVIÇO EM CAIXA AUTOMÁTICO - 2</title>
+</head>
+
+<body>
+
+<p><a target="main" href="b1-a.htm"><img src="../images/seta-ant.gif" align="absmiddle"
+alt="seta-ant.gif " border="0" width="22" height="21"></a> </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="B.1.6">B.1.6</a> OPERAÇÕES DE SUPERVISÃO EM CA</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="B.1.6.1">B.1.6.1</a> CONSIDERAÇÕES GERAIS</h3>
+
+<p><br>
+Estas operações servem para efectuar os procedimentos de supervisão relativamente ao
+funcionamento do CA e obter os valores contabilísticos resultantes das operações
+efectuadas por este, durante o período contabilístico a que diz respeito. </p>
+
+<p>Trata-se de um conjunto de funcionalidades, designadas por &quot;Supervisão&quot;, que
+se destinam a apoiar o supervisor do CA e que permitem conferir, ao nível da Agência
+Bancária, a importância das notas colocadas no CA no início do período, os montantes
+distribuídos nos levantamentos e também os depósitos em numerário recebidos.&nbsp; </p>
+
+<p>As funções descritas neste ponto actuam quando o supervisor do CA coloca o CA em
+estado de &quot;Supervisão&quot;. A passagem do CA para este estado pode efectuar-se de
+vários modos conforme o modelo de CA em causa, desde o posicionamento de uma chave
+física pelo operador, até à selecção da opção &quot;Supervisão&quot; num teclado
+do equipamento. A ordem pela qual aparecem os diferentes ecrãs e opções depende
+igualmente da marca/modelo do equipamento, embora se procure garantir que todos os
+equipamentos apresentem as mesmas funcionalidades. </p>
+
+<p><br>
+Para que o sistema central possa controlar o estado do CA, todas as funções de
+supervisão do CA são enquadradas por duas mensagens para o sistema central: uma indica
+&quot;Início de Supervisão&quot;, a outra, enviada depois do supervisor concluir a sua
+intervenção, informa o &quot;Fim de Supervisão&quot;. Quando o CA entra em supervisão
+executa uma validação ao estado de funcionamento dos periféricos, apresentando no ecrã
+o estado de funcionamento do CA. </p>
+
+<p><br>
+</p>
+
+<blockquote>
+  <table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="265">
+    <tr>
+      <td class="esq" width="255"><strong>INFORMAÇÕES GERAIS DO CA</strong></td>
+    </tr>
+    <tr>
+      <td class="esq" width="255">ESTADO DA LINHA: OK<br>
+      INCIDENTES FATAIS: NÃO<br>
+      CARTÕES CAPTURADOS NO PERÍODO: XX<br>
+      (...)</td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><br>
+Em seguida, apresenta um ecrã com o estado dos periféricos e as eventuais anomalias de <em>hardware</em>
+registadas sobre cada um deles.</p>
+
+<p><br>
+</p>
+
+<blockquote>
+  <table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="210">
+    <tr>
+      <td class="esq" width="200"><strong>PERIFÉRICOS</strong></td>
+    </tr>
+    <tr>
+      <td class="esq" width="200">IMPRESSORA JORNAL = OK<br>
+      IMPRESSORA RECIBO = OK<br>
+      DISPENSADOR DE NOTAS = OK<br>
+      (&#133;)</td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><br>
+Esta é uma característica muito importante da aplicação local dos CAs MB, a de
+reportar para o sistema central da SIBS e registar ao nível do diário de fundo local,
+todas as anomalias de funcionamento detectadas sobre um qualquer dos periféricos que
+equipam o CA - módulo de dispensação, de depósitos, impressoras, leitor de cartões,
+etc. </p>
+
+<p style="page-break-before: always">Estas anomalias encontram-se tipificadas para cada
+marca/modelo existente e o manual entregue pelo fornecedor aquando da instalação do
+equipamento indica, para cada uma delas, o tipo de intervenção que permite a sua
+resolução: podem ser ultrapassadas pela própria aplicação, sem necessidade de recurso
+a qualquer outra diligência, podem necessitar da intervenção do pessoal habilitado da
+Agência ou podem requerer uma deslocação ao local duma equipa da assistência técnica.
+</p>
+
+<p>De seguida a aplicação apresenta o Estado dos Cacifos, informando o supervisor do
+número de notas carregadas em cada cacifo no último carregamento e do número de notas
+que já foram distribuídas desde este carregamento. <span class="a">Apresenta também a
+informação respeitante ao estado dos cacifos de emissão de cheques.</span><br>
+Assim, o supervisor pode a cada
+momento avaliar a necessidade de proceder ou não a um novo carregamento do(s) cacifo(s)
+do CA. </p>
+
+<p><br>
+</p>
+
+<blockquote>
+  <table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="262">
+    <tr>
+      <td COLSPAN="5"><strong>ESTADO DOS CACIFOS</strong></td>
+    </tr>
+    <tr>
+      <td WIDTH="21%">CACIFO</td>
+      <td WIDTH="22%">NOTAS</td>
+      <td WIDTH="22%">CARREGADAS</td>
+      <td WIDTH="18%">DISTRIBUÍDAS</td>
+      <td WIDTH="18%">EXISTENTES</td>
+    </tr>
+    <tr>
+      <td WIDTH="21%">1<br>
+      2<br>
+      3</td>
+      <td WIDTH="22%">1<br>
+      5<br>
+      0</td>
+      <td WIDTH="22%">100<br>
+      50<br>
+      0</td>
+      <td WIDTH="18%">50<br>
+      20<br>
+      0</td>
+      <td WIDTH="18%">50<br>
+      30<br>
+      0</td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><br>
+ </p>
+
+<blockquote>
+  <table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="262">
+    <tr>
+      <td COLSPAN="5" class="a"><strong>ESTADO DOS CACIFOS</strong></td>
+    </tr>
+    <tr>
+      <td WIDTH="21%" class="mida">CACIFO</td>
+      <td WIDTH="22%" class="a">CHEQUES<br>
+        CACIFO</td>
+      <td WIDTH="22%" class="a">CHEQUES<br>
+        EMITIDOS</td>
+      <td WIDTH="18%" class="a">CHEQUES<br>
+        RECOLHIDOS</td>
+      <td WIDTH="18%" class="a">CHEQUES<br>
+        REJEITADOS</td>
+    </tr>
+    <tr>
+      <td WIDTH="21%" class="a">1<br>
+      2<br>
+      3<br>
+        4</td>
+      <td WIDTH="22%" class="a">XXXXX<br>
+        XXXXX<br>
+        XXXXX<br>
+        XXXXX</td>
+      <td WIDTH="22%" class="a">XXXXX<br>
+        XXXXX<br>
+        XXXXX<br>
+        XXXXX</td>
+      <td WIDTH="22%" class="a">XXXXX<br>
+        XXXXX<br>
+        XXXXX<br>
+        XXXXX</td>
+      <td WIDTH="22%" class="a">XXXXX<br>
+        XXXXX<br>
+        XXXXX<br>
+        XXXXX</td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><br>
+Após a verificação do Estado dos Cacifos o supervisor pode proceder ao Fecho
+Contabilístico, efectuar um Carregamento de Notas sem efectuar o Fecho, ou escolher
+qualquer uma das restantes opções disponíveis. Em alternativa, pode terminar a
+Supervisão, colocando de novo o CA em serviço. As opções mais relevantes são
+desenvolvidas no ponto seguinte. </p>
+
+<p><br>
+</p>
+
+<blockquote>
+  <table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="215">
+    <tr>
+      <td class="esq"><strong>OPÇÕES</strong></td>
+    </tr>
+    <tr>
+      <td class="esq">0 - FIM DE SUPERVISÃO<br>
+      1 - TESTAR PERIFÉRICOS<br>
+      2 - ESTADO DOS PERIFÉRICOS<br>
+      3 - RECOLHER/LISTAR CARTÕES<br>
+      4 - FECHO CONTABILÍSTICO <br>
+      5 - ESTADO DOS CACIFOS<br>
+      6 - REGULARIZAÇÃO<br>
+      7 - CARREGAMENTO DE NOTAS<br>
+      8 - RECOLHA DE DEPÓSITOS<br>
+      9 - CONSULTA AO DIÁRIO</td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><br>
+No caso do CA não ter comunicação com o sistema central, está prevista a possibilidade
+das operações serem efectuadas pelo CA, baseadas nos dados acumulados localmente. Por
+cada operação executada a ser enviada para o sistema central da SIBS é gerado um
+registo de <em>log</em> que permite o envio da mensagem criada logo que a comunicação
+seja recuperada. </p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><a name="B.1.6.2">B.1.6.2</a> ASPECTOS PARTICULARES DE CADA TIPO DE OPERAÇÃO DE
+SUPERVISÃO</h3>
+
+<p>&nbsp;</p>
+
+<h5><a name="B.1.6.2.1">B.1.6.2.1</a> RECOLHA DE DEPÓSITOS</h5>
+
+<p>No âmbito da revisão do portfolio de serviços da Rede de CA Multibanco, a
+SIBS implementou a operação de depósitos com validação.</p>
+
+<p>Considerando a possibilidade de, durante um determinado período de tempo, coexistirem na Rede
+CA dois tipos de depósitos (o actual com envelope, e o novo com validação),
+descrevem-se os procedimentos de supervisão, sempre que necessário, para os dois
+processos relacionados com a operação de Depósito.</p>
+
+<p>Salienta-se que um terminal pode disponibilizar apenas um dos dois tipos de operação
+de depósitos.</p>
+
+<h6 ><br>
+RECOLHA DE DEPÓSITOS COM ENVELOPE</h6>
+
+<p>Para executar o Fecho Contabilístico, o operador deve começar por recolher os
+envelopes de depósito, caso existam. O CA emite uma listagem que identifica cada
+depósito e a importância indicada pelo cliente, referindo se se tratou de um depósito
+de notas, ou de cheques ou outros valores. Esta listagem permite ao supervisor reconciliar
+a importância digitada pelo utilizador com aquela que se encontra efectivamente no
+interior do envelope. </p>
+
+<p>Apresenta-se, seguidamente, um exemplo de Listagem de Depósitos.</p>
+
+<p class="center"><br>
+<img src="imagens2/b1-43.gif" alt="b1-43.gif" width="318" height="414"></p>
+
+<p><br>
+O envelope apresenta um conjunto de informações que permite ao supervisor associar sem
+equívoco cada depósito listado com o respectivo envelope. </p>
+
+<p style="page-break-before: always">No caso de ter havido depósitos de notas durante o período contabilístico em causa e
+a confirmação dos depósitos de notas ser efectuada no próprio CA, o supervisor deve
+efectuar a confirmação dos depósitos de notas antes de efectuar o Fecho. Pode realizar
+este procedimento de dois modos: 
+
+<ul>
+  <li>indicando que todos os depósitos estão correctos; </li>
+  <li>indicando por cada depósito a corrigir o número de sequência do depósito e
+    introduzindo o montante efectivamente encontrado no envelope. </li>
+</ul>
+
+<p>No fim da operação de Confirmação dos Depósitos, o CA apresenta uma
+Listagem com as correcções efectuadas. </p>
+
+<p>Estes dados confirmados são enviados numa mensagem para a SIBS. Apenas os depósitos
+de notas confirmados originam a Compensação dos montantes depositados, na aplicação de
+Compensação Multibanco executada na SIBS. </p>
+
+<p>Apresenta-se, seguidamente, um exemplo de
+Listagem de Confirmação de Depósitos.</p>
+
+<p class="center"><br>
+<img src="imagens2/b1-44.gif" alt="b1-44.gif " width="316" height="346"></p>
+
+<p>&nbsp;</p>
+
+<h6 >RECOLHA DE DEPÓSITOS COM VALIDAÇÃO</h6>
+
+<p><br>
+<strong>Depósito de Notas com Validação</strong></p>
+
+<p>O supervisor deve começar por recolher as notas dos diferentes cacifos.
+Seguidamente, o CA emite um talão que identifica a quantidade e o valor total das notas
+depositadas por categoria. Esta informação é necessária ao supervisor para efectuar a contagem
+física das notas e conferir com o total indicado no talão antes de efectuar o Fecho
+propriamente dito.</p>
+
+<p>Caso existam divergências nesta fase, o supervisor deve efectuar a contagem
+por espécie de notas e realizar uma operação de regularização. </p>
+
+<p class="a"> O Banco
+    Emissor/Banco Destinatário recebe um registo no Ficheiro <a href="../l-iii/dst-1.htm">Destinos</a>
+    (MDST5) relativo ao crédito do valor das notas depositadas e o Banco de Apoio do Terminal
+    recebe um registo no Ficheiro <a href="../l-iii/ori.htm">Origens</a> (MORI5) relativo ao
+    débito do valor das notas depositadas. </p>
+
+<p><br>
+<strong><em>Tratamento das notas de Categoria 2 (falsas)</em></strong></p>
+
+<p class="a">A operação de validação das notas está condicionada à
+capacidade do CA de inequivocamente identificar através do <em>fingerprint </em>o
+depositante. Quando aquela identificação não for possível, o CA coloca o
+módulo de depósitos fora de serviço sempre que surja uma nota falsa de igual
+denominação a outra anteriormente depositada por depositante diferente (caso
+permita separar notas falsas de dois depósitos) ou para&nbsp;o primeiro
+depósito com notas falsas (caso não permita separar notas falsas de dois
+depósitos).</p>
+
+<p>O BAT envia as notas à Polícia Judiciária, indicando a referência
+inequívoca do depósito onde as mesmas foram detectadas <span class="a">e os dados do cliente
+depositante.</span> &nbsp;</p>
+
+<p class="a">Caso o BAT conclua que a nota considerada de Categoria 2 pelo
+CA é de Categoria 4 (boa), não fará o seu envio à Polícia Judicária e deve
+creditar o seu cliente através de procedimento interno.</p>
+
+<p><br>
+<strong>Depósito de Cheques com Validação</strong></p>
+
+<p>A operação de Depósito de Cheques não tem a componente contabilística em
+termos da Compensação Multibanco, sendo tratada como uma entrega ao balcão do Banco. A
+operação é processada no balcão, seguindo posteriormente os demais procedimentos da
+Compensação de Cheques.</p>
+
+<p>O supervisor deve começar por recolher os cheques. Seguidamente, o CA emite
+um talão que identifica cada cheque com a respectiva linha óptica, bem como a
+importância indicada pelo cliente. Esta listagem é um suporte adicional para o
+supervisor reconciliar as importâncias dos cheques com aquelas que se encontram no
+ficheiro de imagens e, eventualmente, no próprio cheque. O CA apresenta, na Listagem de
+Depósitos, a importância de cada depósito na ordem pela qual estes foram efectuados.</p>
+
+<p>&nbsp;</p>
+
+<h5><a name="B.1.6.2.2">B.1.6.2.2</a> RECOLHA DE CARTÕES CAPTURADOS</h5>
+
+<p>Esta operação pode ser utilizada em qualquer altura durante um período
+contabilístico do CA para permitir que o supervisor possa retirar os cartões capturados
+até ao momento. Nesse caso, a listagem obtida apresenta os cartões capturados desde a
+última recolha (que pode ser o início do período). </p>
+
+<p>No momento do Fecho propriamente dito apresenta a listagem de todos os cartões
+capturados durante o período, sendo recolhidos pelo supervisor os cartões remanescentes
+desde a última recolha. A listagem apresenta a identificação do cartão capturado
+(Nacional, Internacional, Cartão de Depósito ou ainda PMB) acompanhado do respectivo
+motivo de captura. Esta listagem destina-se a acompanhar os referidos cartões, no
+encaminhamento do Balcão responsável pelo CA ou da Empresa responsável pela gestão do
+CA, para o serviço central do Banco encarregado de os fazer chegar às respectivas
+Instituições Emissoras. </p>
+
+<p>No caso de se tratarem de cartões com <em>chip</em> a listagem apresenta também o
+saldo do PMB dos cartões PMB anónimos e combinados, para que o Balcão possa saber qual
+a importância existente no cartão antes de efectuar a expedição do cartão. </p>
+
+<p style="page-break-before: always">Apresenta-se, seguidamente, um exemplo da Listagem de
+Cartões Capturados.</p>
+
+<p class="center"><br>
+<img src="imagens2/b1-47.gif" alt="b1-47.gif " width="319" height="397"></p>
+
+<p>Como regra, todos os cartões capturados devem ser encaminhados para o serviço central
+do Banco responsável pela sua distribuição, quer a outros Balcões do Banco, quer às
+outras Instituições. </p>
+
+<h5><br>
+CIRCUITO DOS CARTÕES CAPTURADOS NUM CA</h5>
+
+<p><br>
+<strong>1. Procedimentos ao nível do Banco</strong></p>
+
+<p>O Balcão responsável pela supervisão do CA garante: 
+
+<ul>
+  <li>a recolha dos cartões capturados;</li>
+  <li>a análise do motivo de captura;</li>
+  <li>o conveniente encaminhamento do cartão.</li>
+</ul>
+
+<p>Descrevem-se, seguidamente, conforme o tipo de cartão e o motivo da captura,
+os processos a implementar no Balcão do CA quando existem cartões capturados.</p>
+
+<p><br>
+<em><strong>A. Cartão Bancário com ou sem PMB Incorporado</strong></em></p>
+
+<p>Após a recolha o Balcão deve: 
+
+<ul>
+  <li>reter os cartões por ele emitidos que identifica a partir da informação dada pelo CA
+    (número de conta e motivo de captura);</li>
+  <li>entregar através de protocolo ao balcão do Banco Emissor situado na mesma praça, os
+    cartões que por este lhe forem solicitados nas 24 horas seguintes;</li>
+  <li>enviar os restantes cartões aos seus serviços centrais, acompanhados de fotocópia ou
+    relação dos cartões retidos ou entregues a outro balcão.<br>
+    A relação dos cartões retidos com o símbolo Porta Moedas Multibanco (PMB) constam numa
+    listagem própria onde figura o saldo disponível. </li>
+</ul>
+
+<p><br>
+O Banco pode devolver um cartão ao seu titular, desde que o motivo de captura não esteja
+relacionado com procedimentos de segurança: </p>
+
+<p><br>
+
+<ol type="a">
+  <li>Os cartões podem ser entregues, desde que os clientes apresentem um documento de
+    identificação que corresponda ao nome do titular impresso no plástico, nos casos de: </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li><em>time out</em> na recolha do cartão; </li>
+    <li >erro de PIN (código secreto);</li>
+    <li>anomalia do equipamento CA.</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Deve existir um contacto com a Entidade Emissora dos cartões, previamente à
+  devolução do cartão ao cliente, por forma a garantir que a captura não desencadeou, no
+  sistema do Emissor, a inibição do cartão. </p>
+  <p>Para cartões não personalizados e ainda para cartões cujo motivo de captura seja o
+  de tentativas excedidas (na introdução do código secreto), a entrega ao cliente deve
+  obrigatoriamente requerer uma autorização escrita por parte da Instituição Emissora. </p>
+  <p>No caso do cartão ter o PMB incorporado, o Balcão pode exibir ao cliente o saldo do
+  PMB no momento da sua captura, constante&nbsp; na listagem acima referida. </p>
+  <p>Caso o Balcão necessite de expedir o cartão PMB, então deve enviar também a
+  listagem que foi emitida no CA, onde se exibe o saldo do PMB, de modo a garantir que no
+  trajecto Balcão do CA de captura/Serviço Central do Banco/Balcão Emissor não se
+  efectuou a utilização do PMB do cartão dentro do sistema bancário. </p>
+  <p>Na Compensação MB, o Banco de Apoio do CA recebe o <a href="../l-iii/cln.htm#= 6">tipo
+  de registo 6</a> do Ficheiro Capturas e Lista Negra (MCLN5) com o número do PMB e saldo
+  disponível. O Banco Emissor do PMB recebe no <a href="../l-iii/cln.htm#= 3">tipo de
+  registo 3</a> do Ficheiro Capturas e Lista Negra (MCLN5) a mesma informação de saldo, no
+  dia seguinte à captura do cartão. No caso do cliente recolher o cartão no Balcão, e
+  ser efectuada a operação de devolução de cartão capturado, o mesmo Ficheiro Capturas
+  e Lista Negra (MCLN5) envia outro registo informando os Bancos da reactivação do
+  cartão. </p>
+  <p><br>
+  </p>
+</blockquote>
+
+<ol type="a" start="2" >
+  <li>Os cartões não devem ser entregues quando capturados por outros motivos: os cartões
+    nesta situação devem ser canalizados para os serviços centrais do Banco.</li>
+</ol>
+
+<blockquote>
+  <p>O tratamento dos cartões internacionais capturados encontra-se descrito com detalhe no
+  capítulo <a target="main" href="b2.htm#B.2.3">B.2.3</a>. </p>
+</blockquote>
+
+<p><br>
+<em><strong>B. Cartão Porta Moedas Multibanco Anónimo</strong></em></p>
+
+<p>Um cartão Porta Moedas Multibanco anónimo pode ser capturado num CA devido a: 
+
+<ul>
+  <li><em>time out</em> na recolha do cartão; </li>
+  <li>anomalia do equipamento CA. </li>
+</ul>
+
+<p>Nos restantes casos em que ocorrem problemas na execução da operação, a aplicação
+efectua a expulsão do cartão e solicita ao cliente que contacte o Banco Emissor do PMB. </p>
+
+<p>Nos casos acima referidos, o Balcão do CA deve reter o cartão durante três dias, e
+caso o cartão PMB seja reclamado, o Balcão pode devolvê-lo se o cliente provar ao mesmo
+ser o legítimo possuidor do cartão: 
+
+<ul>
+  <li>por exibir um documento de identificação que apresente uma assinatura idêntica à que
+    aparece no cartão; ou</li>
+  <li>apresentar o cartão bancário que iniciou a operação do CA onde o cartão PMB foi
+    posteriormente usado, provando ser o utente desse cartão.</li>
+</ul>
+
+<p>Na Compensação MB o Banco de Apoio do CA recebe o <a href="../l-iii/cln.htm#= 6">tipo
+de registo 6</a> do Ficheiro Capturas e Lista Negra (MCLN5)&nbsp; com o número de PMB,
+saldo disponível e o motivo da captura.</p>
+
+<p>O Banco Emissor PMB recebe o <a href="../l-iii/cln.htm#= 3">tipo de registo 3</a> do
+Ficheiro Capturas e Lista Negra (MCLN5) com a mesma informação.</p>
+
+<p>No caso de o cliente recolher o cartão no Balcão, e ser efectuada a operação de
+devolução de cartão capturado, o mesmo Ficheiro Capturas e Lista Negra (MCLN5) &nbsp;
+apresenta outro registo informando os Bancos da reactivação do cartão.</p>
+
+<p><br>
+<em><strong>C. Cartão de Depósito</strong></em></p>
+
+<p>Os motivos para a captura de um Cartão de Depósito num CA da Rede MB são: 
+
+<ul>
+  <li><em>time out</em> na recolha do cartão; </li>
+  <li>anomalia do equipamento CA. </li>
+</ul>
+
+<p>Este cartão deve ser devolvido ao Banco de Apoio do Comerciante, visível na
+Identificação do Cartão.</p>
+
+<p><br>
+1. Identificação dos Cartões de Depósito de 1ª Geração: </p>
+
+<blockquote>
+  <p><img src="imagens2/b1-45.gif" alt="b1-45.gif" width="473" height="68"></p>
+</blockquote>
+
+<p><br>
+2. Identificação dos Cartões de Depósito de 2ª Geração: </p>
+
+<blockquote>
+  <p><img src="imagens2/b1-46.gif" alt="b1-46.gif" width="473" height="67"></p>
+</blockquote>
+
+<p><br>
+O conteúdo do cartão é sempre automaticamente encaminhado para a conta do Comerciante,
+mesmo que seja roubado ou perdido, não havendo risco no seu manuseamento. O cartão
+apenas pode ser usado naquele Comerciante específico. </p>
+
+<p>A entrega do cartão ao Balcão de captura não está interdita, embora seja da
+responsabilidade deste validar através de um documento que prove que o utente pertence à
+empresa a quem pertence o terminal (por ex.: através da exibição de outros talões de
+CA de depósito efectuados pelo mesmo cartão em períodos anteriores). </p>
+
+<p><br>
+<strong>2. Procedimentos ao nível dos Serviços Centrais</strong></p>
+
+<p>Os serviços centrais têm conhecimento, através da informação que lhe é enviada
+pela SIBS em suporte magnético, de todas as capturas relacionadas com o Banco, quer na
+qualidade de Emissor, quer como responsável pelos CAs.</p>
+
+<p style="page-break-before: always">Esta informação permite-lhes: 
+
+<ul>
+  <li>produzir listagens orientadas por balcão de destino e balcão de captura; </li>
+  <li>controlar a recepção dos cartões capturados ou dos documentos justificativos da sua
+    retenção (fotocópia ou relação) remetidos pelos seus balcões ou outros Bancos; </li>
+  <li>canalizar para os seus balcões os cartões capturados que devam ser devolvidos aos
+    titulares; </li>
+  <li>canalizar para os Bancos Emissores os respectivos cartões capturados, bem como o
+    justificativo dos já entregues a nível de balcão, independentemente do motivo da
+    captura. </li>
+</ul>
+
+<p>Admite-se ainda que: 
+
+<ul>
+  <li>sejam criadas duas zonas no país ligadas, uma aos Serviços Centrais de Lisboa e outra
+    aos Serviços Centrais do Porto; </li>
+  <li>para a troca entre bancos se utilize o contacto diariamente proporcionado pela SIBS; </li>
+  <li>o cliente que vê o seu cartão capturado possa, através de impresso próprio,
+    solicitar o seu envio para um endereço por si indicado. </li>
+</ul>
+
+<p>No anexo <a href="b_a4.htm">B.AX.4</a> encontra-se a Lista dos Serviços Responsáveis
+pelo Controlo de Cartões Capturados.</p>
+
+<p>&nbsp;</p>
+
+<h5><a name="B.1.6.2.3">B.1.6.2.3</a> FECHO CONTABILÍSTICO</h5>
+
+<p>Em qualquer operação de Fecho Contabilístico existem <span class="a">cinco</span> passos
+básicos: 
+
+<ul >
+  <li>Recolha e confirmação de depósitos (no caso em que estes existam);</li>
+  <li>Recolha dos cartões capturados (obtenção da listagem de cartões capturados);</li>
+  <li>Fecho (obtenção dos totais contabilísticos para o período);</li>
+  <li>Carregamento de notas (obtenção do talão de carregamento);</li>
+  <li class="a">Recolha de cheques rejeitados, recolhidos por <i>time out</i> ou
+    por erro no dispositivo (obtenção de listagens de cada um dos tipos de
+    recolha).</li>
+</ul>
+
+<p>A operação termina com a entrega ao supervisor do talão de carregamento.</p>
+
+<p>As operações de recolha de depósitos e de cartões e o carregamento de
+notas podem ser efectuadas sem que seja realizado um fecho contabilístico, mas a
+realização do fecho contabilístico determina sempre a execução dos passos acima
+referidos.</p>
+
+<p>A operação de Fecho Contabilístico é uma das opções da supervisão, na qual o CA
+envia uma mensagem para o sistema central da SIBS com os totais de cada uma das
+operações efectuadas e os respectivos valores. Na resposta são enviados os mesmos
+valores, caso estejam correctos, ou os apurados pelo sistema central, correspondentes aos
+valores que, de facto, foram objecto de Compensação interbancária. </p>
+
+<p>A operação de Fecho Contabilístico do CA pode efectuar-se mesmo quando o CA não
+consegue estabelecer a comunicação com o sistema central da SIBS, por forma a permitir o
+encerramento contabilístico da Agência, mesmo que algo esteja a impedir a ligação com
+a SIBS. Quando restabelecida a comunicação, o CA envia as mensagens anteriormente
+referidas para o sistema central da SIBS. </p>
+
+<p>A impressão dos dados do Fecho é efectuada no diário de fundo do CA (ou na
+impressora de talões no caso do CA não ter impressora de Jornal), apresentando os totais
+das operações do período. O documento emitido deve ser retirado e arquivado pela
+Agência ou num serviço central, por um período de tempo idêntico ao dos documentos
+similares do Banco. Para permitir um melhor controlo entre os dados do Fecho do CA e a
+Compensação Multibanco, o montante distribuído é apresentado dividido entre
+levantamentos nacionais e internacionais. </p>
+
+<p class="center"><br>
+<img src="imagens2/b1-48.gif" alt="b1-48.gif " width="316" height="305"></p>
+
+<p class="a"><br>
+A recolha de cheques é efectuada em três passos. Primeiro é indicado ao
+supervisor que deve fazer a recolha dos cheques rejeitados. Após esta recolha o
+supervisor solicita a impressão da seguinte listagem:</p>
+
+<p class="center"><br>
+<img border="0" src="imagens2/b1-49.gif" alt="b1-49.gif" width="299" height="336"></p>
+
+<p style="page-break-before: always" class="a"><br>
+Em segundo lugar o supervisor deve recolher os cheques capturados por <i>time
+out</i>. Após esta recolha o supervisor solicita a impressão da seguinte
+listagem:</p>
+<p class="center"><br>
+<img border="0" src="imagens2/b1-50.gif" alt="b1-50.gif" width="286" height="422"></p>
+<p class="a"><br>
+Por fim o supervisor deve efectuar a recolha dos cheques que estão, por
+anomalia, no dispositivo. A listagem emitida é a seguinte:</p>
+<p class="center"><br>
+<img border="0" src="imagens2/b1-51.gif" alt="b1-51.gif" width="281" height="219"></p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<h5><a name="B.1.6.2.4">B.1.6.2.4</a> CARREGAMENTO DE NOTAS</h5>
+
+<p>Nesta operação, o supervisor deve colocar correctamente no CA os cacifos com notas e
+o cacifo para notas rejeitadas. Em seguida a aplicação solicita a indicação do número
+de notas carregadas em cada cacifo. Uma mensagem é encaminhada do CA para a SIBS, o que
+permite manter o conhecimento do nível de disponibilidades de cada CA da Rede Multibanco.
+</p>
+
+<p>Todos os CAs da Rede Multibanco são instalados com cacifos extra, relativamente ao
+número que pode ser introduzido no CA. O objectivo deste procedimento é que as Agências
+utilizem alternadamente os cacifos, permitindo uma rigorosa contagem das notas entre duas
+utilizações. </p>
+
+<p>Por muito eficiente que seja o módulo de dispensação do CA, é possível a
+existência de falhas na entrega das notas, pelo que é fundamental o processo de contagem
+inicial e final das notas existentes nos vários cacifos. Cada cacifo é inicialmente
+preparado pelo fornecedor do equipamento para estar adequado a um dado tipo de notas
+(dimensões e espessura) que vai ser colocado no seu interior. No entanto, dado existirem
+denominações com características muito semelhantes, cabe ao supervisor o cuidado e a
+responsabilidade de carregar no cacifo o tipo de notas nele indicado. </p>
+
+<p>No fim da operação é produzido um talão que apresenta a identificação dos cacifos
+carregados e o número de notas introduzidas em cada um deles, para que o supervisor o
+inclua no processo de Tesouraria da Agência. Após o carregamento, o CA volta ao ponto de
+selecção das Operações de Supervisão. </p>
+
+<p class="center"><br>
+<img src="imagens2/b1-52.gif" alt="b1-52.gif " width="317" height="245"></p>
+
+<p><br>
+Quando o carregamento de notas é efectuado no decurso dum Fecho Contabilístico, o
+supervisor deve retirar os cacifos que estiveram em funcionamento no período encerrado, e
+colocar novos cacifos carregados com notas. O cacifo de notas rejeitadas deve ser
+esvaziado e recolocado. </p>
+
+<p>O Sistema MB prevê a possibilidade de o CA ser previamente parametrizado para permitir
+que a operação &quot;Carregamento de Notas&quot; se possa fazer por adição (reforço)
+de notas e não por substituição dos cacifos. Esta possibilidade foi solicitada por
+alguns Bancos e para certas instalações não bancárias, onde seria desejável o
+acréscimo de numerário ao longo do período contabilístico, sendo a substituição e
+contagem das respectivas notas remanescentes efectuada apenas após o Fecho
+Contabilístico. </p>
+
+<p>A aplicação central necessita efectuar contabilizações distintas num caso ou
+noutro. </p>
+
+<p>&nbsp;</p>
+
+<h5><a name="B.1.6.2.5">B.1.6.2.5</a> REGULARIZAÇÃO</h5>
+
+<p>Trata-se de uma funcionalidade incluída nas operações de supervisão aquando da
+implementação de um processo electrónico de Compensação de regularizações da Rede
+Multibanco. </p>
+
+<p>Assim, uma Agência Bancária tem a possibilidade de informar a SIBS da falta ou da
+sobra de notas ocorrida num período contabilístico anterior. Tipicamente depois do Fecho
+de um período local, as notas remanescentes são contadas e verificadas as correcções
+ou falhas. Nessa altura e perante uma condição de falha, o supervisor pode na próxima
+supervisão informar a SIBS: 
+
+<ul>
+  <li>seleccionando a operação Regularização; </li>
+</ul>
+
+<ul>
+  <li>indicando pelo teclado de supervisão o período local do CA a regularizar. É enviada
+    uma mensagem do CA para o sistema central da SIBS que responde com os dados do período:
+    data de início, data de fim e montante distribuído; </li>
+</ul>
+
+<ul>
+  <li>solicitando que pretende informar uma falta de notas (as notas contadas nos cacifos não
+    perfazem a diferença entre as notas carregadas pela Agência e as notas informadas como
+    distribuídas pelo CA no Fecho) ou sobra de notas; </li>
+</ul>
+
+<ul>
+  <li>indicando o montante da regularização. É enviada uma nova mensagem ao sistema central
+    da SIBS que efectua os procedimentos de auditoria convenientes. Posteriormente, o montante
+    é incluído na Compensação Multibanco, no ficheiro Origens, <a
+    href="../l-iii/ori.htm#= 4">tipo de registo 4</a>.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h5 class="a"><a name="B.1.6.2.6">B.1.6.2.6</a> CARREGAMENTO DE CHEQUES</h5>
+<p class="a">Nesta operação, o supervisor deve colocar correctamente nos
+cacifos do CA os cheques prontos para a emissão. Em seguida a aplicação
+solicita a indicação da referência de <i>stock</i> do primeiro cheque e de
+seguida a referência de <i>stock</i> do último cheque do lote colocado no
+cacifo. A operação é repetida por cada cacifo carregado. Uma mensagem é
+encaminhada do CA para a SIBS, o que permite manter o conhecimento do nível de
+disponibilidades de cada CA da Rede Multibanco.</p>
+<p class="a">No fim da operação é produzido um talão que apresenta a
+identificação dos cacifos carregados e a referência de <i>stock</i> inicial e
+final do lote de cheques carregado. Após o carregamento, o CA volta ao ponto de
+selecção das Operações de Supervisão.</p>
+
+<p class="center"><br>
+<img border="0" src="imagens2/b1-53.gif" alt="b1-53.gif" width="278" height="231"></p>
+
+<p>&nbsp;</p>
+
+<h5 class="a"><a name="B.1.6.2.7">B.1.6.2.7</a> REMOÇÃO DE CHEQUES</h5>
+<p class="a">Com o objectivo de permitir a operação de carregamento dos
+cacifos dos cheques acima mencionada mesmo antes destes estarem vazios, o
+supervisor dispõe da opção de remover os cheques existentes.</p>
+<p class="a">No fim da operação é produzido um talão que apresenta a
+identificação dos cacifos descarregados e a referência de <i>stock</i>
+inicial e final do lote de cheques retirados. Após a operação, o CA volta ao
+ponto de selecção das Operações de Supervisão.</p>
+<p class="center"><br>
+<img border="0" src="imagens2/b1-54.gif" alt="b1-54.gif" width="275" height="231"></p>
+<p>&nbsp;</p>
+<h5 class="a"><a name="B.1.6.2.8">B.1.6.2.8</a> IMPRESSÃO DE CHEQUES DE TESTE</h5>
+<p class="a">Com o objectivo de testar a qualidade da impressão dos cheques, o
+CA disponibiliza a possibilidade de impressão de cheques de teste através de
+uma operação específica do menu de supervisão. A quantidade de cheques de
+teste emitidos é informada ao Banco de Apoio do CA MB.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="B.1.7">B.1.7</a> INTERVENÇÃO DA AGÊNCIA BANCÁRIA DE APOIO AO CA</h2>
+
+<p><br>
+No ponto anterior, foram descritas as operações de supervisão que constituem um aspecto
+essencial no funcionamento do Serviço CA MB. </p>
+
+<p>Em primeiro lugar, porque por muito eficiente que seja um equipamento ou serviço
+informático, este funciona tanto melhor quanto o interesse manifestado pelos seus
+utilizadores. Em segundo lugar, a experiência do Serviço CA mostra que existe uma
+relação directa entre o bom funcionamento do CA e as Agências nas quais o supervisor
+compreende a importância do serviço para o Banco e acompanha de perto o comportamento do
+equipamento. </p>
+
+<p>Cada Instituição deve portanto prestar especial atenção à formação dos elementos
+que, em cada Agência, irão ter a seu cargo o Serviço CA. Para este efeito, e no que
+concerne à operação do equipamento, a SIBS, em colaboração com os fornecedores dos
+equipamentos, presta formação a dois elementos de cada Instituição, que por sua vez se
+encarregarão da formação a nível do Banco. Pode ser disponibilizado, nas instalações
+da SIBS, um CA ligado ao ambiente de testes para as Instituições que pretendam ali
+efectuar a formação, devendo ser efectuada uma marcação prévia com o Departamento de
+Produção. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="B.1.7.1">B.1.7.1</a> GESTÃO DOS CAs - SERVIÇO DA SIBS</h3>
+
+<p><br>
+Procurando garantir a melhor qualidade possível do serviço a prestar aos clientes da
+Rede de CA MB e apoiar as Agências responsáveis por CAs, a SIBS implementou um serviço
+especializado destinado ao controlo da rede - a Supervisão da Rede. </p>
+
+<p>A título de exemplo, referem-se algumas das atribuições deste serviço: 
+
+<ul>
+  <li>monitorar constantemente a rede de terminais, detectando equipamentos inoperativos ou
+    com problemas de funcionamento; </li>
+  <li>contactar os fornecedores para conhecer os resultados das suas intervenções junto dos
+    CAs; a informação de avarias é efectuada automaticamente pelo sistema, mediante o envio
+    duma mensagem para o Centro de Manutenção do CA avariado;</li>
+  <li>detectar atempadamente situações anormais, tais como, captura excessiva de cartões,
+    número anormal de rejeição de operações por um dado equipamento, que podem estar
+    relacionadas com avarias não detectadas pelos equipamentos;</li>
+  <li>contactar as Agências, caso seja necessário dar indicações ao supervisor do CA; por
+    outro lado, prestar esclarecimentos e auxiliar o supervisor sempre que este o solicite;</li>
+  <li>alertar o Banco respectivo para o caso de CAs que sistematicamente deixem de funcionar
+    por esgotarem o dinheiro ou o rolo do diário de fundo;</li>
+  <li>acompanhamento da instalação de novos equipamentos.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3><a name="B.1.7.2">B.1.7.2</a> SUPORTE AOS FORNECEDORES E SERVIÇOS DE ABASTECIMENTO</h3>
+
+<p><br>
+Procurando assegurar o melhor apoio possível ao Serviço CA Multibanco, a SIBS
+disponibiliza funcionalidades no <a target="captulos" href="indicei.htm#I">Terminal de
+Serviços SIBS</a>, destinado às Entidades ligadas ao Serviço CA. </p>
+
+<p>Estas funcionalidades destinam-se às Entidades a quem tenha sido entregue por um Banco
+a responsabilidade do aprovisionamento e manutenção de CAs. </p>
+
+<p>O capítulo <a href="i3.htm#I.3.4">I.3.4</a> tem uma descrição mais detalhada destas
+funcionalidades.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="B.1.8">B.1.8</a> SERVIÇO DE PUBLICIDADE EM CA - SUA GESTÃO</h2>
+
+<p><br>
+A SIBS tem um acordo com uma empresa responsável pela exploração autónoma da
+publicidade a incluir nos CAs Multibanco. </p>
+
+<p>O serviço está sujeito às leis em vigor aplicáveis à actividade publicitária, mas
+a empresa deve respeitar e tomar em consideração a especificidade e natureza do meio de
+transmissão em causa, nomeadamente a inserção no sector bancário. Assim, a SIBS pode
+opor-se a que determinados produtos, serviços ou mensagens sejam exibidos. </p>
+
+<p>A SIBS pode utilizar espaço disponível, gratuito, para promover serviços Multibanco.
+</p>
+
+<p>A aplicação dos CAs pode apresentar um ecrã de publicidade nos seguintes momentos do
+serviço cliente: 
+
+<ul>
+  <li>No <em>loop</em> inicial, quando o CA está em serviço: o ecrã publicitário alterna
+    com o ecrã do Multibanco e com o ecrã que indica &quot;Introduza o seu cartão&quot;. No
+    caso de não haver nenhum ecrã publicitário a apresentar, o <em>loop</em> executa-se
+    apenas com os outros dois ecrãs mencionados; </li>
+</ul>
+
+<ul>
+  <li>Em todos os momentos em que a aplicação do CA
+    executa uma operação um pouco mais demorada (como por exemplo durante a leitura das
+    pistas magnéticas do cartão) e que implique um tempo de espera para o utilizador; </li>
+</ul>
+
+<ul>
+  <li>Durante o período em que aguarda uma resposta do sistema central da SIBS, após envio
+    de um pedido do cliente. </li>
+</ul>
+
+<p>Os ecrãs publicitários a apresentar têm uma zona inferior (cerca de 1/5 da
+altura do ecrã) onde pode constar um dos textos &quot;Aguarde um momento por favor&quot;
+ou &quot;Introduza o seu cartão&quot;.</p>
+
+<p style="page-break-before: always"><br>
+A gestão do serviço de publicidade a nível dos CAs é constituída por duas funções
+distintas: 
+
+<ol type="1" start="1">
+  <li>Na primeira é efectuado o envio de um ficheiro (que consiste num ou vários ecrãs) da
+    SIBS para o CA. O ficheiro transmitido deve ser compactado, de modo a minimizar o tempo e
+    o custo de transmissão. A recepção do ficheiro é interrompida sempre que um cliente
+    insere o seu cartão no CA. Quando o ficheiro é completamente recebido no CA, é
+    descompactado e arquivado em disco à espera de ser utilizado.</li>
+</ol>
+
+<ol type="1" start="2">
+  <li>Na segunda função é preparada no sistema central da SIBS uma mensagem via uma
+    funcionalidade de &quot;Gestão de ecrã publicitário&quot; que consiste na formatação
+    de uma tabela de regras de afixação de ecrãs com várias ocorrências, uma por cada
+    ecrã transmitido. Esta tabela indica os dias, momentos e intervalos de tempo em que o
+    ecrã deve ser apresentado no CA. Uma vez finalizada a preparação da tabela, esta é
+    enviada para os CAs que devem apresentar os ecrãs publicitários de acordo com as regras
+    recebidas.</li>
+</ol>
+
+<p><br>
+Os atributos associados à identificação de cada ecrã são: 
+
+<ul>
+  <li>a data de início e fim para a afixação do ecrã; </li>
+  <li>a primeira e a última hora em que o ecrã deve ser visualizado; </li>
+  <li>a posição (ou posições) dentro da aplicação do CA, em que o ecrã deve ser
+    apresentado.</li>
+</ul>
+
+<p><br>
+Os critérios para definição da distribuição geográfica são estabelecidos conforme
+as redes às quais pertencem os CAs. Neste momento a SIBS prevê aumentar o número de
+redes disponíveis e permitir o envio: 
+
+<ul >
+  <li>para todos os CAs da Rede MB;</li>
+  <li>para os CAs de uma ou mais redes, com possibilidade de selecção de distrito/concelho.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><a name="B.1.9">B.1.9</a> SERVIÇO DE PARAMETRIZAÇÃO DE INTERFACE GRÁFICO
+PROPRIETÁRIO</h2>
+
+<p><br>
+O <strong>Interface Gráfico Cliente</strong> é constituído por um conjunto de imagens,
+geralmente referidas como ecrãs, que a aplicação CA MB apresenta no monitor do CA, de
+modo a conduzir o cliente na operação, dando-lhe indicações sobre as opções que tem
+disponíveis, sobre como proceder e sobre o resultado dessas operações. </p>
+
+<p>Designa-se por &quot;Proprietário do Interface Gráfico Cliente&quot; a Instituição
+de Crédito que define um determinado Interface Gráfico Cliente. </p>
+
+<p>Desde que se iniciou o Serviço de CA MB, tem funcionado um único Interface Gráfico
+Cliente, utilizado para todos os clientes (cartões) nacionais, qualquer que seja o Banco
+Emissor. Este &quot;interface&quot; designa-se <strong>Interface Gráfico Multibanco</strong>.
+</p>
+
+<p style="page-break-before: always">Está em estudo a possibilidade de uma dada
+Instituição de Crédito participante no Sistema Multibanco definir o seu próprio
+Interface Gráfico Cliente e disponibilizá-lo em exclusivo aos seus clientes utilizadores
+do Serviço de CAs MB. </p>
+
+<p>Um Interface Gráfico Cliente definido por uma determinada Instituição de Crédito
+participante no Sistema Multibanco designa-se por <strong>Interface Gráfico
+Proprietário.</strong></p>
+
+<p><br>
+Para informações mais específicas acerca desta possibilidade, o Banco deve contactar o
+Departamento de Coordenação do Negócio da SIBS. </p>
+
+<p class="dta"><br>
+<a target="main" href="b2.htm">Seguinte</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

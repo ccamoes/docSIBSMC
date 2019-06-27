@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>X-O - TARIFÁRIO INTERBANCÁRIO</title>
+<script>top.captulos.location='indicex.htm#X';</script>
+</head>
+
+<body>
+
+<h2>O - TARIFÁRIO INTERBANCÁRIO</h2>
+
+<p>&nbsp;</p>
+
+<p>O tarifário interbancário exprime os custos e proveitos exclusivos das
+Instituições, decorrentes das operações realizadas no Sistema Multibanco. Trata-se de
+um mecanismo de Compensação de modo a equilibrar os custos de investimento realizados
+pelas Instituições na Rede MB. <br>
+O apuramento dos respectivos valores realiza-se diariamente através da Compensação MB
+(ficheiro Destinos <a href="../l-iii/dst-1.htm">MDST5</a>, Movimentos
+<a href="../l-iii/mov-0.htm">MMOV5</a> e Origens <a href="../l-iii/ori.htm">MORI5</a>),
+efectuando-se a correspondente movimentação financeira na conta da Instituição junto
+do Banco de Portugal pelo saldo das operações realizadas. <br>
+As rubricas descritas neste ponto não são assim informadas via ficheiro de facturação.
+</p>
+
+<p>&nbsp;</p>
+
+<h3><br>
+O1 - BANCO EMISSOR DE CARTÃO DÉBITO / CRÉDITO MB</h3>
+
+<p><br>
+<strong><a name="O11">O11</a> - Custo por Levantamento em CA de outro Banco <br>
+O12 - Custo por Outra Op. em Terminal de outro Banco (excl. compras e op. com PMB) <br>
+<a name="O13">O13</a> - Proveito de Pagamento de Serviços ou Serviço
+Especial<br>
+<a name="O14">O14</a> - Proveito por Compra a débito em terminal de outro Banco <br>
+<a name="OAB">OAB</a> - Custo por Lev. em CA doutro Banco-Cartão <em>Co-branded</em><br>
+O16 - Custo por Carreg./Cons. PMB em terminal doutro Banco </strong></p>
+
+<p><br>
+As rubricas <strong>O11</strong>, <strong>O12</strong>, <strong>O15</strong> e <strong>O16</strong>
+correspondem a tarifas que o Banco, na posição de Emissor de cartões, paga ao Banco de
+Apoio do CA utilizado pelo seu cliente, caso o CA não seja apoiado pelo próprio Banco. <br>
+A rubrica <strong>O14</strong> corresponde a um custo do Banco de Apoio do TPA. <br>
+A rubrica <strong>O13</strong> corresponde a um custo do Banco Representante da Entidade
+prestadora do serviço. </p>
+
+<p>&nbsp;</p>
+
+<h3><br>
+O2 - BANCO DE APOIO DO TERMINAL</h3>
+
+<p><br>
+<strong><a name="O21">O21</a> - Proveito por Levantamento de Cartão de outro Banco <br>
+<a name="O22">O22</a> - Proveito por Outra Operação com Cartão de débito/crédito de
+outro Banco <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (excluindo compras em TPA) <br>
+<a name="O24">O24</a> - Custo por Compra a débito com Cartão de outro Banco <br>
+<a name="OBA">OBA</a> - Prov. por Lev. de Cartão doutro Banco -
+Cartão <em>Co-branded</em></strong></p>
+
+<p><br>
+As rubricas <strong>O21</strong>, <strong>O22</strong>, e <strong>OBA</strong>
+correspondem a tarifas a receber pelo Banco de Apoio de cada CA, quando este é utilizado
+por clientes de outros Bancos. A rubrica <strong>O24</strong> que representa um custo para
+o Banco de Apoio, relativa às compras efectuadas por cartões de outros emissores num
+terminal apoiado pelo Banco. </p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><br>
+O3 - BANCO EMISSOR DE CARTÃO PMB</h3>
+
+<p><br>
+<strong>O32 - Proveito por Pagamento depositado </strong></p>
+
+<p>&nbsp;</p>
+
+<h3><br>
+O4 - BANCO EMISSOR DO CARTÃO DE DEPÓSITO PMB</h3>
+
+<p><br>
+<strong>O41 - Custo por Depósito em terminal de outro Banco <br>
+O42 - Custo por Pagamento depositado</strong></p>
+
+<p><br>
+As rubricas <strong>O3</strong> e <strong>O4</strong> reflectem as tarifas interbancárias
+referentes à operação com PMB. </p>
+
+<p>&nbsp;</p>
+
+<h3><br>
+<a name="O5">O5</a> - BANCO DE APOIO DA ENTIDADE PRESTADORA DE SERVIÇOS</h3>
+
+<p><br>
+<strong>O51 - Custo por Pag. de Serviços ou Serviço Especial </strong></p>
+
+<p><br>
+Tarifa a suportar pelo Banco de Apoio à Entidade prestadora do serviço que reverte a
+favor do Banco Emissor do cartão. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>No ficheiro Origens (MORI5) o registo de detalhe (<a href="../l-iii/ori.htm#= 3">TIPREG=3</a>)
+apresenta o número e os tarifários aplicáveis às operações efectuadas no período do
+CA a que diz respeito o registo. O registo inclui informação contabilística
+(tarifários interbancários) e informativa (tarifário SIBS). Cada campo (<a
+target="explicac" href="../../Campos/campos4.htm#303">303</a>) NUMOPTARI indica o número
+de operações a que se aplica a rubrica do tarifário interbancário indicada no campo (<a
+href="../../Campos/camp2300.htm#2301" target="explicac">2301</a>) TARINT que o precede. </p>
+
+<p>As ocorrências relativas aos campos (<a href="../../Campos/camp2300.htm#2301"
+target="explicac">2301</a>) TARINT correspondem, por exemplo, a: 
+
+<ul>
+  <li>Levantamentos efectuados por clientes de outros Bancos que não o do CA (<strong>O21</strong>)
+  </li>
+  <li>Operações efectuadas por clientes &quot;<em>not-on-us</em>&quot; (internacionais) (<strong>T41</strong>)</li>
+  <li>Outras operações efectuadas por clientes de outros Bancos que não o do CA (<strong>O22</strong>)</li>
+  <li>Levantamentos efectuados por cartões <em>co-branded</em> (<strong>OAB</strong>)
+  </li>
+</ul>
+
+<p><br>
+No ficheiro <a href="../l-iii/dst-1.htm">MDST5</a> são informadas todas as operações
+cliente que, tendo ou não, valor contabilístico, são objecto de tarifário
+interbancário ou de facturação pela SIBS (ex.: pedido de livro de cheques, alteração
+de PIN, etc.). <br>
+Ver a <a href="../l-iii/dst-1.htm#DADOS">tabela</a> presente no ficheiro e que relaciona
+a operação realizada com a tarifa aplicada. </p>
+
+<p>Por outro lado, o ficheiro <a href="../l-iii/mov-0.htm">MMOV5</a> apresenta
+todas as operações referentes a totais de comerciantes e empresas alvo de tarifas (<span
+>TARSIBS-E e TARINT-E).</span></p>
+
+<p>O campo (<a target="explicac" href="../../Campos/camp2300.htm#2300">2300</a>) <span
+>TARSIBS-E</span> permite ao Banco actualizar os contadores do grupo do
+tarifário indicado, para que no final do mês possa validar a factura da SIBS. O campo (<a
+href="../../Campos/camp2300.htm#2301" target="explicac">2301</a>) TARINT-E
+indica a rubrica de tarifário interbancário, sendo o valor preenchido no campo (<a
+href="../../Campos/campos1.htm#050" target="explicac">050</a>) COMEMI, ou (<a
+target="explicac" href="../../Campos/campos1.htm#051">051</a>) COMPROP ou (<a
+target="explicac" href="../../Campos/campos1.htm#052">052</a>) COMREP, conforme o detalhe
+de registo. </p>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span> <br>
+    Para efeitos de apresentação e por uma questão prática mantém-se o layout anterior nas
+    tabelas auxiliares. </em></td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="x2.htm">Anterior</a></p>
+</body>
+</html>

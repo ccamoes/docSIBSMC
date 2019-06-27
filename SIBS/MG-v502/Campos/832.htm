@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="explicac">
+<link REL="StyleSheet" HREF="main.css" TYPE="text/css">
+<title>Formato da Pista 2 (campo 832)</title>
+</head>
+
+<body>
+
+<h3 align="center">FORMATO DA PISTA 2 (Campo <a href="camp800.htm#832">832</a>)</h3>
+
+<p align="center"><br>
+</p>
+
+<ol>
+  <li>No caso de operações efectuadas com <strong><em>key enter</em></strong>, o campo é
+    preenchido com o <em>input</em> efectuado ao nível do Terminal.<br />
+    Nestes casos, o formato do campo pode ser:</li>
+</ol>
+
+<blockquote>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="esq"><strong>a)&nbsp;&nbsp;</strong> </td>
+      <td class="esq">Terminais com programa anterior à versão Euro 45.02<br />
+      <span class="cor">&nbsp;&nbsp;&nbsp; nnnn......nnDmmaaD0..00</span> </td>
+    </tr>
+    <tr>
+      <td class="esq"><strong>b)&nbsp;&nbsp;</strong> </td>
+      <td class="esq">Terminais com programa de versão Euro 45.02<br />
+      <span class="cor">&nbsp;&nbsp;&nbsp; nnnn......nnDmmaaD0..00<br />
+      </span>ou<br />
+      &nbsp; &nbsp; <span class="cor">nnnn......nnDmmaaDcccD0..00</span> </td>
+    </tr>
+    <tr>
+      <td class="esq"><strong>c)&nbsp;&nbsp;</strong> </td>
+      <td class="esq">Terminais com programa acima da versão Euro 45.02<br />
+      &nbsp;&nbsp;&nbsp; <span class="cor">nnnn......nnDmmaaDcccDoD0..00</span> <br />
+      ou<br />
+      &nbsp; &nbsp; <span class="cor">nnnn......nnDmmaaDrDoD0..00</span> </td>
+    </tr>
+  </table>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="3" class="esq">sendo </td>
+      </tr>
+      <tr>
+        <td>-&nbsp;&nbsp;</td>
+        <td class="esq" colspan="2">nnnn.....nn&nbsp; -&gt;&nbsp; o PAN do cartão (11 a 23
+        dígitos)</td>
+      </tr>
+      <tr>
+        <td>-&nbsp;&nbsp;</td>
+        <td class="esq" colspan="2">mmaa&nbsp;-&gt;&nbsp; a data de expiração (4 dígitos:
+        mês/ano)</td>
+      </tr>
+      <tr>
+        <td>-&nbsp;&nbsp;</td>
+        <td class="esq" colspan="2">ccc&nbsp;-&gt;&nbsp; o CVV2 ou CVC2 (3 dígitos)</td>
+      </tr>
+      <tr>
+        <td>-&nbsp;&nbsp;</td>
+        <td class="esq" nowrap="nowrap">r&nbsp;-&gt;&nbsp;</td>
+        <td class="esq">razão pela qual o CVV2 não informado (1 dígito);<br />
+        valores possíveis:<br />
+        <em>2</em> = CVV2 ilegível no cartão;<br />
+        <em>9</em> = Cardholder informou que o cartão não tem CVV2;<br>
+        <em>X</em> = Outro motivo</td>
+      </tr>
+      <tr>
+        <td>-&nbsp;&nbsp;</td>
+        <td class="esq" nowrap="nowrap">o&nbsp;-&gt;&nbsp;</td>
+        <td class="esq">origem da informação para o comerciante (1 dígito);<br />
+        valores possíveis:<br />
+        <em>0</em> = Electrónico (e-mail);<br />
+        <em>1</em> = Fax;<br />
+        <em>2</em> = Telefone;<br />
+        <em>3</em> = Correio;<br />
+        <em>9</em> = cartão presente<br>
+        <em>X</em> = Outro motivo</td>
+      </tr>
+      <tr>
+        <td>-&nbsp;&nbsp;</td>
+        <td class="esq" colspan="2">0..00 -&gt;&nbsp; zeros para completar o campo</td>
+      </tr>
+    </table>
+  </blockquote>
+</blockquote>
+
+<p><br>
+
+<ol start="2">
+  <li>No caso de operações com cartões <em><strong>EMV</strong></em> para as quais não
+    tenha sido obtida a 'track 2 equivalent data' (campo <a href="camp800.htm#811">811</a> =
+    5), o formato do campo será:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp; <span class="cor">nnnn......nnDaammdd</span> </li>
+  <blockquote>
+    <p>sendo <br>
+    &nbsp; - nnnnnn......nn&nbsp; -&gt; o PAN do cartão (11 a 23 dígitos)<br />
+    &nbsp; - aammdd -&gt; a data de expiração</p>
+  </blockquote>
+</ol>
+
+<p><br>
+
+<ol start="3">
+  <li>Quando usado em mensagens/registos relativos ao serviço <em><strong>MBNet</strong></em>,
+    o formato será:</li>
+</ol>
+
+<blockquote>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="esq"><strong>a)&nbsp;</strong> </td>
+      <td class="esq">Para os cartões <strong>temporários</strong> (campo <a
+      href="camp800.htm#811">811</a> = 2) :<br />
+      <span class="cor">&nbsp;&nbsp;&nbsp; nnnn......nnDmmaaDcccD0..00</span> </td>
+    </tr>
+  </table>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>sendo<br />
+    &nbsp; - nnnn......nn -&gt; o PAN do cartão com 16 dígitos<br />
+    &nbsp; - mmaa -&gt; a data de expiração (4 dígitos: mês/ano)<br />
+    &nbsp; - ccc -&gt; o CVV2 ou CVC2 (3 dígitos)<br />
+    &nbsp; - 0..00 -&gt; zeros para completar o campo</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="esq"><strong>b)&nbsp;</strong> </td>
+      <td class="esq">Para o formato de <strong>pista</strong> (campo <a href="camp800.htm#811">811</a>
+      = 3) o formato depende do sistema de pagamento do cartão.</td>
+    </tr>
+  </table>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p><em>Se Visa ou Multibanco:<br />
+    </em>PAN (16 bytes) - (Bin (6) + Ext (2) + Número de cartão (7) + check digit (1)<br />
+    Separador - D<br />
+    Data de expiração (4 bytes) - AAMM<br />
+    Service code (3 bytes)<br />
+    Cod. Combinação de Chaves Visa (1 byte)<br />
+    PVV (4 bytes)<br />
+    CVV (3 bytes)<br />
+    Dados discricionários (5 bytes)</p>
+    <p><em>Se Eurocard/ Mastercard:<br />
+    </em>Pan (16 bytes) - (Bin (6) + Ext (2) + Número de cartão (7) + check digit (1)<br />
+    Separador - D<br />
+    Data de expiração (4 bytes) - AAMM<br />
+    Service code (3 bytes)<br />
+    Cod. Combinação de Chaves (1 byte)<br />
+    PVV (4 bytes)<br />
+    Sequência de cartão (1 byte)<br />
+    CVV (3 bytes)<br />
+    Dados discricionários (4 bytes)</p>
+    <p><em>Se Amex (para o grupo BCP):<br />
+    </em>Pan (15 bytes) - (Bin (6) + 0 (1) + Número de cartão (7) + check digit (1)<br />
+    Separador - D<br />
+    Data de expiração (4 bytes) - AAMM<br />
+    Service code (3 bytes)<br />
+    Data efectiva do cartão ( 4 bytes) -<br />
+    Cod. Combinação de Chaves (1 byte)<br />
+    PVV (4 bytes)<br />
+    Zeros (3 bytes)<br />
+    Código de língua (2 bytes)</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="esq"><strong>c)&nbsp;</strong> </td>
+      <td class="esq">Para o formato de <strong>pista manual </strong>(campo <a
+      href="camp800.htm#811">811</a> = 4):<br />
+      &nbsp;&nbsp;&nbsp; <span class="cor">nnnn......nnDmmaaDcccDoD0..00</span> </td>
+    </tr>
+  </table>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>sendo<br />
+    &nbsp; - nnnnnn......nn -&gt; o PAN do cartão com 16 dígitos<br />
+    &nbsp; - mmaa -&gt; a data de expiração (4 dígitos: mês/ano)<br />
+    &nbsp; - ccc -&gt; o CVV2 ou CVC2 (3 dígitos)<br />
+    &nbsp; - o - &gt; origem da informação para o comerciante é:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>0</em> =
+    Electrónico ( e-mail )<br />
+    &nbsp; - 0..00 -&gt; zeros para completar o campo</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <p>&nbsp;</p>
+</blockquote>
+</body>
+</html>

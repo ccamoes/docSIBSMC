@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indiceb.htm#B';</script>
+
+<title>B.1 INTRODUÇÃO</title>
+</head>
+
+<body>
+
+<h1>B.1 INTRODUÇÃO</h1>
+
+<p>&nbsp;</p>
+
+<p>O protocolo de <em>Real-Time</em>, cuja inserção no sistema de comunicações foi
+descrita no capítulo <a href="a1.htm" target="main">A.1</a>, tem as seguintes funções: 
+
+<ul>
+  <li>Controlar as sessões entre as duas aplicações em diálogo (abertura, fecho, paragem e
+    reactivação do tráfego); </li>
+</ul>
+
+<ul>
+  <li>Transporte dos dados aplicacionais e sua entrega às aplicações destino; </li>
+</ul>
+
+<ul>
+  <li>Evitar a serialização das mensagens trocadas entre as duas aplicações, permitindo
+    assim a circulação de várias mensagens em simultâneo com limites parametrizáveis, de
+    modo a evitar a saturação por parte do receptor dos pedidos; </li>
+</ul>
+
+<ul>
+  <li>Garantir a integridade e recuperação das mensagens, cujo ciclo pedido/resposta, não
+    se completa em condições normais.</li>
+</ul>
+
+<p><br>
+Para a execução daquelas funções o PRT prevê os seguintes mecanismos: 
+
+<ul>
+  <li>Procedimentos de abertura de sessão, paragem e reactivação do tráfego de dados numa
+    sessão, fecho controlado da sessão. </li>
+</ul>
+
+<ul>
+  <li>Identificação dos computadores origem e destino de cada mensagem, bem como das
+    respectivas aplicações que devem receber o pedido e a respectiva resposta através de um
+    cabeçalho próprio adicionado a cada mensagem. Este cabeçalho permite ainda a
+    identificação inequívoca de cada mensagem. </li>
+</ul>
+
+<ul>
+  <li>Registo das mensagens, pedido e resposta em cada um dos computadores em <em>buffers</em>
+    recuperáveis, de forma a possibilitar a sua repetição em caso de necessidade, sem no
+    entanto submeter cada pedido mais do que uma vez à aplicação no computador que o
+    recebe. Este mecanismo garante ainda que a resposta é sempre entregue à aplicação
+    correcta perfeitamente identificada com um pedido. </li>
+</ul>
+
+<ul>
+  <li>Mecanismo de janela que controla o envio de mensagens pedido de acordo com a recepção
+    das respostas, permitindo o envio de vários pedidos sem receber nenhuma resposta em
+    número não superior ao desejado pelo computador receptor. </li>
+</ul>
+
+<ul>
+  <li>Mecanismo de recuperação de mensagens cuja resposta não foi entregue à aplicação
+    que a esperava em tempo útil.</li>
+</ul>
+
+<p class="dta"><br>
+<a href="b2.htm">Seguinte</a></p>
+</body>
+</html>

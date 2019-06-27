@@ -1,0 +1,508 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>X-F - PRODUÇÃO DE CARTÕES</title>
+<script>top.captulos.location='indicex.htm#X';</script>
+</head>
+
+<body>
+
+<h2>F - PRODUÇÃO DE CARTÕES</h2>
+
+<p>&nbsp;</p>
+
+<p>A facturação dos cartões emitidos efectua-se a partir dos ficheiros enviados pelo
+Banco, de acordo com as características de expedição por este solicitadas e definidas
+segundo o respectivo contrato de produção de cartões. </p>
+
+<p>Cada produção é identificada pelo correspondente ficheiro de Emissão de Cartões (<a
+href="../l-iii/eecb.htm">MEECB</a>). A data existente na factura é preenchida com a data
+do Ficheiro de Emissão e com a respectiva sequência do ficheiro. </p>
+
+<p>Todos os processos que envolvem expedição serão complementarmente objecto de
+aplicação da rubrica<a href="x-r.htm"> R</a>, se os custos correspondentes tiverem sido
+suportados pela SIBS, ou seja, se o Banco não utilizar para o efeito uma avença
+própria. </p>
+
+<p>&nbsp;</p>
+
+<h3>F1 - CARTÕES BANCÁRIOS</h3>
+
+<p><br>
+<strong><a name="F11">F11</a> - Cartão emitido segundo contrato s/expedição<br>
+<a name="F12">F12</a> - Cartão emitido segundo contrato c/expedição<br>
+<a name="F19">F19</a> - Abate de cartão não gravado</strong></p>
+
+<p><br>
+As tarifas <strong>F11</strong> e <strong>F12</strong>&nbsp; aplicam-se de acordo com o
+definido pelo Banco no contrato de produção de cartões. </p>
+
+<p><strong><br>
+Forma de Controlo</strong></p>
+
+<p>A aplicação desta rubrica pode ser controlada a partir dos diversos ficheiros de
+erros (<a href="../l-iii/eerr.htm">MEERR</a>) onde se apresenta o número de registos
+processados e tarifados, correspondentes aos ficheiros de produção de cartões (<a
+href="../l-iii/eecb.htm">MEECB</a>) enviados pelo Banco. </p>
+
+<p><strong><br>
+Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>Estas rubricas apresentam-se em registos do tipo 4, com uma ocorrência por cada
+ficheiro <a href="../l-iii/eecb.htm">MEECB</a> enviado pelo Banco. </p>
+
+<p><br>
+Os campos do registo tipo 4 para as rubricas <strong>F11/F12</strong> são: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a href="../../Campos/campos2.htm#101" target="explicac">101</a>)+(<a target="explicac"
+    href="../../Campos/campos2.htm#102">102</a>) aplicação e nome do ficheiro (1)+(4)</li>
+  <li>(<a href="../../Campos/campos1.htm#061" target="explicac">061</a>) identificação e
+    sequência do ficheiro (11)</li>
+  <li>(<a href="../../Campos/campos2.htm#104" target="explicac">104</a>) identificação CPD
+    (1)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p>O registo tipo 5 indica: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#469">469</a>) contrato utilizado
+    para a produção de cartões (5)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica F11/F12</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+2F  PRODUCAO DE CARTOES
+3F1 CARTOES BANCARIOS
+4F1120020228MEECB200202010481        CART.EMI.C/CTR.S/EXP. 000000000009000000000000010000000000090D
+5F1100999
+...
+4F1120020228MEECB200202250501        CART.EMI.C/CTR.S/EXP. 000000000009000000000000020000000000180D
+5F1100999
+6F1 0000000348015D
+4F1220020228MEECB200202010631        CART.EMI.C/CTR.C/EXP. 000000000010000000000000010000000000100D
+5F1200998
+&#133;
+4F1220020228MEECB200202240721        CART.EMI.C/CTR.C/EXP. 000000000010000000000000060000000000600D
+5F1200998
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<p>A rubrica <strong>F19</strong> aplica-se no caso da produção de cartões em que estes
+nunca foram entregues a clientes, e consequentemente não foram personalizados. Quando o Banco
+enviar o ficheiro <a href="../l-iii/easc.htm">MEASC</a> para anulá-los, a SIBS efectua um
+crédito ao Banco correspondente ao custo da personalização. No ficheiro <a
+href="../l-iii/efac.htm"><strong>MEFAC</strong></a> é incluído um outro documento, nota
+de crédito, com a descrição destas ocorrências. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>O número de cartões anulados deve ser verificado através do <em>trailer</em> de cada
+ficheiro de erros que constitui o retorno do ficheiro <a href="../l-iii/easc.htm">MEASC</a>.</p>
+
+<p><strong><br>
+Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p><br>
+Os campos do registo tipo 4 referente à rubrica <strong>F19</strong> são: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#380">380</a>) data de processamento
+    (8)</li>
+  <li>(<a href="../../Campos/campos2.htm#101" target="explicac">101</a>)+(<a target="explicac"
+    href="../../Campos/campos2.htm#102">102</a>) aplicação e nome do ficheiro (1)+(4)</li>
+  <li>(<a href="../../Campos/campos1.htm#061" target="explicac">061</a>) identificação e
+    sequência do ficheiro (11)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica F19 - Nota de Crédito</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+12002022802200013100000330501525882DAA - DESTINARIO DA FACTURACAO
+2F  PRODUCAO DE CARTOES
+3F1 CARTOES BANCARIOS
+4F1920020202MEASC20020227001         ABATE DE CARTAO N.GRV.000000000004000000000000010000000000004C
+&#133;
+4F1920020301MEASC20020227002         ABATE DE CARTAO N.GRV.000000000004000000000000390000000000156C
+6F1 0000000026360C
+7F  0000000000026360C
+80000000000026360C0000000000004481C0000000000030841C
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="F3">F3</a> - EMISSÃO DE CARTAS DE PIN - CLIENTES BANCÁRIOS</h3>
+
+<p><br>
+<strong><a name="F31">F31</a> - Carta de PIN emitida segundo contrato s/expedição <br>
+<a name="F32">F32</a> - Carta de PIN emitida segundo contrato c/expedição<br>
+<a name="F39">F39</a> - Abate de carta de PIN não emitida</strong></p>
+
+<p><br>
+O valor a aplicar nas tarifas <strong>F31</strong> e <strong>F32</strong> é conforme o
+que tiver sido definido no contrato de produção de cartões. </p>
+
+<p><strong><br>
+Forma de Controlo</strong></p>
+
+<p>Recorrendo ao ficheiro de erros (<a href="../l-iii/eerr.htm">MEERR</a>), é informado
+no <em>trailer</em> do ficheiro o total de cartas de PIN emitidas (inclui as que ficaram
+em <em>wait</em>) em resultado do processamento de cada ficheiro <a
+href="../l-iii/eecb.htm">MEECB</a> permitindo o apuramento dos valores a facturar.</p>
+
+<p>A produção de PINs aleatórios que é desencadeada pelo representante do Banco num
+terminal específico para o efeito, gera um ficheiro virtual (EPAL - exclusivamente para
+uso interno), de modo a permitir o processamento de um retorno para os emissores. Este
+retorno é o ficheiro de erros (<a href="../l-iii/eerr.htm">MEERR</a>) e informa as
+quantidades correspondentes a cada produção realizada.</p>
+
+<p><strong><br>
+Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>Os campos do registo tipo 4 para as rubricas <strong><a name="F3">F3</a>1/F32</strong>
+são: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#380">380</a>) data de processamento
+    (8)</li>
+  <li>(<a href="../../Campos/campos2.htm#101" target="explicac">101</a>)+(<a target="explicac"
+    href="../../Campos/campos2.htm#102">102</a>) aplicação e nome do ficheiro (1)+(4) ou (<a
+    target="explicac" href="../../Campos/campos4.htm#327">327</a>) identificação do
+    comerciante (7) *</li>
+  <li>(<a href="../../Campos/campos1.htm#061" target="explicac">061</a>) identificação e
+    sequência do ficheiro (11) ou (<a target="explicac" href="../../Campos/campos4.htm#328">328</a>)
+    identificação do estabelecimento (4) *</li>
+  <li>(<a href="../../Campos/campos2.htm#104" target="explicac">104</a>) CPD (1) ou (<a
+    target="explicac" href="../../Campos/campos4.htm#327">327</a>) identificação do Banco de
+    Apoio do Terminal (7) *</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<blockquote>
+  <p>* Para as cartas de PIN relativas a cartões operador/supervisor</p>
+</blockquote>
+
+<p>O registo tipo 5 indica: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#469">469</a>) contrato utilizado
+    para a produção de cartões (5)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica F31/F32</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+3F3 EMI. CARTAS PIN CLI.
+4F3120020201MEPAL000000000320        CART.PIN C/ CTR.S/EXP.000000000006000000000050000000000030000D
+5F3100998
+4F3120020201MEECB200201311082        CART.PIN C/ CTR.S/EXP.000000000005000000000000150000000000075D
+5F3100999
+&#133;
+4F3120020228012783500010000332       CART.PIN C/ CTR.S/EXP.000000000005000000000000020000000000010D
+5F3100999
+6F3 0000000506525D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p><br>
+A rubrica <strong>F39</strong> é aplicável sempre que as cartas de PIN ainda não
+emitidas fisicamente, embora o tenham sido logicamente, deixem de ser necessárias, devido
+à anulação ou expiração do cartão associado. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>O <em>trailer</em> do ficheiro de erros (<a href="../l-iii/eerr.htm">MEERR</a>) inclui
+um campo em que se informa o número de cartas de PIN abatidas. </p>
+
+<p><br>
+<strong>Apresentação no <a HREF="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>Os campos do registo tipo 4 referente à rubrica <strong>F39</strong> são: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#380">380</a>) data de processamento
+    (8)</li>
+  <li>(<a href="../../Campos/campos2.htm#101" target="explicac">101</a>)+(<a target="explicac"
+    href="../../Campos/campos2.htm#102">102</a>) aplicação e nome do ficheiro (1)+(4)</li>
+  <li>(<a href="../../Campos/campos1.htm#061" target="explicac">061</a>) identificação e
+    sequência do ficheiro (11)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3><a name="F4">F4</a> - CARTÕES OPERADOR/SUPERVISOR TPA E DE DEPÓSITO PMB</h3>
+
+<p><br>
+<strong><a name="F41">F41</a> - Cartão simples c/contrato s/expedição <br>
+F42 - Cartão chip c/contrato s/expedição</strong></p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>No caso das rubricas <strong>F41/F42</strong>,&nbsp; considera-se o ficheiro de
+terminais&nbsp; (MTRMF, <a href="../l-iii/trmf.htm#= 5">TIPREG=5</a>, GESTRM=05),
+utilizando os campos <a href="../../Campos/camp1000.htm#1066" target="explicac">1066</a>
+(N-CRT-SUP), <a target="explicac" href="../../Campos/camp1000.htm#1063">1063</a>
+(N-CRT-DEP-PMB) e <a target="explicac" href="../../Campos/camp1000.htm#1064">1064</a>
+(N-CRT-OPER), que apresentam o número de cartões supervisor/operador pedidos. </p>
+
+<p><strong><br>
+Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>Os campos do registo tipo 4 para as rubricas <strong>F4</strong> são: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#380">380</a>) data de processamento
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#327">327</a>) identificação do
+    comerciante (7)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#328">328</a>) identificação do
+    estabelecimento (4)</li>
+  <li>(<a target="explicac" href="../../Campos/campos1.htm#006">006</a>) identificação do
+    terminal (10)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p>O registo tipo 5 indica: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#469">469</a>) contrato utilizado
+    para a produção de cartões (5)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica F4</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+3F4 CART. OP/SUP TPA E PMB
+4F4120020201000041800660000000088    CART.SIMP.C/CTR.S/EXP.000000000012500000000000120000000000150D
+5F4109998
+4F4120020201000041800670000000088    CART.SIMP.C/CTR.S/EXP.000000000012500000000000120000000000150D
+5F4109998
+&#133;
+4F4220020222006416700020000000120    CART.CHIP C/CTR.S/EXP.000000000538700000000000020000000001077D
+5F4209999
+6F4 0000000023097D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="F7">F7</a> - GESTÃO DE FICHEIRO DE PIN</h3>
+
+<p><br>
+<strong>F71 - De 1 a 25.000 PINs<br>
+F72 - No excedente, de 25.001 a 50.000<br>
+F73 - No excedente, de 50.001 a 75.000<br>
+F74 - No excedente, de 75.001 a 100.000<br>
+F75 - No excedente, de 100.001 a 125.000<br>
+F76 - No excedente, de 125.001 a 150.000<br>
+F77 - No excedente, de 150.001 a 175.000<br>
+F78 - No excedente, de 175.001 a 200.000<br>
+F79 - No excedente de 200.000</strong></p>
+
+<p><br>
+Tarifas a aplicar aos Bancos Emissores que emitem cartões com PIN fixo. Esta é calculada
+sobre o número de <em>pinblocks</em> existentes em ficheiro, no fim do mês. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Através do ficheiro <a href="../l-iii/ecst.htm">MECST</a>. Cada registo de cartão
+inclui um campo que indica se este possui <em>pinblock</em> à guarda da SIBS. As cartas
+de PIN aleatórias emitidas através do serviço existente no terminal de
+serviços para esse efeito, são informadas num registo que indica o número total
+de cartas emitidas e consequentemente o número de <em>pinblocks</em> deste tipo
+disponíveis para associação a cartões.</p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>Os campos do registo tipo 4 para as rubricas <strong>F7</strong> são: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" BORDER="1" CELLSPACING="0" CELLPADDING="4"
+WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica F7</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+3F7 GESTAO DE FICH. DE PIN
+4F7120020228                         DE 1 A 25 000  PINS   000000000002500000000250000000000062500D
+4F7220020228                         EXCED. 25001 A 50000  000000000002200000000250000000000055000D
+4F7320020228                         EXCED. 50001 A 75000  000000000002000000000250000000000050000D
+4F7420020228                         EXCED. 75001 A 100000 000000000001700000000250000000000042500D
+4F7520020228                         EXCED.100001 A 125000 000000000001500000000250000000000037500D
+4F7620020228                         EXCED.125001 A 150000 000000000001200000000250000000000030000D
+4F7720020228                         EXCED.150001 A 175000 000000000001000000000250000000000025000D
+4F7820020228                         EXCED.175001 A 200000 000000000000700000000250000000000017500D
+4F7920020228                         EXCED.200001          000000000000500000003862590000000193130D
+&#133;
+4F7920020228                         EXCED.200001          000000000000500000058423690000002921185D
+6F7 0000004990934D
+7F  0000000005866571D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span> <br>
+    Para efeitos de apresentação e por uma questão prática mantém-se o layout anterior nas
+    tabelas auxiliares. </em></td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="x2.htm">Anterior</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

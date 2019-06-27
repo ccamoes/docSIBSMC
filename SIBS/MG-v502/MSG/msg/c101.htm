@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="explicac">
+<link REL="StyleSheet" HREF="../../mglobal/main.css" TYPE="text/css">
+
+<title>C101/C201 - MENSAGEM DE AUTENTICAÇÃO (EMISSOR) </title>
+</head>
+
+<body>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td colspan="5" class="corfundo" height="30"><strong>MENSAGEM C101 - PEDIDO
+      DE AUTENTICAÇÃO (Emissor)</strong></td>
+  </tr>
+  <tr>
+    <td width="55" class="fundo">N.CAMPO </td>
+    <td width="165" class="fundo">SÍMBOLO DO CAMPO </td>
+    <td class="fundo" width="60">COMP.</td>
+    <td width="40" class="fundo">REP. </td>
+    <td width="240" class="fundo">OBS. </td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/campos1.htm#001">001</a></td>
+    <td class="esq" width="165">CODMSG </td>
+    <td class="dta" width="60">4</td>
+    <td width="40">A</td>
+    <td width="240" class="esq">=C101</td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/campos1.htm#002">002</a></td>
+    <td class="esq" width="165">VERMSG </td>
+    <td class="dta" width="60">2</td>
+    <td width="40">N</td>
+    <td width="240" class="esq">=&quot;00&quot; </td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/campos2.htm#105">105</a></td>
+    <td class="esq" width="165">DTHORA </td>
+    <td class="dta" width="60">14</td>
+    <td width="40">N</td>
+    <td width="240">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/camp3100.htm#3134">3134</a></td>
+    <td class="esq" width="165">REF-MSG </td>
+    <td class="dta" width="60">&nbsp;10</td>
+    <td width="40">N</td>
+    <td width="240">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td class="esq" width="165">CODBAN </td>
+    <td class="dta" width="60">&nbsp;4</td>
+    <td width="40">N</td>
+    <td width="240" class="tahoesq">Emissor que está a pedir a autenticação</td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/camp3100.htm#3131">3131</a></td>
+    <td class="esq" width="165">CAP-MODO </td>
+    <td class="dta" width="60">&nbsp;1</td>
+    <td width="40">N</td>
+    <td width="240" class="tahoesq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/campos1.htm#008">008</a></td>
+    <td class="esq" width="165">MONTANTE </td>
+    <td class="dta" width="60">&nbsp;13</td>
+    <td width="40">N</td>
+    <td width="240" class="tahoesq">Opcional, apenas usado no modo 1</td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td class="esq" width="165">CODMOEDA </td>
+    <td class="dta" width="60">&nbsp;3</td>
+    <td width="40">N</td>
+    <td width="240" class="tahoesq">Opcional, apenas usado no modo 1</td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/camp3100.htm#3132">3132</a></td>
+    <td class="esq" width="165">CAP-DADOS </td>
+    <td class="dta" width="60">&nbsp;1 a 109</td>
+    <td width="40">A</td>
+    <td width="240" class="tahoesq">Opcional, apenas usado no modo 1 ou modo 2
+      com TDS</td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/camp3100.htm#3133">3133</a></td>
+    <td class="esq" width="165">CAP-TOKEN </td>
+    <td class="dta" width="60">4 a 12</td>
+    <td width="40">N</td>
+    <td width="240" class="tahoesq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/camp3100.htm#3143">3143</a></td>
+    <td class="esq" width="165">CAP-PAN </td>
+    <td class="dta" width="60">13 a 19</td>
+    <td width="40">A</td>
+    <td width="240" class="tahoesq">Restrição: PAN tem que ser emitido pelo
+      Emissor, de forma a ser autenticado pelo SAF</td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td class="esq" width="165">DATEXP-E</td>
+    <td class="dta" width="60">4</td>
+    <td width="40">N</td>
+    <td width="240">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="55" class="fundo">&nbsp;</td>
+    <td class="fundo" width="165">&nbsp; </td>
+    <td class="fundo" width="60">&nbsp;</td>
+    <td width="40" class="fundo">&nbsp;</td>
+    <td width="240" class="fundo">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td colspan="5" class="corfundo" height="30"><strong>MENSAGEM C201 -
+      RESPOSTA A PEDIDO
+      DE AUTENTICAÇÃO (Emissor)</strong></td>
+  </tr>
+  <tr>
+    <td width="55" class="fundo">N.CAMPO </td>
+    <td width="165" class="fundo">SÍMBOLO DO CAMPO </td>
+    <td class="fundo" width="60">COMP.</td>
+    <td width="40" class="fundo">REP. </td>
+    <td width="240" class="fundo">OBS. </td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/campos1.htm#001">001</a></td>
+    <td class="esq" width="165">CODMSG </td>
+    <td class="dta" width="60">4</td>
+    <td width="40">A</td>
+    <td width="240" class="esq">=C201</td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/campos1.htm#002">002</a></td>
+    <td class="esq" width="165">VERMSG </td>
+    <td class="dta" width="60">2</td>
+    <td width="40">N</td>
+    <td width="240" class="esq">=&quot;00&quot; </td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/campos2.htm#105">105</a></td>
+    <td class="esq" width="165">DTHORA </td>
+    <td class="dta" width="60">14</td>
+    <td width="40">N</td>
+    <td width="240">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/camp3100.htm#3134">3134</a></td>
+    <td class="esq" width="165">REF-MSG </td>
+    <td class="dta" width="60">&nbsp;10</td>
+    <td width="40">N</td>
+    <td width="240" class="tahoesq">Mesmo valor da mensagem de pedido</td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/camp3100.htm#3135">3135</a></td>
+    <td class="esq" width="165">CAP-RES-AUT </td>
+    <td class="dta" width="60">&nbsp;2</td>
+    <td width="40">N</td>
+    <td width="240" class="tahoesq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="55"><a href="../../Campos/camp3100.htm#3142">3142</a></td>
+    <td class="esq" width="165">CAP-ATC </td>
+    <td class="dta" width="60">5</td>
+    <td width="40">N</td>
+    <td width="240" class="tahoesq">Número do contador de transacções do
+      cartão (ATC)</td>
+  </tr>
+  <tr>
+    <td width="55" class="fundo">&nbsp;</td>
+    <td class="fundo" width="165">&nbsp; </td>
+    <td class="fundo" width="60">&nbsp;</td>
+    <td width="40" class="fundo">&nbsp;</td>
+    <td width="240" class="fundo">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

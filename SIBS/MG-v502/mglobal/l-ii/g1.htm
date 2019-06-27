@@ -1,0 +1,408 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>G.1 PAGAMENTO DE SERVIÇOS/COMPRAS</title>
+<script>top.captulos.location='indiceg.htm#G';</script>
+</head>
+
+<body>
+
+<h1><a name="G.1">G.1</a> PAGAMENTO DE SERVIÇOS/COMPRAS</h1>
+
+<p>&nbsp;</p>
+
+<h2><a name="G.1.1">G.1.1</a> INTRODUÇÃO AO SERVIÇO</h2>
+
+<p><br>
+A operação de Pagamento de Serviços/Compras visa possibilitar que o cliente de uma
+Empresa* possuidor de um cartão bancário (ou outro, desde que a operação esteja
+autorizada para o BIN), independentemente do Emissor do mesmo, possa pagar o serviço
+prestado pela Empresa, na Rede Multibanco (ex.: Caixas Automáticos, Terminais de
+Pagamento Automático, Programa de Acesso ao Multibanco, TeleMultibanco, Serviço de <em>Homebanking</em>,
+etc.).</p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap>*&nbsp;</td>
+    <td class="just8">A palavra &quot;Empresa&quot; é empregue ao longo deste capítulo em
+    sentido lato, abrangendo qualquer instituição que tendo valores a receber, acorda com
+    uma Instituição de Crédito ou <em>Acquirer</em> e com a SIBS a disponibilização da
+    opção de Pagamento de Serviços/Compras aos seus devedores.</td>
+  </tr>
+</table>
+
+<p>Para ter acesso à Operação, a Empresa prestadora do serviço tem de solicitar o
+acesso ao Pagamento de Serviços/Compras, a um Banco participante no Serviço Multibanco
+ou a um <em>Acquirer</em> (Unicre ou AMEX). </p>
+
+<p>A factura/recibo enviada pela Empresa ao seu cliente, tem de ser emitida com a
+indicação do Número de Entidade, a Referência da factura e o Montante a pagamento. </p>
+
+<p>Diariamente a Empresa recebe os dados relativos aos pagamentos efectuados na Rede
+Multibanco. </p>
+
+<p>A SIBS é a Empresa encarregue de efectuar a gestão do Serviço MB e a respectiva
+Compensação Interbancária. A SIBS é também responsável: 
+
+<ul>
+  <li>No caso de Pagamento de Serviços/Compras sob o acordo MB, pela informação ao Banco de
+    Apoio, do crédito a efectuar na conta bancária da Empresa. </li>
+  <li>No caso de Pagamento de Serviços/Compras sob outros acordos, pela informação ao Banco
+    onde reside a conta bancária da empresa e do <em>Acquirer</em>, do crédito a efectuar na
+    conta da empresa, por débito do <em>Acquirer</em>. Assim, neste caso, o <em>Acquirer</em>
+    é responsável quer pela contratação do serviço quer pelo pagamento à Empresa das
+    cobranças efectuadas, deduzidas dos descontos acordados. </li>
+</ul>
+
+<p>No documento &quot;Pagamento de Serviços/Compras - Descrição e Planeamento
+do Serviço&quot; (<a href="g_a1.pdf">G.AX.1</a>), encontram-se, para além da descrição
+do serviço, as especificações técnicas necessárias à implementação do serviço por
+parte das Empresas.</p>
+
+<p style="page-break-before: always" class="center"><br>
+<u><strong>Descrição Geral do Serviço</strong></u></p>
+
+<p class="center"><img src="imagens2/g1-1.gif" alt="g1-1.gif" WIDTH="576" HEIGHT="349"></p>
+
+<p>&nbsp;</p>
+
+<h2><a name="G.1.2">G.1.2</a> IMPLEMENTAÇÃO DO SERVIÇO </h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="G.1.2.1">G.1.2.1</a> FORMALIZAÇÃO DO PEDIDO</h3>
+
+<p><br>
+A Empresa interessada nesta operação do serviço da Rede Multibanco tem de o solicitar a
+um Banco participante no Sistema Multibanco ou <em>Acquirer</em> (Unicre ou AMEX). </p>
+
+<p>A Instituição escolhida pela Empresa funciona como Instituição de Apoio à Empresa
+e envia à SIBS os questionários &quot;Adesão ao Pagamento de Serviços/Compras&quot;
+(anexo <a target="main" href="g_a2.pdf">G.AX.2</a>), devidamente preenchidos e assinados.
+Estes questionários destinam-se à inserção da Empresa no sistema central da SIBS. </p>
+
+<p>Os questionários 1 e 2 devem ser preenchidos pela Empresa e verificados e validados
+pela Instituição de apoio à operação. </p>
+
+<p>O modelo 3 deve ser preenchido pela Entidade Contratante. </p>
+
+<p>Nos modelos 2 e 3, para além da assinatura e carimbo da Empresa, é obrigatório
+também a assinatura e carimbo da Entidade Contratante. </p>
+
+<p><br>
+<strong>MODELO 1</strong></p>
+
+<p>Os elementos solicitados neste modelo destinam-se à
+introdução/validação/actualização dos dados da Empresa no Sistema MB.<br>
+Devido à sua importância, o não preenchimento, ou o preenchimento incorrecto do ponto 1
+(Número de Pessoa Colectiva) origina a devolução do processo à Instituição de Apoio
+à Empresa.</p>
+
+<p style="page-break-before: always"><br>
+<strong>MODELO 2</strong></p>
+
+<p>Neste modelo são apresentadas as seguintes questões:</p>
+
+<p><br>
+<strong>(1) Objectivo do questionário</strong></p>
+
+<p>Neste ponto deve ser indicado se se pretende solicitar uma nova Entidade, ou alterar a
+caracterização de uma Entidade já existente no sistema. Escolhendo esta última
+opção, é obrigatória a informação do número de Entidade e, nos restantes pontos dos
+modelos 2 e/ou 3, apenas se devem preencher aqueles para os quais se pretende alterar a
+caracterização existente.<br>
+Uma vez que é possível uma Empresa contratar o serviço com um <em>Acquirer</em>
+e um Banco, para o mesmo código de Entidade, a informação de um novo contrato deve ser
+efectuada através da indicação de alteração de caracterização de Entidade e do
+preenchimento dos pontos relativos aos dados do estabelecimento do modelo 2, ou do
+preenchimento do modelo 3.</p>
+
+<p><br>
+<strong>(2) Número sequencial de inscrição</strong></p>
+
+<p>O objectivo deste ponto é apenas o de permitir uma correspondência entre este modelo
+2 e o modelo 3 respectivo, no caso em que para uma empresa (modelo 1) se solicite,
+simultaneamente, mais do que um código de Entidade.</p>
+
+<p><em><br>
+</em><strong>(3) - A natureza do pagamento</strong></p>
+
+<p>Deve ser assinalado o código que mais se aproxima do serviço que está a ser cobrado.
+Este código foi definido pelo Banco de Portugal e é usado também na Prestação de
+Serviço a Clientes. Tem um objectivo estatístico. </p>
+
+<p>A excepção a este tratamento é o código &#145;90&#146; - Cartão de crédito. Este
+código destina-se a informar as Entidades de suporte à liquidação de saldos de
+cartões de crédito. Os cartões que estiverem informados no Sistema MB como autorizados
+a realizar, de forma condicional, a operação Pagamento de Serviços/Compras, não podem
+efectuar pagamentos para as Entidades definidas desta natureza de pagamento. O Banco deve,
+assim, validar atentamente a utilização desta natureza de pagamento.</p>
+
+<p><br>
+<strong>(4) - Modo de comunicação do ficheiro &quot;movimentos&quot; (da SIBS para a
+Entidade) </strong></p>
+
+<p>Trata-se de indicar qual vai ser a forma de transmissão de dados entre a Entidade e a
+SIBS. </p>
+
+<p><br>
+<strong>(5) - Validação do pagamento</strong></p>
+
+<p>Destina-se à escolha da opção que melhor se adequa ao funcionamento da
+cobrança pretendida pela Entidade. A descrição das opções existentes faz-se no
+capítulo 4.1 do caderno descritivo da operação &quot;Pagamento de
+Serviços/Compras&quot;. </p>
+
+<p><br>
+<strong>(6) - Validação da operação</strong></p>
+
+<p>Destina-se à escolha da opção que melhor se adequa ao funcionamento da
+cobrança pretendida pela Entidade. A descrição das opções existentes faz-se no
+capítulo 4.2 do caderno descritivo da operação &#147;Pagamento de
+Serviços/Compras&#148;.</p>
+
+<p style="page-break-before: always"><br>
+<strong>(7) - Notificação do pagamento</strong></p>
+
+<p>Destina-se à escolha da opção que melhor se adequa ao funcionamento da
+cobrança pretendida pela Entidade. A descrição das opções existentes faz-se no
+capítulo 4.3 do caderno descritivo da operação &#147;Pagamento de
+Serviços/Compras&#148;.</p>
+
+<p><br>
+<strong>(8) - Banco e NIB </strong></p>
+
+<p>Deve indicar-se o NIB que a SIBS deve posicionar para o crédito dos pagamentos à
+Entidade. </p>
+
+<p><em>Espaço reservado ao preenchimento da Entidade contratante:<br>
+</em>Caso a empresa já exista matriculada no Sistema MB, o Banco/<em>Acquirer</em> pode
+informar o número de Comerciante MB da empresa, no espaço reservado para o efeito.<br>
+O número de estabelecimento destina-se ao preenchimento pelo <em>Acquirer</em>, no caso
+de outros acordos que não o Multibanco.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>MODELO 3</strong></p>
+
+<p>Este modelo deve ser preenchido na totalidade pelo Banco de Apoio e deve ser
+assinado/carimbado quer pelo Banco quer pela Empresa.</p>
+
+<p><br>
+<strong>(1) Número sequencial de inscrição</strong></p>
+
+<p>O objectivo deste ponto é apenas o de permitir uma correspondência entre este modelo
+3 e o modelo 2 respectivo, no caso em que para uma empresa (modelo 1) se solicite,
+simultaneamente, mais do que um código de Entidade.</p>
+
+<p><strong>(2) - Tarifação a aplicar à Entidade</strong></p>
+
+<p>Assinalando o ponto 2.1, é apenas debitado o tarifário interbancário ao Banco de
+Apoio, não sendo deduzidos quaisquer valores ao montante das cobranças efectuadas pela
+Empresa.<br>
+Escolhendo a opção 2.2 de tarifa incorporada no crédito, o Banco deve indicar as
+tarifas a aplicar (já com IVA incluído). Quando se efectua a Compensação do serviço,
+a SIBS deduz, ao montante a creditar à Entidade, as tarifas definidas (com o respectivo
+IVA) e credita-os à Instituição de Apoio, debitando em simultâneo o tarifário
+interbancário. <br>
+Seleccionando a opção 2.3 é aplicada uma percentagem (já com IVA incluído) ao valor
+de cada pagamento efectuado à Entidade. O valor apurado através da aplicação da
+percentagem pode ter um valor mínimo e máximo (que também já devem ter o IVA
+incluído). A acrescer ao valor percentual, o Banco pode ainda determinar a aplicação de
+uma taxa fixa (com IVA incluído), independente do valor do pagamento.</p>
+
+<p><br>
+<strong>(3) - Taxa de IVA</strong></p>
+
+<p>Reforçando o conhecimento de que todos os valores informados no ponto (2) incluem o
+IVA, deve indicar-se neste ponto a taxa de IVA aplicável à Entidade.</p>
+
+<p><br>
+<strong>(4) - Prémio de adesão e (5) - Mensalidade</strong></p>
+
+<p>Estes pontos destinam-se a permitir que a Entidade Contratante formalize com
+a empresa as condições financeiras da adesão e da mensalidade que lhe são aplicadas
+pelo arranque e utilização do Serviço. A SIBS não efectua qualquer validação ou
+tratamento desta informação.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="G.1.2.2">G.1.2.2</a> RESPOSTA AO PEDIDO</h3>
+
+<p><br>
+No caso de pedido de nova Entidade, após a recepção dos modelos, a SIBS informa, por
+escrito, o Banco e a Empresa (Acordo Multibanco) ou Banco e <em>Acquirer</em> (no caso de
+outros acordos) dos seguintes elementos de identificação:</p>
+
+<h6><br>
+Identificação da Empresa </h6>
+
+<p>É o número que identifica a Empresa no Sistema Multibanco.<br>
+Trata-se de um número que identifica univocamente a Empresa no sistema da SIBS, para
+qualquer tipo de serviço prestado. Este campo está presente no Ficheiro Movimentos
+(MEPS) enviado à Empresa e no Ficheiro Movimentos (MMOV5) enviado
+à I.C. onde reside a conta da Empresa a ser creditada, nos <a href="../l-iii/mov-3.htm">registos
+de tipo 3</a> - campo <a href="../../Campos/campos4.htm#327" target="explicac">327</a>.</p>
+
+<h6><br>
+Número de Entidade</h6>
+
+<p>É o número que a identifica no serviço de &#145;Pagamento de
+Serviços/Compras&#146;.<br>
+Este número, serve para identificar a operação de &quot;Pagamento de
+Serviços/Compras&quot;, no Ficheiro de Movimentos. Nos <a href="../l-iii/mov-3.htm">registos
+de tipo 3</a> do Ficheiro Movimentos (MMOV5) é informado no campo <a
+href="../../Campos/campos1.htm#068" target="explicac">068</a>.</p>
+
+<p><br>
+<b>Certificação</p>
+</b>
+
+<p>Na carta enviada à Empresa é também informada a necessidade de se efectuarem testes
+de certificação. Os testes a efectuar com a Empresa dependem das validações
+pretendidas para a operação.<br>
+Só depois da certificação da SIBS estar concluída é que a Entidade pode ser
+disponibilizada no Serviço MB.</p>
+
+<p>No caso de pedido de alteração de caracterização de Entidade, após a recepção
+dos modelos, e dependendo do tipo de alteração solicitada, a SIBS confirma ao Banco de
+Apoio/<em>Acquirer</em> e/ou à Empresa a execução da alteração solicitada.<br>
+Algumas alterações podem ser efectuadas sem ser necessário repetir o processo de
+certificação. Este aspecto é, contudo, informado caso a caso pela SIBS.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="G.1.3">G.1.3</a> PROCESSAMENTO DO SERVIÇO</h2>
+
+<p><br>
+Diariamente, desde que tenham existido pagamentos para a Entidade, a SIBS executa na
+Compensação Multibanco, os seguintes procedimentos: 
+
+<ul>
+  <li>Criação do Ficheiro de Movimentos (MEPS), disponibilizado à Empresa.<br>
+    Este ficheiro encontra-se descrito no capítulo 8.1 do caderno descritivo
+    &quot;Pagamento de Serviços/Compras&quot;.</li>
+</ul>
+
+<ul>
+  <li>A SIBS envia ao Banco de Apoio no Ficheiro Movimentos (MMOV5) <a
+    href="../l-iii/mov-3.htm">registo tipo 3</a>, para crédito da conta da Empresa, o total
+    dos pagamentos efectuados na Rede Multibanco, durante o período de Compensação.<br>
+    Este montante é igual ao informado à Empresa no correspondente ficheiro de Movimentos
+    (MEPS), ou igual ao somatório dos totais dos três ficheiros de Movimentos
+    (MMOV5) enviados ao longo do dia.<br>
+    No montante a creditar, podem ser deduzidas as tarifas do serviço (incluindo o IVA
+    respectivo).</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="G.1.4">G.1.4</a> FACTURA/RECIBO MENSAL</h2>
+
+<p><br>
+No final de cada mês, o Banco de Apoio da Entidade deve emitir um comprovativo
+contabilístico onde apresente os valores tarifados pela prestação do serviço, que deve
+remeter à Empresa. <br>
+O detalhe deste documento pode ser obtido a partir do registo do ficheiro da Compensação
+em que se envia a importância a creditar na conta da Entidade. Ver no Modelo Global,
+Livro III, capítulo E - Ficheiro Movimentos (MMOV5) <a
+href="../l-iii/mov-3.htm">registo tipo 3</a>. </p>
+
+<p>Como forma de apoio a esta necessidade, a SIBS inclui no seu processamento mensal de
+facturação uma listagem de tarifas pagas pelas Entidades com Pagamentos de
+Serviços/Compras apoiadas pelo Banco. Nesta listagem não se encontram aquelas cujo
+tarifário não foi incorporado na Compensação, isto é, aquelas Entidades em que foi
+assinalada a opção 2.1 no Modelo 3 (ver Anexo <a href="g_a2.pdf">G.AX.1</a>).</p>
+
+<p>A pedido do Banco a SIBS pode emitir a factura/recibo do Banco à Empresa, depois deste
+dar essa autorização e a&nbsp; numeração a usar na sua emissão. </p>
+
+<p>No detalhe da factura/recibo devem ser apresentados os seguintes elementos: 
+
+<ul>
+  <li>data de processamento dos ficheiros de movimentos </li>
+  <li>identificação dos ficheiros </li>
+  <li>número de pagamentos incluídos nos ficheiros </li>
+  <li>tarifa </li>
+  <li>total tarifado por ficheiro </li>
+  <li>nota indicativa de que os valores tarifados incluem IVA à taxa em vigor. O Banco deve
+    ter em atenção que a taxa de IVA dos clientes do Continente (19%) difere da aplicável
+    aos clientes das Regiões Autónomas (13%).</li>
+</ul>
+
+<p style="page-break-before: always"><br>
+<u>Exemplo:</u></p>
+
+<p><img src="imagens2/g1-2.gif" alt="g1-2.gif" WIDTH="560" HEIGHT="296"></p>
+
+<blockquote>
+  <blockquote>
+    <p class="nove">TOTAL DA FACTURA&nbsp;&nbsp;999.999.999,99 Euros (inclui IVA à taxa de
+    99,99%)</p>
+  </blockquote>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h2><a name="G.1.5">G.1.5</a> PAGAMENTO DE SERVIÇOS/COMPRAS ORIGINADO NO CPD DE UM BANCO </h2>
+
+<p><br>
+Para além dos restantes canais Multibanco, a operação de
+Pagamento de Serviços/Compras pode ser originada no CPD de um Banco e transmitida à SIBS
+numa sessão RT (Banco -&gt; SIBS). Essa mensagem encontra-se descrita no Livro III,
+capítulo<a target="main" href="../l-iii/d32.htm"> D.3.2</a>. A conta posicionada na
+mensagem e que é debitada tem que pertencer ao Banco da sessão RT. A SIBS verifica a
+correcção dos dados do Pagamento de Serviços/Compras e do cartão informado (no caso de
+pagamento sob outros acordos que não o MB) e responde ao Banco com a aceitação ou com
+recusa. Na Compensação MB do dia, o Ficheiro Destinos (MDST5) contém registos de <a
+href="../l-iii/dst-1.htm#= 1">tipo 1</a> (CODTRN-E=0P0) ou <a
+href="../l-iii/dst-1.htm#= 2">tipo 2</a> (CODTRN-E=009) correspondentes à operação
+aceite. </p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="G.1.6">G.1.6</a> APOIO NO ESCLARECIMENTO
+AOS UTENTES</h2>
+
+<p><br>
+A operação de Pagamento de Serviços/Compras na Rede Multibanco exige, tal como referido
+anteriormente, que o utente da Rede MB tenha em sua posse um documento, que para a maioria
+dos serviços a pagamento deve ser uma factura/recibo, que indique os elementos a
+introduzir para a operação. O utente deve introduzir cuidadosamente os elementos que tem
+na sua posse. </p>
+
+<p>O sistema central efectua várias validações dos dados que foram inseridos de forma a
+minimizar a aceitação de erros dos utilizadores. Quando ocorre um erro na introdução
+de um dos elementos, face ao exposto no documento que a empresa produziu, o sistema
+apresenta uma mensagem de erro que procura orientar o utilizador para a origem do erro. </p>
+
+<p>Contudo, há determinados erros na introdução de um, ou mais, dos três elementos que
+o sistema não reconhece como erro e aceita o pagamento. A probabilidade desta situação
+ocorrer é mínima, mas existe. </p>
+
+<p>No anexo <a href="g_a5.htm">G.AX.5</a> faz-se a tipificação de
+algumas destas situações. Enumeram-se também as mensagens de erro que são apresentadas
+aos clientes, sempre que existe um erro no pagamento, consoante o meio de pagamento da
+Rede MB utilizado, tentando descrever-se todas as situações que podem dar origem a esse
+erro. Adicionalmente é apresentada uma sugestão para a acção que o cliente pode
+executar para resolver a situação. </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,83 @@
+Pds Coorporate 27.07.2007
+
+PRT
+1-Quando se iniciam as sessões (PrtClient) do lado do Cetelem a primeira mensagem enviada pela SIBS nunca é processada, isto acontece em cada uma das sessões.
+	A SIBS ainda não deu resposta ás 	  questões que lhes colocámos.
+	No entanto sugeriram duas coisas:
+	  a. Se o PRTServidor e os PRTClientes 	    estiverem em máquinas diferentes 	    fazer a ligação entre as máquinas 	    por TELNET primeiro.
+	  b. Se não for o caso verificar o 	    software dos PRTClientes.
+
+Simulador Bancada de Testes
+1-Continuamos sem acesso ao simulador, a SIBS tem um cartão supervisor e um cartão cliente nosso para verificar o problema, mas ainda não nos deu resposta.
+
+Operações
+1-Consulta de movimentos está pendente de novos testes para identificação do problema. Tinha sido realizada uma correcção que não resolveu a situação.
+
+2-Compra Outdoor (outras vertentes), a transacção foi enviada pela SIBS mas o Cetelem não a registou, não actualizou o saldo na telemática nem foi enviada no ficheiro PSIBSFIN.
+	Penso que esta anomalia já tinha sido 	corrigida pela Stecard, provável 	problema de versões do software de 	Recette.
+
+3-Cancelamentos de Autorizações de crédito, não estão a ser registados pelo Cetelem, não actualiza o saldo na telemática nem vem no ficheiro PSIBSFIN. Temos ainda pendente na SIBS uma resposta sobre a forma de emparelhar estas transacções.
+
+4-Anulações de operações, embora esteja em análise pela SIBS penso que este problema esteja resolvido, uma vez que nos testes de 27.07.2007 provocámos duas anulações e ambas funcionaram na perfeição. Falta testar as anulações em offline.
+
+5-Transferências Bancárias, temos vários problemas com esta operação
+  a. Falta preencher o numero de dossier 	(não é o NIB) no registo enviado no 	ficheiro PSIBSFIN
+   b. A operação vem também no ficheiro de 	financiamentos telemáticos como de uma 	OF telemática se tratasse. Esta 	operação não pode vir no ficheiro de 	financiamentos telemáticos ou então 	tem que vir formatado da mesma forma 	que vêm os outros financiamentos SIBS, 	uma vez que não tem nada a ver com as 	OF telemáticas, são realizadas e 	compensadas num canal totalmente 	distinto das transacções on-us.
+    c. Em contacto telefónico com Antoine 	Fabry foi sugerido que este tema 	estaria sujeito a uma evolução e 	provável custo financeiro, remeti a 	questão para ser tratada pelos meus 	superiores e desde logo informei do 	meu desacordo.
+ Falta testar a anulação desta mensagem.
+
+6-Anulação de Autorizações no Estrangeiro, não foram testadas devido à indisponibilidade do simulador.
+
+7-As mensagens de captura e alteração de situação de cartão geradas em Real-Time pela SIBS não estão a ser reflectidas no ficheiro PSIBSFIN, isto provoca um atraso de um dia na colocação de verrou no dossier permitindo que o cliente possa realizar operações, em principio não com o cartão porque fica retido, mas pode realizar OF por telefone o operações na internet se tiver os dados do cartão. Por isso é necessário que as mensagens sejam incluídas no ficheiro PSIBSFIN.
+
+8-O campo IDLOG-O está sistematicamente alimentado em todos os registos do ficheiro PSIBSFIN.
+
+9-Saldo disponível:
+	O saldo disponível na consulta de 	saldos que está actualmente a ser 	enviado não reflecte a diferença do 	CRU para o CMA.
+	Isto provoca que nas operações Outdoor 	só se consiga realizar a compra pelo 	valor do saldo disponível sem o 	remanescente do CMA.
+	Embora nas outras transacções se 	consiga utilizar o valor remanescente 	até ao CMA.
+		a. É necessário definir se o		saldo a apresentar ao cliente		deve reflectir o CMA e se o		cliente o pode utilizar antes		de existir um aumento do CRU?
+
+Em relação ao ponto 5.a 5.b e 7 é necessário definir se trata de anomalias ou evoluções, uma vez que o Coorporate necessita de esclarecer a situação para iniciar os desenvolvimentos e por causa de custos a aplicar ou não. Eu penso que se tratam de anomalias.
+
+
+Pds Cetelem Portugal 27.07.2007
+
+SIBS
+1-O numero de conta nos recebidos ATM está a zeros, já foi pedido o esclarecimento à SIBS
+	-Anomalia 18.
+
+2-Nos recibos POS aparecem caracteres estranhos (? e ;) e a menção (comiss: 000 000,10), nomeadamente nas operações outdoor. Já foi pedido o esclarecimento à SIBS
+	-Anomalia 29 e 30.
+
+3-Texto dos recibos, já foi pedido à SIBS a alteração:
+ -Texto para recibos em TPA:
+	De "Banco Cetelem" para "Cetelem"
+-Texto para recibos em CA:
+	Primeira linha - De "Banco Cetelem" 	para "Cetelem"
+	Segunda linha - De "Tel : 707 27 27 27 	- www.bancocetelem.pt" para "Tel : 707 	27 27 27 - www.cetelem.pt"
+	Aguardamos confirmação.
+	-Anomalia 18
+
+Telemática
+1-As OF IGP não estão a ser enviadas no ficheiro de financiamentos para o IBM (PCPFIN). A equipa telemática Portugal está a tratar do assunto
+	Anomalia 23
+
+SICLID
+1-Dossier 42033533640100: sem TBIL + Billing Homebanking
+	Ainda não foi analisada
+	-Anomalia 26
+
+2-Dossier 42575914711100 ( POS17. Compra Outdoor  (MB)) no valor de 100€ não actualizou o saldo do cartão, em consequências todas as operações realizadas posteriormente foram realizados com um pressuposto de saldo errado 
+	Ainda não foi analisada
+	-Anomalia 17
+
+3-Operação 9. Cancelamento de autorização (outras vertentes) não cancelou a a autorização de 8,23€: cativo em Siclid de 118 em vez de 110€.
+	Esta anomalia já foi reportada ao 	Corporate. Ver Ponto 3 das operações 	no Pds Corporate.
+	-Anomalia 31
+
+4-Ficheiro IE 26/07/07 'Simulador_tarifarioSIBS_Contab'. Diferenças de tarifário SIBS.
+	Esta situação vai ser reportada à 	SIBS, se possível ainda hoje 	(27.07.2007)
+	-Anomalia 32
+
+5-Anomalia 19,20,21,22 e 24 falta a validação da contabilidade.

@@ -1,0 +1,515 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>Apoio no Esclarecimento aos Utentes</title>
+<script>top.captulos.location='indiceg.htm#G';</script>
+</head>
+
+<body>
+
+<h2 class="center">APOIO NO ESCLARECIMENTO AOS UTENTES</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="1">1</a> - MENSAGENS DE ERRO</h3>
+
+<p><br>
+A operação de Pagamento de Serviços/Compras na Rede Multibanco exige, tal como referido
+anteriormente, que o utente da Rede MB tenha em sua posse um documento, que para a maioria
+dos serviços a pagamento deve ser uma factura/recibo, que indique os elementos a
+introduzir para a operação. O utente deve introduzir cuidadosamente os elementos que tem
+na sua posse. </p>
+
+<p>O sistema central efectua várias validações dos dados que foram inseridos de forma a
+minimizar a aceitação de erros dos utilizadores. Quando ocorre um erro na introdução
+de um dos elementos, face ao exposto no documento que a empresa produziu, o sistema
+apresenta uma mensagem de erro que procura orientar o utilizador para a origem do erro. </p>
+
+<p>Contudo, há determinados erros na introdução de um, ou mais, dos três elementos que
+o sistema não reconhece como erro e aceita o pagamento. A probabilidade desta situação
+ocorrer é mínima, mas existe. </p>
+
+<p>No ponto <a href="#2">2</a> faz-se a tipificação de
+algumas destas situações. Enumeram-se de seguida as mensagens de erro que são
+apresentadas aos clientes, sempre que existe um erro no pagamento, consoante o meio de
+pagamento da Rede MB utilizado, tentando descrever-se todas as situações que podem dar
+origem a esse erro. É também apresentada uma sugestão para a acção que o cliente pode
+executar para resolver a situação. </p>
+
+<p>&nbsp;</p>
+
+<h5>1.1 - NOS CAIXAS AUTOMÁTICOS</h5>
+
+<p><br>
+<strong>&quot;Lamentamos mas não podemos satisfazer o seu pedido, a factura não se
+encontra a pagamento&quot;</strong></p>
+
+<p>Este erro apenas ocorre nos pagamentos para as Entidades que têm validação por <em>Check
+Digit</em> com gestão de datas limite, ou para as Entidades com validação por ficheiro
+de clientes (que também lhes permite gerir as datas limite). </p>
+
+<p>Esta mensagem informa que a empresa posicionou na SIBS uma data início de pagamento
+que ainda não foi atingida. </p>
+
+<p>Nestes casos o cliente deve confirmar qual a data de início de pagamento que tem
+informada no documento do pagamento, e caso a resposta do sistema esteja incoerente com o
+documento, deve contactar a empresa. Caso não tenha qualquer informação sobre o início
+do pagamento, deve tentar o pagamento mais tarde ou contactar a empresa. </p>
+
+<p><br>
+<strong>&quot;O saldo disponível neste momento não nos permite realizar o
+pagamento&quot;</strong></p>
+
+<p>Esta mensagem surge quando o cliente está a tentar efectuar um pagamento, para o qual
+não tem saldo de conta disponível para o efeito. De notar que pode surgir também quando
+se está em cenário de degradação, e, neste cenário, o cliente não disposer de saldo
+de cartão, de véspera, ou de conta para efectuar a operação. Deve tentar executar a
+operação mais tarde, ou utilizar outro cartão. </p>
+
+<p><br>
+<strong>&quot;Pagamento já foi efectuado. Seleccione 2ª via de talão&quot;</strong></p>
+
+<p>Esta mensagem apenas ocorre nas tentativas de pagamentos a Entidades que têm
+validação de duplicados. </p>
+
+<p>Assim, nos casos em que o utente, ao tentar efectuar um pagamento obtenha esta mensagem
+sabe que o sistema não vai aceitar o pagamento, (nos próximos <u><em>n</em></u> dias, conforme preenchimento do ponto 6.1.1 do Modelo 2) uma vez que este já
+foi efectuado. </p>
+
+<p>Pode-se, caso pretenda confirmar o pagamento, obter uma 2ª via do Talão. </p>
+
+<p><br>
+<strong>&quot;Lamentamos mas não podemos satisfazer o seu pedido, dados indicados
+incorrectos&quot;</strong></p>
+
+<p>O utente visualiza esta mensagem em diversos casos: 
+
+<ul>
+  <li>a Entidade para a qual está a tentar efectuar o pagamento tem validação por <em>Check
+    Digit</em> e a referência introduzida tem o <em>Check Digit</em> errado; ou</li>
+  <li>o montante introduzido é igual a zero; ou</li>
+  <li>a Entidade para a qual está a tentar efectuar o pagamento tem validação por ficheiro
+    de clientes, e o montante introduzido está fora dos parâmetros definidos pela Entidade.</li>
+</ul>
+
+<p>O utente deve, como em todos os restantes casos, verificar que não está a tentar
+efectuar um pagamento com um montante diferente do indicado no documento que tem em sua
+posse. Estas tentativas são o motivo mais frequente para o aparecimento desta mensagem de
+erro. Tipicamente o utente está a tentar fazer um pagamento, para uma Entidade com
+validação por <em>Check Digit</em>, utilizando a referência facultada pela empresa e
+digitando um montante diferente e que mais lhe convenha. Como o <em>Check Digit</em> não
+é o mesmo para esse montante, o pagamento é recusado com esta mensagem de erro. </p>
+
+<p style="page-break-before: always"><br>
+<strong>&quot;Lamentamos mas não podemos satisfazer o seu pedido, dados incorrectos ou
+não está a pagamento&quot;</strong></p>
+
+<p>Esta mensagem é frequente, e é normalmente originada por o sistema detectar erro na
+referência introduzida. Contudo o facto do sistema detectar erro na referência, pode
+significar que na realidade o cliente tenha cometido algum dos seguintes erros: 
+
+<ul type="square">
+  <li>a referência introduzida tenha sido apenas composta por zeros;</li>
+  <li>nas Entidades com validação por ficheiro de clientes:</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>caso o cliente se tenha enganado no número de Entidade e apesar da Entidade estar
+      definida no sistema, a referência introduzida não tenha sido definida para essa
+      Entidade;</li>
+    <li>se o cliente se tiver enganado na introdução da referência, e esta não existir
+      posicionada para a Entidade em questão;</li>
+    <li>se o prazo de pagamento da referência já tiver expirado há mais de uma semana;</li>
+  </ul>
+</blockquote>
+
+<ul type="square">
+  <li>nas Entidades com validação por <em>Check Digit</em>:</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%"><blockquote>
+      <ul>
+        <li>caso o cliente se tenha enganado no número de Entidade originando que o <em>Check Digit</em>
+          da referência fique errado;</li>
+        <li>se o cliente se tiver enganado no montante a pagamento.</li>
+      </ul>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+
+<p><a name="Pode">Pode</a> ocorrer também, caso o número de Entidade inserido apenas
+esteja definido para pagamentos de Serviço Especial. </p>
+
+<p><br>
+<strong>&quot;Terminou a data limite de pagamento&quot;</strong></p>
+
+<p>Esta mensagem de erro ocorre quando o prazo de pagamento definido pela Entidade já
+terminou (há menos de uma semana). Pode verificar-se para as Entidades com validação
+por ficheiro de clientes ou com validação por <em>Check Digit</em> e gestão de datas
+limite. </p>
+
+<p>Caso confirme, com o documento em sua posse, que a data limite do pagamento ainda não
+terminou, o cliente deve sempre garantir que o erro não se verificou na digitação da
+Entidade, ou da referência, uma vez que, caso tenha digitado mal, pode estar a tentar
+pagar outra factura cujo prazo de pagamento entretanto já tenha terminado (há menos de
+uma semana). </p>
+
+<p><br>
+<strong>&quot;O seu tipo de cartão, não lhe permite efectuar pagamentos para a Entidade
+introduzida&quot;</strong></p>
+
+<p>Ocorre sempre que uma operação seja rejeitada, quer devido à inexistência de
+condições contratuais para o cartão que está a tentar executar a operação, quer
+devido ao facto da operação não estar autorizada para o BIN - ou família - do cartão.</p>
+
+<p><br>
+<strong>&quot;Lamentamos mas de momento não podemos satisfazer o seu pedido&quot;</strong></p>
+
+<p>Sempre que a SIBS não receba autorização do Banco Emissor do cartão para permitir o
+pagamento, esta é a mensagem facultada. </p>
+
+<p><br>
+<strong>&quot;Operação não efectuada, por favor consulte o seu Banco&quot;</strong></p>
+
+<p>Esta mensagem de erro ocorre quando: 
+
+<ul>
+  <li>a Entidade digitada não existe definida no sistema;</li>
+  <li>a Entidade digitada apesar de definida ainda não foi activa, por a SIBS ainda não ter
+    recebido indicações formais, da empresa, para a activar.</li>
+</ul>
+
+<p><br>
+<strong>&quot;Parte do pagamento já foi efectuado&quot;</strong></p>
+
+<p>Quando a Entidade tem validação por ficheiro de clientes, não tem validação de
+duplicados, e tenha, para a referência em questão, posicionado um montante variável
+para pagamento, esta mensagem de erro ocorre caso o cliente já tenha efectuado algum
+pagamento e o montante que está a querer pagar, somado ao que já pagou, ultrapasse o
+montante máximo definido pela Entidade. </p>
+
+<p><br>
+<strong>&quot;Por dificuldades de comunicação não podemos executar o seu pedido. As
+nossas desculpas&quot;</strong></p>
+
+<p>Esta mensagem refere-se a um erro residual, e como tal, é algo genérica. </p>
+
+<p>Pode ocorrer por diversos motivos inerentes ao sistema da SIBS, ao sistema do Banco
+Emissor do cartão com o qual o utente está a tentar efectuar o pagamento, ou ao sistema
+de comunicações que liga o Caixa Automático, ao sistema da SIBS. </p>
+
+<p>Na prática, nestes casos, o cliente não tem qualquer responsabilidade sobre a não
+concretização do pagamento naquela altura, pois nem sequer existe a validação dos
+elementos de pagamento introduzidos. Estes problemas verificam-se, na sua grande maioria
+por períodos de tempo muito limitados. Aconselha-se por isso que o cliente tente o
+pagamento uns minutos mais tarde, ou noutro Caixa Automático, ou com outro cartão
+bancário, ou utilizando outro dos acessos à Rede MB colocados ao seu dispor. </p>
+
+<p><br>
+</p>
+
+<h5>1.2 - VIA HOST DO BANCO</h5>
+
+<p><br>
+<strong>&quot;Entidade não numérica, igual a zero ou inexistente&quot;</strong></p>
+
+<p>As razões que originam o aparecimento deste ecrã de erro podem ser as seguintes: 
+
+<ul>
+  <li>os dígitos introduzidos na Entidade são não numéricos;</li>
+  <li>a Entidade inserida é inválida pois apenas foram inseridos zeros;</li>
+  <li>o número de Entidade inserido não está definido no Sistema MB.</li>
+</ul>
+
+<p><br>
+<strong>&quot;Referência do pagamento incorrecta&quot;</strong></p>
+
+<p>Esta mensagem de erro surge quando o sistema detecta um erro na referência
+introduzida. </p>
+
+<p>Assim, surge quando: 
+
+<ul>
+  <li>a referência introduzida não for numérica;</li>
+  <li>se introduzir apenas zeros na referência;</li>
+  <li>existir um erro no <em>Check Digit</em> da referência (que na realidade pode
+    corresponder a um erro em apenas um dígito dos diversos inseridos);</li>
+  <li>a referência não estiver definida no sistema (Entidade com validação por ficheiro de
+    clientes), quer por nunca ter sido definida, quer por já ter passado mais de uma semana
+    sobre a data limite de pagamento;</li>
+  <li>a Entidade tenha validação por <em>Check Digit</em> e gestão de datas limite e ainda
+    não tiver posicionado, no sistema, o intervalo de referências contendo aquela
+    referência e respectiva data limite.</li>
+</ul>
+
+<p>Ver último parágrafo do ponto &quot;<a href="#Pode">Lamentamos mas não podemos
+satisfazer o seu pedido, dados incorrectos ou não está a pagamento</a>&quot; para obter
+mais uma pista sobre o erro obtido. </p>
+
+<p style="page-break-before: always"><br>
+<strong>&quot;Montante do pagamento incorrecto&quot;</strong></p>
+
+<p>Mensagem que ocorre quando: 
+
+<ul>
+  <li>o montante inserido for não numérico;</li>
+  <li>o montante inserido for diferente do definido pela Entidade, que tenha validação por
+    ficheiro de clientes e tenha optado por fixar o montante a pagamento para aquela
+    referência;</li>
+  <li>o montante estiver fora do intervalo definido para a Entidade, que tenha validação por
+    ficheiro de clientes;</li>
+  <li>se tiver introduzido um montante igual a zero.</li>
+</ul>
+
+<p><br>
+<strong>&quot;Entidade inactiva&quot;</strong></p>
+
+<p>A Entidade digitada, apesar de existente no Sistema, não está activa por não ter
+efectuado o pedido de activação à SIBS. </p>
+
+<p><br>
+<strong>&quot;Referência ainda não se encontra a pagamento&quot;</strong></p>
+
+<p>Se obtiver esta mensagem de erro sabe que: 
+
+<ul>
+  <li>caso a Entidade tenha validação por ficheiro de clientes, a referência inserida
+    apesar de existente, ainda não está a pagamento;</li>
+  <li>caso a Entidade tenha validação por <em>Check Digit</em> e gestão de datas limite, a
+    referência já existe inserida no sistema, mas ainda não se encontra a pagamento.</li>
+</ul>
+
+<p><br>
+<strong>&quot;Referência já não se encontra a pagamento&quot;</strong></p>
+
+<table border="0" cellspacing="0" cellpadding="0" class="just10" width="99%">
+  <tr>
+    <td width="100%" class="just10">Nas Entidades com validação das datas limite de
+    pagamento, seja por ficheiro de clientes, seja por <em>Check Digit</em>, esta mensagem
+    surge quando há a tentativa de um pagamento para uma referência cuja data limite
+    informada ao sistema, pela empresa, terminou, embora há menos de uma semana. </td>
+  </tr>
+</table>
+
+<p><br>
+<strong>&quot;Pagamento já efectuado&quot;</strong></p>
+
+<p>Quando a Entidade tem validação de pagamentos duplicados, surge esta mensagem sempre
+que se tentar efectuar um pagamento para uma Entidade / referência que já foi efectuado.
+</p>
+
+<p><br>
+<strong>&quot;NIB inválido&quot;</strong></p>
+
+<p>O NIB utilizado para efectuar o pagamento não está correcto. </p>
+
+<p><br>
+<strong>&quot;Pagamento não efectuado &#150; erro na transacção genérica de
+pagamentos&quot;</strong></p>
+
+<p>Esta é uma mensagem de erro genérico, onde caiem todos os erros que não se inserem
+em nenhuma das mensagens anteriores. </p>
+
+<p>Normalmente informa erros no terminal que está a tentar efectuar o pagamento. </p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><a name="2">2</a> - PAGAMENTOS CONCRETIZADOS</h3>
+
+<p><br>
+Quando um utente, por equívoco, ou propositadamente, por desconhecer o funcionamento do
+sistema, introduz um dos elementos da operação de forma errada, ocorrerá, na grande
+maioria dos casos uma das mensagens descritas anteriormente. </p>
+
+<p>A probabilidade de um pagamento errado, para o cliente, ser considerado correcto para o
+sistema, é muito reduzida, contudo existe. Neste ponto pretende-se explicar o sentido
+prático de um erro deste tipo, e o que o cliente deve fazer assim que detectar a
+situação. </p>
+
+<h5><br>
+2.1 ENTIDADE DIFERENTE DA INDICADA NO DOCUMENTO</h5>
+
+<p>Caso o cliente digite um número de Entidade diferente do indicado no seu documento e o
+pagamento seja aceite, na prática o cliente está a pagar a factura de outro indivíduo,
+a outra empresa. </p>
+
+<p>Nestes casos, quando o cliente detectar o erro, deve executar, assim que possível as
+seguintes acções: 
+
+<ol>
+  <li>Efectuar imediatamente o pagamento correcto de forma a regularizar a sua situação
+    junto da empresa de que é cliente, caso o não pagamento do serviço nesse dia lhe possa
+    trazer inconvenientes (quando, por exemplo, se está no fim do prazo de pagamento);</li>
+</ol>
+
+<ol start="2">
+  <li>Expor o ocorrido, junto do seu Banco, apresentando comprovativo do pagamento errado, ou
+    facultando os elementos que possibilitam que o Banco obtenha informações junto da SIBS,
+    como sejam, o número do cartão que efectuou o pagamento, ou o NIB caso tenha sido um
+    pagamento comunicado à SIBS através do <em>Host</em> de um Banco, Entidade, referência,
+    montante pago, e data/hora da transacção.</li>
+</ol>
+
+<h5><br>
+2.2 - REFERÊNCIA DIFERENTE DA INDICADA NO DOCUMENTO</h5>
+
+<p>O cliente pode enganar-se ao digitar a referência. Se a referência introduzida
+estiver definida para aquela Entidade, e o montante também estiver coerente com o
+definido no sistema, e caso a data de pagamento esteja em vigor, o pagamento é aceite. Na
+prática, o utente está a pagar a factura de outro cliente, da mesma empresa. </p>
+
+<p>O cliente deve: 
+
+<ol>
+  <li>Pagar novamente, utilizando os elementos correctos, nos casos em que preveja que o não
+    pagamento imediato lhe pode causar incómodos. Um exemplo desta situação é o Pagamento
+    de Serviços/Compras para carregamento de cartões de telefones móveis;</li>
+</ol>
+
+<ol start="2">
+  <li>Expor a situação junto da empresa, apresentando comprovativo do pagamento. A empresa,
+    por ser a única Entidade a ter informação sobre a que cliente corresponde cada
+    referência, pode, assim, regularizar a situação. Deve ter em atenção que, a maioria
+    das Entidades não possui informação sobre o pagamento no imediato, de forma a poder
+    verificar a situação. Ver capítulo 4.3 do caderno &quot;Pagamento de
+    Serviços/Compras&quot;.</li>
+</ol>
+
+<h5><br>
+2.3 - MONTANTE DIFERENTE DO INDICADO NO DOCUMENTO</h5>
+
+<p><br>
+<strong>Montante fixo</strong></p>
+
+<p>Caso o cliente tenha, no documento em sua posse, indicação sobre o montante fixo a
+pagar, deve cumprir essa indicação. A probabilidade de, nestes casos, o utente digitar
+um montante diferente e o seu pagamento ser aceite é muito reduzida. Só pode ocorrer
+para determinadas Entidades que optaram pelo sistema de validação de pagamentos por <em>Check
+Digit</em> e mesmo para estas Entidades a probabilidade de aceitação de um pagamento
+nestas condições é de 1/200000. </p>
+
+<p>Caso ocorra esta situação, o cliente deve contactar a empresa no sentido de decidirem
+a via para a regularização. Deve ter em atenção que, a maioria das Entidades não
+possui informação sobre o pagamento no imediato, de forma a poder verificar a
+situação.</p>
+
+<p><br>
+<strong>Montante variável</strong></p>
+
+<p>Conforme referido anteriormente, determinadas Entidades definem, para todas as
+referências ou para parte delas, montantes variáveis de pagamento, normalmente a partir
+de determinado montante mínimo, até determinado montante máximo. Nestes casos, o
+documento que contém os elementos a pagamento deve indicar expressamente que para aquela
+Entidade / Referência o montante a pagamento deve ser qualquer um, desde que cumpridos os
+limites mínimo e máximo (caso existam). </p>
+
+<p>Assim, qualquer montante introduzido, que esteja contido no intervalo definido pela
+empresa, é aceite pelo sistema. Qualquer engano do cliente não é considerado erro pelo
+Sistema MB. </p>
+
+<p>Caso tenha pago menos do que o pretendido, o cliente pode tentar pagar o restante,
+utilizando os mesmos elementos Entidade e Referência. Este segundo pagamento pode ser, ou
+não, aceite pelo sistema, consoante a Entidade tenha ou não validação de duplicados. </p>
+
+<p>Se o cliente tentar pagar menos do que o limite mínimo definido pela empresa, ou mais
+do que o limite máximo, o sistema recusa o pagamento e apresenta uma das mensagens
+apresentadas no ponto <a href="#1">1</a>. </p>
+
+<h5><br>
+2.4 - DÚVIDAS SOBRE A CONCRETIZAÇÃO DE UM PAGAMENTO</h5>
+
+<p>Em situações limite, o utente pode ficar com dúvidas sobre a concretização de um
+pagamento. Deve, nestes casos, obter uma 2ª via de talão e nunca tentar repetir o
+pagamento. </p>
+
+<p><br>
+<strong>2ª Via de Talão</strong></p>
+
+<p>Nos casos, em que a operação é bem concluída, mas não é impresso o respectivo
+talão, o cliente, na posse do cartão que efectuou a transacção pode solicitar num
+qualquer CA da Rede MB a 2ª Via do Talão. Para esse efeito, basta-lhe seleccionar as
+seguintes opções:</p>
+
+<blockquote>
+  <ul>
+    <li>Consultas;</li>
+    <li>Consulta Operações cartão no MB;</li>
+    <li>2ª via de Talão;</li>
+  </ul>
+</blockquote>
+
+<p>e introduzir a Data de Realização da operação Pagamento de Serviços/Compras. É
+impresso um talão idêntico ao talão original da operação, diferenciando-se deste pelo
+seu cabeçalho, onde é apresentado &quot;2ª via de Talão&quot; na linha anterior à
+linha descritiva da operação. </p>
+
+<p>Esta opção de obtenção de 2ª via de Talão está disponível nos Caixas
+Automáticos, qualquer que seja o método utilizado para o pagamento original, <u>excepto
+o Pagamento comunicado à SIBS através do<em> Host</em> do Banco</u>, uma vez que neste
+caso não é utilizado qualquer cartão, mas sim um NIB. </p>
+
+<p>A operação original não deve ter ocorrido há mais de 2 meses. </p>
+
+<h5><br>
+2.5 - PAGAMENTOS DUPLICADOS</h5>
+
+<p>Tal como referido no capítulo 4.2 do caderno descritivo do serviço,
+o Sistema MB disponibiliza a possibilidade de cada empresa escolher se deseja que haja, ou
+não, validação de duplicados. </p>
+
+<p>Para as empresas que não solicitaram este tipo de validação, o Sistema MB aceita
+pagamentos duplicados tantas vezes quantas as que o cliente efectuar. É fácil de
+compreender que para determinado tipo de serviços, o cliente é o principal interessado
+em que o sistema funcione desta forma. São exemplos típicos deste tipo de situação, os
+pagamentos para reforço de saldo de cartão de crédito, e os carregamentos de cartões
+de telefones móveis e fixos. </p>
+
+<p>Nos casos em que o cliente efectue por engano mais do que um pagamento, deve contactar
+a empresa destinatária do pagamento para solicitar a regularização da sua situação.
+Deve ter em atenção que, a maioria das Entidades não possui informação sobre o
+pagamento no imediato, de forma a poder verificar a situação. </p>
+
+<p>&nbsp;</p>
+
+<h3>3 - ERROS ORIGINADOS PELA EMPRESA</h3>
+
+<p><br>
+A empresa, como gestora da sua Entidade, pode estar na origem de mensagens de erros
+obtidos pelos clientes quando tentam efectuar o pagamento da sua referência. </p>
+
+<p>Sabendo-se que a empresa é a responsável pela emissão e entrega aos seus clientes da
+factura/recibo, ou outro documento que indique os elementos a utilizar no Pagamento de
+Serviços/Compras, bem como pelo envio de dados ao Sistema MB, compreende-se que os dados
+constantes no papel, podem não estar consistentes com os dados posicionados pela empresa
+no sistema. Os motivos podem ser: 
+
+<ul>
+  <li>erro na impressão dos elementos no documento;</li>
+  <li>erro no conteúdo do ficheiro enviado à SIBS, como seja referências, montantes ou
+    datas de pagamento que ficam incoerentes com o emitido no documento;</li>
+  <li>erro de formatação no ficheiro de clientes enviado à SIBS e não reenvio atempado de
+    ficheiro corrigido;</li>
+  <li>atraso no posicionamento das <em>tranches</em> de referência para gestão de datas
+    limite.</li>
+</ul>
+
+<p>Situação diferente, mas também motivada por problemas no sistema da empresa, é a
+que normalmente ocorre quando o cliente paga o serviço, mas a empresa não lhe fornece o
+serviço, ou supre o fornecimento do serviço que já decorria. Esta situação acontece
+tipicamente quando ocorre uma falha pontual no processamento de um ficheiro de movimentos
+e a Entidade não detecta essa falha. É alertada para o problema apenas quando o utente
+reclamar o não fornecimento do serviço pago. Nestes casos, o utente deve facultar
+comprovativo do pagamento à empresa, que pode, na posse desses elementos, detectar a
+anomalia ou solicitar o auxílio da SIBS. </p>
+
+<p>&nbsp; </p>
+</body>
+</html>

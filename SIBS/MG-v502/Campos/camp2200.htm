@@ -1,0 +1,1624 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos 2200 (2200-2299)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.&nbsp;</td>
+    <td class="fundo">REP.&nbsp;</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="2200" name="2200">2200</a></td>
+    <td class="esq"><p ><u>TOTAL COBRANÇAS</u></p>
+    <p>Corresponde ao somatório dos montantes cobrados de todos os documentos
+    incluídos no ficheiro. <br>
+    O sinal posicionado neste campo será sempre &#145;+&#146;.</td>
+    <td class="dta"><p>18</td>
+    <td><p>N</td>
+    <td><p>sinal<br>
+    15 int.<br>
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2201" name="2201">2201</a></td>
+    <td class="esq"><p ><u>TOTAL TARIFAS</u></p>
+    <p >Corresponde ao produto do valor da tarifa acordada com a DGT (ex: 0,60
+    euros) pelo número de pagamentos efectuados (Campo <a href="camp2100.htm#2190">2190</a>),
+    acrescido do respectivo IVA de acordo com a taxa em vigor (ex: 19%).<br>
+    O sinal posicionado neste campo será sempre &#145;+&#146;.</td>
+    <td class="dta"><p>18</td>
+    <td><p >N</td>
+    <td><p >sinal<br>
+    15 int.<br>
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2202" name="2202">2202</a></td>
+    <td class="esq"><p ><u>TOTAL LÍQUIDO</u></p>
+    <p >Indica o montante líquido em euros a ser creditado à DGT.<br>
+    Corresponde a:<br>
+    &nbsp;&nbsp; Total Cobranças - Total Tarifas = 2200 - 2201<br>
+    O sinal posicionado neste campo será sempre &#145;+&#146;.</td>
+    <td class="dta"><p>18</td>
+    <td><p >N</td>
+    <td><p >sinal<br>
+    15 int.<br>
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2203" name="2203">2203</a></td>
+    <td class="esq"><p ><u>TOTAL IVA</u></p>
+    <p >Campo preenchido a zeros.</td>
+    <td class="dta"><p >13</td>
+    <td><p >N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2204" name="2204">2204</a></td>
+    <td class="esq"><p ><u>HORA COBRANÇA</u></p>
+    <p >Hora em que se efectuou o pagamento.</td>
+    <td class="dta"><p >6</td>
+    <td><p >N</td>
+    <td><p >HHMMSS</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2205" name="2205">2205</a></td>
+    <td class="esq"><u>TECNOLOGIA DA PISTA MAGNÉTICA</u><p>Identifica a tecnologia das pista
+    de um cartão.<br>
+    Este indicador é gravado na Pista 3 dos cartões nacionais, quando esta exista.<br>
+    A tecnologia das pistas condiciona o processamento das transacções em ATM. Em função
+    do valor deste indicador, determina-se se deve ser validado o conteúdo da Pista 3 física
+    do cartão (validação efectuada apenas quando a pista pode ser reescrita) ou os
+    elementos equivalentes guardados centralmente.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 0 - Pista 3 de baixa coercividade (Low-Co), regravável<br>
+    &nbsp;&nbsp; 1 - Pista 3 de alta coercividade (Hi-Co), não regravável</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIP-TARJA</td>
+  </tr>
+  <tr>
+    <td><a id="2206" name="2206">2206</a></td>
+    <td class="esq"><u>DADOS ADICIONAIS DO PAGAMENTO</u><p>Campo preenchido de acordo com o
+    serviço para o qual se pretende efectuar um determinado pagamento. É variável em
+    função do código de transacção.</td>
+    <td class="dta">70</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2207" name="2207">2207</a></td>
+    <td class="esq"><u>INDICADOR ORDENANTE</u><p>Código que define o formato de preenchimento
+    do campo <a href="camp2100.htm#2167">2167</a> - IDENTIFICAÇÃO DO ORDENANTE - PAGAMENTOS.</p>
+    <p>Tem os seguintes valores:<br>
+    &nbsp;&nbsp; 1 - Preenchido em formato PAN<br>
+    &nbsp;&nbsp; 2 - Preenchido em formato NIB</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2208" name="2208">2208</a></td>
+    <td class="esq"><u>TEXTO DESCRITIVO SERVIÇO</u><p>Campo com informação descritiva
+    relativa ao serviço das Custas Judiciais.</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2209" name="2209">2209</a></td>
+    <td class="esq"><u>VALOR DA ACÇÃO , INCIDENTE OU RECURSO OU PROMOÇÃO JUDICIAL</u><p>Indica
+    o valor da acção, incidente ou recurso, associado a um determinado tipo de pagamento.
+    Preenchimento obrigatório quando campo <a href="campos6.htm#533">533</a> igual a 01, 02,
+    04, 06 ou 07. <br>
+    Quando o campo <a href="campos6.htm#533">533</a> for igual a 05, pode ser preenchido a
+    zeros.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>6 int.<br>
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2210" name="2210">2210</a></td>
+    <td class="esq">
+      <p><u>CÓDIGO DE CONTRATO EXPEDIÇÃO</u>&nbsp;</p>
+    </td>
+    <td class="dta">
+      <p>9</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>COD-CTR-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2211" name="2211">2211</a></td>
+    <td class="esq">
+      <p><u>CÓDIGO CLIENTE EXPEDIDOR</u></p>
+    </td>
+    <td class="dta">
+      <p>9</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>COD-CLI-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2212" name="2212">2212</a></td>
+    <td class="esq">
+      <p><u>NOME CLIENTE EXPEDIDOR</u></p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>NOM-CLI-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2213" name="2213">2213</a></td>
+    <td class="esq">
+      <p><u>DATA DE REQUISIÇÃO DA EXPEDIÇÃO</u></p>
+    </td>
+    <td class="dta">
+      <p>8</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DAT-REQ-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2214" name="2214">2214</a></td>
+    <td class="esq">
+      <p><u>MORADA CLIENTE EXPEDIDOR</u></p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>MOR-CLI-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2215" name="2215">2215</a></td>
+    <td class="esq">
+      <p><u>CÓDIGO POSTAL EXPEDIDOR</u></p>
+    </td>
+    <td class="dta">
+      <p>8</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>COD-P-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2216" name="2216">2216</a></td>
+    <td class="esq">
+      <p><u>LOCALIDADE DO EXPEDIDOR</u></p>
+    </td>
+    <td class="dta">
+      <p>20</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>LOCAL-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2217" name="2217">2217</a></td>
+    <td class="esq">
+      <p><u>VELOCIDADE</u></p>
+      <p>&nbsp;&nbsp; 1 - Prioritário<br>
+      &nbsp;&nbsp; 2 - Normal<br>
+      &nbsp;&nbsp; 3 - Económico</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>VELOC-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2218" name="2218">2218</a></td>
+    <td class="esq">
+      <p><u>DESCRITIVO DA VELOCIDADE</u></p>
+    </td>
+    <td class="dta">
+      <p>11</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DESC-VELOC-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2219" name="2219">2219</a></td>
+    <td class="esq">
+      <p><u>PRODUTOS</u></p>
+      <p>&nbsp;&nbsp; C01 - Correio Azul<br>
+      &nbsp;&nbsp; C02 - Correio Normal</p>
+    </td>
+    <td class="dta">
+      <p>3</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>PROD-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2220" name="2220">2220</a></td>
+    <td class="esq">
+      <p><u>DESCRITIVOS DOS PRODUTOS</u></p>
+    </td>
+    <td class="dta">
+      <p>12</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DESC-PROD-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2221" name="2221">2221</a></td>
+    <td class="esq">
+      <p><u>ZONA DE TAXAÇÃO</u></p>
+      <p>&nbsp;&nbsp; 01 - Continente, Açores e Madeira<br>
+      &nbsp;&nbsp; 02 - Espanha<br>
+      &nbsp;&nbsp; 03 - Regime especial<br>
+      &nbsp;&nbsp; 04 - Europa<br>
+      &nbsp;&nbsp; 05 - Resto do Mundo</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ZON-TAX-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2222" name="2222">2222</a></td>
+    <td class="esq">
+      <p><u>DESCRITIVO DA ZONA DE TAXAÇÃO</u></p>
+    </td>
+    <td class="dta">
+      <p>10</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DESC-Z-TAX-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2223" name="2223">2223</a></td>
+    <td class="esq">
+      <p><u>PESO</u></p>
+    </td>
+    <td class="dta">
+      <p>5</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>PESO-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2224" name="2224">2224</a></td>
+    <td class="esq">
+      <p><u>FORMATO</u></p>
+      <p>&nbsp;&nbsp; 1 - Normalizado<br>
+      &nbsp;&nbsp; 2 - Não normalizado</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>FORM-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2225" name="2225">2225</a></td>
+    <td class="esq">
+      <p><u>PRÉ-TRATAMENTO EXPEDIÇÃO</u></p>
+      <p>&nbsp;&nbsp; 1 - Ordenado por CP<br>
+      &nbsp;&nbsp; 2 - Não ordenado</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>PRE-TRAT-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2226" name="2226">2226</a></td>
+    <td class="esq">
+      <p><u>DESCONTOS</u></p>
+      <p>&nbsp;&nbsp; 1 - Objectos com RSF ou RL incluído<br>
+      &nbsp;&nbsp; 2 - Produção própria de correio
+      azul<br>
+      &nbsp;&nbsp; 3 - Correio registado</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DESCONT-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2227" name="2227">2227</a></td>
+    <td class="esq">
+      <p><u>QUANTIDADE OBJECTOS A EXPEDIR</u></p>
+    </td>
+    <td class="dta">
+      <p>6</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>QNT-OBJ-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2228" name="2228">2228</a></td>
+    <td class="esq">
+      <p><u>ENTIDADE DO CONTRATO PRODUÇÃO CARTÕES</u></p>
+    </td>
+    <td class="dta">
+      <p>7</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ENT-CTR</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2229" name="2229">2229</a></td>
+    <td class="esq">
+      <p><u>DESCRITIVO DA ENTIDADE</u></p>
+    </td>
+    <td class="dta">
+      <p>20</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DESC</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2230" name="2230">2230</a></td>
+    <td class="esq">
+      <p><u>SEQUÊNCIA</u></p>
+    </td>
+    <td class="dta">
+      <p>4</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>SEQ</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2231" name="2231">2231</a></td>
+    <td class="esq">
+      <p style="margin-left: 0cm; margin-right: 0cm"><u>NIF DO EXPEDIDOR</u></p>
+    </td>
+    <td class="dta">
+      <p>9</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>NIF-EXP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2232" name="2232">2232</a></td>
+    <td class="esq"><u>MOTO/ECI INDICATOR</u><p>Campo 60.08 da Visa.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td nowrap>MOTO/ECI IND</td>
+  </tr>
+  <tr>
+    <td><a id="2233" name="2233">2233</a></td>
+    <td class="esq"><u>POS DATA</u><p>Campo 061, subfields 4,5 e 8 da MasterCard</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td nowrap>POS DATA</td>
+  </tr>
+  <tr>
+    <td><a id="2234" name="2234">2234</a></td>
+    <td class="esq"><u>CÓDIGO DE RECUSA ADICIONAL</u><p>Campo 039 (Response Code) da Visa e
+    da MasterCard.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODRECADIC</td>
+  </tr>
+  <tr>
+    <td><a id="2235" name="2235">2235</a></td>
+    <td class="esq"><u>RESULTADO DA VALIDAÇÃO DO CVV2</u>
+      <p>Campo 44.10 da Visa e 48-PDS 87
+    da MasterCard.</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" colspan="2">Pode assumir os seguintes valores:</td>
+        </tr>
+        <tr>
+          <td class="dta" nowrap>Espaço -&nbsp;&nbsp;</td>
+          <td class="esq">sem resultado</td>
+        </tr>
+        <tr>
+          <td class="dta" nowrap>M -&nbsp;&nbsp;</td>
+          <td class="esq">CVV2 corresponde</td>
+        </tr>
+        <tr>
+          <td class="dta" nowrap>N -&nbsp;&nbsp;</td>
+          <td class="esq">CVV2 não corresponde</td>
+        </tr>
+        <tr>
+          <td class="dta" nowrap>P -&nbsp;&nbsp;</td>
+          <td class="esq">Não processado</td>
+        </tr>
+        <tr>
+          <td class="dta" nowrap>S -&nbsp;&nbsp;</td>
+          <td class="esq">CVV2 devia existir na pista mas o comerciante informou
+            que não existe.</td>
+        </tr>
+        <tr>
+          <td class="dta" nowrap>U -&nbsp;&nbsp;</td>
+          <td class="esq">Emissor não está certificado ou não possui as
+            chaves de encriptação da Visa, ou ambas.</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>RESVALCVV2</td>
+  </tr>
+  <tr>
+    <td><a id="2236" name="2236">2236</a></td>
+    <td class="esq"><u>RESPONSE CODE / REASON CODE</u><p>Campo 44.1 da Visa.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>RES_REA_CODE</td>
+  </tr>
+  <tr>
+    <td><a id="2237" name="2237">2237</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DEPÓSITO EM EUROS</u><p>Indica o total em euros dos
+    depósitos em numerário confirmados, efectuados&nbsp; também em euros, num dado período
+    ou fracção de período contabilístico (normalmente está associada ao sinal
+    &quot;D&quot;).</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br>
+      2 dec.<br>
+    </td>
+    <td>IMPDEP-E</td>
+  </tr>
+  <tr>
+    <td><a id="2238" name="2238">2238</a></td>
+    <td class="esq"><u>TIPO DE EMISSOR </u><p>Identifica o posicionamento do Emissor nos
+    projectos da SIBS.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; P - Participa apenas em projectos do Banco de Portugal<br>
+    &nbsp;&nbsp; R - Banco de Portugal<br>
+    &nbsp;&nbsp; S - Participa em todos os projectos SIBS </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIP_EMISSOR</td>
+  </tr>
+  <tr>
+    <td><a id="2239" name="2239">2239</a></td>
+    <td class="esq"><u>ENVIO DA FACTURAÇÃO SIBS</u><p>Indica o método de envio da factura
+    da SIBS para os Emissores.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 0 - Não recebe<br>
+    &nbsp;&nbsp; 1 - Listagem<br>
+    &nbsp;&nbsp; 2 - Factura resumo + Ficheiro<br>
+    &nbsp;&nbsp; 3 - Facturação de grupo</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ENV_FACT</td>
+  </tr>
+  <tr>
+    <td><a id="2240" name="2240">2240</a></td>
+    <td class="esq"><u>VERSÃO DO FICHEIRO DE FACTURAÇÃO</u><p>Indica o número da versão
+    do ficheiro Facturação.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>VER_EFAC</td>
+  </tr>
+  <tr>
+    <td><a id="2241" name="2241">2241</a></td>
+    <td class="esq"><u>ENVIO DOS EXTRACTOS AOS COMERCIANTES</u><p>Indica a forma de envio dos
+    extractos mensais para os comerciantes apoiados pelos Bancos de Apoio.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 0 - Não recebe<br>
+    &nbsp;&nbsp; 1 - Listagem<br>
+    &nbsp;&nbsp; 2 - Ficheiro Spool<br>
+    &nbsp;&nbsp; 3 - Listagem com expedição</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ENV_EXTR_COM</td>
+  </tr>
+  <tr>
+    <td><a id="2242" name="2242">2242</a></td>
+    <td class="esq"><u>TEXTO PARA RECIBO DOS TPAS</u><p>Descritivo referente ao Emissor que
+    aparece nos recibos emitidos pelos Terminais de Pagamento Automático.</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TXT_RECIBO_TPA</td>
+  </tr>
+  <tr>
+    <td><a id="2243" name="2243">2243</a></td>
+    <td class="esq"><u>TEXTO PARA RECIBO DE CA - LINHA 1</u><p>Primeira linha de texto
+    referente ao Emissor que aparece nos recibos emitidos pelos Caixa Automáticos.</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TXT_RECIBO_CA1</td>
+  </tr>
+  <tr>
+    <td><a id="2244" name="2244">2244</a></td>
+    <td class="esq"><u>TEXTO PARA RECIBO DE CA - LINHA 2</u><p>Segunda linha de texto que
+    aparece nos recibos emitidos pelos Caixa Automáticos.</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TXT_RECIBO_CA2</td>
+  </tr>
+  <tr>
+    <td><a id="2245" name="2245">2245</a></td>
+    <td class="esq"><u>INDICADOR DE GUARDA DE PINBLOCKS</u><p>Indica se o Emissor utiliza o
+    serviço de guarda de pinblocks.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 0 - Sem guarda de pinblocks<br>
+    &nbsp;&nbsp; 1 - Com guarda de pinblocks</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>GRD_PINBLOCK</td>
+  </tr>
+  <tr>
+    <td><a id="2246" name="2246">2246</a></td>
+    <td class="esq"><u>DATA-HORA DA INSERÇÃO DA CARACTERIZAÇÃO DE EMISSOR</u><p>Este campo
+    regista a data e hora em que a Caracterização de Emissor foi inserida pela primeira vez.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DH_INS_CE</td>
+  </tr>
+  <tr>
+    <td><a id="2247" name="2247">2247</a></td>
+    <td class="esq"><u>DATA-HORA DA ÚLTIMA ALTERAÇÃO DA CARACTERIZAÇÃO DE EMISSOR</u><p>Este
+    campo regista a data e hora em que a Caracterização de Emissor foi alterada
+      pela
+    última vez.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DH_ALT_CE</td>
+  </tr>
+  <tr>
+    <td><a id="2248" name="2248">2248</a></td>
+    <td class="esq"><u>UTILIZADOR QUE EFECTOU PEDIDO DE CARACTERIZAÇÃO</u><p>Contém a
+    identificação do utilizador que efectou o pedido ou a implementação da
+    Caracterização de Emissor.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>USER_ALT_CE</td>
+  </tr>
+  <tr>
+    <td><a id="2249" name="2249">2249</a></td>
+    <td class="esq"><u>MAPA DE BYTES INFORMATIVO DE BLOCOS</u> <p>Conjunto de campos que
+    informam a presença (com o valor igual a &quot;1&quot;) ou ausência (com o valor igual a
+    &quot;0&quot;) de um bloco de dados nos campos variáveis seguintes.</td>
+    <td class="dta">Var.</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>BYTEMAP_INFO</td>
+  </tr>
+  <tr>
+    <td><a id="2250" name="2250">2250</a></td>
+    <td class="esq"><u>TIMEOUT NO REAL-TIME </u><p>Intervalo de tempo (em segundos) que o
+    Emissor tem para responder a uma mensagem enviada pela SIBS numa sessão de Real-Time.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIMEOUT_RT</td>
+  </tr>
+  <tr>
+    <td><a id="2251" name="2251">2251</a></td>
+    <td class="esq"><u>JANELAS PARA TRANSACÇÕES A FRIO </u><p>Percentagem das janelas
+    existentes para envio de mensagens a frio relativas às operações autorizadas pela SIBS
+    durante interrupção da sessão de RT.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>JN_TRN_FRIO</td>
+  </tr>
+  <tr>
+    <td><a id="2252" name="2252">2252</a></td>
+    <td class="esq"><u>ICA</u><p>Número do Emissor no Interbank Card Association.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ICA</td>
+  </tr>
+  <tr>
+    <td><a id="2253" name="2253">2253</a></td>
+    <td class="esq"><u>ÂMBITO AUTORIZAÇÕES - DOMÉSTICO</u><p>Indica se o BIN pode ter
+    pedidos de autorização originados do território português.</p>
+      <p>Valores possíveis:<br>
+    &nbsp;&nbsp; A - Em Caixa Automáticos<br>
+      &nbsp;&nbsp; P - Em Terminais de Pagamento Automático<br>
+      &nbsp;&nbsp; T - Todos os terminais </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>AUT_DOMST</td>
+  </tr>
+  <tr>
+    <td><a id="2254" name="2254">2254</a></td>
+    <td class="esq"><u>ÂMBITO AUTORIZAÇÕES - EUROPA</u><p>Indica se o BIN pode ter pedidos
+    de autorização originados do território europeu.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; A - Em Caixa Automáticos<br>
+    &nbsp;&nbsp; P - Em Terminais de Pagamento Automático<br>
+    &nbsp;&nbsp; T - Todos os terminais</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>AUT_EUR</td>
+  </tr>
+  <tr>
+    <td><a id="2255" name="2255">2255</a></td>
+    <td class="esq"><u>ÂMBITO AUTORIZAÇÕES - FORA EUROPA</u><p>Indica se o BIN pode ter
+    pedidos de autorização originados fora do território europeu.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; A - Em Caixa Automáticos<br>
+    &nbsp;&nbsp; P - Em Terminais de Pagamento Automático<br>
+    &nbsp;&nbsp; T - Todos os terminais</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>AUT_FORA_EUR</td>
+  </tr>
+  <tr>
+    <td><a id="2256" name="2256">2256</a></td>
+    <td class="esq"><u>TIPO DE AUTENTICAÇÃO DAS OPERAÇÕES (REDE INTERNACIONAL)</u><p>Indica
+    o tipo de validação que se exige para a autenticação do utilizador do cartão quando
+    efectua uma transacção numa rede internacional.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; A - Assinatura<br>
+    &nbsp;&nbsp; F - PIN facultativo<br>
+    &nbsp;&nbsp; O - PIN obrigatório<br>
+    [Espaço] - não aplicável</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIP_VAL_PIN</td>
+  </tr>
+  <tr>
+    <td><a id="2257" name="2257">2257</a></td>
+    <td class="esq"><u>PISTA MAGNÉTICA OBRIGATÓRIA NA AUTORIZAÇÃO</u><p>Indica se o BIN
+    obriga ou não à leitura da pista magnética do cartão.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 0 - Leitura da pista magnética facultativa<br>
+    &nbsp;&nbsp; 1 - Leitura da pista magnética obrigatória</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>PST_MAG_AUT</td>
+  </tr>
+  <tr>
+    <td><a id="2258" name="2258">2258</a></td>
+    <td class="esq"><u>ACEITAÇÃO DE MAIL/PHONE ORDERS</u><p>Indica se o BIN permite ou não
+    a aceitação de compras por correio ou telefone, sem a presença do cartão.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 0 - Não permite mail/phone orders<br>
+    &nbsp;&nbsp; 1 - Permite mail/phone orders</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ACEITC_MPO</td>
+  </tr>
+  <tr>
+    <td><a id="2259" name="2259">2259</a></td>
+    <td class="esq"><u>ACÇÃO PARA ERRO OU TIMEOUT RESPOSTA RT</u><p>Indica o tipo de
+    resposta da SIBS face a um pedido de autorização do representante internacional de um
+    BIN quando a resposta do Emissor for um erro ou quando não responder dentro do
+    tempo-limite.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" colspan="2">Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; S -&nbsp; </td>
+        <td class="esq">Na MasterCard, sem resposta; na Visa, envia-se o código &quot;N0&quot;</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; N -&nbsp; </td>
+        <td class="esq">Procedimento de resposta normal</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap colspan="2"> [Espaço] - Não aplicável </td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ACCAO_ERR_T</td>
+  </tr>
+  <tr>
+    <td><a id="2260" name="2260">2260</a></td>
+    <td class="esq"><u>COMISSÃO SOBRE OPERAÇÕES COM CARTÕES DE DÉBITO</u><p>Percentagem
+    da comissão cobrada ao comerciante a favor do Emissor na realização de uma transacção
+    sob o acordo MB.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COM_CRT_DEB</td>
+  </tr>
+  <tr>
+    <td><a id="2261" name="2261">2261</a></td>
+    <td class="esq"><u>COMISSÃO SOBRE OPERAÇÕES DE CASH ADVANCE PAGA PELO CLIENTE</u><p>Percentagem
+    da comissão cobrada ao cliente a favor do Emissor na realização de um cash-advance sob
+    um acordo não-MB.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COM_CSH_ADV</td>
+  </tr>
+  <tr>
+    <td><a id="2262" name="2262">2262</a></td>
+    <td class="esq"><u>COMISSÃO SOBRE OPERAÇÕES A CRÉDITO QUANDO EXISTE TAXA
+    CLIENTE+COMERCIANTE PAGA PELO CLIENTE</u><p>Percentagem da comissão cobrada ao
+    comerciante e cliente a cobrar ao cliente a favor do Emissor na realização de uma
+    transacção sob um acordo não-MB.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COM_TC_CLI</td>
+  </tr>
+  <tr>
+    <td><a id="2263" name="2263">2263</a></td>
+    <td class="esq"><u>COMISSÃO SOBRE OPERAÇÕES A CRÉDITO QUANDO EXISTE TAXA
+    CLIENTE+COMERCIANTE PAGA PELO COMERCIANTE</u><p>Percentagem da comissão cobrada ao
+    comerciante e cliente a cobrar ao comerciante a favor do Emissor na realização de uma
+    transacção sob um acordo não-MB.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COM_TC_COM</td>
+  </tr>
+  <tr>
+    <td><a id="2264" name="2264">2264</a></td>
+    <td class="esq"><u>CENÁRIO DE DEGRADAÇÃO ALTERNATIVO </u><p>Indica o cenário de
+    degradação alternativo quando o cenário principal de degradação não se encontra
+    disponível.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; P - Saldo de cartão<br>
+    &nbsp;&nbsp; S - Saldo de conta</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DEC-DEG-ALT</td>
+  </tr>
+  <tr>
+    <td><a id="2265" name="2265">2265</a></td>
+    <td class="esq"><u>BIN PARA EMISSÃO DE CARTÕES TEMPORÁRIOS (MBNET)</u><p>Código de
+    identificação do Emissor de cartões temporários no âmbito do serviço MBNet.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>BIN_TEMP</td>
+  </tr>
+  <tr>
+    <td><a id="2266" name="2266">2266</a></td>
+    <td class="esq"><u>EMAIL PARA SERVIÇO DE CARACTERIZAÇÕES DE EMISSOR</u><p>Endereço de
+    correio electrónico (definido pela entidade emissora) de destino dos avisos de
+    implementação dos pedidos de Caracterização de Emissor.</td>
+    <td class="dta">55</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMAIL_CARACT</td>
+  </tr>
+  <tr>
+    <td><a id="2267" name="2267">2267</a></td>
+    <td class="esq"><u>INDICADOR DE ÂMBITO DE ACTUALIZAÇÃO DO FICHEIRO DE SALDOS DE
+    VÉSPERA (CSV)</u><p>Indica o processo de actualização pretendido pelo Emissor quando
+    este envia um ficheiro de saldos de véspera.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 1 - Ficheiro recebido actualiza apenas CPD nele indicado<br>
+    &nbsp;&nbsp; 2 - Ficheiro recebido actualiza todos os CPDs do Emissor</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ACTUAL_CSV</td>
+  </tr>
+  <tr>
+    <td><a id="2268" name="2268">2268</a></td>
+    <td class="esq"><u>TIPO DE MENSAGEM</u><p>Este campo indica a acção tomada
+      sobre um pedido de
+    inserção/alteração de uma Caracterização de Emissor.</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; A - Anular implementação (em Certificação)<br>
+      &nbsp;&nbsp; B - Pedir anulação implementação (em Certificação)<br>
+      &nbsp;&nbsp; C - Analisar pedido<br>
+      &nbsp;&nbsp; D - Pedir passagem a produção<br>
+      &nbsp;&nbsp; F - Efectuar passagem a produção<br>
+      &nbsp;&nbsp;&nbsp; I - Implementar em Certificação<br>
+      &nbsp;&nbsp; N - Anular pedido<br>
+      &nbsp;&nbsp; P - Formular pedido<br>
+    &nbsp;&nbsp; Q - Alterar pedido&nbsp;<br>
+      &nbsp;&nbsp; R - Recusar pedido<br>
+      &nbsp;&nbsp; S - Reformular pedido recusado<br>
+      &nbsp;&nbsp; U - Implementar em Produção (e em Certificação)<br>
+      &nbsp;&nbsp; Z - Pedido automático</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIP_MSG_PED</td>
+  </tr>
+  <tr>
+    <td><a id="2269" name="2269">2269</a></td>
+    <td class="esq"><u>NÚMERO DE CHEQUES PEDIDOS</u><p>Campo que informa a quantidade de
+    cheques requisitados no serviço Pedido de livro de cheques.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PLC_NUM</td>
+  </tr>
+  <tr>
+    <td><a id="2270" name="2270">2270</a></td>
+    <td class="esq"><u>NÚMERO DE DIAS PESQUISADOS</u>
+      <p>Indica o número de dias pesquisados no sistema da SIBS para efeitos de
+      listagens de movimentos.<br>
+      Será o número de dias a facturar à entidade que solicitou o pedido,
+      independentemente da sua origem.</p>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2271" name="2271">2271</a></td>
+    <td class="esq"><u>ESCALÃO DE FACTURAÇÃO</u>
+      <p>Código do <i>Acquirer, </i>posicionado ao nível das condições
+      contratuais de um determinado produto financeiro, que permite classificar um estabelecimento,
+      de acordo com o seu volume de facturação.</p>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ESC-FAC</td>
+  </tr>
+  <tr>
+    <td><a id="2272" name="2272">2272</a></td>
+    <td class="esq">
+      <p class="MsoNormal"><u>CÓDIGO DE
+      REGIME DE PRICING</u></p>
+      <p class="MsoNormal">Código, cuja definição
+      é da responsabilidade do <i>Acquirer</i>, que juntamente com outros atributos,
+      identifica os valores da<i> Interchange Fee </i> a aplicar a determinada transacção.</p>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td><span lang="PT" style="color:navy">CODREGPRI</span></td>
+  </tr>
+  <tr>
+    <td><a id="2273" name="2273">2273</a></td>
+    <td class="esq">
+      <p class="MsoNormal"><u>CÓDIGO ERRO DO
+      FICHEIRO DE INTERCHANGE FEE</u></p>
+      <table border="0" width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" nowrap colspan="2">Valores possíveis:</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 001 -&nbsp;</td>
+          <td class="esq">tipo de registo
+      inválido</td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 002 -&nbsp;</td>
+          <td class="esq">
+      <p>código de regime
+      de pricing não numérico</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 003 -&nbsp;</td>
+          <td class="esq">
+      <p>produto
+      financeiro não numérico</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 004 -&nbsp;</td>
+          <td class="esq">
+      <p>produto
+      financeiro não existe para o representante</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 005 -&nbsp;</td>
+          <td class="esq">
+      <p>identificação
+      do escalão de facturação não numérico</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 007 -&nbsp;</td>
+          <td class="esq">
+      <p>código de
+      actividade não numérico</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 008 -&nbsp;</td>
+          <td class="esq">
+      <p>código de
+      actividade não existe para o representante</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 009 -&nbsp;</td>
+          <td class="esq">
+      <p>código de
+      sub-actividade não numérico</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 010 -&nbsp;</td>
+          <td class="esq">
+      <p>código de
+      sub-actividade não existe para o representante</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 011 -&nbsp;</td>
+          <td class="esq">
+      <p>valor de
+      percentagem não numérico</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 012 -&nbsp;</td>
+          <td class="esq">
+      <p>valor de taxa não
+      numérico</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 013 -&nbsp;</td>
+          <td class="esq">
+      <p>incidência de
+      limite não numérico</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 014 -&nbsp;</td>
+          <td class="esq">
+      <p>valor mínimo não
+      numérico</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 015 -&nbsp;</td>
+          <td class="esq">
+      <p>valor máximo não
+      numérico</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 016 -&nbsp;</td>
+          <td class="esq">
+      <p>valor mínimo
+      superior ao valor máximo</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 017 -&nbsp;</td>
+          <td class="esq">
+      <p>valor mínimo
+      diferente de zeros e incidência de limite igual a zero</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 018 -&nbsp;</td>
+          <td class="esq">
+      <p>valor máximo
+      diferente de zeros e incidência de limite igual a zero</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 019 -&nbsp;</td>
+          <td class="esq">
+      <p>registo com a
+      mesma chave que outro do mesmo ficheiro</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 020 -&nbsp;</td>
+          <td class="esq">
+      <p>registo duplicado</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 021 -&nbsp;</td>
+          <td class="esq">
+      <p>número de
+      registos não numérico</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 022 -&nbsp;</td>
+          <td class="esq">
+      <p>número de
+      registos errado</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 023 -&nbsp;</td>
+          <td class="esq">
+      <p class="MsoNormal">registo de tipo 1
+      inexistente</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td><span lang="PT" style="color:navy">CODERRIF</span></td>
+  </tr>
+  <tr>
+    <td><a id="2274" name="2274">2274</a></td>
+    <td class="esq"><u>ORIGEM DO PEDIDO DE LISTAGEM</u><p>Campo que informa qual a origem dum
+    determinado pedido de listagem de movimentos.</p>
+    <p>Assume os valores seguintes:<br>
+    &nbsp;&nbsp; 1 - Interno SIBS<br>
+    &nbsp;&nbsp; 2 - Terminal de Serviços SIBS</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2275" name="2275">2275</a></td>
+    <td class="esq"><u>TIPO DE FORÇA MILITAR / MILITARIZADA</u><p>&nbsp;&nbsp;
+      0 - força militar / militarizada - graduado<br>
+    &nbsp;&nbsp; 1 - força militar / militarizada - não graduado<br>
+    &nbsp;&nbsp; 9 - não aplicável</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2276" name="2276">2276</a></td>
+    <td class="esq"><u>TIPO DE BILHETE</u><p>É o tipo de bilhete adquirido pelo
+      cliente do Serviço. </p>
+      <p>Assume valores com ou sem desconto, de cordo com os códigos seguintes:<br>
+      &nbsp;&nbsp; 000 - Normal (sem desconto)<br>
+    &nbsp;&nbsp; 411 - Exército<br>
+    &nbsp;&nbsp; 412 - Marinha<br>
+    &nbsp;&nbsp; 413 - Força Aérea<br>
+    &nbsp;&nbsp; 421 - GNR<br>
+    &nbsp;&nbsp; 422 - PSP<br>
+    &nbsp;&nbsp; 431 - Sapadores Bombeiros Lisboa<br>
+    &nbsp;&nbsp; 432 - Sapadores Bombeiros Porto<br>
+    &nbsp;&nbsp; 441 - Guardas Prisionais<br>
+      &nbsp;&nbsp; 700 - Criança<br>
+      &nbsp;&nbsp; 800 - Pessoa idosa<br>
+      &nbsp;&nbsp; 999 - Não aplicável </p>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2277" name="2277">2277</a></td>
+    <td class="esq"><u>NÚMERO MECANOGRÁFICO</u><p>Número que identifica o cliente militar
+    para o serviço da CP.<br>
+      Quando campo <a href="#2275"> 2275</a> - Tipo de Força Militar = 9, este campo é preenchido a
+      zeros.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2278" name="2278">2278</a></td>
+    <td class="esq"><u>CÓDIGO DE FACTURAÇÃO</u><p>Código que identifica o
+      tipo de tarifação aplicado num pedido de listagem de movimentos.</p>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq" colspan="2">Assume os códigos:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 0 - &nbsp;</td>
+        <td class="esq">A não facturar</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 1 - &nbsp;</td>
+        <td class="esq">Facturar (movimento a débito)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 2 - &nbsp;</td>
+        <td class="esq">Regularizar facturação indevida (movimento a crédito)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 3 - &nbsp;</td>
+        <td class="esq">Regularizar facturação, por não ter sido aplicada
+          tarifa (movimento a débito)</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2279">2279</a></td>
+    <td class="esq"><u>FORMATO DA LISTAGEM</u><p>Caracteriza a emissão da listagem efectuada,
+    através dos códigos:</p>
+    <p>&nbsp;&nbsp; 1 - Formato Ficheiro<br>
+    &nbsp;&nbsp; 2 - Formato Papel<br>
+    &nbsp;&nbsp; 3 - Formato Electrónico</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2280">2280</a></td>
+    <td class="esq"><u>TIPO DE ACORDO</u><p>Indica o âmbito de aplicação das condições
+    contratuais.</p>
+    <p>&nbsp;&nbsp; 01 - Serviço TPA standard/Pag. Compras<br>
+    &nbsp;&nbsp; 02 - Serviço TPA combustíveis<br>
+    &nbsp;&nbsp; 03 - Serviço Pagamentos (Serv./SEsp.)<br>
+    &nbsp;&nbsp; 04 - Serviço BXV cartão<br>
+    &nbsp;&nbsp; 05 - Serviço Parques<br>
+    &nbsp;&nbsp; 06 - Serviço TPA 2 tempos<br>
+    &nbsp;&nbsp; 07 - Serviço TPA off-line</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIP-ACR</td>
+  </tr>
+  <tr>
+    <td><a name="2281">2281</a></td>
+    <td class="esq"><u>PROCESSO DA COMISSÃO</u><p>Campo que indica o tipo de cálculo da
+    comissão estabelecida entre o Representante ou o emissor do cartão, e o Comerciante com
+    o qual foi feito um acordo.<br>
+    Corresponde à extensão do atributo <a href="camp1000.htm#1088">1088</a>.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" nowrap colspan="2">Assume os valores seguintes:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 0 - </td>
+        <td class="esq">Não há comissões</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 1 -&nbsp; </td>
+        <td class="esq">Percentagem sobre o valor bruto</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 2 -&nbsp; </td>
+        <td class="esq">Importância fixa</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 3 - </td>
+        <td class="esq">(Taxa comerciante + percentagem comerciante) compreendida entre um valor
+        mínimo (<a href="camp2200.htm#2282">2282</a>) e máximo (<a href="camp2200.htm#2283">2283</a>).</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 4 - </td>
+        <td class="esq">Taxa comerciante + (percentagem comerciante compreendida entre um valor
+        mínimo (<a href="camp2200.htm#2282">2282</a>) e máximo (<a href="camp2200.htm#2283">2283</a>)).</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 5 - </td>
+        <td class="esq">Escalões quantidade + (percentagem comerciante compreendida entre um
+        valor mínimo (<a href="camp2200.htm#2282">2282</a>) e máximo (<a
+        href="camp2200.htm#2283">2283</a>)).</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 6 -&nbsp; </td>
+        <td class="esq">Escalões quantidade</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 7 -&nbsp; </td>
+        <td class="esq">A definir</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 8 -&nbsp; </td>
+        <td class="esq">...</td>
+      </tr>
+    </table>
+    <p>Nota: os valores a assumir pelo valor minímo e pelo valor máximo (caps) podem variar
+    entre 000,00 e 999,99 o que implica que um dado limite pode não se aplicar.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PROC-COMI-E</td>
+  </tr>
+  <tr>
+    <td><a name="2282">2282</a></td>
+    <td class="esq"><u>VALOR MÁXIMO</u><p>Indica o valor máximo a aplicar a uma taxa fixa ou
+    variável, ou ao somatório destas, no âmbito de um acordo de representação.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>3 int.<br>
+    2 dec.</td>
+    <td>VAL-MAX</td>
+  </tr>
+  <tr>
+    <td><a name="2283">2283</a></td>
+    <td class="esq"><u>VALOR MÍNIMO</u><p>Indica o valor mínimo a aplicar a uma taxa fixa ou
+    variável, ou ao somatório destas, no âmbito de um acordo de representação.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>3 int.<br>
+    2 dec.</td>
+    <td>VAL-MIN</td>
+  </tr>
+  <tr>
+    <td><a name="2284">2284</a></td>
+    <td class="esq"><u>INCIDÊNCIA DOS LIMITES DA COMISSÃO (Caps)</u><p>&nbsp;&nbsp; 0 - N.A.<br>
+    &nbsp;&nbsp; 1 - Tem sobre o valor variável<br>
+    &nbsp;&nbsp; 2 - Tem sobre o valor total (variável mais fixo)</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INCID-LIM</td>
+  </tr>
+  <tr>
+    <td><a name="2285">2285</a></td>
+    <td class="esq"><u>DESCRITIVO DO RID</u></td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DESC-RID</td>
+  </tr>
+  <tr>
+    <td><a name="2286">2286</a></td>
+    <td class="esq"><u>RID - INDICADOR DE ENVIO A TERMINAIS</u><p>&nbsp;&nbsp; 0 - A não
+    enviar<br>
+    &nbsp;&nbsp; 1 - A enviar</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>RID-IND-ENV</td>
+  </tr>
+  <tr>
+    <td><a name="2287">2287</a></td>
+    <td class="esq"><u>ESTADO DO ACORDO</u><p>&nbsp;&nbsp; 0 - Inactivo<br>
+    &nbsp;&nbsp; 1 - Activo</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>EST-ACR</td>
+  </tr>
+  <tr>
+    <td><a name="2288">2288</a></td>
+    <td class="esq"><u>DATA DO ESTADO DO ACORDO</u></td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DT-EST-ACR</td>
+  </tr>
+  <tr>
+    <td><a name="2289">2289</a></td>
+    <td class="esq"><u>INDICADOR DE OBRIGATORIEDADE DO ACORDO</u><p>Indica para o tipo de
+    acordo em causa se este é opcional ou obrigatório.</p>
+    <p>&nbsp;&nbsp; 0 - Opcional<br>
+    &nbsp;&nbsp; 1 - Obrigatório</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND-OBG-ACR</td>
+  </tr>
+  <tr>
+    <td><a name="2290">2290</a></td>
+    <td class="esq"><u>NÍVEL A QUE SE APLICA O ACORDO</u><p>Indica a que nível é que são
+    aplicadas as condições contratuais, se a todos os estabelecimentos de um dado
+    Comerciante, se para cada estabelecimento individualmente.</p>
+    <p>&nbsp;&nbsp; 0 - Comerciante<br>
+    &nbsp;&nbsp; 1 - Estabelecimento</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NIV-APLIC-ACR</td>
+  </tr>
+  <tr>
+    <td><a name="2291">2291</a></td>
+    <td class="esq"><u>INDICADOR DE IVA</u><p>Indica se o comissionamento está sujeito a IVA.</p>
+    <p>&nbsp;&nbsp; 0 - Não sujeito<br>
+    &nbsp;&nbsp; 1 - Sujeito a IVA<br>
+    &nbsp;&nbsp; 2 - IVA incluído</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND-IVA</td>
+  </tr>
+  <tr>
+    <td><a name="2292">2292</a></td>
+    <td class="esq"><u>INCIDÊNCIA DO IVA</u><p>Indica sobre que comissionamento incide o IVA:</p>
+    <p>&nbsp;&nbsp; F - Fixo<br>
+    &nbsp;&nbsp; V - Variável<br>
+    &nbsp;&nbsp; A - Ambos</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>INCID-IVA</td>
+  </tr>
+  <tr>
+    <td><a name="2293">2293</a></td>
+    <td class="esq"><u>INDICADOR DE IMPOSTO DO SELO</u><p>Indica se o comissionamento está
+    sujeito a IS.</p>
+    <p>&nbsp;&nbsp; 0 - Não sujeito<br>
+    &nbsp;&nbsp; 1 - Sujeito a IS</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND-IS</td>
+  </tr>
+  <tr>
+    <td><a name="2294">2294</a></td>
+    <td class="esq"><u>INCIDÊNCIA DO IMPOSTO DO SELO</u><p>Indica sobre que comissionamento
+    incide o IS.</p>
+    <p>&nbsp;&nbsp; F - Fixo<br>
+    &nbsp;&nbsp; V - Variável<br>
+    &nbsp;&nbsp; A - Ambos</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>INCID-IS</td>
+  </tr>
+  <tr>
+    <td><a name="2295">2295</a></td>
+    <td class="esq"><u>VALOR DE LEVANTAMENTOS INTERNACIONAIS</u><p>Campo preenchido com o
+    total dos levantamentos internacionais feitos no dia no CA. Trata-se de um valor
+    informativo, sem valor contabilístico, para efeitos de gestão de tesouraria dos Bancos
+    de Apoio.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br>
+    2 dec.</td>
+    <td>LEVINT</td>
+  </tr>
+  <tr>
+    <td><a name="2296">2296</a></td>
+    <td class="esq"><u>RUBRICA ASSOCIADA AO COMISSIONAMENTO COMERCIANTE</u><p>Aplicável nos
+    contratos directos com a SIBS, o comissionamento ao Comerciante corresponde a uma rubrica
+    do tarifário que é necessário explicitar.</td>
+    <td class="dta">6</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>RUB-COM-COM</td>
+  </tr>
+  <tr>
+    <td><a name="2297">2297</a></td>
+    <td class="esq"><u>RUBRICA ASSOCIADA AO COMISSIONAMENTO CLIENTE</u><p>Aplicável nos
+    contratos directos com a SIBS, o comissionamento ao Cliente corresponde a uma rubrica do
+    tarifário que é necessário explicitar.</td>
+    <td class="dta">6</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>RUB-COM-CLI</td>
+  </tr>
+  <tr>
+    <td><a name="2298">2298</a></td>
+    <td class="esq"><u>INDICADOR DE ACORDO CONTABILÍSTICO</u><p>&nbsp;&nbsp; 0 - Não
+    contabilístico<br>
+    &nbsp;&nbsp; 1 - Contabilístico<br>
+    &nbsp;&nbsp; 2 - Diferido</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND-CONTAB</td>
+  </tr>
+  <tr>
+    <td><a name="2299">2299</a></td>
+    <td class="esq"><u>PRODUTO MULTIBANCO ASSOCIADO A UM AID</u><p>Código do produto MB
+    associado ao AID.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ID-PROD-MB</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

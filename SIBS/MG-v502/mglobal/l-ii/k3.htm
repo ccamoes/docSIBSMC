@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>K.3 COMPENSAÇÃO DE EFEITOS</title>
+<script>top.captulos.location='indicek.htm#K';</script>
+</head>
+
+<body>
+
+<h1>K.3 COMPENSAÇÃO DE EFEITOS</h1>
+
+<p><br>
+</p>
+
+<p>Última revisão: 2003/06/04</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="K.3.1">K.3.1</a> OBJECTIVOS</h2>
+
+<p><br>
+Para além de constituir o sistema através do qual é efectuada a compensação de
+efeitos e letras comerciais, este sistema tem por objectivo racionalizar e automatizar os
+diversos procedimentos relacionados com a compensação interbancária de efeitos e letras
+comerciais, que ultrapassam em muito a mera apresentação a pagamento. Pretende-se desta
+forma reduzir a carga administrativa associada à cobrança, devolução e recolha de
+dados relativos a efeitos.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="K.3.2">K.3.2</a> CARACTERÍSTICAS GERAIS</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.3.2.1">K.3.2.1</a>&nbsp; PRINCÍPIOS</h3>
+
+<p><br>
+A compensação de efeitos baseia-se nos seguintes princípios: 
+
+<ul>
+  <li>Truncagem (arquivo) de efeitos no Banco Tomador;</li>
+  <li>Banalização do local de cobrança (permitir o pagamento do efeito através de qualquer
+    instituição bancária e Sistema Multibanco);</li>
+  <li>Apuramento automático de incumprimentos (identificação automática dos efeitos a
+    pagamento que tenham ultrapassado o prazo limite, independentemente de ter sido realizado
+    protesto dos mesmos).</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.3.2.2">K.3.2.2</a> OPERAÇÕES SUBJACENTES AO SISTEMA</h3>
+
+<p><br>
+Este sistema de compensação constitui o suporte para todo o tipo de operações
+interbancárias de efeitos: cobranças, descontos, devoluções e protestos. O sistema
+encontra-se também preparado para integrar cobranças provenientes de Bancos do exterior.</p>
+
+<p>O pagamento de um efeito pode ser realizado da seguinte forma: 
+
+<ul>
+  <li>Efeito domiciliado (contém NIB da conta do Sacado (devedor)): a cobrança é feita pelo
+    Banco Tomador ao Banco a que corresponde o NIB.</li>
+  <li>Efeito não domiciliado: pagável em qualquer balcão bancário ou na Rede Multibanco.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><a name="K.3.2.3">K.3.2.3</a> INTERVENIENTES</h3>
+
+<p><br>
+Como intervenientes directos neste sistema encontram-se: 
+
+<ul>
+  <li>Os Bancos, que assumem a posição de Bancos Tomadores (quando apresentam a
+    compensação efeitos entregues para cobrança/desconto aos seus balcões) e/ou de Bancos
+    Cobradores (aos quais são apresentados, na compensação, pedidos de cobrança por outros
+    Participantes). No caso dos efeitos não domiciliados, o Banco Cobrador é aquele que
+    emite o cartão usado para pagamento na rede Multibanco ou aquele em cujo balcão o
+    pagamento se consuma;</li>
+</ul>
+
+<ul>
+  <li>A SIBS, que procede à compensação da informação recebida, à actualização da
+    carteira de cobranças e ao envio dos ficheiros resultantes.</li>
+</ul>
+
+<ul>
+  <li>O Banco de Portugal, que liquida no SPGT os saldos apurados na compensação.</li>
+</ul>
+
+<p><br>
+Os Bancos participantes podem escolher uma de três possibilidades de participação: 
+
+<ol>
+  <li>Directa, em que enviam e recebem ficheiros de e para a SIBS, com liquidação na sua
+    conta junto do Banco de Portugal;</li>
+  <li>Indirecta activa, em que enviam e recebem ficheiros de e para a SIBS, sendo no entanto
+    os valores apurados em compensação integrados juntamente com os do Banco Representante,
+    e a liquidação efectuada na conta de liquidação deste;</li>
+  <li>Indirecta Passiva, em que o envio dos ficheiros à SIBS é efectuado pelo Banco
+    Representante, decorrendo a compensação e a liquidação de forma semelhante à
+    indirecta activa.</li>
+</ol>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.3.2.4">K.3.2.4</a> TRANSMISSÃO DA INFORMAÇÃO</h3>
+
+<p><br>
+O ciclo de um efeito na compensação é o seguinte: 
+
+<ol>
+  <li>Recepção de efeitos na IC Tomadora: consiste na apresentação, pelo credor, do efeito
+    para cobrança ou desconto junto do seu Banco. Este procede à recolha dos dados e ao
+    arquivo do suporte papel da letra (na por esta razão denominada Carteira Física).</li>
+  <li>Processo de Cobrança: envio à SIBS, pelo Banco Tomador, do registo de inserção de
+    cobrança. Tratando-se de efeitos domiciliados, a SIBS envia os registos correspondentes
+    para as ICs cobradoras. No caso dos efeitos não domiciliados, o Banco Tomador envia ao
+    Sacado um aviso de pagamento (normalizado), informando da entrada em cobrança e dos
+    locais onde pode liquidar o efeito. A SIBS actualiza ainda a Carteira Centralizada de
+    Cobranças em Curso com os novos registos recebidos.</li>
+  <li>Uma vez efectuado o pagamento de um efeito, o registo correspondente é retirado da
+    Carteira de Cobranças, sendo o respectivo suporte físico (ou comprovativo de pagamento)
+    remetido ao Sacado pelo Banco Tomador.</li>
+</ol>
+
+<p><br>
+Deste modo, o fluxo de informação no sistema de compensação de efeitos é o seguinte: 
+
+<ol>
+  <li>Em cada sessão de compensação, os Bancos enviam à SIBS os ficheiros correspondentes
+    à inserção de novos efeitos para cobrança, à actualização de registos de efeitos
+    já em cobrança e à actualização relativa a aceites incobrados.</li>
+  <li>Após o fecho da compensação e o processamento da informação recebida, a SIBS envia
+    a cada Banco o ficheiro com o resumo dos registos trocados na sessão relativos a
+    cobrança respeitantes a esse Banco, os ficheiros de erros, informa os valores
+    considerados no apuramento no saldo financeiro comunicado ao Banco de Portugal, e envia o
+    ficheiro de divulgação de aceites incobrados.</li>
+  <li>Envio, pela SIBS ao Banco de Portugal, de ficheiros informando o saldo de cada IC na
+    sessão e dos saldos bilaterais de cada uma face às restantes.</li>
+</ol>
+
+<p><br>
+Os efeitos domiciliados cobrados com valor igual ou superior a 100 mil contos ou 500 mil
+euros, são considerados na actualização da carteira de cobranças, sendo no entanto
+liquidados um a um na sessão seguinte do SPGT. Um efeito não domiciliado não pode
+apresentar, no sistema interbancário de cobranças, um valor superior àquele limite.</p>
+
+<p>&nbsp;</p>
+
+<h3 table><a name="K.3.2.5">K.3.2.5</a> HORÁRIOS</h3>
+
+<p><br>
+Os Bancos poderão encaminhar ficheiros para a SIBS ao longo do dia, até uma hora antes
+do fecho. A partir dessa hora, serão integrados na compensação seguinte. A SIBS
+responde, em horários pré-definidos, com ficheiros de validação de informação
+recebida, informando se foram detectados erros e, em caso positivo, quais.</p>
+
+<p>À hora estabelecida pelo Regulamento do SICOI ocorre o fecho de compensação. Findo o
+processamento da informação, a SIBS procede ao envio de ficheiros resultantes da
+compensação.</p>
+
+<p>Na abertura do SPGT ocorre a liquidação dos saldos da sessão de compensação.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.3.2.6">K.3.2.6</a> TARIFÁRIO E FACTURAÇÃO</h3>
+
+<p><br>
+Aplica-se a este subsistema um tarifário SIBS e um tarifário interbancário. </p>
+
+<p>Nos ficheiros de resumo da compensação, os Bancos recebem informação respeitante ao
+total apurado de tarifas interbancárias, cujo valor é integrado nos totais a debitar ou
+creditar na sessão, sendo liquidado diariamente. Relativamente ao tarifário SIBS, esta
+sociedade envia mensalmente aos Bancos participantes a factura referente à utilização
+dos seus serviços neste subsistema.</p>
+
+<p>Tendo em conta os meios que a SIBS tem que ter permanentemente disponíveis, existe uma
+tarifa mensal mínima a imputar a todas as instituições intervenientes na
+Telecompensação de Efeitos, quer como participantes directas, quer como utilizadoras. O
+valor mínimo apenas será aplicado quando, para uma dada instituição, os totais
+resultantes da aplicação dos custos de processamento da SIBS lhe sejam inferiores.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="K.3.3">K.3.3</a> DOCUMENTAÇÃO</h2>
+
+<p><br>
+Como documentação de referência e pormenorizada deste subsistema, existe o Regulamento
+do SICOI, que inclui regras e procedimentos gerais, e o Manual de Funcionamento da
+Compensação de Efeitos.</p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="K.3.4">K.3.4</a> APLICAÇÕES DESENVOLVIDAS
+PELA SIBS</h2>
+
+<p><br>
+Todos os Bancos participantes desenvolveram produtos próprios para a formatação de
+ficheiros segundo o especificado no Manual de Funcionamento da Compensação de Efeitos.</p>
+
+<p>Como produto SIBS, foi desenvolvida a possibilidade de acesso à Carteira de Cobranças
+gerida pela SIBS, que pode assumir duas formas: 
+
+<ul>
+  <li>numa base de ligação entre sistemas centrais (<em>Host-to-Host</em>, em <em>real-time</em>),
+    para os casos de maior tráfego de mensagens;</li>
+  <li>a partir de acesso à rede da SIBS, sempre que há necessidade de actualizar ou
+    consultar a referida carteira.</li>
+</ul>
+
+<p class="dta"><br>
+<a href="k2.htm" target="main">Anterior</a>/<a href="k4.htm" target="main">Seguinte</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

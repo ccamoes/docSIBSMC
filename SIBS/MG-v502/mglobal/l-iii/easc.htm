@@ -1,0 +1,736 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>ALTERAÇÃO SITUAÇÃO CARTÃO</title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: &nbsp; ALTERAÇÃO SITUAÇÃO CARTÃO</td>
+        <td class="fichdta">&quot;FICH&quot; = EASC</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Através da recepção deste ficheiro enviado pelo Emissor, a base de dados de cartões da
+SIBS é actualizada. Pretende-se completar o que já existe para gerir os cartões de
+débito, acrescentando a possibilidade de gerir a informação que existe noutros sistemas
+(Unicre, Visa e MasterCard).</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de <em>Header</em> do ficheiro &quot;TIPREG=0&quot;;</li>
+</ul>
+
+<ul>
+  <li>o registo de Detalhe &quot;TIPREG=1&quot;, altera a situação do cartão na sua
+    globalidade;</li>
+</ul>
+
+<ul>
+  <li>o registo de Detalhe &quot;TIPREG=3&quot;, altera os parâmetros
+    do cartão que se encontram informados na LN do Sistema de Pagamento;</li>
+</ul>
+
+<ul>
+  <li>o registo de <em>Trailer</em> &quot;TIPREG=9&quot;, apresenta o total de registos do
+    ficheiro. </li>
+</ul>
+
+<p><br>
+O formato do registo é fixo, com o tamanho de 46 bytes.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>DESCRIÇÃO</u></h6>
+
+<p><br>
+O Emissor pode posicionar uma nova situação para o cartão:</p>
+
+<blockquote>
+  <blockquote>
+    <p><strong><a target="main" href="../l-ii/a9.htm#02">02</a> - normal<br>
+    <a href="../l-ii/a9.htm#06" target="main">06</a> - em lista negra<br>
+    <a target="main" href="../l-ii/a9.htm#07">07</a> - em lista cinzenta<br>
+    <a target="main" href="../l-ii/a9.htm#08">08</a> - capturado<br>
+    <a target="main" href="../l-ii/a9.htm#09">09</a> - anulado</strong></p>
+  </blockquote>
+</blockquote>
+
+<p><br>
+<em>Inibição no representante:</em></p>
+
+<p>No caso do cartão ser Visa/MasterCard pode também informar a acção a tomar para ser
+transmitido ao Sistema de Pagamento.</p>
+
+<blockquote>
+  <blockquote>
+    <p><strong>05 - rejeitar<br>
+    04 - capturar<br>
+    07 - capturar, condições especiais<br>
+    41 - capturar, cartão perdido<br>
+    43 - capturar, cartão roubado</strong></p>
+  </blockquote>
+</blockquote>
+
+<p><br>
+O Emissor pode indicar também qual a(s) região(ões) a indicar para o Representante
+Internacional (até um máximo de 9 ocorrências). Para informar a Unicre, o Emissor pode
+também indicar o código do motivo (LN por fraude, contencioso, perda de cartão) e se
+pretende a emissão na listagem em papel expedida para os comerciantes. Ver o quadro a
+seguir com as condições de preenchimento dos diferentes campos do registo.</p>
+
+<p>Através do terceiro tipo de registo de detalhe, o Emissor pode actuar apenas sobre a
+situação no Sistema de Pagamento.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>VERSÕES</u></h6>
+
+<ul>
+  <li>A versão 00 dos ficheiros corresponde à introdução da versão 4.0 do Modelo Global
+    em Novembro de 1997, cujo objectivo principal foi a preparação para o Euro.</li>
+</ul>
+
+<ul>
+  <li>A versão 01 de Junho de 2002 apresenta novos campos no bloco de dados de cartão, por
+    forma a permitir a gestão de cartões por BIN/N.º cartão em lugar de Emissor/N.º
+    cartão, assim como a gestão de cartões com o mesmo número (diferenciados pela data de
+    expiração).</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3><em>FICHEIRO 'EASC' - TIPREG=1</em></h3>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellspacing="0" width="100%">
+  <tr>
+    <td class="oitomidf">TIPO <br>
+    CARTÃO</td>
+    <td class="oitomidf">SITUAÇÃO<br>
+    PEDIDA</td>
+    <td class="oitof" nowrap>COMUN. AO REP.<br>
+    C/ INSERÇÃO<br>
+    EM LISTA PAPEL</td>
+    <td class="oitomidf">NSITCAR<br>
+    (<a href="../../Campos/campos2.htm#144">144</a>)</td>
+    <td class="oitomidf">COMREP<br>
+    (<a href="../../Campos/campos4.htm#390">390</a>)</td>
+    <td class="oitomidf">VISCA<br>
+    (<a href="../../Campos/campos3.htm#279">279</a>)</td>
+    <td class="oitomidf">VISA-CRB<br>
+    (<a href="../../Campos/campos3.htm#286">286</a>)</td>
+    <td class="oitomidf">DTLIMCBR<br>
+    (<a href="../../Campos/campos3.htm#287">287</a>)</td>
+    <td class="oitomidf">LSTUNI<br>
+    (<a href="../../Campos/campos4.htm#289">289</a>)</td>
+    <td class="oitomidf">LSTINT<br>
+    (<a href="../../Campos/campos3.htm#288">288</a>)</td>
+  </tr>
+  <tr>
+    <td class="oitomid">MULTIB.<br>
+    EUROCH.<br>
+    PROPRIET.</td>
+    <td class="oitomid">LISTA NEGRA<br>
+    LISTA CINZENTA<br>
+    ANULADO<br>
+    NORMAL</td>
+    <td class="oitomid">------<br>
+    ------<br>
+    ------</td>
+    <td class="oitomid"><a href="../l-ii/a9.htm#06" target="main">06</a><br>
+    <a target="main" href="../l-ii/a9.htm#07">07</a><br>
+    <a target="main" href="../l-ii/a9.htm#09">09</a><br>
+    <a target="main" href="../l-ii/a9.htm#02">02</a></td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">ESPAÇOS</td>
+    <td class="oitomid">ESPAÇOS</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">0</td>
+  </tr>
+  <tr>
+    <td class="oitomid" rowspan="11">VISA<br>
+    <br>
+    MASTERCARD<br>
+    <br>
+    AMEX</td>
+    <td class="oitomid">ANULADO<br>
+    NORMAL</td>
+    <td class="oitomid">------<br>
+    ------</td>
+    <td class="oitomid"><a target="main" href="../l-ii/a9.htm#09">09</a><br>
+    <a target="main" href="../l-ii/a9.htm#02">02</a><em> <strong>a)</strong></em></td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">ESPAÇOS</td>
+    <td class="oitomid">ESPAÇOS</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">0</td>
+  </tr>
+  <tr>
+    <td class="oitomid">LISTA CINZENTA</td>
+    <td class="oitomid">------</td>
+    <td class="oitomid"><a target="main" href="../l-ii/a9.htm#07">07</a></td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">ESPAÇOS <em><strong>b)</strong></em></td>
+    <td class="oitomid">ESPAÇOS</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">0</td>
+  </tr>
+  <tr>
+    <td class="oitomid" rowspan="9">LISTA NEGRA</td>
+    <td class="oitomid">------</td>
+    <td class="oitomid" rowspan="9"><a href="../l-ii/a9.htm#06" target="main">06</a></td>
+    <td class="oitomid">0<br>
+    Não pretende informar os representantes </td>
+    <td class="oitomid" rowspan="9">07, 04,<br>
+    41, 43</td>
+    <td class="oitomid">ESPAÇOS</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">0</td>
+  </tr>
+  <tr>
+    <td class="oitomid">S/ LISTA PAPEL</td>
+    <td class="oitomid" rowspan="2">1<br>
+    Pretende informar o representante nacional (Unicre) </td>
+    <td class="oitomid">ESPAÇOS</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">0</td>
+  </tr>
+  <tr>
+    <td class="oitomid">C/ LISTA PAPEL NACIONAL</td>
+    <td class="oitomid">ESPAÇOS</td>
+    <td class="oitomid">DATA<br>
+    VÁLIDA</td>
+    <td class="oitomid">1</td>
+    <td class="oitomid">0</td>
+  </tr>
+  <tr>
+    <td class="oitomid">S/ LISTA PAPEL </td>
+    <td class="oitomid" rowspan="4">2<br>
+    Pretende informar o representante nacional (Unicre) e internacional </td>
+    <td class="oitomid">ESPAÇOS</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">0</td>
+  </tr>
+  <tr>
+    <td class="oitomid">C/ LISTA PAPEL NACIONAL</td>
+    <td class="oitomid">ESPAÇOS</td>
+    <td class="oitomid">DATA<br>
+    VÁLIDA</td>
+    <td class="oitomid">1</td>
+    <td class="oitomid">0</td>
+  </tr>
+  <tr>
+    <td class="oitomid">C/ LISTA PAPEL INTERNACIONAL</td>
+    <td class="oitomid">PELO MENOS 1 REGIÃO INFORMADA</td>
+    <td class="oitomid">DATA<br>
+    VÁLIDA</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">1</td>
+  </tr>
+  <tr>
+    <td class="oitomid">C/ LISTA PAPEL NACIONAL E INTERNACIONAL</td>
+    <td class="oitomid">PELO MENOS 1 REGIÃO INFORMADA</td>
+    <td class="oitomid">DATA<br>
+    VÁLIDA</td>
+    <td class="oitomid">1</td>
+    <td class="oitomid">1</td>
+  </tr>
+  <tr>
+    <td class="oitomid">S/ LISTA PAPEL </td>
+    <td class="oitomid" rowspan="2">4<br>
+    Pretende informar o representante internacional </td>
+    <td class="oitomid">ESPAÇOS</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">0</td>
+  </tr>
+  <tr>
+    <td class="oitomid">C/ LISTA PAPEL INTERNACIONAL</td>
+    <td class="oitomid">PELO MENOS 1 REGIÃO INFORMADA</td>
+    <td class="oitomid">DATA<br>
+    VÁLIDA</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">1</td>
+  </tr>
+  <tr>
+    <td colspan="10" class="oito"><p class="oito"><em>a)</em> O abate de lista negra ou lista
+    cinzenta é transmitido aos representantes informados na inserção.<br>
+    <em>b)</em> Qualquer pedido de inclusão em lista cinzenta é
+    informado aos representantes, com código de acção 05, se a parametrização de<em>
+    default </em>do BIN referente ao envio de Lista Negra (indicada na '<a target="main"
+    href="../l-ii/i3.htm#I.3.16">Caracterização do BIN</a>'), o informar. </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">EASC - TIPO DE REGISTO = 1
+(ALTERAÇÃO SITUAÇÃO DE CARTÃO) - Versão 00</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NSITCAR</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#144">144</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">COMREP</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">11</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#390">390</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VISCA</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">12</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#279">279</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VISA-CRB</td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#286">286</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DTLIMCBR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#287">287</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LSTUNI</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">30</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#289">289</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LSTINT</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">31</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#288">288</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">EASC - TIPO DE REGISTO = 1 (ALTERAÇÃO SITUAÇÃO DE CARTÃO) - Versão
+01</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD (<a href="easc.htm#1" target="main">1</a>)</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP (<a target="main" href="easc.htm#2">2</a>)</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NSITCAR</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#144">144</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">COMREP</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#390">390</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VISCA</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#279">279</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VISA-CRB</td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">27</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#286">286</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DTLIMCBR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">36</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#287">287</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LSTUNI</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">43</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#289">289</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LSTINT</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">44</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#288">288</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">EASC - TIPO DE REGISTO = 3 (ALTERAÇÃO PARÂMETROS
+DE CARTÃO NO SIST. PAG.) - Versão 00 </p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 3</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">COMREP</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#390">390</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VISCA</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#279">279</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VISA-CRB</td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">12</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#286">286</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DTLIMCBR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">21</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#287">287</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LSTUNI</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">28</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#289">289</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LSTINT</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">29</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#288">288</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">EASC - TIPO DE REGISTO = 3
+(ALTERAÇÃO PARÂMETROS DE CARTÃO NO SIST. PAG) - Versão 01 </p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 3</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td width="45" class="dta">6</td>
+    <td width="45" class="dta">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td width="45" class="dta">2</td>
+    <td width="45" class="dta">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td width="45" class="dta">7</td>
+    <td width="45" class="dta">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CARCD (<a href="easc.htm#1" target="main">1</a>)</td>
+    <td width="45" class="dta">1</td>
+    <td width="45" class="dta">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1161">1161</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP (<a target="main" href="easc.htm#2">2</a>)</td>
+    <td width="45" class="dta">4</td>
+    <td width="45" class="dta">18</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">COMREP</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#390">390</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VISCA</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#279">279</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VISA-CRB</td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#286">286</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DTLIMCBR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">34</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#287">287</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LSTUNI</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">41</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#289">289</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LSTINT</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">42</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#288">288</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p class="nove"><br>
+(<a name="1">1</a>) - Parâmetro - é validado se o Emissor indicar que
+envia o CD.</p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap>(<a name="2">2</a>) -&nbsp;</td>
+    <td class="esq">Preenchimento opcional - mandatório para a emissão de cartões com o
+    mesmo número.</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

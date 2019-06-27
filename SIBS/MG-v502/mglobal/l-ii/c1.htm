@@ -1,0 +1,941 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>C.1 SERVIÇO DE PAGAMENTO AUTOMÁTICO</title>
+<script>top.captulos.location='indicec.htm#C';</script>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><h1 style="padding-top: 10px">C.1 SERVIÇO DE PAGAMENTO <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AUTOMÁTICO </h1>
+    </td>
+    <td class="dta"><img src="imagens2/c1-a.gif" alt="c1-a.gif " WIDTH="204" HEIGHT="61"></td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<p>O serviço de Pagamento Automático foi lançado em 1987, permitindo que os clientes
+possuidores de cartões Multibanco pudessem utilizar o seu cartão para pagar bens ou
+serviços no ponto de venda, com o mesmo cartão que até esse momento já podia ser usado
+nos Caixas Automáticos. </p>
+
+<p>As principais datas da evolução do serviço de Pagamento Automático são:</p>
+
+<blockquote>
+  <table BORDER="0" CELLSPACING="0" CELLPADDING="2" WIDTH="510">
+    <tr>
+      <td class="dez">1987 -</td>
+      <td class="esq10">Lançamento do serviço com terminais de balcão (só para cartões
+      Multibanco)</td>
+    </tr>
+    <tr>
+      <td class="dez">1988 -</td>
+      <td class="esq10">Primeiras Caixas Registadoras (só para cartões Multibanco)</td>
+    </tr>
+    <tr>
+      <td class="dez">1989 -</td>
+      <td class="esq10">Primeiros terminais self-service (só para cartões Multibanco)</td>
+    </tr>
+    <tr>
+      <td class="dez">1990 -</td>
+      <td class="esq10">Alargamento do serviço a outras marcas (cartões de crédito)</td>
+    </tr>
+    <tr>
+      <td class="dez">1991 -</td>
+      <td class="esq10">Terminais nas portagens com o serviço Baixo Valor</td>
+    </tr>
+    <tr>
+      <td class="dez">1992 -</td>
+      <td class="esq10">Telefones públicos e Via Verde nas Portagens, com o serviço Baixo
+      Valor</td>
+    </tr>
+    <tr>
+      <td class="dez">1995 -</td>
+      <td class="esq10">Introdução do Porta Moedas Multibanco</td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><br>
+Em 1990, com o alargamento do serviço, e com a aceitação de cartões de crédito, que
+entretanto os Bancos passaram a emitir, criaram-se dois conceitos novos no Sistema
+Multibanco: 
+
+<ul>
+  <li><strong>ENTIDADE DE APOIO DO TERMINAL</strong> - identificando a entidade que efectua
+    contratos com comerciantes para instalação de Terminais de Pagamento Automático (TPAs)
+    (ex.: Bancos, Unicre).</li>
+</ul>
+
+<ul>
+  <li><strong>REPRESENTANTE DE CARTÃO</strong> - identificando uma entidade que representa
+    cartões (de outros sistemas de pagamento, por exemplo) e que se torna responsável pelos
+    encargos financeiros do Serviço MB e pelo acolhimento do <em>Clearing</em> e <em>Settlement</em>.</li>
+</ul>
+
+<p><br>
+Ao longo dos anos têm-se diversificado as soluções de pagamento para diferentes
+ambientes de retalho através de diferentes tipos de terminais, assim como têm aumentado
+os serviços disponíveis nos mesmos e as diferentes soluções de comunicação. </p>
+
+<p>O pagamento automático com cartões de débito ou de crédito funciona 100% <em>online</em>*, sendo o cliente autenticado pelo código secreto ou por uma
+assinatura. </p>
+
+<p class="oito">* Excepto para o pagamento de portagens.</p>
+
+<p>Tecnicamente a mensagem expedida pelo terminal é recebida pelo sistema central da Rede
+Multibanco. A aplicação Multibanco analisa os dados da pista magnética do cartão do
+utilizador e com a identificação do emissor (BIN), determina qual o centro de
+autorizações para onde a mensagem deve ser encaminhada e qual a natureza do acordo,
+previamente posicionado pelo representante acima referido, a aplicar. </p>
+
+<p style="page-break-before: always" class="center"><img src="imagens2/c1-b.gif" alt="c1-b.gif " WIDTH="470" HEIGHT="221"></p>
+
+<p>1 - Terminal iniciador da operação<br>
+2 - Sistema Central MB faz o &quot;<em>switch</em>&quot; da mensagem ou
+processa em delegação <br>
+&nbsp;&nbsp;&nbsp;&nbsp; e a operação pode ser enviada:<br>
+3 - Ao Emissor do cartão (caso tenha cenário <em>real-time</em>)<br>
+4 - A um Representante de Cartões<br>
+5 - A um Sistema de Pagamento Internacional</p>
+
+<p><br>
+Na tabela de BINs posicionada no Sistema Central da Rede MB, encontram-se codificadas
+quais as características pretendidas pelo emissor: 
+
+<ul>
+  <li>forma de autenticação (código secreto ou assinatura) </li>
+  <li>centro de autorização pretendido </li>
+  <li >tipo de relacionamento com o representante do cartão, quando aplicável, etc.</li>
+</ul>
+
+<p>No caso do BIN do cartão pertencer a um Emissor processado pelo
+Sistema MB, então a SIBS analisa quais os cenários posicionados pelo Emissor, de
+acordo com a &quot;<a href="i3.htm#I.3.16">Caracterização do BIN</a>&quot;. Nos restantes casos, é efectuado o encaminhamento para o Emissor ou processador
+associado ao tipo de cartão.</p>
+
+<p style="page-break-before: always">O <a name="recibo">recibo</a> entregue pelo terminal,
+embora possa variar no seu formato, contém sempre um conjunto mínimo de dados: </p>
+
+<blockquote>
+  <p><img src="imagens2/c1-c.gif" alt="c1-c.gif" WIDTH="462" HEIGHT="390"></p>
+</blockquote>
+
+<blockquote>
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td class="oitoesq" nowrap>1 -&nbsp;&nbsp;</td>
+      <td class="oitoesq">Elementos definidos pela Entidade de Apoio do Terminal quando inseriu
+      no Sistema MB os dados de comerciante e de estabelecimento.</td>
+    </tr>
+  </table>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><strong>PROGRAMAS EMISSOR</strong></p>
+
+<p>Designam-se desta forma as novas funcionalidades que podem ser implementadas
+para cartões <em>chip</em> EMV nacionais. O seu propósito é alargar a oferta de
+serviços prestados pelos emissores aos clientes. Estas funcionalidades são baseadas em
+dados colocados no <em>chip</em> e que podem ser actualizados pela SIBS. </p>
+
+<p><strong>Programa de Crédito - </strong>Permite que o cliente no acto da
+compra especifique se pretende pagar recorrendo a prestações e, em caso afirmativo, qual
+o número de prestações. Os dados existentes no <em>chip</em> determinam qual o valor
+mínimo da compra que permite a sua aplicação, o número máximo de prestações e o
+valor mínimo de cada prestação. </p>
+
+<p><strong>Programa de Fidelização - </strong>Permite que o cliente, após ter
+acumulado pontos associados a um cartão, inicie o processo de rebate dos mesmos através
+de um serviço em CA disponibilizado para o efeito. Esta activação é realizada
+actualizando o indicador de rebate de pontos no cartão. Na operação de compra seguinte,
+o cliente é questionado se pretende efectuar o pagamento mediante a utilização da bolsa
+de pontos para rebate que criou.</p>
+
+<p><strong>Programa de Detalhe - </strong>Permite que o Emissor do cartão seja
+informado de detalhes associados a determinadas operações de compra. Para este efeito, o
+Emissor deve estabelecer acordos com comerciantes de forma a definir os formatos da
+informação enviada, e é necessário desenvolvimento adicional no TPA para suportar esta
+funcionalidade.</p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="C.1.1">C.1.1</a> SISTEMA APLICACIONAL DO
+SERVIÇO MB - PAGAMENTO AUTOMÁTICO</h2>
+
+<p><br>
+O modelo de dados que suporta todas estas relações é o seguinte: </p>
+
+<p class="center"><br>
+<map name="FPMap0">
+<area href="#4" shape="rect" coords="346, 244, 374, 268">
+<area href="#5" shape="rect" coords="489, 159, 513, 183">
+<area href="#2" shape="rect" coords="208, 158, 233, 180">
+<area href="#3" shape="rect" coords="106, 242, 128, 267">
+<area href="#6" shape="rect" coords="423, 76, 448, 103">
+<area href="#1" shape="rect" coords="214, 78, 243, 101">
+<area href="#9" shape="rect" coords="301, 4, 327, 28">
+<area href="#8" shape="rect" coords="49, 156, 72, 183">
+<area href="#7" shape="rect" coords="39, 8, 62, 26"></map><img rectangle="(208,158) (233,180) c1.htm#2" rectangle="(106,242) (128,267) c1.htm#3" rectangle="(423,76) (448,103) c1.htm#6" rectangle="(214,78) (243,101) c1.htm#1" rectangle="(301,4) (327,28) c1.htm#9" rectangle="(49,156) (72,183) c1.htm#8" rectangle="(39,8) (62,26) c1.htm#7" src="imagens2/c1-d.gif" alt="c1-d.gif" border="0" usemap="#FPMap0" width="551" height="302"></p>
+
+<p>&nbsp;</p>
+
+<h6><a name="1">1</a>. Comerciante</h6>
+
+<p>Representa a entidade (pessoa colectiva em nome individual ou empresa) que participa no
+serviço como comerciante ou destinatário das operações efectuadas nos terminais que
+lhe forem associados, matriculada no sistema via Terminal de Serviços SIBS pela Entidade
+de Apoio ao Terminal, a partir dos documentos incluídos em <a href="i_a2.pdf">anexo</a>
+ao capítulo I. <br>
+Cada comerciante tem uma identificação única no Sistema Multibanco. </p>
+
+<h6><br>
+<a name="2">2</a>. Estabelecimento</h6>
+
+<p>Representa um conjunto de terminais contratados pela Entidade de Apoio. Normalmente
+corresponde a um estabelecimento com uma determinada morada onde os terminais se
+encontram. <br>
+A Entidade de Apoio do Terminal pode associar a cada estabelecimento um número variável
+de terminais e de cartões de comerciante. <br>
+Os contratos são definidos a nível de estabelecimento e vigoram para todos os terminais
+que pertencem ao estabelecimento. <br>
+Os dados são inseridos via Terminal de Serviços SIBS pela Entidade de Apoio a partir dos
+documentos incluídos em <a href="i_a2.pdf">anexo</a> ao capítulo I. </p>
+
+<h6><br>
+<a name="3">3</a>. Terminal</h6>
+
+<p>Representa cada terminal contratado. <br>
+Cada TPA tem uma identificação única no Sistema MB que é atribuída quando a Entidade
+de Apoio o regista. <br>
+Só é permitido o registo de TPAs cujas marcas/modelos tenham sido certificadas pela
+SIBS. </p>
+
+<p>Devido à diversidade de TPAs existente, as suas características variam consoante o
+tipo e marca/modelo (ver <a href="c_a2.htm">anexo</a> ao presente capítulo). </p>
+
+<p><br>
+Exemplos de tipos de Terminal:</p>
+
+<table align="center" BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="559">
+  <tr>
+    <th WIDTH="121" class="dez">Tipo de Terminal</th>
+    <th WIDTH="426" class="dez">Notas</th>
+  </tr>
+  <tr>
+    <td width="121" class="esq">Terminal de balcão</td>
+    <td width="426" class="esq">TPA atendido. Precisa de cartão Supervisor.</td>
+  </tr>
+  <tr>
+    <td width="121" class="esq">Terminal Portátil</td>
+    <td width="426" class="esq">TPA portátil em que o módulo de segurança está integrado.</td>
+  </tr>
+  <tr>
+    <td width="121" class="esq">Caixa Registadora</td>
+    <td width="426" class="esq">TPA atendido. Precisa de cartão Supervisor.</td>
+  </tr>
+  <tr>
+    <td width="121" class="esq">TPA <em>Self-Service</em></td>
+    <td width="426" class="esq">TPA <em>self-service</em>. Precisa de cartão Supervisor.</td>
+  </tr>
+  <tr>
+    <td width="121" class="esq">Terminal Portagem *</td>
+    <td width="426" class="esq">TPA para serviço Baixo Valor. Precisa de cartão Supervisor.</td>
+  </tr>
+  <tr>
+    <td width="121" class="esq">TPA Virtual</td>
+    <td width="426" class="esq">TPA para pagamentos na Internet. Precisa de cartão
+    Supervisor.</td>
+  </tr>
+  <tr>
+    <td width="121" class="esq">Telefone Público *</td>
+    <td width="426" class="esq">TPA para serviço Baixo Valor.</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap>*&nbsp; </td>
+    <td class="esq">Nestes terminais <font FACE="Arial" SIZE="2">o cliente identifica-se
+    mediante a apresentação do cartão, nas não autentica a operação (não há código
+    secreto nem assinatura). </font></td>
+  </tr>
+</table>
+
+<p><br>
+Os dados do TPA são inseridos no Terminal de Serviços SIBS com base nos documentos
+incluídos em <a href="i_a2.pdf">anexo</a> ao capítulo I.</p>
+
+<h6><br>
+<a name="4">4</a>. Cartões Comerciante</h6>
+
+<p>São cartões que relacionam a identificação do estabelecimento com a conta bancária
+que é movimentada pelas operações contabilísticas executadas no terminal. Dados
+inseridos no Terminal SIBS a partir dos documentos incluídos em <a href="i_a2.pdf">anexo</a>
+ao capítulo I.</p>
+
+<p><br>
+</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="esq"><br>
+    <strong><br>
+    Cartão Supervisor </strong><br>
+    É um cartão magnético utilizado para colocar em funcionamento um TPA. A partir de 2000
+    estes cartões passaram a ser emitidos com pista de alta coercividade. </td>
+    <td class="esq"><table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="100%" class="esq">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        de 1987 a 1999
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp; desde 2000</td>
+      </tr>
+      <tr>
+        <td width="100%"><img src="imagens2/c1-e.jpg" alt="c1-e.jpg" WIDTH="428" HEIGHT="138"></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="just">Cada cartão supervisor tem um código secreto associado. <br>
+    Um cartão supervisor pode ser utilizado em qualquer TPA registado no mesmo
+    estabelecimento. </td>
+  </tr>
+</table>
+
+<h6><br>
+<a name="5">5</a>. Conta</h6>
+
+<p>É o número da conta bancária, tal como deve ser transmitida para o Banco de
+domicílio da mesma, que está associada ao estabelecimento comercial no qual o terminal
+está instalado. O Banco de Apoio do Comerciante é a instituição financeira na qual
+reside essa conta e que deve colaborar na inserção dos dados no sistema, validando que a
+identificação da conta está correcta e corresponde ao seu cliente/comerciante. </p>
+
+<h6><br>
+<a name="6">6</a>. Banco de Apoio do Comerciante</h6>
+
+<p>É a Instituição de Crédito na qual reside a conta do comerciante que é movimentada
+pelos totais do período deduzidos dos valores aplicáveis. </p>
+
+<h6 style="page-break-before: always"><br>
+<a name="7">7</a>. Representante</h6>
+
+<p>Trata-se de uma entidade jurídica distinta que é previamente matriculada no Sistema
+MB, com a capacidade para caracterização de novos contratos entre um estabelecimento
+possuidor de TPAs e um ou vários tipos de cartão (ex.: Unicre, American Express, etc.). </p>
+
+<h6><br>
+<a name="8">8</a>. Contrato</h6>
+
+<p>É o conjunto de dados que caracterizam as operações que forem realizadas pelos
+cartões do Representante, no terminal do Comerciante, com quem o contrato é realizado. </p>
+
+<h6><br>
+<a name="9">9</a>. Entidade de Apoio do Terminal</h6>
+
+<p>É a instituição que contratou com o comerciante o funcionamento de um conjunto de
+terminais. Ou coincide com um representante (ex.: Unicre) ou com o Banco de Apoio (caso
+dos terminais que não foram contratados por um representante). <br>
+É o responsável por registar na SIBS os dados de Comerciante, Estabelecimento, Terminal
+e solicitar a produção de cartões comerciante. </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.1.2">C.1.2</a> OPERAÇÕES CLIENTE NO PAGAMENTO AUTOMÁTICO</h2>
+
+<p><br>
+As operações de cliente no P.A. são fundamentalmente as operações que permitem a
+realização de um pagamento (Compra) ou o seu inverso (Devolução), que são de
+implementação obrigatória para qualquer sistema que pretenda ser certificado como
+Terminal de Pagamento Automático. A Devolução não se aplica a terminais <em>self-service</em>.
+<br>
+Para dar suporte a operações com cartão de crédito em terminais atendidos estão
+definidas as operações Autorização de Crédito e Cancelar Autorização. <br>
+Para terminais <em>self-service</em> em que não se conhece o valor do pagamento à
+partida existe uma operação especial de Autorização de Compra. <br>
+Estão ainda definidas as operações de Adiantamento de Dinheiro e de Depósito, esta
+última específica para terminais que estejam instalados em balcões dos Bancos. <br>
+Pode ainda efectuar-se um conjunto diversificado de operações, se a Entidade de Apoio do
+Terminal o autorizar e o terminal do comerciante tiver essas operações implementadas:
+Consulta de Saldos de conta, Consulta de Movimentos de conta, Pagamento de
+Serviços/Compras. </p>
+
+<p align="left">&nbsp;</p>
+
+<p style="page-break-before: always" class="center"><strong>Operações Cliente que o
+Fornecedor pode implementar por tipo de Terminal</strong> </p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="562">
+  <tr>
+    <td class="fundomid" width="193" rowspan="2" checked="false"><strong>Operação</strong></td>
+    <th class="fundo" width="351" colspan="2">Tipo de Terminal</th>
+  </tr>
+  <tr>
+    <th class="fundo" width="139">Atendido</th>
+    <th class="fundo" width="212"><em>Self-Service</em></th>
+  </tr>
+  <tr>
+    <td width="193">COMPRA <em>online<br>
+    </em>(<em>Chip</em> e magnética)</td>
+    <td width="139">Obrigatória</td>
+    <td width="212">Obrigatória apenas se Autorização <br>
+    não implementada</td>
+  </tr>
+  <tr>
+    <td width="193">ADIANTAMENTO DINHEIRO<em><br>
+    </em>(<em>Chip</em> e magnética)</td>
+    <td width="139">Opcional</td>
+    <td width="212">Não permitido</td>
+  </tr>
+  <tr>
+    <td width="193">DEVOLUÇÃO</td>
+    <td width="139">Obrigatória</td>
+    <td width="212">Não permitido</td>
+  </tr>
+  <tr>
+    <td width="193">PAGAMENTO <br>
+    SERVIÇOS/COMPRAS</td>
+    <td width="139">Opcional</td>
+    <td width="212">Não permitido</td>
+  </tr>
+  <tr>
+    <td width="193" >PEDIDO DE CRÉDITO</td>
+    <td width="139" >Opcional</td>
+    <td width="212" >Não permitido</td>
+  </tr>
+  <tr>
+    <td width="193">DEPÓSITO</td>
+    <td width="139">Opcional</td>
+    <td width="212">Não permitido</td>
+  </tr>
+  <tr>
+    <td width="193" class="mid">AUTORIZAÇÃO DE COMPRA<br>
+    (<em>Chip</em> e magnética)</td>
+    <td width="139" class="mid">Não permitido</td>
+    <td width="212" >Obrigatória apenas se Compra <br>
+    não implementada</td>
+  </tr>
+  <tr>
+    <td width="193">AUTORIZAÇÃO DE CRÉDITO<em><br>
+    </em>(<em>Chip</em> e magnética)</td>
+    <td width="139">Opcional</td>
+    <td width="212">Não permitido</td>
+  </tr>
+  <tr>
+    <td nowrap width="193">CANCELAR <br>
+    AUTORIZAÇÃO CRÉDITO</td>
+    <td width="139">Opcional</td>
+    <td width="212">Não permitido</td>
+  </tr>
+  <tr>
+    <td width="193">CONSULTA SALDOS</td>
+    <td width="139">Opcional</td>
+    <td width="212">Não permitido</td>
+  </tr>
+  <tr>
+    <td width="193">CONSULTA MOVIMENTOS</td>
+    <td width="139">Opcional</td>
+    <td width="212">Não permitido</td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.1.3">C.1.3</a> COMERCIANTE NO PAGAMENTO AUTOMÁTICO</h2>
+
+<p><br>
+O Comerciante é um agente fundamental em todo o serviço de Pagamento Automático. O
+serviço só é prestado em terminais de comerciantes registados no sistema pela Entidade
+de Apoio do Terminal. <br>
+Nos contratos, que são definidos a nível de cada estabelecimento criado para o
+comerciante, são definidas as regras comerciais que regem a prestação do serviço. <br>
+Após acordo comercial, a Entidade deve inserir os dados do Comerciante, Estabelecimento,
+terminais e requisição dos cartões necessários no Sistema MB, usando os modelos
+incluídos em <a href="i_a2.pdf">anexo</a> ao capítulo I, e inserindo os dados pelo
+Terminal SIBS. A cada Entidade, Comerciante, Estabelecimento e TPA, é atribuída uma
+identificação única. <br>
+Se o comerciante já estiver definido no sistema, a Entidade de Apoio só regista os
+restantes elementos. </p>
+
+<p>Para cada Estabelecimento o comerciante recebe os Cartões Supervisor requisitados que
+estão associados à sua conta no Banco de Apoio e que são utilizados para operar os
+terminais. </p>
+
+<p>A partir desse momento fica definida a conta a ser creditada pela actividade efectuada
+nesse terminal e nesse período de funcionamento. </p>
+
+<p>O tipo de TPA utilizado determina as funções de Comerciante que estão disponíveis. </p>
+
+<p style="page-break-before: always" class="center"><br>
+<strong>Operações Comerciante que o Fornecedor pode implementar por tipo de Terminal</strong></p>
+
+<p><strong><br>
+</strong></p>
+<div align="center"><center>
+
+<table border="1" cellpadding="2" cellspacing="0" width="590">
+  <tr>
+    <td class="fundomid" width="193" rowspan="2" checked="false"><strong>Operação</strong></td>
+    <th class="fundo" width="351" colspan="2">Tipo de Terminal</th>
+  </tr>
+  <tr>
+    <th class="fundo" width="139">Atendido</th>
+    <th class="fundo" width="212">Self-Service</th>
+  </tr>
+  <tr>
+    <td width="341" class="just"><strong>ABERTURA PERÍODO</strong> <br>
+    Define o início de um período contabilístico do terminal.</td>
+    <td width="127" class="mid">Obrigatória</td>
+    <td width="104" class="mid">Obrigatória</td>
+  </tr>
+  <tr>
+    <td width="341" class="just"><strong>FECHO PERÍODO</strong> <br>
+    Encerra um período contabilístico. É esta função que determina a criação de um
+    movimento de crédito ao comerciante pelas operações efectuadas durante o período. <br>
+    É emitido um recibo com os totais das operações efectuadas durante o período e as
+    respectivas comissões. </td>
+    <td width="127" class="mid">Obrigatória</td>
+    <td width="104" class="mid">Obrigatória</td>
+  </tr>
+  <tr>
+    <td class="just" width="341"><strong>FECHO&amp;ABERTURA<br>
+    </strong>Permite ao comerciante fechar o período e automaticamente abrir o período
+    seguinte</td>
+    <td width="127" class="mid">Obrigatória</td>
+    <td width="104" class="mid">Obrigatória</td>
+  </tr>
+  <tr>
+    <td width="341" class="just"><strong>DESCARGA OPERAÇÕES</strong> <br>
+    Permite ao comerciante efectuar o envio de registos <em>offline</em> para a SIBS. </td>
+    <td width="127" class="mid">Obrigatória</td>
+    <td width="104" class="mid">Obrigatória</td>
+  </tr>
+  <tr>
+    <td width="341" class="just"><strong>CONSULTA GENÉRICA <br>
+    </strong>Permite ao comerciante ou ao fornecedor do terminal efectuar operações
+    especiais.</td>
+    <td width="127" class="mid">Obrigatória</td>
+    <td width="104" class="mid">Obrigatória</td>
+  </tr>
+  <tr>
+    <td width="341" class="just"><strong>ALTERAÇÃO CÓDIGO</strong><br>
+    Permite ao comerciante alterar o código secreto do seu cartão supervisor. </td>
+    <td width="127" class="mid">Opcional</td>
+    <td width="104" class="mid">Opcional</td>
+  </tr>
+  <tr>
+    <td class="just" width="341"><strong>CONSULTA ÚLTIMA OPERAÇÃO<br>
+    </strong>Permite ao comerciante obter um talão com a última operação processada na
+    SIBS.</td>
+    <td width="127" class="mid">Obrigatória</td>
+    <td width="104" class="mid">Opcional</td>
+  </tr>
+  <tr>
+    <td class="just" width="341"><strong>REPETIR ÚLTIMO RECIBO<br>
+    </strong>Permite ao comerciante imprimir uma cópia do último recibo (apenas para os
+    recibos em que tal é possível).</td>
+    <td width="127" class="mid">Obrigatória</td>
+    <td width="104" class="mid">Opcional</td>
+  </tr>
+</table>
+</center></div>
+
+<p><br>
+Os Telefones Públicos só têm definida uma operação de matrícula. <br>
+Os Terminais de Portagem têm definida a operação de Abertura e Fecho de Período, para
+além da descarga das operações que processam em <em>offline</em>. </p>
+
+<p>As operações de comerciante são possíveis através da utilização do cartão
+Supervisor e respectivo código secreto. </p>
+
+<p>A operação de Abertura e de Fecho&amp;Abertura pode ser efectuada sem se utilizar um
+cartão supervisor, se o terminal o permitir e a Entidade de Apoio assim o autorizar nos
+dados de registo do terminal no Sistema MB. Neste caso a conta de comerciante a ser
+movimentada pelas operações efectuadas é a mesma que estava a ser utilizada no período
+anterior. </p>
+
+<p><br>
+<strong>O Comerciante tem certas obrigações perante o serviço: </strong>
+
+<ul>
+  <li>O comerciante deve manter uma cópia dos recibos de venda emitidos pelos terminais,
+    devendo, no caso de utilização de assinatura para cartões de crédito, guardar o recibo
+    devidamente assinado. </li>
+  <li>Responder à Entidade de Apoio, (ou à SIBS em sua representação) ou ao Representante
+    de cartões (ex.: Unicre), sempre que surjam dúvidas quanto ao correcto funcionamento do
+    terminal. </li>
+  <li>Pode também ser solicitado ao comerciante no acto do pagamento que identifique o
+    cliente e registe no recibo de compra essa identificação. </li>
+  <li>Só pode ler os cartões dos clientes no leitor do terminal certificado pela SIBS.</li>
+</ul>
+
+<p>Os custos do serviço para o comerciante são negociados com a sua Entidade de Apoio. <br>
+Os custos de comunicação devem ser suportados directamente pelo comerciante caso o
+contrato com a sua Entidade de Apoio não preveja outra solução. Quando se utiliza linha
+telefónica da rede fixa, os custos de comunicação podem ser pagos pela SIBS que os
+transfere para a sua Entidade de Apoio do Terminal. Esta solução foi a única solução
+de acesso telefónico utilizada até 1999 e começa a ser substituída pelo tipo de
+comunicação Quiosque, em que a factura do tempo de comunicação é apresentada ao
+comerciante na factura do seu telefone (apresentada pelo operador da rede fixa). </p>
+
+<p><br>
+<strong>O Comerciante tem direitos perante o serviço: </strong>
+
+<ol type="a" start="1">
+  <li>Receber <a href="c_a1.htm">informação mensal</a> com o resumo das operações de Fecho
+    do Terminal.</li>
+  <li>Mudar de Entidade de Apoio do Terminal (desde que o terminal não pertença à
+    anterior).</li>
+  <li>Contratar novos acordos para a aceitação de outros tipos de cartões cujo
+    representante tenha acordado previamente a utilização da Rede MB.</li>
+</ol>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.1.4">C.1.4</a> BANCO DE APOIO DO COMERCIANTE</h2>
+
+<p><br>
+O Banco de Apoio do Comerciante é responsável pelo serviço bancário associado ao TPA,
+disponibilizando o seu Sistema de Informação para acolher os movimentos da compensação
+MB para movimentar a conta do comerciante. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="C.1.4.1">C.1.4.1</a> CRÉDITO DA CONTA DO COMERCIANTE</h3>
+
+<p><br>
+O crédito da conta do comerciante é efectuado pelo Banco de Apoio na sequência do
+processamento dos ficheiros recebidos da SIBS resultantes da Compensação MB. </p>
+
+<p>Por cada efectivação de um &quot;Fecho de Período&quot; a SIBS envia um registo no
+ficheiro Movimentos (MMOV5) da Compensação MB (<a href="../l-iii/mov-3.htm">tipo registo = 3</a>) na próxima sessão. No caso do Banco ter
+cenário <em>real-time</em>, é previamente enviada a mensagem (<a href="../l-iii/3164.htm">3164</a>). </p>
+
+<p>&nbsp; </p>
+
+<h3 ><a name="C.1.4.2">C.1.4.2</a>&nbsp;EXTRACTOS PARA COMERCIANTE</h3>
+
+  <p><br>
+Na sequência da descontinuação no 1º semestre de 2005 do serviço de <i>printing</i>
+de extractos mensais destinados a comerciantes participantes no Sistema MB,
+  foram criados os ficheiros a enviar pela SIBS aos contratantes das
+operações, Multibanco ou outras marcas, efectuadas nos TPAs em causa, que
+incluem os dados necessários à sua impressão ou disponibilização por outro
+qualquer canal.&nbsp; </p>
+
+<p>
+Os tipos de serviço de extracto electrónico processados pela SIBS, que o
+contratante selecciona quando matricula o Comerciante no Sistema Multibanco, são: </p>
+
+<ul >
+  <li>
+Sem emissão de extracto;</li>
+  <li>
+Extracto por fecho TPA (emitido por
+    Comerciante\Estabelecimento);</li>
+  <li>
+Extracto por fecho e detalhe das comissões MB/PMB
+    (extracto complementar ao anterior e emitido por terminal).</li>
+</ul>
+<p  style="page-break-before: always">São ainda emitidos pela SIBS:&nbsp;</p>
+<ul >
+  <li>
+Extracto por fecho e detalhe das comissões para
+    produtos específicos (Representante);</li>
+  <li>
+Extracto de movimentos creditados ao Comerciante por
+    contrapartida da apresentação das facturas manuais ou de ficheiro de
+    movimentos (BCP/AMEX).</li>
+</ul>
+  No capítulo <a href="../l-iii/ext.htm">E.5</a> do Livro III detalha-se cada um deles, de forma a permitir aos Bancos
+de Apoio ou <i> Acquirers</i> proceder à distribuição mensal da informação relativa
+aos Comerciantes por si contratados.
+
+<p>&nbsp;</p>
+
+
+<h2><a name="C.1.5">C.1.5</a> ENTIDADE DE APOIO DO TERMINAL</h2>
+
+<p><br>
+A Entidade de Apoio do Terminal designa a entidade que contratou o serviço com o
+comerciante. Em termos do Tarifário SIBS é referida como Banco de Apoio
+do Terminal (BAT), podendo ser o Banco de Apoio do Comerciante ou a Unicre.</p>
+
+<p>As tarifas associadas à instalação e gestão do serviço Pagamento
+Automático (taxas de instalação e de ligação mensal, emissão de extractos mensais e
+custos de comunicação quando processados pela SIBS) são facturadas pela SIBS à
+Entidade de Apoio do Terminal (ver Livro II - capítulo <a target="captulos" href="indicex.htm#X">X</a>). </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.1.6">C.1.6</a> REPRESENTANTE DE CARTÕES
+- UTILIZAÇÃO DO SERVIÇO</h2>
+
+<p><br>
+O representante de cartões designa a entidade que é responsável pela contratação e
+pagamento de transacções de cartões de um ou mais Emissores. </p>
+
+<p>Alguns representantes de cartões&nbsp;existentes são, a título de exemplo: </p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="1" cellpadding="2" cellspacing="0" width="595">
+  <tr>
+    <td width="282" class="fundo">REPRESENTANTES </td>
+    <td width="301" class="fundo">CARTÕES </td>
+  </tr>
+  <tr>
+    <td width="282">UNICRE </td>
+    <td width="301">VISA, MASTERCARD, DINERS, JCB</td>
+  </tr>
+  <tr>
+    <td width="282">BANCO COMERCIAL PORTUGUÊS </td>
+    <td width="301">AMERICAN EXPRESS </td>
+  </tr>
+  <tr>
+    <td width="282">BP, REPSOL, ESSO, PETROGAL, etc. </td>
+    <td width="301">GASÓLEO AGRÍCOLA</td>
+  </tr>
+</table>
+</center></div>
+
+<p><br>
+Cada Representante é caracterizado por um conjunto de regras comerciais referentes ao
+processamento das operações com os seus cartões que se materializa no contrato. </p>
+
+<p>O acordo de Representante é definido ao nível do Estabelecimento do comerciante,
+abrangendo portanto todos os terminais existentes nesse estabelecimento. </p>
+
+<p><br>
+Sempre que um Representante conclui um acordo com o comerciante para aceitação de
+cartões no seu estabelecimento, deve inserir os dados respectivos no Sistema MB.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.1.7">C.1.7</a> GESTÃO DE TPA - SERVIÇO DA SIBS</h2>
+
+<p><br>
+A SIBS efectua a certificação dos TPAs e dos <em>pinpads</em> dos
+fornecedores e a Gestão da rede de TPA existente. </p>
+
+<p>No âmbito da certificação, a SIBS emite as especificações técnicas do serviço,
+que vão sendo adequadas à evolução do serviço e dos ambientes e equipamentos em que
+este é inserido. </p>
+
+<p>No âmbito da gestão do serviço a SIBS efectua: </p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="1" cellpadding="6" cellspacing="0" width="537">
+  <tr>
+    <th width="232">REGISTO DE COMERCIANTES/ESTABELECIMENTOS <br>
+    E TERMINAIS </th>
+    <td width="293" class="just">Normalmente é a Entidade de Apoio do Terminal
+      (EAT) que efectua
+    esta operação. A SIBS só intervém a título excepcional e como <em>backup</em>. </td>
+  </tr>
+  <tr>
+    <th width="232">INICIALIZAÇÃO DE PINPAD </th>
+    <td width="293" class="just">Actualmente, todos os <em>pinpads</em> que são utilizados
+    nos TPA têm que ser previamente inicializados na SIBS. </td>
+  </tr>
+  <tr>
+    <th width="232">PRODUÇÃO CARTÕES SUPERVISOR </th>
+    <td width="293" class="just">Os cartões que são requisitados ao Sistema MB são
+    produzidos na SIBS e entregues à EAT que, por sua vez, os disponibiliza ao comerciante. </td>
+  </tr>
+  <tr>
+    <th width="232">COMPENSAÇÃO </th>
+    <td width="293" class="just">Toda actividade realizada nos TPA é diariamente compensada
+    na SIBS, tendo em atenção o tipo de operação, as regras comerciais associadas, e tendo
+    em conta os contratos de representação existentes. O comerciante é creditado na
+    sequência da realização de um fecho contabilístico no seu terminal.&nbsp; </td>
+  </tr>
+  <tr>
+    <th width="232">APOIO AOS COMERCIANTES E FORNECEDORES </th>
+    <td width="293" class="just">O apoio ao funcionamento dos TPA é também realizado, sendo
+    normalmente a SIBS contactada pelo fornecedor do TPA sempre que é necessária alguma
+    intervenção especial. </td>
+  </tr>
+  <tr>
+    <th width="232">EMISSÃO DE LISTAGENS MENSAIS </th>
+    <td width="293" class="just">Mensalmente a SIBS produz listagens resumo, por
+      Comerciante/Estabelecimento, dos fechos efectuados por cada terminal, caso estas tenham
+    sido solicitadas. </td>
+  </tr>
+  <tr>
+    <th width="232">DISPONIBILIZA ACESSO AO SERVIÇO FORNECEDOR DE TPAs </th>
+    <td width="293" class="just">É mantido na SIBS um conjunto de serviços de apoio à
+    gestão dos TPA de cada fornecedor que são disponibilizados através da <i>extranet</i> da SIBS
+    mediante a utilização de um <em>pinpad</em> como segurança de acesso.</td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.1.8">C.1.8</a> FORNECEDOR DE TERMINAIS</h2>
+
+<p><br>
+O fornecedor do TPA é a entidade responsável pela instalação, assistência e
+manutenção do mesmo. </p>
+
+<p>Normalmente é a empresa que solicitou a certificação do mesmo, embora existam
+excepções, em especial no caso dos terminais de balcão. </p>
+
+<p>O fornecedor de TPA é responsável pela correcta instalação dos TPA e <em>pinpad</em>
+nas instalações do comerciante. </p>
+
+<p>Para a instalação de um TPA o fornecedor precisa de conhecer o Número TPA do
+terminal do comerciante. Este número é atribuído automaticamente pelo Sistema MB quando
+a Entidade de Apoio ao Terminal regista o terminal no sistema da SIBS. </p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="C.1.9">C.1.9</a> RECLAMAÇÕES DE FUNCIONAMENTO</h2>
+
+<p><br>
+As reclamações de funcionamento devem ser enviadas à SIBS pela Entidade de Apoio do
+Terminal, ou pelo Banco do cliente. </p>
+
+<p>Em determinadas situações é necessário contactar o comerciante para confirmar se o
+cliente efectuou um pagamento de modo alternativo. </p>
+
+<p>A SIBS regulariza as situações em que seja reconhecido pelo comerciante que uma
+determinada transferência electrónica de fundos não devia ter sido efectuada, conforme
+descrito no capítulo <a target="captulos" href="indicej.htm#J">J</a> -
+Reclamações e Tratamento de Disputas. </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.1.10">C.1.10</a> PAGAMENTOS DE BAIXO VALOR</h2>
+
+<p><br>
+O serviço de Pagamento Automático é um serviço prestado <em>online</em> com a SIBS e
+exigindo ao cliente que digite o seu código secreto ou efectue a sua assinatura. </p>
+
+<p>Excepcionalmente, foi criada, em dois ambientes distintos, a possibilidade de realizar
+o pagamento, sem ser necessário a apresentação do código secreto ou da assinatura.
+Estes dois ambientes caracterizam-se por terem normalmente valores baixos de pagamento e
+serem ambientes de pagamento de serviços em que o risco de fraude por duplicação
+fraudulenta de cartões é menor. Não é autorizado este tipo de funcionamento para
+vendas de bens ou produtos. </p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="1" cellpadding="8" cellspacing="0" width="538">
+  <tr>
+    <th width="96">PORTAGENS </th>
+    <td width="430" class="just">As portagens (por ex.: na BRISA) podem ser pagas somente pela
+    apresentação do cartão que é lido pelo portageiro. <br>
+    A SIBS desenvolveu um sistema que se encontra na Portagem e que autoriza o pagamento. Este
+    sistema mantém uma lista negra local que é actualizada periodicamente pelo Sistema MB .
+    É emitido um recibo que é entregue ao cliente. <br>
+    Este mesmo serviço pode ser acedido através do uso do dispositivo VIA VERDE de um
+    concessionário de auto-estradas, desde que o cliente assine um contrato específico e
+    indique um cartão a ser debitado pelas passagens em portagens com o referido dispositivo.
+    </td>
+  </tr>
+  <tr>
+    <th width="96">TELEFONES </th>
+    <td width="430" class="just">A PT&nbsp;instala telefones públicos&nbsp; que aceitam o
+    cartão como modo de pagamento das chamadas telefónicas. Alguns modelos não aceitam
+    moedas, mas aceitam os cartões pré-comprados do operador. O utilizador deve efectuar a
+    leitura do seu cartão, após o que o telefone entra em contacto com a SIBS para pedir uma
+    autorização antes de permitir que sejam efectuadas até 5 chamadas consecutivas. <br>
+    Neste caso não se efectua a emissão de qualquer recibo. </td>
+  </tr>
+</table>
+</center></div>
+
+<p><br>
+Estes pagamentos são somente cobrados ao cliente em lotes na sequência da sua
+agregação na SIBS. Deste modo evita-se que a conta seja sobrecarregada com muitos
+pagamentos de baixo valor, efectuando-se somente um débito agregado com a totalidade dos
+pagamentos de baixo valor efectuados. </p>
+
+<p>A entidade/comerciante destes serviços é creditada semanalmente pela importância das
+cobranças efectuadas, deduzidas das importâncias retidas como pagamento dos serviços. </p>
+
+<p>Simultaneamente é enviado um ficheiro que contém os detalhes das operações
+realizadas (embora sem a sua associação com a identificação dos cartões ou contas que
+efectuaram os pagamentos). Este ficheiro permite que a empresa efectue a reconciliação
+das cobranças proporcionadas pelo Serviço MB com as receitas expectáveis dos seus
+postos ou cabines. </p>
+
+<p style="page-break-before: always">(ex. de recibo)</p>
+
+<blockquote>
+  <p><img src="imagens2/c1-f.gif" alt="c1-f.gif" WIDTH="413" HEIGHT="213"></p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h6>SERVIÇOS DE SUPORTE A PAGAMENTOS DE BAIXO VALOR</h6>
+
+<p>No caso de o cliente pretender obter uma discriminação dos pagamentos incluídos no
+débito semanal deve dirigir-se a um Caixa Automático ou, se tiver um <em>pinpad</em>
+doméstico, aceder ao site www.multibanco.pt, e solicitar o serviço de Consulta
+Movimentos Baixo Valor. </p>
+
+<p>Neste serviço pode seleccionar o débito pretendido e é impresso um talão com o
+detalhe de todas as operações de baixo valor nele incluídas. </p>
+
+<p>(ex. recibo de CA)</p>
+
+<blockquote>
+  <p class="center"><br>
+  <img src="imagens2/c1-g.gif" alt="c1-g.gif" WIDTH="316" HEIGHT="431"></p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h2><a name="C.1.11">C.1.11</a> TARIFA DE SERVIÇO COMERCIANTE</h2>
+
+<p><br>
+No serviço Pagamento Automático o representante de cada família de cartões negoceia
+com o comerciante a Tarifa de Serviço Comerciante (TSC) a aplicar às operações
+realizadas nos seus TPAs. </p>
+
+<p>No caso de aceitação da marca Multibanco, considera-se como equivalente a
+representante a entidade que matricula o Terminal de Pagamento Automático no Sistema
+Multibanco. Para um mesmo estabelecimento existe apenas uma EAT, independentemente do
+número de TPAs matriculados no mesmo. </p>
+
+<p>Sempre que um Banco ou um Representante termina a negociação da TSC para um
+estabelecimento com TPAs deve inserir as condições via Terminal SIBS. Automaticamente
+estas são utilizadas pelas transacções realizadas em cada um dos terminais pertencentes
+ao estabelecimento, após a abertura local subsequente, realizada no terminal. </p>
+
+<p>O representante é a entidade creditada pela TSC cobrada ao comerciante. </p>
+
+<p class="dta"><br>
+<a href="c2.htm">Seguinte</a></p>
+</body>
+</html>

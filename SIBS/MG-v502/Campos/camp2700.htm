@@ -1,0 +1,1120 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos 2700 (2700-2799)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.&nbsp;</td>
+    <td class="fundo">REP.&nbsp;</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="2700" name="2700">2700</a></td>
+    <td class="esq">
+      <p ALIGN="JUSTIFY"><u>CARD_DATE_ISSU</u></p>
+      <p>Data de emissão do CT, no formato AAAAMMDD.
+    </td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td nowrap>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2701" name="2701">2701</a></td>
+    <td class="esq"><u>BIN DE ÂMBITO NACIONAL</u>
+      <p>Indica se o BIN é âmbito nacional ou não.</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; 0 - Não<br>
+      &nbsp;&nbsp; 1 - Sim</p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>BIN_NAC</td>
+  </tr>
+  <tr>
+    <td><a id="2702" name="2702">2702</a></td>
+    <td class="esq"><u>BIN DE REDE PRIVADA</u>
+      <p>Indica se o BIN pertence a uma Rede Privada ou não.</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; 0 - Não<br>
+      &nbsp;&nbsp; 1 - Sim</p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>BIN_REDE_PRIV</td>
+  </tr>
+  <tr>
+    <td><a id="2703" name="2703">2703</a></td>
+    <td class="esq">
+     <u>BIN COM TAXA GASOLINEIRA</u>
+     <p>Indica se o BIN tem associada a cobrança duma taxa gasolineira ou não.</p>
+     <p>Valores possíveis:<br>
+     &nbsp;&nbsp; 0 - Não<br>
+     &nbsp;&nbsp; 1 - Sim</p>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>BIN_TX_GASOL</td>
+  </tr>
+  <tr>
+    <td><a id="2704" name="2704">2704</a></td>
+    <td class="esq">
+      <u>NÚMERO DE AUTORIZAÇÃO - ORIGINAL</u>
+      <p>Identifica o número de autorização atribuído pelo resolutor à
+      transacção original.</p>
+    </td>
+    <td class="dta">6</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td nowrap>NUM-AUT-O</td>
+  </tr>
+  <tr>
+    <td><a id="2705" name="2705">2705</a></td>
+    <td class="esq"><u>COMPRAS COM PAGAMENTO FRACCIONADO</u>
+      <p>Indica o código de transacção que tem o fraccionamento do pagamento.</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; 010 - Compra (vertente MB)<br>
+      &nbsp;&nbsp; 015 - Compra (outras vertentes)</p>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TRN_PAG_FRAC</td>
+  </tr>
+  <tr>
+    <td><a id="2706" name="2706">2706</a></td>
+    <td class="esq"><u>CENÁRIO DE REAL-TIME PARA PAGAMENTO FRACCIONADO</u>
+      <p>Indica se existe o cenário de <i>Real-Time </i>no serviço de
+      Pagamento Fraccionado</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; N - Não<br>
+      &nbsp;&nbsp; S - Sim</p>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>RT_PAG_FRAC</td>
+  </tr>
+  <tr>
+    <td><a id="2707" name="2707">2707</a></td>
+    <td class="esq"><u>CENÁRIO DE DEGRADAÇÃO PARA PAGAMENTO FRACCIONADO</u>
+      <p>Indica qual é o cenário de degradação ao de <i>Real-Time </i>para o
+      serviço de Pagamento Fraccionado.</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" colspan="2">Valores possíveis:</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 25 -</td>
+          <td class="esq">&nbsp;Saldo de Cartão</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 28 -</td>
+          <td class="esq">&nbsp;Saldo de Crédito Disponível</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 29 -</td>
+          <td class="esq">&nbsp;Saldo para Pagamento Fraccionado</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 57 -</td>
+          <td class="esq">&nbsp;Saldo para Pagamento Fraccionado em conjugação
+            com Saldo de Crédito Disponível</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CEN_PAG_FRAC</td>
+  </tr>
+  <tr>
+    <td><a id="2708" name="2708">2708</a></td>
+    <td class="esq"><u>CÓDIGO DE EMISSOR PARA SIDF</u>
+      <p>Identifica o código do emissor do BIN (descrito no campo 2709), no
+      âmbito do serviço interbancário de detecção de fraude.</p>
+    </td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD_EMI_SIDF</td>
+  </tr>
+  <tr>
+    <td><a id="2709" name="2709">2709</a></td>
+    <td class="esq"><u>DESIGNAÇÃO DO BIN PARA O SIDF</u>
+      <p>Descreve o BIN no âmbito do serviço interbancário de detecção de
+      fraude.</p>
+    </td>
+    <td class="dta">25</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>BIN_SIDF</td>
+  </tr>
+  <tr>
+    <td><a id="2710" name="2710">2710</a></td>
+    <td class="esq"><u>TIPO DE SERVIÇO PRESTADO</u>
+      <p>Identifica o posicionamento do Emissor quento ao tipo de serviço
+      contratado para adetecção de fraude (SIDF).</p>
+      <p>Tem os seguintes valores possíveis:<br>
+      &nbsp;&nbsp; 0 - Sem Serviço<br>
+      &nbsp;&nbsp; 1 - Serviço Básico<br>
+      &nbsp;&nbsp; 2 - Serviço Completo</p>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>SERV_SIDF</td>
+  </tr>
+  <tr>
+    <td><a id="2711" name="2711">2711</a></td>
+    <td class="esq"><u>CÓDIGO DE PRODUTO</u>
+      <p>Campo que identifica o código do Produto que está associado a um
+      determinado BIN (identificado no campo 2709), no âmbito do serviço
+      interbancário de detecção de fraude.</p>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD_PROD_SIDF</td>
+  </tr>
+  <tr>
+    <td><a id="2712" name="2712">2712</a></td>
+    <td class="esq"><u>ENVI_APPL_END_DATE</u>
+      <p>Data de expiração da Aplicação da Rede de Transportes, no formato
+      AAAAMMDD.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2713" name="2713">2713</a></td>
+    <td class="esq"><u>ENVI_PAY_METH</u>
+      <p>Ambiente do método de pagamento.<br>
+      Bitmap com os métodos de pagamento suportados no carregamento do CT.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2714" name="2714">2714</a></td>
+    <td class="esq"><u>ENVI_MONEY_COUNTRY</u>
+      <p>Código de moeda do país da Aplicação da Rede de Transportes.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2715" name="2715">2715</a></td>
+    <td class="esq"><u>PROF_BIRTH_DATE</u>
+      <p>Data de nascimento do titular do CT, no formato AAAAMMDD. Pode ser
+      usada para calcular o preço do contrato.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td nowrap>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2716" name="2716">2716</a></td>
+    <td class="esq"><u>PROF_REDU_RATE</u>
+      <p>Taxa de redução do perfil. Pode ser usada para calcular o preço do
+      contrato.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2717" name="2717">2717</a></td>
+    <td class="esq"><u>PROF_COMPANY_WORKER_NUMBER/PROF_ COMPANY_CUSTOMER_NUMBER</u>
+      <p>Número de trabalhador na empresa ou número de cliente da empresa,
+      dependendo da informação constante no campo <a href="camp2600.htm#2661">2661</a>.<br>
+      Se o campo <a href="camp2600.htm#2661">2661</a> = “00”, então este
+      campo contém o número de identificação do titular (número de cliente
+      da empresa) no ambiente da entidade referida no campo <a href="camp2600.htm#2698">2698</a>
+      (que atribui este número).<br>
+      Se o campo <a href="camp2600.htm#2661">2661</a> for diferente de “00”,
+      então este campo representa o número de trabalhador da empresa de
+      transportes referida no campo <a href="camp2600.htm#2661">2661</a>.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2718" name="2718">2718</a></td>
+    <td class="esq"><u>PROF_USAGE_DATE1</u>
+      <p>Data de expiração do perfil 1, no formato AAAAMMDD.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2719" name="2719">2719</a></td>
+    <td class="esq"><u>PROF_USAGE_DATE2</u>
+      <p>Data de expiração do perfil 2, no formato AAAAMMDD.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2720" name="2720">2720</a></td>
+    <td class="esq"><u>PROF_USAGE_DATE3</u>
+      <p>Data de expiração do perfil 3, no formato AAAAMMDD.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2721" name="2721">2721</a></td>
+    <td class="esq"><u>HIST_DATE_TIME</u>
+      <p>Data/Hora da transacção do CT, no formato AAAAMMDDHHMMSS.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2722" name="2722">2722</a></td>
+    <td class="esq"><u>CONT_LOCATION</u> (para suporte a contratos de duração
+      periódica)
+      <p>Localização do contrato no CT. O valor “0” significa que não
+      está a ser utilizado nenhum contrato de duração periódica.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2723" name="2723">2723</a></td>
+    <td class="esq">
+      <p><u>FIRST_DATE_TIME_ENTRANCE</u> (para suporte a contratos de duração
+      periódica)</p>
+      <p>Data/Hora da primeira entrada, no formato AAAAMMDDHHMMSS.</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2724" name="2724">2724</a></td>
+    <td class="esq">
+      <p><u>HIST_INTERCHANGE_AUTH</u></p>
+      <p>Indicador de ligação em curso.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2725" name="2725">2725</a></td>
+    <td class="esq">
+      <p><u>TICK_USED_PTR_MASK</u></p>
+      <p><i>Bitmap</i> com a localização dos contratos utilizados na
+      transacção.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2726" name="2726">2726</a></td>
+    <td class="esq">
+      <p><u>CONT_1_EXPIRED</u></p>
+      <p>Estado de expiração do contrato 1.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2727" name="2727">2727</a></td>
+    <td class="esq">
+      <p><u>CONT_1_PRIORITY</u></p>
+      <p>Nível de prioridade do contrato 1.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2728" name="2728">2728</a></td>
+    <td class="esq">
+      <p><u>CONT_2_EXPIRED</u></p>
+      <p>Estado de expiração do contrato 2.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2729" name="2729">2729</a></td>
+    <td class="esq">
+      <p><u>CONT_2_PRIORITY</u></p>
+      <p>Nível de prioridade do contrato 2.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2730" name="2730">2730</a></td>
+    <td class="esq">
+      <p><u>CONT_3_EXPIRED</u></p>
+      <p>Estado de expiração do contrato 3.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2731" name="2731">2731</a></td>
+    <td class="esq">
+      <p><u>CONT_3_PRIORITY</u></p>
+      <p>Nível de prioridade do contrato 3.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2732" name="2732">2732</a></td>
+    <td class="esq">
+      <p><u>CONT_4_EXPIRED</u></p>
+      <p>Estado de expiração do contrato 4.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2733" name="2733">2733</a></td>
+    <td class="esq">
+      <p><u>CONT_4_PRIORITY</u></p>
+      <p>Nível de prioridade do contrato 4.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2734" name="2734">2734</a></td>
+    <td class="esq">
+      <p><u>CONT_5_EXPIRED</u></p>
+      <p>Estado de expiração do contrato 5.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2735" name="2735">2735</a></td>
+    <td class="esq">
+      <p><u>CONT_5_PRIORITY</u></p>
+      <p>Nível de prioridade do contrato 5.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2736" name="2736">2736</a></td>
+    <td class="esq">
+      <p><u>CONT_6_EXPIRED</u></p>
+      <p>Estado de expiração do contrato 6.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2737" name="2737">2737</a></td>
+    <td class="esq">
+      <p><u>CONT_6_PRIORITY</u></p>
+      <p>Nível de prioridade do contrato 6.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2738" name="2738">2738</a></td>
+    <td class="esq">
+      <p><u>HIST_EVENT_TYPE</u></p>
+      <p>Tipo de evento/transacção activado no CT. Indica se o evento
+      aconteceu na entrada ou na saída, se corresponde a uma reentrada (na
+      mesma circulação) no sistema de transportes, ou a uma transacção de
+      controlo em caso de fraude.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2739" name="2739">2739</a></td>
+    <td class="esq">
+      <p><u>HIST_OPER_CODE</u></p>
+      <p>Código do operador do sistema de transportes.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2740" name="2740">2740</a></td>
+    <td class="esq">
+      <p><u>HIST_MEANS_TP_IDEN</u></p>
+      <p>Identificador do meio de transporte (por operador de transporte).</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2741" name="2741">2741</a></td>
+    <td class="esq">
+      <p><u>HIST_MACH_CODE</u></p>
+      <p>Identificador do validador (por operador de transporte).</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2742" name="2742">2742</a></td>
+    <td class="esq">
+      <p><u>HIST_ROUTE_CODE</u></p>
+      <p>Código de percurso (por operador de transporte).</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2743" name="2743">2743</a></td>
+    <td class="esq">
+      <p><u>HIST_RUN_CODE</u></p>
+      <p>Código de carreira/linha (por operador de transporte).</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td nowrap>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2744" name="2744">2744</a></td>
+    <td class="esq">
+      <p><u>HIST_STOP_INDEX</u></p>
+      <p>Índice do identificador da paragem na carreira.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2745" name="2745">2745</a></td>
+    <td class="esq">
+      <p><u>HIST_STOP_SUB_INDEX</u></p>
+      <p>Sub índice do identificador da paragem na carreira.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2746" name="2746">2746</a></td>
+    <td class="esq">
+      <p><u>CONTADOR #1</u></td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2747" name="2747">2747</a></td>
+    <td class="esq">
+      <p><u>CONTADOR #2</u></td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2748" name="2748">2748</a></td>
+    <td class="esq">
+      <p><u>CONTADOR #3</u></td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2749" name="2749">2749</a></td>
+    <td class="esq">
+      <p><u>CONTADOR #4</u></td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2750" name="2750">2750</a></td>
+    <td class="esq">
+      <p><u>CONTADOR #5</u></td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2751" name="2751">2751</a></td>
+    <td class="esq">
+      <p><u>CONTADOR #6</u></td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2752" name="2752">2752</a></td>
+    <td class="esq">
+      <p><u>CONTADOR #7</u></td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2753" name="2753">2753</a></td>
+    <td class="esq">
+      <p><u>CONTADOR #8</u></td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2754" name="2754">2754</a></td>
+    <td class="esq">
+      <p><u>CONTADOR #9</u></td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2755" name="2755">2755</a></td>
+    <td class="esq">
+      <p><u>TICK_CONT_VERSION</u></p>
+      <p>Número da versão da estrutura do contrato carregado.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>= “0”</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2756" name="2756">2756</a></td>
+    <td class="esq">
+      <p><u>TICK_CLASS</u></p>
+      <p>Código da classe do contrato.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2757" name="2757">2757</a></td>
+    <td class="esq">
+      <p><u>TICK_RELO_DATE</u></p>
+      <p>Data do carregamento, no formato AAAAMMDD.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2758" name="2758">2758</a></td>
+    <td class="esq">
+      <p><u>VALIDITY_DURATION_TYPE</u></p>
+      <p>Tipo de duração da validade (período no qual um contrato é válido,
+      para uma determinada viagem, após a validação).</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2759" name="2759">2759</a></td>
+    <td class="esq">
+      <p><u>VALIDITY_DURATION_PERI_HOURS</u></p>
+      <p>Período de duração da validade em horas.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2760" name="2760">2760</a></td>
+    <td class="esq">
+      <p><u>TRIP_LIMIT_TYPE</u></p>
+      <p>Tipo de limite de viagens (representa os direitos detidos pelo cliente
+      para viajar).</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2761" name="2761">2761</a></td>
+    <td class="esq">
+      <p><u>TICK_VALI_PERI_TYPE</u></p>
+      <p>Tipo de período de validade.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2762" name="2762">2762</a></td>
+    <td class="esq">
+      <p><u>TICK_UTILIZATION</u></p>
+      <p>Tipo de utilização.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2763" name="2763">2763</a></td>
+    <td class="esq">
+      <p><u>TICK_INTERCHANGE_TYPE</u></p>
+      <p>Tipo de ligação.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2764" name="2764">2764</a></td>
+    <td class="esq">
+      <p><u>TEMPORAL_VALIDITY_TYPE</u></p>
+      <p>Tipo de validade temporal.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2765" name="2765">2765</a></td>
+    <td class="esq">
+      <p><u>TICK_START_DATE</u></p>
+      <p>Data de início do contrato, no formato AAAAMMDD.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2766" name="2766">2766</a></td>
+    <td class="esq">
+      <p><u>TEMPORAL_AMOUNT_DAYS_OR_MONTHS</u></p>
+      <p>Valor do limite temporal em dias ou meses, dependendo do campo <a href="#2764">2764</a>.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2767" name="2767">2767</a></td>
+    <td class="esq">
+      <p><u>TICK_START_TIME</u></p>
+      <p>Hora de início da validade do contrato, no formato HHMM.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2768">2768</a></td>
+    <td class="esq">
+      <p><u>TEMPORAL_AMOUNT_HOURS</u></p>
+      <p>Valor do limite temporal em horas.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2769" name="2769">2769</a></td>
+    <td class="esq">
+      <p><u>SPATIAL_VALIDITY_TYPE</u></p>
+      <p>Tipo de validade espacial.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2770" name="2770">2770</a></td>
+    <td class="esq">
+      <p><u>NETW_ZONE_MASK</u></p>
+      <p>Bitmap que indica as zonas válidas da Rede de Transportes.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2771" name="2771">2771</a></td>
+    <td class="esq">
+      <p><u>SPATIAL_VALIDITY_OPER_CODE</u></p>
+      <p>Código do operador de transportes detentor da zona.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2772" name="2772">2772</a></td>
+    <td class="esq">
+      <p><u>SPATIAL_VALIDITY_OPER_MASK</u></p>
+      <p>Máscara do operador na qual cada posição corresponde a um operador
+      específico onde o contrato é válido.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2773" name="2773">2773</a></td>
+    <td class="esq">
+      <p><u>ROUTE_CODE</u></p>
+      <p>Código do percurso.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2774" name="2774">2774</a></td>
+    <td class="esq">
+      <p><u>ROUTE_ORIG_FARE_ZONE</u></p>
+      <p>Zona de tarifa origem do percurso.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2775" name="2775">2775</a></td>
+    <td class="esq">
+      <p><u>ROUTE_DEST_FARE_ZONE</u></p>
+      <p>Zona de tarifa destino do percurso.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2776" name="2776">2776</a></td>
+    <td class="esq">
+      <p><u>SPATIAL_VALIDITY_PARK_OPER_CODE</u></p>
+      <p>Código de operador do detentor do parque de estacionamento.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2777" name="2777">2777</a></td>
+    <td class="esq">
+      <p><u>SPATIAL_VALIDITY_PARK_LOT_CODE</u></p>
+      <p>Código da zona de estacionamento.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2778" name="2778">2778</a></td>
+    <td class="esq">
+      <p><u>SPATIAL_VALIDITY_PARK_RFU</u></td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2779">2779</a></td>
+    <td class="esq"><u>IDENTIFICADOR DO SAM</u>
+      <p>Código que identifica o SAM na SIBS.<br>
+      Identificador do contexto de sessão com o SAM, em conjunto com o campo (<a href="camp2800.htm#2851">2851</a>)<i>Token
+      de sessão</i> .</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2780">2780</a></td>
+    <td class="esq"><u>KVC</u>
+      <p>KVC (<i>Key index, Version and Category</i>) associado a uma chave
+      mestra.</td>
+    <td class="dta">1</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2781">2781</a></td>
+    <td class="esq"><u>CARD CHALLENGE</u>
+      <p>Número aleatório gerado pelo CT para os comandos de cálculo da
+      assinatura com o SAM.</td>
+    <td class="dta">4</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2782">2782</a></td>
+    <td class="esq"><u>RATIFICATION</u></td>
+    <td class="dta">2</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2783">2783</a></td>
+    <td class="esq"><u>ÍNDICE DO CONTRATO</u>
+      <p>Número de ordem do contrato no CT.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2784">2784</a></td>
+    <td class="esq"><u>PARTE ALTA DA ASSINATURA PARA CT</u></td>
+    <td class="dta">4</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2785">2785</a></td>
+    <td class="esq"><u>CONTRACT TOKEN QUANTITY</u>
+      <p>Contador do contrato indicado no campo <a href="#2783">2783</a>.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2786">2786</a></td>
+    <td class="esq"><u>EMV - RESTRIÇÕES DE UTILIZAÇÃO EM TERMINAIS</u>
+      <p>Este campo corresponde à informação constante nos dois primeiros
+      dois bits do primeiro byte do campo <a href="camp1700.htm#1723">1723</a>&nbsp;
+      EMV - RESTRIÇÕES DE UTILIZAÇÃO.</p>
+      <p>Valores&nbsp; possíveis:<br>
+      &nbsp;&nbsp; (espaço) - Não aplicável<br>
+      &nbsp;&nbsp; A - ATMs<br>
+      &nbsp;&nbsp; R - Restantes terminais<br>
+      &nbsp;&nbsp; S - Sem restrições</p>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMV_UTIL_TERM</td>
+  </tr>
+  <tr>
+    <td><a name="2787">2787</a></td>
+    <td class="esq"><u>EMV - RESTRIÇÕES DE UTILIZAÇÃO DE LEVANTAMENTOS POR
+      ÁREA GEOGRÁFICA</u>
+      <p>Este campo corresponde à informação constante nos últimos dois bits
+      do primeiro byte do campo <a href="camp1700.htm#1723">1723</a>&nbsp; EMV -
+      RESTRIÇÕES DE UTILIZAÇÃO.</p>
+      <p>Valores&nbsp; possíveis:<br>
+      &nbsp;&nbsp; (espaço) - Não aplicável<br>
+      &nbsp;&nbsp; D - Transacções domésticas<br>
+      &nbsp;&nbsp;&nbsp; I -&nbsp; Transacções Internacionais<br>
+      &nbsp;&nbsp; S - Sem restrições</p>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMV_AREA_LEV</td>
+  </tr>
+  <tr>
+    <td><a name="2788">2788</a></td>
+    <td class="esq"><u>EMV - RESTRIÇÕES DE UTILIZAÇÃO DE TRANSACÇÕES DE
+      BENS POR ÁREA GEOGRÁFICA</u>
+      <p>Este campo corresponde à informação constante no quinto e sexto bits
+      do primeiro byte do campo <a href="camp1700.htm#1723">1723</a>&nbsp; EMV -
+      RESTRIÇÕES DE UTILIZAÇÃO.</p>
+      <p>Valores&nbsp; possíveis:<br>
+      &nbsp;&nbsp; (espaço) - Não aplicável<br>
+      &nbsp;&nbsp; D - Transacções domésticas<br>
+      &nbsp;&nbsp;&nbsp; I -&nbsp; Transacções Internacionais<br>
+      &nbsp;&nbsp; S - Sem restrições</p>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMV_AREA_ BENS</td>
+  </tr>
+  <tr>
+    <td><a name="2789">2789</a></td>
+    <td class="esq"><u>EMV - RESTRIÇÕES DE UTILIZAÇÃO DE TRANSACÇÕES DE
+      SERVIÇOS POR ÁREA GEOGRÁFICA</u>
+      <p>Este campo corresponde à informação constante no terceiro e quarto
+      bits do primeiro byte do campo <a href="camp1700.htm#1723">1723</a>&nbsp;
+      EMV - RESTRIÇÕES DE UTILIZAÇÃO.</p>
+      <p>Valores&nbsp; possíveis:<br>
+      &nbsp;&nbsp; (espaço) - Não aplicável<br>
+      &nbsp;&nbsp; D - Transacções domésticas<br>
+      &nbsp;&nbsp;&nbsp; I -&nbsp; Transacções Internacionais<br>
+      &nbsp;&nbsp; S - Sem restrições</p>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMV_AREA_SERV</td>
+  </tr>
+  <tr>
+    <td><a name="2790">2790</a></td>
+    <td class="esq"><u>EMV - RESTRIÇÕES DE UTILIZAÇÃO DE ADIANTAMENTOS POR
+      ÁREA GEOGRÁFICA</u>
+      <p>Este campo corresponde à informação constante nos dois últimos bits
+      do segundo byte do campo <a href="camp1700.htm#1723">1723</a>&nbsp; EMV -
+      RESTRIÇÕES DE UTILIZAÇÃO.</p>
+      <p>Valores&nbsp; possíveis:<br>
+      &nbsp;&nbsp; (espaço) - Não aplicável<br>
+      &nbsp;&nbsp; D - Transacções domésticas<br>
+      &nbsp;&nbsp;&nbsp; I -&nbsp; Transacções Internacionais<br>
+      &nbsp;&nbsp; S - Sem restrições</p>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMV_AREA_CASH</td>
+  </tr>
+  <tr>
+    <td><a name="2791">2791</a></td>
+    <td class="esq"><u>TIPO DE PEDIDO</u>
+      <p>Indica o tipo de pedido da Caracterização.</p>
+      <p>Valores possíveis:<br>
+      &nbsp;&nbsp; A - Alteração<br>
+      &nbsp;&nbsp;&nbsp; I -&nbsp; Inserção</p>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIP_PED</td>
+  </tr>
+  <tr>
+    <td><a name="2792">2792</a></td>
+    <td class="esq">
+      <u>
+      COMPRIMENTO DO FINGERPRINT</u>&nbsp;
+      <p>
+      Comprimento exacto do campo <a href="camp2300.htm#2356">2356</a> -
+      FINGERPRINT em bytes.</p>
+    </td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CPRFP</td>
+  </tr>
+  <tr>
+    <td><a name="2793">2793</a></td>
+    <td class="esq"><u>DATA DO EXTRACTO</u>
+      <p>Apresenta o mês e o ano, a que os movimentos fazem referência. O mês
+      é apresentado por extenso.<br>
+      Ficheiro para impressão de extractos.</td>
+    <td class="dta">14</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DT_EXT</td>
+  </tr>
+  <tr>
+    <td><a name="2794">2794</a></td>
+    <td class="esq"><u>DATA DE EMISSÃO DO EXTRACTO</u>
+      <p>Indica a data de emissão do documento.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DT_EMI_EXT</td>
+  </tr>
+  <tr>
+    <td><a name="2795">2795</a></td>
+    <td class="esq"><u>NOTA SOBRE O IVA PARA EXTRACTO TPA</u>
+      <p>Se igual a 1 é impressa a seguinte nota:<br>
+      &nbsp;&nbsp;&nbsp; Operação isenta de IVA ao abrigo do n.º 28 do artigo
+      do código do IVA.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NOT_IVA_EXT</td>
+  </tr>
+  <tr>
+    <td><a name="2796">2796</a></td>
+    <td class="esq"><u>NÚMERO DE PÁGINA</u></td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUM_PAG</td>
+  </tr>
+  <tr>
+    <td><a name="2797">2797</a></td>
+    <td class="esq"><u>BANCO APOIO COMERCIANTE</u></td>
+    <td class="dta">32</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>BAC_EXT</td>
+  </tr>
+  <tr>
+    <td><a name="2798">2798</a></td>
+    <td class="esq"><u>MORADA E LOCALIDADE DO BANCO APOIO COMERCIANTE</u></td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MOR_BAC_EXT</td>
+  </tr>
+  <tr>
+    <td><a name="2799">2799</a></td>
+    <td class="esq"><u>CÓDIGO POSTAL E LOCALIDADE POSTAL DO BANCO APOIO
+      COMERCIANTE</u></td>
+    <td class="dta">33</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CP_MOR_BAC_EXT</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+<center></center>
+</body>
+</html>

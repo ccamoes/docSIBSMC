@@ -1,0 +1,1175 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos 1400 (1400-1499)</title>
+</head>
+
+<body>
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.</td>
+    <td class="fundo">REP.</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="1400" name="1400">1400</a></td>
+    <td class="esq"><u>EMV - CRYPTOGRAM INFORMATION DATA</u> <p>Inclui informação
+    proprietária, informada pelo cartão EMV para entrega ao emissor.</td>
+    <td class="dta">1</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>CRIPT-INF</td>
+  </tr>
+  <tr>
+    <td><a id="1401" name="1401">1401</a></td>
+    <td class="esq"><u>EMV - CARDHOLDER VERIFICATION METHOD RESULTS</u> <p>Informa o resultado
+    das funções EMV executadas.</td>
+    <td class="dta">3</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>CVM-RESULTS</td>
+  </tr>
+  <tr>
+    <td><a id="1402" name="1402">1402</a></td>
+    <td class="esq"><u>EMV - DEDICATED FILE NAME</u> <p>Identificação alternativa da
+    aplicação do cartão. Primeiro byte indica o comprimento dos dados enviados.</td>
+    <td class="dta">17</td>
+    <td>B</td>
+    <td>&nbsp;</td>
+    <td>DF-NAME</td>
+  </tr>
+  <tr>
+    <td><a id="1403" name="1403">1403</a></td>
+    <td class="esq"><u>VERSÃO/CAPACIDADES DO TPA</u> <p>Informa a capacidade de processamento
+    de operações por parte do Terminal de Pagamento Automático, face à evolução
+    tecnológica registada na rede nacional.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp;&nbsp; 0 - TPA sem capacidades Euro/não aplicável<br />
+    &nbsp;&nbsp;&nbsp; 1 - TPA com capacidades Euro<br />
+    &nbsp;&nbsp;&nbsp; 2 - TPA com capacidades Euro e EMV</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CAP-TPA</td>
+  </tr>
+  <tr>
+    <td><a id="1404" name="1404">1404</a></td>
+    <td class="esq"><u>NÚMERO CARTÃO EUROSHELLl</u> <p>Número atribuído pela Shell, na
+    sequência do último número emitido para o mesmo tipo de cartão/cliente Shell.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NCARTSHELL</td>
+  </tr>
+  <tr>
+    <td><a id="1405" name="1405">1405</a></td>
+    <td class="esq"><u>CHECK DIGIT DO CARTÃO EUROSHELLl</u> <p>Check digit da pista 2,
+    calculado sobre BIN/release code/cód. companhia/n.º cartão.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CDSHELL</td>
+  </tr>
+  <tr>
+    <td><a id="1406" name="1406">1406</a></td>
+    <td class="esq"><u>TIPO DE PEDIDO DE CARTÃO</u> <p>&nbsp;&nbsp; 1 - Inicial<br />
+    &nbsp;&nbsp; 2 - Substituição</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPPEDCAR</td>
+  </tr>
+  <tr>
+    <td><a id="1407" name="1407">1407</a></td>
+    <td class="esq"><u>COMBINAÇÃO DE CHAVES EUROSHELL</u> <p>Código de combinação de
+    chaves de produção/validação de PIN. Assume o valor constante &#145;1&#146;.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COMCHASHELL</td>
+  </tr>
+  <tr>
+    <td><a id="1408" name="1408">1408</a></td>
+    <td class="esq"><u>DURAÇÃO DO PERÍODO</u> <p>Período de duração de saldo a utilizar
+    pelo cartão Euroshell.</p>
+    <table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq">&nbsp;01 -&nbsp;</td>
+        <td class="esq"><em>Diário:</em> das 0 às 24h</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;10 -&nbsp;</td>
+        <td class="esq"><em>Único renovável:</em> até gastar o valor, renovando-se
+        automaticamente</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;11 -&nbsp;</td>
+        <td class="esq"><em>Único não renovável:</em> até gastar o valor</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap">&nbsp;80 -&nbsp;</td>
+        <td class="esq"><em>Semanal:</em> de domingo a sábado</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;83 -&nbsp;</td>
+        <td class="esq"><em>Mensal:</em> de 1 ao último dia do mês</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;84 -&nbsp;</td>
+        <td class="esq"><em>Mensal com acumulação de saldos:</em> acumula para o plafond do mês
+        seguinte, o saldo não gasto no mês anterior</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;85 -&nbsp;</td>
+        <td class="esq"><em>Trimestral:</em> do 1º ao último dia do trimestre</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;86 -&nbsp;</td>
+        <td class="esq"><em>Semestral:</em> do 1º ao último dia do semestre</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;89 -&nbsp;</td>
+        <td class="esq"><em>Anual:</em> do 1º ao último dia do ano</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;90 -&nbsp;</td>
+        <td class="esq"><em>A termo certo:</em> data de fim pré-determinada</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DURPERSHELL</td>
+  </tr>
+  <tr>
+    <td><a id="1409" name="1409">1409</a></td>
+    <td class="esq"><u>DATA DE INÍCIO DO PERÍODO</u> <p>Data a partir da qual fica
+    disponível o plafond definido, para o cartão Euroshell, para utilização no período.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATINIPER</td>
+  </tr>
+  <tr>
+    <td><a id="1410" name="1410">1410</a></td>
+    <td class="esq"><u>MONTANTE MÁXIMO NO PERÍODO</u> <p>Plafond a utilizar pelo cartão
+    Euroshell durante o período escolhido.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MONMAXPER</td>
+  </tr>
+  <tr>
+    <td><a id="1411" name="1411">1411</a></td>
+    <td class="esq"><u>PURCHASE CATEGORY</u> <p>&nbsp;&nbsp; 0 - Gasóleo<br>
+    &nbsp;&nbsp; 1 - Gasolina<br />
+    &nbsp;&nbsp; 2 - Manutenção + combustíveis<br />
+    &nbsp;&nbsp; 3 - Sem restrições</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PURCAT</td>
+  </tr>
+  <tr>
+    <td><a id="1412" name="1412">1412</a></td>
+    <td class="esq"><u>INDICADOR DE RECOLHA DE KM</u> <p>&nbsp;&nbsp; 0 - Não recolher
+    quilometragem<br />
+    &nbsp;&nbsp; 1 - Recolher quilometragem</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDKM</td>
+  </tr>
+  <tr>
+    <td><a id="1413" name="1413">1413</a></td>
+    <td class="esq"><u>INDICADOR DE MATRÍCULA DO VEÍCULO</u> <p>&nbsp;&nbsp; 0 - Não
+    recolher matrícula do veículo<br />
+    &nbsp;&nbsp; 1 - Recolher matrícula do veículo</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDMATVEI</td>
+  </tr>
+  <tr>
+    <td><a id="1414" name="1414">1414</a></td>
+    <td class="esq"><u>NOME DO UTILIZADOR DO CARTÃO</u> <p>Nome do utilizador do cartão
+    Euroshell. É a primeira linha do embossing do cartão.</td>
+    <td class="dta">27</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NOMUTICAR</td>
+  </tr>
+  <tr>
+    <td><a id="1415" name="1415">1415</a></td>
+    <td class="esq"><u>MATRÍCULA DO VEÍCULO</u> <p>Matrícula do veículo. É a segunda
+    linha do embossing do cartão Euroshell.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MATVEI</td>
+  </tr>
+  <tr>
+    <td><a id="1416" name="1416">1416</a></td>
+    <td class="esq"><u>EMBOSSING CARTÃO EUROSHELL</u> <p>Terceira linha do embossing do
+    cartão Euroshell.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>EMBCARSHELL</td>
+  </tr>
+  <tr>
+    <td><a id="1417" name="1417">1417</a></td>
+    <td class="esq"><u>CÓDIGO DE LÍNGUA</u> <p>&nbsp;&nbsp; 1 - Inglês<br />
+    &nbsp;&nbsp; 2 - Francês<br />
+    &nbsp;&nbsp; 3 - Alemão</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODLIN</td>
+  </tr>
+  <tr>
+    <td><a id="1418" name="1418">1418</a></td>
+    <td class="esq"><u>CÓDIGO PRODUTO DO VEÍCULO</u> <p>Código Euroshell associado ao
+    cartão Frota.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODPROVEI</td>
+  </tr>
+  <tr>
+    <td><a id="1419" name="1419">1419</a></td>
+    <td class="esq"><u>MARCA DO VEÍCULO</u> <p>Código Shell.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MARVEI</td>
+  </tr>
+  <tr>
+    <td><a id="1420" name="1420">1420</a></td>
+    <td class="esq"><u>MODELO DO VEÍCULO</u> <p>Código Shell.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MODVEI</td>
+  </tr>
+  <tr>
+    <td><a id="1421" name="1421">1421</a></td>
+    <td class="esq"><u>CATEGORIA DO VEÍCULO</u> <p>Código Shell.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CATVEI</td>
+  </tr>
+  <tr>
+    <td><a id="1422" name="1422">1422</a></td>
+    <td class="esq"><u>REFERÊNCIA FACTURA MANUAL</u> <p>Referência atribuída às facturas
+    manuais de cartões Euroshell.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>REFFACMAN</td>
+  </tr>
+  <tr>
+    <td><a id="1423" name="1423">1423</a></td>
+    <td class="esq"><u>DATA FACTURA MANUAL</u> <p>Data da transacção que originou a factura
+    manual Euroshell.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATFACMAN</td>
+  </tr>
+  <tr>
+    <td><a id="1424" name="1424">1424</a></td>
+    <td class="esq"><u>NÚMERO KM FACTURA MANUAL</u> <p>Número de quilómetros do veículo,
+    informado na factura manual Euroshell.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NKMFACMAN</td>
+  </tr>
+  <tr>
+    <td><a id="1425" name="1425">1425</a></td>
+    <td class="esq"><u>FLEET NUMBER FACTURA MANUAL</u> <p>Quando contém valor significativo,
+    indica o número do condutor ou veículo. Código Euroshell.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FLENUMFAC</td>
+  </tr>
+  <tr>
+    <td><a id="1426" name="1426">1426</a></td>
+    <td class="esq"><u>CÓDIGO DE PRODUTO</u> <p>Código de produto Euroshell.</p>
+    <p>Pode assumir os seguintes valores:<br>
+    &nbsp;&nbsp; 001 - Super<br>
+    &nbsp;&nbsp; 002 - S/ Chumbo 98<br>
+    &nbsp;&nbsp; 003 - Gasóleo<br>
+    &nbsp;&nbsp; 004 - Gasolina V-Power CC<br>
+    &nbsp;&nbsp; 005 - S/ Chumbo 95<br>
+    &nbsp;&nbsp; 006 - Auto Gás<br>
+    &nbsp;&nbsp; 007 - Gasóleo Agrícola<br>
+    &nbsp;&nbsp; 010 - Gás Embalado<br>
+    &nbsp;&nbsp; 011 - Bebidas<br>
+    &nbsp;&nbsp; 012 - Tabaco<br>
+    &nbsp;&nbsp; 013 - Conf. Snack<br>
+    &nbsp;&nbsp; 014 - Fast Food<br>
+    &nbsp;&nbsp; 015 - Bens Conv.<br>
+    &nbsp;&nbsp; 016 - Não alimentar<br>
+    &nbsp;&nbsp; 017 - Jornais<br>
+    &nbsp;&nbsp; 018 - Automóvel<br>
+    &nbsp;&nbsp; 019 - Serviço Loja<br>
+    &nbsp;&nbsp; 020 - Lavagens<br>
+    &nbsp;&nbsp; 021 - Apoio Auto<br>
+    &nbsp;&nbsp; 022 - Lubrificantes<br>
+    &nbsp;&nbsp; 023 - Promoções<br>
+    &nbsp;&nbsp; 024 - Outros 5%<br>
+    &nbsp;&nbsp; 025 - Outros 6%&nbsp; </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODPRO</td>
+  </tr>
+  <tr>
+    <td><a id="1427" name="1427">1427</a></td>
+    <td class="esq"><u>QUANTIDADE PRODUTO</u> <p>Quantidade de produto adquirido pelo cartão
+    Euroshell.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>4 int.<br />
+    2 dec.</td>
+    <td>QUANPROD</td>
+  </tr>
+  <tr>
+    <td><a id="1428" name="1428">1428</a></td>
+    <td class="esq"><u>VALOR PRODUTO</u> <p>Valor total de produto adquirido pelo cartão
+    Euroshell.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>6 int.<br />
+    2 dec.</td>
+    <td>VALPROD</td>
+  </tr>
+  <tr>
+    <td><a id="1429" name="1429">1429</a></td>
+    <td class="esq"><u>CÓDIGO OPERAÇÃO TRANSACÇÃO</u> <p>Operador para scroll. Pode
+    assumir os valores &gt;; &lt;; =.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODOPETRA</td>
+  </tr>
+  <tr>
+    <td><a id="1430" name="1430">1430</a></td>
+    <td class="esq"><u>SITUAÇÃO CLIENTE NO BAIXO VALOR</u> <p>&nbsp;&nbsp; 1 - Inibida<br />
+    &nbsp;&nbsp; 2 - Normal</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SITCLIBXV</td>
+  </tr>
+  <tr>
+    <td><a id="1431" name="1431">1431</a></td>
+    <td class="esq"><u>SITUAÇÃO CARTÃO EUROSHELL</u> <p>Os valores possíveis são:<br>
+    &nbsp;&nbsp; 2 - Normal<br />
+    &nbsp;&nbsp; 3 - Tentativas de PIN esgotadas no dia<br />
+    &nbsp;&nbsp; 4 - Lista Negra nacional</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SITCARSHELL</td>
+  </tr>
+  <tr>
+    <td><a id="1432" name="1432">1432</a></td>
+    <td class="esq"><u>DATA SITUAÇÃO CARTÃO EUROSHELL</u> <p>Data da última alteração à
+    situação do cartão Euroshell.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATSITCAR</td>
+  </tr>
+  <tr>
+    <td><a id="1433" name="1433">1433</a></td>
+    <td class="esq"><u>REDE</u><p>Indica a Rede a que o CA pertence.<br>
+    Utilizado no âmbito do reporting da publicidade em CAs.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>REDE</td>
+  </tr>
+  <tr>
+    <td><a id="1434" name="1434">1434</a></td>
+    <td class="esq"><u>INDICADOR ACORDO AMEX</u><p>Indica se o estabelecimento possui algum
+    acordo com o representante AMEX.</p>
+    <p>&nbsp;&nbsp; 0 - Não<br>
+    &nbsp;&nbsp; 1 - Sim</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp; </td>
+    <td>IND_AC_AMEX</td>
+  </tr>
+  <tr>
+    <td><a id="1435" name="1435">1435</a></td>
+    <td class="esq"><u>ORIGEM LISTA NEGRA</u> <p>Pode ser:<br>
+    &nbsp;&nbsp; 1 - Telex da empresa<br />
+    &nbsp;&nbsp; 2 - Rede Multibanco<br />
+    &nbsp;&nbsp; 3 - Telex para a SIBS<br />
+    &nbsp;&nbsp; 4 - Inibição cliente</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ORILN</td>
+  </tr>
+  <tr>
+    <td><a id="1436" name="1436">1436</a></td>
+    <td class="esq"><u>SALDO DISPONÍVEL</u> <p>Saldo disponível no período para o cartão
+    Euroshell.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>5 int.<br />
+    2 dec.</td>
+    <td>SALDISP</td>
+  </tr>
+  <tr>
+    <td><a id="1437" name="1437">1437</a></td>
+    <td class="esq"><u>DATA ÚLTIMO MOVIMENTO</u> <p>Data do último movimento do cartão
+    Euroshell.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATULTMOV</td>
+  </tr>
+  <tr>
+    <td><a id="1438" name="1438">1438</a></td>
+    <td class="esq"><u>MONTANTE GASTO NO PERÍODO</u> <p>Montante gasto no período com o
+    cartão Euroshell.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>4 int.<br />
+    2 dec.</td>
+    <td>MONGASPER</td>
+  </tr>
+  <tr>
+    <td><a id="1439" name="1439">1439</a></td>
+    <td class="esq"><u>NÚMERO MOVIMENTOS ANO</u> <p>Número de transacções efectuadas no
+    ano pelo cartão Euroshell.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMMOVANO</td>
+  </tr>
+  <tr>
+    <td><a id="1440" name="1440">1440</a></td>
+    <td class="esq"><u>VALOR MOVIMENTOS ANO</u> <p>Valor total das transacções efectuadas no
+    ano pelo cartão Euroshell.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>5 int.<br />
+    2 dec.</td>
+    <td>VALMOVANO</td>
+  </tr>
+  <tr>
+    <td><a id="1441" name="1441">1441</a></td>
+    <td class="esq"><u>NÚMERO MOVIMENTOS INTERNACIONAIS ANO</u> <p>Número de transacções
+    internacionais realizadas no ano com cartão Euroshell.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NMOVINTANO</td>
+  </tr>
+  <tr>
+    <td><a id="1442" name="1442">1442</a></td>
+    <td class="esq"><u>VALOR MOVIMENTOS INTERNACIONAIS ANO</u> <p>Valor total das
+    transacções internacionais efectuadas no ano com cartão Euroshell.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>5 int.<br />
+    2 dec.</td>
+    <td>VALMOVINTANO</td>
+  </tr>
+  <tr>
+    <td><a id="1443" name="1443">1443</a></td>
+    <td class="esq"><u>DATA 1ª UTILIZAÇÃO MÊS</u> <p>Data da primeira utilização do
+    cartão Euroshell no período.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATUTIMES</td>
+  </tr>
+  <tr>
+    <td><a id="1444" name="1444">1444</a></td>
+    <td class="esq"><u>KM 1ª UTILIZAÇÃO MÊS</u> <p>Quilómetros do veículo na primeira
+    utilização do cartão Euroshell no período.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>KMUTIMES</td>
+  </tr>
+  <tr>
+    <td><a id="1445" name="1445">1445</a></td>
+    <td class="esq"><u>DATA 1ª UTILIZAÇÃO ANO</u> <p>Data da primeira utilização do
+    cartão Euroshell no ano.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATUTIANO</td>
+  </tr>
+  <tr>
+    <td><a id="1446" name="1446">1446</a></td>
+    <td class="esq"><u>KM 1ª UTILIZAÇÃO ANO</u> <p>Quilómetros do veículo na primeira
+    utilização do cartão Euroshell no ano.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>KMUTIANO</td>
+  </tr>
+  <tr>
+    <td><a id="1447" name="1447">1447</a></td>
+    <td class="esq"><u>DATA ÚLTIMA UTILIZAÇÃO</u> <p>Data da última utilização do
+    cartão Euroshell.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATULTUTI</td>
+  </tr>
+  <tr>
+    <td><a id="1448" name="1448">1448</a></td>
+    <td class="esq"><u>KM NA ÚLTIMA UTILIZAÇÃO</u> <p>Quilómetros do veículo na última
+    utilização do cartão Euroshell.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>KMULTUTI</td>
+  </tr>
+  <tr>
+    <td><a id="1449" name="1449">1449</a></td>
+    <td class="esq"><u>LITROS ÚLTIMA UTILIZAÇÃO</u> <p>Litros de combustível abastecido na
+    última utilização do cartão Euroshell.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>LITULTUTI</td>
+  </tr>
+  <tr>
+    <td><a id="1450" name="1450">1450</a></td>
+    <td class="esq"><u>LITROS ABASTECIDOS NO TOTAL</u> </td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>LITABATOT</td>
+  </tr>
+  <tr>
+    <td><a id="1451" name="1451">1451</a></td>
+    <td class="esq"><u>NÚMERO TRANSACÇÕES DE BAIXO VALOR NO PERÍODO</u> <p>Número de
+    transacções em portagens realizadas pelo cartão Euroshell no período.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NTRABXVPER</td>
+  </tr>
+  <tr>
+    <td><a id="1452" name="1452">1452</a></td>
+    <td class="esq"><u>VALOR TRANSACÇÕES DE BAIXO VALOR NO PERÍODO</u> <p>Valor de
+    transacções em portagens realizadas pelo cartão Euroshell no período.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>5 int.<br />
+    2 dec.</td>
+    <td>VALTRABXVPER</td>
+  </tr>
+  <tr>
+    <td><a id="1453" name="1453">1453</a></td>
+    <td class="esq"><u>NÚMERO TRANSACÇÕES DE BAIXO VALOR NO ANO</u> <p>Número de
+    transacções em portagens realizadas pelo cartão Euroshell no ano.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NTRABXVANO</td>
+  </tr>
+  <tr>
+    <td><a id="1454" name="1454">1454</a></td>
+    <td class="esq"><u>VALOR TRANSACÇÕES DE BAIXO VALOR NO ANO</u> <p>Valor de transacções
+    em portagens realizadas pelo cartão Euroshell no ano.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>5 int.<br />
+    2 dec.</td>
+    <td>VALTRABXVANO</td>
+  </tr>
+  <tr>
+    <td><a id="1455" name="1455">1455</a></td>
+    <td class="esq"><u>INDICADOR DE ACTUALIZAÇÃO DE CARTÃO</u> <p>Atributo que indica a
+    acção a efectuar sobre o cartão. Assume os valores:<br>
+    &nbsp;&nbsp; 2 - incluir em LN nacional<br />
+    &nbsp;&nbsp; 6 - repor tentativas de PIN<br />
+    &nbsp;&nbsp; 9 - abater de LN</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>INDACTCAR</td>
+  </tr>
+  <tr>
+    <td><a id="1456" name="1456">1456</a></td>
+    <td class="esq"><u>CONTROLO DE TROCAS</u> <p>Define o âmbito geográfico de utilização
+    do cartão. Assume os valores:<br>
+    &nbsp;&nbsp; 1 - Internacional<br />
+    &nbsp;&nbsp; 5 - Nacional<br />
+    &nbsp;&nbsp; 7 - Rede própria</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CONTROCAS</td>
+  </tr>
+  <tr>
+    <td><a id="1457" name="1457">1457</a></td>
+    <td class="esq"><u>TID</u> <p>Número único atribuído pela AMEX a uma transacção.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TID</td>
+  </tr>
+  <tr>
+    <td><a id="1458" name="1458">1458</a></td>
+    <td class="esq"><u>DATA DE INTRODUÇÃO DA FACTURA MANUAL</u> <p>Data de introdução da
+    factura manual de cartão Euroshell.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DATINTFAC</td>
+  </tr>
+  <tr>
+    <td><a id="1459" name="1459">1459</a></td>
+    <td class="esq"><u>INDICADOR 2ª OCORRÊNCIA ACORDO</u> <p>Informa se existe um segundo
+    conjunto de condições contratuais de um acordo, específicas para vendas que incluam
+    combustíveis.</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap">&nbsp;&nbsp; 0 -&nbsp;</td>
+        <td class="esq">não existe um acordo de combustíveis no comerciante/estabelecimento
+        independente de acordo para não combustíveis.</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 1 -&nbsp;</td>
+        <td class="esq">existe um acordo de combustíveis no comerciante/estabelecimento
+        independente de acordo para não combustíveis.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND-AC-FUEL</td>
+  </tr>
+  <tr>
+    <td><a id="1460" name="1460">1460</a></td>
+    <td class="esq"><u>VENDA DE COMBUSTÍVEIS</u> <p>Informa se o Terminal de Pagamento
+    Automático pode efectuar vendas de combustível e indica as condições em que é
+    aplicada uma taxa ao cliente.</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap">&nbsp;&nbsp; 0 -&nbsp;</td>
+        <td class="esq">não aplicável - TPA não vende combustíveis ou campo ainda não
+        existente; não é aplicada nenhuma taxa ao cliente.</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 1 -&nbsp;</td>
+        <td class="esq">TPA vende combustíveis e outros bens; se a aplicação local não o
+        consegue determinar, o TPA deve perguntar ao operador se a compra inclui combustíveis. Se
+        o operador confirmar a inclusão de combustíveis, pode ser aplicada uma taxa ao cliente
+        (em função dos parâmetros do cartão).</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 2 -</td>
+        <td class="esq">TPA só vende combustíveis; é aplicada a taxa ao cliente sempre que os
+        parâmetros do cartão não indiquem o contrário.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1461" name="1461">1461</a></td>
+    <td class="esq"><u>FLOOR LIMIT NACIONAL</u> <p>Parâmetro para gestão de risco no TPA.<br
+    />
+    Corresponde a um valor limite, em Euro, para transacções <em>offline</em> com cartões
+    nacionais (código país do emissor = código país do TPA).</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>Euros<br />
+    8 int.<br />
+    2 dec.</td>
+    <td>FLIM-NAC</td>
+  </tr>
+  <tr>
+    <td><a id="1462" name="1462">1462</a></td>
+    <td class="esq"><u>FLOOR LIMIT INTERNACIONAL</u> <p>Parâmetro para gestão de risco no
+    TPA.<br />
+    Corresponde a um valor limite, em Euro, para transacções <em>offline</em> com cartões
+    internacionais (código de país do emissor é diferente do código de país do TPA).</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>Euros<br />
+    8 int.<br />
+    2 dec.</td>
+    <td>FLIM-INT</td>
+  </tr>
+  <tr>
+    <td><a id="1463" name="1463">1463</a></td>
+    <td class="esq"><u>PERCENTAGEM ESCOLHA ALEATÓRIA</u> <p>Parâmetro para gestão de risco
+    no TPA.<br />
+    Indicador utilizado pelo TPA para escolher, aleatoriamente, uma percentagem de
+    transacções que devem ser autorizadas online, independentemente de o valor envolvido ser
+    ou não inferior ao <em>FLOOR LIMIT</em> posicionado.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TPERC</td>
+  </tr>
+  <tr>
+    <td><a id="1464" name="1464">1464</a></td>
+    <td class="esq"><u>PERCENTAGEM MÁXIMA ESCOLHA ALEATÓRIA</u> <p>Parâmetro para gestão
+    de risco no TPA.<br />
+    Percentagem máxima para o número de transacções escolhidas aleatoriamente para serem
+    autorizadas <em>online</em>.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TMAX</td>
+  </tr>
+  <tr>
+    <td><a id="1465" name="1465">1465</a></td>
+    <td class="esq"><u>VALOR LIMITE ESCOLHA ALEATÓRIA</u> <p>Parâmetro para gestão de risco
+    no TPA.<br />
+    Permite atribuir uma ponderação às transacções consoante o seu valor. À medida que o
+    valor da transacção se aproxima deste parâmetro, aumenta a probabilidade da
+    transacção ser &quot;escolhida&quot; para autorização <em>online</em>.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>VL-ALEAT</td>
+  </tr>
+  <tr>
+    <td><a id="1466" name="1466">1466</a></td>
+    <td class="esq"><u>TERMINAL ACTION CODE - DENIAL</u> <p>Especifica as condições no
+    acquirer que resultam numa recusa da transacção sem que se verifique sequer uma
+    tentativa de autorização <em>online</em>.</td>
+    <td class="dta">10</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TAC-DEN</td>
+  </tr>
+  <tr>
+    <td><a id="1467" name="1467">1467</a></td>
+    <td class="esq"><u>TERMINAL ACTION CODE - ONLINE</u> <p>Especifica as condições no
+    acquirer que levam a uma decisão <em>online</em>.</td>
+    <td class="dta">10</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TAC-ONL</td>
+  </tr>
+  <tr>
+    <td><a id="1468" name="1468">1468</a></td>
+    <td class="esq"><u>TERMINAL ACTION CODE - DEFAULT</u> <p>Especifica as condições que
+    geram uma recusa de uma transacção que poderia ser autorizada online, mas que o TPA não
+    conseguiu processar <em>online</em>.</td>
+    <td class="dta">10</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TAC-DFL</td>
+  </tr>
+  <tr>
+    <td><a id="1469" name="1469">1469</a></td>
+    <td class="esq"><u>ALGORITMO ESCOLHA ALEATÓRIA</u> <p>Indicador utilizado pelo terminal
+    para seleccionar o algoritmo a utilizar para calcular o montante das transacções <em>offline</em>
+    com um determinado cartão.</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" colspan="2">Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap">&nbsp;&nbsp; 0 -&nbsp;</td>
+        <td class="esq">não é efectuada nenhuma verificação</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 1 -</td>
+        <td class="esq">o valor da última transacção de um cartão com um determinado PAN é
+        adicionado ao valor da transacção corrente</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 2 -</td>
+        <td class="esq">os montantes determinados de todas as transacções offline anteriores
+        são adicionados ao da transacção corrente</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>T-LOG</td>
+  </tr>
+  <tr>
+    <td><a id="1470" name="1470">1470</a></td>
+    <td class="esq"><u>INDICADOR CVM</u> <p>Campo que define o comportamento do TPA na
+    verificação da titularidade do cartão (<em>Cardholder Verification Methods</em>).</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CVM-IND</td>
+  </tr>
+  <tr>
+    <td><a id="1471" name="1471">1471</a></td>
+    <td class="esq"><u>INDICADOR DE KEY ENTER</u> <p>Valores possíveis:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Key Enter não está disponível<br />
+    &nbsp;&nbsp;&nbsp; 1 - Key Enter está disponível</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>KEY ENTER</td>
+  </tr>
+  <tr>
+    <td><a id="1472" name="1472">1472</a></td>
+    <td class="esq"><u>RID (&quot;REGISTERED APPLICATION PROVIDER IDENTIFIER&quot;)</u> <p>Alguns
+    valores possíveis:<br />
+    &nbsp;&nbsp;&nbsp; A000000003 - VISA<br />
+    &nbsp;&nbsp;&nbsp; A000000004 - MasterCard<br />
+    &nbsp;&nbsp;&nbsp; A000000010 - Europay</td>
+    <td class="dta">10</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>RID</td>
+  </tr>
+  <tr>
+    <td><a id="1473" name="1473">1473</a></td>
+    <td class="esq"><u>AID (&quot;APPLICATION IDENTIFIER&quot;)</u> <p>Identificador de uma
+    aplicação EMV, de acordo com a norma ISO/ IEC 7816-5.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>AID</td>
+  </tr>
+  <tr>
+    <td><a id="1474" name="1474">1474</a></td>
+    <td class="esq"><u>CARACTERIZAÇÃO DA APLICAÇÃO</u> <p>Campo relaccionado com o AID.
+    Define um conjunto de características da aplicação, a utilizar pelo terminal.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>APLIC-CAR</td>
+  </tr>
+  <tr>
+    <td><a id="1475" name="1475">1475</a></td>
+    <td class="esq"><u>AID LABEL</u> <p>Descritivo associado a um AID.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>AID-LABEL</td>
+  </tr>
+  <tr>
+    <td><a id="1476" name="1476">1476</a></td>
+    <td class="esq"><u>CÓDIGO DE PARÂMETROS EMV</u> <p>Indica o conjunto de parâmetros EMV
+    considerado.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODPAREMV</td>
+  </tr>
+  <tr>
+    <td><a id="1477" name="1477">1477</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO PINBLOCK</u><p>Usado nos campos em que a emissão de
+    cartões é efectuada com PIN fixo; identifica o PINBLOCK a associar ao cartão.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDPINBLOCK2</td>
+  </tr>
+  <tr>
+    <td><a id="1478" name="1478">1478</a></td>
+    <td class="esq"><p ><u>DATA DE CRIAÇÃO</u></p>
+    <p >Data de formatação do ficheiro. Os dois últimos dígitos representam
+    a sequência do ficheiro no dia, que pode ir de 00 a 99.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>AAAAMMDDSS</td>
+    <td>DT-CRIACAO</td>
+  </tr>
+  <tr>
+    <td><a id="1479" name="1479">1479</a></td>
+    <td class="esq"><p ><u>IDENTIFICAÇÃO DO FICHEIRO ANTERIOR</u></p>
+    <p >Indica a data e sequência do último ficheiro processado com sucesso.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>AAAAMMDDSS</td>
+    <td>ID-FICHANT</td>
+  </tr>
+  <tr>
+    <td><a id="1480" name="1480">1480</a></td>
+    <td class="esq"><u>NÚMERO DE DECIMAIS MONTANTE SETTLEMENT</u> <p>É o número de decimais
+    que o campo <a href="camp800.htm#866">866</a> MONTANTE DE SETTLEMENT contém.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DEC-MNT-SET</td>
+  </tr>
+  <tr>
+    <td><a id="1481" name="1481">1481</a></td>
+    <td class="esq"><u>CÓDIGO DO TIPO DE CARTÃO</u><p>Código atribuído pela SIBS a cada
+    tipo de cartão para o qual realiza processamento.<br>
+    <br>
+    Pode assumir os seguintes valores:<br />
+    &nbsp;&nbsp; 3 - VISA<br />
+    &nbsp;&nbsp; 2 - SHELL<br />
+    &nbsp;&nbsp; 4 - MASTERCARD<br />
+    &nbsp;&nbsp; 5 - EUROCARD<br />
+    &nbsp;&nbsp; 6 - ELECTRON<br />
+    &nbsp;&nbsp; 7 - UNIBANCO<br />
+    &nbsp;&nbsp; 8 - ESSO<br />
+    &nbsp;&nbsp; A - CECA<br />
+    &nbsp;&nbsp; C - GALP<br />
+    &nbsp;&nbsp; G - MAESTRO<br />
+    &nbsp;&nbsp; M - DINERS<br />
+    &nbsp;&nbsp; N - REPSOL (SOLRED)<br />
+    &nbsp;&nbsp; O - REPSOL<br />
+    &nbsp;&nbsp; Q - CREDIPLUS<br />
+    &nbsp;&nbsp; R - CREDIPLUS<br />
+    &nbsp;&nbsp; S - SERVISA<br />
+    &nbsp;&nbsp; T - CEPSA<br />
+    &nbsp;&nbsp; U - UTA<br />
+    &nbsp;&nbsp; V - RESSA<br />
+    &nbsp;&nbsp; K - DKV</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIPCART-COD</td>
+  </tr>
+  <tr>
+    <td><a id="1482" name="1482">1482</a></td>
+    <td class="esq"><u>CÓDIGO DE DISTRITO UTILIZADOR CARTÃO GV</u><p>É o código do
+    distrito onde o utilizador do Cartão Gasóleo Verde está registado.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1483" name="1483">1483</a></td>
+    <td class="esq"><u>CÓDIGO DE CONCELHO UTILIZADOR CARTÃO GV</u><p>É o código do
+    Concelho onde o utilizador do Cartão Gasóleo Verde está registado.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1484" name="1484">1484</a></td>
+    <td class="esq"><u>CÓDIGO DE FREGUESIA UTILIZADOR CARTÃO GV</u><p>É o código de
+    Freguesia onde o utilizador do Cartão Gasóleo Verde está registado.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1485" name="1485">1485</a></td>
+    <td class="esq"><u>NÚMERO AGRÍCOLA</u><p>Número atribuído pela direcção regional ao
+    beneficiário.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1486" name="1486">1486</a></td>
+    <td class="esq"><u>CÓDIGO REGIONAL</u><p>Código que permite ao terminal distinguir os
+    cartões por Região Agrícola (emitidos por uma dada Direcção Regional) ou o ramo de
+    actividade em que a utilização do cartão se insere. Com base neste código, o terminal
+    pode aplicar diferentes perfis de autorização.</p>
+    <p>Tem os seguintes valores:<br>
+    &nbsp;&nbsp;&nbsp; 00 - RESERVADO<br>
+    &nbsp;&nbsp;&nbsp; 01 - ENTRE DOURO E MINHO<br>
+    &nbsp;&nbsp;&nbsp; 02 - TRÁS-OS-MONTES<br>
+    &nbsp;&nbsp;&nbsp; 03 - BEIRA LITORAL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Agricultura)<br>
+    &nbsp;&nbsp;&nbsp; 04 - BEIRA INTERIOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Silvicultura)<br>
+    &nbsp;&nbsp;&nbsp; 05 - RIBATEJO E OESTE<br>
+    &nbsp;&nbsp;&nbsp; 06 - ALENTEJO<br>
+    &nbsp;&nbsp;&nbsp; 07 - ALGARVE<br>
+    &nbsp;&nbsp;&nbsp; 08 - AÇORES
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    (Pesca Cabinada)<br>
+    &nbsp;&nbsp;&nbsp; 09 - AÇORES
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    (Agricultura)<br>
+    &nbsp;&nbsp;&nbsp; 10 - AÇORES
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    (Pesca Artesanal)<br>
+    &nbsp;&nbsp;&nbsp; 11 -
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    (Motores Fixos/Aquecimento)<br>
+    &nbsp;&nbsp;&nbsp; 12 -
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    (Ferrovia)<br>
+    &nbsp;&nbsp;&nbsp; 13 -
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    (Motores Fixos/Geradores)<br>
+    &nbsp;&nbsp;&nbsp; 14 -
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    (Motores Fixos/Aquicultura)<br>
+    &nbsp;&nbsp;&nbsp; 19 - <br>
+    &nbsp;&nbsp;&nbsp; 20 - CONTINENTE
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Pescas Continente)<br>
+    &nbsp;&nbsp;&nbsp; 21 - CONTINENTE
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Navegação Costeira)<br>
+    &nbsp;&nbsp;&nbsp; 22 - CONTINENTE
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Act. Marítimo/Turísticas)<br>
+    &nbsp;&nbsp;&nbsp; 23 - CONTINENTE
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Dragagens)<br>
+    &nbsp;&nbsp;&nbsp; 24 - RESERVADO<br>
+    &nbsp;&nbsp;&nbsp; 25 - RESERVADO<br>
+    &nbsp;&nbsp;&nbsp; 39 - RESERVADO<br>
+    &nbsp;&nbsp;&nbsp; 99 - RESERVADO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    (Brigadas Fiscais)</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1487" name="1487">1487</a></td>
+    <td class="esq"><u>CÓDIGO SITUAÇÃO CARTÃO GV</u><p>Código que indica qual a
+    situação do Cartão Gasóleo Verde.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1488" name="1488">1488</a></td>
+    <td class="esq"><u>DATA INSERÇÃO CARTÃO</u><p>Data de inserção do Cartão Gasóleo
+    Verde no sistema central da SIBS.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1489" name="1489">1489</a></td>
+    <td class="esq"><u>DATA SITUAÇÃO CARTÃO GV</u><p>Data em que o Cartão Gasóleo Verde
+    ficou com o código de situação indicado no campo <a href="#1487">1487</a>.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1490" name="1490">1490</a></td>
+    <td class="esq"><u>DATA ÚLTIMA ACTUALIZAÇÃO CARTÃO</u><p>Data em que se realizou a
+    última actualização aos dados do Cartão Gasóleo Verde.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1491" name="1491">1491</a></td>
+    <td class="esq"><u>DATA ÚLTIMA ACTUALIZAÇÃO</u><p>Data em que se realizou a última
+    actualização aos dados referentes ao cliente do serviço de Gasóleo Verde, titular do
+    cartão.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1492" name="1492">1492</a></td>
+    <td class="esq"><u>DATA ÚLTIMO ABASTECIMENTO</u><p>Data do último abastecimento
+    efectuado pelo Cartão Gasóleo Verde.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1493" name="1493">1493</a></td>
+    <td class="esq"><u>HORA ÚLTIMO ABASTECIMENTO</u><p>É a hora em que foi efectuado o
+    último abastecimento com o Cartão de Gasóleo Verde.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>HHMM</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1494" name="1494">1494</a></td>
+    <td class="esq"><u>NÚMERO DE CARTÕES</u><p>Quantidade de cartões já atribuídos ao
+    titular de Cartão Gasóleo Verde.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1495" name="1495">1495</a></td>
+    <td class="esq"><u>NOME</u><p>Nome do titular do Cartão de Gasóleo Verde.</td>
+    <td class="dta">50</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1496" name="1496">1496</a></td>
+    <td class="esq"><u>NÚMERO CARTÃO GV</u><p>Número único que identifica o cartão de
+    Gasóleo Verde no sistema central.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1497" name="1497">1497</a></td>
+    <td class="esq"><u>NÚMERO CARTÃO MINISTÉRIO</u><p>Número sequencial do cartão
+    atribuído pelo Ministério ao beneficiário.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1498" name="1498">1498</a></td>
+    <td class="esq"><u>NÚMERO CONTRIBUINTE</u><p>Número de Identificação Fiscal do titular
+    do cartão de Gasóleo Verde.</td>
+    <td class="dta">9</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="1499" name="1499">1499</a></td>
+    <td class="esq"><u>ORIGEM SITUAÇÃO CARTÃO GV</u><p>Campo que indica a entidade que deu
+    origem à alteração efectuada no cartão GV.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

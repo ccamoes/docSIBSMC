@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>D.2 INTERACÇÃO COM O NÍVEL PRT</title>
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="main">
+<script>top.captulos.location='indiced.htm#D';</script>
+</head>
+
+<body>
+
+<h1>D.2 INTERACÇÃO COM O NÍVEL PRT</h1>
+
+<p>&nbsp;</p>
+
+<p>O operador do Participante ou da SIBS efectua ao nível do monitor do PRT, o comando de
+abertura de sessão. Esta acção faz com que os níveis de PRT de ambos os interlocutores
+troquem as necessárias mensagens de controlo de diálogo, após o que o PRT de ambos
+informa a aplicação de que a sessão foi (ou não) estabelecida.</p>
+
+<p>Após este acontecimento, o nível aplicacional pode, recorrendo aos serviços do PRT,
+trocar mensagens estruturadas de acordo com as regras desta aplicação. </p>
+
+<p>Quando um dos interlocutores desejar suspender ou fechar a sessão, efectua a
+correspondente solicitação ao PRT, que se encarrega de a acertar com o outro
+interlocutor, através das necessárias mensagens de controlo de diálogo.</p>
+
+<p>Uma vantagem importante da comunicação estruturada em duas camadas distintas
+(PRT/Aplicação) é a garantia de integridade de comunicação proporcionada pelo PRT. </p>
+
+<p>Assim, há por um lado uma garantia de que não se perderam mensagens e por outro lado
+de que não são entregues mensagens ao nível aplicação que já anteriormente o haviam
+sido. Isto é possível porque o PRT tem mecanismos de controlo de integridade e
+recuperação próprios.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.2.1">D.2.1</a> RECUPERAÇÃO E INTEGRIDADE</h2>
+
+<p><br>
+O Sistema MB, no cenário de <em>Real-Time</em>, está implementado sobre a camada de <em>software</em>
+PRT que oferece uma total garantia de integridade. </p>
+
+<p>Pelo facto de ser usado o PRT, a aplicação a nível do Participante pode assumir que
+o PRT nunca lhe entrega a mesma transacção duas vezes (não há duplicados) e pode
+também assumir que nunca há perda de mensagens. Esta situação simplifica
+extraordinariamente o desenho da aplicação, já que há a garantia de que o PRT assegura
+a integridade da comunicação. </p>
+
+<p>O PRT regista as mensagens enviadas em disco, bem como o estado da comunicação, de
+forma que, mesmo se houver uma falha grave no CPD, é possível reatar a comunicação e
+executar correctamente os procedimentos de recuperação. </p>
+
+<p>Após uma qualquer falha grave (queda do CPU, corte de linha ou outro), a sessão
+recupera, repetindo o PRT SIBS para o do Participante, as mensagens enviadas e para as
+quais não houve resposta. </p>
+
+<p>Se o Participante já respondeu anteriormente então o seu PRT constata isso e repete a
+resposta anteriormente dada à SIBS, que ao recebê-la provoca o envio duma transacção
+de anulação ao Participante. </p>
+
+<p>Se o PRT do Participante constata que a mensagem ainda não foi tratada, passa a
+mensagem ao nível aplicacional e a transacção é processada e respondida, sendo em tudo
+o mais o procedimento análogo ao caso anterior. </p>
+
+<p>É importante notar que se assume aqui que o desenho do PRT e o seu interface com a
+aplicação no lado do Participante garante a execução da aplicação e envio da
+resposta numa acção sincronizada. Isto significa que, caso ocorra um <em>backout</em>
+das acções executadas pelo PRT, ele é acompanhado de <em>backout</em> às acções
+executadas pela aplicação. </p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="D.2.2">D.2.2</a> ENVIO DE PENDENTES</h2>
+
+<p><br>
+As transacções pendentes são aquelas que, por alguma razão, não foram enviadas para
+autorização pelo Participante (previamente à sua execução). Adoptamos como princípio
+que estas transacções são enviadas com a maior urgência possível, devendo entender-se
+que o Participante as aceita sempre, já que correspondem a transacções já executadas. </p>
+
+<p>O Participante responde a estas transacções, mas a resposta é invariavelmente
+positiva. O processo de envio de pendentes da SIBS procura enviar todos os movimentos; se
+esse envio não tiver ocorrido até ao momento em que é realizado um fecho central na
+SIBS, a tentativa de envio é parada e os movimentos pendentes que não tenham seguido
+ainda são incluídos no ficheiro da Compensação adequado (<a href="dst-1.htm"
+target="main">Destinos</a>, no caso de operações cliente, <a href="mov-0.htm">Movimentos</a>,
+no caso de fechos TPA) que o Participante vai receber e que é preparado na sequência do
+fecho central da SIBS (Compensação MB). </p>
+
+<p><br>
+As transacções pendentes são motivadas por diversas causas: 
+
+<ul>
+  <li>O Participante não está acessível em <em>real-time</em>, sendo no momento as
+    transacções dos seus clientes resolvidas em modo degradado (saldo de cartão ou saldo de
+    conta). Mal se restabeleça o <em>real-time</em> estas começam então a ser enviadas. </li>
+</ul>
+
+<ul>
+  <li>As transacções chegam à SIBS como <em>re-entries</em> provenientes dum equipamento
+    que funcionou em <em>offline</em> durante algum tempo. <br>
+    Destas, algumas podem ser anulações que a SIBS só envia se já tiver anteriormente
+    comunicado a transacção a anular. </li>
+</ul>
+
+<ul>
+  <li>O Participante enviou uma resposta a uma transacção que chega à SIBS fora de tempo
+    (devido ou a um tempo de resposta invulgarmente grande ou a qualquer outra anomalia), o
+    que origina a entrega à aplicação na SIBS duma resposta tardia. Nestas situações,
+    caso a resposta tenha sido positiva, a SIBS gera uma anulação que é imediatamente
+    marcada para envio pelo processo acima referido. </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><a name="D.2.3">D.2.3</a> TRATAMENTO DE MENSAGENS DE RESPOSTA COM ERRO</h2>
+
+<p><br>
+Procedimento a seguir no âmbito de uma sessão <em>real-time</em> e na sequência de um
+pedido da SIBS em que ocorre um erro numa mensagem de resposta de um Participante: 
+
+<ol>
+  <li>Se no tratamento da mensagem de resposta do Participante, não for detectado qualquer
+    erro até à validação do código de resposta (inclusive) e se a resposta do
+    Participante (conhecida pelo código em causa) for positiva: a SIBS degrada o serviço
+    (passa a decisão para saldo de conta ou saldo de cartão).</li>
+</ol>
+
+<ol start="2">
+  <li>Se no tratamento da mensagem de resposta do Participante, não for detectado qualquer
+    erro até à validação do código de resposta (inclusive) e se a resposta do
+    Participante for negativa: a SIBS rejeita a operação (não presta o serviço).</li>
+</ol>
+
+<ol start="3">
+  <li>Se no tratamento da resposta do Participante, for detectado um erro até à validação
+    do código de resposta (inclusive): a SIBS activa o cenário de degradação, caso exista
+    para a operação em causa.</li>
+</ol>
+
+<p class="dta"><br>
+<a href="d1.htm">Anterior</a>/<a href="d31.htm">Seguinte</a></p>
+</body>
+</html>

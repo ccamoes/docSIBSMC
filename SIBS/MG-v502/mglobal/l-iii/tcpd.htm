@@ -1,0 +1,504 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+
+<title>MIGRAÇÃO DE CARTÕES DE CPD (TCPD) </title>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME FICHEIRO:&nbsp; MIGRAÇÃO DE CARTÕES DE CPD </td>
+        <td class="fichdta">&quot;FICH&quot; = TCPD</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+O ficheiro é enviado à SIBS pelo Emissor quando este último pretenda efectuar a
+migração de cartões específicos que se encontram num CPD para um outro CPD distinto.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de <em>Header</em>&nbsp; do ficheiro &quot;TIPREG=0&quot;; </li>
+</ul>
+
+<ul>
+  <li>o registo de Detalhe &quot;TIPREG=1&quot;, apresenta informação do cartão a migrar;</li>
+</ul>
+
+<ul>
+  <li>o registo de <em>Trailer</em> &quot;TIPREG=9&quot;, apresenta o total de registos do
+    ficheiro.</li>
+</ul>
+
+<p><br>
+O formato do registo é fixo, com o tamanho de 25 bytes.</p>
+
+<p>&nbsp;</p>
+<u><b>
+
+<h6></b>OBSERVAÇÕES</u></h6>
+
+<p><br>
+O processamento de qualquer TCPD recebido do Emissor não é efectuado por um processo
+rotinado. O seu processamento exige um acompanhamento por parte do Departamento de
+Produção e do Departamento de Desenvolvimento da SIBS, por forma a garantir e preparar a
+correcta migração dos cartões para um outro CPD.</p>
+
+<p>Assim, o Emissor deve contactar o seu gestor de cliente, com pelo menos duas semanas de
+antecedência sobre a data em que pretende migrar cartões de um CPD para outro através
+do ficheiro TCPD, para que se defina um planeamento adequado e seja garantido o
+acompanhamento necessário. O ficheiro só é processado quando estiver garantido o
+planeamento referido e após comunicação pelo Emissor de ter efectuado o seu envio. </p>
+
+<p>Outras possibilidades de migração de cartões de um CPD para outro (por exemplo,
+migração de todos os cartões de um BIN) não se encontram no âmbito deste ficheiro. No
+caso do Emissor pretender migrar de CPD todos os cartões de um BIN, deve contactar a SIBS
+com pelo menos 1 mês de antecedência, uma vez que esta alternativa exige programação
+específica para o efeito.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">TCPD - TIPO DE
+REGISTO = 0&nbsp;(<em>HEADER</em>)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 0</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">6</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#104">104</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FILLER</td>
+    <td class="dta" width="45">19</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">A</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">espaços</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">TCPD - TIPO DE
+REGISTO = 1&nbsp;(INFORMAÇÃO DE CARTÃO A MIGRAR)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '1'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP-E</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">17</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos7.htm#637">637</a></td>
+    <td width="200" class="esq">AAAAMM</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FILLER</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">23</td>
+    <td width="45" >A</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">espaços</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">TCPD - TIPO DE REGISTO = 9 (<i>TRAILER</i>)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 9</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTREG</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#107">107</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FILLER</td>
+    <td class="dta" width="45">16</td>
+    <td class="dta" width="45">10</td>
+    <td width="45" >A</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">espaços</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><a name="ERROS">&nbsp; </a></p>
+<div align="center"><center>
+
+<table style="page-break-before: always" border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME FICHEIRO:&nbsp; ERROS DE MIGRAÇÃO CARTÕES DE
+        CPD </td>
+        <td class="fichdta">&quot;FICH&quot; = TCPD</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Sempre que é processado um TCPD recebido na SIBS, é produzido e enviado ao Emissor um
+ficheiro com igual nomenclatura (TCPD) que contém os erros verificados durante o
+processamento.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+A estrutura do ficheiro de erros replica a estrutura do ficheiro recebido, acrescentando
+aos tipos de registo 1 e 9 informação sobre os erros encontrados.</p>
+
+<p><br>
+O formato do registo é fixo, com o tamanho de 25 bytes.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">TCPD - TIPO DE
+REGISTO = 0&nbsp;(<em>HEADER</em>)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 0</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">6</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#104">104</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FILLER</td>
+    <td class="dta" width="45">19</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">A</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">espaços</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">TCPD - TIPO DE
+REGISTO = 1&nbsp;(INFORMAÇÃO DE ERRO EM CARTÃO A MIGRAR)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '1'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATEXP-E</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">17</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos7.htm#637">637</a></td>
+    <td width="200" class="esq">AAAAMM</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CÓDIGO ERRO</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">23</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos6.htm#590">590</a></td>
+    <td width="200" class="esq">= Código de erro *</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="1" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap>&nbsp;&nbsp; *&nbsp;&nbsp; </td>
+    <td class="esq" nowrap>001 -</td>
+    <td class="esq">HDT diferente de '1'</td>
+  </tr>
+  <tr>
+    <td class="esq"></td>
+    <td class="esq">002 -</td>
+    <td class="esq">BIN não numérico ou a zeros</td>
+  </tr>
+  <tr>
+    <td class="esq"></td>
+    <td class="esq">003 -</td>
+    <td class="esq">Complemento do BIN não numérico</td>
+  </tr>
+  <tr>
+    <td class="esq"></td>
+    <td class="esq">004 -</td>
+    <td class="esq">Cartão não numérico ou a zeros</td>
+  </tr>
+  <tr>
+    <td class="esq"></td>
+    <td class="esq">005 -</td>
+    <td class="esq">Cartão inexistente</td>
+  </tr>
+  <tr>
+    <td class="esq"></td>
+    <td class="esq">006 -&nbsp;</td>
+    <td class="esq">BIN/Complemento informado diferente do cartão</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">TCPD - TIPO DE REGISTO = 9 (<i>TRAILER</i>)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 9</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTREG</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#107">107</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FILLER</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">10</td>
+    <td width="45" >A</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">espaços</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CÓDIGO ERRO</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">17</td>
+    <td width="45" >A</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">= Código de erro *</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FILLER</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">20</td>
+    <td width="45" >A</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">espaços</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="1" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap>&nbsp;&nbsp; *&nbsp;&nbsp; </td>
+    <td class="esq" nowrap>001 -</td>
+    <td class="esq">Trailer inexistente</td>
+  </tr>
+  <tr>
+    <td class="esq"></td>
+    <td class="esq">002 -</td>
+    <td class="esq">HDT diferente de '9'</td>
+  </tr>
+  <tr>
+    <td class="esq"></td>
+    <td class="esq">003 -</td>
+    <td class="esq">Quantidade de registos não numérica</td>
+  </tr>
+  <tr>
+    <td class="esq"></td>
+    <td class="esq">004 -</td>
+    <td class="esq">Quantidade de registos informada diferente da apurada</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

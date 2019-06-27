@@ -1,0 +1,378 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="_self">
+<script>top.captulos.location='indiceb.htm#B';</script>
+
+
+<title>B.2 SERVIÇOS PARA EMISSORES DE CARTÕES (EMISSÃO OU
+&lt;i&gt;ISSUING&lt;/i&gt;)</title>
+</head>
+
+<body>
+
+<h1>B.2 SERVIÇOS PARA EMISSORES DE CARTÕES (EMISSÃO OU <i>ISSUING</i>)</h1>
+
+<p>&nbsp;</p>
+
+<h2><a name="B.2.1">B.2.1</a> SEM PROCESSAMENTO POSTERIOR PELA SIBS</h2>
+
+<p><br>
+A Unidade de Produção de Cartões da SIBS presta serviços na
+área da emissão de cartões.
+
+</p>
+<p>A emissão pode ser feita apenas na sua componente física,
+através da personalização dos cartões, ou também na sua componente lógica,
+com o cálculo lógico e respectiva emissão de carta de PIN.
+
+</p>
+<p>Os Emissores que não pretendam qualquer tipo de processamento
+por parte da SIBS, podem optar por qualquer um dos dois tipos de emissão
+referenciados.
+
+</p>
+<p>A produção de cartões na SIBS obriga ao envio, pelo Emissor,
+de ficheiros definidos para o efeito.
+
+</p>
+<p>&nbsp;
+
+</p>
+<h2><a name="B.2.2">B.2.2</a> PARA PROCESSAMENTO POSTERIOR PELA SIBS
+
+</h2>
+<p><br>
+Se os Emissores pretenderem algum tipo de processamento das
+transacções pela SIBS, a produção lógica e física dos cartões pode ser
+efectuada na SIBS, ou por um personalizador externo, desde que credenciado para
+a emissão dos cartões em causa (relevante, por exemplo, no caso de cartões
+associados a Sistemas de Pagamento Internacionais). É contudo sempre necessário
+o carregamento de dados na SIBS, de acordo com o descrito nos pontos seguintes.
+
+</p>
+<p>No caso da produção lógica e física não ser efectuada na
+SIBS, há que garantir que não existem incompatibilidades com as normas de
+segurança aplicadas no Sistema Multibanco.
+
+</p>
+<p>&nbsp;
+
+</p>
+<h3><a name="B.2.2.1">B.2.2.1</a> CARACTERIZAÇÃO DO EMISSOR
+
+</h3>
+<p><br>
+No caso da emissão de cartões para os quais a SIBS efectua
+algum tipo de processamento pós emissão, é necessário efectuar a um conjunto
+de caracterizações no Sistema SIBS, do novo Emissor de cartões inseridos na
+plataforma Modelo Global.
+
+</p>
+<p>Esta tarefa compete à SIBS, após envio da informação pelo
+Emissor.
+
+</p>
+<p>&nbsp;
+
+</p>
+<h3><a name="B.2.2.2">B.2.2.2</a> PARQUEAMENTO DE CARTÕES
+
+</h3>
+<p><br>
+Os serviços prestados a Emissores pela SIBS através da
+plataforma Modelo Global são baseados numa base de dados positiva de cartões,
+resultante do parqueamento dos cartões do Emissor na SIBS. O parqueamento
+consiste no carregamento, pelo Emissor dos cartões, na base de dados acima
+referida, através dos ficheiros definidos para o efeito.
+
+</p>
+<p>Os cartões a carregar no sistema têm de ter um PAN (<i>Primary
+Account Number</i>, i.e., número de cartão) com comprimento máximo de 16 dígitos.
+
+</p>
+<p style="page-break-before: always">Optando por esta componente do serviço, o Emissor deve prever
+as seguintes necessidades de implementação:
+
+</p>
+<ul>
+  <li><a href="../l-iii/eecb.htm">Ficheiro Emissão de
+Cartões</a> - a enviar pelo Emissor à SIBS;</li>
+  <li><a href="../l-iii/eerr.htm">Ficheiro de Erros Cartão</a> - a receber da SIBS sempre que esta processe um Ficheiro de Emissão de Cartões.</li>
+</ul>
+<p>Com o parqueamento dos cartões, a SIBS efectua todas as validações
+de segurança, prévias à apresentação de uma operação para autorização,
+e necessárias à execução das transacções - a autenticação.
+
+</p>
+<p>&nbsp;
+
+</p>
+<h2><a name="B.2.3">B.2.3</a> MARCAS DE CARTÕES PROCESSADAS
+
+</h2>
+<p><br>
+A SIBS tem implementadas as especificações dos seguintes
+Sistemas de Pagamento:
+
+</p>
+<ul>
+  <li>MULTIBANCO</li>
+  <li>VISA</li>
+  <li>MASTERCARD</li>
+  <li>AMEX</li>
+  <li>EUFISERV</li>
+</ul>
+<p>Além de cartões das marcas acima, processa ainda cartões de
+marca proprietária (por exemplo de redes privadas).
+
+</p>
+<p>&nbsp;
+
+</p>
+<h2><a name="B.2.4">B.2.4</a> GESTÃO DE SITUAÇÃO DE CARTÕES
+
+</h2>
+<p><br>
+Um dos atributos da base de dados dos cartões no Sistema da
+SIBS é a situação do cartão - condição que possibilita, ou não, na fase
+de autenticação, a realização de operações. 
+
+</p>
+<p>O Emissor efectua a gestão dessa situação, através de vários
+meios ao seu dispor, que podem ser utilizados em conjunto:
+
+</p>
+<ul>
+  <li><a href="../l-iii/easc.htm">Ficheiro Alteração de
+Situação de Cartão</a> - a enviar à SIBS, possibilitando alterações massivas
+ou individuais à situação dos cartões;</li>
+  <li><a href="../l-iii/d4.htm">Mensagem de <i> Real-Time</i> </a> - a enviar à SIBS.</li>
+</ul>
+<p>Adicionalmente, ou em substituição dos meios anteriores, o Emissor pode utilizar o Terminal de Serviços SIBS (ver
+<a href="b7.htm">B.7</a>), sem necessidade de desenvolvimentos aplicacionais para o efeito. Esta solução
+é adequada para alterações de situação pontuais e não massivas.
+
+</p>
+<p>&nbsp;
+
+</p>
+<h2><a name="B.2.5">B.2.5</a> PROCESSAMENTO DAS OPERAÇÕES
+
+</h2>
+<p>&nbsp;
+
+</p>
+<h3><a name="B.2.5.1">B.2.5.1</a> AUTENTICAÇÃO
+
+</h3>
+<p><br>
+Previamente ao processo de autorização, e independentemente
+do cenário de funcionamento, o sistema valida se: 
+
+</p>
+<ul>
+  <li>O cartão existe na base
+de dados de cartões da SIBS;</li>
+  <li>Os dados das pistas magnéticas*
+do cartão ou do <i>chip</i>, no caso de cartões EMV, são consistentes com a informação
+da referida base de dados;</li>
+  <li>Os dados de segurança
+(na pista ou <i> chip</i> EMV) estão correctos;</li>
+  <li>O código secreto (PIN)
+inserido pelo cliente está correcto;</li>
+  <li>A situação do cartão
+é admissível para o cartão efectuar a operação escolhida;</li>
+  <li>A operação está
+autorizada para o cartão.</li>
+</ul>
+<blockquote>
+<p>* Pistas 2 e 3 ou apenas a pista 2, dependendo do Terminal.
+
+</p>
+</blockquote>
+<p>Caso alguma das validações anteriores não seja ultrapassada
+com sucesso, a transacção é finalizada com a mensagem de erro prevista para o
+efeito. Se todas as validações forem bem sucedidas segue-se o processo de
+autorização.
+
+</p>
+<p>&nbsp;
+
+</p>
+<h3><a name="B.2.5.2">B.2.5.2</a> AUTORIZAÇÃO
+
+</h3>
+<p><br>
+A realização de operações com cartões de pagamento está
+dependente da sua autorização. O Sistema MB disponibiliza vários cenários de
+funcionamento, de modo a adequar o modo de decisão à estratégia individual de
+cada Emissor.
+
+</p>
+<p>Cabe ao Emissor a decisão sobre o nível de serviço e de
+risco que pretende relativamente à autorização das transacções. De uma
+forma resumida, pode optar por:
+
+</p>
+<ul>
+  <li>autorizar as transacções em tempo real;</li>
+  <li>delegar na
+SIBS as autorizações das transacções, com base em critério pré-acordado.</li>
+</ul>
+<p>Pode ainda delegar as autorizações num Representante, em tempo real. Num
+cenário completo, o Emissor pode autorizar as transacções em tempo real e,
+como meio alternativo de decisão nas interrupções da sessão <i>Real-Time</i>,
+delegar na SIBS as autorizações, com base em critério pré-acordado.
+
+</p>
+<p>&nbsp;
+
+</p>
+<h5>
+<a name="B.2.5.2.1">B.2.5.2.1</a> AUTORIZAÇÕES NO EMISSOR
+
+</h5>
+<p>No caso de optar por autorizar as transacções efectuadas com
+os seus cartões, estamos perante um dos cenários básicos de funcionamento -
+<i>
+Real-Time</i>.
+
+</p>
+<p>Para decidir as autorizações, em tempo real, o Emissor tem de
+implementar:
+
+</p>
+<ul>
+  <li>Protocolo de Diálogo
+(PDD);</li>
+  <li><a href="../l-iii/d32.htm">Mensagens <i>Real-Time</i></a>, de
+pedido de Operação com Cartão (Emissor) autorização, anulação e pendente
+    - a receber da SIBS;</li>
+  <li>Respectivas <a href="../l-iii/d32.htm"> mensagens de
+resposta</a> - a enviar à SIBS.</li>
+</ul>
+<p>&nbsp;</p>
+<h5>
+<a name="B.2.5.2.2">B.2.5.2.2</a> AUTORIZAÇÕES NA SIBS E CENÁRIOS DE
+DEGRADAÇÃO
+
+</h5>
+<p>Se optar pela delegação de todas as autorizações na SIBS,
+ou por delegá-las apenas em momentos de impossibilidade temporária de as
+decidir, o Emissor deve escolher o cenário de degradação que pretende
+utilizar e implementar os necessários ficheiros de suporte. Referem-se de
+seguida, a título de exemplo, os impactos de implementação de dois cenários
+possíveis.
+
+</p>
+<p>Para o cenário de saldo de crédito disponível, há que
+implementar:
+
+</p>
+<ul>
+  <li><a href="../l-iii/escd.htm">Ficheiro de Comunicação
+de Saldos de Crédito</a> - a enviar pelo Emissor à SIBS;</li>
+  <li><a href="../l-iii/eerc.htm">Ficheiro de Erros de
+Conta </a>- a receber da SIBS sempre que esta processe um Ficheiro de Comunicação
+de Saldos de Crédito.</li>
+</ul>
+<p>Para o cenário de Saldo de Cartão, há que gerir, através do
+ficheiro de carregamento inicial dos cartões na Base de Dados e do <a href="../l-iii/egcc.htm"> Ficheiro de
+Gestão de Cartões e Contas</a>, o <i> plafond</i> disponível para cada cartão (existência
+de um máximo de nove <i> plafonds</i> por Emissor).
+
+</p>
+<p>&nbsp;
+
+</p>
+<h5>
+<a name="B.2.5.2.3">B.2.5.2.3</a> AUTORIZAÇÕES NO REPRESENTANTE
+
+</h5>
+<p>Cenário semelhante ao descrito no ponto Autorizações no
+Emissor, considerando que&nbsp; as mensagens <i> Real-Time</i> são trocadas entre a
+SIBS e um representante do Emissor.
+
+</p>
+<p>&nbsp;
+
+</p>
+<h3><a name="B.2.5.3">B.2.5.3</a> OPERAÇÕES NO SISTEMA MB
+
+</h3>
+<p><br>
+As operações disponibilizadas no Sistema MB para determinado
+cartão em cada momento, são função de um conjunto de factores: 
+
+</p>
+<ul>
+  <li>marca associada ao cartão (MB, Visa, MasterCard, AMEX, outras);</li>
+  <li>características do produto/cartão (designado por BIN);</li>
+  <li>Emissor do cartão;</li>
+  <li>características
+e parametrizações do terminal;</li>
+</ul>
+<p>e ainda de:
+
+</p>
+<ul>
+  <li>cenário de funcionamento do Centro de Processamento de Dados (CPD) ao qual o
+cartão se encontra associado;</li>
+  <li>operações autorizadas pelo Emissor para o CPD ao qual está associado o
+produto/cartão;</li>
+  <li>operações
+autorizadas pelo Emissor para o BIN.</li>
+</ul>
+<p>O Emissor deve seleccionar, de entre as operações
+implementadas no Sistema Multibanco, aquelas que pretende ver disponibilizadas
+aos seus cartões, e solicitar à SIBS a adequada parametrização da autorização
+das mesmas. 
+
+</p>
+<p>&nbsp;
+
+</p>
+<h3><a name="B.2.5.4">B.2.5.4</a>  OPERAÇÕES NO CANAL <i>HOST-TO-HOST</i>
+
+</h3>
+<p><br>
+O Emissor pode ainda implementar a aceitação, em canais próprios (por
+exemplo, no caso de instituições bancárias, em <i>homebanking</i>), de operações
+disponíveis no Sistema MB. Este processamento designa-se por serviços <i>Host-to-Host</i>.
+
+</p>
+
+<p class="dta"><br>
+<a target="main" href="b1.htm">Anterior</a>/<a href="b3.htm">Seguinte</a> </p>
+
+<p>&nbsp;
+
+</p>
+<p>&nbsp;
+
+</p>
+<p>&nbsp;
+
+</p>
+<p>&nbsp;
+
+</p>
+<p>&nbsp;
+
+</p>
+<p>&nbsp;
+
+</p>
+<p>&nbsp;
+
+</p>
+<p>&nbsp;
+
+</p>
+
+</body>
+</html>

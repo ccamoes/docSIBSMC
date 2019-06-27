@@ -1,0 +1,26 @@
+Testes a efectuar 
+1- sem header, com detalhes e trailler 		TESTE OK
+2- sem header, sem detalhes e com trailler	TESTE OK
+3- sem header, com detalhes, sem trailler	TESTE OK
+4- sem trailler, com header e detalhes		TESTE OK
+5- sem trailler, com header, sem detalhes	TESTE OK
+6- totais trailler errados			TESTE OK
+7- totais a zero e sem detalhes (com header e trailler) TESTE OK
+8- com a sequencia errada			TESTE OK
+9- com tipo de registo errado			TESTE OK
+10- campos do header com erro			TESTE OK
+
+testes com mais que um ficheiro com dados
+11- testar as sequencias em varias ordens
+1-2-3						TESTE OK
+1-3-2						TESTE OK
+2-1-3						TESTE OK
+2-3-1						TESTE OK
+3-1-2						TESTE OK
+3-2-1						TESTE OK
+
+1-X-3						TESTE OK
+1-X-2						TESTE OK
+2-3-X						TESTE OK
+X-1-3						TESTE OK
+X-X-1						

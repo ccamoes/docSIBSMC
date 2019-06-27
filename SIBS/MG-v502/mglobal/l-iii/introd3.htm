@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='captulos.htm';</script>
+
+<title>INTRODUÇÃO 3</title>
+<base target="main">
+</head>
+
+<body>
+
+<h1>ENQUADRAMENTO DO LIVRO III</h1>
+
+<p>&nbsp;</p>
+
+<h3><strong>CAPÍTULOS:</strong></h3>
+
+<p><br>
+<a href="defin.htm">DEFINIÇÃO DOS ELEMENTOS DE INFORMAÇÃO</a></p>
+
+<p>Apresenta os elementos de informação presentes nas mensagens e ficheiros descritos
+nos capítulos <a href="indiced.htm#D" target="captulos">D</a> e <a href="indicee.htm#E"
+target="captulos">E</a> deste Livro.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><a target="captulos" href="indicea.htm#A">A. COMUNICAÇÕES - INTERCÂMBIO DE DADOS</a></p>
+
+<p>O capítulo A descreve a arquitectura geral da interligação de sistemas informáticos
+preconizada pela SIBS, para o estabelecimento das comunicações entre o seu centro de
+processamento de dados e o dos participantes no Sistema MB, bem como com outros
+intervenientes (ex.: centrais de <em>Clearing</em>, Sistemas de Pagamento Internacionais,
+etc.).<br>
+As aplicações a envolver pela estrutura de comunicações são todas aquelas que
+implicam o intercâmbio de dados, seja por troca de mensagens <em>real-time</em>, seja por
+troca de ficheiros.<br>
+Descrevem-se neste capítulo ainda os aspectos particulares das comunicações
+necessárias para a ligação dos participantes ao centro alternativo (<em>backup</em>),
+em caso de acidente grave no centro de processamento principal.</p>
+
+<p>&nbsp;</p>
+
+<p><a target="captulos" href="indiceb.htm#B">B. PROTOCOLO DE <em>REAL-TIME</em></a></p>
+
+<p>Este capítulo detalha o protocolo de <em>Real-Time</em> cujo papel no sistema de
+comunicações foi descrito no capitulo A. O protocolo RT tem as seguintes funções: 
+
+<ul>
+  <li>Controlar as sessões entre duas aplicações em diálogo;</li>
+  <li>Transporte dos dados aplicacionais e sua entrega às aplicações de destino;</li>
+  <li>Permitir a circulação de várias mensagens em simultâneo de modo a evitar a
+    saturação por parte do receptor dos pedidos;</li>
+  <li>Garantir a integridade e recuperação das mensagens, cujo pedido/resposta, não se
+    completa em condições normais.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><a target="captulos" href="indicec.htm#C">C. PROTOCOLO DE TRANSFERÊNCIAS DE FICHEIROS</a></p>
+
+<p>O capítulo C define as regras que se aplicam entre dois sistemas residentes em
+computadores diferentes para que se possa transferir entre estes conjuntos de informação
+normalmente designados por ficheiros (sequências de registos), suportados por linhas de
+comunicação de dados.<br>
+Este sistema tem por objectivo satisfazer as constantes necessidades de transferência de
+grandes volumes de dados decorrentes da operativa existente no sistema MB.</p>
+
+<p>&nbsp;</p>
+
+<p><a target="captulos" href="indiced.htm#D">D. MENSAGENS APLICACIONAIS</a></p>
+
+<p>O capítulo D descreve em detalhes as mensagens aplicacionais que se encontram
+definidas de acordo com o tipo de serviço prestado a cada Participante no Sistema MB.<br>
+A estrutura das mensagens é normalizada e com as seguintes características: <em>Header</em>
+comum, conceito de versão de mensagem, campos em formato <em>display</em>. </p>
+
+<p>As mensagens SIBS -&gt; Participante podem ser de três tipos: 
+
+<ul>
+  <li>TIPO DE MENSAGEM: <a href="d32.htm#TIPO DE MENSAGEM: 1" target="main">1</a>
+    (Transacções <em>Real-Time</em>) <br>
+    Mensagens enviadas a quente, ou seja, envio de operações cuja aprovação depende do
+    Participante. </li>
+</ul>
+
+<ul>
+  <li>TIPO DE MENSAGEM: <a href="d32.htm#TIPO DE MENSAGEM: 2" target="main">2</a> (Anulação
+    Transacções <em>Real-Time</em>)<br>
+    Anulações de mensagens originais cujo envio pode ter sido efectuado através de uma
+    mensagem <em>Real-Time</em> ou de uma mensagem de <em>Reentrie</em>. </li>
+</ul>
+
+<ul>
+  <li>TIPO DE MENSAGEM: <a href="d32.htm#TIPO DE MENSAGEM: 3" target="main">3</a> (Envio de
+    Pendentes - <em>Reentries</em>)<br>
+    Mensagens enviadas a frio, ou seja, para dar conhecimento ao Participante da operação
+    efectuada. </li>
+</ul>
+
+<p>As mensagens Participante -&gt; SIBS encontram-se descritas no ponto <a href="d4.htm">D.4</a>
+e correspondem à troca de dados realizada através de sessões habitualmente designadas
+de <em>Host-to-Host</em>. A descrição funcional e respectivas particularidades deste
+canal encontra-se no Livro II, capítulo <a target="captulos" href="../l-ii/indicee.htm#E">E</a>.</p>
+
+<p>&nbsp; </p>
+
+<p><a href="indicee.htm#E" target="captulos">E. FICHEIROS</a></p>
+
+<p>Apresenta-se neste capítulo a descrição detalhada de todos os ficheiros recebidos da
+SIBS ou enviados à SIBS no âmbito do Serviço MB, segmentada por tipo de serviço
+prestado a cada Participante, ou seja, para cada função desempenhada existe um grupo de
+ficheiros que tem de ser trocado com a SIBS. <br>
+Todos os ficheiros são constituídos por um registo <em>header</em> que identifica o
+ficheiro, ao qual se seguem todos os registos de detalhe, e são finalizados por um
+registo <em>trailer</em> contendo dados obtidos a partir do detalhe do ficheiro: 
+
+<ul>
+  <li>Um registo de <em>Header</em> </li>
+  <li>Registos de Detalhe </li>
+  <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; </li>
+  <li>Um registo de <em>Trailer</em> </li>
+</ul>
+
+<p>Os ficheiros encontram-se agrupados nas seguintes categorias, sendo descritos em
+detalhe nos capítulos indicados: 
+
+<ul>
+  <li><a href="e2.htm">E.2</a> - FICHEIROS RELATIVOS A CARTÕES </li>
+  <li><a href="e3.htm">E.3</a> - FICHEIROS RELATIVOS A CONTAS</li>
+  <li><a href="e4.htm">E.4</a> - FICHEIROS DA COMPENSAÇÃO</li>
+  <li><a href="e5.htm">E.5</a> - FICHEIROS DE TERMINAIS, ESTATÍSTICA E FACTURAÇÃO</li>
+  <li><a href="e6.htm">E.6</a> - FICHEIROS RELATIVOS AO PMB</li>
+  <li><a href="e7.htm">E.7</a> - FICHEIROS PARA O BANCO DE PORTUGAL</li>
+</ul>
+
+<p>&nbsp;</p>
+</body>
+</html>

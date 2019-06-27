@@ -1,0 +1,717 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indiceb.htm#B';</script>
+
+<title>B.2 PROTOCOLO DE TRANSPORTE E SESSÃO</title>
+</head>
+
+<body>
+
+<h1>B.2 PROTOCOLO DE TRANSPORTE E SESSÃO</h1>
+
+<p>&nbsp;</p>
+
+<h2><a name="B.2.1">B.2.1</a> ABERTURA E FECHO DA SESSÃO </h2>
+
+<p><br>
+Os principais procedimentos durante a sessão, para além dos dados trocados, são a
+abertura e fecho da sessão.</p>
+
+<p>Fazendo um certo paralelismo, o Emissor de pedidos (SIBS) funciona para o <em>Host</em>
+Receptor de pedidos (Participante) como um terminal ou grupo de terminais, que fazem <em>LOGON</em>
+ao seu <em>Host</em>, desencadeiam transacções e fazem <em>LOGOFF</em>. Assim passa a
+ser o Emissor de pedidos (SIBS) que envia ao Receptor a mensagem de abertura de sessão,
+manda as transacções e depois o fecho da sessão.</p>
+
+<p>O Participante toma assim um papel passivo na sessão, prevendo-se no entanto
+mecanismos que lhe permitam desencadear estes processos, como adiante se descreve.</p>
+
+<p><br>
+Neste documento adoptam-se as seguintes abreviaturas:</p>
+
+<table border="0" cellspacing="0" width="584" cellpadding="4">
+  <tr>
+    <td width="5">&nbsp; </td>
+    <td width="43" class="esq">A-E&nbsp; </td>
+    <td width="7" class="esq">-</td>
+    <td class="esq" width="537">Aplicação emissora, da qual parte a abertura de sessão, as
+    transacções e o fecho. <br>
+    (O PRT-Monitor pode desencadear os procedimentos de abertura e fecho.)</td>
+  </tr>
+  <tr>
+    <td width="5">&nbsp; </td>
+    <td width="43" class="esq">A-R&nbsp; </td>
+    <td width="7" class="esq">-</td>
+    <td class="esq" width="537">Aplicação receptora. Entidade passiva que não é obrigada a
+    tomar nenhuma iniciativa.</td>
+  </tr>
+  <tr>
+    <td width="5">&nbsp; </td>
+    <td width="43" class="esq">PRT-E </td>
+    <td width="7" class="esq">-</td>
+    <td class="esq" width="537">Programa que implementa o protocolo PRT, na perspectiva do
+    Emissor.</td>
+  </tr>
+  <tr>
+    <td width="5">&nbsp; </td>
+    <td width="43" class="esq">PRT-R </td>
+    <td width="7" class="esq">-</td>
+    <td class="esq" width="537">Programa que implementa o protocolo, na perspectiva do
+    Receptor.</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always"><strong>FUNCIONAMENTO NORMAL E SIMPLES DE UMA SESSÃO</strong></p>
+
+<p><br>
+</p>
+
+<blockquote>
+  <div align="left"><pre class="courier">     A-E            PRT-E               PRT-R             A-R         
+            |        |      |   OPEN     |      |        |            
+       Open |-------&gt;|      |-----------&gt;|--+   |-------&gt;|--+ Opcional
+            |        |      |   ROPEN    |  |   |        |  | inform. 
+            |&lt;-------|      |&lt;-----------| -+   |&lt;-------|--+ Aplic.  
+            |        |      |            |      |        |            
+            |        |      |            |      |        |            
+        Msg |-------&gt;|      |-----------&gt;|      |-------&gt;|--+         
+       dados|        |      |            |      |        |  |         
+        Resp|&lt;-------|      |&lt;-----------|      |&lt;-------|--+         
+            |        |      |            |      |        |            
+       dados|-------&gt;|      |-----------&gt;|      |-------&gt;|----+       
+       dados|-------&gt;|      |-----------&gt;|      |-------&gt;|--+ |       
+            |        |      |            |      |        |  | |       
+            |&lt;-------|      |&lt;-----------|      |&lt;-------|--+ |       
+            |&lt;-------|      |&lt;-----------|      |&lt;-------|----+       
+            |        |      |     .      |      |        |            
+                                  .                                   
+                                  .                                   
+                                  .                                   
+            |        |      |            |      |        |            
+       dados|-------&gt;|      |-----------&gt;|      |-------&gt;|--+         
+            |        |      |            |      |        |  |         
+  Req. Close|-------&gt;|--+   |            |      |        |  |         
+            |        |  |   |            |      |        |  |         
+            |&lt;-------|  |   |&lt;-----------|      |&lt;-------|--+         
+ Close Ready|&lt;-------|--+   |   CLOSE    |      |        |            
+      CLOSE |-------&gt;|      |-----------&gt;|      |-------&gt;|--+         
+            |        |      |   RCLOSE   |      |        |  |         
+            |&lt;-------|      |&lt;-----------|      |&lt;-------|--+         
+            |        |      |            |      |        |            
+            |        |      |            |      |        |            </pre>
+  </div>
+</blockquote>
+
+<p><br>
+</p>
+
+<p>Tanto o <em>Open</em> como o <em>Close</em> podem ser solicitados pela aplicação ou
+pelo Monitor-PRT. </p>
+
+<p>Após receber o <em>Request Close</em>, o PRT-E não aceita mais mensagens da A-E e,
+assim que tiver a janela limpa, informa a aplicação para que esta envie o <em>Close</em>
+(com os totais de sessão).</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always"><strong>FECHO SOLICITADO PELO RECEPTOR</strong></p>
+
+<p><br>
+O receptor pode também solicitar o fecho de uma sessão, tipicamente quando deseja
+encerrar as suas aplicações (fim do dia, fim de semana,...). </p>
+
+<p>Para isso envia ao emissor um <em>Request Close</em>, o qual tem para o PRT-E o mesmo
+efeito que idêntico pedido feito pelo seu monitor.</p>
+
+<p><br>
+</p>
+
+<blockquote>
+  <div align="left"><pre class="courier">       A-E            PRT-E               PRT-R             A-R       
+                                  .                                   
+            |        |      |     .      |      |        |            
+            |        |      |     .      |      |        |            
+            | Dados  |      |            |      |        |            
+            |-------&gt;|      |-----------&gt;|      |-------&gt;|--+         
+            |        |      |  Req. Close|      |        |  |         
+       Stop |&lt;-------|    +-|&lt;-----------|      |&lt;------------ Mon-PRT
+            |        |    | |  Req. Cl ok|      |        |  |         
+            |        |    +-|-----------&gt;|      |        |  |         
+            |  Dad R.|      |            |      |        |  |         
+            |&lt;-------|      |&lt;-----------|      |&lt;-------|--+         
+   Clo.Ready|&lt;-------|      |            |      |        |            
+            |        |      |   CLOSE    |      |        |            
+      CLOSE |-------&gt;|      |-----------&gt;|      |-------&gt;|--+         
+            |        |      |   RCLOSE   |      |        |  |         
+            |&lt;-------|      |&lt;-----------|      |&lt;-------|--+         
+            |        |      |            |      |        |            
+            |        |      |            |      |        |            </pre>
+  </div>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h2><a name="B.2.2">B.2.2</a> RECUPERAÇÃO DE MENSAGENS PENDENTES SEM RESPOSTA</h2>
+
+<p><br>
+</p>
+
+<blockquote>
+  <div align="left"><pre class="courier">     A-E             PRT-E                PRT-R            A-R     
+                                                                   
+            | msg 6  |      | msg tl=2   |      |        |         
+            |-------&gt;|      |-----------&gt;|      |-------&gt;|--&gt; abend
+            |        |      | Apos 60 seg|      |        |         
+            |        |      | sem resp.  |      |        |         
+            |        |      | msg tl=2   |      |        |         
+            |        |      |-----------&gt;|      |-------&gt;|---+     
+            |        |      | repete a   |      |        |   |     
+            |        |      | msg com ind|      |        |   |     
+            |        |      | repetição  |      |        |   |     
+            |        |      |            |      | resp   |   |     
+            |        |      |        X---|      |--------|---+     
+            |  msg 7 |      | msg tl=3   |      |        |         
+            |-------&gt;|      |-----------&gt;|      |-------&gt;|---+     
+            | resp 7 |      | resp tl=3  |      |        |   |     
+            |&lt;-------|      |&lt;-----------|      |&lt;-------|---+     
+            |        |      | msg tl=2   |      |        |         
+            |        |      |-----------&gt;|--+   |        |         
+            | resp 6 |      | resp tl=2  |  |   |        |         
+            |&lt;-------|      |&lt;-----------|--+   |        |         
+            |        |      |            |      |        |         </pre>
+  </div>
+</blockquote>
+
+<blockquote>
+  <p><br>
+  </p>
+</blockquote>
+
+<p>O PRT-E repete as mensagens que necessitam de recuperação durante a vida normal da
+sessão, pondo-lhe a indicação de que é uma repetição. </p>
+
+<p>As mensagens só são repetidas após um <em>timeout</em> mínimo (1 minuto é o
+mínimo aconselhado, considerando que a resposta envolve processamento aplicacional).</p>
+
+<p style="page-break-before: always">A repetição faz-se por Terminal Lógico,
+continuando os restantes a efectuar o seu tráfego normal.</p>
+
+<p>O PRT-R, quando já tem a resposta nos seus <em>buffers</em>, limita-se a repeti-la.</p>
+
+<p>Não há mensagens de controlo envolvidas neste processo.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="B.2.3">B.2.3</a> OUTRAS MENSAGENS DE SERVIÇO </h2>
+
+<p><br>
+<strong>SUSPENSÃO E REACTIVAÇÃO DO TRÁFEGO (&quot;<em>Stop Traffic</em>&quot; e &quot;<em>Start
+Traffic</em>&quot;) </strong></p>
+
+<p><br>
+Estas mensagens são da iniciativa do lado receptor, mas a sua emissão é facultativa. </p>
+
+<p>A sua finalidade é funcionar como um interruptor, só accionado pelo lado do Receptor,
+para dizer ao Emissor quando pode receber tráfego ou não. </p>
+
+<p>Este mecanismo afecta todo o tráfego, dados e serviço, à excepção do <em>Echo Test</em>.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>INFORMAÇÃO AO EMISSOR APÓS ARRANQUE DO SISTEMA</strong></p>
+
+<p><strong><br>
+</strong></p>
+
+<blockquote>
+  <div align="left"><pre class="courier">    A-E               PRT-E              PRT-R           A-R ou       
+           | Open   |      |  Open                         Mon-PRT.   
+           |-------&gt;|      |-----------&gt; perde-se                     
+           |        |      |                                          
+           |        |      |             Arranque do PRT              
+           |        |      |  Open      |      |                      
+           |        |      |-----------&gt;|      |                      
+           |        |      |&lt;-----------|Not ok|                      
+           |        |      |            |      |       Arranque Aplic.
+           |        |      | Start Traf.|      |        |             
+           |        |      |&lt;-----------|      |&lt;-------| Logon       
+           |        |   Ok |-----------&gt;|      |        |             
+           |        |      |  Open      |      |        |             
+           |        |      |-----------&gt;|      |        |             
+           |        |      |&lt;-----------| Ok   |        |             </pre>
+  </div>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p>Após receber um &quot;<em>Start Traffic</em>&quot;, o PRT-E pode então repetir de
+novo um <em>Open</em> que já tenha anteriormente enviado sem resposta.</p>
+
+<p>Dado que o PRT-E não deve saturar a linha com pedidos de abertura, esta mensagem tem o
+objectivo de lhe dar oportunidade de tentar de novo a abertura no momento ideal.</p>
+
+<p>Do ponto de vista prático, esta situação pode funcionar como uma abertura feita por
+vontade do Receptor (Participante).</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always"><strong>SUSPENSÃO TEMPORÁRIA E REACTIVAÇÃO DO
+TRÁFEGO</strong></p>
+
+<p><strong><br>
+</strong></p>
+<div align="left">
+
+<pre class="courier">                 PRT-E              PRT-R          A-R ou Mon-PRT  
+                                                                   
+               |      |  Stop Traf.|      |        |               
+               |   +--|&lt;-----------|      |&lt;-------| Stop Traffic  
+               |   |  |  RStop     |      |        |               
+               |   +--|-----------&gt;|      |        | (para parar   
+               |      | O PRT-E    |      |        |   aplic.)     
+               |      | deixa de   |      |        |               
+               |      | enviar     |      |        |               
+               |      | tudo até   |      |        |               
+               |      | receber um |      |        |               
+               |      | Start Traf.|      |        |               
+               |   +--|&lt;-----------|      |&lt;-------| Resume Traffic
+               |   |  |  RStart    |      |        | ou Logon      
+               |   +--|-----------&gt;|      |        |               
+               |      |            |      |        |               </pre>
+</div>
+
+<p>&nbsp;</p>
+
+<p><strong>MENSAGEM DE SERVIÇO (<em>ECHO TEST</em>)</strong></p>
+
+<p><br>
+Destinada a detectar a presença e funcionamento do outro interlocutor e testar as
+comunicações. </p>
+
+<p><br>
+</p>
+
+<blockquote>
+  <div align="left"><pre class="courier">Mon-PRT.           PRT                 PRT 
+      |        |      |            |      |
+      |-------&gt;|      |-----------&gt;|--+   |
+      |        |      |            |  |   |
+      |&lt;-------|      |&lt;-----------|--+   |
+      |        |      |            |      |
+      |        |      |            |      |
+      |        |      |            |      |</pre>
+  </div>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p>Esta mensagem pode ser enviada por qualquer dos interlocutores em qualquer estado da
+sessão, sem provocar qualquer efeito nesta.</p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="B.2.4">B.2.4</a> CABEÇALHO DAS MENSAGENS</h2>
+
+<p><br>
+Os campos a incluir no cabeçalho para o controlo da sessão são:</p>
+
+<p><br>
+</p>
+
+<pre class="courier">         3  +   3  + 2+ 1+ 1+  2   = 12 bytes                         
+     |______|______|__|__|__|____|                                    
+      |      |      |  |  |   |                                       
+      |      |      |  |  |   +-&gt; Número de sequen. (único por T.L.)  
+      |      |      |  |  |       formato: inteiro binário            
+      |      |      |  |  |       valores: de 1 a 65535               
+      |      |      |  |  |       É inicializado no Open_Session e é único
+      |      |      |  |  |       por terminal lógico. Por conseguinte,
+      |      |      |  |  |       uma vez atingido o limite, o terminal
+      |      |      |  |  |       lógico não deve ser usado de novo, antes
+      |      |      |  |  |       que a sessão seja fechada e aberta.
+      |      |      |  |  |                                           
+      |      |      |  |  +-&gt; Número do Terminal Lógico               
+      |      |      |  |      formato: inteiro binário                
+      |      |      |  |      0 - mensagens de serviço                
+      |      |      |  |      1 a 99 - para dados                     
+      |      |      |  |                                              
+      |      |      |  +-&gt; Tipo de mensagem                           
+      |      |      |      formato: hexadecimal                       
+      |      |      |      01 - Dados pedido original                 
+      |      |      |      02 - Dados pedido repetição                
+      |      |      |      00 - Dados resp.                           
+      |      |      |      11 - Open Session                          
+      |      |      |      10 - Ropen                                 
+      |      |      |      21 - Close Session                         
+      |      |      |      20 - Rclose                                
+      |      |      |      31 - Stop Traffic (Emi. deve inibir envios)
+      |      |      |      30 - R.Stop                                
+      |      |      |      41 - Start Traffic                         
+      |      |      |      40 - R.Start                               
+      |      |      |      51 - Echo test                             
+      |      |      |      50 - R.echo                                
+      |      |      |      61 - Reset ao número de sequência de um TL 
+      |      |      |      60 - Resp. Reset                           
+      |      |      |      71 - Request Close                         
+      |      |      |      70 - Resp. Req. Close                      
+      |      |      |                                                 
+      |      |      +-&gt; Código de aplicação                           
+      |      |          formato : hexadecimal                         
+      |      |          a atribuir de '01' a '99' (ATM, POS, EST...)  
+      |      |                                                        
+      |      +-&gt; Computador destino (hexadecimal)                     
+      |                                                               
+      +-&gt; Computador origem (hexadecimal)                             </pre>
+
+<p>&nbsp;</p>
+
+<h2><a name="B.2.5">B.2.5</a> MENSAGENS DE SERVIÇO (INICIATIVA E FUNÇÕES)</h2>
+
+<p><br>
+<strong><em>OPEN SESSION</em>:</strong></p>
+
+<p>É emitida pelo Emissor para abrir a sessão e poder depois enviar mensagens de dados.</p>
+
+<p>É repetida até haver resposta, mas com intervalos de dimensão progressiva até
+atingir um valor entre 20 e 60 m.</p>
+
+<p>Se anteriormente tiver recebido um &quot;<em>Stop Traffic</em>&quot;, o PRT-E não deve
+enviar a mensagem até receber um &quot;<em>Start Traffic</em>&quot;. Independentemente
+disso, quando receber um &quot;<em>Start Traffic</em>&quot;, o PRT-E deve poder enviar de
+seguida o <em>Open</em>.</p>
+
+<p style="page-break-before: always"><br>
+<strong><em>CLOSE SESSION</em>:</strong></p>
+
+<p>É enviada pelo Emissor para fechar a sessão, depois de não ter nenhuma mensagem de
+dados na janela e quando NÃO tiver recebido anteriormente um &quot;<em>Stop Traffic</em>&quot;.</p>
+
+<p>Leva dados aplicacionais, que são dados pela aplicação ao PRT-E no momento do envio
+e que o PRT-R deve passar à sua aplicação, recebendo em seguida também dados para
+colocar na resposta. </p>
+
+<p><br>
+<strong><em>STOP TRAFFIC</em>:</strong></p>
+
+<p>O Receptor pode solicitar a paragem de todo o tráfego (dados e serviço, excepto
+&quot;<em>Echo test</em>&quot;), enviando este comando.</p>
+
+<p>Quando recebido pelo Emissor, este apenas responde e depois não envia mais nada até
+receber um &quot;<em>Start Traffic</em>&quot;.</p>
+
+<p><br>
+<strong><em>START TRAFFIC</em>:</strong></p>
+
+<p>O Receptor deve enviar este comando logo que esteja pronto para receber tráfego de
+novo (após um &quot;<em>Stop Traffic</em>&quot;).</p>
+
+<p>Deve enviá-lo também quando o sistema arranca, para indicar ao Emissor que já pode
+abrir a sessão ou enviar tráfego (caso esta já esteja aberta).</p>
+
+<p><br>
+<strong><em>ECHO TEST</em>:</strong></p>
+
+<p>Qualquer interlocutor pode enviar esta mensagem, independentemente do estado da sessão
+ou do tráfego. </p>
+
+<p>O objectivo é testar o estado de funcionamento das comunicações (níveis
+inferiores), a presença do outro interlocutor e o estado da sessão.</p>
+
+<p><em><br>
+<strong>RESET L.T. Sequence Number</em>:</strong></p>
+
+<p>Só o emissor pode enviar esta mensagem, em sessão aberta, caso deseje esquecer uma
+determinada mensagem que não teve resposta ou sincronizar o número de sequência de um
+determinado terminal lógico.</p>
+
+<p>Isto pode acontecer tipicamente quando foi enviada uma mensagem cuja resposta não tem
+interesse depois do <em>timeout</em>.</p>
+
+<p>Se a resposta não chegou, o emissor pode enviar esta mensagem indicando o número de
+sequência que fica assim ultrapassado, considerando-se que a seguir pode ser enviada uma
+nova transacção utilizando o número seguinte.</p>
+
+<p>Ao recebê-la, o PRT-R deve responder e limpar o seu <em>buffer</em> e ficar preparado
+para receber o número de sequência seguinte. Caso receba da sua aplicação mais tarde a
+resposta para o número de seq. &quot;<em>reseted</em>&quot;, deve ignorá-la.</p>
+
+<p style="page-break-before: always"><br>
+<strong><em>REQUEST CLOSE</em>:</strong></p>
+
+<p>O receptor pode enviar este comando quando desejar que a sessão seja fechada
+(tipicamente para desligar as suas aplicações).</p>
+
+<p>O emissor ao recebê-la, deve informar de imediato a aplicação de que não pode
+enviar novas transacções e responder. Em seguida deve verificar se há janelas ocupadas
+(respostas em falta) e, se houver, aguardar que se resolvam as transacções &quot;em
+voo&quot;. Logo que as janelas estejam vazias, deve provocar o fecho.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="B.2.6">B.2.6</a> DADOS/PARÂMETROS DAS MENSAGENS DE SERVIÇO</h2>
+
+<p><br>
+</p>
+
+<blockquote>
+  <pre class="courier">Open:   Pedido                    Resposta              
+        Num. T.L. proposto        Num. T.L. aceite      
+                                  Cod. resp.            
+
+
+Close:  Pedido                    Resposta               
+        ADF (bloco 80 bytes)      ADF (bloco 80 b)       
+
+        (ADF = Application Data Field)                   
+
+
+Echo T: Pedido             Resposta                      
+        ---                Indicador de estado da sessão 
+                                x'00' - Fechada          
+                                x'01' - Wait ROpen       
+                                x'10' - Aberta           
+                                x'11' - Wait RClose      
+                                x'12' - Close Pending    
+                           Indicador Tráfego Stop/Start  
+                                x'00' - Suspenso / OFF   
+                                x'01' - Wait RStart      
+                                x'10' - Activo / ON      
+                                x'11' - Wait RStop       
+                           Número de T.L.'s em funcionam.
+                                (1 byte)                 
+                           Número de sequência em cada TL
+                                2 bytes inteiro binário  
+                                ocorre X vezes, sendo X  
+                                o número indicado no     
+                                parâmetro anterior.      
+
+
+Reset:  Pedido                  Resposta                 
+        T.L. (1 byte)           T.L. (1 byte)            
+        Num. seq. Msg (2 bytes)                          
+
+
+Restantes mensagens de serviço:                          
+
+     Não transportam parte de dados.                     </pre>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h2><a name="B.2.7">B.2.7</a> TABELA DE ACEITAÇÃO DE MENSAGENS E COMANDOS</h2>
+
+<p><br>
+As seguintes tabelas pretendem definir sumariamente a reacção e acções de cada
+interlocutor perante cada acontecimento previsto, consoante a sua natureza e estado da
+sessão.</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always"><strong>EMISSOR</strong></p>
+
+<blockquote>
+  <pre class="courier">        |         | Wait    |          | Close  | Wait     | Trafego |
+        | Closed  | ROpen   | Open     | Pend.  | RClose   | Suspenso|
+----------------------------------------------------------------------
+Open    | #       | #       | #        | #      | #        | #       |
+ *      |         |         |          |        |          |         |
+----------------------------------------------------------------------
+Ropen + | #       | Inf.appl| #        | #      | #        | #       |
+ *      |         | -&gt;Open  |          |        |          |         |
+----------------------------------------------------------------------
+Ropen - | #       | -&gt;Close | #        | #      | #        | #       |
+ *      |         |         |          |        |          |         |
+----------------------------------------------------------------------
+Close   | #       | #       | #        | #      | #        | #       |
+ *      |         |         |          |        |          |         |
+----------------------------------------------------------------------
+Rclose  | #       | #       | #        | #      | Inf.Appl | #       |
+ *      |         |         |          |        | -&gt;Closed |         |
+----------------------------------------------------------------------
+Stop T. | Susp.Tr.| Susp.Tr.| Susp.Tr. | Susp Tr| Susp.Tr. | Resp.   |
+ *      | Resp.   | Resp.   | Resp.    | Resp.  | Resp.    |         |
+----------------------------------------------------------------------
+Rstop   | #       | #       | #        | #      | #        | #       |
+ *      |         |         |          |        |          |         |
+----------------------------------------------------------------------
+Start T.| Resp.   | Resp.   | Resp.    | Resp.  | Resp.    | Resp.   |
+ *      | S-Open  | S-Open  |          |        | S-Close  | Retoma T|
+----------------------------------------------------------------------
+RStart  | #       | #       | #        | #      | #        | #       |
+ *      |         |         |          |        |          |         |
+----------------------------------------------------------------------
+Echo T. | Resp.   | Resp.   |  Resp.   | Resp.  | Resp.    | Resp.   |
+ *      |         |         |          |        |          |         |
+----------------------------------------------------------------------
+Recho   | Inf.Mon.| Inf.Mon.| Inf.Mon. | Inf.Mon| Inf.Mon. | Inf.Mon.|
+ *      |         |         |          |        |          |         |
+----------------------------------------------------------------------
+Reset   | #       | #       | #        | #      | #        | #       |
+ *      |         |         |          |        |          |         |
+----------------------------------------------------------------------
+
+
+
+        |         | Wait    |          | Close  | Wait     | Trafego |
+        | Closed  | ROpen   | Open     | Pend.  | RClose   | Suspenso|
+----------------------------------------------------------------------
+RReset  | #       | #       | se esp.  | se esp.| #        | #       |
+ *      |         |         | ok       | ok     |          |         |
+        |         |         | senao #  | senao #|          |         |
+----------------------------------------------------------------------
+Req.Clos| #       | #       | Resp.    | Resp.  | #        | #       |
+ *      |         |         | -&gt;Clo P. |        |          |         |
+----------------------------------------------------------------------
+RReq.Clo| #       | #       | #        | #      | #        | #       |
+ *      |         |         |          |        |          |         |
+----------------------------------------------------------------------
+Dados P | #       | #       | #        | #      | #        | #       |
+ *      |         |         |          |        |          |         |
+----------------------------------------------------------------------
+Dados R | * #     | * #     | se esp.  | se esp.| * #      | se esp. |
+        |         |         | ok       | ok     |          | ok      |
+        |         |         | senao * #| senao*#|          | senao *#|
+----------------------------------------------------------------------
+Resp.NS | ---     | #       | #        | #      | #        | #       |
+&lt; esper.|         |         |          |        |          |         |
+ *      |         |         |          |        |          |         |
+----------------------------------------------------------------------
+Timeout | ---     | Repete  | Repete   | Repete | Repete   | ---     |
+        |         | Msg     | Msg dados| Msg dad| Msg      |         |
+----------------------------------------------------------------------</pre>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p>As mensagens assinaladas com &quot;*&quot; são sempre registadas em <em>Log</em>.</p>
+
+<p>Nas situações assinaladas com &quot;#&quot;, a mensagem recebida é ignorada.</p>
+
+<p>Quando &quot;<em>Closed</em>&quot; e recebe um &quot;<em>Start Traffic</em>&quot;, o
+PRT-E pode enviar um <em>Open</em>, se anteriormente tiver recebido ordem de abertura da
+aplicação ou Mon-PRT.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>RECEPTOR</strong></p>
+
+<p><strong><br>
+</strong></p>
+
+<blockquote>
+  <pre class="courier">        |           |           | Wait      | Wait      | Trafego   |
+        | Closed    | Open      | RStop     | RStart    | Suspenso  |
+---------------------------------------------------------------------
+Open    | Inf. appl | Resp.     | #         | #         | #         |
+ *      | -&gt;Open    |           | Repet.Stop| Repet.Star| Repet.Stop|
+        | Resp. (+) |           |           |           |           |
+---------------------------------------------------------------------
+ROpen   | #         | #         | #         | #         | #         |
+ *      |           |           |           |           |           |
+---------------------------------------------------------------------
+Close   | Resp.     | Inf.appl  | Repet.stop| Inf.appl  | #         |
+ *      |           | -&gt;Closed  |           | -&gt;Closed  |           |
+        |           | Resp.     |           | Resp.     |           |
+---------------------------------------------------------------------
+Rclose  | #         | #         | #         | #         | #         |
+ *      |           |           |           |           |           |
+---------------------------------------------------------------------
+Stop T. | #         | #         | #         | #         | #         |
+ *      |           |           |           |           |           |
+---------------------------------------------------------------------
+Rstop   | #         | #         | -&gt;T. Susp.| #         | #         |
+ *      |           |           |           |           |           |
+---------------------------------------------------------------------
+Start T.| #         | #         | #         | #         | #         |
+ *      |           |           |           |           |           |
+---------------------------------------------------------------------
+RStart  | #         | #         | #         | Activa T. | #         |
+ *      |           |           |           |           |           |
+---------------------------------------------------------------------
+Echo T  | Resp.     | Resp.     |  Resp.    | Resp.     | Resp.     |
+ *      |           |           |           |           |           |
+---------------------------------------------------------------------
+Recho   | Inf. Mon. | Inf. Mon. | Inf. Mon. | Inf. Mon. | Inf. Mon. |
+ *      |           |           |           |           |           |
+---------------------------------------------------------------------
+Reset   | #         | limpa buf.| #         | #         | #         |
+ *      |           | Resp.     | Repet.Stop| Repet.Star|           |
+---------------------------------------------------------------------
+RReset  | #         | #         | #         | #         | #         |
+ *      |           |           |           |           |           |
+---------------------------------------------------------------------
+Req.Clo.| #         | #         | #         | #         | #         |
+ *      |           |           |           |           |           |
+---------------------------------------------------------------------
+RReq.Clo| #         | ok        | #         | #         | #         |
+ *      |           |           |           |           |           |
+---------------------------------------------------------------------
+
+</pre>
+  <pre class="courier" style="page-break-before: always">
+
+
+        |           |           | Wait      | Wait      | Trafego   |
+        | Closed    | Open      | RStop     | RStart    | Suspenso  |
+---------------------------------------------------------------------
+Dados P | * #       | Passa appl| Repet.Stop| Repet.Star| * #       |
+        |           | Resp      |           |           | Repet.Stop|
+---------------------------------------------------------------------
+Dados R | #         | #         | #         | #         | #         |
+ *      |           |           |           |           |           |
+---------------------------------------------------------------------
+Resp.NS | ---       | ---       | #         | #         | ---       |
+&lt; esper.|           |           |           |           |           |
+ *      |           |           |           |           |           |
+---------------------------------------------------------------------
+Timeout | ---       | ---       | Repete msg| Repete msg| ---       |
+---------------------------------------------------------------------</pre>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><strong>Respostas Negativas</strong></p>
+
+<p>O <em>Open</em> é respondido negativamente quando: 
+
+<ul>
+  <li>Não houver aplicação activa, ou o PRT não tiver recebido o respectivo <em>Logon</em>.
+  </li>
+  <li>Tiver sido enviado anteriormente um &quot;<em>Stop Traffic</em>&quot;, quer já tenha
+    recebido a resposta ou não. </li>
+  <li>O PRT tiver uma indicação de manter o estado <em>Close</em>. </li>
+</ul>
+
+<blockquote>
+  <p>Nenhuma outra mensagem de serviço tem resposta negativa.</p>
+</blockquote>
+
+<p><br>
+Cada interlocutor deve manter dois indicadores distintos: 
+
+<ul>
+  <li>Um destinado ao estado da sessão (aberta/fechada). </li>
+  <li>O outro destinado a suspensão de tráfego e reactivação do mesmo (tráfego
+    suspenso/tráfego activo).</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="center"><img src="imagens3/a2-1.gif" alt="a2-1.gif" WIDTH="554" HEIGHT="816"></p>
+
+<blockquote>
+  <p>&nbsp;</p>
+</blockquote>
+
+<p class="center"><img src="imagens3/a2-2.gif" alt="a2-2.gif" WIDTH="549" HEIGHT="796"></p>
+
+<p class="dta"><br>
+<a href="b1.htm">Anterior</a></p>
+</body>
+</html>

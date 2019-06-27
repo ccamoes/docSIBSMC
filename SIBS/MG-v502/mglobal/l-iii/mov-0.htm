@@ -1,0 +1,717 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+
+
+<title>MOVIMENTOS (MOV5 - Introdução)</title>
+</head>
+
+<body>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: &nbsp; MOVIMENTOS</td>
+        <td class="fichdta">&quot;FICH&quot; = MOV5 </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Enviar a Bancos e <em>Acquirers</em> participantes no Sistema MB movimentos
+correspondentes a diferentes tipos de operações. </p>
+
+<p><br>
+Para os Bancos MB (domiciliatários de contas D.O.), o ficheiro inclui: 
+
+<ul>
+  <li>Totais para Comerciantes de Fechos de TPA, para os quais a conta a movimentar reside no
+    Banco;</li>
+</ul>
+
+<ul>
+  <li>Totais para Empresas de Pagamentos de Serviços/Compras ou Serviços Especiais para os
+    quais a conta a movimentar reside no Banco;</li>
+</ul>
+
+<ul>
+  <li>Totais destinados a Representantes de cartões cuja conta a movimentar reside no Banco;</li>
+</ul>
+
+<ul>
+  <li>Movimento de contrapartida das Transferências Interbancárias efectuadas na Rede MB;</li>
+</ul>
+
+<ul>
+  <li>Totais de remunerações de Representante de Sistema Pagamento; </li>
+</ul>
+
+<ul>
+  <li>Movimentos de regularização do Sistema Multibanco.</li>
+</ul>
+
+<p><br>
+Para os <em>Acquirers</em> com serviços de processamento através da SIBS, para as
+entidades contratantes da marca MB (TPAs e Pagamento de Serviços/Serviços Especiais) e
+para entidades de apoio a operações realizadas no âmbito de outros Sistemas de
+Pagamento (ex.: Visa, MasterCard, AMEX), o ficheiro inclui: 
+
+<ul>
+  <li>Operações com cartões realizadas no âmbito da sua contratação, e respectivos
+    comissionamentos e/ou tarifas; </li>
+</ul>
+
+<ul>
+  <li>Totais por contrato de aceitação das operações em TPAs (totais por acordo para cada
+    fecho contabilístico local);</li>
+</ul>
+
+<ul>
+  <li>Totais de <em>Settlement</em> a liquidar noutros Sistemas de Pagamento;</li>
+</ul>
+
+<ul>
+  <li>Totais de <em>Settlement</em> correspondentes a operações realizadas por cartões
+    presentes no Sistema MB (ex.: contrapartida para o <em>Acquirer</em> da movimentação de
+    cartões de Bancos autónomos). </li>
+</ul>
+
+<p><br>
+Para os Bancos de Liquidação, que representam outros participantes na componente de
+liquidação financeira junto do Banco Central, o ficheiro inclui: 
+
+<ul>
+  <li>registo de totais correspondente ao <em>trailer</em> de cada ficheiro dos participantes
+    que representam.</li>
+</ul>
+
+<p><br>
+Todas as operações são incluídas no ficheiro, mesmo aquelas que tenham sido aceites
+pelos participantes nas sessões <em>real-time</em>.</p>
+
+<p><br>
+O registo tem um comprimento fixo de 404 bytes. </p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA DO FICHEIRO</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: </p>
+
+<p><br>
+
+<ul>
+  <li><strong>Um registo de <em>Header</em> do ficheiro &quot;TIPREG=0&quot;;</strong></li>
+</ul>
+
+<p><br>
+
+<ul>
+  <li><strong>Registos de Detalhe &quot;<a href="mov-1.htm" target="main">TIPREG=1</a>&quot; </strong><p>Incluem
+    informação detalhada sobre:<ul type="square">
+      <li>operações na rede de CAs Multibanco efectuadas por cartões geridos pelo <em>Acquirer;</em></li>
+      <li>operações na rede de TPAs efectuadas por cartões geridos pelo <em>Acquirer;</em></li>
+      <li>operações na rede de TPAs efectuadas por cartões de outros Emissores, no âmbito de
+        acordos posicionados pelo <em>Acquirer</em>;</li>
+      <li>operações de Pagamento de Serviços/Compras (outras marcas) efectuadas no âmbito de
+        acordos posicionados pelo <em>Acquirer.</em></li>
+    </ul>
+    <p>São enviadas operações bem concluídas ou operações de anulação de outras já
+    expedidas. Todas as operações são repetidas no ficheiro, mesmo que tenham sido
+    informadas ao <em>Acquirer</em> através de mensagem <em>real-time</em>. </p>
+    <p>Cada registo corresponde a uma operação.</p>
+  </li>
+</ul>
+
+<p><br>
+
+<ul>
+  <li><strong>Registos de Detalhe &quot;<a href="mov-2.htm" target="main">TIPREG=2</a>&quot; </strong><p>Incluem
+    informação adicional ao <a target="main" href="mov-1.htm">tipo de registo 1</a>:<ul
+    type="square">
+      <li>dados particulares de EMV, na vertente <em>Acquirer;</em></li>
+      <li>dados específicos relativos a transacções na Rede Multibanco efectuadas com cartões
+        Visa e MasterCard. </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br>
+
+<ul>
+  <li><strong>Registos de detalhe &quot;<a href="mov-3.htm" target="main">TIPREG=3</a>&quot; </strong><p>Incluem
+    os movimentos nas contas bancárias, residentes no Banco destinatário do ficheiro, de
+    comerciantes/empresas correspondentes a:<ul type="square">
+      <li>cada Fecho local de Terminais de Pagamento Automático (TPA); </li>
+      <li>cada operação de Depósito de Lote PMB; </li>
+      <li>total de pagamentos de serviços/compras ou serviços especiais realizados para uma
+        empresa e incluídos no ficheiro enviado a esta última. </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br>
+
+<ul>
+  <li><strong>Registos de Detalhe &quot;<a target="main" href="mov-4.htm">TIPREG=4</a>&quot; </strong></li>
+</ul>
+
+<blockquote>
+  <p>Incluem o detalhe, por produto financeiro (ex.: Acordo MB, Acordo Unicre CR, Acordo
+  AMEX, etc.), dos totais liquidados através do <a href="mov-3.htm" target="main">tipo de
+  registo 3</a>. Estes registos destinam-se a todos os <em>Acquirers</em> participantes no
+  Sistema MB, incluindo os contratantes da marca MB, quer para TPAs quer para operações de
+  Pagamento de Serviços ou Serviços Especiais.</p>
+</blockquote>
+
+<p><br>
+
+<ul>
+  <li><strong>Registos de Detalhe &quot;<a href="mov-5.htm" target="main">TIPREG=5</a>&quot; </strong></li>
+</ul>
+
+<blockquote>
+  <p>Incluem totais de suporte ao <em>Clearing</em> dos diferentes Sistemas de Pagamento
+  (enviados para os respectivos Bancos de apoio) e valores a movimentar em contas de <em>Acquirers</em>
+  ou Bancos de apoio ao <em>Clearing</em> relativos a um conjunto de serviços específicos,
+  nomeadamente:<ul type="square">
+    <li>valores referentes à componente de aceitação em CA/TPA;</li>
+    <li>contrapartida nas TEI das Transferências Bancárias desencadeadas na Rede MB;</li>
+    <li>movimentos de regularização (relativos ao Sistema MB, <em>Acquirer</em> ou Bancos de
+      apoio);</li>
+    <li>outros movimentos para <em>Acquirers</em> das diferentes marcas dos Sistemas de
+      Pagamento.</li>
+  </ul>
+  <p>Cada registo corresponde normalmente a valores agregados.</p>
+</blockquote>
+
+<p><br>
+
+<ul>
+  <li><strong>Um registo de <em>Trailer</em> &quot;TIPREG=9&quot; </strong></li>
+</ul>
+
+<blockquote>
+  <p>Inclui o total de registos enviados no ficheiro e o correspondente impacto
+  contabilístico final, a débito e a crédito. Estes valores podem contribuir, ou para o
+  &nbsp; Ficheiro <a href="rmb.htm" target="main">RMB5</a>, sempre que o ficheiro se
+  destina a um Banco de Liquidação, ou para um <a target="main" href="mov-5.htm">registo
+  tipo 5</a> no Ficheiro MOV5 do Banco Representante, nos restantes casos.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA DOS REGISTOS DE DETALHE</u></h6>
+
+<p><br>
+Os registos de detalhe do Ficheiro Movimentos encontram-se organizados por grupos de
+dados. </p>
+
+<p>Para cada grupo de dados descrito em seguida indicam-se os tipos de registo em que se
+encontra presente.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>1. DADOS DE IDENTIFICAÇÃO DA OPERAÇÃO (<em>HEADER</em>)</strong></p>
+
+<p>Os campos (<a href="../../Campos/camp1700.htm#1709">1709</a>) APLIC_N,
+(<a href="../../Campos/campos4.htm#320">320</a>) IDLOG e (<a
+href="../../Campos/campos2.htm#117">117</a>) NRLOG incluem os dados necessários para o
+acesso directo ao <em>LOG</em> da SIBS, no caso de ser necessário, para auditar a
+operação. <br>
+Presentes em todos os Tipos de Registos.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>2. DADOS DE IDENTIFICAÇÃO DA OPERAÇÃO (PROCESSO)</strong></p>
+
+<p>O campo (<a href="../../Campos/campos2.htm#121">121</a>) TPROC indica o cenário em que
+a operação se realizou. O campo (<a href="../../Campos/campos2.htm#186">186</a>) MODENV
+indica se houve (MODENV=1) ou não (MODENV=0) uma transmissão em <em>real-time</em> da
+operação, informando também casos particulares da transmissão, que podem requerer
+processamento específico (MODENV=2 e 3). </p>
+
+<p>Os três campos que iniciam o registo (<em>Header</em>) e os campos (<a
+href="../../Campos/campos1.htm#004">004</a>) DHMSG, (<a
+href="../../Campos/campos1.htm#012">012</a>) CODRESP e (<a
+href="../../Campos/campos1.htm#013">013</a>) NRIDRESP, devem permitir ao Emissor o
+emparelhamento com uma operação executada em <em>real-time</em>, caso tenha sido este o
+cenário de decisão usado, ou com uma operação realizada noutro cenário mas para a
+qual tenha sido enviada uma mensagem pendente para o Emissor. </p>
+
+<p>Grupo de dados presente nos Tipos de Registos 1, 3 e 4.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>3. DADOS DA TRANSACÇÃO</strong></p>
+
+<p>O campo (<a href="../../Campos/campos7.htm#699">699</a>) CODTRN-E e o campo (<a
+href="../../Campos/campos4.htm#313">313</a>) INDESTR identificam a operação realizada e
+a sua natureza. <br>
+Estes campos estão presentes nos TIPREG=1, 3 e 4.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>4. DADOS DO TERMINAL (GLOBAL)</strong></p>
+
+<p>Identificam os terminais da Rede MB e de outras redes: 
+
+<ul>
+  <li>O tipo de terminal - (<a href="../../Campos/campos1.htm#003">003</a>) TIPOTERM;</li>
+  <li>O Banco de Apoio, quando aplicável - (<a href="../../Campos/campos3.htm#241">241</a>)
+    BANAPOIO;</li>
+  <li>O código do terminal - (<a href="../../Campos/campos1.htm#006">006</a>) IDTERMINAL;</li>
+  <li >As capacidades de processamento do terminal - (<a
+    href="../../Campos/camp2300.htm#2354">2354</a>) CAP-TERM;</li>
+  <li>A data/hora de realização da operação (<a href="../../Campos/campos2.htm#105">105</a>)
+    DTHORA;</li>
+  <li>A localização do terminal - (<a href="../../Campos/campos1.htm#007">007</a>) LOCTERM e
+    (<a href="../../Campos/campos3.htm#226">226</a>) CODPAIS;</li>
+  <li>O código de tipo de actividade da localização do terminal - (<a
+    href="../../Campos/campos2.htm#157">157</a>) MCC.</li>
+</ul>
+
+<p>Presentes nos TIPREG=1, 3 e 4. </p>
+
+<p>&nbsp;</p>
+
+<p><strong>5. DADOS DO TERMINAL (REDE MB)</strong></p>
+
+<p>Dados específicos de terminais da Rede MB: 
+
+<ul>
+  <li>A Entidade de apoio do terminal - (<a href="../../Campos/campos1.htm#068">068</a>)
+    IDPROP;</li>
+  <li>O período contabilístico local - (<a href="../../Campos/campos2.htm#118">118</a>)
+    IDPERLOCAL;</li>
+  <li>O número de registo local - (<a href="../../Campos/campos4.htm#323">323</a>) NUMREGLOC;</li>
+  <li>Distrito e concelho - (<a href="../../Campos/campos2.htm#158">158</a>) DISTCONC.</li>
+</ul>
+
+<p>Presentes nos TIPREG=1, 3 e 4. </p>
+
+<p>&nbsp;</p>
+
+<p><strong>6. DADOS DE CARTÃO</strong></p>
+
+<p>Os campos (<a href="../../Campos/camp2300.htm#2324">2324</a>) COMP-PAN, (<a
+href="../../Campos/camp2300.htm#2325">2325</a>) PAN, (<a
+href="../../Campos/campos2.htm#126">126</a>) DATEXP, identificam o cartão utilizado na
+operação. <br>
+Presentes no TIPREG=1.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>7. DADOS ADICIONAIS DE CARTÃO</strong></p>
+
+<p>Os campos (<a href="../../Campos/campos2.htm#119">119</a>) SEQMOV, (<a
+href="../../Campos/campos2.htm#129">129</a>) SEQPAN, (<a
+href="../../Campos/camp1700.htm#1716">1716</a>) EMV-PADRAO, (<a
+href="../../Campos/campos1.htm#005">005</a>) TIPOAUT, apresentam dados adicionais sobre o
+cartão e a transacção realizada.<br>
+Presentes no TIPREG=1.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>8. DADOS DE CONTA</strong></p>
+
+<p>O campo (<a href="../../Campos/campos2.htm#132">132</a>) CONTA indica a conta a
+movimentar pela transacção.<br>
+Presente nos TIPREG=3, 4 e 5.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>9. DADOS DA TRANSACÇÃO - TOTALIZADOR</strong></p>
+
+<p>O campo (<a href="../../Campos/camp2300.htm#2329">2329</a>) TOTOPER-E informa
+o número de operações consideradas em registos que contêm valores agregados. <br>
+Presente nos TIPREG=3, 4 e 5.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>10. MONTANTES DA OPERAÇÃO</strong></p>
+
+<p>Os campos (<a href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E, (<a
+href="../../Campos/camp2300.htm#2327">2327</a>) MNT-ADI e respectivos sinais, nos TIPREG=1
+e 3 apresentam os montantes a movimentar ao cliente em função da transacção realizada.
+</p>
+
+<p>Nos TIPREG=4 incluem movimentação de natureza diversa, detalhada na descrição do
+registo.</p>
+
+<p>Nos TIPREG=5, normalmente correspondentes a valores agregados, o campo (<a
+href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E traduz o valor da operação a
+considerar pelo destinatário. Quando preenchido, o campo (<a
+href="../../Campos/camp2300.htm#2327">2327</a>) MNT-ADI apresenta alternativamente um
+valor adicional relacionado com a operação (por exemplo, um comissionamento) ou o valor
+que resulta da aplicação de uma tarifa indicada no campo TARINT-E. O impacto
+contabilístico dos dois campos, (<a href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E
+e (<a href="../../Campos/camp2300.htm#2327">2327</a>) MNT-ADI, depende do valor indicado
+para o campo AV/CUTOFF.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>11. MODELO DE NEGÓCIO APLICADO</strong></p>
+
+<p>O código do Modelo de Negócio e os diferentes tarifários aplicados
+encontram-se indicados nos campos (<a href="../../Campos/camp2300.htm#2328">2328</a>)
+COD-MOD-NEG, (<a href="../../Campos/camp2300.htm#2300">2300</a>) TARSIBS-E, (<a
+href="../../Campos/camp2300.htm#2301">2301</a>) TARINT-E. <br>
+Presentes nos TIPREG=1, 4 e 5.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>12. MONTANTES CORRESPONDENTES AO MODELO DE NEGÓCIO </strong></p>
+
+<p>Os campos (<a href="../../Campos/camp2300.htm#2340">2340</a>) MNT-P-DST, (<a
+href="../../Campos/camp2300.htm#2341">2341</a>) MNT-R-DST e respectivos sinais, apresentam
+os montantes a movimentar ao destinatário do ficheiro em função da aplicação do
+correspondente Modelo de Negócio para a transacção em causa. <br>
+Presentes nos TIPREG=1 e 4. </p>
+
+<p>Os campos (<a href="../../Campos/camp2300.htm#2338">2338</a>) MNT-P-COM e (<a
+href="../../Campos/camp2300.htm#2339">2339</a>) MNT-R-COM e respectivos sinais, presentes
+nos TIPREG=4, apresentam os montantes pagos ou recebidos pelo comerciante/empresa.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>13. DADOS DO <em>ACQUIRER</em></strong></p>
+
+<p>O campo (<a href="../../Campos/camp800.htm#806">806</a>) TIPOCART permite identificar o
+tipo de cartão que efectuou a transacção. </p>
+
+<p>Os campos (<a href="../../Campos/camp1000.htm#1007">1007</a>) ID-COM-REP e (<a
+href="../../Campos/campos5.htm#434">434</a>) PRODFIN identificam o Comerciante para o
+representante e o produto financeiro a que respeita o registo. O campo (<a
+href="../../Campos/camp800.htm#809">809</a>) ENTAUT identifica a entidade que autorizou a
+operação. </p>
+
+<p>Os campos (<a href="../../Campos/camp2400.htm#2401">2401</a>) BANCOSUP e (<a
+href="../../Campos/campos2.htm#110">110</a>) DATAVALOR identificam o Banco no qual a
+informação do registo tem impacto contabilístico na conta do <em>Acquirer</em>, bem
+como a data-valor em que esse impacto ocorre. <br>
+Presentes nos TIPREG=1 e 4.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>14. DADOS DO TIPO DE MOVIMENTO</strong></p>
+
+<p>O campo (<a href="../../Campos/campos1.htm#063">063</a>) TIPMOV permite
+distinguir registos de detalhe. O valor deste campo tem influência sobre o tipo de
+informação contida no registo e sobre o respectivo preenchimento dos restantes campos.</p>
+
+<p>Os campos (<a href="../../Campos/campos3.htm#221">221</a>) SISTEMA, (<a
+href="../../Campos/campos3.htm#222">222</a>) SISTPAG e (<a
+href="../../Campos/campos3.htm#225">225</a>) BPAGAPOIO permitem identificar a origem da
+operação.</p>
+
+<p>O campo (<a href="../../Campos/campos3.htm#228">228</a>) AV/CUTOFF indica se
+o registo é apenas informativo (AV/CUTOFF=1) ou se possui valor contabilístico
+(AV/CUTOFF=2).</p>
+
+<p>Os campos (<a href="../../Campos/campos2.htm#105">105</a>) DTHORA e (<a
+href="../../Campos/campos2.htm#110">110</a>) DATAVALOR indicam respectivamente a data/hora
+de produção da informação contida no registo e a data/hora em que é realizada a
+compensação financeira do mesmo, quando este tem valor contabilístico.</p>
+
+<p>Este grupo de dados está presente apenas no TIPREG=5.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>15. DADOS DA OPERAÇÃO ORIGINAL</strong></p>
+
+<p>Apresenta os campos correspondentes à identificação da operação original no caso
+do registo corresponder a uma anulação ou a uma regularização: (<a
+href="../../Campos/campos1.htm#014">014</a>) NRIDRESP-O, (<a
+href="../../Campos/camp1700.htm#1747">1747</a>) APLIC_N-O, (<a
+href="../../Campos/campos1.htm#010">010</a>) IDLOG-O, (<a
+href="../../Campos/campos1.htm#011">011</a>) NRLOG-O, (<a
+href="../../Campos/campos1.htm#009">009</a>) DHMSG-O e (<a
+href="../../Campos/campos1.htm#015">015</a>) MOTANUL. O campo (<a
+href="../../Campos/campos3.htm#243">243</a>) IDOCUMENT está preenchido a zeros no caso de
+anulações e inclui, no caso de regularizações, a identificação do documento de
+suporte (em formato electrónico ou excepcionalmente em papel) enviado pela SIBS ao <em>Acquirer</em>
+ou ao Banco de Apoio, no caso de operações MB.<br>
+Presentes nos TIPREG=1, 3 e 4.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>16. DADOS ADICIONAIS </strong></p>
+
+<p>O campo DADOS ADICIONAIS presente nos TIPREG=1, 3, 4 e 5 é preenchido com campos
+variáveis, necessários em função do código de transacção ou do registo de totais
+considerado, pelo que são especificados caso a caso.</p>
+
+<p>&nbsp;</p>
+
+<p class="cor"><a name="IMPACTO"><strong>IMPACTO CONTABILÍSTICO DOS REGISTOS DE DETALHE</strong></a></p>
+
+<p><br>
+O impacto contabilístico de cada registo de detalhe é especificado na descrição de
+cada registo.</p>
+
+<blockquote>
+  <p style="line-height: 20px">&#150;&nbsp; <a href="mov-1.htm" target="main">Tipo de
+  Registo 1</a> (Movimento Cartão <em>Acquirer</em>)<br>
+  &#150;&nbsp; <a target="main" href="mov-2.htm">Tipo de Registo 2</a> (Dados Adicionais de
+  Movimentos)<br>
+  &#150;&nbsp; <a target="main" href="mov-3.htm">Tipo de Registo 3</a> (Totais para Contas
+  de Comerciantes/Empresas)<br>
+  &#150;&nbsp; <a target="main" href="mov-4.htm">Tipo de Registo 4</a> (Totais por Produto
+  Financeiro)<br>
+  &#150;&nbsp; <a target="main" href="mov-5.htm">Tipo de Registo 5</a> (Totais de Suporte ao
+  <em>Clearing</em> e Serviços Específicos)</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p class="cor"><strong>SITUAÇÕES PARTICULARES</strong></p>
+
+<p><br>
+<strong>ACORDOS COM APLICAÇÃO DIFERIDA</strong></p>
+
+<p>Um <em>Acquirer</em>, ao matricular no Sistema MB um acordo para um determinado
+comerciante/estabelecimento, pode indicar que o crédito ao Comerciante, em lugar de se
+realizar no fecho de período contabilístico, se efectua n dias após esse fecho. O
+número de dias para crédito após o fecho é um dado parametrizável pelo <em>Acquirer</em>
+na gestão dos acordos via Terminal de Serviços SIBS ou via Ficheiro <a
+href="adcoeadc.htm" target="main">MADCO</a>. O elemento de informação que permite
+identificar, nos ficheiros de Compensação, que se está perante um acordo com
+aplicação diferida, é o atributo (<a href="../../Campos/camp2200.htm#2298">2298</a>)
+IND-CONTAB igual a &#145;2&#146; - Diferido.</p>
+
+<p>É objectivo deste ponto descrever os fluxos de informação no Ficheiro MMOV5, para
+operações realizadas sob acordos de aplicação diferida, no dia: 
+
+<ul>
+  <li>da realização das transacções (dia T)</li>
+  <li>do fecho de período contabilístico (Dia F)</li>
+  <li>da Compensação em que se deve efectuar o crédito ao Comerciante (Dia F+n).</li>
+</ul>
+
+<p>De uma forma esquemática temos:</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" width="503">
+  <tr>
+    <td rowspan="2" width="54">&nbsp;</td>
+    <td rowspan="2" width="75" class="mid"><a href="mov-1.htm" target="main">TIPREG=1</a><br>
+    <em>Acquirer</em></td>
+    <td rowspan="2" width="95" class="mid"><a href="mov-3.htm" target="main">TIPREG=3</a><br>
+    B.A.Comerc.</td>
+    <td rowspan="2" width="67" class="mid"><a href="mov-4.htm" target="main">TIPREG=4</a><br>
+    <em>Acquirer</em></td>
+    <td COLSPAN="2" width="173"><a href="mov-5.htm" target="main">TIPREG=5</a></td>
+  </tr>
+  <tr>
+    <td width="87"><em>Acquirer</em></td>
+    <td width="89">B.A.<em>Acquirer</em></td>
+  </tr>
+  <tr>
+    <td width="54" class="mid">Dia T</td>
+    <td width="75" class="mid">informativo</td>
+    <td width="95" class="mid">-</td>
+    <td width="67" class="mid">-</td>
+    <td width="87" class="mid">informativo<br>
+    TIPMOV=0111</td>
+    <td width="89" class="mid">-</td>
+  </tr>
+  <tr>
+    <td width="54" class="mid">Dia F</td>
+    <td width="75" class="mid">-</td>
+    <td width="95" class="mid">contabilístico (=0)</td>
+    <td width="67" class="mid">informativo</td>
+    <td width="87" class="mid">-</td>
+    <td width="89" class="mid">-</td>
+  </tr>
+  <tr>
+    <td width="54" class="mid">Dia F+n</td>
+    <td width="75" class="mid">-</td>
+    <td width="95" class="mid">contabilístico</td>
+    <td width="67" class="mid">informativo</td>
+    <td width="87" class="mid">informativo<br>
+    TIPMOV=0112</td>
+    <td width="89" class="mid">contabilístico<br>
+    TIPMOV=0112</td>
+  </tr>
+</table>
+
+<p><br>
+O preenchimento dos campos de cada registo é efectuado de acordo com a descrição feita
+em cada um dos tipos de registo; as excepções encontram-se ao nível do impacto
+contabilístico de cada um. </p>
+
+<p><br>
+<strong>Dia T - Dia da realização da transacção</strong></p>
+
+<p>Cada transacção é informada no <a href="mov-1.htm" target="main">tipo de registo 1</a>,
+de acordo com o especificado para este tipo de registo. Dado que a transacção não é
+creditada ao Comerciante no mesmo período da Compensação em que aquele realiza o fecho
+de período contabilístico, também não é debitada ao <em>Acquirer</em>. Assim, os
+registos com (<a href="../../Campos/camp2200.htm#2298">2298</a>) IND-CONTAB=2, não têm
+impacto contabilístico.</p>
+
+<p>Adicionalmente, é(são) enviado(s) ao <em>Acquirer</em> <a target="main"
+href="mov-5.htm">registo(s) de tipo 5</a>, também informativo(s), com (<a
+href="../../Campos/campos1.htm#063">063</a>) TIPMOV=&#146;0111&#146;. (São enviados
+tantos registos de tipo 5 quantas as contas parametrizadas no produto financeiro, face aos
+Bancos de Apoio dos terminais onde se realizaram as transacções).</p>
+
+<p><br>
+<strong>Dia F - Dia do fecho do período contabilístico do terminal</strong></p>
+
+<p>É enviado um <a target="main" href="mov-3.htm">tipo de registo 3</a> ao Banco
+domiciliatário da conta do Comerciante. Este registo inclui o valor a creditar ao
+Comerciante, relativo aos restantes acordos ao abrigo dos quais se realizaram
+transacções no período contabilístico encerrado. Não se inclui, assim, o valor das
+transacções feitas nesse período sob o acordo contabilístico de aplicação diferida.
+Caso, nesse período, só se tenham efectuado transacções com acordo com aplicação
+diferida, o registo é enviado mas com total a movimentar a zeros.</p>
+
+<p>Mantém-se a informação no <a target="main" href="mov-4.htm">tipo de registo 4</a>,
+de carácter informativo, e com conteúdo semelhante ao utilizado no caso das
+transacções com IND-CONTAB<span class="symbol">¹2.</p>
+
+<p><br>
+<strong>Dia F+n - Dia do crédito ao Comerciante </strong></p>
+
+<p>O crédito ao Comerciante, das transacções efectuadas no período contabilístico
+encerrado no dia F, é informado ao Banco domiciliatário da sua conta através do
+Ficheiro MMOV5, <a target="main" href="mov-3.htm">tipo de registo 3</a>; este registo tem
+impacto contabilístico. </p>
+
+<p>São enviados <a target="main" href="mov-5.htm">registos de tipo 5</a>, ao(s) Banco(s)
+de Apoio do <em>Acquirer</em>, com impacto contabilístico, para débito na(s) sua(s)
+conta(s), e ao próprio <em>Acquirer</em>, de carácter informativo, ambos com
+TIPMOV=&#146;0112&#146;. </p>
+
+<p>Adicionalmente o <em>Acquirer</em> recebe informação, no <a target="main"
+href="mov-4.htm">tipo de registo 4</a>, sobre os valores movimentados ao abrigo de cada
+acordo.</p>
+
+<p><br>
+<strong>COMERCIANTES COM INDICADOR DE RISCO ACTIVO</strong></p>
+
+<p>No âmbito do combate à fraude e da implementação do SIDF, Sistema Interbancário de
+Detecção de Fraude, pretende-se que um Comerciante, sempre que tenha o indicador de
+risco activo, não seja creditado pelos movimentos realizados nos seus TPAs, quando
+efectua um fecho de período contabilístico. </p>
+
+<p>Permite-se desta forma que os serviços operacionais analisem as operações realizadas
+no período contabilístico em causa, até à activação do indicador de inibição do
+Comerciante, e determinem se estas devem ser estornadas para os clientes ou seguirem para
+crédito do Comerciante.</p>
+
+<p>Nos parágrafos seguintes, descrevem-se os fluxos de informação no Ficheiro MMOV5, no
+período da Compensação em que o Comerciante efectua o fecho de período contabilístico
+e no momento posterior (dia X), quando o serviço operacional determina, via aplicação
+de regularizações, a Compensação de uma ou mais das operações que ficaram pendentes
+no <em>Acquirer</em>.</p>
+
+<p>De uma forma esquemática temos:</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="583">
+  <tr>
+    <td>&nbsp;</td>
+    <td><a href="mov-1.htm" target="main">TIPREG=1</a></td>
+    <td><a href="mov-3.htm" target="main">TIPREG=3</a></td>
+    <td><a href="mov-4.htm" target="main">TIPREG=4</a></td>
+    <td COLSPAN="2"><a href="mov-5.htm" target="main">TIPREG=5</a></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><em>Acquirer</em></td>
+    <td>B.A.Comerc.</td>
+    <td><em>Acquirer</em></td>
+    <td><em>Acquirer</em></td>
+    <td>B.A.<em>Acquirer</em></td>
+  </tr>
+  <tr>
+    <td class="mid">Dia Fecho TPA<br>
+    INDRISCO=1</td>
+    <td class="mid">contabilístico</td>
+    <td class="esq">contabilístico:<br>
+    - MNT-E e MNT-ADI =0;<br>
+    - INDESTR=2</td>
+    <td class="mid">informativo</td>
+    <td class="mid">contabilístico<br>
+    TIPMOV=0121</td>
+    <td class="mid">-</td>
+  </tr>
+  <tr>
+    <td class="mid">Dia X (ver acima)</td>
+    <td class="mid">-</td>
+    <td class="esq" nowrap>contabilístico:<br>
+    - (MNT-E)-(MNT-ADI)=valor a creditar<br>
+    - INDESTR=2</td>
+    <td class="mid">informativo</td>
+    <td class="mid">informativo<br>
+    TIPMOV=0122</td>
+    <td class="mid">contabilístico<br>
+    TIPMOV=0122</td>
+  </tr>
+</table>
+
+<p>O preenchimento dos campos de cada registo é efectuado de acordo com a descrição
+feita em cada um dos tipos de registo; as excepções encontram-se ao nível do impacto
+contabilístico de cada um. </p>
+
+<p><br>
+<strong>Dia de fecho de período contabilístico de Comerciante com indicador de risco
+activo</strong></p>
+
+<p>Cada transacção incluída no fecho é informada no <a href="mov-1.htm" target="main">tipo
+de registo 1</a>, de acordo com o especificado para este tipo de registo. Este registo tem
+impacto contabilístico.</p>
+
+<p>Como contrapartida do <a href="mov-1.htm" target="main">tipo de registo 1</a>, é
+(são) enviado(s) <a target="main" href="mov-5.htm">registo(s) de tipo 5</a>, ao <em>Acquirer</em>,
+no mesmo ficheiro, com valor contabilístico, com (<a href="../../Campos/campos1.htm#063">063</a>)
+TIPMOV=&#146;0121&#146;.</p>
+
+<p>Dado que, nestas condições, não se pretende efectuar o crédito ao Comerciante,
+envia-se um <a target="main" href="mov-3.htm">tipo de registo 3</a> ao seu Banco de Apoio,
+com todos os valores a zeros e com INDESTR=2, como forma de reportar que o fecho se
+realizou em condições anormais.</p>
+
+<p>Mantém-se a informação no <a target="main" href="mov-4.htm">tipo de registo 4</a>,
+enviado ao <em>Acquirer</em>, com carácter informativo. Neste registo é informado o (<a
+href="../../Campos/camp800.htm#815">815</a>) INDRISCO=&#146;1&#146;.</p>
+
+<p><br>
+<strong>Dia X em que o serviço operacional determina a regularização </strong></p>
+
+<p>O crédito ao Comerciante é informado ao Banco domiciliatário da sua conta através
+do Ficheiro MMOV5, <a target="main" href="mov-3.htm">tipo de registo 3</a>; este registo
+tem impacto contabilístico e INDESTR=2. </p>
+
+<p>São enviados <a target="main" href="mov-5.htm">registos de tipo 5</a>, ao(s) Banco(s)
+de Apoio do <em>Acquirer</em>, com impacto contabilístico, para débito na(s) sua(s)
+conta(s), e ao próprio <em>Acquirer</em>, de carácter informativo, ambos com (<a
+href="../../Campos/campos1.htm#063">063</a>) TIPMOV=&#146;0122&#146;. </p>
+
+<p>Adicionalmente o <em>Acquirer</em> recebe informação, no <a target="main"
+href="mov-4.htm">tipo de registo 4</a>, sem impacto contabilístico.</p>
+
+<p>Caso o serviço operacional determine a regularização dos clientes, titulares de
+cartões, é aplicável o procedimento normal para qualquer outro tipo de regularização.</p>
+
+<p class="dta"><em><br>
+continua</em>  <a href="mov-1.htm" target="main"><img src="../images/seta-seg.gif" class="dta" border="0" align="absmiddle" WIDTH="22" HEIGHT="21"></a></p>
+
+<p>&nbsp;</p>
+
+</body>
+</html>

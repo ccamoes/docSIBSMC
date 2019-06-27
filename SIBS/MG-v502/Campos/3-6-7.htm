@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>campo3-6-7</title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="main.css" TYPE="text/css">
+</head>
+
+<body>
+
+<h2 align="center">DADOS DO TERMINAL</h2>
+
+<h6 align="center"><br>
+RELACIONAMENTO DOS CAMPOS DE IDENTIFICAÇÃO DO TERMINAL (003), (006) E (007)</h6>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+  <tr>
+    <th width="27%" class="oitof">Valores possíveis <br>
+    Campo <a href="campos1.htm#003">003</a> - TIPOTERM </th>
+    <th width="38%" class="oitof">Estrutura do <br>
+    Campo <a href="campos1.htm#006">006</a> - IDTERMINAL</th>
+    <th width="35%" class="oitof">Informação incluída no<br>
+    Campo <a href="campos1.htm#007">007</a> - LOCTERM</th>
+  </tr>
+  <tr>
+    <td class="tahoesq" width="27%">A - Caixa Automático (CA)</td>
+    <td class="tahoesq" width="38%">0000AAAANN (cód. agência + n.º máq.)</td>
+    <td class="tahoesq" width="35%">Nome (25) + Localidade (15)</td>
+  </tr>
+  <tr>
+    <td class="tahoesq" width="27%">B - Pagamento Automático (POS) </td>
+    <td class="tahoesq" width="38%">00NNNNNNNN (n.º do TPA)</td>
+    <td class="tahoesq" width="35%">1ª e 4ª linha do estabelecimento<br>
+    (nome1+ localidade)</td>
+  </tr>
+  <tr>
+    <td class="tahoesq" width="27%">C - Caixa Automático no estrangeiro</td>
+    <td class="tahoesq" width="38%">valor informado pelo acquirer</td>
+    <td class="tahoesq" width="35%">valor recebido do estrangeiro <br>
+    Nome (25) + Localidade (15)</td>
+  </tr>
+  <tr>
+    <td class="tahoesq" width="27%">D - Pagamento Automático estrangeiro</td>
+    <td class="tahoesq" width="38%">valor informado pelo acquirer</td>
+    <td class="tahoesq" width="35%">valor recebido do estrangeiro <br>
+    Nome (25) + Localidade (15)</td>
+  </tr>
+  <tr>
+    <td class="tahoesq" width="27%">E - Terminal Baixo Valor</td>
+    <td class="tahoesq" width="38%">zeros</td>
+    <td class="tahoesq" width="35%">&#145;TRANSACÇÕES BAIXO VALOR&#146;</td>
+  </tr>
+  <tr>
+    <td class="tahoesq" width="27%">F - Terminal Unicre</td>
+    <td class="tahoesq" width="38%">valor informado pela Unicre</td>
+    <td class="tahoesq" width="35%">valor informado pela Unicre</td>
+  </tr>
+  <tr>
+    <td class="tahoesq" width="27%">G - Terminal Bancário</td>
+    <td class="tahoesq" width="38%">n.º terminal bancário</td>
+    <td class="tahoesq" width="35%">1ª e 4ª linha do estabelecimento</td>
+  </tr>
+  <tr>
+    <td class="tahoesq" width="27%">H - Terminal Empresa</td>
+    <td class="tahoesq" width="38%">n.º terminal empresa</td>
+    <td class="tahoesq" width="35%">1ª e 4ª linha do estabelecimento </td>
+  </tr>
+  <tr>
+    <td class="tahoesq" width="27%">I - Porta Moedas Multibanco</td>
+    <td class="tahoesq" width="38%">&nbsp;</td>
+    <td class="tahoesq" width="35%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="tahoesq" width="27%">J - Acesso ao MULTIBANCO</td>
+    <td class="tahoesq" width="38%">n.º do pinpad</td>
+    <td class="tahoesq" width="35%">&#145;ACESSO AO MULTIBANCO&#146; </td>
+  </tr>
+  <tr>
+    <td class="tahoesq" width="27%">K - Telemultibanco</td>
+    <td class="tahoesq" width="38%">0TTTTTTTTT (n.º telefone)</td>
+    <td class="tahoesq" width="35%">&#145;TELEMULTIBANCO&#146;</td>
+  </tr>
+  <tr>
+    <td class="tahoesq" width="27%">L - Host do Banco</td>
+    <td class="tahoesq" width="38%">= campo <a href="campos5.htm#471" target="explicac">471</a>
+    (IDMSGBAN - 10 posições direita do campo) recebido na sessão Banco -&gt; SIBS</td>
+    <td class="tahoesq" width="35%">Nome reduzido do Banco (25 caracteres) + Cód. CPD (1
+    dígito)</td>
+  </tr>
+  <tr>
+    <td class="tahoesq" width="27%">M - Internet</td>
+    <td class="tahoesq" width="38%">zeros ou 00NNNNNNNN (n.º do TPA)</td>
+    <td class="tahoesq" width="35%">Internet ou 1ª e 4ª linha do estabelecimento (nome1+
+    localidade)</td>
+  </tr>
+  <tr>
+    <td class="tahoesq" width="27%">N - Quiosques</td>
+    <td width="38%">&nbsp;</td>
+    <td width="35%">&nbsp;</td>
+  </tr>
+</table>
+
+<p class="tahoma">&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

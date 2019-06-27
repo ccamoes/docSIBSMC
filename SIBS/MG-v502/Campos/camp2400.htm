@@ -1,0 +1,2926 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos 2400 (2400-2499)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Número DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.&nbsp;</td>
+    <td class="fundo">REP.&nbsp;</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="2400" name="2400">2400</a></td>
+    <td class="esq"><u>CÓDIGO DE PROCESSAMENTO</u><p>É o código que identifica o tipo de
+    cada transacção efectuada.</p>
+    <p>Pode assumir os seguintes valores:<br>
+    &nbsp;&nbsp; 04 - Movimento a Crédito<br>
+    &nbsp;&nbsp; 80 - Inserção / Actualização de cliente<br>
+    &nbsp;&nbsp; 82 - Anulação de cliente<br>
+    &nbsp;&nbsp; 90 - Movimento a Débito<br>
+    &nbsp;&nbsp; 99 - Movimento sem valor contabilístico </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td nowrap>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2401" name="2401">2401</a></td>
+    <td class="esq"><u>BANCO DE SUPORTE</u><p>Identifica o código do Banco no qual a
+    Instituição participante no Sistema tem conta para a liquidação.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>BANCOSUP</td>
+  </tr>
+  <tr>
+    <td><a id="2402" name="2402">2402</a></td>
+    <td class="esq"><u>AUTHORIZATION CHARACTERISTICS INDICATOR</u><p>Inclui o valor recebido
+    pela SIBS no campo 62.1 - Authorization Characteristics Indicator (especificações VISA)
+    na mensagem <em>real-time </em>com a VISA (Base I); pode assumir os valores 'E'
+    (transacção qualificou para&nbsp; CPS/ATM) ou 'N' (transacção não qualificou para
+    CPS/ATM).</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>AUT_CHA_IND</td>
+  </tr>
+  <tr>
+    <td><a id="2403" name="2403">2403</a></td>
+    <td class="esq"><u>TRANSACTION IDENTIFIER</u><p>Inclui o valor recebido pela SIBS no campo
+    62.2 - Transaction Identifier (especificações VISA) na mensagem <em>real-time </em>com a
+    VISA (Base I); este campo estará preenchido a zeros no campo do Campo Authorization
+    Characteristics Indicator incluir o valor 'N'.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TRANS_ID</td>
+  </tr>
+  <tr>
+    <td><a id="2404" name="2404">2404</a></td>
+    <td class="esq"><u>VALIDATION CODE</u><p>Inclui o valor recebido pela SIBS no campo 62.3
+      - Validation Code (especificações VISA) na mensagem <em>real-time </em>com a VISA (Base
+    I); este campo estará preenchido a espaços no campo do Campo Authorization
+    Characteristics Indicator incluir o valor 'N'.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>VALID_COD</td>
+  </tr>
+  <tr>
+    <td><a id="2405" name="2405">2405</a></td>
+    <td class="esq"><u>KACOD</u><p>Campo chave (aleatória) que entra nos cálculos do campo
+    2406 - Code Block.<br>
+    Poderá ter origem num CPD de um Banco.</td>
+    <td class="dta">32</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2406" name="2406">2406</a></td>
+    <td class="esq"><u>CODE BLOCK</u><p>Campo com informação codificada sob a forma de Pin
+    Block, em formato 03 da ISO.<br>
+    Poderá ter origem num CPD de um Banco.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2407" name="2407">2407</a></td>
+    <td class="esq"><u>ENTIDADE AMEX</u><p>Campo &quot;Entidade&quot; presente no file
+    tracking ID do Report Amex</td>
+    <td class="dta">11</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ENT_AMEX</td>
+  </tr>
+  <tr>
+    <td><a id="2408" name="2408">2408</a></td>
+    <td class="esq"><u>SEQUÊNCIA DE FICHEIRO AMEX</u><p>Campos &quot;Data&quot; e
+    &quot;Seqfich.&quot; presentes no file tracking ID do Report AMEX.</td>
+    <td class="dta">22</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDFICH_AMEX</td>
+  </tr>
+  <tr>
+    <td><a id="2409" name="2409">2409</a></td>
+    <td class="esq"><u>CARD SEQUENCE NUMBER</u><p>Identificação que permite distinguir
+    cartões diferentes com o mesmo PAN. (Campo DE024 da MasterCard).</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CARSEQNUM</td>
+  </tr>
+  <tr>
+    <td><a id="2410" name="2410">2410</a></td>
+    <td class="esq"><u>POS DATA CODE</u><p>Identifica as condições específicas existentes
+    no momento em que ocorreu a transacção e/ou no momento em que a transacção foi
+    iniciada.<br>
+    (Campo DE022 das especificações ECCF da MasterCard).</td>
+    <td class="dta">12</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>POSDATCOD</td>
+  </tr>
+  <tr>
+    <td><a id="2411" name="2411">2411</a></td>
+    <td class="esq"><u>MONTANTE AUXILIAR INFORMATIVO</u><p>Montante utilizado nos dados
+    adicionais de registos dos ficheiros da compensação, que permite informar, de forma
+    descriminada, parcelas, de totais informados em campos presentes nos dados fixos desses
+    registos.<br>
+    A natureza do seu conteúdo é informado caso a caso, no detalhe dos registos.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>MNTAUX-E</td>
+  </tr>
+  <tr>
+    <td><a id="2412" name="2412">2412</a></td>
+    <td class="esq"><u>EMV - TDOL - TRANSACTION CERTIFICATE DATA OBJECT LIST</u>
+      <p>Lista de Elementos EMV (Tags e Lengths) que o Terminal irá utilizar
+      para gerar o &quot;Transaction Certificate Hash Value&quot;.<br>
+      Se não existir um TDOL no <i>chip</i> do cartão EMV, é utilizado um
+      &quot;DEFAULT TDOL&quot;.</p>
+    </td>
+    <td class="dta">var.</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>EMV-TDOL</td>
+  </tr>
+  <tr>
+    <td><a id="2413" name="2413">2413</a></td>
+    <td class="esq"><u>EMV - DDOL - DYNAMIC DATA AUTHENTICATION DATA OBJECT LIST</u>
+      <p>Campo necessário para cartões EMV que suportam DDA (&quot;Dynamic
+      Data Authentication&quot;).<br>
+      Este campo contém uma Lista de Elementos EMV (Tags e Lengths) que são
+      entregues ao cartão no comando &quot;Internal Autenticate&quot;.<br>
+      Se não existir um DDOL no <i>chip</i> do cartão EMV, é utilizado um
+      &quot;DEFAULT DDOL&quot;.</p>
+    </td>
+    <td class="dta">var.</td>
+    <td>H</td>
+    <td>&nbsp;</td>
+    <td>EMV-DDOL</td>
+  </tr>
+  <tr>
+    <td><a id="2414" name="2414">2414</a></td>
+    <td class="esq"><u>FUNCIONALIDADES EM CAIXAS AUTOMÁTICOS</u><p>Indica as formas de
+    encadeamento de operações e emissão opcional de recibo nos Caixas Automáticos.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" colspan="2">Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 001 -&nbsp; </td>
+        <td class="esq">Encadeamento de operações e recibo opcional</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 002 -&nbsp; </td>
+        <td class="esq">Encadeamento de operações, recibo opcional e consulta de saldos em
+        ecrã/papel</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FUNCLDD_CA</td>
+  </tr>
+  <tr>
+    <td><a id="2415" name="2415">2415</a></td>
+    <td class="esq"><u>VALOR POR TIPO DE BILHETE</u>
+      <p>É o montante total, com ou sem desconto associado, definido pelo
+      Agente que promove o espectáculo. É distinto para cada tipo de bilhete.</p>
+    </td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>5 int.<br>
+      2 dec.</td>
+    <td nowrap>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2416" name="2416">2416</a></td>
+    <td class="esq"><u>MONTANTE TOTAL TRANSACÇÕES</u><p>É o total de montantes (<a
+    href="camp2500.htm#2564">2564</a>) das transacções efectuadas (código processamento =
+    04).</td>
+    <td class="dta">17</td>
+    <td>N</td>
+    <td>15 int.<br>
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2417" name="2417">2417</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO CARTÃO</u><p>É o número que identifica o cartão
+    bancário, ou seja, os 16 ou 19 números que são impressos nos recibos dos CAs.</td>
+    <td class="dta">19</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2418" name="2418">2418</a></td>
+    <td class="esq"><u>NÚMERO DA WORKSTATION</u><p>Campo que em conjunto com o campo 2419
+    determina o código que identifica univocamente uma transacção de compra de bilhetes
+    para a CP.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2419" name="2419">2419</a></td>
+    <td class="esq"><u>NÚMERO DE RESERVA</u><p>Campo que em conjunto com o campo 2418
+    determina o código único duma transacção de compra de bilhetes para a CP.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="2420" name="2420">2420</a></td>
+    <td class="esq">
+      <p><u>VERSÃO DA
+      TABELA</u>&nbsp;</p>
+      <p>Campo de
+      identificação da versão da tabela do sistema. Todas as tabelas
+      incorporam o conceito de versão, e as correspondentes datas associadas,
+      por forma a permitir a futura rastreabilidade das alterações efectuadas.</p>
+    </td>
+    <td class="dta">
+      3
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>VER_TAB</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2421" name="2421">2421</a></td>
+    <td class="esq">
+      <p><u>DATA DE INÍCIO
+      EM CERTIFICAÇÃO</u>&nbsp;</p>
+      <p>Data a partir
+      da qual a tabela entra no sistema de certificação. Até essa data é
+      possível a introdução de novos dados ou alteração dos existentes, sem
+      que isso implique a criação de uma nova versão.</p>
+    </td>
+    <td class="dta">
+      <p>10</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>AAAAMMDDHH</p>
+    </td>
+    <td>
+      <p>DTA_HH_INI_CER</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2422" name="2422">2422</a></td>
+    <td class="esq">
+      <p><u>DATA DE FIM
+      DE CERTIFICAÇÃO</u>&nbsp;</p>
+      <p>Data
+      em que terminou o processo de certificação da tabela envolvida.</p>
+    </td>
+    <td class="dta">
+      <p>10</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>AAAAMMDDHH&nbsp;</p>
+    </td>
+    <td>
+      <p>DTA_HH_FIM_CER</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2423" name="2423">2423</a></td>
+    <td class="esq">
+      <p><u>DATA DE INÍCIO</u>&nbsp;</p>
+      <p>Data em que a
+      tabela envolvida entra em produção após o correspondente processo de
+      certificação (ou pré-produção). &nbsp;</p>
+    </td>
+    <td class="dta">
+      <p>10</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>AAAAMMDDHH</p>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DTA_HH_INI_PRD</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2424" name="2424">2424</a></td>
+    <td class="esq">
+      <p><u>DATA DE FIM</u>&nbsp;</p>
+      <p>Data de fim da
+      tabela em produção. Apenas será preenchido quando uma nova versão do
+      mesmo tipo de tabela entra em vigor.</p>
+    </td>
+    <td class="dta">
+      <p>10</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>AAAAMMDDHH</p>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DTA_HH_FIM_PRD</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2425" name="2425">2425</a></td>
+    <td class="esq">
+      <u>IDENTIFICAÇÃO DO SERVIÇO</u>
+      <p>Identifica o serviço prestado pela SIBS num determinado Modelo de
+      Negócio. Ex.:<br>
+      &nbsp;&nbsp; 001 - Ligação Central<br>
+      &nbsp;&nbsp; 002 - Processamento de cartões sem RT<br>
+      &nbsp;&nbsp; 003 - Ligação CA</p>
+    </td>
+    <td class="dta">
+      <p>3</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ID_SER</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2426" name="2426">2426</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DO SERVIÇO</u>&nbsp;</p>
+      <p>Descrição dos
+      valores do campo 2425.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_SER</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2427" name="2427">2427</a></td>
+    <td class="esq">
+      <p><u>TIPO DE
+      FLUXO</u>&nbsp;</p>
+      <p>Código que
+      identifica o tipo de fluxo, i.e., o seu âmbito de aplicabilidade.&nbsp;</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" nowrap colspan="2"> Os
+      valores possíveis são respectivamente:</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; T -&nbsp;</td>
+          <td class="esq">
+      <p>Fluxo
+      relativo ao processamento da transacção</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; C -&nbsp;</td>
+          <td class="esq">
+      <p>Fluxo relativo à aplicação de condições contratuais
+      (comissionamento)</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp;&nbsp; I -&nbsp;</td>
+          <td class="esq">
+      <p>Fluxo relativo à aplicação do tarifário interbancário</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; S -&nbsp;</td>
+          <td class="esq">
+      <p>Fluxo relativo à aplicação do tarifário SIBS</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>TIP_FLX</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2428" name="2428">2428</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DO TIPO DE FLUXO</u>&nbsp;</p>
+      <p>Descrição dos
+      valores do campo 2427.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_TIP_FLX</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2429" name="2429">2429</a></td>
+    <td class="esq">
+      <p><u>IDENTIFICAÇÃO
+      DO TIPO DE INTERVENIENTE</u>&nbsp;</p>
+      <p>Identifica qual
+      o papel que o Tipo de Interveniente ou Participante no Sistema MB assume
+      num determinado Modelo de Negócio.</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 01 -&nbsp;</td>
+          <td class="esq">BE&nbsp;</td>
+          <td class="esq">
+      <p>- Banco Emissor</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 02 -&nbsp;</td>
+          <td class="esq">BAT&nbsp;</td>
+          <td class="esq">
+      <p>- Banco de Apoio do Terminal</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 03 -&nbsp;</td>
+          <td class="esq">BAC&nbsp;</td>
+          <td class="esq">
+      <p>- Banco de Apoio de Comerciante</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 04 -&nbsp;</td>
+          <td class="esq">BAE&nbsp;</td>
+          <td class="esq"><p>- Banco de Apoio de Entidade</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 05 -&nbsp;</td>
+          <td class="esq">BD&nbsp;</td>
+          <td class="esq">
+      <p>- Banco Destinatário (TEIS e 52)</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 06 -&nbsp;</td>
+          <td class="esq">BO&nbsp;</td>
+          <td class="esq">
+      <p>- Banco Ordenante</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 07 -&nbsp;</td>
+          <td class="esq">BT&nbsp;</td>
+          <td class="esq">
+      <p>- Banco Tomador</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 08 -&nbsp;</td>
+          <td class="esq">BS&nbsp;</td>
+          <td class="esq">
+      <p>- Banco Sacado</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 09 -&nbsp;</td>
+          <td class="esq">BC&nbsp;</td>
+          <td class="esq">
+      <p>- Banco Cobrador</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 10 -&nbsp;</td>
+          <td class="esq">BdD&nbsp;</td>
+          <td class="esq">
+      <p>- Banco do Devedor</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 11 -&nbsp;</td>
+          <td class="esq">BdC&nbsp;</td>
+          <td class="esq">
+      <p>- Banco do Credor</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 12 -&nbsp;</td>
+          <td class="esq">ACQ&nbsp;</td>
+          <td class="esq">
+      <p>- <i>Acquirer</i></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 13 -&nbsp;</td>
+          <td class="esq">CCar&nbsp;</td>
+          <td class="esq">
+      <p>- Cliente Cartão</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 14 -&nbsp;</td>
+          <td class="esq">CNIB&nbsp;</td>
+          <td class="esq">
+      <p>- Cliente NIB</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 15 -&nbsp;</td>
+          <td class="esq">COM&nbsp;</td>
+          <td class="esq">
+      <p>- Comerciante</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 16 -&nbsp;</td>
+          <td class="esq">CTT&nbsp;</td>
+          <td class="esq">
+      <p>- Correios (compensação Cheques)</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 17 -&nbsp;</td>
+          <td class="esq">PrS1&nbsp;</td>
+          <td class="esq">
+      <p>- Prestador de Serviços Tipo1 (PgS)</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 1 -&nbsp;</td>
+          <td class="esq">PrS2&nbsp;</td>
+          <td class="esq">
+      <p>- Prestador de Serviços Tipo2 (PgC)</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 1 -&nbsp;</td>
+          <td class="esq">PrS3&nbsp;</td>
+          <td class="esq">
+      <p>- Prestador de Serviços Tipo3&nbsp; (SEspecial)</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 1 -&nbsp;</td>
+          <td class="esq">PrS4&nbsp;</td>
+          <td class="esq">
+      <p>- Prestador de Serviços Tipo4 (Via Verde)</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; 1 -&nbsp;</td>
+          <td class="esq">PrS5&nbsp;</td>
+          <td class="esq">
+      <p>- Prestador de Serviços Tipo5 (Estado)</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq" colspan="3">&nbsp;&nbsp; …</td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; EE -&nbsp;</td>
+          <td class="esq" colspan="2">
+      <p>Emissor Estrangeiro</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; BP -&nbsp;</td>
+          <td class="esq" colspan="2">
+      <p>Banco de Portugal</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; S&nbsp;&nbsp; -&nbsp;</td>
+          <td class="esq" colspan="2">
+      <p>SIBS</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq" colspan="3">
+      <p>&nbsp;&nbsp; Outros …</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">
+      <p>2</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ID_TIP_ITV</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2430" name="2430">2430</a></td>
+    <td class="esq">
+      <p><u>SIGLA DO
+      TIPO DE INTERVENIENTE</u>&nbsp;</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq">&nbsp;&nbsp; E&nbsp;</td>
+          <td class="esq">
+      <p>- Emissor</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; EAT&nbsp;</td>
+          <td class="esq">
+      <p>- Entidade de Apoio do TPA</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; BACA&nbsp;</td>
+          <td class="esq">
+      <p>- Banco de Apoio do CA</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; BAC&nbsp;</td>
+          <td class="esq">
+      <p>- Banco
+      de Apoio de Comerciante</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; BAE&nbsp;</td>
+          <td class="esq">
+      <p>- Banco
+      de Apoio de Entidade</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; BD&nbsp;</td>
+          <td class="esq">
+      <p>- Banco
+      Destinatário (TEIS e 52)</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; BO&nbsp;</td>
+          <td class="esq">
+      <p>- Banco
+      Ordenante</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; BT&nbsp;</td>
+          <td class="esq">
+      <p>- Banco
+      Tomador</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; BS&nbsp;</td>
+          <td class="esq">
+      <p>- Banco
+      Sacado</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; BC&nbsp;</td>
+          <td class="esq">
+      <p>- Banco
+      Cobrador</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; BdD&nbsp;</td>
+          <td class="esq">
+      <p> - Banco
+      do Devedor</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; BdC&nbsp;</td>
+          <td class="esq">
+      <p>
+      - Banco do Credor</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; BP&nbsp;</td>
+          <td class="esq">
+      <p>
+      - Banco de Portugal</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; CCar&nbsp;</td>
+          <td class="esq">
+      <p>
+      - Cliente Cartão</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; CNIB&nbsp;</td>
+          <td class="esq">
+      <p>
+      - Cliente NIB</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; COM&nbsp;</td>
+          <td class="esq">
+      <p>- Comerciante</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; CTT&nbsp;</td>
+          <td class="esq">
+      <p>
+      - Correios (compensação Cheques)</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; PrS1&nbsp;</td>
+          <td class="esq">
+      <p>
+      - Prestador de Serviços Tipo1 (PgS)</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; PrS2&nbsp;</td>
+          <td class="esq">
+      <p>
+      - Prestador de Serviços Tipo2 (PgC)</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; RP1&nbsp;</td>
+          <td class="esq">
+      <p>
+      - Representante de Cartões - UNICRE</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; RP2&nbsp;</td>
+          <td class="esq">
+      <p>
+      - Representante de Cartões - AMEX</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">
+      <p>6</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>SIG_TIP_ITV</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2431" name="2431">2431</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DO TIPO DE INTERVENIENTE</u>&nbsp;</p>
+      <p>Descrição dos
+      valores do campo <a href="#2429">2429</a>.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_TIP_ITV</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2432" name="2432">2432</a></td>
+    <td class="esq">
+      <p><u>CÓDIGO DO
+      INTERFACE OPERATIVO</u>&nbsp;</p>
+      <p>Código de
+      identificação do interface operativo para movimentação de dados
+      contabilísticos do tipo de interveniente. O interface operativo é mandatório
+      para cada tipo de interveniente. Código atribuído sequencialmente aquando
+      da sua criação no sistema.</p>
+      <p>&nbsp;&nbsp; - Movimento cliente operação cartão<br>
+      &nbsp;&nbsp; - Movimento cliente operação NIB<br>
+      &nbsp;&nbsp; - Movimento acquirer operação cartão<br>
+      &nbsp; &nbsp;-
+      Movimento comerciante fecho TPA<br>
+      &nbsp;&nbsp; - Movimentos Entidade de pagamentos<br>
+      &nbsp;&nbsp; - Movimento custo/proveito para Emissor<br>
+      &nbsp;&nbsp; - Movimento custo/proveito Acquirer<br>
+      &nbsp;&nbsp; ...<br>
+      &nbsp;&nbsp; (ex.: registo
+      tipo 1 do DST5)</p>
+    </td>
+    <td class="dta">
+      <p>4</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ID_INT_OPE</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2433" name="2433">2433</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DO INTERFACE OPERATIVO</u>&nbsp;</p>
+      <p>Descrição dos
+      valores do campo 2432.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_INT_OPE</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2434" name="2434">2434</a></td>
+    <td class="esq">
+      <p><u>CÓDIGO DO
+      INTERFACE INFORMATIVO</u>&nbsp;</p>
+      <p>Identificação
+      do interface utilizado para o reporte de dados do tipo de interveniente
+      presente no fluxo. O interface informativo só se aplica para alguns tipos
+      de interveniente pelo que é opcional.</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp;</td>
+          <td class="esq">Não aplicável
+      ao tipo de interveniente</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp;</td>
+          <td class="esq">Movimentos
+      realizados para uma Entidade de pagamentos</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp;</td>
+          <td class="esq">Movimentos
+      de baixo valor realizados num concessionário</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp;&nbsp;</td>
+          <td class="esq">&nbsp;...</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp;&nbsp;</td>
+          <td class="esq">(ex.: registo
+      tipo 1 no ficheiro MEPS)</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">
+      <p>4</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ID_INT_INF</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2435" name="2435">2435</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DO INTERFACE INFORMATIVO</u>&nbsp;</p>
+      <p>Descrição dos
+      valores do campo 2434.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_INT_INF</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2436" name="2436">2436</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DO CÓDIGO TRANSACÇÃO</u>&nbsp;</p>
+      <p>Descrição
+      dos valores do campo <a href="campos7.htm#699">699</a>.</p>
+    </td>
+    <td class="dta">
+      <p>60</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_CODTRN</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2437" name="2437">2437</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DO TIPO DE TERMINAL</u>&nbsp;</p>
+      <p>Descrição
+      dos valores do campo <a href="campos1.htm#003">003</a>.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_TIP_TER</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2438" name="2438">2438</a></td>
+    <td class="esq">
+      <p><u>IDENTIFICAÇÃO
+      DO MODELO DE NEGÓCIO</u>&nbsp;</p>
+      <p>Código que
+      identifica o Modelo de Negócio a aplicar a um determinado código de
+      transacção e realizado num determinado tipo de terminal.</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp;</td>
+          <td class="esq">Levantamento de CA</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp;</td>
+          <td class="esq">Compra MB em TPA</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp;</td>
+          <td class="esq">Pagamento de Serviços/Compras (MB) em CA</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp;</td>
+          <td class="esq">Pagamento de Serviços/Compras (outras marcas) em CA</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp;</td>
+          <td class="esq">Compra (outras vertentes)</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp;</td>
+          <td class="esq">Pagamento de Serviços/Compras (MB) no H-&gt;H</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp;</td>
+          <td class="esq">Pagamento de Serviços/Compras (outras marcas) no
+            H-&gt;H</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;</td>
+          <td class="esq">&nbsp;...</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">
+      <p>4</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ID_MOD_NEG</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2439" name="2439">2439</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DO MODELO DE NEGÓCIO</u>&nbsp;</p>
+      <p>Descrição
+      dos valores do campo 2438.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_MOD_NEG</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2440" name="2440">2440</a></td>
+    <td class="esq">
+      <p><u>IDENTIFICAÇÃO
+      DO FLUXO</u>&nbsp;</p>
+      <p>Código que
+      identifica o fluxo aplicado num Modelo de Negócio.</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td nowrap>&nbsp;&nbsp;I001</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;&nbsp;</td>
+          <td class="esq"> Banco Emissor para Banco Apoio do CA (tipo fluxo interbancário)</td>
+        </tr>
+        <tr>
+          <td nowrap>&nbsp;&nbsp;I002</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;&nbsp;</td>
+          <td class="esq"> Banco Emissor para a Entidade de Apoio do TPA</td>
+        </tr>
+        <tr>
+          <td nowrap>&nbsp;&nbsp;I003</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;&nbsp;</td>
+          <td class="esq"></td>
+        </tr>
+        <tr>
+          <td nowrap>&nbsp;&nbsp;I004</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;&nbsp;</td>
+          <td class="esq"></td>
+        </tr>
+        <tr>
+          <td nowrap>&nbsp;&nbsp; C001&nbsp;</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;&nbsp;</td>
+          <td class="esq"> Entidade Apoio Terminal -&gt;</td>
+        </tr>
+        <tr>
+          <td nowrap>&nbsp;&nbsp; S001</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;&nbsp;</td>
+          <td class="esq"> Banco Emissor -&gt; SiBS</td>
+        </tr>
+        <tr>
+          <td nowrap>&nbsp;&nbsp; S002</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;&nbsp;</td>
+          <td class="esq"> Banco Apoio Terminal -&gt; SiBS</td>
+        </tr>
+        <tr>
+          <td nowrap>&nbsp;&nbsp; S003</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;&nbsp;</td>
+          <td class="esq"></td>
+        </tr>
+        <tr>
+          <td nowrap>&nbsp;&nbsp;T001</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;&nbsp;</td>
+          <td class="esq"></td>
+        </tr>
+        <tr>
+          <td class="esq">&nbsp;&nbsp; ...</td>
+          <td class="esq" nowrap>&nbsp;</td>
+          <td class="esq"></td>
+        </tr>
+        <tr>
+          <td class="esq" colspan="3">&nbsp;&nbsp;&nbsp; (ex.: Fluxo do
+      tipo TARINT do BE para o BAT)</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">
+      <p>4</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ID_FLX</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2441" name="2441">2441</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DO FLUXO</u>&nbsp;</p>
+      <p>Descrição
+      dos valores do campo 2440.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_FLX</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2442" name="2442">2442</a></td>
+    <td class="esq">
+      <p><u>IDENTIFICAÇÃO
+      DA CONDIÇÃO</u>&nbsp;</p>
+      <p>Código que
+      identifica a condição ou restrição que incide sobre a aplicação de
+      um Modelo de Negócio.</p>
+      <p>&nbsp;&nbsp; 001 - Condição
+      da G6<br>
+      &nbsp;&nbsp; 002 - Condição
+      pagamentos em RT<br>
+      &nbsp;&nbsp; ...<br>
+      (ex.: Se o
+      BE=BACE e se CODCA=C ou CODCA=D, então aplica G6 rubrica G6).<br>
+      (ex.2: Se
+      Entidade não recebe pagamentos e RT então não se aplica o fluxo).</p>
+    </td>
+    <td class="dta">
+      <p>3</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ID_CND</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2443" name="2443">2443</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DA CONDIÇÃO</u>&nbsp;</p>
+      <p>Descrição
+      dos valores do campo 2442.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_CND</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2444" name="2444">2444</a></td>
+    <td class="esq">
+      <p><u>CAMPO DA
+      CONDIÇÃO</u>&nbsp;</p>
+      <p>Campo que é
+      utilizado numa determinada condição. Pode corresponder a um campo
+      presente na tabela de campos (ex.: número 0327 que corresponde ao atributo
+      IDCOMEMP) ou a um determinado valor numérico ou alfanumérico dependendo
+      do posicionado no atributo precedente (2506 TIP_CMP)
+      (ex.: 100; A).</p>
+    </td>
+    <td class="dta">
+      <p>13</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>CMP_CND</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2445" name="2445">2445</a></td>
+    <td class="esq">
+      <p><u>VALOR LÓGICO
+      DA CONDIÇÃO</u>&nbsp;</p>
+      <p>Valor que
+      assume o teste à condição.<br>
+      &nbsp;&nbsp; V - Verdadeiro<br>
+      &nbsp;&nbsp;&nbsp; F - Falso</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>VAL_CND</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2446" name="2446">2446</a></td>
+    <td class="esq">
+      <p><u>INDICAÇÃO
+      DA MOVIMENTAÇÃO</u>&nbsp;</p>
+      <p>Indica o tipo
+      de movimentação de um tipo de interveniente num interface operativo.<br>
+      &nbsp;&nbsp; D - A débito<br>
+      &nbsp;&nbsp; C - A crédito</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DEB_CRE</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2447" name="2447">2447</a></td>
+    <td class="esq">
+      <p><u>IDENTIFICAÇÃO
+      DA FÓRMULA</u>&nbsp;</p>
+      <p>Código de
+      identificação da fórmula utilizada para a especificação de uma rubrica
+      de tarifário. Esta fórmula pode assumir um dos tipos (polinómio)
+      definidos no Tipo de Fórmula.</p>
+    </td>
+    <td class="dta">
+      <p>2</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ID_FRM</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2448" name="2448">2448</a></td>
+    <td class="esq">
+      <p><u>TIPO DE FÓRMULA</u>&nbsp;</p>
+      <p>Código de
+      identificação do tipo de fórmula utilizada para a especificação de
+      uma rubrica de tarifário. O tipo de fórmula distingue o tipo de polinómio
+      a utilizar na especificação da fórmula.<br>
+      &nbsp;&nbsp; - Fórmula do
+      tipo a+b<br>
+      &nbsp;&nbsp; - Fórmula do
+      tipo a+b%<br>
+      &nbsp;&nbsp; - Fórmula do
+      tipo a&lt;x%&lt;b<br>
+      &nbsp;&nbsp; - Etc.</p>
+    </td>
+    <td class="dta">
+      <p>2</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>TIP_FRM</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2449" name="2449">2449</a></td>
+    <td class="esq">
+      <p><u>CÓDIGO SUB-ROTINA DA FÓRMULA</u>&nbsp;</p>
+      <p>Identificação
+      da programação existente para a fórmula.</p>
+    </td>
+    <td class="dta">
+      <p>2</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>COD_SUB_ROT</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2450" name="2450">2450</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DO TIPO DE FÓRMULA</u>&nbsp;</p>
+      <p>Descrição
+      do campo 2448.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_TIP_FRM</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2451" name="2451">2451</a></td>
+    <td class="esq">
+      <p><u>CAMPO
+      PRESENTE NA FÓRMULA</u>&nbsp;</p>
+      <p>Campo que é
+      utilizado numa determinada fórmula que define uma rubrica de tarifário.
+      Pode corresponder a um campo presente na tabela de campos (ex.: MNT) ou a
+      um determinado valor (ex.: 0,005).</p>
+    </td>
+    <td class="dta">
+      <p>13</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>7 int.<br>
+      6 dec.</p>
+    </td>
+    <td>
+      <p>CMP_FRM</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2452" name="2452">2452</a></td>
+    <td class="esq">
+      <p><u>ARREDONDAMENTO
+      DA FÓRMULA</u>&nbsp;</p>
+      <p>Especifica a
+      forma de arredondamento do resultado obtido pela fórmula:<br>
+      &nbsp;&nbsp; 1 - arredondamento (por defeito ou por excesso)<br>
+      &nbsp;&nbsp; 2 - truncar</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ARR_FRM</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2453" name="2453">2453</a></td>
+    <td class="esq">
+      <p><u>NÚMERO CASAS
+      DECIMAIS DO ARREDONDAMENTO</u>&nbsp;</p>
+      <p>Indica o número de casas decimais a utilizar no arredondamento da fórmula, campo
+      2452:<br>
+      &nbsp;&nbsp; 1 - uma
+      casa decimal<br>
+      &nbsp;&nbsp; 2 - duas
+      casas decimais<br>
+      &nbsp;&nbsp; 3 - três
+      casas decimais<br>
+      &nbsp;&nbsp; 4 - quatro
+      casas decimais</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>N_DEC_ARR</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2454" name="2454">2454</a></td>
+    <td class="esq">
+      <p><u>IDENTIFICAÇÃO
+      DE REGRA</u>&nbsp;</p>
+      <p>A aplicar aquando da emissão pela SIBS de uma factura em nome de terceiros.</p>
+    </td>
+    <td class="dta">
+      <p>3</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ID_RGR</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2455" name="2455">2455</a></td>
+    <td class="esq">
+      <p><u>PREFIXO DA
+      FACTURA</u>&nbsp;</p>
+      <p>Número de série
+      indicado pelo Emitente pela qual se deverá iniciar a numeração das
+      facturas emitidas em seu nome.</p>
+    </td>
+    <td class="dta">
+      <p>5</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>PRE_FIX</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2456" name="2456">2456</a></td>
+    <td class="esq">
+      <p><u>LIMITE
+      INFERIOR (DA RANGE)</u>&nbsp;</p>
+      <p>Primeiro número disponível para numeração das facturas a emitir pela SIBS em nome de
+      terceiros.</p>
+    </td>
+    <td class="dta">
+      <p>7</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>LIM_INF_RGR</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2457" name="2457">2457</a></td>
+    <td class="esq">
+      <p><u>LIMITE
+      SUPERIOR (DA RANGE)</u>&nbsp;</p>
+      <p>Último número disponível para numeração das facturas a emitir pela SIBS em nome de
+      terceiros.</p>
+    </td>
+    <td class="dta">
+      <p>7</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>LIM_SUP_RGR</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2458" name="2458">2458</a></td>
+    <td class="esq">
+      <p><u>CÓDIGO DO INTERFACE OPERATIVO DA FACTURAÇÃO</u>&nbsp;</p>
+      <p>Código de
+      identificação do Interface operativo utilizado nos Modelos de Negócio
+      existentes por participação em serviços&nbsp; SIBS. Código atribuído pela SIBS
+      aquando da sua criação no
+      sistema.<br>
+      &nbsp;&nbsp; &nbsp;-
+      Ficheiro de facturação (FAC)<br>
+      &nbsp;&nbsp; &nbsp;-
+      Ficheiro de interbancário...<br>
+      &nbsp;&nbsp; ...<br>
+      &nbsp;&nbsp; (ex.: registo
+      tipo 4 do EFAC)</p>
+    </td>
+    <td class="dta">
+      4
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ID_INT_OPE_FCT</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2459" name="2459">2459</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DO INTERFACE OPERATIVO DA FACTURAÇÃO</u>&nbsp;</p>
+      <p>Descrição
+      dos valores do campo 2458.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_INT_OPE_FCT</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2460" name="2460">2460</a></td>
+    <td class="esq">
+      <p><u>CÓDIGO DO
+      INTERFACE INFORMATIVO DA FACTURAÇÃO</u>&nbsp;</p>
+      <p>Código de
+      identificação do Interface informativo utilizado na facturação. Código
+      atribuído pela SIBS aquando da sua criação no sistema.<br>
+      &nbsp;&nbsp; - Ficheiro de
+      tarifário<br>
+      &nbsp;&nbsp; -<br>
+      &nbsp;&nbsp; ...<br>
+      &nbsp;&nbsp; (ex.: registo
+      tipo 3 do ETAR)</p>
+    </td>
+    <td class="dta">
+      <p>3</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ID_INT_INF_FCT</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2461" name="2461">2461</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DO INTERFACE INFORMATIVO DA FACTURAÇÃO</u>&nbsp;</p>
+      <p>Descrição
+      dos valores do campo <a href="#2458">2458</a>.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_INT_INF_FCT</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2462" name="2462">2462</a></td>
+    <td class="esq">
+      <p><u>TIPO DE
+      RUBRICA</u>&nbsp;</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 1 -&nbsp;</td>
+          <td class="esq"> SIBS
+      Geral (comuns aos accionistas)</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 2 -&nbsp;</td>
+          <td class="esq"> Interbancária</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 3 -&nbsp;</td>
+          <td class="esq"> SIBS Específica (aplicada a outro tipo de participante, ou
+            específica de um
+      Participante)</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>TIP_RUB</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2463" name="2463">2463</a></td>
+    <td class="esq">
+      <p><u>TIPO DE OUTPUT</u>&nbsp;</p>
+      <p>Indica o tipo
+      de documento a produzir pela facturação.<br>
+      &nbsp;&nbsp; 1 - Factura<br>
+      &nbsp;&nbsp; 2 - Factura/Recibo<br>
+      &nbsp;&nbsp; 3 - Nota de
+      Crédito<br>
+      &nbsp;&nbsp; 4 - Comprovativo do Interbancário<br>
+      &nbsp;&nbsp; ...</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>TIP_OUT</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2464" name="2464">2464</a></td>
+    <td class="esq">
+      <p><u>INDICADOR
+      DE APLICAÇÃO DE ESCALÕES</u>&nbsp;</p>
+      <p>Indica se a
+      rubrica está definida por escalões.</p>
+      <p>
+      &nbsp;&nbsp; 0 - Não
+      tem escalões<br>
+      &nbsp;&nbsp; 1 - Detalhe de escalão<br>
+      &nbsp;&nbsp; 2 - Header de escalão<br>
+      &nbsp;&nbsp; 3 - Header e detalhe de escalão<br>
+      &nbsp;&nbsp; 4 - Facturação mínima<br>
+      &nbsp;&nbsp; 5 - Renda/Mensalidade</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>IND_APL_ESC</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2465" name="2465">2465</a></td>
+    <td class="esq">
+      <p><u>FORMA DE
+      APLICAÇÃO DO ESCALÃO</u>&nbsp;</p>
+      <p>Indica a
+      forma de aplicação dos escalões.&nbsp;</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 0 -&nbsp;</td>
+          <td class="esq"> Não
+      aplicável</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 1 -&nbsp;</td>
+          <td class="esq">Não
+      cumulativo (aplicados todos os escalões no intervalo considerado)</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 2 -&nbsp;</td>
+          <td class="esq"> Cumulativo (aplicado o escalão mais favorável)</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>FRM_APL_ESC</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2466" name="2466">2466</a></td>
+    <td class="esq">
+      <p><u>LIMITE
+      INFERIOR DO ESCALÃO&nbsp;</u></p>
+      <p>Indica o
+      limite inferior relativo ao escalão aplicado. Igual a zero, ou igual ao
+      limite superior do escalão anterior mais 1.</p>
+    </td>
+    <td class="dta">
+      <p>9</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>LIM_INF_ESC</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2467" name="2467">2467</a></td>
+    <td class="esq">
+      <p><u>LIMITE
+      SUPERIOR DO ESCALÃO</u>&nbsp;</p>
+      <p>Indica o número de unidades que limita superiormente o escalão aplicado.</p>
+    </td>
+    <td class="dta">
+      <p>9</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>LIM_SUP_ESC</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2468">2468</a></td>
+    <td class="esq">
+      <p><u>IDENTIFICADOR
+      DA APLICAÇÃO DE CÁLCULO</u>&nbsp;</p>
+      <p>Indica se a
+      rubrica é aplicada pela aplicação de facturação ou pela aplicação
+      transaccional ao nível do acordo.<br>
+      &nbsp;&nbsp; 1 - Aplicação
+      de facturação<br>
+      &nbsp;&nbsp; 2 - Aplicação
+      de “acordos”</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>IND_APL_CAL</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2469" name="2469">2469</a></td>
+    <td class="esq">
+      <p><u>INDICADOR
+      DO MOMENTO DE APLICAÇÃO</u>&nbsp;</p>
+      <p>Indica em que
+      momento é que se aplica a rubrica.<br>
+      &nbsp;&nbsp; 1 - Transacção
+      a transacção (via compensação)<br>
+      &nbsp;&nbsp; 2 - Mensalmente (via facturação)</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>IND_MOM_APL</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2470" name="2470">2470</a></td>
+    <td class="esq">
+      <p><u>SISTEMA DE
+      FACTURAÇÃO UTILIZADO</u>&nbsp;</p>
+      <p>Indica o
+      sistema da SIBS que processa a facturação da rubrica.<br>
+      &nbsp;&nbsp; 1 - Sistema
+      Central<br>
+      &nbsp;&nbsp; 2 - Sistema
+      Corporativo<br>
+      &nbsp;&nbsp; 3 - Processamento Administrativo</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>SIS_FCT</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2471" name="2471">2471</a></td>
+    <td class="esq">
+      <p><u>INDICADOR
+      DO IMPOSTO</u>&nbsp;</p>
+      <p>Indica se
+      existe incidência de imposto sobre a rubrica e qual.<br>
+      &nbsp;&nbsp; 0 - Não
+      incide<br>
+      &nbsp;&nbsp; 1 - IVA<br>
+      &nbsp;&nbsp; 2 - IS<br>
+      &nbsp;&nbsp; 3 - IVA
+      incluído</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>INC_IMP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2472" name="2472">2472</a></td>
+    <td class="esq">
+      <p><u>INDICADOR
+      DE PRESENÇA NO FICHEIRO DE TARIFÁRIO</u>&nbsp;</p>
+      <p>Indica se a
+      rubrica deve ser informada no ficheiro de tarifário.<br>
+      &nbsp;&nbsp; 0 - Não
+      informada no TAR<br>
+      &nbsp;&nbsp; 1 - Informada no TAR</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>IND_ETAR</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2473" name="2473">2473</a></td>
+    <td class="esq">
+      <p><u>EMITENTE DA FACTURA</u>&nbsp;</p>
+      <p>Indica a
+      Entidade Emitente da factura.<br>
+      &nbsp;&nbsp; 01 - SiBS,&nbsp;&nbsp;S.A.&nbsp;<br>
+      &nbsp;&nbsp; 02 - Via
+      Verde Portugal<br>
+      &nbsp;&nbsp; 03 - Banco<br>
+      &nbsp;&nbsp; 04 -</p>
+    </td>
+    <td class="dta">
+      <p>2</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>EMI_FCT</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2474" name="2474">2474</a></td>
+    <td class="esq">
+      <p><u>DESCRITIVO
+      DO EMITENTE DA FACTURA</u>&nbsp;</p>
+      <p>Descrição
+      dos valores do campo 2473.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_EMI_FCT</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2475" name="2475">2475</a></td>
+    <td class="esq">
+      <p><u>CÓDIGO DA
+      RUBRICA NO PLANO DE CONTAS</u>&nbsp;</p>
+      <p>Apresenta o código
+      do plano de contas do sistema bancário correspondente à rubrica em
+      causa. Utilizado para os devidos efeitos de contabilidade analitica.</p>
+    </td>
+    <td class="dta">
+      <p>9</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>COD_RUB_PCSB</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2476" name="2476">2476</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DO CAMPO GRUPO-E</u>&nbsp;</p>
+      <p>Descrição
+      dos valores do campo <a href="camp2300.htm#2302">2302</a>.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_GRP</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2477" name="2477">2477</a></td>
+    <td class="esq">
+      <p><u>NOME DA
+      TABELA</u>&nbsp;</p>
+      <p>Designação
+      da tabela no âmbito da aplicação de Modelos de Negócio.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_TAB</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a id="2478" name="2478">2478</a></td>
+    <td class="esq">
+      <p><u>DESCRITIVO
+      DA REGRA</u>&nbsp;</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_RGR</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2479">2479</a></td>
+    <td class="esq">
+      <p><u>DESCRITIVO
+      DA FÓRMULA</u>&nbsp;</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_FRM</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2480">2480</a></td>
+    <td class="esq">
+      <p><u>ESTADO DA
+      TABELA</u>&nbsp;</p>
+      <p>Atributo que
+      indica em que se situação se encontra a tabela:</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; F -&nbsp;</td>
+          <td class="esq"> Fechada, a tabela já está em CER ou PRD não sendo possível a escrita
+      de dados.</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>
+      <p>&nbsp;&nbsp; A -&nbsp;</p>
+          </td>
+          <td class="esq"> Aberta,
+      a tabela ainda não atingiu a data de CER, permite a escrita de dados.</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>EST_TAB</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2481">2481</a></td>
+    <td class="esq">
+      <p><u>IDENTIFICAÇÃO
+      DA TABELA</u>&nbsp;</p>
+      <p>Chave que
+      identifica a tabela na base de dados.</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGCMP</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Tabela de Campos</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGTRN</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Códigos
+      de transacção</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGTER</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Tipos de Terminal</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGINT</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Tipo de Interveniente</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGTFL</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Tipos de Fluxo</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGSRV</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Serviços SIBS</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGIOP</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Interface Operativo</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGINF</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Interface Informativo</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGRNF</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Regras de numeração de facturas</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGFCE</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Entidades por conta de quem a SIBS emite facturas.</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGTFO</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Tipo de fórmula</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGFOR</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Fórmulas</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGIOF</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Interface operativo da facturação</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGIIF</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Interface informativo da facturação</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGTTI</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Cruzamento dos códigos transacção com tipos de terminal e tipos de
+      interveniente</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGIMO</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Cruzamento dos tipos de interveniente com os
+            interfaces operativos</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGMNG</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Definição de modelos de negócio</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGRAF</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Regras de auditoria da facturação</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGTAR</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Tarifário</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGSRI</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Cruzamento dos serviços com os tipos de interveniente</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGFLX</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Fluxos</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGMNF</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Cruzamento do modelos de negócio com os fluxos</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGCND</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Condições</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; TMNGCNA</td>
+          <td class="esq" nowrap>&nbsp;-&nbsp;</td>
+          <td class="esq">Acções da condição</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">
+      <p>8</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ID_TAB</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2482">2482</a></td>
+    <td class="esq">
+      <p><u>TIPO DE
+      TABELA</u>&nbsp;</p>
+      <p>Indica que
+      tipo de funcionalidade a tabela suporta:<br>
+      &nbsp;&nbsp; B - Elementos base do sistema<br>
+      &nbsp;&nbsp; C - Cruzamento de dados<br>
+      &nbsp;&nbsp; D - Definição
+      de Fluxos, Modelos de Negócio, ...</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>TIP_TAB</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2483">2483</a></td>
+    <td class="esq">
+      <p><u>CÓDIGO DE
+      GESTÃO DA MENSAGEM</u>&nbsp;</p>
+      <p>Código que
+      determina a acção que a mensagem desenvolve:<br>
+      &nbsp;&nbsp; 1 - Inserção<br>
+      &nbsp;&nbsp; 2 - Consulta<br>
+      &nbsp;&nbsp; 3 - Alteração<br>
+      &nbsp;&nbsp; 4 - Abate</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>COD_GEST_MSG</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2484">2484</a></td>
+    <td class="esq">
+      <p><u>BYTEMAP
+      DOS CAMPOS PRESENTES NO INTERFACE OPERATIVO</u>&nbsp;</p>
+      <p>Indica os
+      campos que estão presentes no interface em causa; cada byte indica se um
+      campo está ou não presente:</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; 1ª Posição do Campo - COD-MOD-NEG<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 2ª Posição do Campo - CONTA<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 3ª Posição do Campo - TOTOPER-E<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 4ª Posição do Campo - MNT-E<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 5ª Posição do Campo - MNT-ADI<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 6ª Posição do Campo - MNT-P-DST<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 7ª Posição do Campo - MNT-R-DST<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 8ª Posição do Campo - MNT-P-COM<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 9ª Posição do Campo - MNT-R-COM<br>
+      &nbsp;&nbsp; 10ª Posição do
+      Campo - TARSIBS-E<br>
+      &nbsp;&nbsp; 11ª Posição do
+      Campo - TARINT-E<br>
+      &nbsp;&nbsp; 12ª Posição do
+      Campo - TARINT-E (2)<br>
+      &nbsp;&nbsp; 13ª Posição do
+      Campo - NUMOPTARS-E<br>
+      &nbsp;&nbsp; 14ª Posição do
+      Campo - NUMOPTARI-E<br>
+      &nbsp;&nbsp; 15ª Posição do
+      Campo - PRODFIN<br>
+      &nbsp;&nbsp; 16ª Posição do
+      Campo - A DEF.<br>
+      &nbsp;&nbsp; 17ª Posição do
+      Campo - A DEF.<br>
+      &nbsp;&nbsp; 18ª Posição do
+      Campo - A DEF.<br>
+      &nbsp;&nbsp; 19ª Posição do
+      Campo - A DEF.<br>
+      &nbsp;&nbsp; 20ª Posição do
+      Campo - A DEF.<br>
+      <br>
+      Quando
+      a posição do campo for:<br>
+      &nbsp;&nbsp; 0 - não presente no interface&nbsp;<br>
+      &nbsp;&nbsp; 1 - presente
+      no interface</p>
+    </td>
+    <td class="dta">
+      <p>20</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>BMAP_INT_OPR</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2485">2485</a></td>
+    <td class="esq">
+      <p><u>BYTEMAP
+      DOS CAMPOS PRESENTES NO INTERFACE INFORMATIVO</u>&nbsp;</p>
+      <p>Indica os
+      campos que estão presentes no interface em causa; cada byte indica se um
+      campo está ou não presente:</p>
+      <p>&nbsp;&nbsp; 1ª Posição do Campo - CONTA<br>
+      &nbsp;&nbsp; 2ª Posição do Campo - MNT-E<br>
+      &nbsp;&nbsp; 3ª Posição do Campo - MNT-ADI<br>
+      &nbsp;&nbsp; 4ª Posição do Campo - ENTIDADE<br>
+      &nbsp;&nbsp; 5ª Posição do Campo - TARSIBS-E<br>
+      &nbsp;&nbsp; 6ª Posição do Campo - A DEF.<br>
+      &nbsp;&nbsp; 7ª Posição do Campo - A DEF.<br>
+      &nbsp;&nbsp; 8ª Posição do Campo - A DEF.<br>
+      &nbsp;&nbsp; 9ª Posição do Campo - A DEF.</p>
+    </td>
+    <td class="dta">
+      <p>15</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>BMAP_INT_INF</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2486">2486</a></td>
+    <td class="esq">
+      <p><u>BYTEMAP
+      DOS CAMPOS PRESENTES NO INTERFACE OPERATIVO DA FACTURAÇÃO</u>&nbsp;</p>
+      <p>Indica os
+      campos que estão presentes no interface em causa; cada byte indica se um
+      campo está ou não presente:</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; 1ª Posição do Campo - TIPREG2<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 2ª Posição do Campo - TIPREG3<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 3ª Posição do Campo - TIPREG4<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 4ª Posição do Campo - TIPREG5<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 5ª Posição do Campo - TIPREG6<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 6ª Posição do Campo - TIPREG7<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 7ª Posição do Campo - TIPREG8<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 8ª Posição do Campo - TARIFA<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; 9ª Posição do Campo - QUANTLIN<br>
+      &nbsp;&nbsp; 10ª Posição do
+      Campo - IMPLIN<br>
+      &nbsp;&nbsp; 11ª Posição do
+      Campo -<br>
+      &nbsp;&nbsp; 12ª Posição do
+      Campo -<br>
+      &nbsp;&nbsp; 13ª Posição do
+      Campo - A DEF.<br>
+      &nbsp;&nbsp; 14ª Posição do
+      Campo - A DEF.&nbsp;</p>
+    </td>
+    <td class="dta">
+      <p>15</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>BMAP_INT_OPR</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2487">2487</a></td>
+    <td class="esq">
+      <p><u>BYTEMAP
+      DOS CAMPOS PRESENTES NO INTERFACE INFORMATIVO DA FACTURAÇÃO</u>&nbsp;</p>
+      <p>Indica os
+      campos que estão presentes no interface em causa; cada byte indica se um
+      campo está ou não presente:</p>
+      <p>&nbsp;&nbsp; 1ª Posição do Campo - TIPREG2<br>
+      &nbsp;&nbsp; 2ª Posição do Campo - TIPREG3<br>
+      &nbsp;&nbsp; 3ª Posição do Campo - TIPREG4<br>
+      &nbsp;&nbsp; 4ª Posição do Campo - TARSIBS-E<br>
+      &nbsp;&nbsp; 5ª Posição do Campo - DES_GRUPO<br>
+      &nbsp;&nbsp; 6ª Posição do Campo - TARIFA<br>
+      &nbsp;&nbsp; 7ª Posição do Campo - INDTAR<br>
+      &nbsp;&nbsp; 8ª Posição do Campo - A DEF.<br>
+      &nbsp;&nbsp; 9ª Posição do Campo - A DEF.</p>
+    </td>
+    <td class="dta">
+      <p>10</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>BMAP_INT_INF</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2488">2488</a></td>
+    <td class="esq">
+      <p><u>DESCRIÇÃO
+      DA VERSÃO DA TABELA</u>&nbsp;</p>
+      <p>Breve descrição
+      do que motivou a criação da versão da tabela (campo <a href="#2420">2420</a>).</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_VER_TAB</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2489">2489</a></td>
+    <td class="esq">
+      <p><u>IDENTIFICAÇÃO DO UTILIZADOR DA ÚLTIMA ALTERAÇÃO</u>&nbsp;</p>
+    </td>
+    <td class="dta">
+      <p>8</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>USER_ID</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2490">2490</a></td>
+    <td class="esq">
+      <p><u>ACÇÃO
+      RESULTANTE DA CONDIÇÃO</u>&nbsp;</p>
+      <p>Identifica
+      que acção deve ser realizada em resultado da condição ser verdadeira.<br>
+      &nbsp;&nbsp; 01 - Ignora
+      fluxo<br>
+      &nbsp;&nbsp; 02 - Aplica
+      tarifa diferente</p>
+    </td>
+    <td class="dta">
+      <p>2</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>ID_ACC_CND</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2491">2491</a></td>
+    <td class="esq">
+      <p><u>DESCRITIVO DA
+      ACÇÃO</u>&nbsp;</p>
+      <p>Descritivo do
+      campo 2490.</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_ID_ACC</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2492">2492</a></td>
+    <td class="esq">
+      <p><u>CÓDIGO SUB-ROTINA DA ACÇÃO</u>&nbsp;</p>
+      <p>Identificação
+      da programação existente para cumprir a acção definida.</p>
+    </td>
+    <td class="dta">
+      <p>2</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>COD_SUB_ROT_ACC</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2493">2493</a></td>
+    <td class="esq">
+      <p><u>REGRA DE
+      ENTRADA EM VIGOR DA TABELA</u>&nbsp;</p>
+      <p>Atributo referente à aplicação da regra de entrada em vigor.</p>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 0 -&nbsp;</td>
+          <td class="esq">Regra default (2 dias antes)</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; 1 -&nbsp;</td>
+          <td class="esq">Regra 1, as versões tem de estar em CER pelo menos 30
+            dias antes de passarem a PRD. A data de entrada é a 1 de cada mês.</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;&nbsp; x -&nbsp;</td>
+          <td class="esq">Regra x, a definir.</td>
+        </tr>
+      </table>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>RGR_DAT_INI</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2494">2494</a></td>
+    <td class="esq">
+      <p><u>TIPO DE
+      FACTURA</u>&nbsp;</p>
+      <p>Atributo que
+      indica se a factura emitida é do tipo:<br>
+      &nbsp;&nbsp; 1- Resumo
+      (papel)<br>
+      &nbsp;&nbsp; 2- Detalhada
+      (papel e ficheiro)<br>
+      &nbsp;&nbsp; 3 - Input
+      interno</p>
+    </td>
+    <td class="dta">
+      <p>1</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>TIP_FCT</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2495">2495</a></td>
+    <td class="esq">
+      <p><u>REGRA DE
+      AUDITORIA DA FACTURAÇÃO</u>&nbsp;</p>
+      <p>Apresenta os
+      campos que comprovam a facturação aplicada.</p>
+    </td>
+    <td class="dta">
+      <p>2</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>RGR_AUD_FCT</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2496">2496</a></td>
+    <td class="esq">
+      <p><u>DESCRITIVO
+      DA REGRA DE AUDITORIA</u>&nbsp;</p>
+    </td>
+    <td class="dta">
+      <p>40</p>
+    </td>
+    <td>
+      <p>A</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>DES_RGR_AUD</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2497">2497</a></td>
+    <td class="esq">
+      <p><u>BYTEMAP
+      DOS CAMPOS PRESENTES UTILIZADOS NA AUDITORIA DA FACTURAÇÃO</u>&nbsp;</p>
+      <p>Indica os
+      campos presentes no interface que se destina a auditoria da facturação;
+      cada byte indica se um campo está ou não presente:</p>
+      <p>&nbsp;&nbsp; 01ª Posição do
+      Campo - CPD<br>
+      &nbsp;&nbsp; 02ª Posição do
+      Campo - IDCOMEMP<br>
+      &nbsp;&nbsp; 03ª Posição do
+      Campo - IDEST<br>
+      &nbsp;&nbsp; 04ª Posição do
+      Campo - IDTERMINAL<br>
+      &nbsp;&nbsp; 05ª Posição do
+      Campo - APLIC + FICH<br>
+      &nbsp;&nbsp; 06ª Posição do
+      Campo - IDFICH<br>
+      &nbsp;&nbsp; 07ª Posição do
+      Campo - ENTIDADE<br>
+      &nbsp;&nbsp; 08ª Posição do
+      Campo - FTPFICH<br>
+      &nbsp;&nbsp; 09ª Posição do
+      Campo - FTPENT<br>
+      &nbsp;&nbsp; 10ª Posição do
+      Campo - NR-Kb<br>
+      &nbsp;&nbsp; 11ª Posição do
+      Campo - INSCAR<br>
+      &nbsp;&nbsp; 12ª Posição do
+      Campo - ANULCAR<br>
+      &nbsp;&nbsp; 13ª Posição do
+      Campo - ABACAR<br>
+      &nbsp;&nbsp; 14ª Posição do
+      Campo - AGATM<br>
+      &nbsp;&nbsp; 15ª Posição do
+      Campo - IDPROP<br>
+      &nbsp;&nbsp; 16ª Posição do
+      Campo - CONTRATO<br>
+      &nbsp;&nbsp; 17ª Posição do
+      Campo - DATAPROC<br>
+      &nbsp;&nbsp; 18ª Posição do
+      Campo - DATAFUNC<br>
+      &nbsp;&nbsp; 19ª Posição do
+      Campo - DATAVALOR<br>
+      &nbsp;&nbsp; 20ª Posição do
+      Campo - DTEMFAC<br>
+      &nbsp;&nbsp; 21ª Posição do
+      Campo - A DEF.<br>
+      &nbsp;&nbsp; 22ª Posição do
+      Campo - A DEF.<br>
+      &nbsp;&nbsp; 23ª Posição do
+      Campo - A DEF.<br>
+      &nbsp;&nbsp; 24ª Posição do
+      Campo - A DEF.</p>
+    </td>
+    <td class="dta">
+      <p>20</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>BMAP_RGR_AUD</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2498">2498</a></td>
+    <td class="esq">
+      <p><u>NÚMERO DO
+      ATRIBUTO</u>&nbsp;</p>
+      <p>Indica o número sequencial atribuído ao atributo.</p>
+    </td>
+    <td class="dta">
+      <p>4</p>
+    </td>
+    <td>
+      <p>N</p>
+    </td>
+    <td>
+      <p>
+      &nbsp;</p>
+    </td>
+    <td>
+      <p>NUM_ATR</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a name="2499">2499</a></td>
+    <td class="esq">
+      <u>
+      SÍMBOLO</u>&nbsp;
+      <p>Abreviatura
+      do nome/descrição do atributo.</p>
+    </td>
+    <td class="dta">
+     12    </td>
+    <td>
+    A
+    </td>
+    <td>
+    
+      &nbsp;
+    </td>
+    <td>
+      SIM_BOL
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+</body>
+</html>

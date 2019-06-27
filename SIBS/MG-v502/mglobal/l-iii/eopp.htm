@@ -1,0 +1,527 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>OPERAÇÕES PMB (EOPP)</title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: &nbsp; OPERAÇÕES PMB</td>
+        <td class="fichdta">&quot;FICH&quot; = EOPP</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Este ficheiro é produzido com as operações realizadas por todos os cartões Porta
+Moedas (PMB) emitidos pelo Banco e compensadas neste período Central, que já foram
+carregados com euros. O Ficheiro MOPP, descrito na Versão 3.0 do Modelo Global inclui as
+operações dos cartões cujos saldos se encontram ainda em escudos.</p>
+
+<p>O ficheiro só é produzido quando solicitado expressamente pelo Banco.</p>
+
+<p>O ficheiro pode ser emitido sistematicamente (por ex.: em todas as Compensações MB)
+ou apenas sobre uma sessão específica (futura ou passada). Este último caso foi pensado
+para que o Banco tenha um meio de auditoriar o serviço da SIBS sem ter que tratar o
+ficheiro permanentemente.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registos: 
+
+<ul>
+  <li>um registo de <em>Header</em> &quot;TIPREG=0&quot;; </li>
+</ul>
+
+<ul>
+  <li>registos de Detalhe &quot;TIPREG=1&quot;, por cada operação realizada com um cartão
+    PMB do Banco;</li>
+</ul>
+
+<ul>
+  <li>registo de Detalhe &quot;TIPREG=2&quot;, preenchido apenas se nesse período foram
+    recepcionados lotes de PMB, sem detalhes por operação; </li>
+</ul>
+
+<ul>
+  <li>registo de sub-totais TIPREG=7&quot;; existente apenas no caso do Banco ter posicionado
+    a Compensação MB com totais por Agência; </li>
+</ul>
+
+<ul>
+  <li>registo de sub-totais TIPREG=8&quot;; por tipo de tarifário posicionado pelo Banco.
+    Estes dados correspondem ao informado no TIPREG=6 do <a target="main"
+    href="dst-1.htm#= 6">F.EDST</a> correspondente aos totais PMB da sessão da
+    Compensação; </li>
+</ul>
+
+<ul>
+  <li>registo de totais &quot;TIPREG=9&quot;, com o total do ficheiro. </li>
+</ul>
+
+<p><br>
+O ficheiro é constituído por registos de comprimento fixo com 67 bytes.</p>
+
+<p>&nbsp;</p>
+
+<h6 style="page-break-before: always"><u>ORDENAÇÃO</u></h6>
+
+<p><br>
+O ficheiro é enviado ordenado por:</p>
+
+<blockquote>
+  <table border="0" cellspacing="0">
+    <tr>
+      <td width="100" class="esq10">TARCLIPMB </td>
+      <td class="esq10">(campo <a href="../../Campos/campos5.htm#439">439</a>) </td>
+    </tr>
+    <tr>
+      <td width="100" class="esq10">CODAGE</td>
+      <td class="esq10">(campo <a href="../../Campos/campos2.htm#134">134</a>) </td>
+    </tr>
+    <tr>
+      <td width="100" class="esq10">IDPMB</td>
+      <td class="esq10">(campo <a href="../../Campos/campos5.htm#431">431</a>) </td>
+    </tr>
+  </table>
+</blockquote>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq10" nowrap><strong>Nota:</strong> </td>
+    <td class="esq10">A produção deste ficheiro é objecto de tarifário, rubrica <a
+    href="../l-ii/x-j.htm#J2" target="main">J2</a>, Ficheiros Teletransmitidos.</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="75">N.º Campo</td>
+    <td class="fundo" width="210">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="210"><strong>= 1</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARCLIPMB</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#439">439</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODAGE</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos2.htm#134">134</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDPMB</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#431">431</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ESTPMB</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">16</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#447">447</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN </td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">17</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="210" class="esq"><p class="narrow">preenchido apenas se cartão combinado</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN </td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="210" class="esq"><p class="narrow">preenchido apenas se cartão combinado</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR </td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="210" class="esq"><p class="narrow">preenchido apenas se cartão combinado</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODTRN</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">32</td>
+    <td width="45">A</td>
+    <td width="75"><a href="../../Campos/campos2.htm#120">120</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ANO/MES-OP</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">34</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#448">448</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DIA/HORA-OP</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">40</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#449">449</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NOPERPMB</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">44</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#450">450</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IMPORTPMB</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">49</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#451">451</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">54</td>
+    <td width="45">A</td>
+    <td width="75"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SALDOPMB</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">55</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#435">435</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SECTORPMB</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">62</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#452">452</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BANTER/CAR</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">64</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#453">453</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="75">&nbsp;</td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="210"><strong>= 2</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARCLIPMB</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#439">439</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODAGE</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos2.htm#134">134</a></td>
+    <td class="esq" width="210">= 9999</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODTRN</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">A</td>
+    <td width="75"><a href="../../Campos/campos2.htm#120">120</a></td>
+    <td class="esq" width="210">= 10</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ANO/MES-OP</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#448">448</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIMPORTPMB (compras) </td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">16</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#454">454</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">A</td>
+    <td width="75"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SECTORPMB</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">26</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#452">452</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BANTER/CAR</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">28</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#453">453</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FILLER</td>
+    <td class="dta" width="45">37</td>
+    <td class="dta" width="45">31</td>
+    <td width="45">A</td>
+    <td width="75">&nbsp;</td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="75">&nbsp;</td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="210"><strong>= 7</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARCLIPMB</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#439">439</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODAGE</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos2.htm#134">134</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIMPORTPMB</td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#454">454</a></td>
+    <td class="esq" width="210">total de carregamentos</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">17</td>
+    <td width="45">A</td>
+    <td width="75"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIMPORTPMB </td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">18</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#454">454</a></td>
+    <td class="esq" width="210">total de compras</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">27</td>
+    <td width="45">A</td>
+    <td width="75"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIMPORTPMB</td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">28</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#454">454</a></td>
+    <td class="esq" width="210">total de saldos devolvidos p/Banco</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">37</td>
+    <td width="45">A</td>
+    <td width="75"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FILLER</td>
+    <td class="dta" width="45">30</td>
+    <td class="dta" width="45">38</td>
+    <td width="45">A</td>
+    <td width="75">&nbsp;</td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="75">&nbsp;</td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="210"><strong>= 8</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARCLIPMB</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#439">439</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIMPORTPMB</td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#454">454</a></td>
+    <td class="esq" width="210">total de carregamentos</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">13</td>
+    <td width="45">A</td>
+    <td width="75"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIMPORTPMB </td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#454">454</a></td>
+    <td class="esq" width="210">total de compras</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">A</td>
+    <td width="75"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIMPORTPMB</td>
+    <td class="dta" width="45">9</td>
+    <td class="dta" width="45">24</td>
+    <td width="45">N</td>
+    <td width="75"><a href="../../Campos/campos5.htm#454">454</a></td>
+    <td class="esq" width="210">total de saldos devolvidos p/Banco</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">33</td>
+    <td width="45">A</td>
+    <td width="75"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="210">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FILLER</td>
+    <td class="dta" width="45">34</td>
+    <td class="dta" width="45">34</td>
+    <td width="45">A</td>
+    <td width="75">&nbsp;</td>
+    <td width="210">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

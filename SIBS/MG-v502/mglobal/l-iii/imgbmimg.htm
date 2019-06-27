@@ -1,0 +1,999 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+
+<title>IMAGENS DE CARTÕES E ERROS - IMGB / MIMG</title>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO:&nbsp; IMAGENS DE CARTÕES</td>
+        <td class="fichdta">&quot;FICH&quot; = IMGB <br>
+        &quot;FICH&quot; = MIMG </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Os ficheiros de imagens são produzidos como resultado do processamento da recolha dos
+dados de uma proposta de cliente para a produção de cartões com imagens, de modo a
+permitir a produção do ficheiro de cartões por parte do Emissor.</p>
+
+<p>O ficheiro é produzido por um subsistema de captura de dados. </p>
+
+<p ALIGN="JUSTIFY" >De acordo com a entidade origem, o ficheiro de imagens pode
+ser:</p>
+
+<ul>
+  <li >Ficheiro IMGB - utilizado na emissão de cartões por entidades bancárias; </li>
+</ul>
+
+<ul>
+  <li >Ficheiro MIMG - utilizado na emissão de cartões por entidades não
+    bancárias.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+Todo o ficheiro (IMGB ou MIMG) tem estrutura binária, com excepção do nome do ficheiro.</p>
+
+<p>O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de <em>Header</em> &quot;TIPREG=x'00'&quot;; </li>
+</ul>
+
+<ul>
+  <li>o registo de Detalhe &quot;TIPREG=x'02'&quot; por cada cartão a produzir;</li>
+</ul>
+
+<ul>
+  <li>o registo de <em>Trailer</em> &quot;TIPREG=x'09'&quot;.</li>
+</ul>
+
+<p><br>
+O formato do <em>Header</em> e <em>Trailer</em> do IMGB e MIMG difere dos tradicionalmente
+enviados pelos Emissores à SIBS, sendo detalhados neste documento.</p>
+
+<p>O ficheiro IMGB distingue-se do ficheiro MIMG apenas pelo registo de <em>Header</em>.
+O registo de detalhe e o <em>Trailer</em> dos dois ficheiros têm uma estrutura comum.</p>
+
+<p><br>
+Qualquer ficheiro de imagens é constituído por registos de comprimento fixo com 512
+bytes.</p>
+
+<p>&nbsp;</p>
+
+<h6 style="page-break-before: always" ><u>OBSERVAÇÕES</u></h6>
+
+<p><br>
+Os ficheiros de imagens têm uma estrutura binária. Este formato corresponde a uma
+compactação dos dados e não à sua conversão para valores hexadecimais.</p>
+
+<blockquote>
+  <p>Exemplo:</p>
+  <p>Um &#145;IDFICH&#146; que assuma em <em>display</em> o valor
+  &#145;020040507001&#146; traduz-se em formato binário no seguinte:</p>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <table CELLSPACING="0" BORDER="0" CELLPADDING="2" WIDTH="350">
+      <tr>
+        <td class="dta">Valor binário (representação no <em>File Transfer</em>):&nbsp; </td>
+        <td class="courier">.. &amp;..</td>
+      </tr>
+      <tr>
+        <td class="dtamid">Equivalência em <em>display</em>:&nbsp; </td>
+        <td class="courier">004570<br>
+        200001</td>
+      </tr>
+    </table>
+  </blockquote>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">IMGB - TIPO DE REGISTO = 0 (<em>HEADER</em>)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs. </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">B</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= x'00'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">APLIC</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#101">101</a></td>
+    <td class="esq" width="200">= 'M'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">3</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td class="esq" width="200">= 'IMGB'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VERFICH</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">B</td>
+    <td width="85"><a href="../../Campos/campos1.htm#064">064</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BANCO</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">B</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">B</td>
+    <td width="85"><a href="../../Campos/campos2.htm#104">104</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">11</td>
+    <td width="45">B</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td width="200" class="esq">x'0AAAAMMDDSSS'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">17</td>
+    <td width="45">B</td>
+    <td width="85"><a href="../../Campos/campos1.htm#062">062</a></td>
+    <td width="200" class="esq">x'0AAAAMMDDSSS'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODMOEDA</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">B</td>
+    <td width="85"><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODPAIS</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">B</td>
+    <td width="85"><a href="../../Campos/campos3.htm#226">226</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTRATO</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">27</td>
+    <td width="45">B</td>
+    <td><a href="../../Campos/campos5.htm#469">469</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">REFFICH</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">30</td>
+    <td width="45">B</td>
+    <td>(a)</td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">31</td>
+    <td width="45">B</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td width="200" class="esq">Identificação. Ficheiro Referência</td>
+  </tr>
+</table>
+
+<p><br>
+(a) - Indica qual o tipo de ficheiro referência: 01-<a href="eecb.htm" target="main">MEECB</a>;
+02-<a href="edacdacb.htm" target="main">MDACB</a>.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">MIMG - TIPO DE REGISTO = 0 (<em>HEADER</em>)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >B</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= x'00'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td class="esq" width="200">= 'MIMG'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID. INSTIT. ORIGEM</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">6</td>
+    <td width="45" >B</td>
+    <td width="85" >*</td>
+    <td class="esq" width="200">= x'XXXXXX' </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID. INSTIT. DESTINO</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">9</td>
+    <td width="45" >B</td>
+    <td width="85" >*</td>
+    <td class="esq" width="200">= x'000001' (SIBS)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">12</td>
+    <td width="45" >B</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td class="esq" width="200">x'0AAAAMMDDSSS'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">18</td>
+    <td width="45" >B</td>
+    <td width="85"><a href="../../Campos/campos1.htm#062">062</a></td>
+    <td class="esq" width="200">x'0AAAAMMDDSSS'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">REFFICH</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">24</td>
+    <td width="45" >B</td>
+    <td >(a)</td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">IDFICH</td>
+    <td class="dtamid" width="45">6</td>
+    <td class="dtamid" width="45">25</td>
+    <td width="45" class="mid">B</td>
+    <td class="mid"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td class="esq" width="200">(Id. Ficheiro Referência)</td>
+  </tr>
+</table>
+
+<p>* Identificação da instituição no Sistema SIBS (número de Comerciante).</p>
+
+<p>a) - Indica qual o tipo de ficheiro
+referência: 01-<a href="eecb.htm" target="main">MEECB</a>; 02-<a href="edacdacb.htm"
+target="main">EDAC</a>.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">IMGB ou MIMG - TIPO DE REGISTO = 2</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs. </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">B</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= x'02'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IMAGEM</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">B</td>
+    <td width="85"><a href="../../Campos/campos5.htm#466">466</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPOIMG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">B</td>
+    <td width="85" >(a)</td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ULTBIMG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">11</td>
+    <td width="45" >B</td>
+    <td width="85" >(b)</td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMBIMG</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">12</td>
+    <td width="45" >B</td>
+    <td width="85" >(c)</td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CMPBIMG</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">14</td>
+    <td width="45" >B</td>
+    <td width="85" >(d)</td>
+    <td width="200" class="esq">1 a 497</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BLKDIMG</td>
+    <td class="dta" width="45">497</td>
+    <td class="dta" width="45">16</td>
+    <td width="45" >B</td>
+    <td width="85" >(e)</td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+(a) - Valores: x'10' = fotografia civil; x'11' = fotografia militar;
+x'20' = assinatura; x'21' = rubrica</p>
+
+<p>(b) - Indica se se trata do último bloco que compõe a imagem (quando ='01',
+indica último bloco).</p>
+
+<p>(c) - Número de ocorrência do registo dentro da mesma imagem. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (para transferir uma imagem é necessário mais do que um registo)</p>
+
+<p>(d) - Comprimento do bloco.</p>
+
+<p>(e) - Dados da imagem digitalizada.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">IMGB ou MIMG - TIPO DE REGISTO = 9</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs. </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">B</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= x'09'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTREG</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">B</td>
+    <td width="85"><a href="../../Campos/campos2.htm#107">107</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTIMG</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">6</td>
+    <td width="45">B</td>
+    <td width="85">(a)</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+(a) - Total de imagens transmitidas</p>
+
+<p><br>
+</p>
+
+<p style="page-break-before: always"><a name="RIMB">&nbsp; </a></p>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO:&nbsp; ERROS DE IMAGENS DE CARTÕES</td>
+        <td class="fichdta">&quot;FICH&quot; = RIMB <br>
+        &quot;FICH&quot; = RIMG </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+É produzido pela SIBS para o Emissor um ficheiro de erros sempre que for recebido um
+ficheiro de Imagens. </p>
+
+<p>O ficheiro produzido é: 
+
+<ul >
+  <li>um Ficheiro RIMB, se o ficheiro de imagens respectivo for um IMGB; </li>
+</ul>
+
+<ul>
+  <li >um Ficheiro RIMG, se o ficheiro de imagens respectivo for um MIMG.</li>
+</ul>
+
+<p>Os registos de detalhe incluem os dados do registo original que apresentava erros. Cada
+erro é classificado conforme o campo onde ocorreu o erro. </p>
+
+<p>&nbsp;</p>
+
+<p><strong><u>ESTRUTURA</u></strong></p>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de <em>Header</em> do ficheiro &quot;TIPREG=0&quot;, identifica o tipo de
+    ficheiro e a instituição origem e destino;</li>
+</ul>
+
+<ul>
+  <li>o registo de Detalhe 1 &quot;TIPREG=1&quot;, identifica o ficheiro de referência; </li>
+</ul>
+
+<ul>
+  <li>o registo de <em>Trailer</em> &quot;TIPREG=9&quot;, é preenchido com campos que servem
+    para o controlo de rejeitados do Emissor e de Facturação da SIBS. </li>
+</ul>
+
+<p>O formato do <em>Header</em> e <em>Trailer</em> dos ficheiros de erros de
+imagens de cartões difere dos tradicionalmente enviados pelos Emissores à SIBS, sendo
+detalhados neste documento.</p>
+
+<p><br>
+O comprimento do registo é fixo e tem 260 bytes. </p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">RIMB - TIPO DE REGISTO = 0</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs. </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 0</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">APLIC</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#101">101</a></td>
+    <td class="esq" width="200">= 'M'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">3</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td class="esq" width="200">= 'RIMB'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VERFICH</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#064">064</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BANCO</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">13</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#104">104</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td width="200" class="esq">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#062">062</a></td>
+    <td width="200" class="esq">AAAAMMDDSSS</td>
+  </tr>
+</table>
+
+<p style="page-break-before: always">&nbsp;</p>
+
+<p class="tipreg">RIMG - TIPO DE REGISTO = 0</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '0'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td class="esq" width="200">= 'RIMG'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID. INSTIT. ORIGEM</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">6</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq" width="200">'0000001' (SIBS)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID. INSTIT. DESTINO</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq" width="200">'XXXXXXX'&nbsp; *</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">20</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">31</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#062">062</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS'</td>
+  </tr>
+</table>
+
+<p>* Identificação da instituição no Sistema SIBS.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">RIMB - TIPO DE REGISTO = 1</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="200">Obs. </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">APLIC</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#101">101</a></td>
+    <td class="esq" width="200">= 'M'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">3</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td class="esq" width="200">= 'IMGB'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VERFICH</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#064">064</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BANCO</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">13</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#104">104</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td width="200" class="esq">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">HDRSIT</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos6.htm#521">521</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">26</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#062">062</a></td>
+    <td width="200" class="esq">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODMOEDA</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">37</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODPAIS</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">40</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#226">226</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTRATO</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">43</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos5.htm#469">469</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">RIMG - TIPO DE REGISTO = 1</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td class="esq" width="200">= 'MIMG'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID. INSTIT. ORIGEM</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">6</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq" width="200">'XXXXXXX'&nbsp; *</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID. INSTIT. DESTINO</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq" width="200">'0000001' (SIBS)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">20</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">31</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#062">062</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SITHDRO</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">42</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#293">293</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>* Identificação da instituição no Sistema SIBS.</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">RIMB ou RIMG - TIPO DE REGISTO = 2</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="180">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="180">Obs. </td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="180">= 2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">IMAGEM</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#466">466</a></td>
+    <td width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">CODERRO</td>
+    <td class="dta">4</td>
+    <td class="dta" width="45">17</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/campos2.htm#152">152</a></td>
+    <td width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">N.º CAMPO ERRADO</td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">21</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos7.htm#691">691</a></td>
+    <td width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">REG. ERRADO (DADOS ORIG.)</td>
+    <td class="dta" width="45">238</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/camp900.htm#905">905</a></td>
+    <td width="180">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">RIMB ou RIMG - TIPO DE REGISTO = 9</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="180">Nome do Campo </td>
+    <td class="fundo" width="45">Comp. </td>
+    <td class="fundo" width="45">Pos. </td>
+    <td class="fundo" width="45">Rep. </td>
+    <td class="fundo" width="85">N.º Campo </td>
+    <td class="fundo" width="180">Obs. </td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="180">= 9</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">N.º REGISTOS</td>
+    <td class="dta">8</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos2.htm#107">107</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">CODMOEDA</td>
+    <td class="dta">3</td>
+    <td class="dta" width="45">10</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TOTAL DO DÉBITO</td>
+    <td class="dta">15</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos7.htm#696">696</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">FILLER</td>
+    <td class="dta">15</td>
+    <td class="dta" width="45">28</td>
+    <td width="45" >A</td>
+    <td>&nbsp;</td>
+    <td class="esq" width="180">espaços</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TOTAL CART. RECEBIDOS</td>
+    <td class="dta">6</td>
+    <td class="dta" width="45">43</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos4.htm#383">383</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TOTAL CART. RECUSADOS</td>
+    <td class="dta">6</td>
+    <td class="dta" width="45">49</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos7.htm#695">695</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TOTAL CART. ACEITES/PROD.</td>
+    <td class="dta">6</td>
+    <td class="dta" width="45">55</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos4.htm#384">384</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TOTAL CART. EM ESPERA</td>
+    <td class="dta">6</td>
+    <td class="dta" width="45">61</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos3.htm#294">294</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">SITUAÇÃO TRAILER</td>
+    <td class="dta">1</td>
+    <td class="dta" width="45">67</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos6.htm#523">523</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

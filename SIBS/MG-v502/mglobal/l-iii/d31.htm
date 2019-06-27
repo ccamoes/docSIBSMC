@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>D.3.1 INTRODUÇÃO</title>
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indiced.htm#D';</script>
+</head>
+
+<body>
+
+<h1>D.3 MENSAGENS SIBS -&gt; PARTICIPANTE</h1>
+
+<p>&nbsp;</p>
+
+<h2>D.3.1 INTRODUÇÃO</h2>
+
+<p><br>
+As mensagens trocadas no âmbito do Sistema MB possuem as seguintes características
+genéricas:</p>
+
+<h6 ><br>
+<em>HEADER</em></h6>
+
+<p>Normalizado, permitindo que um único formato deste bloco seja usado nas
+mensagens de pedido e de resposta para várias operações distintas.</p>
+
+<h6 ><br>
+VERSÃO DE MENSAGEM</h6>
+
+<p>O conceito de versão de mensagem (campo incluído no <em>header</em>)
+permite gerir de forma simples a migração quando são necessárias alterações.</p>
+
+<h6 ><br>
+CÓDIGO DE MOEDA</h6>
+
+<p>Explicitação da denominação em que se realizou quer a operação, quer a
+Compensação MB; no <em>header</em> das mensagens enviadas pela SIBS, o valor do campo
+CODMOEDA (<a href="../../Campos/campos3.htm#233" target="explicac">233</a>) indica a
+denominação na qual é efectuada a Compensação MB, e na qual é também realizada a
+correspondente liquidação financeira. </p>
+
+<h6 ><br>
+CAMPOS EM FORMATO <em>DISPLAY</em></h6>
+
+<p>Excepto alguns campos com informação de segurança (ex.: <em>Pinblock</em>),
+os campos têm formato <em>display</em>, garantindo desta forma uma completa
+compatibilização com o restante universo da Compensação Multibanco.</p>
+
+<p>&nbsp;<br>
+O código das diferentes mensagens é estruturado de acordo com os seguintes conceitos:</p>
+
+<blockquote>
+  <p><img src="imagens3/d31.gif" WIDTH="407" HEIGHT="179"></p>
+</blockquote>
+
+<p class="dta"><br>
+<a href="d2.htm">Anterior</a>/<a href="d32.htm">Seguinte</a></p>
+</body>
+</html>

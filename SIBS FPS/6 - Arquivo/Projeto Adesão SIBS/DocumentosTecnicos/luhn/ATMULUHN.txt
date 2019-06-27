@@ -1,0 +1,14 @@
+      *--------------------------------------------------------------*
+      * ESTA COPY CORRESPONDE AL AREA DE COMUNICACION, QUE DEBEN     *
+      * PASARSE LOS PROGRAMAS QUE ACCEDEN AL MODULO DE CALCULO DEL   *
+      * CHECK POR MEDIO DEL ALGORITMO DE LUHN                        *
+      * COPY ATMULUHN.                                               *
+      *--------------------------------------------------------------*
+
+       01  ATMULUHN.
+           05  LONGITUD                          PIC    9(02).
+           05  CARS-CON-CHECK-LUHN               PIC    X(30).
+           05  CHECK-LUHN                        PIC    X(01).
+           05  FG-CHECK-LUHN-VALIDO              PIC    9(01).
+               88  CHECK-LUHN-VALIDO    VALUE 1.
+

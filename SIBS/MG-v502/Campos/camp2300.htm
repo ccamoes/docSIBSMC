@@ -1,0 +1,1374 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos 2300 (2300-2399)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.&nbsp;</td>
+    <td class="fundo">REP.&nbsp;</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="2300" name="2300">2300</a></td>
+    <td class="esq"><u>TARIFA SIBS</u> <p>Apresenta o código da rubrica do Tarifário da
+    SIBS. Permite ao Banco actualizar totalizadores para poder auditar a factura da SIBS no
+    fim do mês.<br>
+    No caso do Ficheiro <a href="../mglobal/l-iii/ori.htm" target="main">Origens</a> a tarifa
+    refere-se a operações feitas por cartões internacionais. No caso do Ficheiro <a
+    target="main" href="../mglobal/l-iii/trmf.htm">Terminais</a> apresenta a rubrica do
+    tarifário referente à inserção, ligação mensal e à emissão de extracto.<br>
+    Este atributo corresponde à expansão do campo (<a href="campos4.htm#324">324</a>).</td>
+    <td class="dta">6</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td nowrap>TARSIBS-E</td>
+  </tr>
+  <tr>
+    <td><a id="2301" name="2301">2301</a></td>
+    <td class="esq"><u>TARIFA INTERBANCÁRIA </u><p>Apresenta o código da rubrica do
+    tarifário interbancário aplicada. Permite que o Banco valide o montante debitado ou
+    creditado na Compensação MB.<br>
+    Este atributo corresponde à expansão do campo (<a href="campos4.htm#325">325</a>).</td>
+    <td class="dta">6</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TARINT-E</td>
+  </tr>
+  <tr>
+    <td><a id="2302" name="2302">2302</a></td>
+    <td class="esq"><u>GRUPO / SUBGRUPO 1 / SUBGRUPO 2</u> <p>Trata-se da decomposição do
+    campo (<a href="camp2300.htm#2300">2300</a>) TARSIBS-E de modo a permitir a associação
+    dos títulos das rubricas:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq">1ª e 2ª posição preenchida</td>
+        <td class="esq">-&gt; Rubrica de Grupo</td>
+      </tr>
+      <tr>
+        <td class="esq">1ª, 2ª, 3ª e 4ª posição preenchida</td>
+        <td class="esq">-&gt; Rubrica de Subgrupo</td>
+      </tr>
+      <tr>
+        <td class="esq">1ª,2ª,3ª,4ª,5ª e 6ª pos. preenchida&nbsp;</td>
+        <td class="esq">-&gt; Rubrica Sub-subgrupo</td>
+      </tr>
+    </table>
+    <p>Este atributo corresponde à expansão do campo (<a href="campos5.htm#404">404</a>).</p>
+    <p>Para efeitos de migração da tabela actual, e até se reformular esta estrutura,
+    deve-se considerar a seguinte regra: Grupo/espaço, Subgrupo/espaço,
+    Sub-subgrupo/espaço.</td>
+    <td class="dta">6</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>GRUPO-E</td>
+  </tr>
+  <tr>
+    <td><a id="2303" name="2303">2303</a></td>
+    <td class="esq"><u>EMV - TIPO DE PAGAMENTO - FUNCIONALIDADES ADICIONAIS À COMPRA</u> <p>Identificação
+    das Funcionalidades Adicionais utilizadas numa operação de compra efectuada por um
+    cartão EMV num Terminal de Pagamento Automático (TPA) EMV-compatível.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" colspan="2">Valores possíveis - 1º byte:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 0 -&nbsp; </td>
+        <td class="esq">compra sem Pagamento Fraccionado e sem Rebate de Pontos</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 1 -&nbsp; </td>
+        <td class="esq">compra com Pagamento Fraccionado</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 2 -&nbsp; </td>
+        <td class="esq">compra com Rebate de Pontos</td>
+      </tr>
+    </table>
+    <p>Valores possíveis - 2º byte:<br>
+    &nbsp;&nbsp; 0 - compra sem Detalhe<br>
+    &nbsp;&nbsp; 1 -&nbsp;compra com Detalhe</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND-TIP-PAG</td>
+  </tr>
+  <tr>
+    <td><a id="2304" name="2304">2304</a></td>
+    <td class="esq"><u>EMV - LINHA DE CRÉDITO - NÚMERO PRESTAÇÕES ESCOLHIDAS PELO CLIENTE</u>
+    <p>Apresenta o número de prestações indicado por um cliente no momento de realização
+    de uma compra com pagamento fraccionado.<br>
+    O cliente pode escolher um qualquer número de prestações entre 0 e 99. No entanto, o
+    valor deste campo será limitado ao máximo permitido pelo Emissor, parametrizado através
+    do campo (<a href="camp1700.htm#1737">1737</a>) LINHACRE-PREST.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CRE-PRESTCLI</td>
+  </tr>
+  <tr>
+    <td><a id="2305" name="2305">2305</a></td>
+    <td class="esq"><u>EMV - LINHA DE CRÉDITO - PLAFOND</u> <p>Valor em euros definido por
+    cartão. Corresponde ao limite definido especificamente para autorização de compras
+    realizadas no âmbito do cenário &quot;Saldo para Compras com Pagamento
+    Fraccionado&quot;.<br>
+    Se o Emissor utiliza o cenário indicado mas não o pretende aplicar para um determinado
+    cartão, o campo deve ser preenchido com &quot;999999999&quot;.<br>
+    Este limite é renovável mensalmente por indicação do Emissor de um determinado dia do
+    mês (campo (<a href="camp2300.htm#2306">2306</a>) CRE-PLAFDIA). </td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>CRE-PLAFOND</td>
+  </tr>
+  <tr>
+    <td><a id="2306" name="2306">2306</a></td>
+    <td class="esq"><u>EMV - LINHA DE CRÉDITO - DIA DE RENOVAÇÃO</u> <p>Dia do mês em que
+    é renovado o limite aplicável ao cenário &quot;Saldo para Compras com Pagamento
+    Fraccionado&quot;. O valor renovado corresponde ao indicado no campo (<a
+    href="camp2300.htm#2305">2305</a>) CRE-PLAFOND.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" colspan="2">Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>00 -&nbsp;&nbsp;&nbsp; </td>
+        <td class="esq">Emissor não pretende utilizar o conceito de renovação deste saldo (o
+        montante de CRE-PLAFOND será utilizado até atingir o valor zero)</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>01 a 28 -&nbsp; </td>
+        <td class="esq">dia do mês em que se realiza a renovação do saldo</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CRE-PLAFDIA</td>
+  </tr>
+  <tr>
+    <td><a id="2307" name="2307">2307</a></td>
+    <td class="esq"><u>EMV - LINHA DE CRÉDITO - PLAFOND DISPONÍVEL</u> <p>Valor em euros
+    definido por cartão. Corresponde ao valor ainda disponível para realização de compras
+    realizadas no âmbito do cenário &quot;Saldo para Compras com Pagamento
+    Fraccionado&quot;.<br>
+    O <em>plafond</em> disponível é obtido deduzindo ao valor de (<a
+    href="camp2300.htm#2305">2305</a>) CRE-PLAFOND os valores totais das compras com pagamento
+    fraccionado, transacção a transacção.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>CRE-PLAFDIS</td>
+  </tr>
+  <tr>
+    <td><a id="2308" name="2308">2308</a></td>
+    <td class="esq"><u>EMV - FIDELIZAÇÃO - PONTOS REBATIDOS</u> <p>Indica a quantidade de
+    pontos utilizados numa compra efectuada com rebate de pontos. </td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FID-PONTOSREB</td>
+  </tr>
+  <tr>
+    <td><a id="2309" name="2309">2309</a></td>
+    <td class="esq"><u>EMV - FIDELIZAÇÃO - PONTOS DISPONÍVEIS</u> <p>Apresenta a quantidade
+    de pontos que se encontra disponível num vale de pontos virtual, para utilização em
+    compras efectuadas com rebate de pontos. </td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FID-PONTOSDIS</td>
+  </tr>
+  <tr>
+    <td><a id="2310" name="2310">2310</a></td>
+    <td class="esq"><u>EMV - FIDELIZAÇÃO - CONTRAVALOR DE PONTOS REBATIDOS</u> <p>Indica o
+    valor em euros correspondente a uma quantidade de pontos utilizada numa compra com rebate
+    de pontos.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>FID-VALORPONT</td>
+  </tr>
+  <tr>
+    <td><a id="2311" name="2311">2311</a></td>
+    <td class="esq"><u>EMV - FIDELIZAÇÃO - CONTRAVALOR DE PONTOS DISPONÍVEIS</u> <p>Indica
+    o valor em euros correspondente a uma quantidade de pontos que se encontra disponível num
+    vale de pontos virtual associado a um cartão.</p>
+    <p>No ficheiro <a href="../mglobal/l-iii/egcc.htm" target="main">EGCC</a>, este campo pode
+    assumir os seguintes valores particulares:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" nowrap>00000000 -&nbsp; </td>
+        <td class="esq">eliminação do contravalor dos pontos disponíveis (eliminação do
+        vale).</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>99999999 -&nbsp; </td>
+        <td class="esq">manutenção do contravalor dos pontos disponíveis; se for indicado um
+        valor para o campo <a href="camp2300.htm#2309">2309</a> FID-PONTOSDIS, corresponde a uma
+        alteração do factor de conversão entre pontos e o seu contravalor.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>FID-VALORDISP</td>
+  </tr>
+  <tr>
+    <td><a id="2312" name="2312">2312</a></td>
+    <td class="esq"><u>EMV - FIDELIZAÇÃO - DATA DE EXPIRAÇÃO DO VALE VIRTUAL</u> <p>Indica
+    uma data na qual os pontos ainda disponíveis num vale virtual e o seu respectivo
+    contravalor são eliminados (expiração do vale).</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>FID-VALEEXP</td>
+  </tr>
+  <tr>
+    <td><a id="2313" name="2313">2313</a></td>
+    <td class="esq"><u>EMV -&nbsp; FIDELIZAÇÃO - VALOR A DEBITAR AO CARTÃO</u> <p>Este
+    campo é utilizado nas compras efectuadas com rebate de pontos para indicar ao Emissor o
+    valor remanescente que deve debitar ao cartão, i.e., indica o montante em euros que
+    corresponde à parcela do valor da compra não liquidada através da utilização de
+    pontos. </td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>FID-VALORREM</td>
+  </tr>
+  <tr>
+    <td><a id="2314" name="2314">2314</a></td>
+    <td class="esq"><u>EMV - PROGRAMA DE EMISSOR - CÓDIGO DE PRODUTO</u> <p>Apresenta um
+    código associado ao produto que está a ser adquirido. Esta codificação é definida por
+    mútuo acordo entre o Emissor e um ou vários comerciantes. Os valores assumidos por este
+    campo são relevantes unicamente para os dois intervenientes indicados. <br>
+    O código de produto pode assumir quaisquer valores, não sendo efectuadas validações
+    sobre o mesmo. </td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>PROGEM-CODPRO</td>
+  </tr>
+  <tr>
+    <td><a id="2315" name="2315">2315</a></td>
+    <td class="esq"><u>EMV - PROGRAMA DE EMISSOR - CUSTO UNITÁRIO</u> <p>Montante em euros
+    correspondente ao custo de uma unidade do produto/serviço incluído na compra.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>5 int.<br>
+    2 dec.</td>
+    <td nowrap>PROGEM-CUSTOUN</td>
+  </tr>
+  <tr>
+    <td><a id="2316" name="2316">2316</a></td>
+    <td class="esq"><u>EMV - PROGRAMA DE EMISSOR - QUANTIDADE</u> <p>Valor correspondente ao
+    número de unidades de produto/serviço que estão a ser adquiridas.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PROGEM-QUANT</td>
+  </tr>
+  <tr>
+    <td><a id="2317" name="2317">2317</a></td>
+    <td class="esq"><u>EMV - PROGRAMA DE EMISSOR - UNIDADE DE MEDIDA</u> <p>Campo que indica a
+    unidade de medição ou agregação do produto/serviço adquirido. </td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>PROGEM-UNIDADE</td>
+  </tr>
+  <tr>
+    <td><a id="2318" name="2318">2318</a></td>
+    <td class="esq"><u>CÓDIGO DE OPERAÇÃO</u><p>Indica o tipo de operação nos
+    carregamentos programados.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 1 - Adesão<br>
+    &nbsp;&nbsp; 2 - Alteração<br>
+    &nbsp;&nbsp; 3 - Cancelamento</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD-OPER</td>
+  </tr>
+  <tr>
+    <td><a id="2319" name="2319">2319</a></td>
+    <td class="esq"><u>MONTANTE A CARREGAR</u><p>Indicação do montante a carregar numa
+    operação de carregamento programado.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MONT-CARREG</td>
+  </tr>
+  <tr>
+    <td><a id="2320" name="2320">2320</a></td>
+    <td class="esq"><u>TIPO DE CARREGAMENTO PROGRAMADO</u> <p>Indica o tipo de serviço nos
+    carregamentos programados. </p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 1 - saldo mínimo<br>
+    &nbsp;&nbsp; 2 - por validade<br>
+    &nbsp;&nbsp; 3 - periódico</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIP-CARR-PROG</td>
+  </tr>
+  <tr>
+    <td><a id="2321" name="2321">2321</a></td>
+    <td class="esq"><u>VALOR DO SALDO MÍNIMO</u> <p>Valor do saldo mínimo, em euro, a partir
+    do qual é desencadeado um carregamento programado.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>VAL-SALDO-MIN</td>
+  </tr>
+  <tr>
+    <td><a id="2322" name="2322">2322</a></td>
+    <td class="esq"><u>VALIDADE</u> <p>Validade, em número de dias antes da data de
+    carregamento obrigatório, a partir dos quais é desencadeado um carregamento programado.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>VALIDADE</td>
+  </tr>
+  <tr>
+    <td><a id="2323" name="2323">2323</a></td>
+    <td class="esq"><u>CÓDIGO DE PERIODICIDADE</u> <p>Indica o período findo o qual é
+    desencadeado um carregamento programado. </p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 1 - diário<br>
+    &nbsp;&nbsp; 2 - semanal<br>
+    &nbsp;&nbsp; 3 - quinzenal<br>
+    &nbsp;&nbsp; 4 - mensal<br>
+    &nbsp;&nbsp; 5 - bimestral<br>
+    &nbsp;&nbsp; 6 - trimestral<br>
+    &nbsp;&nbsp; 7 - semestral<br>
+    &nbsp;&nbsp; 8 - anual</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD-PERIOD</td>
+  </tr>
+  <tr>
+    <td><a id="2324" name="2324">2324</a></td>
+    <td class="esq"><u>COMPRIMENTO DO PAN</u> <p>Indica qual o comprimento do PAN apresentado
+    no campo <a href="#2325">2325</a>.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COMP-PAN</td>
+  </tr>
+  <tr>
+    <td><a id="2325" name="2325">2325</a></td>
+    <td class="esq"><u>PRIMARY ACCOUNT NUMBER</u> <p>Número completo do cartão.</td>
+    <td class="dta">19</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>PAN</td>
+  </tr>
+  <tr>
+    <td><a id="2326" name="2326">2326</a></td>
+    <td class="esq"><u>MONTANTE</u> <p>Indica o valor a movimentar. O montante pode
+    corresponder à movimentação de valores agregados ou de valores individuais, como por
+    exemplo: &nbsp;&nbsp; </p>
+    <p>&nbsp;&nbsp; - Total facturado por um comerciante<br>
+    &nbsp;&nbsp; - Total a movimentar a um representante<br>
+    &nbsp;&nbsp; - Somatório de um conjunto de operações<br>
+    &nbsp;&nbsp; - Total de custos/receitas<br>
+    &nbsp;&nbsp; - etc. </p>
+    <p>No caso de uma operação no estrangeiro realizada noutra moeda, corresponde ao produto
+    do valor total da operação (campo <a href="campos3.htm#238">238</a>) pelo câmbio (campo
+    <a href="campos3.htm#236">236</a>).<br>
+    Actualmente o valor máximo admissível no SPGT por operação está limitado a 100.000
+    Euros. <br>
+    Corresponde à versão Euro do atributo <a href="campos1.htm#008">008</a>.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br>
+    2 dec.</td>
+    <td>MNT-E</td>
+  </tr>
+  <tr>
+    <td><a id="2327" name="2327">2327</a></td>
+    <td class="esq"><u>MONTANTE ADICIONAL</u> <p>Indica o valor a lançar adicionalmente, a
+    débito ou a crédito, para além do MONTANTE. </p>
+    <p>Este é devido a: &nbsp;&nbsp; <br>
+    &nbsp;&nbsp; - Taxas cliente<br>
+    &nbsp;&nbsp; - Taxas de processamento<br>
+    &nbsp;&nbsp; - Valor do desconto ou comissionamento aplicado <br>
+    &nbsp;&nbsp; - Montante de incentivos ou promoções<br>
+    &nbsp;&nbsp; - Etc.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>MNT-ADI</td>
+  </tr>
+  <tr>
+    <td><a id="2328" name="2328">2328</a></td>
+    <td class="esq"><u>CÓDIGO DO MODELO DE NEGÓCIO</u> <p>Código que identifica o Modelo de
+    Negócio aplicado.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>COD-MOD-NEG</td>
+  </tr>
+  <tr>
+    <td><a id="2329" name="2329">2329</a></td>
+    <td class="esq"><u>TOTAL DE OPERAÇÕES COMERCIANTE</u> <p>Apresenta o número de
+    operações de compra ou de cobrança incluídas nos ficheiros de movimentos dos diversos
+    serviços associados ao comerciante. Para efeitos de facturação da SIBS, este campo é
+    utilizado para aplicar a rubrica relativa à Entidade de Apoio do TPA.<br>
+    Corresponde à expansão do atributo <a href="campos4.htm#331">331</a>.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOTOPER-E</td>
+  </tr>
+  <tr>
+    <td><a id="2330" name="2330">2330</a></td>
+    <td class="esq"><u>NÚMERO DE OPERAÇÕES TARIFADAS</u> <p>Indica o número de operações
+    bem concluídas às quais se aplica a rubrica de tarifário interbancário indicada no (<a
+    href="#2301">2301</a>) TARINT que precede este campo.<br>
+    Corresponde à expansão do atributo <a href="campos4.htm#303">303</a>.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMOPTARI-E</td>
+  </tr>
+  <tr>
+    <td><a id="2331" name="2331">2331</a></td>
+    <td class="esq"><u>NÚMERO DE OPERAÇÕES TARIFADAS - SIBS</u> <p>Indica o número de
+    operações bem concluídas às quais se aplica a rubrica de tarifário SIBS indicada nos
+    campos (<a href="#2300">2300</a>) TARSIBS que precede este campo. <br>
+    Corresponde à expansão do atributo <a href="campos4.htm#305">305</a>.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMOPTARS-E</td>
+  </tr>
+  <tr>
+    <td><a id="2332" name="2332">2332</a></td>
+    <td class="esq"><u>SALDO DISPONÍVEL NA CONTA</u> <p>Valor do saldo da conta. Apresenta o
+    valor depois de executada a operação, caso a resposta seja afirmativa. Se a resposta for
+    negativa, o saldo só será preenchido para o código de resposta = 5 (Campo <a
+    href="campos1.htm#012">012</a>).<br>
+    Corresponde à versão Euro do atributo <a href="campos1.htm#027">027</a>.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br>
+    2 dec.</td>
+    <td>SALDODISP-E</td>
+  </tr>
+  <tr>
+    <td><a id="2333" name="2333">2333</a></td>
+    <td class="esq"><u>SALDO CONTABILÍSTICO (SAN1 OU SAN2)</u> <p>Valor do saldo
+    contabilístico da primeira conta (1ª - SAN1) ou da segunda conta (2ª - SAN2) associada
+    ao cartão. <br>
+    Corresponde à versão Euro do atributo <a href="campos1.htm#019">019</a>.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br>
+    2 dec.</td>
+    <td>SALDOCONT-E</td>
+  </tr>
+  <tr>
+    <td><a id="2334" name="2334">2334</a></td>
+    <td class="esq"><u>VALOR DO MOVIMENTO</u> <p>Valor do movimento da conta.<br>
+    Corresponde à versão Euro do atributo <a href="campos1.htm#025">025</a>.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br>
+    2 dec.</td>
+    <td>VALORMOV-E</td>
+  </tr>
+  <tr>
+    <td><a id="2335" name="2335">2335</a></td>
+    <td class="esq"><u>MONTANTE ORIGINAL</u><p>Indica o montante original da transacção, ou
+    o valor para o qual foi processada a autorização.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br>
+    2 dec.</td>
+    <td>MNT-ORI</td>
+  </tr>
+  <tr>
+    <td><a id="2336" name="2336">2336</a></td>
+    <td class="esq"><u>COMPRIMENTO DOS DADOS VARIÁVEIS</u><p>Indica o tamanho do bloco de
+    dados variáveis presentes nas mensagens <em>real-time </em>associados a um código de
+    transacção. O comprimento destes dados não inclui os 4 bytes deste atributo, i.e.,
+    refere-se apenas aos dados que se seguem à definição do comprimento.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COMP-DADOSV</td>
+  </tr>
+  <tr>
+    <td><a id="2337" name="2337">2337</a></td>
+    <td class="esq"><u>VERSÃO DOS DADOS VARIÁVEIS</u><p>Indica a versão do bloco de dados
+    variáveis presentes nas mensagens <em>real-time</em> associados a um código de
+    transacção.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>VER-DADOSV</td>
+  </tr>
+  <tr>
+    <td><a id="2338" name="2338">2338</a></td>
+    <td class="esq"><u>MONTANTE PAGO PELO COMERCIANTE</u><p>Apresenta o montante total pago,
+    via sistema MB, pelo Comerciante ou Empresa, consoante o código do Modelo de Negócio
+    aplicado. Este montante pode ser referente a qualquer tipo de comissionamento, tarifário
+    ou descontos aplicados a Comerciantes ou Empresas. </td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>MNT-P-COM</td>
+  </tr>
+  <tr>
+    <td><a id="2339" name="2339">2339</a></td>
+    <td class="esq"><u>MONTANTE RECEBIDO PELO COMERCIANTE</u><p>Apresenta o montante total
+    recebido, via sistema MB, pelo Comerciante ou Empresa, consoante o código do Modelo de
+    Negócio aplicado. Este montante pode ser referente a quaisquer tipos de incentivos
+    aplicados a Comerciantes ou Empresas (ex.: Incentivos ou Promoções).</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>MNT-R-COM</td>
+  </tr>
+  <tr>
+    <td><a id="2340" name="2340">2340</a></td>
+    <td class="esq"><u>MONTANTE PAGO PELO DESTINATÁRIO</u><p>Apresenta o montante total pago
+    pelo destinatário do ficheiro no qual se inclui o registo. Este destinatário pode ser um
+    Emissor, Banco de Apoio, ou <em>Acquirer</em>, consoante o código do Modelo de Negócio
+    aplicado. </p>
+    <p>O montante é relativo a (por exemplo): <br>
+    &nbsp;&nbsp; - Tarifário Interbancário<br>
+    &nbsp;&nbsp; - <em>Interchange Fee<br>
+    &nbsp;&nbsp; </em>-<em> Fees </em>de estrangeiro<br>
+    &nbsp;&nbsp; - etc.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>MNT-P-DST</td>
+  </tr>
+  <tr>
+    <td><a id="2341" name="2341">2341</a></td>
+    <td class="esq"><u>MONTANTE RECEBIDO PELO DESTINATÁRIO</u><p>Apresenta o montante total
+    recebido pelo destinatário do ficheiro no qual se inclui o registo. Este destinatário
+    pode ser um Emissor, Banco de Apoio, ou <em>Acquirer</em>, consoante o código do Modelo
+    de Negócio aplicado.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" colspan="2">O montante é relativo a, por exemplo: </td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp; </td>
+        <td class="esq">Taxas Cliente</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; -&nbsp; </td>
+        <td class="esq">Proveitos da Entidade de Apoio (de Comerciantes / Empresas)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; -&nbsp; </td>
+        <td class="esq">Tarifário Interbancário</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; -&nbsp; </td>
+        <td class="esq"><em>Interchange Fee</em></td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; -&nbsp; </td>
+        <td class="esq"><em>Fees </em>de estrangeiro</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; -&nbsp; </td>
+        <td class="esq">etc.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>MNT-R-DST</td>
+  </tr>
+  <tr>
+    <td><a id="2342" name="2342">2342</a></td>
+    <td class="esq"><u>REFERÊNCIA DO DEPÓSITO (COM VALIDAÇÃO PELO CA-MB)</u><p>Referência
+    inequívoca do depósito na operação de depósito com validação.</p>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq" colspan="2">É composta por (da esquerda para a direita):</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; -&nbsp; </td>
+        <td class="esq">4 dígitos para a data MMDD (mês e dia)</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; -&nbsp; </td>
+        <td class="esq">5 dígitos para a identificação do ATM</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; -&nbsp; </td>
+        <td class="esq">2 dígitos para o período local</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; -&nbsp; </td>
+        <td class="esq">4 dígitos número sequencial (incrementado por operação)</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>REFDEPVAL</td>
+  </tr>
+  <tr>
+    <td><a id="2343" name="2343">2343</a></td>
+    <td class="esq"><u>VALOR TOTAL DO DEPÓSITO DE NOTAS DE CATEGORIA 2</u><p>Valor total dos
+    depósitos com validação em CA-MB de notas da categoria 2 (falsas ou contrafeitas).</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>TOTDEPCAT2</td>
+  </tr>
+  <tr>
+    <td><a id="2344" name="2344">2344</a></td>
+    <td class="esq"><u>VALOR TOTAL DO DEPÓSITO DE NOTAS DE CATEGORIA 3</u><p>Valor total dos
+    depósitos com validação em CA-MB de notas da categoria 3 (suspeitas).</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>TOTDEPCAT3</td>
+  </tr>
+  <tr>
+    <td><a id="2345" name="2345">2345</a></td>
+    <td class="esq"><u>VALOR TOTAL DO DEPÓSITO DE NOTAS DE CATEGORIA 4</u><p>Valor total dos
+    depósitos com validação em CA-MB de notas da categoria 4 (boas).</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br>
+    2 dec.</td>
+    <td>TOTDEPCAT4</td>
+  </tr>
+  <tr>
+    <td><a id="2346" name="2346">2346</a></td>
+    <td class="esq"><u>MONTANTE DO CHEQUE INDICADO PELO CLIENTE</u><p>Valor do cheque indicado
+    pelo cliente na operação de depósito de cheques com validação em CA-MB.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>MNTCHQIND</td>
+  </tr>
+  <tr>
+    <td><a id="2347" name="2347">2347</a></td>
+    <td class="esq"><u>ESTADO CIVIL</u><p>Estado civil. Campo utilizado no âmbito do pedido
+    de dados de cliente pela Polícia Judiciária.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 1 - Solteiro<br>
+    &nbsp;&nbsp; 2 - Casado<br>
+    &nbsp;&nbsp; 3 - Divorciado<br>
+    &nbsp;&nbsp; 4 - Viúvo</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ESTCIVIL</td>
+  </tr>
+  <tr>
+    <td><a id="2348" name="2348">2348</a></td>
+    <td class="esq"><u>NÚMERO DOCUMENTO DE IDENTIFICAÇÃO</u><p>Número do documento de
+    identificação (bilhete de identidade ou passaporte). Campo utilizado no âmbito do
+    pedido de dados de cliente pela Polícia Judiciária.</td>
+    <td class="dta">10</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NUMDOCIDT</td>
+  </tr>
+  <tr>
+    <td><a id="2349" name="2349">2349</a></td>
+    <td class="esq"><u>DENOMINAÇÃO DA NOTA EXPANDIDO</u><p>Denominação das notas
+    carregadas no cacifo em euros.<br>
+    (ex.: 5 euros = 005; 100 euros = 100)</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DENOMIN-E</td>
+  </tr>
+  <tr>
+    <td><a id="2350" name="2350">2350</a></td>
+    <td class="esq"><u>NÚMERO DE OCORRÊNCIAS EXPANDIDO </u><p>Número de vezes em que
+    ocorrem os conjuntos de campos definidos a seguir e que se encontram assinalados com (*).</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMOCORR-E</td>
+  </tr>
+  <tr>
+    <td><a id="2351" name="2351">2351</a></td>
+    <td class="esq"><u>CÓDIGO SERVIÇO ESPECIAL (BANCOS)</u><p>Trata-se de um código
+    atribuído a cada Serviço Especial desenvolvido para o Banco. A sua codificação é
+    indicada caso a caso e para o Banco a quem interessar (ex.: Pedido de NIB-AA).<br>
+    Corresponde à expansão do atributo <a href="campos4.htm#389">389</a>.</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODSE-E</td>
+  </tr>
+  <tr>
+    <td><a id="2352" name="2352">2352</a></td>
+    <td class="esq"><u>NÚMERO DE NOTAS</u><p>Número de notas das categorias 2
+      (falsas) ou 3 (suspeitas) ou 4 (verdadeiras) depositadas em CA-MB.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMNOTDEP</td>
+  </tr>
+  <tr>
+    <td><a id="2353" name="2353">2353</a></td>
+    <td class="esq"><u>REGULARIZAÇÃO DE OPERAÇÃO DE CA</u><p>Indica o tipo de
+    regularização.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" colspan="2">Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 1 -&nbsp; </td>
+        <td class="esq">Diferenças em operações de levantamentos em CA</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 2 - </td>
+        <td class="esq">Diferenças em operações de depósitos de notas com validação em
+          CA</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 3 - </td>
+        <td class="esq">Regularização de notas suspeitas/falsas</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 4 - </td>
+        <td class="esq">Regularização resultante de validação pelo Banco de Portugal de nota
+        anteriormente considerada suspeita</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>REGOPERCA</td>
+  </tr>
+  <tr>
+    <td><a id="2354" name="2354">2354</a></td>
+    <td class="esq"><u>CAPACIDADES DO TERMINAL</u><p>Informa a capacidade de processamento de
+    operações por parte do Terminal, face à evolução tecnológica registada na rede
+    nacional.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 0 - Terminal sem capacidades Euro/não aplicável<br>
+    &nbsp;&nbsp; 1 - Terminal com capacidades Euro<br>
+    &nbsp;&nbsp; 2 - Terminal com capacidades Euro e EMV</p>
+    <p>Os códigos de versão de especificações dos TPAs até à 10 correspondem a
+    capacidades do tipo 1, superiores a 20 correspondem a capacidades do tipo 2.<br>
+    Os códigos de versão de especificações dos CAs 7.xx correspondem a capacidade do tipo
+    1, superiores a 8.00 correspondem a capacidades do tipo 2.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CAP-TERM</td>
+  </tr>
+  <tr>
+    <td><a id="2355" name="2355">2355</a></td>
+    <td class="esq"><u>CATEGORIA DE NOTAS DEPOSITADAS</u><p>Segundo a regulamentação do
+    Banco de Portugal (Instrução nº4/2003) nas operações de depósito de notas em CA as
+    notas devem ser classificadas nas seguintes categorias:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 1 - </td>
+        <td class="esq">Não é uma nota; não é reconhecida como nota.</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 2 - </td>
+        <td class="esq">Um ou mais elementos foram identificados como contrafeitos.</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 3 -&nbsp; </td>
+        <td class="esq">Alguns elementos não foram claramente autenticados. Notas suspeitas.</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 4 - </td>
+        <td class="esq">Notas completamente autenticadas como verdadeiras.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CATNOTAS</td>
+  </tr>
+  <tr>
+    <td><a id="2356" name="2356">2356</a></td>
+    <td class="esq"><p ALIGN="JUSTIFY"><u>FINGERPRINT</u></p>
+    <p ALIGN="JUSTIFY">&quot;Impressão digital&quot; electrónica da nota.</td>
+    <td class="dta">Var</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>FINGPRINT</td>
+  </tr>
+  <tr>
+    <td><a id="2357" name="2357">2357</a></td>
+    <td class="esq"><u>TIPO DE IMAGEM</u><p>Formato dos campos de imagem (IMG1 e IMG2). </p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 0 - JPEG<br>
+    &nbsp;&nbsp; 1 - TIFF</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPIMG</td>
+  </tr>
+  <tr>
+    <td><a id="2358" name="2358">2358</a></td>
+    <td class="esq"><u>REFERÊNCIA DA IMAGEM</u><p>Referência da imagem, campo compósito de
+    acordo com a seguinte regra:</p>
+    <p>&nbsp;&nbsp; + BANTOM (n4)<br>
+    &nbsp;&nbsp; + REFARQ (n14)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + DATA JULIANA (n4 - ADDD)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + AGATM (n6)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + NÚMERO SEQUENCIAL (n4)</td>
+    <td class="dta">18</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>REFERIMAG</td>
+  </tr>
+  <tr>
+    <td><a id="2359" name="2359">2359</a></td>
+    <td class="esq"><u>COMPRIMENTO DA FRENTE DO CHEQUE </u><p>Comprimento exacto do campo da
+    imagem seguinte - frente do cheque - (IMG1), em bytes.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CPRIMG1</td>
+  </tr>
+  <tr>
+    <td><a id="2360" name="2360">2360</a></td>
+    <td class="esq"><u>COMPRIMENTO DO VERSO DO CHEQUE</u><p>Comprimento exacto do campo da
+    imagem seguinte - verso do cheque - (IMG2), em bytes.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CPRIMG2</td>
+  </tr>
+  <tr>
+    <td><a id="2361" name="2361">2361</a></td>
+    <td class="esq"><u>IMAGEM DA FRENTE DO CHEQUE</u><p>Imagem da frente do cheque. Campo de
+    dimensão variável.</td>
+    <td class="dta">var</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>IMG1</td>
+  </tr>
+  <tr>
+    <td><a id="2362" name="2362">2362</a></td>
+    <td class="esq"><u>IMAGEM DO VERSO DO CHEQUE</u><p>Imagem do verso do cheque. Campo de
+    dimensão variável.</td>
+    <td class="dta">var</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>IMG2</td>
+  </tr>
+  <tr>
+    <td><a id="2363" name="2363">2363</a></td>
+    <td class="esq"><u>LIMITE COMERCIANTE</u><p>Limite a partir do qual o Comerciante deverá
+    solicitar ao Representante um pedido de autorização. <br>
+    O TPA deverá apresentar uma mensagem nesse sentido.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br>
+    2 dec.</td>
+    <td>LIM-PED-AUT</td>
+  </tr>
+  <tr>
+    <td><a id="2364" name="2364">2364</a></td>
+    <td class="esq"><u>TIPO DE ESCALÕES</u><p>Define o tipo de escalões:</p>
+    <p>&nbsp;&nbsp; Q - Escalões de quantidade<br>
+    &nbsp;&nbsp; V - Escalões de valor </p>
+    <p>Nesta fase de desenvolvimentos apenas vão existir escalões de quantidade.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIP-ESC</td>
+  </tr>
+  <tr>
+    <td><a id="2365" name="2365">2365</a></td>
+    <td class="esq"><u>IINDICADOR DE LIMITES (Caps)</u><p>Indica se existem limites na
+    fórmula de cáculo:</p>
+    <p>&nbsp;&nbsp; 0 - Não tem<br>
+    &nbsp;&nbsp; 1 - Tem sobre a parte variável<br>
+    &nbsp;&nbsp; 2 - Tem sobre a parte fixa<br>
+    &nbsp;&nbsp; 3 - Tem sobre a fórmula total</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND-LIM</td>
+  </tr>
+  <tr>
+    <td><a id="2366" name="2366">2366</a></td>
+    <td class="esq"><u>EMV - OFFLINE - PARÂMETROS POR CARTÃO</u><p>Indica se, na emissão de
+    um cartão EMV, devem ser considerados valores específicos para um determinado cartão:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 0 -&nbsp; </td>
+        <td class="esq">não se aplicam valores específicos (consideram-se os existentes na
+        caracterização do BIN)</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 1 -&nbsp; </td>
+        <td class="esq">aplicam-se valores específicos (valores indicados para o grupo de campos
+        que se segue, identificados com *) </td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDCAR-OFFLINE</td>
+  </tr>
+  <tr>
+    <td><a id="2367" name="2367">2367</a></td>
+    <td class="esq"><u>EMV - LINHA DE CRÉDITO - CARACTERIZAÇÃO POR CARTÃO</u><p>Indica se,
+    na emissão de um cartão EMV, devem ser considerados valores específicos para um
+    determinado cartão:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 0 -&nbsp; </td>
+        <td class="esq">não se aplicam valores específicos&nbsp; (consideram-se os valores
+        indicados no registo de parâmetros do <a href="../mglobal/l-iii/eecb.htm" target="main">EECB</a>,
+        registo de tipo 1)</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 1 -&nbsp; </td>
+        <td class="esq">aplicam-se valores específicos (valores indicados para o grupo de campos
+        que se segue, identificados com *) </td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDCAR-LINHACR</td>
+  </tr>
+  <tr>
+    <td><a id="2368" name="2368">2368</a></td>
+    <td class="esq"><u>ENTIDADE QUE INSERE O ACORDO</u><p>&nbsp;&nbsp; S - SIBS<br>
+    &nbsp;&nbsp; R - Representantes</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ENTINS</td>
+  </tr>
+  <tr>
+    <td><a id="2369" name="2369">2369</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO ACORDO PADRÃO</u><p>Número do acordo padrão para
+    um determinado representante.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ID-ACR-PDR</td>
+  </tr>
+  <tr>
+    <td><a id="2370" name="2370">2370</a></td>
+    <td class="esq"><u>LIMITE SUPERIOR DO ESCALÃO </u><p>Apresenta o limite superior do
+    escalão aplicável a um determinado acordo.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>LIM-SUP-ESC</td>
+  </tr>
+  <tr>
+    <td><a id="2371" name="2371">2371</a></td>
+    <td class="esq"><u>DATA INÍCIO DO ACORDO</u><p>Data em que se iniciam as condições
+    contratuais especificadas. Este campo serve para gerir o período de vigência dos acordos
+    padrão.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DAT-INI-ACR</td>
+  </tr>
+  <tr>
+    <td><a id="2372" name="2372">2372</a></td>
+    <td class="esq"><u>DATA FIM DO ACORDO</u><p>Data em que terminam as condições
+    contratuais especificadas. Este campo serve para gerir o período de vigência dos acordos
+    padrão.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DAT-FIM-ACR</td>
+  </tr>
+  <tr>
+    <td><a id="2373" name="2373">2373</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DA INSTITUIÇÃO ORDENANTE</u><p>Campo usado
+    exclusivamente nos headers de ficheiros trocados com o Banco de Portugal. <br>
+    Nos ficheiros recepcionados pela SIBS tem o valor &quot;000101&quot; e nos comunicados por
+    esta sociedade &quot;060201&quot;.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ID-INS-ORD</td>
+  </tr>
+  <tr>
+    <td><a id="2374" name="2374">2374</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DA INSTITUIÇÃO DE DESTINO</u><p>Campo usado
+    exclusivamente nos headers de ficheiros trocados com o Banco de Portugal. Nos ficheiros
+    recepcionados pela SIBS tem o valor &quot;060201&quot; e nos comunicados por esta
+    sociedade &quot;000101&quot;.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ID-INS-DST</td>
+  </tr>
+  <tr>
+    <td><a id="2375" name="2375">2375</a></td>
+    <td class="esq"><u>NÚMERO DE REGISTOS (BANCO DE PORTUGAL)</u><p>Este campo presente no
+    &quot;Trailer&quot; é um contador dos registos de detalhe (tipo de registo diferente de
+    &#145;0&#146; e &#145;9&#146;) presentes no ficheiro.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOTREG-BP </td>
+  </tr>
+  <tr>
+    <td><a id="2376" name="2376">2376</a></td>
+    <td class="esq"><u>TOTAL DE DÉBITOS (BANCO DE PORTUGAL)</u><p>Este campo contém o total
+    dos valores de débito presentes no detalhe.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br>
+    2 dec.</td>
+    <td>TOTDEB-BP</td>
+  </tr>
+  <tr>
+    <td><a id="2377" name="2377">2377</a></td>
+    <td class="esq"><u>TOTAL DE CRÉDITOS (BANCO DE PORTUGAL)</u><p>Este campo contém o total
+    dos valores de crédito presentes no detalhe.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br>
+    2 dec.</td>
+    <td>TOTCRED-BP</td>
+  </tr>
+  <tr>
+    <td><a id="2378" name="2378">2378</a></td>
+    <td class="esq"><u>FICHEIRO (BANCO DE PORTUGAL)</u><p>Identifica o ficheiro em que se
+    insere. Dentro da aplicação é único .</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>FICH-BP</td>
+  </tr>
+  <tr>
+    <td><a name="2379">2379</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO FICHEIRO (B. DE PORTUGAL)</u><p>Identificação
+    única atribuída a cada ficheiro. Nos ficheiros comunicados ao Banco de Portugal o campo
+    é constituído por AAAAMMDDSS, onde os primeiros 8 dígitos representam a data-valor
+    correspondente aos fundos apresentados no ficheiro e os 2 últimos (&quot;SS&quot;), o
+    número de sequência do ficheiro para essa mesma data-valor (de 01 a 99).<br>
+    O destinatário deverá validar que ainda não processou um ficheiro do mesmo tipo com
+    esta identificação.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDFICH-BP</td>
+  </tr>
+  <tr>
+    <td><a name="2380">2380</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO FICHEIRO ANTERIOR (B.P.)</u><p>Identifica o ficheiro
+    do mesmo tipo expedido anteriormente. O controlo da sequencialidade dos ficheiros permite
+    detectar a falta de transmissão de ficheiros ou a sua produção em duplicado. O formato
+    é idêntico ao do campo anterior.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDFICHANT-BP</td>
+  </tr>
+  <tr>
+    <td><a name="2381">2381</a></td>
+    <td class="esq"><u>FECHO</u><p>Nos ficheiros comunicados pela SIBS ao Banco de Portugal,
+    informa o fecho de telecompensação a que os mesmos correspondem.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FECHO</td>
+  </tr>
+  <tr>
+    <td><a name="2382">2382</a></td>
+    <td class="esq"><u>LIMITE INFERIOR DO ESCALÃO</u><p>Apresenta o limite inferior do
+    escalão aplicável a um determinado acordo.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>LIM-INF-ESC</td>
+  </tr>
+  <tr>
+    <td><a name="2383">2383</a></td>
+    <td class="esq"><u>INDICADOR DE ESCALÕES</u><p>Indicador da existência de escalões de
+    montante ou de quantidade aplicáveis ao acordo.</p>
+    <p>&nbsp;&nbsp; 0 - Não aplicável<br>
+    &nbsp;&nbsp; 1 - Tem escalões de montante<br>
+    &nbsp;&nbsp; 2 - Tem escalões de quantidade</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND-ESC</td>
+  </tr>
+  <tr>
+    <td><a name="2384">2384</a></td>
+    <td class="esq"><u>SALDO DA COMPENSAÇÃO</u><p>No ficheiro CME, para cada Banco
+    participante, indica o saldo da compensação resultante dos movimentos compensados em
+    cada fecho de compensação.<br>
+    Apresenta 2 casas decimais.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SALDOCOMP</td>
+  </tr>
+  <tr>
+    <td><a name="2385">2385</a></td>
+    <td class="esq"><u>DESCRIÇÃO DO ACORDO PADRÃO</u><p>Nome que o <em>Acquirer</em>
+    atribui ao acordo padrão.</td>
+    <td class="dta">25</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DES_ACR_PDR</td>
+  </tr>
+  <tr>
+    <td><a name="2386">2386</a></td>
+    <td class="esq"><u>POS TERMINAL ATTENDANCE INDICATOR</u><p>Específico do Sistema de
+    Pagamento MasterCard.</p>
+    <p>Espaço - Sem informação<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 - Attended<em> </em>terminal<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 1 - Unattended terminal<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 - No terminal used</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>POS-TER-ATT-ID</td>
+  </tr>
+  <tr>
+    <td><a name="2387">2387</a></td>
+    <td class="esq"><u>POS CARDHOLDER PRESENCE INDICATOR</u><p>Específico do Sistema de
+    Pagamento MasterCard.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" colspan="2" nowrap>Espaço - Sem informação</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 -&nbsp; </td>
+        <td class="esq">Cardholder present</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 -&nbsp; </td>
+        <td class="esq">Cardholder not present (unspecified)</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 2 -&nbsp; </td>
+        <td class="esq">Cardholder not present (mail order)</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 3 -&nbsp; </td>
+        <td class="esq">Cardholder not present (telephone order)</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 4 -&nbsp; </td>
+        <td class="esq">Cardholder not present (standing order/recurring transactions)</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 5 -&nbsp; </td>
+        <td class="esq">Cardholder not present (electronic order) </td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td class="dta">A</td>
+    <td>&nbsp;</td>
+    <td>POS-CDH-PRE-ID</td>
+  </tr>
+  <tr>
+    <td><a name="2388">2388</a></td>
+    <td class="esq"><u>POS CARD PRESENCE INDICATOR</u><p>Específico do Sistema de Pagamento
+    MasterCard.</p>
+    <p>Espaço - Sem informação<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 0 - Card present<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 1 - Card not present</td>
+    <td class="dta">1</td>
+    <td class="dta">A</td>
+    <td>&nbsp;</td>
+    <td>POS-CAR-PRE-ID</td>
+  </tr>
+  <tr>
+    <td><a name="2389">2389</a></td>
+    <td class="esq"><u>POS CARD CAPTURE CAPABILITIES</u><p>Específico do Sistema de Pagamento
+    MasterCard.</p>
+    <p>Espaço - Sem informação<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 0 - Terminal has no card capture
+    capabilities<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 1 - Terminal has card capture
+    capabilities</td>
+    <td class="dta">1</td>
+    <td class="dta">A</td>
+    <td>&nbsp;</td>
+    <td>POS-CAR-CAP-CA</td>
+  </tr>
+  <tr>
+    <td><a name="2390">2390</a></td>
+    <td class="esq"><u>POS TRANSACTION STATUS INDICATOR</u><p>Específico do Sistema de
+    Pagamento MasterCard.</p>
+    <p>Espaço - Sem informação<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 0 - Normal request<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 4 - Pre-authorization request</td>
+    <td class="dta">1</td>
+    <td class="dta">A</td>
+    <td>&nbsp;</td>
+    <td>POS-TRA-STA-ID</td>
+  </tr>
+  <tr>
+    <td><a name="2391">2391</a></td>
+    <td class="esq"><u>POS TRANSACTION SECURITY INDICATOR</u><p>Específico do Sistema de
+    Pagamento MasterCard.</p>
+    <p>Espaço - Sem informação<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 0 - No security concern<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 1 - Suspected fraud (merchant
+    suspicious)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 2 - Identification verified</td>
+    <td class="dta">1</td>
+    <td class="dta">A</td>
+    <td>&nbsp;</td>
+    <td>POS-TRA-SEC-ID</td>
+  </tr>
+  <tr>
+    <td><a name="2392">2392</a></td>
+    <td class="esq"><u>CAT LEVEL INDICATOR</u><p>Específico do Sistema de Pagamento
+    MasterCard.</p>
+    <p>Espaço - Sem informação<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 0 - Not a CAT transaction<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 1 - Authorized CAT level 1 (ATM, with
+    PIN)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 2 - Authorized CAT level 2 (self-service
+    terminal)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 3 - Authorized CAT level 3 (limited
+    amount terminal)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 4 - Authorized CAT level 4 (in-flight
+    commerce)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 6 - Authorized CAT level 6 (e-commerce)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 7 - Radio frequency input device</td>
+    <td class="dta">1</td>
+    <td class="dta">A</td>
+    <td>&nbsp;</td>
+    <td>CAT-LEV-ID</td>
+  </tr>
+  <tr>
+    <td><a name="2393">2393</a></td>
+    <td class="esq"><u>CÓDIGO DE DETALHE </u><p>Campo que identifica o tipo de informação e
+    a estrutura dos dados enviados no ficheiro de Detalhes. </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODDETALHE</td>
+  </tr>
+  <tr>
+    <td><a name="2394">2394</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DO CRÉDITO ORIGINAL</u><p>Importância, em euros,
+    compensada a crédito para o fecho do período local a que respeita a regularização.</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br>
+    2 dec.</td>
+    <td>IMPCREDE-O-E</td>
+  </tr>
+  <tr>
+    <td><a name="2395">2395</a></td>
+    <td class="esq"><u>IMPORTÂNCIA REGULARIZADA </u><p>Importância, em euros, da
+    regularização feita pela SIBS ao Banco. O campo poderá também informar a comissão, em
+    euros, entregue ao Banco, resultante de uma anulação de levantamento internacional
+    (total ou parcial).</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br>
+    2 dec.</td>
+    <td>IMPORTREG-E</td>
+  </tr>
+  <tr>
+    <td><a name="2396">2396</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DE LEVANTAMENTOS</u><p>Indica o montante dos levantamentos
+    efectuados num dado período, ou fracção de período contabilístico (normalmente
+    estará associado ao sinal &quot;C&quot;).</td>
+    <td class="dta">11</td>
+    <td>N</td>
+    <td>9 int.<br>
+    2 dec.</td>
+    <td>IMPORTLEV-E</td>
+  </tr>
+  <tr>
+    <td><a name="2397">2397</a></td>
+    <td class="esq"><u>TIPO DE AGREGAÇÃO DE FICHEIROS</u><p>Indica o tipo de desagregração
+    dos dados enviados nos ficheiros da Compensação MB. </p>
+    <p>Valores possíveis: <br>
+    &nbsp;&nbsp; 0 - não aplicável<br>
+    &nbsp;&nbsp; 1 - ficheiros por CPD<br>
+    &nbsp;&nbsp; 2 - ficheiros por CPD e por grupos de BINs</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIP-AGREG</td>
+  </tr>
+  <tr>
+    <td><a name="2398">2398</a></td>
+    <td class="esq"><u>DATA DO PROCESSAMENTO</u><p>É a data em que foi emitido o ficheiro
+    (Data da Compensação SIBS) acrescentando um dígito que corresponde à sequência do
+    ficheiro no dia. <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; Ex: &quot;200404301&quot;</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>AAAAMMDDS</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="2399">2399</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO ÚLTIMO FICHEIRO</u><p>É a identificação do
+    ficheiro anteriormente produzido e enviado. É constituído pela data de processamento
+    mais o número de sequência do ficheiro no dia. <br>
+    &nbsp;&nbsp; &nbsp; Ex: &quot;200412311&quot;</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>AAAAMMDDS</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

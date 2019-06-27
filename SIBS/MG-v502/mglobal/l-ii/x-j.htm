@@ -1,0 +1,317 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>X-J - TRANSMISSÃO DE FICHEIROS</title>
+<script>top.captulos.location='indicex.htm#X';</script>
+</head>
+
+<body>
+
+<h2>J - TRANSMISSÃO DE FICHEIROS</h2>
+
+<p>&nbsp;</p>
+
+<h3>J1 - MANUSEAMENTO DE SUPORTE MAGNÉTICO </h3>
+
+<p><br>
+<strong>J1 - Tarifa única por ficheiro </strong></p>
+
+<p><br>
+Tarifa a aplicar quando o Banco opta por proceder ao envio de ficheiros para a SIBS
+através de banda magnética, em detrimento da teletransmissão. Esta tarifa não se
+aplica quando o Banco recorre à banda como processo de <em>backup</em>. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="J2">J2</a> - FICHEIROS TELETRANSMITIDOS </h3>
+
+<p><br>
+<strong>J21 - 1ª transmissão <br>
+J22 - Por repetição </strong></p>
+
+<p>A rubrica <strong>J2</strong> aplica-se a ficheiros que não se enquadrem no âmbito do
+serviço<a href="i3.htm#I.3.9"> Transferência de Ficheiros</a>, relativos, por exemplo,
+ao Sistema Multibanco ou a processos de Telecompensação. Aplica-se também a pedidos de
+repetição de ficheiros já transmitidos da SIBS para o Banco. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Processo administrativo. Este tipo de serviço é prestado pelo DPR - Serviço de
+Planeamento, de acordo com as solicitações que lhes são efectuadas e que devem estar
+registadas documentalmente.</p>
+
+<p><strong><br>
+Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados para a rubrica <strong>J2</strong>: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#380">380</a>) data de processamento
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos6.htm#516">516</a>) designação do
+    ficheiro teletransmitido (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos6.htm#517">517</a>) entidade destino (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica J2</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+3J2 FICHEIROS TELETRANSMI.
+4J2220020530MEDST   ENT-D       POR REPETICAO         000000000015000176240000002743600D
+&#133;
+4J2220020530MEDST   ENT-D       POR REPETICAO         000000000015000125210000001978150D
+6J2 0000026052150D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="J3">J3</a> - FICHEIROS MOVIMENTOS DE CONTA</h3>
+
+<p><br>
+<strong>J3 - Tarifa única</strong></p>
+
+<p><br>
+Tarifa aplicada a cada ficheiro de Movimentos de Conta (<a href="../l-iii/emvc.htm">MEMVC</a>)
+recebido pela SIBS com os dados dos movimentos de conta para o serviço &quot;Consulta de
+Movimentos na Rede Multibanco&quot;. Aplica-se a Bancos cujo CPD não esteja conectado em <em>real-time</em>
+com a SIBS e pretendam disponibilizar a operação consulta de movimentos. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Através do ficheiro de erros de conta (<a href="../l-iii/eerc.htm">MEERC</a>) retorno
+do ficheiro de movimentos (<a href="../l-iii/emvc.htm">MEMVC</a>). O registo de <em>trailer</em>
+é preenchido com campos que permitem o controlo de rejeitados e a facturação da SIBS.</p>
+
+<p><strong><br>
+Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados para a rubrica <strong>J3</strong>: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a href="../../Campos/campos2.htm#101" target="explicac">101</a>)+(<a target="explicac"
+    href="../../Campos/campos2.htm#102">102</a>) aplicação e nome do ficheiro (1)+(4)</li>
+  <li>(<a href="../../Campos/campos1.htm#061" target="explicac">061</a>) identificação e
+    sequência do ficheiro (11)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica J3</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+2J  TRANSMISSAO DE FICHEI.
+4J3 20020228MEMVC20020201001          FICH. MOVIMENTOS CONTA000000001500000000000000010000000001500D
+&#133;
+4J3 20020228MEMVC20020218001          FICH. MOVIMENTOS CONTA000000001500000000000000010000000001500D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="J6">J6</a> - SERVIÇO DE TRANSMISSÃO DE FICHEIROS COM DIMENSÃO IGUAL OU
+INFERIOR A 100 Kb</h3>
+
+<p><br>
+<strong>J61 - De 1 a 100 ficheiros<br>
+J62 - No excedente, de 101 a 1.000<br>
+J63 - No excedente, de 1.001 a 5.000<br>
+J64 - No excedente, de 5.001 a 10.000<br>
+J65 - No excedente, de 10.001 a 20.000<br>
+J66 - No excedente de 20.000<br>
+J69 - Por repetição de ficheiro de dimensão <font FACE="Symbol">£</font> 100 Kb</strong></p>
+
+<p><br>
+Os escalões apuram-se de acordo com o número total de ficheiros transmitidos durante o
+mês e relativos ao serviço <a href="i3.htm#I.3.9">Transferência de Ficheiros</a>, cuja
+dimensão individual seja igual ou inferior a 100 Kb. <br>
+Nada sendo referido em contrário, a entidade facturada é o emissor da informação, isto
+é, quem envia o ficheiro à SIBS. </p>
+
+<p><br>
+<strong><a name="FC-J6">Forma</a> de Controlo</strong></p>
+
+<p>Processo administrativo. Para a aplicação das rubricas referentes ao <em>forward</em>
+de ficheiros devem existir acordos/contratos que especificam a data e a quantidade de
+ficheiros a processar.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="J7">J7</a> - SERVIÇO DE TRANSMISSÃO DE FICHEIROS COM DIMENSÃO SUPERIOR A <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100 Kb</h3>
+
+<p><br>
+<strong>J71 - De 101 a 100.000 Kb<br>
+J72 - No excedente, de 100.001 a 500.000<br>
+J73 - No excedente, de 500.001 a 1.000.000<br>
+J74 - No excedente de 1.000.000<br>
+J79 - Por repetição de ficheiro de dimensão &gt; 100 Kb</strong></p>
+
+<p><br>
+Os escalões apuram-se de acordo com o volume total de Kbytes correspondente aos ficheiros
+transmitidos durante o mês. <br>
+O grupo <strong>J6</strong> e <strong>J7</strong> aplica-se no caso de serviços
+proporcionados ao Banco (ou seus clientes) baseados na utilização da transferência de
+ficheiros de uma entidade para o banco ou vice-versa. </p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Ver rubrica <a href="x-j.htm#FC-J6">J6</a>.</p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>O registo tipo 4 apresenta os seguintes dados para as rubricas <strong>J6/J7</strong>: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p>O registo tipo 5 apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos4.htm#380">380</a>) data de processamento
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos6.htm#516">516</a>) designação do
+    ficheiro teletransmitido (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos6.htm#517">517</a>) entidade destino (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos8.htm#798">798</a>) número de Kb (8) *</li>
+</ul>
+
+<blockquote>
+  <p>* Apenas para a rubrica <strong>J7</strong></p>
+</blockquote>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" BORDER="1" CELLSPACING="0" CELLPADDING="4"
+WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo das rubricas J6/J7</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">&#133;
+2J  TRANSMISSAO DE FICHEI.
+3J6 TRANS.FICH. &lt; 100 KB
+4J6120020228                         DE 1 A 100 FICHEIROS  000000000067000000000001000000000006700D
+5J6120020228FICHEIROENT_D
+&#133;
+5J6120020228FICHEIROENT_D
+4J6220020228                         EXCE. 101 A 1 000     000000000055000000000009000000000049500D
+5J6220020228FICHEIROENT_D
+&#133;
+6J6 0000000063490D
+3J7 TRANS.FICH. &gt; 100 KB
+4J7120020228                         DE 101 A 100 000 KB   000000000000600000001000000000000060000D
+5J7120020228RPSCPV1 ENT666  00001963
+&#133;
+5J7120020228TEST123 BBB     00001057
+4J7220020228                         DE 100 001 A 500 000  000000000000500000004000000000000200000D
+5J7200020228METVIM1 BCGA    00000102
+&#133;
+5J7220020228FICHA3E ENT666  00000108
+6J7 0000000563693D
+7J  0000000000627183D
+&#133;</pre>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span> <br>
+    Para efeitos de apresentação e por uma questão prática mantém-se o layout anterior nas
+    tabelas auxiliares. </em></td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="x2.htm">Anterior</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

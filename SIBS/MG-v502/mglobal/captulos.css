@@ -1,0 +1,114 @@
+
+BODY, BLOCKQUOTE, P, OL, UL, TD, TH {
+	font-family: Arial;
+	font-size: 8pt;
+	background-color: #000095;
+	color: #FFFFFF;
+	vertical-align: top;
+}
+
+A:link {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #FFFFFF;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+A:active {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #FFFFFF;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+A:visited {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #FFFFFF;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+A:hover {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #00CCFF;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+A.anexo:link {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	color: #ff0000;
+	font-weight: bold;
+}
+
+A.anexo:visited {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	color: #ff0000;
+	font-weight: bold;
+}
+
+A.anexo:hover {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	color: #00CCFF;
+	font-weight: bold;
+}
+
+A.introd:link {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	color: #ff0000;
+}
+
+A.introd:visited {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	color: #ff0000;
+}
+
+A.introd:hover {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	color: #00CCFF;
+}
+
+TD.titulo {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+TD.middle {
+	vertical-align: middle;
+}
+
+.cap {
+	font-family: Verdana, Arial;
+	font-size: 10pt;
+	color: #FF0000;
+	font-weight: bold;
+}
+
+
+TD.capp {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	color: #FF0000;
+	font-weight: bold;
+}
+
+.nolink {
+	font-family: Arial;
+	font-size: 8pt;
+	color: #FFFFFF;
+	font-weight: normal;
+}
+
+

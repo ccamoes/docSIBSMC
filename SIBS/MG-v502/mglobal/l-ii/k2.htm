@@ -1,0 +1,348 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>K.2 COMPENSAÇÃO DE CHEQUES</title>
+<script>top.captulos.location='indicek.htm#K';</script>
+</head>
+
+<body>
+
+<h1>K.2 COMPENSAÇÃO DE CHEQUES</h1>
+
+<p><br>
+Última revisão: 2004/03/19 </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="K.2.1">K.2.1</a> OBJECTIVOS</h2>
+
+<p><br>
+Criado em 1989, o subsistema de Compensação de Cheques tem por objectivo maximizar a
+eficiência no processamento dos pagamentos interbancários realizados com cheques e
+documentos afins (documentos que, não sendo cheques, são passíveis de integração na
+Compensação de Cheques, de acordo com o definido no Regulamento do SICOI - utilizando-se
+neste documento a designação &quot;cheques&quot; como referência a cheques e documentos
+afins) normalizados, em euros, através da Compensação de todas as operações
+interbancárias relacionadas e da circulação interbancária de imagens.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="K.2.2">K.2.2</a> CARACTERÍSTICAS GERAIS</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.2.2.1">K.2.2.1</a> PRINCÍPIOS</h3>
+
+<p><br>
+O subsistema de Compensação baseia-se na comunicação de dados relativos aos cheques
+entre os Participantes por teletransmissão, via SIBS, e na retenção física de todos os
+cheques no Banco Tomador (BT).</p>
+
+<p>Dado que no âmbito deste subsistema não há circulação física de nenhum
+cheque entre o BT e o Banco Sacado (BS): 
+
+<ul >
+  <li>para cheques acima de determinado montante - montante de truncagem - é também
+    obrigatório o envio da respectiva imagem frente e verso (cheques não truncados).</li>
+  <li>é possível ao BS, através de codificação especial na linha óptica do cheque (no
+    campo tipo de cheque), identificar excepcionalmente alguns cheques como não truncáveis,
+    independentemente do valor pelo qual são sacados, permitindo assim ao BS receber as
+    respectivas imagens.</li>
+  <li>os cheques truncados, retidos fisicamente no BT, não obrigam ao envio das respectivas
+    imagens.</li>
+</ul>
+
+<p>Procurando garantir que, em caso de truncagem, o Banco Tomador possa
+assegurar e validar a fidelidade da informação recolhida, foram implementados 2 dígitos
+de controlo ao nível da linha óptica do cheque. <br>
+É interdita a emissão de cheques sem dígitos de controlo na linha óptica. A emissão
+de documentos afins sem linha óptica protegida é desaconselhada, pretendendo-se que
+sejam progressivamente eliminados, na medida em que por um lado não garantem a mesma
+segurança, e por outro o seu tratamento tem custos administrativos acrescidos ao nível
+do Banco Tomador, (uma vez que se trata de documentos sempre não truncáveis). <br>
+Para, por um lado desincentivar a sua emissão, e por outro ressarcir o BT dos custos
+administrativos acrescidos com o tratamento destes documentos, foram acordadas tarifas
+interbancárias penalizadoras desta prática.</p>
+
+<p style="page-break-before: always">&nbsp;</p>
+
+<h3 ><a name="K.2.2.2">K.2.2.2</a> CIRCULAÇÃO DE IMAGENS DE CHEQUES</h3>
+
+<p><br>
+A componente de circulação de imagens, parte integrante do subsistema de Compensação
+de Cheques, apresenta como principais objectivos a extinção da troca física dos
+documentos e a correspondente redução de custos e, como benefícios operacionais, a
+redução do prazo de acesso às imagens de cheques truncados. Esta componente apresenta
+como principais características: 
+
+<ul >
+  <li>para os Participantes</li>
+</ul>
+
+<blockquote>
+  <ul type="square" >
+    <li>envio obrigatório (pelo BT) de ficheiros de imagens de:</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <ol >
+      <li>cheques não truncados (incluindo cheques sem linha óptica protegida); </li>
+      <li>cheques truncados devolvidos pelo BS (para os motivos de devolução definidos); </li>
+      <li>respostas a pedidos de imagens de cheques truncados. </li>
+    </ol>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <ul type="square" >
+    <li>possibilidade (do BS) de realizar pedidos de imagens de cheques truncados.</li>
+    <li>inclusão da referência de arquivo em todos os cheques e documentos afins compensáveis
+      (incluindo portanto também os não truncados).</li>
+  </ul>
+</blockquote>
+
+<ul >
+  <li>para a SIBS</li>
+</ul>
+
+<blockquote>
+  <ul type="square" >
+    <li>processamento e validação dos ficheiros de imagem, e informação aos Bancos de
+      eventuais erros detectados.</li>
+    <li>guarda das imagens recebidas e aceites durante 3 dias úteis.</li>
+    <li>reenvio excepcional do(s) ficheiro(s) de imagens recebidas, a pedido do Banco Sacado,
+      durante o período referido acima.</li>
+  </ul>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.2.2.3">K.2.2.3</a> INTERVENIENTES</h3>
+
+<p><br>
+Como intervenientes directos neste sistema encontram-se: 
+
+<ul>
+  <li>Os Bancos, que assumem a posição de Banco Tomador (quando apresentam à compensação
+    cheques emitidos por outro Banco) e/ou de Banco Sacado (quando os cheques sacados sobre si
+    são apresentados à compensação por outros Participantes).</li>
+  <li>A SIBS, que procede à compensação da informação recebida e ao envio dos ficheiros
+    dela resultantes.</li>
+  <li>O Banco de Portugal, que lança no SPGT os saldos apurados na compensação e os
+    comunica aos Participantes após liquidação.</li>
+</ul>
+
+<p><br>
+De acordo com o Manual de Funcionamento, a participação dos Bancos no subsistema de
+Cheques pode realizar-se a dois níveis: 
+
+<ol >
+  <li>Participante Directo: envia e recebe informação da SIBS. Esta sociedade procede ao
+    apuramento diário dos saldos de compensação do Participante, para liquidação no Banco
+    de Portugal, via SPGT.</li>
+</ol>
+
+<ol start="2" >
+  <li style="page-break-before: always">Participante Indirecto: a liquidação de valores no
+    Banco de Portugal é realizada através do Participante Directo que o representa, ou seja,
+    sem determinação de saldos específicos para o Banco Representado, por parte da SIBS. Em
+    termos operacionais, esta participação pode ser concretizada por duas vias:</li>
+</ol>
+
+<blockquote>
+  <ul >
+    <li>Participante Indirecto activo: o Banco Representado envia e recebe ficheiros próprios
+      no seu diálogo com a SIBS, sendo, nomeadamente, objecto de facturação por parte desta
+      sociedade de forma semelhante aos Bancos que participam directamente neste subsistema, mas
+      o saldo de compensação que lhe corresponderia, incluindo os valores do Tarifário
+      Interbancário, afecta o saldo da Instituição sua representante.</li>
+  </ul>
+  <ul >
+    <li>Participante Indirecto passivo: a informação correspondente ao Banco Representado é
+      comunicada de e para a SIBS, integrada com a informação do Banco Representante. No
+      processamento da informação, a SIBS considera o código do Banco Representado como
+      equivalente ao do Banco Representante, sendo apurado um único saldo de compensação a
+      liquidar na conta deste último. Não existe qualquer distinção do Banco Representado em
+      termos de facturação.</li>
+  </ul>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.2.2.4">K.2.2.4</a> OPERAÇÕES SUBJACENTES AO SUBSISTEMA</h3>
+
+<p><br>
+A informação subjacente ao subsistema de Compensação de Cheques diz respeito à
+apresentação, devolução e troca de imagens de cheques, tal como seguidamente se
+descreve: 
+
+<ul>
+  <li>A apresentação à compensação consiste no envio de ficheiros à SIBS com os dados
+    relativos a todos os cheques tomados por um Banco (apresentados diariamente a pagamento ao
+    Banco participante), a cobrar (debitar) junto de outro Participante.</li>
+</ul>
+
+<ul>
+  <li>Uma devolução consiste na reposição dos valores debitados ao Banco Sacado na
+    cobrança do cheque, que comunica ao Banco Tomador o registo a devolver, dentro dos prazos
+    estabelecidos e de acordo com os motivos previstos pelo Regulamento do SICOI. Este registo
+    é incluído nos ficheiros de apresentação de cheques enviados à SIBS, mediante
+    codificação própria.</li>
+</ul>
+
+<ul >
+  <li>O envio pelo BT de ficheiros de imagens de cheques não truncados (incluindo cheques sem
+    linha óptica protegida) e de cheques truncados devolvidos pelo BS (para os motivos de
+    devolução definidos).</li>
+</ul>
+
+<ul>
+  <li>Existindo truncagem de cheques no Banco Tomador, o Banco Sacado pode ter necessidade de
+    obter as imagens dos mesmos, devendo para tal efectuar os pedidos correspondentes ao Banco
+    Tomador, durante o período legal de arquivo de cheques. Os pedidos são realizados
+    mediante a utilização de registos próprios, com a indicação da referência de arquivo
+    veiculada no pedido inalterada e incluídos nos ficheiros comunicados à SIBS, devendo o
+    Banco Tomador satisfazer o pedido dentro dos limites temporais definidos.</li>
+</ul>
+
+<ul>
+  <li>A resposta aos pedidos de imagens de cheques corresponde ao envio, pelo Banco Tomador,
+    das imagens em causa em ficheiros e registos próprios, e que permite à SIBS controlar o
+    cumprimento do prazo de resposta, ou em alternativa aplicar a respectiva tarifa
+    penalizadora.</li>
+</ul>
+
+<p style="page-break-before: always">&nbsp;</p>
+
+<h3 table><a name="K.2.2.5">K.2.2.5</a> TRANSMISSÃO DA INFORMAÇÃO</h3>
+
+<p><br>
+Para cada período de compensação, os Participantes recolhem a informação decorrente
+da actividade relativa a cada um dos casos acima referidos (registos contabilísticos dos
+cheques e dos pedidos de imagens), por forma a enviar os respectivos ficheiros para a SIBS
+dentro dos prazos e horários estabelecidos no Regulamento do SICOI e no Manual de
+Funcionamento.</p>
+
+<p>Ao longo do período de compensação, a partir de hora previamente estabelecida e à
+medida que a informação esteja disponível, os Bancos podem enviar ficheiros para a SIBS
+com os dados da sessão, até à hora limite fixada. Após a recepção da informação, a
+SIBS, nos horários estabelecidos, procede à validação dos ficheiros recebidos
+(informando o Banco de eventuais erros detectados), efectua a compensação dos mesmos, e
+envia sempre aos Bancos de destino os ficheiros de cheques recebidos e de compensação
+nos horários definidos para os pré-fechos e fechos. A SIBS envia posteriormente ao Banco
+de Portugal o ficheiro com os saldos apurados por cada Banco, para liquidação no SPGT na
+abertura da sessão.</p>
+
+<p>No apuramento dos saldos de compensação, não são contabilizados pela SIBS os
+cheques apresentados ou devolvidos pelos Bancos com valor igual ou superior ao limite
+definido pelo Banco de Portugal para liquidação individualizada no SPGT - Cheques de
+Grande Montante. Os registos relativos a estes cheques são informados pela SIBS, via
+Compensação de Cheques, aos Participantes e ao Banco de Portugal, que efectua a sua
+liquidação no SPGT, na abertura da sessão seguinte, de forma independente e após a
+liquidação dos saldos dos vários subsistemas de compensação.</p>
+
+<p>O envio dos ficheiros de imagens à SIBS, por parte dos Banco participantes,
+com as imagens relativas aos cheques não truncados apresentados, aos cheques truncados
+devolvidos e imagens relativas a respostas a pedidos de imagens apresentados, deve ser
+efectuado de acordo com o limite do horário de fecho na SIBS definido no Regulamento do
+SICOI expressamente para as imagens. A SIBS envia posteriormente aos Bancos de destino os
+ficheiros de imagens de cheques, nos horários definidos para os pré-fechos e fechos.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.2.2.6">K.2.2.6</a> HORÁRIOS</h3>
+
+<p><br>
+A Compensação de Cheques caracteriza-se pela existência de dois ciclos diários de
+processamento, um para a compensação dos registos de cheques, outro relativo ao
+processamento das imagens dos cheques.</p>
+
+<p>O envio dos ficheiros à SIBS, por parte dos Bancos participantes, da totalidade dos
+registos contabilísticos dos cheques e dos pedidos de imagens, num dado ciclo de
+liquidação, decorre ao longo de cada dia útil, de acordo com o limite do horário de
+fecho de compensação na SIBS definido no Regulamento do SICOI. Até ao horário limite
+definido no Manual de Funcionamento deste subsistema, a SIBS procede ao envio dos
+ficheiros de compensação aos Bancos e ao Banco de Portugal, que lança na abertura do
+SPGT os respectivos saldos para liquidação.</p>
+
+<p>O envio dos ficheiros de imagens à SIBS, por parte dos Banco participantes,
+deve ser efectuado até ao limite do horário de fecho na SIBS definido no Regulamento do
+SICOI expressamente para as imagens. A SIBS envia posteriormente aos Bancos de destino os
+ficheiros de imagens de cheques, nos horários definidos para os pré-fechos e fechos de
+imagens no Regulamento do SICOI e no Manual de Funcionamento.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.2.2.7">K.2.2.7</a> TARIFÁRIO E FACTURAÇÃO</h3>
+
+<p><br>
+O tarifário a aplicar na Compensação de Cheques tem subjacente o princípio geral de
+que as tarifas de processamento, a favor da SIBS, devem ser suportadas pelo Banco Sacado
+(BS), excluindo as que respeitam à inexistência de resposta, dentro do prazo, a pedidos
+de imagens de cheques e ao envio de imagens de cheques truncados devolvidos.</p>
+
+<p>No Tarifário Interbancário, consideram-se valores, também a facturar aos BS, que
+visam, de alguma forma, compensar os Bancos Tomadores (BT) pela carga administrativa
+inerente às respostas a pedidos de imagens. São ainda aplicadas taxas aos BS que emitam
+cheques e documentos afins sem linha óptica protegida, ou que por motivos que lhe sejam
+nitidamente imputáveis não permitam o tratamento automático por parte do BT,
+procurando-se deste modo maximizar o número de documentos normalizados e com linha
+óptica protegida compensados através deste subsistema.</p>
+
+<p>O Tarifário SIBS é facturado mensalmente por esta sociedade, mediante
+apresentação a cada Participante de factura mensal em que é comunicado o total da
+facturação SIBS. Tendo em conta os meios que a SIBS tem que ter permanentemente
+disponíveis, foi considerada a implementação de uma tarifa mensal mínima a imputar a
+todas as Instituições intervenientes nos Cheques, quer como Participantes Directos ou
+Indirectos. Desta forma, o valor mínimo é aplicado quando, para uma dada Instituição,
+os totais mensais resultantes da aplicação dos custos de processamento da SIBS lhe sejam
+inferiores.</p>
+
+<p>O Tarifário Interbancário é liquidado mensalmente via SPGT pelo Banco de
+Portugal. Para tal, no final de cada mês, a SIBS envia a esta Instituição um ficheiro
+com os valores finais do tarifário apurado por Instituição.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="K.2.3">K.2.3</a> DOCUMENTAÇÃO</h2>
+
+<p><br>
+O Regulamento do SICOI estabelece as regras e procedimentos a considerar para o subsistema
+de Compensação de Cheques. O Manual de Funcionamento constitui a documentação de
+referência técnica detalhada deste subsistema.</p>
+
+<p class="dta"><br>
+<a href="k1.htm" target="main">Anterior</a>/<a href="k3.htm" target="main">Seguinte</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

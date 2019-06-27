@@ -1,0 +1,379 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicey.htm#Y';</script>
+
+
+<title>Y.3 SISTEMA DE INFORMAÇÃO DE GESTÃO (DATA WAREHOUSE)</title>
+</head>
+
+<body>
+
+<h1>Y.3 SISTEMA DE INFORMAÇÃO DE GESTÃO (DATA WAREHOUSE)</h1>
+
+<p>&nbsp;</p>
+
+<h2><a name="Y.3.1">Y.3.1</a> OBJECTIVO DO DATA WAREHOUSE</h2>
+
+<p><br>
+Dotar a SIBS de um sistema integrado de suporte à decisão, que proporcione fiabilidade,
+acessibilidade e abrangência da informação de gestão, a disponibilizar internamente e
+externamente aos seus clientes.</p>
+
+<p><br>
+Os principais benefícios a alcançar com a solução são os seguintes: 
+
+<ul>
+  <li>Aumentar a eficiência dos processos de obtenção de informação estatística;</li>
+  <li>Atingir um elevado nível de qualidade e alargar a sua abrangência às áreas de
+    Negócio que ainda não são cobertas;</li>
+  <li>Automatizar e simplificar o acesso interno aos relatórios de informação de gestão.
+    Criar as condições necessárias para o acesso ao Data Warehouse por parte dos clientes
+    da SIBS;</li>
+  <li>Reduzir ao mínimo o número de desenvolvimentos aplicacionais <em>ad-hoc</em> visando a
+    obtenção de informação estatística específica;</li>
+  <li>Construir informação estatística de detalhe relativa à monitorização de níveis de
+    serviço, indicadores de fiabilidade, e de operações não concretizadas;</li>
+  <li>Adoptar uma linguagem universal na organização e no exterior, relativamente ao
+    significado das variáveis estatísticas utilizadas.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><a name="Y.3.2">Y.3.2</a> PROJECTO</h2>
+
+<p><br>
+O Data Warehouse é um projecto que envolve vários departamentos da SIBS, implicando um
+dispêndio de recursos não desprezável. No desenvolvimento deste tipo de infra-estrutura
+foi adoptada uma abordagem iterativa. As experiências de tipo &quot;<em>big-bang</em>&quot;
+são tradicionalmente marcadas pelo fracasso, quer porque se conclui que os requisitos
+iniciais se encontram ultrapassados, quer porque o número de factores de risco cresce
+proporcionalmente ao alargamento da abrangência da primeira iteração.</p>
+
+<p>A primeira fase do projecto Data Warehouse da SIBS incidiu fundamentalmente na área de
+<em>Data Staging</em>. Esta é considerada uma das mais críticas, dado que é nesta
+altura que se definem quais os dados a residir no DW, em que se definem as respectivas
+fontes, e em que se faz a movimentação dos dados dos sistemas operacionais para a Base
+de Dados do DW. Tipicamente, e de acordo com a experiência acumulada ao longo dos anos
+por diversos implementadores, o sucesso da implementação de um sistema deste tipo está
+muito dependente do trabalho realizado na fase de <em>Staging</em>.</p>
+
+<p>Após a consolidação da 1ª fase do projecto dar-se-á início à 2ª, cujos
+objectivos são o alargar do âmbito da informação a transportar para o repositório e a
+adopção de um <em>software</em> de exploração e tratamento dos dados. </p>
+
+<p>Para a exploração e análise dos dados residentes no DW será seleccionada uma
+ferramenta do tipo OLAP, aplicações desenhadas para utilizadores e que permitem a
+exploração de uma Base de Dados e a produção de relatórios de diversos tipos num
+curto espaço de tempo.</p>
+
+<p>Pretende-se que o futuro acesso à informação pelos clientes exteriores seja
+efectuado em ambiente <em>browser</em>, via <em>Extranet</em> (em moldes semelhantes aos
+actualmente utilizados no Terminal de Serviços SIBS), solução tipicamente associada ao
+melhor <em>trade-off</em> custo/segurança.</p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="Y.3.3">Y.3.3</a> INFRA-ESTRUTURA</h2>
+
+<p><br>
+O repositório de informação estatística (<em>Operational Data Storage</em>) vai ser
+disponibilizado numa infra-estrutura tecnológica de bases de dados relacionais para
+Mainframe da IBM (DB2), e corresponderá a um conjunto de tabelas que são actualizadas
+todos os meses e que retratam a realidade do mês imediatamente anterior. Para uma fase
+posterior está equacionada a possibilidade de actualizar o repositório, recorrendo a
+outra metodologia que permita incorporar as diversas ocorrências verificadas no Sistema
+MB diariamente.</p>
+
+<p>As tabelas do sistema são alvo de uma agregação, de acordo com os mapas definidos no
+âmbito do Projecto OSIE, por forma a facilitar o seu acesso e posterior tratamento
+estatístico mensal. Apenas em casos pontuais se prevê a necessidade de fazer pesquisas
+directas às tabelas do DB2 (pedidos <em>ad-hoc</em> não contemplados).</p>
+
+<p>O <em>software</em> de <em>queries ad-hoc</em> a implementar permitirá, de uma forma
+simples e intuitiva, aceder aos mapas agregados, bem como directamente às tabelas de DB2,
+construindo os relatórios pretendidos num curto espaço de tempo.</p>
+
+<p>A análise multidimensional é uma das vantagens proporcionadas por este tipo de
+ferramentas. Esta consiste em permitir a visualização de determinados agregados de
+informação (cubos) através de diferentes ângulos, e com diferentes níveis de
+agregação ou detalhe. </p>
+
+<p>Características comuns a este tipo de ferramentas:</p>
+
+<p><br>
+<strong>Geração de <em>Queries</em></strong><br>
+As ferramentas OLAP permitem a geração de <em>queries</em> de uma forma simples e
+directa, não exigindo ao utilizador particulares conhecimentos de informática para obter
+as informações pretendidas.</p>
+
+<p><br>
+<strong>Consultas <em>ad-hoc<br>
+</em></strong>Consultas realizadas pelo utilizador de forma casuística que implicam o
+tratamento dos dados segundo parâmetros nunca antes utilizados. Geralmente são
+realizadas de forma iterativa até se obter o resultado que se procura. </p>
+
+<p><br>
+<em><strong>Slice-and-Dice<br>
+</strong></em>Trata-se de uma das principais características deste tipo de ferramentas.
+Através dela pode-se analisar a mesma informação mas de diferentes prismas ou ângulos,
+que possivelmente não eram perceptíveis antes de existir um DW e uma ferramenta de
+exploração.</p>
+
+<p><br>
+<strong><em>Drill Down/Up</em></strong><br>
+Consiste na possibilidade de explorar a informação em diferentes níveis de detalhe,
+podendo-se em qualquer momento incrementar ou decrementar o detalhe dos dados envolvidos.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="Y.3.4">Y.3.4</a> MODELO DE DADOS</h2>
+
+<p><br>
+Na origem do projecto Data Warehouse SIBS esteve o Projecto de Optimização de Sistemas
+de Informação Estatística, ao longo do qual se definiram os requisitos de informação
+(internos e dos clientes da SIBS) a considerar como prioritários. </p>
+
+<p>Estes requisitos foram tidos em consideração na fase de elaboração do modelo de
+dados que suporta o sistema relacional, sendo que o modelo foi desenhado de modo a
+garantir não só esta informação agregada, mas também a satisfação de necessidades
+não inventariadas neste momento (<em>ad-hoc</em>). Por outro lado, o modelo de dados não
+é um elemento fechado; sempre que novas necessidades o justifiquem serão incorporados no
+repositórios os elementos de informação que sejam considerados necessários.</p>
+
+<p>Os trabalhos efectuados levaram à estruturação das tabelas em quatro blocos
+distintos da informação estatística de base, que se considera como potencialmente mais
+relevante, tanto para os Participantes no Sistema Multibanco, como para uso interno.</p>
+
+<p><br>
+O primeiro bloco de dados agrega informação estatística na perspectiva de cartões: 
+
+<ul>
+  <li>Cartões de Débito/Crédito e sua Actividade (genérica)</li>
+  <li>Cartões Porta Moedas Multibanco e sua Actividade (genérica)</li>
+  <li>Cartões de Depósito Porta Moedas Multibanco e sua Actividade (genérica)</li>
+  <li>Movimentação dos Cartões (detalhe por tipo de operação)</li>
+  <li>Distribuição da Movimentação de Cartões por Distrito</li>
+  <li>TeleMultibanco - Atribuições por Banco e Operador Móvel </li>
+  <li>Movimentação de Cartões no Serviço Via Verde</li>
+  <li>Distribuição da Movimentação de Cartões por Escalão de Valor</li>
+  <li>Carregamentos Porta Moedas Multibanco por Escalão de Valor</li>
+  <li>Pagamentos Porta Moedas Multibanco Depositados por Escalão de Valor</li>
+</ul>
+
+<p><br>
+No segundo bloco, apresentam-se elementos na vertente de Terminal: 
+
+<ul>
+  <li>Rede de Caixas Automáticos (listagem de terminais)</li>
+  <li>Rede de Terminais de Pagamento Automático (listagem de terminais)</li>
+  <li>Movimentação da Rede de CAs</li>
+  <li>Movimentação na Rede de TPAs e MBNet</li>
+  <li>Movimentação por Entidade de Pagamento de Serviços/Compras e Serviços Especiais</li>
+</ul>
+
+<p><br>
+No terceiro bloco, apresentam-se elementos relativos aos totais por dia do mês e por hora
+do dia: 
+
+<ul>
+  <li>Movimentos por dia do mês</li>
+  <li>Movimentos por hora do dia</li>
+</ul>
+
+<p><br>
+O quarto bloco engloba informação que não se enquadra em nenhum dos blocos anteriores: 
+
+<ul>
+  <li>Movimentos realizados no subsistema E - Baixo Valor, por Concessionário</li>
+  <li>Movimentos realizados em ambiente EMV</li>
+</ul>
+
+<p><br>
+Para cada bloco de informação, foram definidos níveis de agregação (ópticas de
+análise), bem como os indicadores estatísticos a disponibilizar. Por exemplo, para a
+tabela de cartões apresenta-se, na perspectiva de Emissor, o número de cartões e
+operações efectuadas (&quot;Indicadores de Base&quot;), por cada combinação de BIN,
+Extensão de BIN e Família (&quot;Níveis de Agregação&quot;).</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="Y.3.5">Y.3.5</a> CONCEITOS GENÉRICOS DE UM SISTEMA DATA WAREHOUSE</h2>
+
+<p><br>
+Um DW é um sistema que visa conservar os dados existentes acerca da actividade da
+organização de uma forma integrada e histórica, enquanto que os sistemas operacionais
+se centram no processamento de informação corrente e pontual. Este tipo de solução é
+independente dos sistemas operacionais existentes, ou dito de outra forma, existirá em
+paralelo com estes.</p>
+
+<p>Os DW devem ser encarados como grandes arquivos de dados, organizados por assunto, com
+um grande nível de detalhe, não voláteis, históricos e integrados, e que reflectem a
+actividade de um dado departamento ou de toda a organização. Os DW e os Data Marts são
+assim a fonte de exploração de dados dos sistemas de apoio à decisão ou das
+ferramentas do tipo OLAP, assegurando a consistência, integração, e fiabilidade dos
+dados.</p>
+
+<p><u><br>
+</u><strong>Os dados são organizados por assunto</strong><br>
+Os assuntos representam uma colecção de todos os dados na organização que pertençam a
+um tópico que é considerado importante para as pessoas que tomam as decisões.</p>
+
+<p><br>
+<strong>Os dados são integrados</strong><u><br>
+</u>Os dados devem ser transformados em formatos comuns de medida, referência, e
+armazenamento para que se tornem úteis (ex: convenções das designações, atributos
+físicos, etc). </p>
+
+<p><br>
+<strong>O Data Warehouse não é volátil</strong><br>
+A não volatilidade é um dos benefícios de guardar registos variáveis no tempo. Os
+dados contidos no Data Warehouse nunca são alterados, podendo apenas ser consultados.
+Isto significa que uma <em>query</em> particular feita em diferentes datas mas
+reportando-se à mesma data do evento devolve o mesmo resultado. </p>
+
+<p><br>
+<strong>A informação é orientada pelo tempo</strong><br>
+A informação deve estar dependente do tempo. Ou seja, deve conter um &quot;selo
+temporal&quot; para que haja uma ligação entre a informação e a data em que ela entrou
+no Data Warehouse. Os sistemas de produção raramente conservam registos variáveis no
+tempo, estes são alterados por transacções. Com um Data Warehouse é possível analisar
+alterações nos dados ao longo do tempo, com o propósito de tomar decisões e calcular o
+seu impacto. Esta acção de guardar registos variáveis no tempo é a base de técnicas
+de simulação e previsão usadas pelas ferramentas de análise e exploração.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="Y.3.5.1">Y.3.5.1</a> PRINCIPAIS DIFERENÇAS ENTRE BASES DE DADOS OPERACIONAIS
+E UM DATA WAREHOUSE</h3>
+
+<p><br>
+Todas as organizações dispõem de aplicações específicas para as operações do
+dia-a-dia, tendo estas as suas próprias bases de dados, vulgarmente denominadas de
+&quot;Bases de Dados Operacionais&quot;. Estas aplicações estão completamente
+optimizadas para o trabalho especifico que têm que realizar diariamente, não tendo assim
+a função de conservar informação histórica desnecessária para tal. </p>
+
+<p>Periodicamente (horas, dias ou semanas), parte de informação contida nas bases de
+dados operacionais é transferida para um Data Warehouse onde irá permanecer inalterada.
+Nem todos os dados são suficientemente importantes para serem guardados, pelo que para o
+Data Warehouse só é transferida a informação considerada relevante para futuras
+análises. A todos os dados é acrescentado um &quot;selo temporal&quot; de modo a
+diferenciá-los e contextualizá-los.</p>
+
+<p style="page-break-before: always"><br>
+</p>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="3" width="584">
+  <tr>
+    <td class="esq" width="142"><strong>Características</strong></td>
+    <th class="esq" width="217">Bases de dados Operacionais</th>
+    <th class="esq" width="201">Data Warehouse</th>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Objectivo</th>
+    <td class="esq" width="217">Operações diárias da actividade </td>
+    <td class="esq" width="201">Analisar o negócio</td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Uso</th>
+    <td class="esq" width="217">Operacional</td>
+    <td class="esq" width="201">Analítico/Informativo</td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Tipo de processamento</th>
+    <td class="esq" width="217">OLTP - Online Transaction Processing</td>
+    <td class="esq" width="201">OLAP - Online Analytical Processing</td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Unidade de trabalho</th>
+    <td class="esq" width="217">Inclusão, alteração, exclusão</td>
+    <td class="esq" width="201">Carga e consulta</td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Número de utilizadores</th>
+    <td class="esq" width="217">Milhares</td>
+    <td class="esq" width="201">Centenas</td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Tipo de utilizadores</th>
+    <td class="esq" width="217">Operadores</td>
+    <td class="esq" width="201">Gestores</td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Interacção do utilizador</th>
+    <td class="esq" width="217">Pré-definida</td>
+    <td class="esq" width="201">Pré-definida e <em>ad-hoc</em></td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Condições dos dados</th>
+    <td class="esq" width="217">Dados operacionais</td>
+    <td class="esq" width="201">Dados Analíticos</td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Volume</th>
+    <td class="esq" width="217"><em>Megabytes</em> - <em>Gigabytes</em></td>
+    <td class="esq" width="201"><em>Gigabytes</em> - <em>Terabytes</em></td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Histórico</th>
+    <td class="esq" width="217">60 a 90 dias</td>
+    <td class="esq" width="201">5 a 10 anos</td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Detalhe</th>
+    <td class="esq" width="217">Detalhados</td>
+    <td class="esq" width="201">Detalhados e resumidos</td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Redundância</th>
+    <td class="esq" width="217">Não ocorre</td>
+    <td class="esq" width="201">Ocorre</td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Estrutura</th>
+    <td class="esq" width="217">Estática</td>
+    <td class="esq" width="201">Variável</td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Manutenção desejada</th>
+    <td class="esq" width="217">Mínima</td>
+    <td class="esq" width="201">Constante</td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Acesso a registos</th>
+    <td class="esq" width="217">Dezenas</td>
+    <td class="esq" width="201">Milhares</td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Actualização</th>
+    <td class="esq" width="217">Contínua (tempo real) </td>
+    <td class="esq" width="201">Periódica (em <em>batch</em>) </td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Integridade</th>
+    <td class="esq" width="217">Transação</td>
+    <td class="esq" width="201">A cada actualização </td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Número de índices</th>
+    <td class="esq" width="217">Poucos/simples </td>
+    <td class="esq" width="201">Muitos/complexos </td>
+  </tr>
+  <tr>
+    <th class="esq" width="142">Finalidade dos índices </th>
+    <td class="esq" width="217">Localizar um registo </td>
+    <td class="esq" width="201">Aperfeiçoar consultas</td>
+  </tr>
+</table>
+</center></div>
+
+<p class="dta"><br>
+<a href="y2.htm">Anterior</a></p>
+</body>
+</html>

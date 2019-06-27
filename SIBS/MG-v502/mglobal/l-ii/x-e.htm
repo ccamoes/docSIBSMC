@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>X-E - DIREITOS DE UTILIZAÇÃO DOS CARTÕES</title>
+<script>top.captulos.location='indicex.htm#X';</script>
+</head>
+
+<body>
+
+<h2>E - UTILIZAÇÃO DE CARTÕES</h2>
+
+<p>&nbsp;</p>
+
+<p>As rubricas deste grupo são aplicadas aos cartões emitidos pelo Banco, existentes na
+base de dados da SIBS no final de cada mês, e que não tenham sido anulados no mês
+anterior, nem tenham expirado. No momento da emissão da factura é feita a quebra por
+escalões, de acordo com o número de cartões emitidos pelo Banco. Não se incluem
+cartões PMB sem a vertente de débito ou crédito. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="E1">E1</a> - DIREITOS DE UTILIZAÇÃO - CLIENTES BANCÁRIOS</h3>
+
+<p><br>
+<strong>E11 - De 1 a 50.000 cartões <br>
+E12 - No excedente, de 50.001 a 150.000<br>
+E13 - No excedente, de 150.001 a 375.000 <br>
+E14 - No excedente, de 375.001 a 750.000 <br>
+E15 - No excedente, de 750.001 a 1.500.000 <br>
+E16 - No excedente de 1.500.000 </strong></p>
+
+<p><br>
+Remunera a gestão do ficheiro positivo de cartões emitidos pelo Banco, possibilitando
+que a SIBS efectue uma validação prévia das operações, evitando assim o envio ao
+Banco, e logo o respectivo processamento, de tentativas de utilização com cartões
+expirados, em LN, anulados, etc. A existência de uma base de dados de cartões existentes
+é um factor determinante para a segurança da Rede MB.</p>
+
+<p><br>
+<strong>Forma de Controlo</strong></p>
+
+<p>Recorrendo ao Ficheiro de Cartões Existentes (<a href="../l-iii/ecst.htm">MECST</a>) o
+Banco pode validar cada cartão por si emitido existente no Sistema MB, e que foi
+contabilizado para esta rubrica de facturação. O registo de <em>trailer</em> do ficheiro
+contém o número de cartões contabilizados para esta rubrica (campo - <a
+href="../../Campos/campos4.htm#386" target="explicac">386</a> TOTALCAR). </p>
+
+<p><strong><br>
+Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>A rubrica é apresentada num tipo de registo 4 com uma ocorrência por cada escalão de
+cartões e apresenta os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" BORDER="1" CELLSPACING="0" CELLPADDING="4"
+WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica E1</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">…
+2E  UTILIZACAO DE CARTOES
+3E1 DIR. UTIL.- CLI. BANC.
+4E1120020228                          DE 1 A 50 000         000000000004500000000500000000000225000D
+4E1220020228                          EXC. 50 001 A 150 000 000000000003500000001000000000000350000D
+4E1320020228                          EXC. 150 001 A 375 000000000000003000000001965060000000589518D
+4E1320020228                          EXC. 150 001 A 375 000000000000003000000000284940000000085482D
+4E1420020228                          EXC. 375 001 A 750 000000000000002500000003750000000000937500D
+4E1520020228                          EXC. 750 001  1500 000000000000002000000005076750000001015350D
+4E1620020228                          EXCEDENTE 1500 000    000000000001500000024780440000003717066D
+6E1 0000007404566D
+…</pre>
+    </td>
+  </tr>
+</table>
+
+<p>Ver <a href="#Nota">nota</a>.</p>
+
+<p>&nbsp;</p>
+
+<h3 class="a" >E9 - MOVIMENTOS DE ALTERAÇÃO DE SITUAÇÃO DE CARTÃO</h3>
+
+<p><br>
+<strong><a name="E91">E91</a> - Alteração de situação de cartão <br>
+<a name="E92">E92</a> - Lista Negra da Rede <br>
+<a name="E93">E93</a> - Lista Negra Urgente <br>
+<a name="E94">E94</a> - Permanência em Lista Negra </strong></p>
+
+<p><br>
+A rubrica <strong>E9</strong> aplica-se aos Emissores e destina-se a remunerar os
+custos decorrentes da gestão da situação dos cartões. </p>
+
+<p><br>
+Na rubrica<strong> E91 'Alteração Situação de Cartão'</strong> facturam-se os
+movimentos de: 
+
+<ul>
+  <li>inclusão de cartões em lista negra (situação = <a href="a9.htm#06">06</a>)</li>
+  <li>inclusão de cartões em lista cinzenta (situação = <a href="a9.htm#07">07</a>)</li>
+  <li>abate de cartões de lista negra, ou de lista cinzenta (para situação <a
+    href="a9.htm#02">02</a>, ou <a href="a9.htm#09">09</a>)</li>
+  <li>cartões a anular da base de dados (situação = <a href="a9.htm#09">09</a>);</li>
+</ul>
+
+<p>que tenham sido solicitados pelo Banco e aceites via processamento dos ficheiros
+alteração da situação de cartão (<a href="../l-iii/easc.htm">MEASC</a>), ou via
+Terminal de Serviços SIBS/<i>Host-to-Host</i>, sendo estas ocorrências informadas via ficheiro Capturas e
+Lista Negra (<a href="../l-iii/cln.htm">MCLN5</a>). </p>
+
+<p class="esq">Nota: Os casos de abates a Lista Negra, quando a
+situação do cartão anteriormente era de capturado e em Lista Negra (<a href="a9.htm#0B">0B</a>),
+não são facturados pela SIBS. </p>
+
+<p><br>
+Na rubrica <strong>E92 'Lista Negra Rede'</strong> consideram-se os cartões que
+correspondem a inserções automáticas de cartões em Lista Negra resultantes de
+situações ocorridas na rede MB consideradas fraudulentas: 
+
+<ul>
+  <li>cartões considerados duplicados;</li>
+  <li>pista 3 inconsistente;</li>
+  <li>cartões já anulados, inexistentes ou capturados, a transaccionar na rede.</li>
+</ul>
+
+<p><br>
+Na rubrica <strong>E93 'Lista Negra Urgente'</strong> consideram-se os cartões que foram
+incluídos em Lista Negra a pedido do próprio cliente, ou por iniciativa do Banco, ou do
+Representante de cartões (por ex.: a Unicre, no caso dos cartões Visa, MasterCard) e que
+implicaram actuações manuais por parte da SIBS. </p>
+
+<p><br>
+Na rubrica <strong>E94 'Permanência em Lista Negra'</strong>&nbsp; facturam-se os
+cartões que se encontram/permaneçam em Lista Negra à data do processamento da
+facturação. </p>
+
+<p style="page-break-before: always"><br>
+<strong>Forma de Controlo</strong></p>
+
+<em><strong>E91</strong> - Alteração de situação de cartão</em><br>
+<span class="a">Através do <a href="../l-iii/cln.htm#= 2">registo tipo 2</a> do ficheiro CLN5. Se a alteração for processada via
+Terminal de Serviços ou <i>Host-to-Host</i>, é informado um registo por cada cartão cuja situação é alterada. Se a alteração
+for processada via ficheiro, é informado um registo por cada tipo de alteração que se verifique com a correspondente indicação do número de cartões envolvidos.&nbsp; </span>
+
+<p><em><strong>E92, E93</strong> - Lista Negra da Rede ou Lista Negra Urgente <br>
+</em>Considerar o ficheiro Capturas e Lista Negra (<a href="../l-iii/cln.htm#= 2">tipo
+registo 2</a>) que informa no campo <a target="explicac"
+href="../../Campos/camp2300.htm#2300">TARSIBS-E</a> qual a tarifa a aplicar conforme o
+motivo de inclusão. </p>
+
+<p><em><strong>E94</strong> - Permanência em Lista Negra. <br>
+</em>O ficheiro de Cartões Existentes (<a href="../l-iii/ecst.htm">MECST</a>) produzido
+mensalmente pela SIBS, apresenta no <em>trailer</em> do ficheiro os cartões presentes em
+LN (TOTCARLN - <a href="../../Campos/campos4.htm#387" target="explicac">387</a>). </p>
+
+<p><br>
+<strong>Apresentação no <a href="../l-iii/efac.htm">MEFAC</a></strong></p>
+
+<p>Estas rubricas são apresentadas no registo tipo 4 com uma ocorrência por cada dia em
+que a SIBS gerou um ficheiro de Capturas e Lista Negra (<a href="../l-iii/cln.htm">MCLN5</a>),
+ou recebeu e processou um ficheiro alteração situação de cartão (<a
+href="../l-iii/easc.htm">MEASC</a>). </p>
+
+<p>O registo tipo 4 apresenta nas rubricas <strong>E91/92/93</strong> os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p>Inclui-se também o tipo de registo 5, apenas para as rubricas <strong>E91/E92/E93</strong>,
+de modo a especificar quantos cartões foram incluídos em LN ou abatidos da LN, em cada
+ficheiro <a href="../l-iii/cln.htm">MCLN5</a>, ou <a href="../l-iii/easc.htm">MEASC</a>,
+que contém: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos2.htm#101" target="explicac">101</a>)+(<a target="explicac"
+    href="../../Campos/campos2.htm#102">102</a>) aplicação e nome do ficheiro (1)+(4)</li>
+  <li>(<a href="../../Campos/campos1.htm#061" target="explicac">061</a>) identificação e
+    sequência do ficheiro (11)</li>
+  <li>(<a href="../../Campos/campos3.htm#296" target="explicac">296</a>) n.º de cartões
+    inseridos (6)</li>
+  <li>(<a target="explicac" href="../../Campos/campos3.htm#297">297</a>) n.º de cartões
+    abatidos (6) *</li>
+  <li>(<a target="explicac" href="../../Campos/campos3.htm#298">298</a>) n.º de cartões
+    anulados (6) *</li>
+</ul>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Apenas para a
+rubrica <strong>E91</strong>.</p>
+
+<p>O registo tipo 4 apresenta para a rubrica <strong>E94</strong> os seguintes dados: 
+
+<ul>
+  <li>(<a href="../../Campos/camp2300.htm#2300" target="explicac">2300</a>) rubrica do
+    tarifário (6)</li>
+  <li>(<a href="../../Campos/campos5.htm#408" target="explicac">408</a>) data de facturação
+    (8)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#405">405</a>) descritivo da rubrica
+    (22)</li>
+  <li>(<a target="explicac" href="../../Campos/camp2100.htm#2113">2113</a>) custo unitário
+    (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#418">418</a>) quantidade (13)</li>
+  <li>(<a target="explicac" href="../../Campos/campos5.htm#419">419</a>)+(<a
+    href="../../Campos/campos4.htm#318" target="explicac">318</a>) valor e sinal &quot;D&quot;
+    (13)+(1)</li>
+</ul>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" BORDER="1" CELLSPACING="0" CELLPADDING="4"
+WIDTH="555">
+  <tr>
+    <td class="fundoesq"><em>MEFAC &#150; Exemplo da rubrica E9</em></td>
+  </tr>
+  <tr>
+    <td class="esq"><pre class="tahoma">…
+…3E9 MOVIMENTOS L.N./ABATES
+4E9120020228                         ALT.SITUACAO CARTAO   000000000016000000000014550000000023280D
+5E91MEASC20020201001000000000000000001
+…
+5E91MEASC20020227001000172000000000771
+4E9220020228                         LISTA NEGRA REDE      000000000016000000000023390000000037424D
+5E92MCCLN20020201001000001000000000000
+…
+5E92MCCLN20020227001000963000000000000
+6E9 0000001155392D
+4E9320020228                         LISTA NEGRA URGENTE   000000000550000000000000290000000015950D
+5E93MCCLN20020201001000001000000000000
+…
+5E93MCCLN20020227001000037000000000000
+6E9 0000000253550D
+4E9420020228                         PERMAN. EM LISTA NEGRA000000000016000000000573830000000918128D
+6E9 0000006761664D
+…</pre>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td class="just"><em><a name="Nota">Nota</a>:&nbsp;<br>
+    Os campos relativos às tarifas foram expandidos por forma a permitir uma revisão da
+    estrutura do tarifário. Assim, o Grupo, Subgrupo e Sub-subgrupo, passam de um byte para
+    dois, totalizando o código de rubrica 6 bytes. Até à revisão da estrutura do
+    tarifário, e para acomodar o actual, as rubricas passam a conter um <span class="a"> espaço depois do Grupo, Subgrupo e Sub-subgrupo (ex.: &#147;G21&#148; -&gt; &#147;G 2 1 &#148;). </span> <br>
+    Para efeitos de apresentação e por uma questão prática mantém-se o layout anterior nas
+    tabelas auxiliares. </em></td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="x2.htm">Anterior</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

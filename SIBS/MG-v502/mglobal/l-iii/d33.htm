@@ -1,0 +1,4568 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indiced.htm#D';</script>
+
+<title>D.3.3 BLOCOS DE DADOS</title>
+
+</head>
+
+<body>
+
+<h2>D.3.3 BLOCOS DE DADOS</h2>
+
+<p><br>
+Com o objectivo de racionalizar a respectiva implementação, no Modelo Global MB as
+mensagens <em>real-time</em> encontram-se estruturadas nos grupos de dados indicados em
+seguida. A presença dos blocos em cada uma das mensagens encontra-se descrita no ponto <a
+href="d34.htm" target="main">D.3.4</a>.</p>
+
+<p>As mensagens podem ainda incluir um grupo de dados variáveis, descrito caso a caso.</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+  <tr>
+    <th colspan="4" class="fundo">&nbsp;</th>
+    <th colspan="2" class="fundo">ORIGINAL</th>
+    <th colspan="2" class="fundo">ANULAÇÃO </th>
+    <th colspan="2" class="fundo">PENDENTE </th>
+  </tr>
+  <tr>
+    <th class="fundo">Nº do <br>
+    Campo </th>
+    <th class="fundo">Descritivo </th>
+    <th width="50" class="fundo">Comp.</th>
+    <th class="fundo">Rep.</th>
+    <th class="fundo">Ped. </th>
+    <th class="fundo">Resp.</th>
+    <th class="fundo">Ped. </th>
+    <th class="fundo">Resp.</th>
+    <th class="fundo">Ped. </th>
+    <th class="fundo">Resp.</th>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u><em>HEADER</em> PEDIDO / RESPOSTA</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#001">001</a></td>
+    <td class="esq">CODMSG</td>
+    <td class="dta" width="45">4</td>
+    <td>A</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#002">002</a></td>
+    <td class="esq">VERMSG</td>
+    <td class="dta" width="45">2</td>
+    <td>N</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1700.htm#1709">1709</a></td>
+    <td class="esq">APLIC_N</td>
+    <td class="dta" width="45">2</td>
+    <td>A</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#320">320</a></td>
+    <td class="esq">IDLOG</td>
+    <td class="dta" width="45">4</td>
+    <td>N</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos2.htm#117">117</a></td>
+    <td class="esq">NRLOG</td>
+    <td class="dta" width="45">8</td>
+    <td>N</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#004">004</a></td>
+    <td class="esq">DHMSG</td>
+    <td class="dta" width="45">14</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos7.htm#699">699</a></td>
+    <td class="esq">CODTRN-E</td>
+    <td class="dta" width="45">3</td>
+    <td>A</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td class="esq">CODMOEDA </td>
+    <td class="dta" width="45">3</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL - PEDIDO</td>
+    <td class="dta" width="45">40</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL - RESPOSTA</td>
+    <td class="dta" width="45">20</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS TERMINAL GLOBAL</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#003">003</a></td>
+    <td class="esq">TIPOTERM</td>
+    <td class="dta" width="45">1</td>
+    <td>A</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos3.htm#241">241</a></td>
+    <td class="esq">BANAPOIO</td>
+    <td class="dta" width="45">4</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#006">006</a></td>
+    <td class="esq">IDTERMINAL </td>
+    <td class="dta" width="45">10</td>
+    <td>A</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2354">2354</a></td>
+    <td class="esq">CAP-TERM</td>
+    <td class="dta" width="45">1</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos2.htm#105">105</a></td>
+    <td class="esq">DTHORA</td>
+    <td class="dta" width="45">14</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#007">007</a></td>
+    <td class="esq">LOCTERM</td>
+    <td class="dta" width="45">40</td>
+    <td>A</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos2.htm#157">157</a></td>
+    <td class="esq">MCC</td>
+    <td class="dta" width="45">4</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos3.htm#226">226</a></td>
+    <td class="esq">CODPAIS</td>
+    <td class="dta" width="45">3</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">77</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS TERMINAL REDE MB</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#068">068</a></td>
+    <td class="esq">IDPROPR</td>
+    <td class="dta" width="45">7</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos2.htm#118">118</a></td>
+    <td class="esq">IDPERLOCAL</td>
+    <td class="dta" width="45">3</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#323">323</a></td>
+    <td class="esq">NUMREGLOC</td>
+    <td class="dta" width="45">5</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos2.htm#158">158</a></td>
+    <td class="esq">DISTCONC</td>
+    <td class="dta" width="45">4</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">19</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS DO CARTÃO</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2324">2324</a></td>
+    <td class="esq">COMP-PAN</td>
+    <td class="dta" width="45">2</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2325">2325</a></td>
+    <td class="esq">PAN</td>
+    <td class="dta" width="45">19</td>
+    <td>A</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td class="esq">DATEXP</td>
+    <td class="dta" width="45">4</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">25</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS ADICIONAIS DO CARTÃO</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos2.htm#119">119</a></td>
+    <td class="esq">SEQMOV</td>
+    <td class="dta" width="45">2</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos2.htm#129">129</a></td>
+    <td class="esq">SEQPAN</td>
+    <td class="dta" width="45">1</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1700.htm#1716">1716</a></td>
+    <td class="esq">EMV-PADRAO</td>
+    <td class="dta" width="45">3</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#005">005</a></td>
+    <td class="esq">TIPOAUT</td>
+    <td class="dta" width="45">2</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">8</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS DA CONTA</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td class="esq">CONTA</td>
+    <td class="dta" width="45">15</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">15</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS DO NIB DO CLIENTE</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos3.htm#268">268</a></td>
+    <td class="esq">NIB</td>
+    <td class="dta" width="45">21</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">21</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS DO COMERCIANTE</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq">IDCOMEMP </td>
+    <td class="dta" width="45">7</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#328">328</a></td>
+    <td class="esq">IDEST </td>
+    <td class="dta" width="45">4</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">11</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS DO <em>ACQUIRER</em></u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1000.htm#1007">1007</a></td>
+    <td class="esq">ID-COM-REP</td>
+    <td class="dta" width="45">7</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos5.htm#434">434</a></td>
+    <td class="esq">PRODFIN</td>
+    <td class="dta" width="45">5</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">12</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>MONTANTES DA OPERAÇÃO</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2326">2326</a></td>
+    <td class="esq">MNT-E</td>
+    <td class="dta" width="45">11</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td>A</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2327">2327</a></td>
+    <td class="esq">MNT-ADI</td>
+    <td class="dta" width="45">9</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td>A</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">22</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS OPERAÇÃO COMERCIANTE</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2329">2329</a></td>
+    <td class="esq">TOTOPER-E</td>
+    <td class="dta" width="45">7</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">7</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >&nbsp;</td>
+    <td class="esq"><u>DADOS LISTA NEGRA PAPEL</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#806">806</a></td>
+    <td class="esq">TIPOCART</td>
+    <td class="dta" width="45">2</td>
+    <td >A</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#821">821</a></td>
+    <td class="esq">LC-NAC</td>
+    <td class="dta" width="45">1</td>
+    <td >N</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#822">822</a></td>
+    <td class="esq">DT-LC-NAC</td>
+    <td class="dta" width="45">8</td>
+    <td >N</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/campos3.htm#279">279</a></td>
+    <td class="esq">VISCA</td>
+    <td class="dta" width="45">2</td>
+    <td >A</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td >&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">13</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS DA AUTORIZAÇÃO</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp800.htm#806">806</a></td>
+    <td class="esq">TIPOCART</td>
+    <td class="dta" width="45">2</td>
+    <td>A</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp800.htm#809">809</a></td>
+    <td class="esq">ENTAUT</td>
+    <td class="dta" width="45">4</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp800.htm#816">816</a></td>
+    <td class="esq">CODREC</td>
+    <td class="dta" width="45">2</td>
+    <td>N</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1900.htm#1971">1971</a></td>
+    <td class="esq">NUM-AUT</td>
+    <td class="dta" width="45">6</td>
+    <td>A</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">14</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >&nbsp;</td>
+    <td class="esq"><u>DADOS ADICIONAIS OPERAÇÃO EMV</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#898">898</a></td>
+    <td class="esq">NRSEQPAN</td>
+    <td class="dta" width="45">2</td>
+    <td >N</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#887">887</a></td>
+    <td class="esq">DT-INI-APLIC</td>
+    <td class="dta" width="45">6</td>
+    <td >N</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#888">888</a></td>
+    <td class="esq">CAR-TERM</td>
+    <td class="dta" width="45">2</td>
+    <td >N</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#889">889</a></td>
+    <td class="esq">CAP-TERM-ACQ</td>
+    <td class="dta" width="45">3</td>
+    <td >B</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#890">890</a></td>
+    <td class="esq">APP-COUNTER</td>
+    <td class="dta" width="45">2</td>
+    <td >B</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#891">891</a></td>
+    <td class="esq">APP-PROFILE</td>
+    <td class="dta" width="45">2</td>
+    <td >B</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#892">892</a></td>
+    <td class="esq">UNP-NR</td>
+    <td class="dta" width="45">4</td>
+    <td >B</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#893">893</a></td>
+    <td class="esq">TIPO-CRIP</td>
+    <td class="dta" width="45">2</td>
+    <td >N</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#894">894</a></td>
+    <td class="esq">CRIPTOGRAMA</td>
+    <td class="dta" width="45">8</td>
+    <td >B</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#895">895</a></td>
+    <td class="esq">ISS-AP-DATA</td>
+    <td class="dta" width="45">33</td>
+    <td >B</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#896">896</a></td>
+    <td class="esq">TVR</td>
+    <td class="dta" width="45">5</td>
+    <td >B</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp1400.htm#1400">1400</a></td>
+    <td class="esq">CRIPT-INF</td>
+    <td class="dta" width="45">1</td>
+    <td >B</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp1400.htm#1401">1401</a></td>
+    <td class="esq">CVM-RESULTS</td>
+    <td class="dta" width="45">3</td>
+    <td >B</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp1400.htm#1402">1402</a></td>
+    <td class="esq">DF-NAME</td>
+    <td class="dta" width="45">17</td>
+    <td >B</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td >&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">90</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td >&nbsp;</td>
+    <td class="esq"><u>DADOS SEGURANÇA</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#811">811</a></td>
+    <td class="esq">EXP-P2</td>
+    <td class="dta" width="45">1</td>
+    <td >N</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#812">812</a></td>
+    <td class="esq">COMP-P2</td>
+    <td class="dta" width="45">2</td>
+    <td >N</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#832">832</a></td>
+    <td class="esq">PISTA2</td>
+    <td class="dta" width="45">37</td>
+    <td >A</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#807">807</a></td>
+    <td class="esq">PINBLOCK</td>
+    <td class="dta" width="45">8</td>
+    <td >H</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td >&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">48</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS DA OPERAÇÃO ORIGINAL</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#014">014</a></td>
+    <td class="esq">NRIDRESP-O </td>
+    <td class="dta" width="45">14</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1700.htm#1747">1747</a></td>
+    <td class="esq">APLIC_N-O </td>
+    <td class="dta" width="45">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#010">010</a></td>
+    <td class="esq">IDLOG-O</td>
+    <td class="dta" width="45">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#011">011</a></td>
+    <td class="esq">NRLOG-O</td>
+    <td class="dta" width="45">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#009">009</a></td>
+    <td class="esq">DHMSG-O</td>
+    <td class="dta" width="45">14</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#015">015</a></td>
+    <td class="esq">MOTANUL</td>
+    <td class="dta" width="45">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp800.htm#897">897</a></td>
+    <td class="esq">SCRIPT-RES</td>
+    <td class="dta" width="45">21</td>
+    <td >B</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >S</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">64</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0"
+width="100%">
+  <tr>
+    <th colspan="4" class="fundo">&nbsp;</th>
+    <th colspan="2" class="fundo">ORIGINAL</th>
+    <th colspan="2" class="fundo">ANULAÇÃO</th>
+    <th colspan="2" class="fundo">PENDENTE</th>
+  </tr>
+  <tr>
+    <th class="fundo">Nº do<br>
+    Campo</th>
+    <th class="fundo">Descritivo</th>
+    <th class="fundo">Comp.</th>
+    <th class="fundo">Rep.</th>
+    <th class="fundo">Ped.</th>
+    <th class="fundo">Resp.</th>
+    <th class="fundo">Ped.</th>
+    <th class="fundo">Resp.</th>
+    <th class="fundo">Ped.</th>
+    <th class="fundo">Resp.</th>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS DA RESPOSTA</u> </td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#012">012</a></td>
+    <td class="esq">CODRESP</td>
+    <td class="dta" width="45">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#013">013</a></td>
+    <td class="esq">NRIDRESP</td>
+    <td class="dta" width="45">14</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">15</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS ADICIONAIS DA RESPOSTA</u> </td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#016">016</a></td>
+    <td class="esq">CODRESPAD </td>
+    <td class="dta" width="45">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">3</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS SALDOS DE CONTA</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td class="esq">CONTA</td>
+    <td class="dta" width="45">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td class="esq">CODMOEDA </td>
+    <td class="dta" width="45">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2332">2332</a></td>
+    <td class="esq">SALDODISP-E</td>
+    <td class="dta" width="45">11</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2333">2333</a></td>
+    <td class="esq">SALDOCONT-E</td>
+    <td class="dta" width="45">11</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#020">020</a></td>
+    <td class="esq">DATASALDO</td>
+    <td class="dta" width="45">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">50</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS SIDF DE CRÉDITO</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1600.htm#1692">1692</a></td>
+    <td class="esq">IND_FOR_DAD</td>
+    <td class="dta" width="45">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1600.htm#1693">1693</a></td>
+    <td class="esq">TIP-PAG-EXT</td>
+    <td class="dta" width="45">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1600.htm#1694">1694</a></td>
+    <td class="esq">LIM-CRED</td>
+    <td class="dta" width="45">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1600.htm#1695">1695</a></td>
+    <td class="esq">VAL-CAT</td>
+    <td class="dta" width="45">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1600.htm#1696">1696</a></td>
+    <td class="esq">CURR-BALANCE</td>
+    <td class="dta" width="45">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1600.htm#1697">1697</a></td>
+    <td class="esq">SALD-CASH</td>
+    <td class="dta" width="45">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1600.htm#1698">1698</a></td>
+    <td class="esq">SALD-COMP</td>
+    <td class="dta" width="45">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta">TOTAL</td>
+    <td class="dta" width="45">48</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><a name="D.3.3.1">D.3.3.1</a> DADOS VARIÁVEIS</h3>
+
+<p><br>
+Por forma a flexibilizar a estrutura das mensagens <em>real-time</em>, o bloco de dados
+variáveis é constituído pelo tamanho do bloco, pela versão do bloco, e pelos dados
+particulares aplicáveis a cada código de transacção.</p>
+
+<p>&nbsp;</p>
+
+<h6><a name="pedido">DADOS</a> VARIÁVEIS DAS MENSAGENS DE PEDIDO</h6>
+
+<p><br>
+</p>
+
+<table border="1" cellspacing="0" cellpadding="2" width="586">
+  <tr>
+    <td class="fundo" width="57">N.CAMPO </td>
+    <td width="154" class="fundo">SÍMBOLO DO CAMPO </td>
+    <td class="fundo" width="48">COMP.</td>
+    <td width="37" class="fundo">REP. </td>
+    <td width="270" class="fundo">Conteúdo do campo (<a href="../../Campos/campos7.htm#699">699</a>)
+    CODTRN-E</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmid" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'001' (levantamento) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" nowrap><u>DADOS OP. ESTRANGEIRO</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq"><a href="#1" target="main">1)</a></td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#222">222</a></td>
+    <td class="esq" width="154">SISTPAG</td>
+    <td class="dta" width="48">1</td>
+    <td width="37">A</td>
+    <td width="270" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td class="esq" width="154">CODMOEDA</td>
+    <td class="dta" width="48">3</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#236">236</a></td>
+    <td class="esq" width="154">CAMBIO</td>
+    <td class="dta" width="48">9</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#237">237</a></td>
+    <td class="esq" width="154">IMPORTOP</td>
+    <td class="dta" width="48">11</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#238">238</a></td>
+    <td class="esq" width="154">VALTOTAL</td>
+    <td class="dta" width="48">11</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#065">065</a></td>
+    <td class="esq" width="154">IDACEITANTE</td>
+    <td class="dta" width="48">11</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#070">070</a></td>
+    <td class="esq" width="154">RETREF</td>
+    <td class="dta" width="48">12</td>
+    <td width="37">A</td>
+    <td width="270" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#071">071</a></td>
+    <td class="esq" width="154">NATOPER</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">66</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmid" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'003' (consulta de saldos) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS DA CONTA</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td class="esq" width="154">CONTA</td>
+    <td class="dta" width="48">15</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">SAN2</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">21</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmid" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'005' (alteração de PIN) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#028">028</a></td>
+    <td class="esq" width="154">PVV2 </td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#029">029</a></td>
+    <td class="esq" width="154">PVV3 </td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#028">028</a></td>
+    <td class="esq" width="154">PVV2 (anterior)</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#029">029</a></td>
+    <td class="esq" width="154">PVV3 (anterior)</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">22</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmid" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'006' (aviso depósito em numerário)<br>
+    '007' (aviso depósito em valores) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos2.htm#193">193</a></td>
+    <td class="esq" width="154">REFDEP </td>
+    <td class="dta" width="48">3</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">9</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmid" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'008' (transferência entre contas do cartão) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td class="esq" width="154">CONTA </td>
+    <td class="dta" width="48">15</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">n.º da conta destino da transferência </td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">21</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmid" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'009' (pag. serviços/compras - MB)<br>
+    '0P0' (pag. serviços/compras - outras marcas)<br>
+      '0P7' (pag. serviços/compras - cartão <i>not-on-us</i>)</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos5.htm#468">468</a></td>
+    <td class="esq" width="154">ENTIDADE </td>
+    <td class="dta" width="48">5</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#250">250</a></td>
+    <td class="esq" width="154">REFPAG </td>
+    <td class="dta" width="48">9</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#263">263</a></td>
+    <td class="esq" width="154">TIPSER </td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#241">241</a></td>
+    <td class="esq" width="154">BANAPOIO </td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS DO <em>ACQUIRER</em></u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp1000.htm#1007">1007</a></td>
+    <td class="esq" width="154">ID-COM-REP</td>
+    <td class="dta" width="48">7</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos5.htm#434">434</a></td>
+    <td class="esq" width="154">PRODFIN</td>
+    <td class="dta" width="48">5</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">38</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmid" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'010' (compra MB) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS EMV</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2303">2303</a></td>
+    <td class="esq" width="154">IND-TIP-PAG</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2304">2304</a></td>
+    <td class="esq" width="154">CRE-PRESTCLI</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">campo significativo se 1º byte IND-TIP-PAG=1</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp1700.htm#1742">1742</a></td>
+    <td class="esq" width="154">FIDELIZACAO-ID</td>
+    <td class="dta" width="48">5</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">campo significativo se 1º byte IND-TIP-PAG=2</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2308">2308</a></td>
+    <td class="esq" width="154">FID-PONTOSREB</td>
+    <td class="dta" width="48">7</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2308">2309</a></td>
+    <td class="esq" width="154">FID-PONTOSDIS</td>
+    <td class="dta" width="48">7</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2310">2310</a></td>
+    <td class="esq" width="154">FID-VALORPONT</td>
+    <td class="dta" width="48">9</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/camp2300.htm#2313">2313</a></td>
+    <td class="esq" width="154">FID-VALORREM</td>
+    <td class="dta" width="48">9</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">47</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmid" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'012' (autorização estrangeiro)</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS OP. ESTRANGEIRO</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#222">222</a></td>
+    <td class="esq" width="154">SISTPAG</td>
+    <td class="dta" width="48">1</td>
+    <td width="37">A</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td class="esq" width="154">CODMOEDA</td>
+    <td class="dta" width="48">3</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#236">236</a></td>
+    <td class="esq" width="154">CAMBIO</td>
+    <td class="dta" width="48">9</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#237">237</a></td>
+    <td class="esq" width="154">IMPORTOP</td>
+    <td class="dta" width="48">11</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#238">238</a></td>
+    <td class="esq" width="154">VALTOTAL</td>
+    <td class="dta" width="48">11</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#065">065</a></td>
+    <td class="esq" width="154">IDACEITANTE</td>
+    <td class="dta" width="48">11</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#070">070</a></td>
+    <td class="esq" width="154">RETREF</td>
+    <td class="dta" width="48">12</td>
+    <td width="37">A</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#071">071</a></td>
+    <td class="esq" width="154">NATOPER</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp1300.htm#1357">1357</a></td>
+    <td width="154" class="esq">PANTPMBNET</td>
+    <td class="dta" width="48">16</td>
+    <td width="37">N</td>
+    <td width="270" class="verdaesq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp1900.htm#1971">1971</a></td>
+    <td width="154" class="esq">NUM-AUT</td>
+    <td class="dta" width="48">6</td>
+    <td width="37">A</td>
+    <td width="270" class="esq">Preenchido apenas nas mensagens a frio</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">88</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmid" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'015' (compra outras vertentes) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS DO <em>ACQUIRER</em></u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp1000.htm#1007">1007</a></td>
+    <td class="esq" width="154">ID-COM-REP</td>
+    <td class="dta" width="48">7</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos5.htm#434">434</a></td>
+    <td class="esq" width="154">PRODFIN</td>
+    <td class="dta" width="48">5</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="tahoma7" width="57">&nbsp;</td>
+    <td width="154" class="tahoma7">&nbsp;</td>
+    <td class="tahoma7" width="48">&nbsp;</td>
+    <td width="37" class="tahoma7">&nbsp;</td>
+    <td width="270" class="tahoma7">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#071">071</a></td>
+    <td class="esq" width="154">NATOPER</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos4.htm#377">377</a></td>
+    <td class="esq" width="154">NPCREP </td>
+    <td class="dta" width="48">9</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS EMV</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2303">2303</a></td>
+    <td class="esq" width="154">IND-TIP-PAG</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2304">2304</a></td>
+    <td class="esq" width="154">CRE-PRESTCLI</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">campo significativo se 1º byte IND-TIP-PAG=1</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp1700.htm#1742">1742</a></td>
+    <td class="esq" width="154">FIDELIZACAO-ID</td>
+    <td class="dta" width="48">5</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">campo significativo se 1º byte IND-TIP-PAG=2</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2308">2308</a></td>
+    <td class="esq" width="154">FID-PONTOSREB</td>
+    <td class="dta" width="48">7</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2309">2309</a></td>
+    <td class="esq" width="154">FID-PONTOSDIS</td>
+    <td class="dta" width="48">7</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2310">2310</a></td>
+    <td class="esq" width="154">FID-VALORPONT</td>
+    <td class="dta" width="48">9</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/camp2300.htm#2313">2313</a></td>
+    <td class="esq" width="154">FID-VALORREM</td>
+    <td class="dta" width="48">9</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">70</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmid" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'016' (devolução compra outras vertentes)<br>
+      '026' (compra <i> outdoor</i> - outras vertentes)  <br>
+    '027' (compra após autorização MBNet)
+      <br>
+     '066' (devolução a crédito - cartão <i>not-on-us</i>)<br>
+      '076' (compra <i> outdoor</i> crédito - cartão <i>not-on-us</i>)  <br>
+    '094' (autorização MBNet)<br>
+    '095' (cancelamento autorização MBNet)</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS DO <em>ACQUIRER</em></u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp1000.htm#1007">1007</a></td>
+    <td class="esq" width="154">ID-COM-REP</td>
+    <td class="dta" width="48">7</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="a" href="#Notas" target="main">a)</a></td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos5.htm#434">434</a></td>
+    <td class="esq" width="154">PRODFIN</td>
+    <td class="dta" width="48">5</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="a" href="#Notas" target="main">a)</a></td>
+  </tr>
+  <tr>
+    <td class="tahoma7" width="57">&nbsp;</td>
+    <td width="154" class="tahoma7">&nbsp;</td>
+    <td class="tahoma7" width="48">&nbsp;</td>
+    <td width="37" class="tahoma7">&nbsp;</td>
+    <td width="270" class="tahoma7">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos4.htm#377">377</a></td>
+    <td class="esq" width="154">NPCREP </td>
+    <td class="dta" width="48">9</td>
+    <td width="37">N</td>
+    <td width="270" class="esq">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="a" href="#Notas" target="main">a)</a></td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2335">2335</a></td>
+    <td class="esq" width="154">MNT-ORI</td>
+    <td class="dta" width="48">11</td>
+    <td width="37">N</td>
+    <td width="270" class="esq"><a name="a" href="#2" target="main">2)</a></td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/camp2600.htm#2601">2601</a></td>
+    <td class="esq" width="154">MOD_PAG </td>
+    <td class="dta" width="48">3</td>
+    <td width="37" >N</td>
+    <td width="270" class="esq"><a name="a" href="#3" target="main">3)</a></td>
+  </tr>
+  <tr>
+    <td class="tahoma7" width="57">&nbsp;</td>
+    <td width="154" class="tahoma7">&nbsp;</td>
+    <td class="tahoma7" width="48">&nbsp;</td>
+    <td width="37" class="tahoma7">&nbsp;</td>
+    <td width="270" class="tahoma7">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#014">014</a></td>
+    <td width="154" class="esq">NRIDRESP-O</td>
+    <td class="dta" width="48">14</td>
+    <td width="37">A</td>
+    <td width="270" class="esq"><a name="a" href="#2" target="main">2)</a>&nbsp;&nbsp;&nbsp;
+      <a name="b" href="#Notas" target="main">b)</a></td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp1700.htm#1747">1747</a></td>
+    <td width="154" class="esq">APLIC_N-O</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">A</td>
+    <td width="270" class="esq"><a name="a" href="#2" target="main">2)</a>&nbsp;&nbsp;&nbsp;
+      <a name="b" href="#Notas" target="main">b)</a></td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#010">010</a></td>
+    <td width="154" class="esq">IDLOG-O</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270" class="esq"><a name="a" href="#2" target="main">2)</a>&nbsp;&nbsp;&nbsp;
+      <a name="b" href="#Notas" target="main">b)</a></td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#011">011</a></td>
+    <td width="154" class="esq">NRLOG-O</td>
+    <td class="dta" width="48">8</td>
+    <td width="37">N</td>
+    <td width="270" class="esq"><a name="a" href="#2" target="main">2)</a>&nbsp;&nbsp;&nbsp;
+      <a name="b" href="#Notas" target="main">b)</a></td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#071">071</a></td>
+    <td class="esq" width="154">NATOPER </td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp1300.htm#1357">1357</a></td>
+    <td width="154" class="esq">PANTPMBNET</td>
+    <td class="dta" width="48">16</td>
+    <td width="37">N</td>
+    <td width="270" class="verdaesq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">87</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmid" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'017' (autorização outras vertentes)<br>
+      '018' (autorização <i> outdoor</i> - outras vertentes) <br>
+      '039' (adiantamento dinheiro - outras vertentes) <br>
+      '067' (autorização a crédito - cartão <i>not-on-us</i>)<br>
+      '068' (autoriz. <i> outdoor</i> crédito - cartão <i>not-on-us</i>)<br>
+      '089' (adiantamento crédito - cartão <i>not-on-us</i>)</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS DO <em>ACQUIRER</em></u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp1000.htm#1007">1007</a></td>
+    <td class="esq" width="154">ID-COM-REP</td>
+    <td class="dta" width="48">7</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos5.htm#434">434</a></td>
+    <td class="esq" width="154">PRODFIN</td>
+    <td class="dta" width="48">5</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="tahoma7" width="57">&nbsp;</td>
+    <td width="154" class="tahoma7">&nbsp;</td>
+    <td class="tahoma7" width="48">&nbsp;</td>
+    <td width="37" class="tahoma7">&nbsp;</td>
+    <td width="270" class="tahoma7">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#071">071</a></td>
+    <td class="esq" width="154">NATOPER</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos4.htm#377">377</a></td>
+    <td class="esq" width="154">NPCREP </td>
+    <td class="dta" width="48">9</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">29</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" >&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37" >&nbsp;</td>
+    <td width="270" class="esq">
+    '019' (cancelamento autoriz. outras vertentes)<br>
+    '069' (cancel. crédito - cartão <i>not-on-us</i>)</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37" >N</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37" >N</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" >&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS DO <em>ACQUIRER</em></u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37" >&nbsp;</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/camp1000.htm#1007">1007</a></td>
+    <td class="esq" width="154">ID-COM-REP</td>
+    <td class="dta" width="48">7</td>
+    <td width="37" >N</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/campos5.htm#434">434</a></td>
+    <td class="esq" width="154">PRODFIN</td>
+    <td class="dta" width="48">5</td>
+    <td width="37" >N</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="tahoma7" width="57">&nbsp;</td>
+    <td width="154" class="tahoma7">&nbsp;</td>
+    <td class="tahoma7" width="48">&nbsp;</td>
+    <td width="37" class="tahoma7">&nbsp;</td>
+    <td width="270" class="tahoma7">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/campos1.htm#071">071</a></td>
+    <td class="esq" width="154">NATOPER</td>
+    <td class="dta" width="48">2</td>
+    <td width="37" >N</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/campos4.htm#377">377</a></td>
+    <td class="esq" width="154">NPCREP </td>
+    <td class="dta" width="48">9</td>
+    <td width="37" >N</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="tahoma7" width="57">&nbsp;</td>
+    <td width="154" class="tahoma7">&nbsp;</td>
+    <td class="tahoma7" width="48">&nbsp;</td>
+    <td width="37" class="tahoma7">&nbsp;</td>
+    <td width="270" class="tahoma7">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/camp2700.htm#2704">2704</a></td>
+    <td class="esq" width="154">NUM-AUT-O</td>
+    <td class="dta" width="48">6</td>
+    <td width="37" >A</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" >&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">35</td>
+    <td width="37" >&nbsp;</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'023' (serviço especial não bancário)</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos5.htm#468">468</a></td>
+    <td class="esq" width="154">ENTIDADE </td>
+    <td class="dta" width="48">5</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#255">255</a></td>
+    <td class="esq" width="154">DESCSE </td>
+    <td class="dta" width="48">12</td>
+    <td width="37">A</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#241">241</a></td>
+    <td class="esq" width="154">BANAPOIO </td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">27</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'036' (depósito numerário confirmado) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos2.htm#193">193</a></td>
+    <td class="esq" width="154">REFDEP </td>
+    <td class="dta" width="48">3</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#067">067</a></td>
+    <td class="esq" width="154">MONTIND </td>
+    <td class="dta" width="48">13</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">22</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td nowrap class="esq" width="270">'037' (transferência bancária - ordenante) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#268">268</a></td>
+    <td class="esq" width="154">NIBDEST </td>
+    <td class="dta" width="48">21</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos5.htm#485">485</a></td>
+    <td class="esq" width="154">CREDDEST </td>
+    <td class="dta" width="48">1</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">28</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'038' (pagamento letra/recibo) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos4.htm#392">392</a></td>
+    <td class="esq" width="154">NUMEFEITO </td>
+    <td class="dta" width="48">21</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">27</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'052' (transferência bancária - destinatário)</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos5.htm#477">477</a></td>
+    <td class="esq" width="154">NIBORD </td>
+    <td class="dta" width="48">21</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos2.htm#137">137</a></td>
+    <td class="esq" width="154">NOMECLI </td>
+    <td class="dta" width="48">27</td>
+    <td width="37">A</td>
+    <td width="270" class="esq">Ordenante</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">54</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" >&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37" >&nbsp;</td>
+    <td width="270" class="esq">
+      '065' (compra crédito - cartão <i>not-on-us</i>) </td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37" >N</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37" >N</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" >&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS DO <em>ACQUIRER</em></u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37" >&nbsp;</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/camp1000.htm#1007">1007</a></td>
+    <td class="esq" width="154">ID-COM-REP</td>
+    <td class="dta" width="48">7</td>
+    <td width="37" >N</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/campos5.htm#434">434</a></td>
+    <td class="esq" width="154">PRODFIN</td>
+    <td class="dta" width="48">5</td>
+    <td width="37" >N</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="tahoma7" width="57">&nbsp;</td>
+    <td width="154" class="tahoma7">&nbsp;</td>
+    <td class="tahoma7" width="48">&nbsp;</td>
+    <td width="37" class="tahoma7">&nbsp;</td>
+    <td width="270" class="tahoma7">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/campos1.htm#071">071</a></td>
+    <td class="esq" width="154">NATOPER</td>
+    <td class="dta" width="48">2</td>
+    <td width="37" >N</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/campos4.htm#377">377</a></td>
+    <td class="esq" width="154">NPCREP </td>
+    <td class="dta" width="48">9</td>
+    <td width="37" >N</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57" ><a href="../../Campos/camp2600.htm#2601">2601</a></td>
+    <td class="esq" width="154">MOD_PAG </td>
+    <td class="dta" width="48">3</td>
+    <td width="37" >N</td>
+    <td width="270" class="esq"><a name="a" href="#3" target="main">3)</a></td>
+  </tr>
+  <tr>
+    <td width="57" >&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">32</td>
+    <td width="37" >&nbsp;</td>
+    <td width="270" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td class="esq" width="270">'071' (comunicação captura de cartão) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos2.htm#160">160</a></td>
+    <td class="esq" width="154">MOTCAPT </td>
+    <td class="dta" width="48">1</td>
+    <td width="37">A</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">7</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmid" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'072' (alteração situação cartão / comunicação
+    inclusão cartão em Lista Negra Urgente) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos2.htm#144">144</a></td>
+    <td class="esq" width="154">NSITCAR</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos2.htm#147">147</a></td>
+    <td class="esq" width="154">MODINS</td>
+    <td class="dta" width="48">1</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos2.htm#184">184</a></td>
+    <td class="esq" width="154">SENHA </td>
+    <td class="dta" width="48">5</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">14</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td class="esq" width="270">'172' (alteração situação de cartão <em>Acquirer</em>) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos2.htm#144">144</a></td>
+    <td class="esq" width="154">NSITCAR</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos2.htm#147">147</a></td>
+    <td class="esq" width="154">MODINS</td>
+    <td class="dta" width="48">1</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">9</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmida" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td class="esqa" width="270">'502' (emissão de cheques) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esqa" width="154">COMP-DADOSV</td>
+    <td class="dtaa" width="48">4</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esqa" width="154">VER-DADOSV</td>
+    <td class="dtaa" width="48">2</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2953">2953</a></td>
+    <td class="esqa" width="154">TIPOLOCHEQ</td>
+    <td class="dtaa" width="48">1</td>
+    <td width="37" class="a">N</td>
+    <td width="270" class="esqa">=0</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2954">2954</a></td>
+    <td class="esqa" width="154">NUMCHEQEMI</td>
+    <td class="dtaa" width="48">2</td>
+    <td width="37" class="a">N</td>
+    <td width="270" class="esqa">='04'</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dtaa" width="154">TOTAL</td>
+    <td class="dtaa" width="48">9</td>
+    <td width="37" class="a">&nbsp;</td>
+    <td width="270" class="esqa">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmid" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td class="esq" width="270">'506' (depósito notas com validação) <br>
+    '536' (dep. notas-confirmação notas suspeitas)<br>
+      '537' (dep. notas-validação Banco de Portugal) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2342">2342</a></td>
+    <td class="esq" width="154">REFDEPVAL</td>
+    <td class="dta" width="48">15</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2800.htm#2831">2831</a></td>
+    <td class="esqa" width="154">INDACCAO</td>
+    <td class="dtaa" width="48">1</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="mid" width="57"><a href="../../Campos/campos5.htm#429">429</a></td>
+    <td class="esqmid" width="154">NIB</td>
+    <td class="dtamid" width="48">21</td>
+    <td class="mid" width="37">N</td>
+    <td class="oitoesq" width="270">Preenchido diferente de zeros quando o
+    depósito se destina a uma conta distinta da do cartão</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2343">2343</a></td>
+    <td class="esq" width="154">TOTDEPCAT2</td>
+    <td class="dta" width="48">9</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2344">2344</a></td>
+    <td class="esq" width="154">TOTDEPCAT3</td>
+    <td class="dta" width="48">9</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2345">2345</a></td>
+    <td class="esq" width="154">TOTDEPCAT4</td>
+    <td class="dta" width="48">11</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos5.htm#428">428</a></td>
+    <td class="esq" width="154">NUMOCORR</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td class="esq" width="270">Máximo = 18</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2355">2355</a></td>
+    <td class="esq" width="154">CATNOTAS *</td>
+    <td class="dta" width="48">1</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2349">2349</a></td>
+    <td class="esq" width="154">DENOMIN-E *</td>
+    <td class="dta" width="48">3</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2352">2352</a></td>
+    <td class="esq" width="154">NUMNOTDEP *</td>
+    <td class="dta" width="48">3</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">199</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td class="esq" width="270">'507' (depósito cheques com validação) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2342">2342</a></td>
+    <td class="esq" width="154">REFDEPVAL</td>
+    <td class="dta" width="48">15</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="mid" width="57"><a href="../../Campos/campos5.htm#429">429</a></td>
+    <td class="esqmid" width="154">NIB</td>
+    <td class="dtamid" width="48">21</td>
+    <td class="mid" width="37">N</td>
+    <td class="oitoesq" width="270">Preenchido diferente de zeros quando o
+    depósito se destina a uma conta distinta da do cartão</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos5.htm#428">428</a></td>
+    <td class="esq" width="154">NUMOCORR</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td class="esq" width="270">Até 40 cheques</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2346">2346</a></td>
+    <td class="esq" width="154">MNTCHQIND *</td>
+    <td class="dta" width="48">9</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#256">256</a></td>
+    <td class="esq" width="154">ZIB *</td>
+    <td class="dta" width="48">8</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#257">257</a></td>
+    <td class="esq" width="154">NCONTA *</td>
+    <td class="dta" width="48">11</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#258">258</a></td>
+    <td class="esq" width="154">NCHEQ *</td>
+    <td class="dta" width="48">10</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#260">260</a></td>
+    <td class="esq" width="154">TIPCHEQ *</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48" nowrap>até 1644</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmida" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td class="esqa" width="270">'532' (confirmação de emissão de cheques) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esqa" width="154">COMP-DADOSV</td>
+    <td class="dtaa" width="48">4</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esqa" width="154">VER-DADOSV</td>
+    <td class="dtaa" width="48">2</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2953">2953</a></td>
+    <td class="esqa" width="154">TIPOLOCHEQ</td>
+    <td class="dtaa" width="48">1</td>
+    <td width="37" class="a">N</td>
+    <td width="270" class="esqa">='0'</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2955">2955</a></td>
+    <td class="esqa" width="154">CUSTOCHEQ</td>
+    <td class="dtaa" width="48">5</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2956">2956</a></td>
+    <td class="esqa" width="154">IMPSELO</td>
+    <td class="dtaa" width="48">4</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2954">2954</a></td>
+    <td class="esqa" width="154">NUMCHEQEMI</td>
+    <td class="dtaa" width="48">2</td>
+    <td width="37" class="a">N</td>
+    <td width="270" class="esqa">='04'</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#256">256</a></td>
+    <td class="esqa" width="154">ZIB *</td>
+    <td class="dtaa" width="48">8</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#257">257</a></td>
+    <td class="esqa" width="154">NCONTA *</td>
+    <td class="dtaa" width="48">11</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#258">258</a></td>
+    <td class="esqa" width="154">NCHEQ *</td>
+    <td class="dtaa" width="48">10</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#260">260</a></td>
+    <td class="esqa" width="154">TIPCHEQ *</td>
+    <td class="dtaa" width="48">2</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dtaa" width="154">TOTAL</td>
+    <td class="dtaa" width="48">142</td>
+    <td width="37" class="a">&nbsp;</td>
+    <td width="270" class="esqa">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmida" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td class="esqa" width="270">'533' (anulação de emissão de cheques) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esqa" width="154">COMP-DADOSV</td>
+    <td class="dtaa" width="48">4</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esqa" width="154">VER-DADOSV</td>
+    <td class="dtaa" width="48">2</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2953">2953</a></td>
+    <td class="esqa" width="154">TIPOLOCHEQ</td>
+    <td class="dtaa" width="48">1</td>
+    <td width="37" class="a">N</td>
+    <td width="270" class="esqa">='0'</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2955">2955</a></td>
+    <td class="esqa" width="154">CUSTOCHEQ</td>
+    <td class="dtaa" width="48">5</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2956">2956</a></td>
+    <td class="esqa" width="154">IMPSELO</td>
+    <td class="dtaa" width="48">4</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2957">2957</a></td>
+    <td class="esqa" width="154">NUMCHEQANUL</td>
+    <td class="dtaa" width="48">2</td>
+    <td width="37" class="a">N</td>
+    <td width="270" class="esqa">='04'</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#256">256</a></td>
+    <td class="esqa" width="154">ZIB *</td>
+    <td class="dtaa" width="48">8</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#257">257</a></td>
+    <td class="esqa" width="154">NCONTA *</td>
+    <td class="dtaa" width="48">11</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#258">258</a></td>
+    <td class="esqa" width="154">NCHEQ *</td>
+    <td class="dtaa" width="48">10</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#260">260</a></td>
+    <td class="esqa" width="154">TIPCHEQ *</td>
+    <td class="dtaa" width="48">2</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dtaa" width="154">TOTAL</td>
+    <td class="dtaa" width="48">142</td>
+    <td width="37" class="a">&nbsp;</td>
+    <td width="270" class="esqa">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esq" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td width="270" class="esq">'0DB' (pedido de cheques) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="154">COMP-DADOSV</td>
+    <td class="dta" width="48">4</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="154">VER-DADOSV</td>
+    <td class="dta" width="48">2</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp1200.htm#1294">1294</a></td>
+    <td class="esq" width="154">TIP-CHQ</td>
+    <td class="dta" width="48">1</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos1.htm#026">026</a></td>
+    <td class="esq" width="154">NCHEQ</td>
+    <td class="dta" width="48">3</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp1200.htm#1296">1296</a></td>
+    <td class="esq" width="154">LOC-ENT-CHQ</td>
+    <td class="dta" width="48">1</td>
+    <td width="37">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="48">11</td>
+    <td width="37">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><strong>Notas:</strong></p>
+
+<p><strong>(<a name="1">1</a>) </strong>- Dados preenchidos apenas se operações
+realizadas em terminais do tipo C.</p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap><b>(<a name="2">2</a>) -&nbsp;</b></td>
+    <td class="esq">Na transacção ‘016’, informação só preenchida
+      quando é possível fazer o emparelhamento com a compra; e nas ‘026’ e
+      ‘076’, quando é possível fazer o emparelhamento com a autorização
+      respectiva.&nbsp;</td>
+  </tr>
+</table>
+
+<p><b>(<a name="3">3</a>) - </b>Apenas preenchido se informação enviada pelo
+TPA.</p>
+
+<p>&nbsp;</p>
+
+<p><strong><a name="Notas">Notas</a> específicas para o MBNet:</strong> 
+
+<ol>
+  <li>Regras de preenchimento de alguns campos para a operação de autorização MBNet
+    (CODTRN-E (<a href="../../Campos/campos7.htm#699">699</a>) = <strong>094</strong>): </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Os campos identificados com <a target="main" href="#a"><strong>a</strong>)</a> no grupo
+      de dados variáveis vão preenchidos.</li>
+    <li>Os campos identificados com <a href="#b" target="main">b)</a> no grupo de dados
+      variáveis vão a zeros se numéricos, e a espaços se alfanuméricos.</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Estas regras também são válidas para a mensagem de pedido de anulação (msg <a
+  target="main" href="216x.htm">2161</a>), relativamente ao preenchimento do campo
+  NRIDRESP-O (<a href="../../Campos/campos1.htm#014">014</a>), no grupo de dados da
+  operação original.</p>
+  <p><br>
+  </p>
+</blockquote>
+
+<ol style="page-break-before: always" start="2">
+  <li>Regras de preenchimento de alguns campos para as operações de cancelamento de
+    autorização (CODTRN-E (<a href="../../Campos/campos7.htm#699">699</a>) = <strong>095</strong>)
+    e compra após autorização (CODTRN-E (<a href="../../Campos/campos7.htm#699">699</a>) = <strong>027</strong>):
+  </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>O campo MNT-E (<a href="../../Campos/camp2300.htm#2326">2326</a>) está preenchido com o
+      valor da operação que está a ser informada. Para a compra (CODTRN-E (<a
+      href="../../Campos/campos7.htm#699">699</a>) = <strong>027</strong>), pode ser igual ou
+      menor ao da correspondente operação de autorização original. </li>
+    <li>Para os cancelamentos (CODTRN-E (<a href="../../Campos/campos7.htm#699">699</a>) = <strong>095</strong>)
+      apresenta um valor igual ao da autorização original.</li>
+    <li>Os campos identificados com <a target="main" href="#a"><strong>a</strong>)</a> ou <a
+      href="#b" target="main">b)</a> no grupo de dados variáveis, correspondem à operação de
+      autorização original (CODTRN-E (<a href="../../Campos/campos7.htm#699">699</a>) = <strong>094</strong>),
+      ou seja, as operações de compra e de cancelamento &quot;emparelham &quot; com a
+      correspondente operação de autorização.</li>
+    <li>O campo MNT-ORI (<a href="../../Campos/camp2300.htm#2335">2335</a>) está preenchido com
+      o valor da autorização original.</li>
+    <li>O campo NRIDRESP-O (<a href="../../Campos/campos1.htm#014">014</a>):</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <ul type="square">
+      <li>Se a operação original (CODTRN-E (<a href="../../Campos/campos7.htm#699">699</a>) = <strong>094</strong>)
+        foi a quente ao Emissor (msg <a target="main" href="116x316x.htm">1161</a>), o campo
+        NRIDRESP-O (<a href="../../Campos/campos1.htm#014">014</a>) está preenchido com a
+        informação enviada pelo Emissor no campo NRIDRESP (<a
+        href="../../Campos/campos1.htm#013">013</a>) na mensagem de resposta <a target="main"
+        href="126x.htm">1261</a>.</li>
+      <li>Se a operação original (CODTRN-E (<a href="../../Campos/campos7.htm#699">699</a>) = <strong>094</strong>)
+        foi decidida pela SIBS em cenário de degradação ou pelo <em>Acquirer</em>, então este
+        campo está preenchido a espaços.</li>
+    </ul>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Os campos APLIC_N-O (<a href="../../Campos/camp1700.htm#1747">1747</a>), IDLOG-O (<a
+      href="../../Campos/campos1.htm#010">010</a>) e NRLOG-O (<a
+      href="../../Campos/campos1.htm#011">011</a>) estão preenchidos com os correspondentes
+      campos informados na operação de autorização, APLIC_N (<a
+      href="../../Campos/camp1700.htm#1709">1709</a>), IDLOG (<a
+      href="../../Campos/campos4.htm#320">320</a>) e NRLOG (<a
+      href="../../Campos/campos2.htm#117">117</a>).</li>
+  </ul>
+</blockquote>
+
+<p><br>
+
+<ol start="3">
+  <li>Regras de preenchimento de alguns campos para a operação de Devolução (CODTRN-E (<a
+    href="../../Campos/campos7.htm#699">699</a>) = <strong>016</strong>): </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>O campo MNT-E (<a href="../../Campos/camp2300.htm#2326">2326</a>) está preenchido com o
+      valor da operação que está a ser informada. </li>
+    <li>Os campos identificados com <a target="main" href="#a"><strong>a</strong>)</a> ou <a
+      href="#b" target="main">b)</a> no grupo de dados variáveis, correspondem à operação de
+      compra original (CODTRN-E (<a href="../../Campos/campos7.htm#699">699</a>) = <strong>027</strong>),
+      ou seja, as operações de devolução &quot;emparelham &quot; com a correspondente
+      operação de compra.</li>
+    <li>O MNT-ORI (<a href="../../Campos/camp2300.htm#2335">2335</a>) está preenchido com o
+      valor da compra original.</li>
+    <li>O campo NRIDRESP-O (<a href="../../Campos/campos1.htm#014">014</a>) está preenchido a
+      espaços, porque a compra só é informada ao Emissor a frio (msg <a target="main"
+      href="116x316x.htm">3161</a>).</li>
+    <li>Os campos APLIC_N-O (<a href="../../Campos/camp1700.htm#1747">1747</a>), IDLOG-O (<a
+      href="../../Campos/campos1.htm#010">010</a>) e NRLOG-O (<a
+      href="../../Campos/campos1.htm#011">011</a>) estão preenchidos com os correspondentes
+      campos enviados na operação de compra, APLIC_N (<a href="../../Campos/camp1700.htm#1709">1709</a>),
+      IDLOG (<a href="../../Campos/campos4.htm#320">320</a>) e NRLOG (<a
+      href="../../Campos/campos2.htm#117">117</a>).</li>
+  </ul>
+</blockquote>
+
+<p><br>
+
+<ol start="4">
+  <li>No caso do Emissor receber a mensagem de autorização como original e responder
+    atempadamente, pode &quot;emparelhar&quot; a operação de autorização com a compra ou
+    cancelamento utilizando os campos NRIDRESP (<a href="../../Campos/campos1.htm#013">013</a>)
+    e NRIDRESP-O (<a href="../../Campos/campos1.htm#014">014</a>).</li>
+</ol>
+
+<blockquote>
+  <p>Caso a operação de autorização seja autorizada pela SIBS em degradado ou pelo <em>Acquirer</em>,
+  o Emissor só pode efectuar o &quot;emparelhamento&quot; pelos campos, APLIC_N (<a
+  href="../../Campos/camp1700.htm#1709">1709</a>), IDLOG (<a
+  href="../../Campos/campos4.htm#320">320</a>) e NRLOG (<a
+  href="../../Campos/campos2.htm#117">117</a>) enviados na mensagem <a target="main"
+  href="116x316x.htm">3161</a> da autorização, com os campos APLIC_N (<a
+  href="../../Campos/camp1700.htm#1709">1709</a>), IDLOG (<a
+  href="../../Campos/campos4.htm#320">320</a>) e NRLOG (<a
+  href="../../Campos/campos2.htm#117">117</a>) enviados na mensagem <a target="main"
+  href="116x316x.htm">3161</a> da compra ou cancelamento. </p>
+</blockquote>
+
+<blockquote>
+  <p>O Emissor deve prever que pode receber a mensagem de compra ou de cancelamento antes de
+  ter processado a operação de autorização.</p>
+  <p>Deve ter sempre presente que o correcto &quot;emparelhamento&quot; das operações é
+  garantido pelo tratamento do ficheiro <a href="dst-1.htm#DADOS" target="main">MEDST</a> e
+  não nas mensagens <em>real-time</em>.</p>
+</blockquote>
+
+<p><br>
+
+<ol style="page-break-before: always" start="5">
+  <li>Para o TIPOTERM (<a href="../../Campos/campos1.htm#003">003</a>) = D, CODTRN-E (<a
+    href="../../Campos/campos7.htm#699">699</a>) = <strong>012</strong> (operação de
+    autorização/cancelamento de autorização com cartão temporário) e TIPOAUT (<a
+    href="../../Campos/campos1.htm#005">005</a>) = 35, o preenchimento dos seguintes campos é
+    feito da seguinte forma: </li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>Os campos IDPROPR (<a href="../../Campos/campos1.htm#068">068</a>), IDPERLOCAL (<a
+      href="../../Campos/campos2.htm#118">118</a>), DISTCONC (<a
+      href="../../Campos/campos2.htm#158">158</a>) e NUMREGLOC (<a
+      href="../../Campos/campos4.htm#323">323</a>) estão a zeros.</li>
+    <li>O campo PANTPMBNET (<a href="../../Campos/camp1300.htm#1357">1357</a>) apresenta o
+      número do cartão temporário.</li>
+    <li>O campo MNT-E (<a href="../../Campos/camp2300.htm#2326">2326</a>) apresenta o valor da
+      operação.</li>
+  </ul>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h6><a name="resposta">DADOS</a> VARIÁVEIS DAS MENSAGENS DE RESPOSTA</h6>
+
+<p><br>
+</p>
+
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr>
+    <td class="fundo">N.CAMPO </td>
+    <td width="145" class="fundo">SÍMBOLO DO CAMPO </td>
+    <td class="fundo" width="45">COMP.</td>
+    <td width="40" class="fundo">REP. </td>
+    <td class="fundo" width="270">Conteúdo do campo (<a href="../../Campos/campos7.htm#699">699</a>)
+    CODTRN-E</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esqmid" width="145"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="40">&nbsp;</td>
+    <td class="esq" width="270">'003' (consulta de saldos) </td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="145">COMP-DADOSV</td>
+    <td class="dta" width="45">4</td>
+    <td width="40">N</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="145">VER-DADOSV</td>
+    <td class="dta" width="45">2</td>
+    <td width="40">N</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><u>DADOS SALDOS DE CONTA</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos2.htm#132">132</a></td>
+    <td class="esq">CONTA</td>
+    <td class="dta" width="45">15</td>
+    <td>N</td>
+    <td class="esq" width="270">SAN2</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td class="esq">CODMOEDA </td>
+    <td class="dta" width="45">3</td>
+    <td>N</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2332">2332</a></td>
+    <td class="esq">SALDODISP-E</td>
+    <td class="dta" width="45">11</td>
+    <td>N</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td>A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2333">2333</a></td>
+    <td class="esq">SALDOCONT-E</td>
+    <td class="dta" width="45">11</td>
+    <td>N</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td>A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#020">020</a></td>
+    <td class="esq">DATASALDO</td>
+    <td class="dta" width="45">8</td>
+    <td>N</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq" colspan="2"><u>DADOS SALDOS CONTA CRÉDITO</u></td>
+    <td>&nbsp;</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp800.htm#899">899</a></td>
+    <td class="esq">INDSALDOS</td>
+    <td class="dta" width="45">3</td>
+    <td>N</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#085">085</a></td>
+    <td class="esq">NRCONTACR</td>
+    <td class="dta" width="45">15</td>
+    <td>N</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2332">2332</a></td>
+    <td class="esq">SALDODISP-E</td>
+    <td class="dta" width="45">11</td>
+    <td>N</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td>A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos3.htm#239">239</a></td>
+    <td class="esq">LIMCR</td>
+    <td class="dta" width="45">7</td>
+    <td>N</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="45">93</td>
+    <td>&nbsp;</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo">&nbsp;</td>
+    <td width="145" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="45">&nbsp;</td>
+    <td width="40" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq" width="145"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="40">&nbsp;</td>
+    <td class="esq" width="270">'004' (consulta de movimentos) </td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="145">COMP-DADOSV</td>
+    <td class="dta" width="45">4</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="145">VER-DADOSV</td>
+    <td class="dta" width="45">2</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#021">021</a></td>
+    <td class="esq" width="145">NRMOV</td>
+    <td class="dta" width="45">2</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#022">022</a></td>
+    <td class="esq" width="145">REFMOV</td>
+    <td class="dta" width="45">3</td>
+    <td width="40">A</td>
+    <td width="270" class="esq">até 10 ocorrências</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#023">023</a></td>
+    <td class="esq" width="145">DESCMOV</td>
+    <td class="dta" width="45">15</td>
+    <td width="40">A</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#024">024</a></td>
+    <td class="esq" width="145">DATAMOV</td>
+    <td class="dta" width="45">8</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2334">2334</a></td>
+    <td class="esq" width="145">VALORMV </td>
+    <td class="dta" width="45">11</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq" width="145">SINAL </td>
+    <td class="dta" width="45">1</td>
+    <td width="40">A</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="45">8 a 388</td>
+    <td width="40">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo">&nbsp;</td>
+    <td width="145" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="45">&nbsp;</td>
+    <td width="40" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq" width="145"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="40">&nbsp;</td>
+    <td class="esq" width="270">'008' (transferência entre contas do cartão) </td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="145">COMP-DADOSV</td>
+    <td class="dta" width="45">4</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="145">VER-DADOSV</td>
+    <td class="dta" width="45">2</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2332">2332</a></td>
+    <td class="esq" width="145">SALDODISP-E</td>
+    <td class="dta" width="45">11</td>
+    <td width="40">N</td>
+    <td width="270" class="esq">da conta de destino da transferência</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq" width="145">SINAL </td>
+    <td class="dta" width="45">1</td>
+    <td width="40">A</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="45">18</td>
+    <td width="40">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo">&nbsp;</td>
+    <td width="145" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="45">&nbsp;</td>
+    <td width="40" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="esqmida" width="154"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="48">&nbsp;</td>
+    <td width="37">&nbsp;</td>
+    <td class="esqa" width="270">'502' (emissão de cheques) </td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esqa" width="154">COMP-DADOSV</td>
+    <td class="dtaa" width="48">4</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esqa" width="154">VER-DADOSV</td>
+    <td class="dtaa" width="48">2</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2960">2960</a></td>
+    <td class="esqa" width="154">NUMCACIFO</td>
+    <td class="dtaa" width="48">1</td>
+    <td width="37" class="a">N</td>
+    <td width="270" class="esqa">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2955">2955</a></td>
+    <td class="esqa" width="154">CUSTOCHEQ</td>
+    <td class="dtaa" width="48">5</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2956">2956</a></td>
+    <td class="esqa" width="154">IMPSELO</td>
+    <td class="dtaa" width="48">4</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos5.htm#428">428</a></td>
+    <td class="esqa" width="154">NUMOCORR</td>
+    <td class="dtaa" width="48">2</td>
+    <td width="37" class="a">N</td>
+    <td width="270" class="esqa">='04'</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2958">2958</a></td>
+    <td class="esqa" width="154">ZLINHA1 *</td>
+    <td class="dtaa" width="48">53</td>
+    <td width="37" class="a">A</td>
+    <td width="270" class="esqa">Linha 1 da zona livre</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2958">2958</a></td>
+    <td class="esqa" width="154">ZLINHA1 *</td>
+    <td class="dtaa" width="48">53</td>
+    <td width="37" class="a">A</td>
+    <td width="270" class="esqa">Linha 2 da zona livre</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2958">2958</a></td>
+    <td class="esqa" width="154">ZLINHA1 *</td>
+    <td class="dtaa" width="48">53</td>
+    <td width="37" class="a">A</td>
+    <td width="270" class="esqa">Linha 3 da zona livre</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2959">2959</a></td>
+    <td class="esqa" width="154">ZLINHA4 *</td>
+    <td class="dtaa" width="48">36</td>
+    <td width="37" class="a">A</td>
+    <td width="270" class="esqa">Linha 4 da zona livre</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2959">2959</a></td>
+    <td class="esqa" width="154">ZLINHA4 *</td>
+    <td class="dtaa" width="48">36</td>
+    <td width="37" class="a">A</td>
+    <td width="270" class="esqa">Linha 5 da zona livre</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/camp2900.htm#2959">2959</a></td>
+    <td class="esqa" width="154">ZLINHA4 *</td>
+    <td class="dtaa" width="48">36</td>
+    <td width="37" class="a">A</td>
+    <td width="270" class="esqa">Linha 6 da zona livre</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#256">256</a></td>
+    <td class="esqa" width="154">ZIB *</td>
+    <td class="dtaa" width="48">8</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#257">257</a></td>
+    <td class="esqa" width="154">NCONTA *</td>
+    <td class="dtaa" width="48">11</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#258">258</a></td>
+    <td class="esqa" width="154">NCHEQ *</td>
+    <td class="dtaa" width="48">10</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57"><a href="../../Campos/campos3.htm#260">260</a></td>
+    <td class="esqa" width="154">TIPCHEQ *</td>
+    <td class="dtaa" width="48">2</td>
+    <td width="37" class="a">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="57">&nbsp;</td>
+    <td class="dtaa" width="154">TOTAL</td>
+    <td class="dtaa" width="48">1210</td>
+    <td width="37" class="a">&nbsp;</td>
+    <td width="270" class="esqa">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo" width="57">&nbsp;</td>
+    <td width="154" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="48">&nbsp;</td>
+    <td width="37" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq" width="145"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="40">&nbsp;</td>
+    <td class="esq" width="270">'031' (levantamento a crédito) </td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="145">COMP-DADOSV</td>
+    <td class="dta" width="45">4</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="145">VER-DADOSV</td>
+    <td class="dta" width="45">2</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#085">085</a></td>
+    <td class="esq" width="145">NRCONTACR</td>
+    <td class="dta" width="45">15</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="45">21</td>
+    <td width="40">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo">&nbsp;</td>
+    <td width="145" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="45">&nbsp;</td>
+    <td width="40" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq" width="145"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="40">&nbsp;</td>
+    <td class="esq" width="270">'0CN' (consulta a NIB destinatário) </td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="145">COMP-DADOSV</td>
+    <td class="dta" width="45">4</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="145">VER-DADOSV</td>
+    <td class="dta" width="45">2</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos3.htm#200">200</a></td>
+    <td class="esq" width="145">NOMETIT</td>
+    <td class="dta" width="45">40</td>
+    <td width="40">A</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="45">46</td>
+    <td width="40">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo">&nbsp;</td>
+    <td width="145" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="45">&nbsp;</td>
+    <td width="40" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq" width="145"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="40">&nbsp;</td>
+    <td class="esq" width="270">'0DB' (pedido de cheques) </td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="145">COMP-DADOSV</td>
+    <td class="dta" width="45">4</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="145">VER-DADOSV</td>
+    <td class="dta" width="45">2</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1200.htm#1296">1296</a></td>
+    <td class="esq" width="145">LOC-ENT-CHQ</td>
+    <td class="dta" width="45">1</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos3.htm#200">200</a></td>
+    <td class="esq" width="145">NOMETIT</td>
+    <td class="dta" width="45">40</td>
+    <td width="40">A</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1500.htm#1533">1533</a></td>
+    <td class="esq" width="145">MORADA</td>
+    <td class="dta" width="45">40</td>
+    <td width="40">A</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1500.htm#1556">1556</a></td>
+    <td class="esq" width="145">LOCALIDADE</td>
+    <td class="dta" width="45">40</td>
+    <td width="40">A</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#083">083</a></td>
+    <td class="esq" width="145">C_POST_CLI</td>
+    <td class="dta" width="45">8</td>
+    <td width="40">A</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1500.htm#1580">1580</a></td>
+    <td class="esq" width="145">PRECO</td>
+    <td class="dta" width="45">10</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="45">145</td>
+    <td width="40">&nbsp;</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="outfundo">&nbsp;</td>
+    <td width="145" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="45">&nbsp;</td>
+    <td width="40" class="outfundo">&nbsp;</td>
+    <td class="outfundo" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq" width="145"><u>DADOS VARIÁVEIS</u></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="40">&nbsp;</td>
+    <td class="esq" width="270">'AVN' (pedido dados cliente - SIDF) </td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2336">2336</a></td>
+    <td class="esq" width="145">COMP-DADOSV</td>
+    <td class="dta" width="45">4</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp2300.htm#2337">2337</a></td>
+    <td class="esq" width="145">VER-DADOSV</td>
+    <td class="dta" width="45">2</td>
+    <td width="40">N</td>
+    <td width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#080">080</a></td>
+    <td class="esq">NOME_CLI</td>
+    <td class="dta" width="45">30</td>
+    <td>A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#081">081</a></td>
+    <td class="esq">ENDER_CLI</td>
+    <td class="dta" width="45">40</td>
+    <td>A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#082">082</a></td>
+    <td class="esq">LOC_CLI</td>
+    <td class="dta" width="45">20</td>
+    <td>A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#083">083</a></td>
+    <td class="esq">C_POST_CLI</td>
+    <td class="dta" width="45">8</td>
+    <td>A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#084">084</a></td>
+    <td class="esq">L_POST_CLI</td>
+    <td class="dta" width="45">25</td>
+    <td>A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1100.htm#1159">1159</a></td>
+    <td class="esq">TELCONT</td>
+    <td class="dta" width="45">25</td>
+    <td>A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1100.htm#1159">1159</a></td>
+    <td class="esq">TELCONT (Emprego)</td>
+    <td class="dta" width="45">25</td>
+    <td>A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1800.htm#1829">1829</a></td>
+    <td class="esq">NUM_TLM</td>
+    <td class="dta" width="45">9</td>
+    <td>N</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td ><a href="../../Campos/camp2000.htm#2053">2053</a></td>
+    <td class="esq">EMAIL</td>
+    <td class="dta" width="45">55</td>
+    <td >A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1700.htm#1793">1793</a></td>
+    <td class="esq">FAX</td>
+    <td class="dta" width="45">9</td>
+    <td>N</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#081">081</a></td>
+    <td class="esq">ENDER_CLI (alternativa)</td>
+    <td class="dta" width="45">40</td>
+    <td>A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#082">082</a></td>
+    <td class="esq">LOC_CLI (alternativa)</td>
+    <td class="dta" width="45">20</td>
+    <td>A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#083">083</a></td>
+    <td class="esq">C_POST_CLI (alternativa)</td>
+    <td class="dta" width="45">8</td>
+    <td>A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#084">084</a></td>
+    <td class="esq">L_POST_CLI (alternativa)</td>
+    <td class="dta" width="45">25</td>
+    <td>A</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta" width="154">TOTAL </td>
+    <td class="dta" width="45">345</td>
+    <td>&nbsp;</td>
+    <td class="esq" width="270">&nbsp;</td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="d32.htm" target="main">Anterior</a>/<a href="d34.htm" target="main">Seguinte</a></p>
+</body>
+</html>

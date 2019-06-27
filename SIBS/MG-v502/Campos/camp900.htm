@@ -1,0 +1,1486 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<title>Campos 900 (900-999)</title>
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.</td>
+    <td class="fundo">REP.</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="900" name="900">900</a></td>
+    <td class="esq"><u>CÓDIGO DE PROCESSAMENTO INTERNACIONAIS</u> <p>Identifica o tipo de
+    transacção efectuada:</p>
+    <p>&nbsp;&nbsp;&nbsp; 03 - pagamento de portagem<br />
+    &nbsp;&nbsp;&nbsp; 04 - anulação de pagamento de portagem</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODPROC-I</td>
+  </tr>
+  <tr>
+    <td><a id="901" name="901">901</a></td>
+    <td class="esq"><u>NÚMERO FISCAL DO CONCESSIONÁRIO</u> <p>Indica o número fiscal do
+    concessionário da auto-estrada.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NF-CONC</td>
+  </tr>
+  <tr>
+    <td><a id="902" name="902">902</a></td>
+    <td class="esq"><u>NÚMERO DISPOSITIVO VIA VERDE</u> <p>Identifica o dispositivo de Via
+    Verde associado a um cartão. Trata-se de um número composto por:</p>
+    <table border="0" cellspacing="0" cellpadding="0" width="178">
+      <tr>
+        <td class="esq" width="101">&nbsp;&nbsp; Cód. país emissor</td>
+        <td class="dta" width="20">3&nbsp;&nbsp;</td>
+        <td class="esq" width="57">N = &#145;620&#146;</td>
+      </tr>
+      <tr>
+        <td class="esq" width="101">&nbsp;&nbsp; Cód. emissor</td>
+        <td class="dta" width="20">5&nbsp;&nbsp;</td>
+        <td class="esq" width="57">N = &#145;001&#146;</td>
+      </tr>
+      <tr>
+        <td class="esq" width="101">&nbsp;&nbsp; Nº sequencial</td>
+        <td class="dta" width="20">10&nbsp;&nbsp;</td>
+        <td class="esq" width="57">N</td>
+      </tr>
+      <tr>
+        <td class="esq" width="101">&nbsp;&nbsp; Cheque dígito</td>
+        <td class="dta" width="20">1&nbsp;&nbsp;</td>
+        <td class="esq" width="57">N</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">19</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NRDISPVV</td>
+  </tr>
+  <tr>
+    <td><a id="903" name="903">903</a></td>
+    <td class="esq"><u>TAXA A SUPORTAR PELO CLIENTE</u> <p>Preenchido com a taxa a pagar pelo
+    cliente no caso de uma compra efectuada no âmbito de um acordo (ex: VISA, AMEX), no qual
+    tenha sido posicionado pelo representante de família do cartão, uma taxa fixa a suportar
+    pelo titular do cartão (ex.: gasolineiras, cash-advance).</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>3 int.<br />
+    2 dec.</td>
+    <td>TX-CLI</td>
+  </tr>
+  <tr>
+    <td><a id="904" name="904">904</a></td>
+    <td class="esq"><u>CÓDIGO DE ERRO</u> <p>Indica o erro registado no processamento dum
+    ficheiro recepcionado pela SIBS.</p>
+    <p>Valores possíveis:<br />
+    &nbsp; &nbsp; 008 - Tipo de registo inválido<br />
+    &nbsp;&nbsp;&nbsp; 009 - Dispositivo anulado<br />
+    &nbsp;&nbsp;&nbsp; 010 - Identificação do cartão inválido<br />
+    &nbsp;&nbsp;&nbsp; 011 - Data de expiração inválida<br />
+    &nbsp;&nbsp;&nbsp; 012 - Identificação do cartão anterior inválida<br />
+    &nbsp;&nbsp;&nbsp; 013 - Identificação de cartão novo inválido<br />
+    &nbsp;&nbsp;&nbsp; 014 - Número de dispositivo inválido<br />
+    &nbsp;&nbsp;&nbsp; 015 - Cartão em Lista Negra<br />
+    &nbsp;&nbsp;&nbsp; 016 - Dispositivo já atribuído<br />
+    &nbsp;&nbsp;&nbsp; 017 - Dispositivo alheio<br />
+    &nbsp;&nbsp;&nbsp; 018 - Dispositivo inexistente<br />
+    &nbsp;&nbsp;&nbsp; 019 - Cartão a substituir não coincide<br />
+    &nbsp;&nbsp;&nbsp; 020 - Falta registo de trailer<br />
+    &nbsp;&nbsp;&nbsp; 021 - Número de registos do ficheiro incorrecto<br />
+    &nbsp;&nbsp;&nbsp; 022 - Dispositivo com cheque dígito inválido<br />
+    &nbsp;&nbsp;&nbsp; 023 - Tamanho do BIN inválido<br />
+    &nbsp;&nbsp;&nbsp; 024 - Identificação do BIN inválido<br />
+    &nbsp;&nbsp;&nbsp; 025 - Tamanho do cartão inválido<br />
+    &nbsp;&nbsp;&nbsp; 026 - Tipo de cartão incorrecto<br>
+    &nbsp;&nbsp;&nbsp; 027 - Tamanho do BIN do cartão novo inválido<br>
+    &nbsp;&nbsp;&nbsp; 028 - Identificação do BIN do cartão novo inválido<br>
+    &nbsp;&nbsp;&nbsp; 029 - Tamanho do cartão novo inválido<br>
+    &nbsp;&nbsp;&nbsp; 030 - Data de expiração do cartão novo inválida<br>
+    &nbsp;&nbsp;&nbsp; 031 - Tipo de cartão novo inválido<br>
+    &nbsp;&nbsp;&nbsp; 032 - Identificação do BIN inexistente<br>
+    &nbsp;&nbsp;&nbsp; 033 - Check-dígito do cartão inválido<br>
+    &nbsp;&nbsp;&nbsp; 034 - Identificação do Registo do SAOS Inválido<br>
+    &nbsp;&nbsp;&nbsp; 035 - Tentativa de Abate para Registo Inexistente<br>
+    &nbsp;&nbsp;&nbsp; 036 - Tentativa de Inserção para registo já existente<br>
+    &nbsp;&nbsp;&nbsp; 037 - Designação de registo do SAOS Inválido<br>
+    &nbsp;&nbsp;&nbsp; 038 - Código de MCCs Inválido<br>
+    &nbsp;&nbsp;&nbsp; 039 - Pos-Entry-Mod Inválido<br>
+    &nbsp;&nbsp;&nbsp; 040 - Código de Processamento Inválido<br>
+    &nbsp;&nbsp;&nbsp; 041 - Registo de SAOS Informado Sem Coerência<br>
+    &nbsp;&nbsp;&nbsp; 042 - MCC Inexistente<br>
+    &nbsp;&nbsp;&nbsp; 050 - Actualização de Lista Negra repetida</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD-ERRO</td>
+  </tr>
+  <tr>
+    <td><a id="905" name="905">905</a></td>
+    <td class="esq"><u>REGISTO ERRADO</u> <p>Este campo reproduz o registo original sobre o
+    qual se verificou o erro, no processamento dum ficheiro recepcionado pela SIBS. O campo
+    tem o comprimento definido em cada ficheiro, dado que depende do comprimento de registo do
+    ficheiro processado pela SIBS.</td>
+    <td class="dta">Variável</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>REG-ERRO</td>
+  </tr>
+  <tr>
+    <td><a id="906" name="906">906</a></td>
+    <td class="esq"><u>TAXA IVA DO PRODUTO</u> <p>Indica a percentagem de IVA incluída na
+    tarifa indicada no campo (<a href="campos1.htm#008">008</a>) MONTANTE.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>2 int.<br />
+    1 dec.</td>
+    <td>IVA-PROD</td>
+  </tr>
+  <tr>
+    <td><a id="907" name="907">907</a></td>
+    <td class="esq"><u>NÚMERO DA IDENTIFICAÇÃO DO PAGAMENTO</u> <p>Identificação única
+    atribuída pelas entidades aceitantes de pagamentos de custas judiciais, a cada operação
+    correctamente concluída.</p>
+    <table border="0" cellpadding="2" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq" colspan="2">Tem a estrutura ENNNNNNND, em que:</td>
+      </tr>
+      <tr>
+        <td class="esq">Entidade Aceitante <br>
+        (E)</td>
+        <td class="esq">= 1, se pagamento feito na rede da SIBS, Serviço Especial<br />
+        = 2, se pagamento feito na rede da SIBS, Pagamento de Serviços</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>Número Sequencial&nbsp;<br />
+        (NNNNNNN)</td>
+        <td class="esq">= atribuído pelas Entidades Aceitantes. Quando o número atingir o valor
+        &quot;9999999&quot;, será reinicializado, sendo atribuído o número seguinte
+        &quot;0000001&quot;.</td>
+      </tr>
+      <tr>
+        <td class="esq">Dígito de Controlo <br>
+        (D)</td>
+        <td class="esq">= calculado com base nos restantes campos</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="908" name="908">908</a></td>
+    <td class="esq"><u>NÚMERO DE CONTRIBUINTE DO APRESENTANTE</u> <p>Indica o número de
+    contribuinte do Apresentante de uma petição inicial ou de um processo em curso,
+    relativamente a uma acção judicial.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="909" name="909">909</a></td>
+    <td class="esq"><u>UNIDADE DE PAGAMENTO</u> <p>Campo que define a quantidade de tempo que
+    será objecto de contabilização, para efeitos de apuramento do montante final a pagar à
+    Segurança Social, no âmbito da operação de Serviço com dados adicionais.<br />
+    Se o campo <a href="camp1100.htm#1169">1169</a> - TIPO DE REMUNERAÇÃO for igual a 1 -
+    &nbsp; Mês completo, o valor a preencher é sempre &quot;001&quot; (indicador de meses).<br>
+    Se o campo <a href="camp1100.htm#1169">1169</a> - TIPO DE REMUNERAÇÃO for igual a 2 -
+    Mensal Mês incompleto, o valor indicado é em dias e apenas serão aceites valores
+    compreendidos entre 1 e 29 (ambos inclusive).<br />
+    Se o campo <a href="camp1100.htm#1169">1169</a> - TIPO DE REMUNERAÇÃO for igual a 3 -
+    Horária, o valor indicado é em horas e apenas serão aceites valores compreendidos entre
+    30 e 172 (ambos inclusive).</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="910" name="910">910</a></td>
+    <td class="esq"><u>FICHEIRO (APLICAÇÃO ACQUIRER)</u> <p>É o nome que identifica o
+    ficheiro.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="911" name="911">911</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DE ESTABELECIMENTO MB (APLICAÇÃO ACQUIRER)</u> <p>Número
+    sequencial atribuído pela SIBS aquando da inserção de um estabelecimento para um
+    determinado comerciante ou empresa, no sistema MB.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="912" name="912">912</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DE REPRESENTANTE (APLICAÇÃO ACQUIRER)</u> <p>Identificação
+    atribuída pelo Sistema da SIBS, quando o comerciante ou empresa tem funções de
+    Representante no sistema MB.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="913" name="913">913</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DE ESTABELECIMENTO PARA O REPRESENTANTE (APLICAÇÃO
+    ACQUIRER)</u> <p>Identificação atribuída pelo Representante para um seu
+    Estabelecimento, no Sistema MB.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="914" name="914">914</a></td>
+    <td class="esq"><u>TIPO DE OPERAÇÂO (APLICAÇÃO ACQUIRER)</u> <p>Código que identifica
+    o tipo de transacção efectuada.</p>
+    <p>Pode assumir os valores:<br />
+    &nbsp;&nbsp;&nbsp; 01 - Electrónica<br />
+    &nbsp;&nbsp;&nbsp; 02 - Manual<br />
+    &nbsp;&nbsp;&nbsp; 03 - Mailphone order</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="915" name="915">915</a></td>
+    <td class="esq"><u>NÚMERO DE CARTÃO (APLICAÇÃO ACQUIRER)</u> <p>Número que identifica
+    o cartão que realizou a operação.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="916" name="916">916</a></td>
+    <td class="esq"><u>REFERÊNCIA DO PAGAMENTO (APLICAÇÃO ACQUIRER)</u> <p>É o número do
+    documento que identifica uma transacção manual. Por exemplo, o número da factura.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>REF</td>
+  </tr>
+  <tr>
+    <td><a id="917" name="917">917</a></td>
+    <td class="esq"><u>NÚMERO DE AUTORIZAÇÃO (APLICAÇÃO ACQUIRER)</u> <p>É o número que
+    identifica a autorização para o movimento.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="918" name="918">918</a></td>
+    <td class="esq"><u>MONTANTE TOTAL (ESCUDOS) (APLICAÇÃO ACQUIRER)</u> <p>É o somatório
+    dos montantes das operações enviadas no ficheiro de transacções, em Escudos.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="919" name="919">919</a></td>
+    <td class="esq"><u>MONTANTE TOTAL (EUROS) (APLICAÇÃO ACQUIRER)</u> <p>É o somatório
+    dos montantes das operações enviadas no ficheiro de transacções, em Euros.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="920" name="920">920</a></td>
+    <td class="esq"><u>MONTANTE TOTAL OPERAÇÕES COMPENSADAS EM ESCUDOS (APLICAÇÃO
+    ACQUIRER)</u> <p>É o valor em Escudos, compensado pela SIBS para crédito na conta do
+    Representante, resultante do correcto processamento das operações em Escudos, recebidas
+    no ficheiro de transacções.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="921" name="921">921</a></td>
+    <td class="esq"><u>MONTANTE TOTAL OPERAÇÕES COMPENSADAS EM EUROS (APLICAÇÃO ACQUIRER)</u>
+    <p>É o valor em Euros, compensado pela SIBS para crédito na conta do Representante,
+    resultante do correcto processamento das operações em Euros, recebidas no ficheiro de
+    transacções.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>13 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="922" name="922">922</a></td>
+    <td class="esq"><u>MONTANTE TOTAL COMISSÕES EM ESCUDOS (APLICAÇÃO ACQUIRER)</u> <p>É o
+    valor total em Escudos, das comissões aplicadas ao Comerciante pelo processamento das
+    operações em Escudos, recebidas no ficheiro de transacções.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="923" name="923">923</a></td>
+    <td class="esq"><u>MONTANTE TOTAL COMISSÕES EM EUROS (APLICAÇÃO ACQUIRER)</u> <p>É o
+    valor total em Euros, das comissões aplicadas ao Comerciante pelo processamento das
+    operações em Euros, recebidas no ficheiro de transacções.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>TOT_COM</td>
+  </tr>
+  <tr>
+    <td><u><a id="924" name="924">924</a></u> </td>
+    <td class="esq"><u>NÚMERO DE OPERAÇÕES RECUSADAS (APLICAÇÃO ACQUIRER)</u> <p>Este
+    campo indica o número de operações recebidas no ficheiro de transacções e que foram
+    recusadas.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="925" name="925">925</a></td>
+    <td class="esq"><u>NÚMERO DE OPERAÇÕES ACEITES (APLICAÇÃO ACQUIRER)</u> <p>Este campo
+    indica o número de operações recebidas no ficheiro de transacções que foram aceites.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="926" name="926">926</a></td>
+    <td class="esq"><u>CÓDIGO DE RECUSA (APLICAÇÃO ACQUIRER)</u> <p>Código que indica no
+    ficheiro de retorno, o motivo pelo qual uma operação enviada no ficheiro de
+    transacções foi rejeitada.</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2" class="esq">Assume os seguintes valores:</td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap="nowrap">&nbsp;&nbsp;01 -&nbsp;</td>
+        <td class="esq">Falta Registo de Detalhe</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;02 -&nbsp;</td>
+        <td class="esq">Tipo de Operação inválida</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;03 -&nbsp;</td>
+        <td class="esq">Número de Cartão igual a zeros</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;04 -&nbsp;</td>
+        <td class="esq">Check Digit de Cartão incorrecto</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;05 -&nbsp;</td>
+        <td class="esq">Número de Cartão Incorrecto</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;06 -&nbsp;</td>
+        <td class="esq">Cartão em Lista Negra</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;07 -&nbsp;</td>
+        <td class="esq">Cartão Anulado</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;08 -&nbsp;</td>
+        <td class="esq">Data de Expiração do Cartão igual a zeros</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;09 -&nbsp;</td>
+        <td class="esq">Data de Expiração do Cartão menor que data corrente</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;10 -&nbsp;</td>
+        <td class="esq">Data da transacção igual a zeros</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;11 -&nbsp;</td>
+        <td class="esq">Data da transacção maior que data de recepção ficheiro</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;12 -&nbsp;</td>
+        <td class="esq">Montante da transacção igual a zeros</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;13 -&nbsp;</td>
+        <td class="esq">Montante da transacção maior que montante máximo autorizado</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;14 -&nbsp;</td>
+        <td class="esq">Código de moeda inválido</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="927" name="927">927</a></td>
+    <td class="esq"><u>REGISTO ORIGINAL (ATRNEMP) (APLICAÇÃO ACQUIRER)</u> <p>É o registo
+    original recebido no ficheiro de transacções e que deu origem a uma rejeição no
+    processamento.</td>
+    <td class="dta">80</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="928" name="928">928</a></td>
+    <td class="esq"><u>DESCRITIVO DO ERRO (APLICAÇÃO ACQUIRER)</u> <p>Descrição dos
+    códigos enviados no ficheiro de Erros. Indica o motivo pelo qual foi rejeitado o ficheiro
+    original ou alguns dos seus registos de detalhe.</p>
+    <table border="0" cellspacing="0" width="100%" cellpadding="0">
+      <tr>
+        <td colspan="2" class="esq">Tem os seguintes valores:</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 01 -</td>
+        <td class="esq">Falta Registo de Header</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 02 -</td>
+        <td class="esq">Tipo de Ficheiro inválido</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 03 -</td>
+        <td class="esq">Id. Comerciante Origem inválida</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 04 -</td>
+        <td class="esq">Id. Comerciante Destino inválida</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 05 -</td>
+        <td class="esq">Id. Ficheiro inválida</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 06 -</td>
+        <td class="esq">Id. Ficheiro Anterior inválida</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 07 -</td>
+        <td class="esq">Id. Estabelecimento MB inválida</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 08 -</td>
+        <td class="esq">Id. Representante inválida</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 09 -</td>
+        <td class="esq">Id. Estabelecimento Representante inválida</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 10 -</td>
+        <td class="esq">Registo Trailer não é o último do ficheiro</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 11 -</td>
+        <td class="esq">Número de Registos de detalhe incorrecto</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 12 -</td>
+        <td class="esq">Falta Registo de Trailer</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 13 -</td>
+        <td class="esq">Montante total (escudos) incorrecto</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 14 -</td>
+        <td class="esq">Montante total (euros) incorrecto</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 15 -</td>
+        <td class="esq">Tipo de registo de Detalhe inválido</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 16 -</td>
+        <td class="esq">Id. Comerciante MB inválida</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 17 -</td>
+        <td class="esq">Código Banco inexistente</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 18 -</td>
+        <td class="esq">Código Moeda inválido</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 19 -</td>
+        <td class="esq">Data inválida</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 20 -</td>
+        <td class="esq">Hora inválida</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 21 -</td>
+        <td class="esq">TPA inexistente</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 22 -</td>
+        <td class="esq">Sinal do Montante incorrecto</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 23 -</td>
+        <td class="esq">Total de Registos Tipos 4 incorrecto</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 24 -</td>
+        <td class="esq">Total de Registos Tipos 5 incorrecto</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 25 -</td>
+        <td class="esq">Número Total de Registos dif. 0 e 9 incorrecto</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 26 -</td>
+        <td class="esq">Tipo de Registo inválido</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">47</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="929" name="929">929</a></td>
+    <td class="esq"><u>ENDEREÇO DE EXTRACTO (APLICAÇÃO ACQUIRER)</u> <p>É a morada do
+    comerciante destinatário do extracto. Campo enviado no ficheiro de extractos para
+    expedição</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="930" name="930">930</a></td>
+    <td class="esq"><u>REGISTO ORIGINAL (EXTRACTOS) (APLICAÇÃO ACQUIRER)</u> <p>É o registo
+    original recebido no ficheiro de Extractos e que deu origem a uma rejeição durante o
+    processamento.</td>
+    <td class="dta">150</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="931" name="931">931</a></td>
+    <td class="esq"><u>DATA DO FECHO (APLICAÇÃO ACQUIRER)</u> <p>É a data em que se
+    realizou a operação de Fecho Contabilístico do TPA.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DT_FECHO</td>
+  </tr>
+  <tr>
+    <td><a id="932" name="932">932</a></td>
+    <td class="esq"><u>HORA DO FECHO (APLICAÇÃO ACQUIRER)</u> <p>É a hora em que se
+    realizou a operação de Fecho Contabilístico do TPA.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>HHMM</td>
+    <td>HR_FECHO</td>
+  </tr>
+  <tr>
+    <td><a id="933" name="933">933</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO TPA (APLICAÇÃO ACQUIRER)</u> <p>É o número do
+    Terminal de Pagamento Automático facturado ao Proprietário ou pertencente ao
+    Estabelecimento do Representante, e para o qual foram apurados movimentos.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NR-TPA</td>
+  </tr>
+  <tr>
+    <td><a id="934" name="934">934</a></td>
+    <td class="esq"><u>NÚMERO PERÍODO CONTABILÍSTICO</u> <p>É o número que identifica o
+    período contabílistico do TPA, e para o qual foram realizadas operações extractáveis.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUM-PER-CNT</td>
+  </tr>
+  <tr>
+    <td><a id="935" name="935">935</a></td>
+    <td class="esq"><u>NÚMERO DE OPERAÇÕES (APLICAÇÃO ACQUIRER)</u> <p>É o número de
+    movimentos realizados no período contabílistico do TPA, indicado na mesma linha de
+    extracto.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="936" name="936">936</a></td>
+    <td class="esq"><u>SINAL (APLICAÇÃO ACQUIRER)</u> <p>É o sinal associado aos montantes,
+    quer das operações como dos descontos.<br />
+    Assume os valores &quot;+&quot; e &quot;-&quot; .</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="937" name="937">937</a></td>
+    <td class="esq"><u>MONTANTE DOS DESCONTOS (APLICAÇÃO ACQUIRER)</u> <p>Indica o valor dos
+    descontos efectuados no Período Contabilístico .</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>6 int.<br />
+    2 dec.</td>
+    <td>DESC</td>
+  </tr>
+  <tr>
+    <td><a id="938" name="938">938</a></td>
+    <td class="esq"><u>MONTANTE A CRÉDITO (APLICAÇÃO ACQUIRER)</u> <p>Indica o valor a
+    crédito do Comerciante.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="939" name="939">939</a></td>
+    <td class="esq"><u>MONTANTE A DÉBITO (APLICAÇÃO ACQUIRER)</u> <p>Indica o valor a
+    débito ao Comerciante.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="940" name="940">940</a></td>
+    <td class="esq"><u>TIPO DE DOCUMENTO (APLICAÇÃO ACQUIRER)</u> <p>Campo descritivo do
+    documento que foi apresentado para compensação. Poderá ser uma factura, chargeback,
+    reapresentação, etc.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="941" name="941">941</a></td>
+    <td class="esq"><u>NÚMERO DO DOCUMENTO (APLICAÇÃO ACQUIRER)</u> <p>Número que
+    identifica o documento descrito no campo 940.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="942" name="942">942</a></td>
+    <td class="esq"><u>DATA DO PAGAMENTO (APLICAÇÃO ACQUIRER)</u> <p>Data em que se realizou
+    o crédito na conta do Comerciante.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="943" name="943">943</a></td>
+    <td class="esq"><u>DATA DO FICHEIRO (APLICAÇÃO ACQUIRER)</u> <p>Indica o ano, mês e dia
+    em que foi produzido o ficheiro.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="944" name="944">944</a></td>
+    <td class="esq"><u>MONTANTE LIQUIDO (APLICAÇÃO ACQUIRER)</u> <p>É o valor pelo qual foi
+    movimentada (a débito ou a crédito) a conta do comerciante.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>MNT-LIQ</td>
+  </tr>
+  <tr>
+    <td><a id="945" name="945">945</a></td>
+    <td class="esq"><u>TELEFONE DO ESTABELECIMENTO DO REPRESENTANTE (APLICAÇÃO ACQUIRER)</u>
+    <p>Número de telefone associado ao estabelecimento do Representante.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="946" name="946">946</a></td>
+    <td class="esq"><u>MORADA 1 DO ESTABELECIMENTO DO REPRESENTANTE (APLICAÇÃO ACQUIRER)</u>
+    <p>É a morada do comerciante destinatário do extracto por <em>default</em>. Campo
+    enviado no ficheiro SE Demographics.</td>
+    <td class="dta">38</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="947" name="947">947</a></td>
+    <td class="esq"><u>MORADA 2 DO ESTABELECIMENTO DO REPRESENTANTE (APLICAÇÃO ACQUIRER)</u>
+    <p>2ª morada alternativa do comerciante destinatário do extracto. Poderá ser um
+    endereço do Serviço de Cobranças, cuja localização é diferente da sede do
+    Comerciante. Este campo poderá ser utilizado para emissão de 2ªs Vias de Extracto e é
+    enviado no ficheiro SE Demographics.</td>
+    <td class="dta">38</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="948" name="948">948</a></td>
+    <td class="esq"><u>DATA DA ÚLTIMA TRANSACÇÃO (APLICAÇÃO ACQUIRER)</u> <p>Campo com a
+    data em que foi realizada a última transacção com um cartão, no Estabelecimento do
+    Representante.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="949" name="949">949</a></td>
+    <td class="esq"><u>INDICADOR DE ENVIO DE FICHEIRO DE TRANSACÇÕES</u><p>Campo que indica
+    se um Estabelecimento do Representante pode, ou não, enviar ficheiros de transacções
+    manuais.</p>
+    <p>Valores do campo:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 0 - Não envia ficheiro<br />
+    &nbsp;&nbsp; &nbsp; 1 - Envia ficheiro</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td nowrap="nowrap">ID-ENV-F-TRAN</td>
+  </tr>
+  <tr>
+    <td><a id="950" name="950">950</a></td>
+    <td class="esq"><u>CÓDIGO DE IVA (APLICAÇÃO ACQUIRER)</u> <p>Código que indica a
+    percentagem de IVA a aplicar ao Comerciante.</p>
+    <p>Tem os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 0 - 0%<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 1 - 15%<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 2 - 21%</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="951" name="951">951</a></td>
+    <td class="esq"><u>CÓDIGO DE RECEPÇÃO INFORMAÇÃO DE LISTA NEGRA (APLICAÇÃO
+    ACQUIRER)</u> <p>Código que indica se o Estabelecimento do Representante recebe
+    informação de Lista Negra.</p>
+    <p>Tem os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Não recebe<br />
+    &nbsp;&nbsp;&nbsp; 1 - Recebe informação de LN ou avisos especiais.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="952" name="952">952</a></td>
+    <td class="esq"><u>INDICADOR DE KEY-ENTERED (APLICAÇÃO ACQUIRER)</u> <p>Código que
+    indica se o Estabelecimento do Representante pode efectuar, ou não, transacções de
+    Key-entered.</p>
+    <p>Tem os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Não autorizado<br />
+    &nbsp;&nbsp;&nbsp; 1 - Autorizado</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="953" name="953">953</a></td>
+    <td class="esq"><u>MONTANTE MÁXIMO POR TRANSACÇÃO EM ESCUDOS (APLICAÇÃO ACQUIRER)</u>
+    <p>Campo que indica o montante máximo em Escudos, que o Estabelecimento do Representante
+    está autorizado a enviar, por operação, no Ficheiro de Transacções.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br />
+    2 dec.</td>
+    <td nowrap="nowrap">ID-MAX-TRAN-$</td>
+  </tr>
+  <tr>
+    <td><a id="954" name="954">954</a></td>
+    <td class="esq"><u>MONTANTE MÁXIMO POR TRANSACÇÃO EM EUROS</u><p>Campo que indica o
+    montante máximo em Euros, que o Estabelecimento do Representante está autorizado a
+    enviar, por operação, no Ficheiro de Transacções.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br />
+    2 dec.</td>
+    <td>MAX-TRAN</td>
+  </tr>
+  <tr>
+    <td><a id="955" name="955">955</a></td>
+    <td class="esq"><u>OCORRÊNCIA NA VISITA AO ESTABELECIMENTO (APLICAÇÃO ACQUIRER)</u> <p>Campo
+    utilizado para tabela de multiselecção, que descreve o que ocorreu no Estabelecimento do
+    ponto de vista do vendedor, quando este efectuou uma visita ao Estabelecimento.<br />
+    <br />
+    Poderá ter os valores:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Activo<br />
+    &nbsp;&nbsp;&nbsp; 1 - Inactivo<br />
+    <br />
+    A ordem referente aos valores atribuídos a cada posição é a seguinte:<br />
+    &nbsp;&nbsp;&nbsp; 1 - Filiação<br />
+    &nbsp;&nbsp;&nbsp; 2 - Entregue Maq. Chapa<br />
+    &nbsp;&nbsp;&nbsp; 3 - Cancelamento<br />
+    &nbsp;&nbsp;&nbsp; 4 - C. Amarelo<br />
+    &nbsp;&nbsp;&nbsp; 5 - Desconto Elevado<br />
+    &nbsp;&nbsp;&nbsp; 6 - Problemas Pagamento<br />
+    &nbsp;&nbsp;&nbsp; 7 - Segurança<br />
+    &nbsp;&nbsp;&nbsp; 8 - Fraude<br />
+    &nbsp;&nbsp;&nbsp; 9 - Supressão<br />
+    &nbsp;&nbsp;&nbsp; 10 a 15 - Por definir</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="956" name="956">956</a></td>
+    <td class="esq"><u>IMAGEM DO ESTABELECIMENTO NA VISITA DO VENDEDOR (APLICAÇÃO ACQUIRER)</u>
+    <p>Campo utilizado para tabela de multiselecção, que descreve a imagem do
+    Estabelecimento do ponto de vista do vendedor, quando este efectuou uma visita ao
+    Estabelecimento.<br />
+    <br />
+    Poderá ter os valores:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Activo<br />
+    &nbsp;&nbsp;&nbsp; 1 - Inactivo<br />
+    <br />
+    A ordem referente aos valores atribuídos a cada posição é a seguinte:<br />
+    &nbsp;&nbsp;&nbsp; 1 - Boa<br />
+    &nbsp;&nbsp;&nbsp; 2 - Deficiente<br />
+    &nbsp;&nbsp;&nbsp; 3 - Colocados Autocolantes<br />
+    &nbsp;&nbsp;&nbsp; 4 - Verificada Máquina<br />
+    &nbsp;&nbsp;&nbsp; 5 - Promoções<br />
+    &nbsp;&nbsp;&nbsp; 6 - Atitude Boa<br />
+    &nbsp;&nbsp;&nbsp; 7 - Atitude Negativa<br />
+    &nbsp;&nbsp;&nbsp; 8 - Seguir com Atenção<br />
+    &nbsp;&nbsp;&nbsp; 9 a 15 - Por definir</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="957" name="957">957</a></td>
+    <td class="esq"><u>NÚMERO VISA (APLICAÇÃO ACQUIRER)</u> <p>Número pelo qual o
+    Estabelecimento está identificado para o sistema VISA.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="958" name="958">958</a></td>
+    <td class="esq"><u>NÚMERO CREDIBANCO (APLICAÇÃO ACQUIRER)</u> <p>Número pelo qual o
+    Estabelecimento está identificado para o sistema CREDIBANCO.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="959" name="959">959</a></td>
+    <td class="esq"><u>CÓDIGO DE ZONA (APLICAÇÃO ACQUIRER)</u> <p>Código que indica a zona
+    onde está inserido o Estabelecimento do Representante.</p>
+    <p>(Ver <a href="959.htm" target="main">Tabela</a> de Zonas da Aplicação de Acquirer
+    AMEX.)</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="960" name="960">960</a></td>
+    <td class="esq"><u>CÓDIGO DE SUB-ZONA (APLICAÇÃO ACQUIRER)</u> <p>Código indicador da
+    área onde está inserido o Estabelecimento. Pode ser um grupo de localidades, uma
+    localidade, um bairro ou uma rua.</p>
+    <p>(Ver <a href="960.htm" target="main">Tabela</a> de Sub-Zonas da Aplicação de Acquirer
+    AMEX.)</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="961" name="961">961</a></td>
+    <td class="esq"><u>INCENTIVO DE COMISSÃO ELECTRÓNICA (APLICAÇÃO ACQUIRER)</u> <p>Código
+    que indica se o Estabelecimento tem algum incentivo, ou não, ao nível do Acordo, para
+    efectuar transacções electrónicas.</p>
+    <p>Tem os valores:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Sem Incentivo (<em>Default</em>)<br />
+    &nbsp;&nbsp;&nbsp; 1 - Com incentivo</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="962" name="962">962</a></td>
+    <td class="esq"><u>MEIO UTILIZADO NO ENVIO DOS DADOS (APLICAÇÃO ACQUIRER)</u> <p>Indica
+    a forma como o Estabelecimento pode enviar os dados da transacção.</p>
+    <p>Assume os valores:<br />
+    &nbsp;&nbsp;&nbsp; 080 - Factura AMEX<br />
+    &nbsp;&nbsp;&nbsp; 081 - Factura do Comerciante<br />
+    &nbsp;&nbsp;&nbsp; 082 - Unidade Tape AMEX<br />
+    &nbsp;&nbsp;&nbsp; 083 - Unidade Tape Comerciante<br />
+    &nbsp;&nbsp;&nbsp; 084 - Imagem electrónica<br />
+    &nbsp;&nbsp;&nbsp; 085 - Disquete<br />
+    &nbsp;&nbsp;&nbsp; 087 - Fax<br />
+    &nbsp;&nbsp;&nbsp; 088 - Transmissão por cabo<br />
+    &nbsp;&nbsp;&nbsp; 089 - Telex<br />
+    &nbsp;&nbsp;&nbsp; 090 - Electrónica<br />
+    &nbsp;&nbsp;&nbsp; 091 - Lista do Comerciante</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="963" name="963">963</a></td>
+    <td class="esq"><u>FAX DO ESTABELECIMENTO DO REPRESENTANTE (APLICAÇÃO ACQUIRER)</u> <p>Número
+    de fax associado ao Estabelecimento do Representante.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="964" name="964">964</a></td>
+    <td class="esq"><u>CÓDIGO DO VENDEDOR (APLICAÇÃO ACQUIRER)</u> <p>Código que
+    identifica o vendedor no sistema aplicacional do Acquirer. Associado ao código, estará o
+    nome (Campo <a href="#965">965</a>) que completa a sua identificação.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="965" name="965">965</a></td>
+    <td class="esq"><u>NOME VENDEDOR (APLICAÇÃO ACQUIRER)</u> <p>Nome do vendedor no sistema
+    aplicacional do Acquirer. A identificação do vendedor é completada com a associação
+    do seu código (Campo <a href="#964">964</a>).</td>
+    <td class="dta">30</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="966" name="966">966</a></td>
+    <td class="esq"><u>DATA DA VISITA AO ESTABELECIMENTO (APLICAÇÃO ACQUIRER)</u> <p>Data em
+    que o Estabelecimento do Representante é visitado pelo vendedor.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="967" name="967">967</a></td>
+    <td class="esq"><u>DATA DA ÚLTIMA VISITA AO ESTABELECIMENTO (APLICAÇÃO ACQUIRER)</u> <p>Data
+    em que o Estabelecimento do Representante foi visitado pela última vez pelo vendedor.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="968" name="968">968</a></td>
+    <td class="esq"><u>E-MAIL DO ESTABELECIMENTO (APLICAÇÃO ACQUIRER)</u> <p>Endereço
+    electrónico do Estabelecimento do Representante.</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="969" name="969">969</a></td>
+    <td class="esq"><u>NOME DA CONTA BANCÁRIA (APLICAÇÃO ACQUIRER)</u> <p>Descritivo que
+    identifica a conta bancária na Instituição de crédito.</td>
+    <td class="dta">30</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="970" name="970">970</a></td>
+    <td class="esq"><u>CONTACTO (RESPONSÁVEL LOCAL) (APLICAÇÃO ACQUIRER)</u> <p>É a pessoa
+    que poderá efectuar esclarecimentos sobre problemas técnicos, financeiros ou de gestão,
+    relacionados com o Estabelecimento.</td>
+    <td class="dta">30</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="971" name="971">971</a></td>
+    <td class="esq"><u>CARGO (APLICAÇÃO ACQUIRER)</u> <p>Cargo que a pessoa identificada no
+    campo <a href="#970">970</a>, ocupa no Estabelecimento.</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="972" name="972">972</a></td>
+    <td class="esq"><u>TIPO DE TERMINAIS DE PAGAMENTO EXISTENTES NO ESTABELECIMENTO
+    (APLICAÇÃO ACQUIRER)</u> <p>Tabela que indica que tipo de terminais de pagamento existem
+    no Estabelecimento do Representante.</p>
+    <p>Tem os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Multibanco<br />
+    &nbsp;&nbsp;&nbsp; 1 - Outros tipos<br />
+    &nbsp;&nbsp;&nbsp; 2 - Multibanco e Outros</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="973" name="973">973</a></td>
+    <td class="esq"><u>DESCANSO SEMANAL DO ESTABELECIMENTO (APLICAÇÃO ACQUIRER)</u> <p>Tabela
+    que indica se o Estabelecimento tem, ou não, descanso semanal e qual o período desse
+    mesmo descanso.</p>
+    <p>Poderá ter os valores:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Não tem Descanso<br />
+    &nbsp;&nbsp;&nbsp; 1 - Domingo<br />
+    &nbsp;&nbsp;&nbsp; 2 - 2ª Feira<br />
+    &nbsp;&nbsp;&nbsp; 4 - 3ª Feira<br />
+    &nbsp;&nbsp;&nbsp; 4 - 4ª Feira<br />
+    &nbsp;&nbsp;&nbsp; 5 - 5ª Feira<br />
+    &nbsp;&nbsp;&nbsp; 6 - 6ª Feira<br />
+    &nbsp;&nbsp;&nbsp; 7 - Sábado</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="974" name="974">974</a></td>
+    <td class="esq"><u>FECHO PARA FÉRIAS DO ESTABELECIMENTO (APLICAÇÃO ACQUIRER)</u> <p>Tabela
+    que indica se o Estabelecimento do Representante encerra ou não, para férias.</p>
+    <p>Tem os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp; 00 - Não encerra<br />
+    &nbsp;&nbsp;&nbsp; 01 - Janeiro<br />
+    &nbsp;&nbsp;&nbsp; 02 - Fevereiro<br />
+    &nbsp;&nbsp;&nbsp; 03 - Março<br />
+    &nbsp;&nbsp;&nbsp; 04 - Abril<br />
+    &nbsp;&nbsp;&nbsp; 05 - Maio<br />
+    &nbsp;&nbsp;&nbsp; 06 - Junho<br />
+    &nbsp;&nbsp;&nbsp; 07 - Julho<br />
+    &nbsp;&nbsp;&nbsp; 08 - Agosto<br />
+    &nbsp;&nbsp;&nbsp; 09 - Setembro<br />
+    &nbsp;&nbsp;&nbsp; 10 - Outubro<br />
+    &nbsp;&nbsp;&nbsp; 11 - Novembro<br />
+    &nbsp;&nbsp;&nbsp; 12 - Dezembro</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="975" name="975">975</a></td>
+    <td class="esq"><u>ESTABELECIMENTO ACEITA TAKE ONE (APLICAÇÃO ACQUIRER)</u> <p>Tabela
+    que indica se o Estabelecimento do Representante aceita ou não, propostas de adesão para
+    o cartão AMEX.</p>
+    <p>Tem os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Não Aceita<br />
+    &nbsp;&nbsp;&nbsp; 1 - Aceita</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="976" name="976">976</a></td>
+    <td class="esq"><u>ESTABELECIMENTO ACEITA TAKE ONE IN ROOM (APLICAÇÃO ACQUIRER)</u> <p>Tabela
+    que indica se o Estabelecimento do Representante aceita ou não, take one nos quartos,
+    propostas de adesão para o cartão AMEX, quando se tratam de estabelecimentos
+    relacionados com hotelaria.</p>
+    <p>Tem os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Não Aceita<br />
+    &nbsp;&nbsp;&nbsp; 1 - Aceita</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="977" name="977">977</a></td>
+    <td class="esq"><u>NOME DEPARTAMENTO DO BANCO (AGÊNCIA) (APLICAÇÃO ACQUIRER</u> ) <p>Designação
+    do &quot;departamento&quot; do Banco, onde está domiciliada a conta do Estabelecimento.
+    É a localização da Agência.</td>
+    <td class="dta">30</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="978" name="978">978</a></td>
+    <td class="esq"><u>CÓDIGO IATA (APLICAÇÃO ACQUIRER)</u> <p>Campo que identifica o
+    acordo efectuado entre o Estabelecimento e a IATA.</p>
+    <p>A existência de acordo, indica que o estabelecimento emite bilhetes de avião.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="979" name="979">979</a></td>
+    <td class="esq"><u>HORA DE ABERTURA DO ESTABELECIMENTO (APLICAÇÃO ACQUIRER)</u> <p>Campo
+    que indica a hora de abertura ao público do estabelecimento.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>HHMM</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="980" name="980">980</a></td>
+    <td class="esq"><u>HORA DE ENCERRAMENTO DO ESTABELECIMENTO (APLICAÇÃO ACQUIRER)</u> <p>Campo
+    que indica a hora de encerramento ao público do estabelecimento.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>HHMM</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="981" name="981">981</a></td>
+    <td class="esq"><u>ESTABELECIMENTO ACEITA TRAVELLERS CHECKS (APLICAÇÃO ACQUIRER)</u> <p>Tabela
+    que indica se o Estabelecimento do Representante aceita ou não, travellers checks.</p>
+    <p>Tem os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Não Aceita<br />
+    &nbsp;&nbsp;&nbsp; 1 - Aceita</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="982" name="982">982</a></td>
+    <td class="esq"><u>NOME CENTRAL NACIONAL (APLICAÇÃO ACQUIRER)</u> <p>Nome que identifica
+    o comerciante a nível nacional, com o valor mais alto da hierarquia, dentro de um grupo
+    ou uma cadeia.</td>
+    <td class="dta">40</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="983" name="983">983</a></td>
+    <td class="esq"><u>TIPO DE IMPRINTERS (APLICAÇÃO ACQUIRER)</u> <p>Campo utilizado para
+    tabela de multiselecção, que indica se o Estabelecimento tem ou não, imprinters e qual
+    o proprietário.</p>
+    <p>Poderá ter os valores:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Activo<br />
+    &nbsp;&nbsp;&nbsp; 1 - Inactivo</p>
+    <p>A ordem referente aos valores atribuídos a cada posição é a seguinte:<br />
+    &nbsp;&nbsp;&nbsp; 1- AMEX<br />
+    &nbsp;&nbsp;&nbsp; 2 - VISA<br />
+    &nbsp;&nbsp;&nbsp; 3 - Outros Proprietários<br />
+    &nbsp;&nbsp;&nbsp; 4 e 5 - Por definir</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="984" name="984">984</a></td>
+    <td class="esq"><u>OUTROS CARTÕES ACEITES NO ESTABELECIMENTO (APLICAÇÃO ACQUIRER)</u> <p>Campo
+    utilizado para tabela de multiselecção, que indica se o Estabelecimento, aceita ou não,
+    outros cartões e quais os tipos de cartão aceites.</p>
+    <p>Tem os valores:<br />
+    &nbsp;&nbsp; 0 - Activo<br />
+    &nbsp;&nbsp; 1 - Inactivo</p>
+    <p>A ordem referente aos valores atribuídos a cada posição é a seguinte:<br />
+    &nbsp;&nbsp;&nbsp; 1- Visa<br />
+    &nbsp;&nbsp;&nbsp; 2 - Mastercard<br />
+    &nbsp;&nbsp;&nbsp; 3 - Eurocheque<br />
+    &nbsp;&nbsp;&nbsp; 4 - Dinners<br />
+    &nbsp;&nbsp;&nbsp; 5 - Multibanco<br />
+    &nbsp;&nbsp;&nbsp; 6 - Outros Cartões<br />
+    &nbsp;&nbsp;&nbsp; 7 e 8 - Por definir</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="985" name="985">985</a></td>
+    <td class="esq"><u>NÚMERO DE POSTOS DE VENDA DE UM ESTABELECIMENTO (APLICAÇÃO ACQUIRER)</u>
+    <p>Campo que indica o número de postos de venda (caixas) que um Estabelecimento possui.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="986" name="986">986</a></td>
+    <td class="esq"><u>SITUAÇÃO DO HOTEL / RESTAURANTE (APLICAÇÃO ACQUIRER)</u> <p>Campo
+    utilizado para tabela de multiselecção, que indica que tipo de situação se encontra o
+    Estabelecimento, quando ligado à hotelaria ou à restauração.</p>
+    <p>Assume os valores:<br />
+    &nbsp;&nbsp;&nbsp; 0 - Activo<br />
+    &nbsp;&nbsp;&nbsp; 1 - Inactivo</p>
+    <p>A ordem referente aos valores atribuídos a cada posição é a seguinte:<br />
+    &nbsp;&nbsp;&nbsp; 1ª posição - Central<br />
+    &nbsp;&nbsp;&nbsp; 2ª posição - Vista<br />
+    &nbsp;&nbsp;&nbsp; 3ª posição - Piscina<br />
+    &nbsp;&nbsp;&nbsp; 4ª posição - Ténis<br />
+    &nbsp;&nbsp;&nbsp; 5ª posição - Golfe<br />
+    &nbsp;&nbsp;&nbsp; 6ª posição - Parking<br />
+    &nbsp;&nbsp;&nbsp; 7ª posição - Congressos<br />
+    &nbsp;&nbsp;&nbsp; 8ª posição - Esplanada<br />
+    &nbsp;&nbsp;&nbsp; 9ª posição - Reserva Assegurada<br />
+    &nbsp;&nbsp;&nbsp; 10ª posição - Restaurante<br />
+    &nbsp;&nbsp;&nbsp; 11ª posição - Express Check In/Out<br />
+    &nbsp;&nbsp;&nbsp; 12ª à 15ª - Por definir</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="987" name="987">987</a></td>
+    <td class="esq"><u>NÚMERO DE LUGARES DO ESTABELECIMENTO - RESTAURANTE (APLICAÇÃO
+    ACQUIRER)</u> <p>Campo que indica o número de lugares que o Estabelecimento (Restaurante)
+    possui.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="988" name="988">988</a></td>
+    <td class="esq"><u>NÚMERO DE QUARTOS DO ESTABELECIMENTO-HOTEL (APLICAÇÃO ACQUIRER)</u> <p>Campo
+    que indica o número de quartos que o Estabelecimento (Hotel) possui.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="989" name="989">989</a></td>
+    <td class="esq"><u>CONTACTO II (APLICAÇÃO ACQUIRER)</u> <p>É a pessoa que poderá
+    efectuar esclarecimentos sobre problemas técnicos, financeiros ou de gestão,
+    relacionados com o Estabelecimento.</td>
+    <td class="dta">30</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="990" name="990">990</a></td>
+    <td class="esq"><u>CARGO II (APLICAÇÃO ACQUIRER)</u> <p>Cargo que a pessoa identificada
+    no campo <a href="#970">970</a> ocupa no Estabelecimento.</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="991" name="991">991</a></td>
+    <td class="esq"><u>TIPO DE HOTEL (APLICAÇÃO ACQUIRER)</u> <p>Código descritivo do tipo
+    de hotel.</p>
+    <p>Tem os valores:<br />
+    &nbsp;&nbsp;&nbsp; 1 - Moderno<br />
+    &nbsp;&nbsp;&nbsp; 2 - Antigo<br />
+    &nbsp;&nbsp;&nbsp; 3 - Histórico</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="992" name="992">992</a></td>
+    <td class="esq"><u>CLASSIFICAÇÃO DO HOTEL (APLICAÇÃO ACQUIRER)</u> <p>Tabela que
+    indica a classificação do Hotel, de acordo com código de actividade AMEX.</p>
+    <p>Tem os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp; 220 - Hotel Restaurante<br />
+    &nbsp;&nbsp;&nbsp; 221 - Apartamento<br />
+    &nbsp;&nbsp;&nbsp; 222 - Pousada<br />
+    &nbsp;&nbsp;&nbsp; 223 - Pequeno Hotel Luxo<br />
+    &nbsp;&nbsp;&nbsp; 224 - Pequeno Hotel Luxo no Campo<br />
+    &nbsp;&nbsp;&nbsp; 225 - Hotel Económico<br />
+    &nbsp;&nbsp;&nbsp; 226 - Hotel Médio<br />
+    &nbsp;&nbsp;&nbsp; 227 - Hotel Superior<br />
+    &nbsp;&nbsp;&nbsp; 228 - Hotel de luxo<br />
+    &nbsp;&nbsp;&nbsp; 229 - Motel<br />
+    &nbsp;&nbsp;&nbsp; 242 - Hotel / Residencial<br />
+    &nbsp;&nbsp;&nbsp; 244 - Estalagem<br />
+    &nbsp;&nbsp;&nbsp; 245 - Turismo de Habitação<br />
+    &nbsp;&nbsp;&nbsp; 246 - Turismo Rural<br />
+    &nbsp;&nbsp;&nbsp; 248 - Parque Campismo<br />
+    &nbsp;&nbsp;&nbsp; 291 - Condomínio<br />
+    &nbsp;&nbsp;&nbsp; 299 - Outros</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="993" name="993">993</a></td>
+    <td class="esq"><u>AMBIENTE DO RESTAURANTE (APLICAÇÃO ACQUIRER)</u> <p>Tabela descritiva
+    do tipo de ambiente do Estabelecimento Restaurante.</p>
+    <p>Assume os valores:<br />
+    &nbsp;&nbsp;&nbsp; 1 - Tradicional<br />
+    &nbsp;&nbsp;&nbsp; 2 - Típico<br />
+    &nbsp;&nbsp;&nbsp; 3 - Elegante<br />
+    &nbsp;&nbsp;&nbsp; 4 - Romântico</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="994" name="994">994</a></td>
+    <td class="esq"><u>TIPO DE RESTAURANTE (APLICAÇÃO ACQUIRER)</u> <p>Tabela que indica a
+    classificação do Restaurante (por tipo de cozinha, tipo de serviço), de acordo com
+    código de actividade AMEX.</p>
+    <p>Tem os seguintes valores:<br />
+    &nbsp;&nbsp;&nbsp; 100 - Cozinha Americana<br />
+    &nbsp;&nbsp;&nbsp; 102 - Cozinha Creola<br />
+    &nbsp;&nbsp;&nbsp; 103 - Delicatessen<br />
+    &nbsp;&nbsp;&nbsp; 106 - Peixe/Marisco<br />
+    &nbsp;&nbsp;&nbsp; 109 - Steak House<br />
+    &nbsp;&nbsp;&nbsp; 110 - Queijo/Vinho<br />
+    &nbsp;&nbsp;&nbsp; 111 - Cozinha Vegetariana<br />
+    &nbsp;&nbsp;&nbsp; 118 - Cozinha Francesa<br />
+    &nbsp;&nbsp;&nbsp; 119 - Cozinha Alemã<br />
+    &nbsp;&nbsp;&nbsp; 120 - Cozinha Grega<br />
+    &nbsp;&nbsp;&nbsp; 121 - Cozinha Húngara<br />
+    &nbsp;&nbsp;&nbsp; 123 - Cozinha Italiana<br />
+    &nbsp;&nbsp;&nbsp; 125 - Cozinha Portuguesa<br />
+    &nbsp;&nbsp;&nbsp; 131 - Cozinha Espanhola<br />
+    &nbsp;&nbsp;&nbsp; 133 - Cozinha Turca<br />
+    &nbsp;&nbsp;&nbsp; 136 - Cozinha Chinesa<br />
+    &nbsp;&nbsp;&nbsp; 137 - Cozinha Indiana<br />
+    &nbsp;&nbsp;&nbsp; 140 - Cozinha Japonesa<br />
+    &nbsp;&nbsp;&nbsp; 149 - Cozinha Cubana<br />
+    &nbsp;&nbsp;&nbsp; 150 - Cozinha Mexicana<br />
+    &nbsp;&nbsp;&nbsp; 155 - Cozinha Internacional<br />
+    &nbsp;&nbsp;&nbsp; 163 - Cozinha Brasileira<br />
+    &nbsp;&nbsp;&nbsp; 167 - Cozinha Muçulmana<br />
+    &nbsp;&nbsp;&nbsp; 170 - Fast Food<br />
+    &nbsp;&nbsp;&nbsp; 180 - Pizzaria<br />
+    &nbsp;&nbsp;&nbsp; 181 - Cozinha Africana<br />
+    &nbsp;&nbsp;&nbsp; 182 - Restaurante de Estrada<br />
+    &nbsp;&nbsp;&nbsp; 183 - Take Away<br />
+    &nbsp;&nbsp;&nbsp; 184 - Cervejaria<br />
+    &nbsp;&nbsp;&nbsp; 185 - Clube Restaurante<br />
+    &nbsp;&nbsp;&nbsp; 188 - Bar/Restaurante<br />
+    &nbsp;&nbsp;&nbsp; 189 - Discoteca<br />
+    &nbsp;&nbsp;&nbsp; 194 - Hotel Restaurante<br />
+    &nbsp;&nbsp;&nbsp; 195 - Café<br />
+    &nbsp;&nbsp;&nbsp; 198 - Pub/Bar<br />
+    &nbsp;&nbsp;&nbsp; 199 - Outros<br />
+    &nbsp;&nbsp;&nbsp; 200 - Catering<br />
+    &nbsp;&nbsp;&nbsp; 210 - Discoteca de hotel</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="995" name="995">995</a></td>
+    <td class="esq"><u>NOTAS DA VISITA (APLICAÇÃO ACQUIRER)</u> <p>Campo texto para
+    inserção de comentários, pelo vendedor, quando este efectuou uma visita a um
+    Estabelecimento. Serve como relatório com considerações pessoais e que tenham interesse
+    numa próxima ocorrência.</td>
+    <td class="dta">240</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="996" name="996">996</a></td>
+    <td class="esq"><u>DESCONTO ANTERIOR (APLICAÇÃO ACQUIRER)</u> <p>Percentagem aplicada
+    antes da alteração ao acordo de representação, sobre o valor da compra.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>9(2)V999</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="997" name="997">997</a></td>
+    <td class="esq"><u>DATA DO CONTRATO</u> <p>Data em que se celebrou a realização do
+    contrato comercial entre o Estabelecimento e o Representante.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="998" name="998">998</a></td>
+    <td class="esq"><u>TIPO DE VISITA</u> <p>Tabela descritiva do tipo de visita que o
+    vendedor efectuou ao Estabelecimento.</p>
+    <p>Poderá ter os valores:<br />
+    &nbsp;&nbsp; 1 - Angariação<br />
+    &nbsp;&nbsp; 2 - Pós-Venda<br />
+    &nbsp;&nbsp; 3 - Manutenção<br />
+    &nbsp;&nbsp; 4 - Assistência<br />
+    &nbsp;&nbsp; 5 - Rotina</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="999" name="999">999</a></td>
+    <td class="esq"><u>ENDEREÇO POSICIONADO PARA ENVIO DO EXTRACTO</u> <p>Tabela que indica
+    qual a morada do estabelecimento, posicionada para o envio do extracto.</p>
+    <p>Poderá ter os valores:<br />
+    &nbsp;&nbsp;&nbsp; 1 - Morada 1<br />
+    &nbsp;&nbsp;&nbsp; 2 - Morada 2<br />
+    &nbsp;&nbsp;&nbsp; 3 - Morada 3<br />
+    &nbsp;&nbsp;&nbsp; 4 - Morada 4</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,1731 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+
+<title>DADOS ADICIONAIS DE CARTÕES - EDAC/DACB</title>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="10" cellspacing="0" width="98%">
+  <tr>
+    <td><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: DADOS ADICIONAIS DE CARTÕES</td>
+        <td class="fichdta">&quot;FICH&quot; = DACB<br>
+        &quot;FICH&quot; = EDAC</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+O ficheiro de dados adicionais à produção de cartões DACB destina-se a permitir
+incluir outros dados que se desejem colocar na frente e no verso de cartões bancários e
+a comunicar dados de uma segunda aplicação para cartões combinados.</p>
+
+<p>A chave de acesso é o campo IDEXTIT (<a href="../../Campos/campos5.htm#465">465</a>).</p>
+
+<p>O ficheiro é também utilizado para emitir cartões não bancários, ou cartões PMB
+anónimos com dados não bancários. Neste caso não existem os ficheiros <a target="main"
+href="eecb.htm">EECB</a>, devendo os elementos informados assegurar a totalidade de
+informação necessária à produção.</p>
+
+<p>O Emissor só deve remeter um ficheiro para a SIBS depois de se ter criado a
+identificação de CONTRATO (<a href="../../Campos/campos5.htm#469">469</a>). O contrato
+reúne múltiplas informações nomeadamente - a &quot;máscara&quot; que vai ser aplicada
+ao cartão, os campos variáveis que se vão receber do Emissor, as pistas a personalizar,
+o custo do cartão acordado com o Emissor.</p>
+
+<p>Antes do início de produção, a SIBS e o Emissor devem concordar com a
+identificação dos campos variáveis que são informados no DACB e o respectivo
+comprimento.</p>
+
+<p>O processamento de dados adicionais à produção de cartões também se
+encontra disponível para as Entidades não bancárias. Neste caso, o ficheiro a utilizar
+é o EDAC, que se distingue do DACB apenas pelo formato do registo de <em>Header</em> e
+pela sua identificação externa no <em>File Transfer</em> (&quot;EDAC&quot;, em vez de
+&quot;MDACB&quot;).</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA DO FICHEIRO</u></h6>
+
+<p><br>
+O ficheiro é constituído por vários tipos de registo: 
+
+<ul>
+  <li>o registo de <em>Header</em>, &quot;TIPREG=0&quot;,&nbsp; identifica o
+    tipo de ficheiro, a instituição origem e o contrato;<br>
+    <br>
+  </li>
+  <li>o registo de Detalhe 1, &quot;TIPREG=1&quot;, informa a identificação
+    do cartão a produzir e o número de documento da fotografia e/ou assinatura do
+    indivíduo, caso exista;<br>
+    <br>
+  </li>
+  <li>o registo de Detalhe 2, &quot;TIPREG=2&quot;, informa os campos
+    necessários à produção gráfica de um cartão, definido em &quot;TIPREG=1&quot;;<br>
+    <br>
+  </li>
+  <li>o registo de Detalhe 3, &quot;TIPREG=3&quot;, informa os dados das
+    pistas magnéticas, para a produção do mesmo cartão definido em &quot;TIPREG=1&quot;;<br>
+    <br>
+  </li>
+  <li>o registo de Detalhe 4, &quot;TIPREG=4&quot;, informa os dados de
+    envelopagem do cartão definido em &quot;TIPREG=1&quot;; <br>
+    <br>
+  </li>
+  <li>o registo de Detalhe 5, &quot;TIPREG=5&quot;, informa os dados a
+    incluir no <em>chip</em>, que não sejam específicos de uma aplicação Multibanco (PMB,
+    cartão combinado, <em>chip</em> EMV, etc.);<br>
+    <br>
+  </li>
+  <li>o registo de Detalhe 6, &quot;TIPREG=6&quot;, informa os dados de
+    expedição da carta de PIN;<br>
+    <br>
+  </li>
+  <li>o registo de <em>Trailer</em>, &quot;TIPREG=9&quot;, informa os totais
+    do ficheiro.</li>
+</ul>
+
+<p><br>
+O formato do <em>Header</em> e <em>Trailer</em> do DACB e EDAC difere dos tradicionalmente
+enviados pelos Emissores à SIBS, sendo detalhados neste documento.</p>
+
+<p><br>
+O ficheiro (DACB ou EDAC) é constituído por registos de comprimento fixo de <strong>240</strong>
+bytes.</p>
+
+<p><em>Aos registos com comprimento inferior deve ser acrescentado um campo filler com o
+tamanho adequado.</em></p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">DACB - TIPO DE REGISTO = 0 (<em>HEADER</em>)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 0</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">APLIC</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#101">101</a></td>
+    <td class="esq" width="200">= 'M'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">3</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td class="esq" width="200">= 'DACB'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VERFICH</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#064">064</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BANCO</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">13</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#104">104</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#062">062</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODMOEDA</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">36</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODPAIS</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">39</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#226">226</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTRATO</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">42</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos5.htm#469">469</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">47</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td class="esq" width="200">Id. Ficheiro Referência</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">EDAC - TIPO DE REGISTO = 0 (<em>HEADER</em>)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 0</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td class="esq" width="200">= 'EDAC'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID. INSTIT. ORIGEM</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">6</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq" width="200">'XXXXXXX' *</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID. INSTIT. DESTINO</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq" width="200">'0000001' (SIBS)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">20</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">31</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#062">062</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTRATO</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">42</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos5.htm#469">469</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="160">IDFICH</td>
+    <td class="dtamid" width="45">11</td>
+    <td class="dtamid" width="45">47</td>
+    <td width="45" class="mid">N</td>
+    <td class="mid"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS <br>
+    (Id. Ficheiro Referência)</td>
+  </tr>
+</table>
+
+<p>* Identificação da instituição no Sistema SIBS (número de Comerciante)</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">DACB ou EDAC - TIPO DE REGISTO = 1 (CARTÃO)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq">IDEXTIT</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/campos5.htm#465">465</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">IMAGEM</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">17</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos5.htm#466">466</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">COMBCH</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">32</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos2.htm#123">123</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DATEXP PMB</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">33</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos2.htm#126">126</a></td>
+    <td class="esq" width="200">= AAMM</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">DACB ou EDAC - TIPO DE REGISTO = 2 (PRODUÇÃO
+GRÁFICA) <a target="main" href="edacdacb.htm#a">(a)</a></p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 2</td>
+  </tr>
+  <tr>
+    <td class="esq">NUMOCORR</td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos5.htm#428">428</a></td>
+    <td class="esq" width="200"><a target="main" href="#b">(b)</a></td>
+  </tr>
+  <tr>
+    <td class="esq">N.º CAMPO * </td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos7.htm#691">691</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">COMP. CAMPO * </td>
+    <td class="dta">3</td>
+    <td class="dta" width="45">6</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos7.htm#692">692</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS CAMPO *</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/campos7.htm#693">693</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">DACB ou EDAC - TIPO DE REGISTO = 3 (PISTAS
+MAGNÉTICAS)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 3</td>
+  </tr>
+  <tr>
+    <td class="esq">NUMOCORR</td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos5.htm#428">428</a></td>
+    <td class="esq" width="200">Máx. 4</td>
+  </tr>
+  <tr>
+    <td class="esq">N.º CAMPO * </td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos7.htm#691">691</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">COMP. CAMPO * </td>
+    <td class="dta">3</td>
+    <td class="dta" width="45">6</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos7.htm#692">692</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS CAMPO *</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/campos7.htm#693">693</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">DACB ou EDAC - TIPO DE REGISTO = 4 (ENVELOPAGEM
+DO CARTÃO) <a target="main" href="edacdacb.htm#a">(a)</a></p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 4</td>
+  </tr>
+  <tr>
+    <td class="esq">NUMOCORR</td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos5.htm#428">428</a></td>
+    <td class="esq" width="200"><a target="main" href="#b">(b)</a></td>
+  </tr>
+  <tr>
+    <td class="esq">N.º CAMPO * </td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos7.htm#691">691</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">COMP. CAMPO * </td>
+    <td class="dta">3</td>
+    <td class="dta" width="45">6</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos7.htm#692">692</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS CAMPO *</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/campos7.htm#693">693</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">DACB ou EDAC - TIPO DE REGISTO = 5 (DADOS DO <em>CHIP</em>)
+<a target="main" href="edacdacb.htm#a">(a)</a></p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 5</td>
+  </tr>
+  <tr>
+    <td class="esq">NUMOCORR</td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos5.htm#428">428</a></td>
+    <td class="esq" width="200"><a target="main" href="#b">(b)</a></td>
+  </tr>
+  <tr>
+    <td class="esq">N.º CAMPO * </td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos7.htm#691">691</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">COMP. CAMPO * </td>
+    <td class="dta">3</td>
+    <td class="dta" width="45">6</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos7.htm#692">692</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS CAMPO *</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/campos7.htm#693">693</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">DACB ou EDAC - TIPO DE REGISTO = 6 (ENVELOPAGEM
+DO PIN)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 6</td>
+  </tr>
+  <tr>
+    <td class="esq">NUMOCORR</td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos5.htm#428">428</a></td>
+    <td class="esq" width="200"><a target="main" href="#b">(b)</a></td>
+  </tr>
+  <tr>
+    <td class="esq">N.º CAMPO * </td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos7.htm#691">691</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">COMP. CAMPO * </td>
+    <td class="dta">3</td>
+    <td class="dta" width="45">6</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos7.htm#692">692</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">DADOS CAMPO *</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/campos7.htm#693">693</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">DACB ou EDAC - TIPO DE REGISTO = 9 (<em>TRAILER</em>)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 9</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTREG</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#107">107</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTCART</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos7.htm#694">694</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq10"><strong>Nota: &nbsp;</strong></td>
+    <td class="esq10">O ficheiro pode vir a incluir novos tipos de registos correspondentes a
+    outras componentes do cartão.</td>
+  </tr>
+</table>
+
+<p class="nove"><br>
+(<a name="a">a</a>) - Se a informação ultrapassar os 240 caracteres é
+gerado outro registo. </p>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" nowrap>(<a name="b">b</a>) -&nbsp;</td>
+    <td class="esq">O grupo constituído pelos campos 'N.º CAMPO' (<a
+href="../../Campos/campos7.htm#691">691</a>), 'COMP. CAMPO' (<a
+href="../../Campos/campos7.htm#692">692</a>) e 'DADOS CAMPO' (<a href="../../Campos/campos7.htm#693">693</a>)
+      pode ser repetido tantas vezes quantas as necessárias, até perfazer o
+      comprimento do registo do ficheiro que são 240 <i>bytes</i>.</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h6><u>OBSERVAÇÕES</u></h6>
+
+<p><br>
+Caso um Emissor não pretenda que determinado campo seja escrito no cartão deve indicar a
+ocorrência respectiva do registo, especificando somente &quot;Nº CAMPO&quot; (<a
+href="../../Campos/campos7.htm#691">691</a>) e &quot;COMP. CAMPO&quot; (<a
+href="../../Campos/campos7.htm#692">692</a>), colocando o valor deste último com zeros.</p>
+
+<p>O Emissor pode enviar por dia o número de ficheiros que entender, tendo em conta a
+actualização da respectiva sequência nos campos (<a href="../../Campos/campos1.htm#061">061</a>)
+e (<a href="../../Campos/campos1.htm#062">062</a>) presentes no <em>Header</em>.</p>
+
+<p>O Emissor deve validar que os campos PAN e linha OCR são idênticos em todos os tipos
+de registo para um determinado cartão (campo <a href="../../Campos/campos5.htm#465">465</a>).
+A SIBS não faz essa validação.</p>
+
+<p>A não existência de um determinado tipo de registo previsto para um cartão é
+detectada pela SIBS. Isto significa que, para um cartão com envelopagem, se não existir
+o tipo de registo 4, a SIBS rejeita a produção desse cartão.</p>
+
+<p>O Emissor pode enviar num DACB ou EDAC múltiplos ficheiros, ou seja, várias
+sequências de registos de 0 a 9.</p>
+
+<p style="page-break-before: always"><em>Exemplo de tipos de registo num DACB (ou EDAC) múltiplo: </em></p>
+
+<blockquote>
+  <blockquote>
+    <p>0<br>
+    1<br>
+    2<br>
+    &#133;<br>
+    9<br>
+    0<br>
+    1<br>
+    &#133;<br>
+    9<br>
+    0&#133;..</p>
+  </blockquote>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><strong>TIPO DE REGISTO 1</strong></p>
+
+<p>Este registo identifica o cartão que vai ser produzido. O campo Identificação
+Externa do Cartão (<a href="../../Campos/campos5.htm#465">465</a>) é um campo utilizado
+pela Entidade gestora, permitindo-lhe identificar com chaves próprias o cartão que está
+a produzir. A Entidade pode criar este número como entender. </p>
+
+<p>A Entidade não pode enviar num mesmo ficheiro dois cartões iguais, ou seja, dois
+registos do tipo 1 com o mesmo campo Identificação Externa (<a
+href="../../Campos/campos5.htm#465">465</a>). A SIBS valida esta duplicação dentro de um
+ficheiro. </p>
+
+<p>O campo Código de Combinação de Chaves (<a href="../../Campos/campos2.htm#123">123</a>)
+identifica o algoritmo de segurança utilizado para cálculos fora do sistema bancário e
+deve ser customizado caso a caso, na hipótese de existir segurança associada a
+aplicações não bancárias no cartão. </p>
+
+<p>&nbsp;</p>
+
+<p><strong>TIPO DE REGISTO 2 </strong></p>
+
+<p>Este registo identifica a componente gráfica que é escrita no cartão, por exemplo o
+PAN, a data de expiração, etc.. </p>
+
+<p>O grupo constituído pelos campos 'N.º CAMPO' (<a href="../../Campos/campos7.htm#691">691</a>),
+'COMP. CAMPO' (<a href="../../Campos/campos7.htm#692">692</a>) e 'DADOS CAMPO' (<a
+href="../../Campos/campos7.htm#693">693</a>) pode ser repetido tantas vezes quantas as
+necessárias, até perfazer o comprimento do registo do ficheiro, que são 240 bytes. <br>
+No entanto, caso esse número de <em>bytes</em> não seja suficiente, podem ser
+adicionados para o mesmo cartão tantos registos do tipo 2 quantos os necessários.</p>
+
+<p>No que diz respeito aos dados de cada campo, existem caracteres não permitidos por
+serem considerados dados de controlo nos ficheiros. Dentro destes encontram-se os
+caracteres de acentuação, asteriscos, etc. Os caracteres não admitidos encontram-se no
+documento &quot;<em>Card Personalization</em>&quot; que deve ser solicitado à SIBS, no
+caso de se pretender usar caracteres não <em>standard</em>.</p>
+
+<p>No caso de um Emissor pretender a gravação destes campos como campos fixos, estes
+podem ser inscritos pelo estabelecimento de uma estampa fixa associada ao <em>layout</em>
+e previamente definida no contrato do cartão.</p>
+
+<p>Relativamente à definição de campos para cartões, é de ressalvar que, por
+condicionalismos técnicos, apenas são admitidos 20 campos de informação gráfica para
+cada lado do cartão (frente ou verso).</p>
+
+<p style="page-break-before: always"><br>
+<em>-&gt; Exemplo do preenchimento dos campos:</em></p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="538">
+  <tr>
+    <th ROWSPAN="2" class="fundo">Conteúdo do <br>
+    Campo <a href="../../Campos/campos7.htm#691">691</a></th>
+    <th ROWSPAN="2" class="fundo">Conteúdo do <br>
+    Campo <a href="../../Campos/campos7.htm#692">692</a></th>
+    <th COLSPAN="2" class="fundo">Conteúdo do Campo <a href="../../Campos/campos7.htm#693">693</a></th>
+  </tr>
+  <tr>
+    <th class="fundo">Rep.</th>
+    <th class="fundo">Descrição</th>
+  </tr>
+  <tr>
+    <td>01<br>
+    02<br>
+    03</td>
+    <td>19<br>
+    27<br>
+    03</td>
+    <td>A<br>
+    A<br>
+    A</td>
+    <td class="esq">&nbsp; LINHA OCR (PAN do cartão)<br>
+    &nbsp; NOME DO CLIENTE<br>
+    &nbsp; Nº DE LOJA</td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<p><strong>TIPO DE REGISTO 3 </strong></p>
+
+<p>Este registo identifica o que se escreve nas 3 pistas do cartão.</p>
+
+<p>Caso algum dos campos não seja preenchido (COMPR, CAMPO=0), a pista respectiva é
+inicializada, tendo-se o preenchimento a espaços na pista 1 e a zeros nas pistas 2 e 3.</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="538">
+  <tr>
+    <th ROWSPAN="2" class="fundo">Conteúdo do <br>
+    Campo <a href="../../Campos/campos7.htm#691">691</a></th>
+    <th ROWSPAN="2" class="fundo">Conteúdo do <br>
+    Campo <a href="../../Campos/campos7.htm#692">692</a></th>
+    <th COLSPAN="2" class="fundo">Conteúdo do Campo <a href="../../Campos/campos7.htm#693">693</a></th>
+  </tr>
+  <tr>
+    <th class="fundo">Rep.</th>
+    <th class="fundo">Descrição</th>
+  </tr>
+  <tr>
+    <td>01<br>
+    02<br>
+    03</td>
+    <td>&nbsp; 76<br>
+    &nbsp; 37<br>
+    104</td>
+    <td>A<br>
+    N<br>
+    N</td>
+    <td class="esq">&nbsp; Pista 1 do cartão<br>
+    &nbsp; Pista 2 do cartão<br>
+    &nbsp; Pista 3 do cartão</td>
+  </tr>
+</table>
+</center></div><div align="center"><center>
+
+<table BORDER="0" CELLSPACING="0" CELLPADDING="4" WIDTH="538">
+  <tr>
+    <td class="esq">Pode ser definido um quarto campo '04' com dados não bancários para
+    inscrever na pista 1 de cartões com tipos de produção específicos.</td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<p><strong>TIPO DE REGISTO 4 </strong></p>
+
+<p>Este registo identifica o que se escreve no envelope do cartão.</p>
+
+<p>São os seguintes os comprimentos máximos de cada ocorrência, que correspondem às
+linhas de endereço de uma carta em envelope com janela. </p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="538">
+  <tr>
+    <th ROWSPAN="2" class="fundo">Conteúdo do <br>
+    Campo <a href="../../Campos/campos7.htm#691">691</a></th>
+    <th ROWSPAN="2" class="fundo">Conteúdo do <br>
+    Campo <a href="../../Campos/campos7.htm#692">692</a></th>
+    <th COLSPAN="2" class="fundo">Conteúdo do Campo <a href="../../Campos/campos7.htm#693">693</a></th>
+  </tr>
+  <tr>
+    <th class="fundo">Rep.</th>
+    <th class="fundo">Descrição</th>
+  </tr>
+  <tr>
+    <td>01<br>
+    02<br>
+    03<br>
+    04<br>
+    05<br>
+    06<br>
+    07</td>
+    <td>30<br>
+    30<br>
+    35<br>
+    35<br>
+    35<br>
+    30<br>
+    30</td>
+    <td>A<br>
+    A<br>
+    A<br>
+    A<br>
+    A<br>
+    A<br>
+    A</td>
+    <td class="esq">&nbsp; NOME 1<br>
+    &nbsp; NOME 2<br>
+    &nbsp; MORADA 1<br>
+    &nbsp; MORADA 2<br>
+    &nbsp; CÓDIGO POSTAL<br>
+    &nbsp; DESCRITIVO LIVRE 1<br>
+    &nbsp; DESCRITIVO LIVRE 2</td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp; </p>
+
+<p><strong>TIPO DE REGISTO 5</strong></p>
+
+<p>Este registo identifica a informação a incluir no <em>chip</em>. Esta informação é
+definida conjuntamente pelo Emissor e pela SIBS.</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always"><strong>TIPO DE REGISTO 6</strong></p>
+
+<p>Este registo identifica o que se escreve no PIN do cartão (PIN não bancário).</p>
+
+<p>São os seguintes os comprimentos máximos de cada ocorrência.</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="593">
+  <tr>
+    <th ROWSPAN="2" class="fundo" width="79">Conteúdo do<br>
+    Campo <a href="../../Campos/campos7.htm#691">691</a></th>
+    <th ROWSPAN="2" class="fundo" width="78">Conteúdo do <br>
+    Campo <a href="../../Campos/campos7.htm#692">692</a></th>
+    <th COLSPAN="2" class="fundo" width="406">Conteúdo do Campo <a
+    href="../../Campos/campos7.htm#693">693</a></th>
+  </tr>
+  <tr>
+    <th class="fundo" width="41">Rep.</th>
+    <th class="fundo" width="355">Descrição</th>
+  </tr>
+  <tr>
+    <td width="79">01<br>
+    02<br>
+    03<br>
+    04<br>
+    05<br>
+    06<br>
+    07<br>
+    08<br>
+    09</td>
+    <td width="78">22<br>
+    40<br>
+    40<br>
+    22<br>
+    15<br>
+    40<br>
+    40<br>
+    40<br>
+    40</td>
+    <td width="41">A<br>
+    A<br>
+    A<br>
+    A<br>
+    A<br>
+    A<br>
+    A<br>
+    A<br>
+    A</td>
+    <td class="esq" width="355">&nbsp;NOME ENT. EMISSORA - 1ª linha do lado esquerdo do
+    envelope<br>
+    &nbsp;NOME 1 - 1ª linha do lado direito<br>
+    &nbsp;NOME 2 - 2ª linha do lado direito<br>
+    &nbsp;PAN - 2ª linha do lado esquerdo<br>
+    &nbsp;AGÊNCIA - 3ª linha do lado esquerdo<br>
+    &nbsp;MORADA 1 - 3ª linha do lado direito <br>
+    &nbsp;MORADA 2 - 4ª linha do lado direito<br>
+    &nbsp;LOCALIDADE - 5ª linha do lado direito<br>
+    &nbsp;CÓDIGO POSTAL&nbsp;- 6ª linha do lado direito</td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<p><a name="RACB">&nbsp; </a></p>
+<div align="center"><center>
+
+<table style="page-break-before: always" border="1" cellpadding="12" cellspacing="0"
+width="97%">
+  <tr>
+    <td><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME: ERROS DE DADOS ADICIONAIS DE CARTÕES</td>
+        <td class="fichdta">&quot;FICH&quot; = RACB<br>
+        &quot;FICH&quot; = ERAC</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Um ficheiro RACB é produzido pela SIBS para o Emissor sempre que for recebido o ficheiro
+de Dados Adicionais DACB. Caso o Emissor envie um ficheiro múltiplo, o RACB informa o
+resultado dos processamentos múltiplos.</p>
+
+<p>O Emissor recebe tantos RACBs quantos os DACBs processados. No entanto, um DACB pode
+ser colocado em <em>wait</em> por falta do ficheiro de imagens <a href="imgbmimg.htm"
+target="main">IMGB</a> respectivo, só sendo processado e gerado o RACB quando este for
+recebido.</p>
+
+<p>Os registos de detalhe incluem os dados do registo original que apresentava erros. Cada
+erro é classificado conforme o campo onde ocorreu o erro.</p>
+
+<p>Os campos TOTAL CARTÕES RECEBIDOS (<a href="../../Campos/campos4.htm#383">383</a>),
+TOTAL CARTÕES PRODUZIDOS (<a href="../../Campos/campos4.htm#384">384</a>) e TOTAL
+CARTÕES EM ESPERA (<a href="../../Campos/campos3.htm#294">294</a>) permitem que o Emissor
+verifique qual o número de registos informados no ficheiro original que foram recusados. </p>
+
+<p>Quando não existir registo de <em>Trailer</em> no ficheiro DACB, este é totalmente
+rejeitado. Este erro é informado no <em>Trailer</em> do RACB, no campo (<a
+href="../../Campos/campos6.htm#523">523</a>) SITUAÇÃO DO <em>TRAILER</em> DO FICHEIRO
+ORIGINAL DACB.</p>
+
+<p>Se o ficheiro processado tiver sido um EDAC, caso das Entidades não
+bancárias, o correspondente ficheiro de erros tem a designação de ERAC, sendo
+aplicáveis todas as indicações anteriores relativas ao RACB. Neste caso, o tipo de
+registo 1, que identifica o EDAC processado, tem um formato distinto.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de Header do ficheiro &quot;TIPREG=0&quot;, identifica o tipo
+    de ficheiro e a instituição origem e destino (ambos os ficheiros, RACB e
+    ERAC, utilizam o <a href="e2.htm" target="main">formato</a> de <em>Header standard</em>
+    característico dos ficheiros relativos a cartões);<br>
+    <br>
+  </li>
+  <li>o registo de Detalhe 1, &quot;TIPREG=1&quot;, corresponde à
+    informação do ficheiro DACB ou EDAC que foi processado (correctamente ou com erros); <br>
+    <br>
+  </li>
+  <li>o registo de Detalhe 2, &quot;TIPREG=2&quot;, é criado sempre que se
+    verifique invalidade num detalhe do ficheiro, sendo apresentado o registo do ficheiro
+    enviado pela entidade que provocou o erro. Para um ficheiro sem erros não existe este
+    tipo de ficheiro;<br>
+    <br>
+  </li>
+  <li>o registo de <em>Trailer</em>, &quot;TIPREG=9&quot;, é preenchido com
+    campos que servem para o controlo de rejeitados do Emissor e de Facturação da SIBS. </li>
+</ul>
+
+<p><br>
+O comprimento do registo (do RACB ou ERAC) é fixo e tem <strong>260</strong> bytes.</p>
+
+<p><em>Aos registos com comprimento inferior deve ser acrescentado um campo filler com o
+tamanho adequado.</em></p>
+
+<p style="page-break-before: always">&nbsp;</p>
+
+<p class="tipreg">RACB - TIPO DE REGISTO = 0</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 0</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">APLIC</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#101">101</a></td>
+    <td class="esq" width="200">= 'M'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">3</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td class="esq" width="200">= 'RACB'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VERFICH</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#064">064</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BANCO</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">13</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#104">104</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#062">062</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">ERAC - TIPO DE REGISTO = 0</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 0</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td class="esq" width="200">= 'ERAC'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID. INSTIT. ORIGEM</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">6</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq" width="200">'0000001' (SIBS)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID. INSTIT. DESTINO</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq" width="200">'XXXXXXX' *</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">20</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">31</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#062">062</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS</td>
+  </tr>
+</table>
+
+<p>* Identificação da instituição no Sistema SIBS; valor igual ao recebido
+no ficheiro EDAC.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">RACB - TIPO DE REGISTO = 1</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICHEIRO</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td class="esq" width="200">= 'MDACB'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VERFICH</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#064">064</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BANCO</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">13</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#104">104</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">HDRSIT</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos6.htm#521">521</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">26</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#062">062</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODMOEDA</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">37</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODPAIS</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">40</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#226">226</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTRATO</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">43</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos5.htm#469">469</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">ERAC - TIPO DE REGISTO = 1</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 0</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td class="esq" width="200">= 'EDAC'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID. INSTIT. ORIGEM</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">6</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq" width="200">'XXXXXXX' *</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID. INSTIT. DESTINO</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq" width="200">'0000001' (SIBS)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">20</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">31</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#062">062</a></td>
+    <td class="esq" width="200">AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SITHDRO</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">42</td>
+    <td width="45" >N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#293">293</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>* Identificação da instituição no Sistema SIBS; valor igual ao recebido
+no ficheiro EDAC.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">RACB ou ERAC - TIPO DE REGISTO = 2</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="180">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="180">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="180">= 2</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">IDEXTIT</td>
+    <td class="dta">15</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/campos5.htm#465">465</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">CODERRO</td>
+    <td class="dta">4</td>
+    <td class="dta" width="45">17</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/campos2.htm#152">152</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">N.º CAMPO ERRADO</td>
+    <td class="dta">2</td>
+    <td class="dta" width="45">21</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos7.htm#691">691</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">REG. ERRADO (DADOS ORIG.)</td>
+    <td class="dta" width="45">238</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/camp900.htm#905">905</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">RACB ou ERAC -
+TIPO DE REGISTO = 9</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="180">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="180">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="180">= 9</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">N.º REGISTOS</td>
+    <td class="dta">8</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos2.htm#107">107</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">CODMOEDA</td>
+    <td class="dta">3</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TOTAL DO DÉBITO</td>
+    <td class="dta">15</td>
+    <td class="dta" width="45">13</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos7.htm#696">696</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">FILLER</td>
+    <td class="dta">15</td>
+    <td class="dta" width="45">28</td>
+    <td width="45">A</td>
+    <td>&nbsp;</td>
+    <td class="esq" width="180">espaços</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TOTAL CART. RECEBIDOS</td>
+    <td class="dta">6</td>
+    <td class="dta" width="45">43</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos4.htm#383">383</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TOTAL CART. RECUSADOS</td>
+    <td class="dta">6</td>
+    <td class="dta" width="45">49</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos7.htm#695">695</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TOTAL CART. ACEITES/PROD.</td>
+    <td class="dta">6</td>
+    <td class="dta" width="45">55</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos4.htm#384">384</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TOTAL CART. EM ESPERA</td>
+    <td class="dta">6</td>
+    <td class="dta" width="45">61</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos3.htm#294">294</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">SITUAÇÃO TRAILER</td>
+    <td class="dta">1</td>
+    <td class="dta" width="45">67</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/campos6.htm#523">523</a></td>
+    <td class="esq" width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TARSIBS</td>
+    <td class="dta">3</td>
+    <td class="dta" width="45">68</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#324" target="explicac">324</a></td>
+    <td class="esq" width="180">1ª ocorrência</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">NUMOPTARS2</td>
+    <td class="dta">6</td>
+    <td class="dta" width="45">71</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp1800.htm#1833">1833</a></td>
+    <td width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TARSIBS</td>
+    <td class="dta">3</td>
+    <td class="dta" width="45">77</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#324" target="explicac">324</a></td>
+    <td class="esq" width="180">2ª ocorrência</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">NUMOPTARS2</td>
+    <td class="dta">6</td>
+    <td class="dta" width="45">80</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp1800.htm#1833">1833</a></td>
+    <td width="180">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TARSIBS </td>
+    <td class="dta">3</td>
+    <td class="dta" width="45">86</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#324" target="explicac">324</a></td>
+    <td class="esq" width="180">n.a.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">NUMOPTARS2 </td>
+    <td class="dta">6</td>
+    <td class="dta" width="45">89</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp1800.htm#1833">1833</a></td>
+    <td class="esq" width="180">n.a.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">TARSIBS </td>
+    <td class="dta">3</td>
+    <td class="dta" width="45">95</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#324" target="explicac">324</a></td>
+    <td class="esq" width="180">n.a.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="180">NUMOPTARS2 </td>
+    <td class="dta">6</td>
+    <td class="dta" width="45">98</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp1800.htm#1833">1833</a></td>
+    <td class="esq" width="180">n.a.</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h6 style="page-break-before: always" class="center"><a name="TABELA DE ERROS">TABELA DE ERROS</a></h6>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%" class="oito">&nbsp; </td>
+  </tr>
+</table>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="570">
+  <tr>
+    <th class="fundo"><em>Erro</em></th>
+    <th class="fundo"><em>Descrição</em></th>
+  </tr>
+  <tr>
+    <td>R070</td>
+    <td class="esq">Data de expiração inválida.</td>
+  </tr>
+  <tr>
+    <td>R114</td>
+    <td class="esq">Tipo de registo inválido.</td>
+  </tr>
+  <tr>
+    <td>R131</td>
+    <td class="esq">Número de ocorrências não numérico ou inválido.</td>
+  </tr>
+  <tr>
+    <td>R147</td>
+    <td class="esq">Número de fotografia não numérico ou inexistente.</td>
+  </tr>
+  <tr>
+    <td>R150</td>
+    <td class="esq">Campo não pertence ao contrato.</td>
+  </tr>
+  <tr>
+    <td>R154</td>
+    <td class="esq">Campo comprimento não numérico ou maior que o permitido.</td>
+  </tr>
+  <tr>
+    <td>R155</td>
+    <td class="esq">Campo obrigatório não preenchido.</td>
+  </tr>
+  <tr>
+    <td>R156</td>
+    <td class="esq">Campo com caracteres não permitidos.</td>
+  </tr>
+  <tr>
+    <td>R160</td>
+    <td class="esq">Código de combinação de chaves nacional não numérico ou inexistente.</td>
+  </tr>
+  <tr>
+    <td>R174</td>
+    <td class="esq">Campo informado sem módulo gráfico correspondente.</td>
+  </tr>
+  <tr>
+    <td>R195</td>
+    <td class="esq">Componente de envelopagem/chip do DACB diferente do ficheiro de contratos.</td>
+  </tr>
+  <tr>
+    <td>R222</td>
+    <td class="esq">Cartão deve ser emitido com fotografia que ainda não se encontra na
+    SIBS.</td>
+  </tr>
+  <tr>
+    <td class="mid">R223</td>
+    <td class="esq">O cartão deve ser emitido com fotografia. Existe uma imagem carregada na
+    SIBS, mas ou é uma assinatura, ou se é fotografia já foi utilizada noutro cartão.
+    (Esta imagem veio informada no ficheiro de imagens)</td>
+  </tr>
+  <tr>
+    <td>W001</td>
+    <td class="esq">Cartão deve ser emitido com fotografia que ainda não se encontra na
+    SIBS.</td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+</body>
+</html>

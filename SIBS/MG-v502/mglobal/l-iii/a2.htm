@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>A.2 LIGAÇÕES DOS PARCEIROS AO CENTRO ALTERNATIVO</title>
+<script>top.captulos.location='indicea.htm#A';</script>
+</head>
+
+<body>
+
+<h1><a name="A.2">A.2</a> LIGAÇÕES DOS PARCEIROS AO CENTRO ALTERNATIVO</h1>
+
+<p>&nbsp;</p>
+
+<p>A SIBS iniciou em 2002 a preparação de um centro de processamento de <em>backup</em>,
+adiante designado como Centro Alternativo ou CA, com o objectivo de substituir o centro
+principal em caso de acidente grave neste, assegurando a continuidade imediata dos
+principais serviços MB.</p>
+
+<p>Dado que o bom funcionamento de muitos desses serviços depende da ligação quer
+transaccional quer de teletransmissão de ficheiros com os vários parceiros, é
+necessário garantir também as condições de ligação dos mesmos ao Centro Alternativo,
+bem como a comutação, sempre que possível sem a sua intervenção.</p>
+
+<p>Para tanto, a SIBS garante a interligação do Centro Alternativo à rede ou redes a
+que está ligado o Centro Principal, para os protocolos quer X.25 quer TCP/IP.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.2.1">A.2.1</a> COMUTAÇÃO DAS COMUNICAÇÕES PARA O CA</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.2.1.1">A.2.1.1</a> CIRCUITOS X.25</h3>
+
+<p><br>
+Os circuitos X.25 a estabelecer do CA para os parceiros (e vice-versa), são os mesmos que
+são estabelecidos de/para o Centro Principal.</p>
+
+<p>Não é necessária, portanto, qualquer alteração nos recursos ou parametrizações
+do lado dos parceiros.</p>
+
+<p>A SIBS só activa os recursos de comunicações no CA, após completa paragem do Centro
+Principal. 
+
+<ul>
+  <li>&quot;CALLs&quot; X.25 de iniciativa da <strong>SIBS</strong>:<br>
+    Após activação das comunicações no CA, os CALLs são estabelecidos sem intervenção
+    dos parceiros. Para os casos em que a entidade valide o NNA chamador, a SIBS pode fornecer
+    o NNA correspondente ao CA, por forma a que o mesmo possa ser igualmente aceite nessa
+    validação.</li>
+</ul>
+
+<ul>
+  <li>&quot;CALLs&quot; X.25 de iniciativa dos <strong>parceiros</strong>:<br>
+    Todas as entidades que efectuam chamadas para a SIBS, devem usar um <em>HuntGroup</em> em
+    vez de um NNA simples (a SIBS através do seus serviços de comunicações, informa qual
+    ou quais os <em>HuntGroups</em> a usar consoante as Aplicações).<br>
+    Em caso de activação do CA, a SIBS desencadeia os necessários procedimentos a nível de
+    rede, por forma a que o referido <em>HuntGroup</em> encaminhe para o CA os mesmos CALLs.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.2.1.2">A.2.1.2</a> LIGAÇÕES TCP/IP</h3>
+
+<p><br>
+Os &quot;<em>IP address</em>&quot; das máquinas do CA, são os mesmos que os das
+máquinas do CP. Dado que não existe funcionamento simultâneo, a rede garante esta
+facilidade, através da activação de <em>routers</em> equivalentes aos principais e de
+DLCIs de <em>backup</em> para o CA.</p>
+
+<p>Esta facilidade permite que seja transparente para os parceiros, o facto de a SIBS usar
+o CA em lugar do Centro Principal. 
+
+<ul>
+  <li>Ligações abertas por iniciativa da <strong>SIBS</strong>:<br>
+    Ao activar o CA a SIBS garante o restabelecimento das ligações perdidas no momento do
+    desastre, bem como o início de novas ligações, após intervenção comandada pela SIBS,
+    sem necessidade dos parceiros realizarem alterações das configurações.</li>
+  <li>Ligações abertas por iniciativa dos <strong>parceiros</strong>:<br>
+    Com a activação dos DLCIs de <em>backup</em> e dos <em>routers</em> do CA sob controlo
+    da SIBS, as chamadas dos parceiros não têm qualquer alteração. As ligações activas
+    no momento do desastre interrompem-se, restabelecendo-se com o Centro Alternativo após
+    intervenção na rede, comandada pela SIBS, para activação dos interfaces dos <em>routers</em>
+    do CA.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.2.2">A.2.2</a> SESSÕES PRT</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.2.2.1">A.2.2.1</a> SESSÕES RELATIVAS À REDE MB (SIBS -&gt; PARTICIPANTE)</h3>
+
+<p><br>
+Por motivos relacionados com as aplicações MB, quando executadas no CA (Centro
+Alternativo), estas apresentam-se, para os parceiros, ao nível do protocolo, com uma
+identificação diferente daquela que apresentam no Centro Principal. </p>
+
+<p>Assim, os parceiros necessitam de dialogar com o CA (Centro Alternativo) da SIBS,
+através de sessões <em>Real-Time</em> diferentes daquelas usadas para o CP (Centro
+Principal), o que implica a duplicação de sessões ao nível de PRT.</p>
+
+<p>Porém, dado que não existe utilização simultânea de ambos os conjuntos de
+sessões, os recursos de comunicações (CICS e VTAM, se existirem) a usar por este
+segundo conjunto, são os mesmos usados pelo primeiro, uma vez que a &quot;agulhagem&quot;
+para o CA é de iniciativa da SIBS. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.2.2.2">A.2.2.2</a> SESSÕES RELATIVAS A TRANSACÇÕES PARTICIPANTE -&gt;
+SIBS</h3>
+
+<p><br>
+Para as aplicações que a partir dos Participantes no Sistema MB, acedem ao sistema de
+informação da SIBS, esta deve garantir o funcionamento dos serviços no CA, sem
+alterações para as primeiras. Por isso, a SIBS replica no CA as mesmas sessões PRT que
+tem no CP, com as mesmas características.</p>
+
+<p>A comutação para o CA, apenas em caso de desastre e por isso sem o fecho controlado
+das sessões, pode deixar as mesmas dessincronizadas, bem como algumas mensagens por
+responder. Neste caso, a ressincronização das sessões, é conseguida com um fecho
+forçado e nova abertura. As mensagens sem resposta, são entretanto retiradas da sessão,
+e podem ser de novo enviadas. O processo pode envolver algum controlo manual.</p>
+
+<p class="dta"><br>
+<a href="a1.htm">Anterior</a>/<a href="a3.htm">Seguinte</a></p>
+</body>
+</html>

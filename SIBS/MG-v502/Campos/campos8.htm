@@ -1,0 +1,1235 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos8 (700-799)</title>
+</head>
+
+<body>
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.</td>
+    <td class="fundo">REP.</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="700" name="700">700</a></td>
+    <td class="esq"><u>TEXTO OPERAÇÃO INSERIDA POR GESTOR</u> <p>Inclui o texto associado a
+    cada operação inserida pelo Gestor Financeiro na bancada da aplicação de cartão de
+    crédito da SIBS. O conteúdo do campo depende do tipo de operação inserida (ver <a
+    href="700.htm" target="main">tabela</a>).</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TEXTO-OP-GF</td>
+  </tr>
+  <tr>
+    <td><a id="701" name="701">701</a></td>
+    <td class="esq"><u>INDICADOR DO TIPO DE CONSULTA A OPERAÇÕES INSERIDAS POR GESTOR
+    FINANCEIRO</u> <p>Indica o tipo de consulta na bancada da aplicação de cartão de
+    crédito da SIBS.<br />
+    <br />
+    Valores possíveis:<br />
+    &nbsp;&nbsp; 1 = por código de operação;<br />
+    &nbsp;&nbsp; 2 = por conta crédito e código de operação.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>IND-TIP-CONS</td>
+  </tr>
+  <tr>
+    <td><a id="702" name="702">702</a></td>
+    <td class="esq"><u>NÚMERO DE REPLACEMENT CARDS A REQUISITAR</u> <p>Indica quantos
+    números de replacement cards se pretendem cativar para um determinado produto financeiro.<br
+    />
+    <br />
+    Valores possíveis: 1 a 5.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NR-REPLAC-C</td>
+  </tr>
+  <tr>
+    <td><a id="703" name="703">703</a></td>
+    <td class="esq"><u>INDICADOR DE RECLAMAÇÃO DO MOVIMENTO DE EXTRACTO</u> <p>Indica se o
+    movimento (linha de extracto) já foi ou não objecto de reclamação.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; 0 - Operação não reclamada<br />
+    &nbsp;&nbsp; 1 - Operação já reclamada<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (não é permitida a inserção de
+    reclamação)<br />
+    &nbsp;&nbsp; 2 - Reclamação concluída<br />
+    &nbsp;&nbsp; 3 - Reclamação não concluída<br />
+    &nbsp;&nbsp; 4 - Processo de estrangeiro por concluir<br />
+    &nbsp;&nbsp; 5 - Operação não reclamável</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND-REC-MOV</td>
+  </tr>
+  <tr>
+    <td><a id="704" name="704">704</a></td>
+    <td class="esq"><u>FICHEIRO DE EXTRACTOS</u> <p>Na aplicação de cartão de crédito,
+    indica o ficheiro de extractos no qual se encontra o movimento.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; A - AXT<br />
+    &nbsp;&nbsp; E - EXT</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>FICH-EXT</td>
+  </tr>
+  <tr>
+    <td><a id="705" name="705">705</a></td>
+    <td class="esq"><u>ORIGEM DA OPERAÇÃO (APLICAÇÃO CARTÃO DE CRÉDITO)</u> <p>Na
+    aplicação de cartão de crédito, indica a origem duma operação.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; 1 - Rede MB<br />
+    &nbsp;&nbsp; 2 - Rede VISA<br />
+    &nbsp;&nbsp; 3 - Unicre POS MB<br />
+    &nbsp;&nbsp; 4 - Rede Eurocard<br />
+    &nbsp;&nbsp; 5 - Terminal Gestor Financeiro<br />
+    &nbsp;&nbsp; 6 - Processamento Automático<br />
+    &nbsp;&nbsp; 7 - Processamento Batch<br />
+    &nbsp;&nbsp; 8 - Ficheiro Facturação Unicre<br />
+    &nbsp;&nbsp; 9 - Ficheiro Base II VISA<br />
+    &nbsp;&nbsp; A - Ficheiro ECCF Europay</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ORI-OPER</td>
+  </tr>
+  <tr>
+    <td><a id="706" name="706">706</a></td>
+    <td class="esq"><u>NATUREZA DA OPERAÇÃO (APLICAÇÃO CARTÃO DE CRÉDITO)</u> <p>Na
+    aplicação de cartão de crédito, indica a natureza duma operação.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; 1 - Normal<br />
+    &nbsp;&nbsp; 2 - Reclamação<br />
+    &nbsp;&nbsp; 3 - Reposição<br />
+    &nbsp;&nbsp; 4 - Correcção</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NAT-OPER-C</td>
+  </tr>
+  <tr>
+    <td><a id="707" name="707">707</a></td>
+    <td class="esq"><u>TIPO DE OPERAÇÃO (APLICAÇÃO CARTÃO DE CRÉDITO)</u> <p>Na
+    aplicação de cartão de crédito, indica o tipo duma operação.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; 1 - Operação não extractável<br />
+    &nbsp;&nbsp; 2 - Operação extractável.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIP-OPER-C</td>
+  </tr>
+  <tr>
+    <td><a id="708" name="708">708</a></td>
+    <td class="esq"><u>DESCRIÇÃO DA OPERAÇÃO (APLICAÇÃO CARTÃO DE CRÉDITO)</u> <p>Descritivo
+    do código da operação apresentado no campo <a href="campos4.htm#306">306</a>. Ver <a
+    href="306-708.htm" target="main">Tabela</a> de Códigos de Operação.</td>
+    <td class="dta">30</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DESC-OPE-C</td>
+  </tr>
+  <tr>
+    <td><a id="709" name="709">709</a></td>
+    <td class="esq"><u>CLASSIFICAÇÃO DA OPERAÇÃO (APLICAÇÃO CARTÃO DE CRÉDITO)</u> <p>Nos
+    produtos não bancários, este campo classifica um movimento de extracto.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; F - Compra Diferida<br />
+    &nbsp;&nbsp; C - Compra Crédito Normal<br />
+    &nbsp;&nbsp; S - Serviço<br />
+    &nbsp;&nbsp; P - Pagamento</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CLASS-OPE-C</td>
+  </tr>
+  <tr>
+    <td><a id="710" name="710">710</a></td>
+    <td class="esq"><u>TIPO DE CONCLUSÃO DA RECLAMAÇÃO (APLICAÇÃO CARTÃO DE CRÉDITO)</u>
+    <p>Indica o tipo de conclusão efectuada para uma reclamação inserida sobre uma
+    operação.</p>
+    <p>Valores possíveis:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td nowrap="nowrap">51 -&nbsp;</td>
+        <td class="esq">Comerciante aceita Reclamação - Não apresenta recibo</td>
+      </tr>
+      <tr>
+        <td>52 -&nbsp;</td>
+        <td class="esq">Comerciante aceita Reclamação - Apresenta recibo sem assinatura</td>
+      </tr>
+      <tr>
+        <td>53 -&nbsp;</td>
+        <td class="esq">Comerciante aceita Reclamação - Operações duplicadas</td>
+      </tr>
+      <tr>
+        <td>54 -&nbsp;</td>
+        <td class="esq">Comerciante aceita Reclamação - Importância incorrecta</td>
+      </tr>
+      <tr>
+        <td>59 -&nbsp;</td>
+        <td class="esq">Comerciante aceita Reclamação - Outras razões</td>
+      </tr>
+      <tr>
+        <td>40 -&nbsp;</td>
+        <td class="esq">Cliente aceita Reclamação - Mau uso do cartão</td>
+      </tr>
+      <tr>
+        <td>48 -&nbsp;&nbsp;</td>
+        <td class="esq">Conclusão Processo Estrangeiro para Conta Cartão - Acção Z01 nas NEs</td>
+      </tr>
+      <tr>
+        <td>49 -&nbsp;</td>
+        <td class="esq">Cliente aceita Reclamação - Outras razões</td>
+      </tr>
+      <tr>
+        <td>30 -&nbsp;</td>
+        <td class="esq">Comerciante e Cliente não aceitam Reclamação - Atraso/inibição de uso</td>
+      </tr>
+      <tr>
+        <td>31 -&nbsp;</td>
+        <td class="esq">Comerciante&nbsp; e Cliente não aceitam Reclamação - Falha do sistema</td>
+      </tr>
+      <tr>
+        <td>38 -&nbsp;&nbsp;</td>
+        <td class="esq">Conclusão Processo Estrangeiro a Custos do Produto - Acção Z02 nas NEs</td>
+      </tr>
+      <tr>
+        <td>39 -&nbsp;</td>
+        <td class="esq">Comerciante&nbsp;e Cliente não aceitam Reclamação - Outros motivos</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIP-CREC-C</td>
+  </tr>
+  <tr>
+    <td><a id="711" name="711">711</a></td>
+    <td class="esq"><u>TIPO DE JUROS A APLICAR NA CONCLUSÃO DA RECLAMAÇÃO (APLICAÇÃO
+    CARTÃO DE CRÉDITO)</u> <p>Indica o tipo de juros a aplicar na conclusão de uma
+    reclamação, aplicável apenas quando esta é concluída a perda do Cliente.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; 01 - Capital e Juros da operação original<br />
+    &nbsp;&nbsp; 02 - Só Capital<br />
+    &nbsp;&nbsp; 03 - Capital e Juros totais</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td nowrap="nowrap">TIP-JUR-CREC-C</td>
+  </tr>
+  <tr>
+    <td><a id="712" name="712">712</a></td>
+    <td class="esq"><u>MONTANTE CORRIGIDO DA CONCLUSÃO DA RECLAMAÇÃO (APLICAÇÃO CARTÃO
+    DE CRÉDITO)</u> <p>Nas conclusões de reclamação a perda do cliente, indica o montante,
+    na moeda do produto financeiro, a lançar ao cliente.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>MNT-CREC-C</td>
+  </tr>
+  <tr>
+    <td><a id="713" name="713">713</a></td>
+    <td class="esq"><u>MONTANTE CORRIGIDO DA OPERAÇÃO NA MOEDA DO ACQUIRER NA CONCLUSÃO DA
+    RECLAMAÇÃO (APLICAÇÃO CARTÃO DE CRÉDITO)</u> <p>Nas conclusões de reclamação a
+    perda do cliente, relativas a operações no estrangeiro, em que o montante a lançar ao
+    cliente é diferente do montante da operação original, indica o correspondente montante
+    corrigido, na moeda do acquirer.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>MNT-ACQ- CREC-C</td>
+  </tr>
+  <tr>
+    <td><a id="714" name="714">714</a></td>
+    <td class="esq"><u>TIPO DE DESPESA DO EMPREGADO NUMA CONTA CRÉDITO EMPRESA (APLICAÇÃO
+    CARTÃO DE CRÉDITO)</u> <p>Caracteriza o tipo de despesa do limite de crédito associado
+    a cada empregado numa conta crédito empresa.</p>
+    <p>Valores possíveis:<br />
+    &nbsp; I&nbsp; - Ilimitada (limite do empregado = limite da conta)<br />
+    &nbsp; L - Limitada (ao limite de crédito atribuído ao empregado)<br />
+    &nbsp; V - Complemento de vencimento</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIP-DESP-E-C</td>
+  </tr>
+  <tr>
+    <td><a id="715" name="715">715</a></td>
+    <td class="esq"><u>PERIODICIDADE DA RENOVAÇÃO DO LIMITE DE CRÉDITO DO EMPREGADO NUMA
+    CONTA CRÉDITO EMPRESA (APLICAÇÃO CARTÃO DE CRÉDITO)</u> <p>Indica a periodicidade de
+    renovação do limite de crédito do empregado.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; 00 &#150; ilimitada<br />
+    &nbsp;&nbsp; 01 &#150; diária<br />
+    &nbsp;&nbsp; 80 &#150; semanal<br />
+    &nbsp;&nbsp; 83 &#150; mensal<br />
+    &nbsp;&nbsp; 86 &#150; anual</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PER-LC-E-C</td>
+  </tr>
+  <tr>
+    <td><a id="716" name="716">716</a></td>
+    <td class="esq"><u>LINHA DE EXTRACTO DO EMPREGADO EMPRESA (APLICAÇÃO CARTÃO DE
+    CRÉDITO)</u> <p>Número de Linha do Extracto do Empregado numa conta crédito empresa:</p>
+    <p>&nbsp;&nbsp; AAAASSLLL<br />
+    &nbsp;&nbsp; AAAA -&gt; Ano<br />
+    &nbsp;&nbsp; SS-&gt; Número Extracto (01 até 13)<br />
+    &nbsp;&nbsp; LLL-&gt; Nr Linha do Extracto</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>AAAASSLLL</td>
+    <td>LINHAEXT-E</td>
+  </tr>
+  <tr>
+    <td><a id="717" name="717">717</a></td>
+    <td class="esq"><u>LIMITE DE CRÉDITO DO EMPREGADO (APLICAÇÃO CARTÃO DE CRÉDITO)</u> <p>Montante
+    do limite de crédito associado a um empregado, numa conta crédito empresa. É
+    apresentado em Contos ou Euros, consoante o Código de Moeda do produto financeiro é
+    respectivamente Escudos ou Euros</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>LIM-CRE-E</td>
+  </tr>
+  <tr>
+    <td><a id="718" name="718">718</a></td>
+    <td class="esq"><u>SITUAÇÃO DO EXTRACTO (APLICAÇÃO CARTÃO DE CRÉDITO)</u> <p>Indica
+    a situação do extracto.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; 1 - Por fechar<br />
+    &nbsp;&nbsp; 2 - Aguarda Pagamento<br />
+    &nbsp;&nbsp; 3 - Encerrado<br />
+    &nbsp;&nbsp; 8 - Omitido<br />
+    &nbsp;&nbsp; 9 - Aguarda passagem a Histórico.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SIT-EXT-E</td>
+  </tr>
+  <tr>
+    <td><a id="719" name="719">719</a></td>
+    <td class="esq"><u>NÚMERO DE CONTRIBUINTE DO EMPREGADO (APLICAÇÃO CARTÃO DE CRÉDITO)</u>
+    <p>Indica o número de contribuinte do empregado.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NR-CONT-E</td>
+  </tr>
+  <tr>
+    <td><a id="720" name="720">720</a></td>
+    <td class="esq"><u>ALGORITMO NOME TITULAR (ACC)</u> <p>Campo resultante de uma função
+    algorítmica baseada no campo <a href="campos8.htm#722">722</a> &quot;Apelido do
+    Titular&quot; destinada a obter uma chave reduzida de pesquisa por nome.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ALGONOMT</td>
+  </tr>
+  <tr>
+    <td><a id="721" name="721">721</a></td>
+    <td class="esq"><u>ANO REFERÊNCIA INFORMAÇÃO (ACC)</u> <p>Ano ao qual se referem os
+    dados da empresa (número de empregados, capital social, etc.)</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ANOREF</td>
+  </tr>
+  <tr>
+    <td><a id="722" name="722">722</a></td>
+    <td class="esq"><u>APELIDO DO TITULAR (ACC)</u> <p>Campo resultante da extracção dos
+    seguintes elementos do campo <a href="campos3.htm#200">200</a> &quot;Nome do
+    Titular&quot;: Apelido (último nome) + 1º nome (+ 2º nome se possível). Este campo
+    serve de base à geração de uma chave reduzida para pesquisa pelo nome do cliente.</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>APELTITUL</td>
+  </tr>
+  <tr>
+    <td><a id="723" name="723">723</a></td>
+    <td class="esq"><u>INDICADOR DE EXISTÊNCIA (ACC)</u> <p>Este campo informa as ligações
+    activas para o Titular e/ou cônjuge no ficheiro de propostas inseridas por um Gestor
+    Financeiro.<br />
+    Valores possíveis :<br />
+    &nbsp;&nbsp; 0 = Identificações Inexistentes ;<br />
+    &nbsp;&nbsp; 1 = Existe Identificação do Titular ;<br />
+    &nbsp;&nbsp; 2 = Existe Identificação do Cônjuge ;<br />
+    &nbsp;&nbsp; 3 = Existem Identificações do Titular e do Cônjuge</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IND-EXIST</td>
+  </tr>
+  <tr>
+    <td><a id="724" name="724">724</a></td>
+    <td class="esq"><u>INDICADOR DO TIPO DE ACEITAÇÃO (ACC)</u> <p>Este campo informa, para
+    uma operação recebida no ficheiro de clearing de um sistema de pagamento, se o processo
+    de validação efectuado a esse ficheiro aceitou ou detectou alguma invalidade.<br />
+    Valores possíveis :<br />
+    &nbsp;&nbsp; Y &#150; Operação Aceite<br />
+    &nbsp;&nbsp; N &#150; Operação Recusada</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="725" name="725">725</a></td>
+    <td class="esq"><u>CÓDIGO DE GRAVIDADE DA RECUSA (ACC)</u> <p>Campo que informa o nível
+    de gravidade da rejeição de uma operação recebida no ficheiro de clearing de um
+    sistema de pagamento.<br />
+    Valores Possíveis :<br />
+    &nbsp;&nbsp; ????</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="726" name="726">726</a></td>
+    <td class="esq"><u>NÚMERO DE FACTURA UNICRE (ACC)</u> <p>Este campo inclui o valor do
+    campo Número de Factura, recebido no ficheiro de facturação da Unicre, para um dado
+    movimento.</td>
+    <td class="dta">9</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="727" name="727">727</a></td>
+    <td class="esq"><u>NÚMERO DO RESUMO DE FACTURA UNICRE (ACC)</u> <p>Este campo inclui o
+    valor do campo Número de Resumo de Factura, recebido no ficheiro de facturação da
+    Unicre, para um dado movimento.</td>
+    <td class="dta">9</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="728" name="728">728</a></td>
+    <td class="esq"><u>NÚMERO DO BATCH UNICRE (ACC)</u> <p>Este campo inclui o valor do campo
+    Número de Batch, recebido no ficheiro de facturação da Unicre, para um dado movimento.</td>
+    <td class="dta">12</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="729" name="729">729</a></td>
+    <td class="esq"><u>ORIGEM DA TRANSACÇÃO UNICRE (ACC)</u> <p>Este campo inclui o valor
+    recebido no ficheiro de facturação da Unicre, relativamente à origem de um dado
+    movimento.<br />
+    Valores possíveis :<br />
+    &nbsp;&nbsp; 001 - Recolha Manual<br />
+    &nbsp;&nbsp; 002 - Débitos Automáticos<br />
+    &nbsp;&nbsp; 003 - VISA Incoming<br />
+    &nbsp;&nbsp; 004 - Mastercard Incoming<br />
+    &nbsp;&nbsp; 005 - Devoluções Automáticas<br />
+    &nbsp;&nbsp; 008 - Inserção no Ficheiro de Erros<br />
+    &nbsp;&nbsp; 009 - POS<br />
+    &nbsp;&nbsp; 010 - Créditos Automáticos</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="730" name="730">730</a></td>
+    <td class="esq"><u>INDICADOR DE ANULAÇÃO (ACC)</u> <p>Define o tipo de movimento
+    recebido no ficheiro de facturação da Unicre.<br />
+    Valores possíveis :<br />
+    &nbsp;&nbsp; O &#150; Original<br />
+    &nbsp;&nbsp; A - Anulação</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="731" name="731">731</a></td>
+    <td class="esq"><u>SEQUÊNCIA DO FICHEIRO UNICRE PROCESSADO (ACC)</u> <p>Número de
+    sequência do ficheiro de facturação recebido da Unicre.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="732" name="732">732</a></td>
+    <td class="esq"><u>CAPITAL SOCIAL EMPRESA (CONTOS) (ACC)</u> <p>Valor do capital social da
+    empresa no momento da sua inserção no Host.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="733" name="733">733</a></td>
+    <td class="esq"><u>CÓDIGO TIPO PROPONENTE (ACC)</u> <p>Código atribuído ao tipo de
+    entidade que inseriu a proposta.</p>
+    <p>Os valores possíveis são os seguintes:<br />
+    &nbsp;&nbsp; 1 - Agência/Loja/...<br />
+    &nbsp;&nbsp; 2 - Gestor Financeiro.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="734" name="734">734</a></td>
+    <td class="esq"><u>CRÉDITO DISPONÍVEL (ACC)</u> <p>Novo crédito disponível após
+    autorização.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="735" name="735">735</a></td>
+    <td class="esq"><u>DATA ACTUALIZAÇÃO LIMITE CRÉDITO TEMPORÁRIO (ACC)</u> <p>Data em
+    que se posicionou como início de uso o limite de crédito temporário.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="736" name="736">736</a></td>
+    <td class="esq"><u>DATA ACTUALIZAÇÃO DO EXTRACTO (ACC)</u> <p>Data em que a situação
+    do extracto assumiu o valor apresentado.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="737" name="737">737</a></td>
+    <td class="esq"><u>DATA CÁLCULO ÚLTIMO SCORING (ACC)</u> <p>Data do cálculo do Scoring
+    que prevalece para a futura gestão do cliente.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="738" name="738">738</a></td>
+    <td class="esq"><u>DATA CONSTITUIÇÃO DA EMPRESA (ACC)</u> </td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="739" name="739">739</a></td>
+    <td class="esq"><u>DATA DEVOLUÇÃO TRANSFERÊNCIA (ACC)</u> <p>Data em que foi recebida a
+    devolução da ordem de transferência.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="740" name="740">740</a></td>
+    <td class="esq"><u>DATA SALDO DO EXTRACTO ANTERIOR (ACC)</u> </td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="741" name="741">741</a></td>
+    <td class="esq"><u>DATA SITUAÇÃO VERTENTE CRÉDITO (ACC)</u> <p>Data da situação da
+    Vertente de Crédito do cartão.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="742" name="742">742</a></td>
+    <td class="esq"><u>DÉBITOS DO MÊS (ACC)</u> <p>Campo no extracto que contém a soma dos
+    débitos do mês.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="743" name="743">743</a></td>
+    <td class="esq"><u>DIA FECHO DO EXTRACTO (ACC)</u> <p>Dia do mês em que deve ser
+    efectuado o fecho do extracto.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>DD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="744" name="744">744</a></td>
+    <td class="esq"><u>DIA LIMITE PAGAMENTO CHEQUE (ACC)</u> <p>Dia limite de pagamento do
+    extracto por cheque.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>DD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="745" name="745">745</a></td>
+    <td class="esq"><u>E-MAIL DA EMPRESA (ACC)</u> </td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="746" name="746">746</a></td>
+    <td class="esq"><u>IMPORTÂNCIA MÍNIMA NÃO PAGA (ACC)</u> <p>Valor mínimo de pagamento
+    do extracto que ainda não foi pago.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="747" name="747">747</a></td>
+    <td class="esq"><u>INDICADOR DE COMPLEMENTOS AO EXTRACTO (ACC)</u> <p>Este campo indica se
+    o extracto em causa teve complementos, tais como mensagens, adicionais ou promoções. Se
+    não teve, está preenchido com 0; se teve, tem 1 e o utilizador poderá efectuar a
+    consulta destes complementos.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="748" name="748">748</a></td>
+    <td class="esq"><u>INDICADOR DE PROMOÇÃO (ACC)</u> </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="749" name="749">749</a></td>
+    <td class="esq"><u>VERSÃO DE EXTRACTO (ACC)</u> <p>Número sequencial que indica a
+    versão do extracto emitido para o cliente. O primeiro extracto emitido tam a versão
+    '00'.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="750" name="750">750</a></td>
+    <td class="esq"><u>LIMITE DESPESAS SEMANAIS DO EMPREGADO NUM CA (ACC)</u> <p>Nos produtos
+    Empresa, este campo define o limite de despesas semanais no CA que pode ser atribuído a
+    um empregado. É apresentado em contos ou euros, consoante o código de moeda definido.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="751" name="751">751</a></td>
+    <td class="esq"><u>MOTIVO DA SITUAÇÃO DO CARTÃO (ACC)</u> <p>Valores possíveis :
+    ?????????????????????</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="752" name="752">752</a></td>
+    <td class="esq"><u>MOTIVO FORÇAGEM SCORING (ACC)</u> <p>Contém o código do motivo pelo
+    qual se conseguiu forçar o scoring (CNB).</p>
+    <p>Valores possíveis :<br />
+    &nbsp;&nbsp; 1 - Aval do comerciante<br />
+    &nbsp;&nbsp; 2 - Boas informações bancárias<br />
+    &nbsp;&nbsp; 3 - Outros motivos</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="753" name="753">753</a></td>
+    <td class="esq"><u>MOTIVO INIBIÇÃO PROPOSTA (ACC)</u> <p>Contém o motivo de inibição
+    de uma proposta.</p>
+    <p>Valores possíveis:</p>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td nowrap="nowrap">&nbsp; 000 -&nbsp;</td>
+        <td class="esq">Não Inibida</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 001 -&nbsp;</td>
+        <td class="esq">B.I. Existente no ficheiro SCCI</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 002 -&nbsp;</td>
+        <td class="esq">Nº de contribuinte existente no ficheiro de Incobráveis do Banco de
+        Portugal</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 004 -&nbsp;</td>
+        <td class="esq">Avaliação diferida do cliente (Manual)</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 050 -&nbsp;</td>
+        <td class="esq">Insuficiência do Scoring 1</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 051 -&nbsp;</td>
+        <td class="esq">Insuficiência do Scoring 2</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 052 -&nbsp;</td>
+        <td class="esq">Insuficiência do Scoring 3</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 061 -&nbsp;</td>
+        <td class="esq">Decisão diferida (Scoring)</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 062 -&nbsp;</td>
+        <td class="esq">Decisão desfavorável (Scoring)</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp; 063 -&nbsp;</td>
+        <td class="esq">Recusa por motivos graves (Scoring)</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 064 -&nbsp;</td>
+        <td class="esq">Decisão desfavorável (Gestor financeiro)</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 070 -&nbsp;</td>
+        <td class="esq">Scoring forçado</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="754" name="754">754</a></td>
+    <td class="esq"><u>NÍVEL DE ESTUDOS DO TITULAR (ACC)</u> <p>Define o nível de estudos do
+    titular de uma conta crédito.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; 1 - Primário<br />
+    &nbsp;&nbsp; 2 - Secundário<br />
+    &nbsp;&nbsp; 3 - Técnico/Especializado<br />
+    &nbsp;&nbsp; 4 - Superior</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="755" name="755">755</a></td>
+    <td class="esq"><u>NÍVEL DE SERVIÇOS DO CARTÃO (ACC)</u> <p>Nível de serviço
+    atribuído ao cartão.</p>
+    <p>Valores possíveis :<br />
+    &nbsp; 102 - Só em POS - inclui operações baixo valor<br />
+    &nbsp; 107 - Só em POS - não inclui operações baixo valor</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="756" name="756">756</a></td>
+    <td class="esq"><u>NÚMERO DE AUTORIZAÇÃO (ACC)</u> <p>Identificativo apresentado no
+    pagamento.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="757" name="757">757</a></td>
+    <td class="esq"><u>NÚMERO DE CLIENTE EXTERNO (ACC)</u> </td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="758" name="758">758</a></td>
+    <td class="esq"><u>NÚMERO EMPREGADOS DA EMPRESA (ACC)</u> <p>No âmbito de uma Conta
+    Crédito Empresa contém o número de empregados desta empresa, é o valor declarado no
+    momento da inserção da proposta.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="759" name="759">759</a></td>
+    <td class="esq"><u>NÚMERO PONTOS SCORING RECALCULADO (ACC)</u> <p>Número de pontos
+    obtidos no primeiro (segundo ou terceiro) scoring efectuado para um proponente recusado.<br
+    />
+    Não dever haver mais tentativas de utilização desse processo de avaliação, excepto se
+    já tiverem passado pelo menos 6 meses desde a &quot;Data Início Situação&quot;,
+    assumindo que esta é aquela em que o scoring foi realizado. Neste caso, estes 3 campos
+    são limpos para poder voltar admitir outros dados.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="760" name="760">760</a></td>
+    <td class="esq"><u>NÚMERO SEQUENCIAL DO EXTRACTO (ACC)</u> <p>Número de referência do
+    extracto enviado ao cliente.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="761" name="761">761</a></td>
+    <td class="esq"><u>NÚMERO TELEX DA EMPRESA (ACC)</u> </td>
+    <td class="dta">10</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="762" name="762">762</a></td>
+    <td class="esq"><u>PADDING ACTIVIDADE PROFISSIONAL (ACC)</u> <p>Quarto caracter do Código
+    Actividade (X YY 0) onde<br />
+    &nbsp; X&nbsp;&nbsp;&nbsp; = Nível de Estudos,<br />
+    &nbsp; YY = Situação Profissional,<br />
+    &nbsp; 0&nbsp;&nbsp;&nbsp; = Padding.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="763" name="763">763</a></td>
+    <td class="esq"><u>PAGAMENTO CAPITAL (ACC)</u> </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="764" name="764">764</a></td>
+    <td class="esq"><u>PAGAMENTO DÉBITO CAPITAL (ACC)</u> </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="765" name="765">765</a></td>
+    <td class="esq"><u>PAGAMENTO IMPOSTO-A (ACC)</u> <p>Montante de pagamento imposto-A.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="766" name="766">766</a></td>
+    <td class="esq"><u>PAGAMENTO IMPOSTO-B (ACC)</u> <p>Montante de pagamento imposto-B.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="767" name="767">767</a></td>
+    <td class="esq"><u>PAGAMENTO JUROS NORMAIS (ACC)</u> </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="768" name="768">768</a></td>
+    <td class="esq"><u>PAGAMENTO JUROS PENALIZADOS (ACC)</u> </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="769" name="769">769</a></td>
+    <td class="esq"><u>PAGAMENTO MÍNIMO LEGAL (ACC)</u> </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="770" name="770">770</a></td>
+    <td class="esq"><u>PAGAMENTO OUTROS CAPITAL (ACC)</u> </td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="771" name="771">771</a></td>
+    <td class="esq"><u>PERÍODO DOS MOVIMENTOS (ACC)</u> <p>Define o período escolhido pelo
+    utilizador em relação à consulta dos Movimentos.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="772" name="772">772</a></td>
+    <td class="esq"><u>PINBLOCK (ACC)</u> <p>Trata-se do valor do PIN introduzido no terminal
+    encifrado por uma chave de transporte usada na comunicação entre o Terminal e a SIBS.</td>
+    <td class="dta">16</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>PINBLOCK-D</td>
+  </tr>
+  <tr>
+    <td><a id="773" name="773">773</a></td>
+    <td class="esq"><u>PONTOS SCORING A UTILIZAR (ACC)</u> <p>Número de pontos do scoring a
+    utilizar na gestão do cliente. O gestor deve eleger um dos scoring calculados
+    anteriormente, e se for um VIP deverá ser escolhido o valor máximo.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="774" name="774">774</a></td>
+    <td class="esq"><u>SALDO EXTRACTO ANTERIOR (ACC)</u> <p>Valor do saldo do extracto
+    anterior.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="775" name="775">775</a></td>
+    <td class="esq"><u>SALDO JUROS NORMAIS EXTRACTO ANTERIOR (ACC)</u> <p>Importância a pagar
+    de juros Normais proveniente do extracto anterior.<br />
+    Resulta do produto [(Taxa Juros Base + Taxa Juros Marginal) x Dívida Contraída].<br />
+    Pode também ser o resultado da parte da importância de juros normais que não foi
+    coberta pelo pagamento.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="776" name="776">776</a></td>
+    <td class="esq"><u>SALDO JUROS PENALIZADOS EXTRACTO ANTERIOR (ACC)</u> <p>Importância a
+    pagar de juros de penalização.<br />
+    Resulta do produto [Taxa de Agravamento x Importância a pagar de Juros Normais
+    proveniente do Extracto Anterior] e foi gerado pelos montantes mínimos não pagos.<br />
+    Pode também ser o resultado da parte dos juros de penalização que não foi coberta pelo
+    pagamento. Estes dados transitaram do extracto anterior.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="777" name="777">777</a></td>
+    <td class="esq"><u>SEQ. MOVIMENTO NA PROPOSTA (ACC)</u> <p>Elemento de Scroll que permite
+    à bancada informar o Host, durante as consultas às propostas, da última ocorrência
+    recebida na última mensagem. O Host define assim se existem mais ocorrências a enviar
+    para a bancada.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="778" name="778">778</a></td>
+    <td class="esq"><u>SITUAÇÃO DA PROPOSTA (ACC)</u> <p>Define o resultado obtido na
+    consulta às propostas inseridas de um cliente.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp; 1 = Aceite<br />
+    &nbsp;&nbsp; 2 = Rejeitada.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="779" name="779">779</a></td>
+    <td class="esq"><u>SITUAÇÃO PROFISSIONAL DO TITULAR (ACC)</u> <br />
+    (elemento parcial do atributo <a href="campos2.htm#175">175</a>) <p>É a situação
+    profissional do titular de uma Conta Crédito.</p>
+    <p>Valores possíveis :<br />
+    &nbsp;&nbsp; 10 - Liberal/Quadro Superior<br />
+    &nbsp;&nbsp; 11 - Pequeno/Médio Empresário<br />
+    &nbsp;&nbsp; 12 - Quadro Médio<br />
+    &nbsp;&nbsp; 13 - Empregado Escrit./Comércio/Serviços<br />
+    &nbsp;&nbsp; 14 - Operário Especializado<br />
+    &nbsp;&nbsp; 15 - Operário Não Especializado<br />
+    &nbsp;&nbsp; 16 - Estudante<br />
+    &nbsp;&nbsp; 17 - Doméstica<br />
+    &nbsp;&nbsp; 90 - Outros</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="780" name="780">780</a></td>
+    <td class="esq"><u>TAXA GERAL (ACC)</u> <p>Taxa de juro aplicada ao cliente quando
+    aumentado pela taxa do imposto 120-B.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>2 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="781" name="781">781</a></td>
+    <td class="esq"><u>TAXA MARGINAL (ACC)</u> <p>Taxa de juro a acrescentar à taxa de juro
+    base definida pelo Banco de Portugal e que corresponde à receita do Gestor Financeiro.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>2 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="782" name="782">782</a></td>
+    <td class="esq"><u>TIPO DE ALTERAÇÃO (ACC)</u> <p>Define o tipo de alteração efectuada
+    numa proposta.</p>
+    <p>Valores possíveis :<br />
+    &nbsp;&nbsp; 1 - Inserção inicial<br />
+    &nbsp;&nbsp; 2 - Reavaliação<br />
+    &nbsp;&nbsp; 3 - Forçagem<br />
+    &nbsp;&nbsp; 4 - Alteração da identificação do 1º titular<br />
+    &nbsp;&nbsp; 5 - Alteração da identificação do 2º titular<br />
+    &nbsp;&nbsp; 6 - Alteração do n.º contribuinte do 1º titular</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="783" name="783">783</a></td>
+    <td class="esq"><u>TIPO DE SERVIÇO AUTORIZADO (ACC)</u> <p>??????</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="784" name="784">784</a></td>
+    <td class="esq"><u>TIPO PROPOSTA (ACC)</u> <p>Define o tipo de proposta com o qual se
+    tenta inserir um cliente :</p>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td nowrap="nowrap">&nbsp; 0 =&nbsp;</td>
+        <td class="esq">Normal</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 1 =&nbsp;</td>
+        <td class="esq">Reavaliação (recálculo, antes da expiração de uma data limite
+        definida, do scoring de uma proposta já inserida e recusado por scoring insuficiente)</td>
+      </tr>
+      <tr>
+        <td>&nbsp; 2 =&nbsp;</td>
+        <td class="esq">Forçagem (efectuada na bancada sem avaliação de scoring).</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="785" name="785">785</a></td>
+    <td class="esq"><u>TOTAL AUTORIZAÇÕES EXTRACTO ANTERIOR (ACC)</u> <p>Na consulta a um
+    extracto de cliente, representa o montante total das autorizações obtidas referentes ao
+    extracto anterior.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="786" name="786">786</a></td>
+    <td class="esq"><u>ÚLTIMA DATA DA PROPOSTA (ACC)</u> <p>Contém a última data de
+    inserção da proposta: pode ser a data da aceitação ou a data da última avaliação.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="787" name="787">787</a></td>
+    <td class="esq"><u>VALOR DO PAGAMENTO PARA TRANSFERÊNCIA (ACC)</u> <p>Corresponde ao
+    valor a lançar na transferência de acordo com a modalidade de débito indicada pelo
+    cliente.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="788" name="788">788</a></td>
+    <td class="esq"><u>VALOR FIXO DA TRANSFERÊNCIA (em contos ??) (ACC)</u> <p>Valor sempre
+    igual que será lançado na transferência.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="789" name="789">789</a></td>
+    <td class="esq"><u>ALGORITMO NOME SEGUNDO TITULAR (ACC)</u> <p>Campo resultante de uma
+    função algorítmica baseada no campo <a href="campos8.htm#790">790</a> &quot;Apelido do
+    Segundo Titular&quot;&nbsp; destinada a obter uma chave reduzida de pesquisa por nome.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="790" name="790">790</a></td>
+    <td class="esq"><u>APELIDO DO SEGUNDO TITULAR (ACC)</u> <p>Campo resultante da extracção
+    dos seguintes elementos do Nome do Segundo Titular: Apelido (último nome) + 1º nome (+
+    2º nome se possível). Este campo serve de base à geração de uma chave reduzida para
+    pesquisa pelo nome de cliente.</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="791" name="791">791</a></td>
+    <td class="esq"><u>APELIDO GENÉRICO (ACC)</u> <p>Campo resultante da extracção dos
+    seguintes elementos do Nome de um Titular existente numa proposta já inserida: Apelido
+    (último nome) + 1º nome (+ 2º nome se possível). Este campo serve de base à geração
+    de uma chave reduzida para pesquisa pelo nome de cliente.</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="792" name="792">792</a></td>
+    <td class="esq"><u>DATA DA ALTERAÇÃO DA PROPOSTA (ACC)</u> <p>Indica a data em que foi
+    efectuada uma alteração aos dados da proposta pelo Gestor Financeiro.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="793" name="793">793</a></td>
+    <td class="esq"><u>SALDO ACTUAL DO EXTRACTO (ACC)</u> <p>Valor do saldo do extracto
+    corrente.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="794" name="794">794</a></td>
+    <td class="esq"><u>LOCALIDADE DO CAIXA AUTOMÁTICO</u> <p>Indica a localidade da morada do
+    Caixa Automático.</td>
+    <td class="dta">30</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>LOC-CA</td>
+  </tr>
+  <tr>
+    <td><a id="795" name="795">795</a></td>
+    <td class="esq"><u>NÚMERO DE PROCESSO DO PROPRIETÁRIO DO TPA</u> <p>Indica o número de
+    processo atribuído ao terminal de pagamento automático pelo seu proprietário, no
+    momento da sua inserção no Sistema MB.</td>
+    <td class="dta">7</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td nowrap="nowrap">PROC-PROP-TPA</td>
+  </tr>
+  <tr>
+    <td><a id="796" name="796">796</a></td>
+    <td class="esq"><u>DATA DE EXPIRAÇÃO DO PMB</u> <p>Indica a data de expiração do
+    Porta-moedas MultiBanco.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>AAAAMM</td>
+    <td>DT-EXP-PMB</td>
+  </tr>
+  <tr>
+    <td><a id="797" name="797">797</a></td>
+    <td class="esq"><u>CÓDIGO DO APLICATIVO PERSONALIZADO</u> <p>BBBBnn - código do Banco e
+    código do aplicativo.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD-APL-P</td>
+  </tr>
+  <tr>
+    <td><a id="798" name="798">798</a></td>
+    <td class="esq"><u>NÚMERO DE KBYTES</u> <p>Apresenta o número de kbytes considerados
+    para o processamento.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NR-KB</td>
+  </tr>
+  <tr>
+    <td><a id="799" name="799">799</a></td>
+    <td class="esq"><u>TIPO DE ACÇÃO</u> <p>Indica o tipo de acção associado a um
+    determinado tipo de pagamento (campo <a href="campos6.htm#533">533</a>) e que foi
+    seleccionado pelo Apresentante no decorrer duma petição inicial ou de um processo em
+    curso, relativamente a uma acção judicial.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,1657 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>E.4 FICHEIROS DA COMPENSAÇÃO</title>
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+<style>
+<!--
+#table tbody td { font-family: Tahoma; font-size: 8pt; color:#000080; vertical-align: middle;}
+#table7 tbody td { font-family: Tahoma; font-size: 7pt; color:#000080; vertical-align: middle;}
+#table tbody td.a { font-family: Tahoma; font-size: 8pt; color:#006400; }
+#table7 tbody td.a { font-family: Tahoma; font-size: 7pt; color:#006400; }
+-->
+</style>
+
+</head>
+
+<body>
+
+<h1>E.4 FICHEIROS DA COMPENSAÇÃO</h1>
+
+<p>&nbsp;</p>
+
+<p>Sempre que a SIBS executa um processamento de Compensação do Serviço
+Multibanco, é produzido um conjunto de ficheiros, descritos no presente capítulo. </p>
+
+<p>Tal como referido no capítulo <a href="indiced.htm#D" target="captulos">D</a>,
+para as mensagens <em>real-time</em> trocadas no Sistema MB, também os ficheiros são
+destinados a diferentes tipos de intervenientes no Sistema.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>GRUPO 1 - Emissores de Cartões ou Representantes de Cartões com
+serviços de processamento através da SIBS</strong></p>
+
+<p><br>
+Ficheiros que incluem, nomeadamente: 
+
+<ul >
+  <li>as operações com Cartão (ex.: Levantamento, Consulta de Saldos) e respectivos
+    comissionamentos e/ou tarifas;</li>
+  <li>informação sobre bloqueamento (quando não provenientes directamente do Emissor) e
+    capturas dos seus cartões (se existe utilização em CA-MB);</li>
+  <li>suporte a serviços especiais próprios de um Participante;</li>
+  <li>regularizações a efectuar para cartões (ex.: início de um ciclo de <em>chargeback</em>).</li>
+</ul>
+
+<p>Para estes Participantes, a SIBS pode segregar o processamento, isto é,
+enviar ficheiros para endereços de <em>File Transfer</em> diferenciados, quer por CPD
+(Centro de Processamento de Dados) quer por conjuntos de BINs (<em>Bank Identifier Number</em>),
+prevalecendo neste caso o endereço de <em>File Transfer</em> associado ao BIN. </p>
+
+<p>A segmentação do processamento por grupos de BINs é determinada por
+excepção. Considera-se que o processamento é efectuado por CPD, excepto para os BINs em
+que se indique expressamente o contrário, na respectiva <a href="../l-ii/i3.htm#I.3.16">Caracterização
+de BIN</a>. </p>
+
+<p>Quando se pretenda utilizar esta opção, é necessário definir
+adicionalmente qual a entidade de <em>File Transfer</em> a considerar para o(s) BIN(s) em
+causa, na respectiva <a href="../l-ii/i3.htm#I.3.16">Caracterização de BIN</a>.</p>
+
+<p>Se para um determinado BIN não for indicada esta entidade de <em>File Transfer</em>,
+considera-se que os processamentos relativos a esse BIN são efectuados no cenário geral,
+i.e., por CPD.</p>
+
+<p>Opcionalmente, o Emissor pode definir na <a href="../l-ii/i3.htm#I.3.16">Caracterização de BIN</a>
+um segundo endereço de <i>File Transfer</i>, específico para envio do ficheiro
+Autorizações Estrangeiro (<a href="aut.htm">MAUT5</a>).&nbsp;</p>
+
+<p>Os ficheiros são agregados por destino de <em>File Transfe</em>r. Se for
+indicada a mesma entidade de destino para dois ou mais BINs, a informação em causa não
+é enviada em dois ou mais ficheiros, mas apenas num único. Mantém-se no entanto a
+separação da informação por CPD, no qual estão posicionados os cartões que
+originaram os registos enviados.</p>
+
+<p>Para compreensão das regras de envio de ficheiros deste Grupo, consulte o
+ponto <a href="#regras">Regras de Envio de Ficheiros do Grupo 1</a>.</p>
+
+<p>Os ficheiros destinados a este grupo de participantes são: Destinos (<a
+href="dst-1.htm">MDST5</a>), Detalhes (<a href="det.htm">MDET5</a>), Capturas e Lista
+Negra (<a href="cln.htm">MCLN5</a>), Pagamentos de Baixo Valor (<a href="pbv.htm">MPBV5</a>)
+e Autorizações Estrangeiro (<a href="aut.htm">MAUT5</a>). </p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" ><strong>GRUPO 2 - Bancos MB (domiciliatários de contas D.O.)</strong></p>
+
+<p><br>
+Ficheiros que incluem, nomeadamente: 
+
+<ul >
+  <li>a movimentação dos CA-MB que apoiam (ex.: Levantamentos nacionais e internacionais,
+    Depósitos de notas);</li>
+  <li>os cartões capturados nos CA-MB que apoiam;</li>
+  <li>as operações com NIBs do Banco (ex.: Transferência Bancária para o Destinatário ou
+    movimentos provenientes de sessões H2H); </li>
+  <li>os totais para Comerciantes (ex.: Fecho de TPA), para os quais a conta a movimentar
+    reside no Banco.</li>
+</ul>
+
+<p>Os ficheiros destinados a este grupo de participantes são: Destinos (<a
+href="dst-1.htm">MDST5</a>), Origens (<a href="ori.htm">MORI5</a>),&nbsp; Movimentos (<a
+href="mov-0.htm">MMOV5</a>) e Capturas e Lista Negra (<a href="cln.htm">MCLN5</a>).</p>
+
+<p>&nbsp;</p>
+
+<p><strong>GRUPO 3</strong> - <em>Acquirers</em> com serviços de processamento
+através da SIBS</p>
+
+<p><br>
+Ficheiros que incluem, nomeadamente: 
+
+<ul >
+  <li>operações com cartões realizadas no âmbito da sua contratação, e respectivos
+    comissionamentos e/ou tarifas;</li>
+  <li>operações de TPAs (ex.: Totais por Fecho TPA); </li>
+  <li>informações sobre bloqueamento (Lista Negra, Lista Cinzenta) na rede do <em>Acquirer</em>;
+  </li>
+  <li>informações sobre capturas de cartões, se existe <em>acquiring</em> para CA-MB.</li>
+</ul>
+
+<p>Os ficheiros destinados a este grupo de participantes são: Movimentos (<a
+href="mov-0.htm">MMOV5</a>) e Capturas e Lista Negra (<a href="cln.htm">MCLN5</a>).</p>
+
+  <p>&nbsp;</p>
+
+<p><strong>GRUPO 4 - Banco Liquidador</strong></p>
+
+<p><br>
+O Banco Liquidador corresponde à entidade para a qual é efectuada a movimentação
+contabilística no Sistema MB, isto é, a liquidação, de facto, via Banco de Portugal. </p>
+
+<p>O ficheiro Resumo da Compensação (<a href="rmb.htm">MRMB5</a>) inclui os
+saldos apurados para as Instituições de Crédito participantes no Sistema MB, e
+autorizadas pelo Banco de Portugal a participar directamente no SICOI, e destina-se
+exclusivamente a este grupo de Participantes. <br>
+Todos as entidades, para as quais a SIBS presta serviços com impacto contabilístico e
+que não possuem autonomia em termos deste processo de liquidação financeira para as
+suas operações, designam, previamente à sua entrada no Sistema, a Instituição de
+Crédito na qual é efectuada a respectiva movimentação. <br>
+É no ficheiro Movimentos (<a href="mov-0.htm">MMOV5</a>) desta Instituição de Crédito
+que são incluídos os saldos a movimentar para cada um dos Participantes que representa.</p>
+
+<p><br>
+</p>
+
+<table style="page-break-before: always" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td colspan="2" width="80"></td>
+    <td width="90" class="oito">Designação para<br>
+    <em>file transfer *</em></td>
+    <td width="80" class="oito">Comprimento <br>
+    do registo</td>
+  </tr>
+  <tr>
+    <td class="dez" width="80"><strong>Grupos</strong></td>
+    <td width="300" class="esq10" colspan="3"><strong>Ficheiros expedidos pela SIBS</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="3" width="80"></td>
+    <td width="80" class="esq">&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="dez" width="80">2</td>
+    <td width="300" class="esq10">&nbsp; &#150;&nbsp; ORIGENS</td>
+    <td width="90" class="dez"><a href="ori.htm">MORI5</a></td>
+    <td width="80" class="dez">163</td>
+  </tr>
+  <tr>
+    <td class="dez" width="80">1, 2</td>
+    <td width="300" class="esq10">&nbsp; &#150;&nbsp; DESTINOS</td>
+    <td width="90" class="dez"><a href="dst-1.htm">MDST5</a></td>
+    <td width="80" class="dez">512</td>
+  </tr>
+  <tr>
+    <td class="dez" width="80">2, 3 </td>
+    <td width="300" class="esq10">&nbsp; &#150;&nbsp; MOVIMENTOS</td>
+    <td width="90" class="dez"><a target="main" href="mov-0.htm">MMOV5</a></td>
+    <td width="80" class="dez">404</td>
+  </tr>
+  <tr>
+    <td class="dez" width="80">1</td>
+    <td width="300" class="esq10">&nbsp; &#150;&nbsp; DETALHES</td>
+    <td width="90" class="dez">&nbsp;&nbsp;&nbsp; <a target="main" href="det.htm">MDET5</a> **</td>
+    <td width="80" class="dez">577</td>
+  </tr>
+  <tr>
+    <td class="dez" width="80">1, 2, 3</td>
+    <td width="300" class="esq10">&nbsp; &#150;&nbsp; CAPTURAS E LISTA NEGRA</td>
+    <td width="90" class="dez"><a target="main" href="cln.htm">MCLN5</a></td>
+    <td width="80" class="dez">218</td>
+  </tr>
+  <tr>
+    <td class="dez" width="80">4</td>
+    <td width="300" class="esq10">&nbsp; &#150;&nbsp; RESUMO DA COMPENSAÇÃO</td>
+    <td width="90" class="dez"><a target="main" href="rmb.htm">MRMB5</a></td>
+    <td width="80" class="dez">69</td>
+  </tr>
+  <tr>
+    <td class="dez" width="80">1</td>
+    <td width="300" class="esq10">&nbsp; &#150;&nbsp; PAGAMENTOS DE BAIXO VALOR</td>
+    <td width="90" class="dez">&nbsp;&nbsp;&nbsp; <a href="pbv.htm">MPBV5</a> **</td>
+    <td width="80" class="dez">175</td>
+  </tr>
+  <tr>
+    <td class="dez" width="80">1</td>
+    <td width="300" class="esq10">&nbsp; &#150;&nbsp; AUTORIZAÇÕES ESTRANGEIRO</td>
+    <td width="90" class="dez">&nbsp;&nbsp;&nbsp; <a href="aut.htm">MAUT5</a> **</td>
+    <td width="80" class="dez">290</td>
+  </tr>
+</table>
+
+<p class="oito"><br>
+</p>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq">* </td>
+    <td class="just">Constituída pelos campos (<a href="../../Campos/campos2.htm#101"
+    target="explicac">101</a>) APLIC e (<a href="../../Campos/campos2.htm#102"
+    target="explicac">102</a>) FICH.<br>
+    Para os ficheiros destinados aos Participantes do Grupo 1, enviados para um CPD que não
+    seja o principal, a designação para o <em>file transfe</em>r inclui ainda dois dígitos
+    que identificam o CPD em causa (ex.: MDST502, no caso de ficheiros correspondentes ao
+    CPD2).</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>** &nbsp; </td>
+    <td class="just">Ficheiros opcionais, enviados unicamente para Participantes que os
+    solicitem.</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><strong><em>HEADER</em> DOS FICHEIROS</strong></p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <th width="160">Nome do Campo</th>
+    <th width="45">Comp.</th>
+    <th width="45">Pos.</th>
+    <th width="45">Rep.</th>
+    <th width="70">Nº Campo</th>
+    <th width="200">Obs. </th>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#111">111</a></td>
+    <td width="200" class="esq">= '0'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">APLIC</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">A</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#101">101</a></td>
+    <td width="200" class="esq">= 'M'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">3</td>
+    <td width="45">A</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#102">102</a></td>
+    <td width="200" class="esq">Preenchido</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VERFICH</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos1.htm#064">064</a></td>
+    <td width="200" class="esq">= '00'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIP-ENT</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">9</td>
+    <td width="45" >A</td>
+    <td width="70"><a target="explicac" href="../../Campos/camp1700.htm#1798">1798</a></td>
+    <td width="200" class="esq">Preenchido</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIP-AGREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">10</td>
+    <td width="45" >A</td>
+    <td width="70"><a target="explicac" href="../../Campos/camp2300.htm#2397">2397</a></td>
+    <td width="200" class="esq">(1)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDCLIFAC</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">11</td>
+    <td width="45" >N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos5.htm#412">412</a></td>
+    <td width="200" class="esq">Preenchido</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">18</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200" class="esq">(2)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#104">104</a></td>
+    <td width="200" class="esq">(3)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos1.htm#061">061</a></td>
+    <td width="200" class="esq">= AAAAMMDDSSS </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">34</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos1.htm#062">062</a></td>
+    <td width="200" class="esq">= AAAAMMDDSSS </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATAVALOR</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">45</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#110">110</a></td>
+    <td width="200" class="esq">= AAAAMMDD </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DTH-PROC</td>
+    <td class="dta" width="45">14</td>
+    <td class="dta" width="45">53</td>
+    <td width="45" >N</td>
+    <td width="70"><a target="explicac" href="../../Campos/camp800.htm#857">857</a></td>
+    <td width="200" class="esq">= AAAAMMDDHHMMSS </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODMOEDA</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">67</td>
+    <td width="45" >N</td>
+    <td width="70"><a href="../../Campos/campos3.htm#233" target="explicac">233</a></td>
+    <td width="200" class="esq">= '978' </td>
+  </tr>
+</table>
+
+<p class="nove"><br>
+(1) - Igual a zeros nos ficheiros <a href="ori.htm">MORI5</a>, <a target="main"
+href="rmb.htm">MRMB5</a> e <a target="main" href="mov-0.htm">MMOV5</a>.</p>
+
+<p class="nove">(2) - Igual a zeros se <a href="../../Campos/camp2300.htm#2397">TIP-ENT</a>
+= 'E' (Empresa); preenchido nos restantes casos.</p>
+
+<p class="nove">(3) - Igual a zeros nos ficheiros <a href="ori.htm">MORI5</a>, <a
+target="main" href="rmb.htm">MRMB5</a> e <a target="main" href="mov-0.htm">MMOV5</a>.</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always"><strong><a name="TRAILER"><em>TRAILER</em></a> DOS FICHEIROS</strong></p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <th width="160">Nome do Campo </th>
+    <th width="45">Comp.</th>
+    <th width="45">Pos.</th>
+    <th width="45">Rep.</th>
+    <th width="70">Nº Campo </th>
+    <th width="200">Obs.</th>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#111">111</a></td>
+    <td width="200" class="esq">= '9'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTREG </td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#107">107</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTDEB </td>
+    <td class="dta" width="45">16</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#108">108</a></td>
+    <td width="200" class="esq">na denominação do <em>header</em></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTCRED </td>
+    <td class="dta" width="45">16</td>
+    <td class="dta" width="45">26</td>
+    <td width="45">N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#109">109</a></td>
+    <td width="200" class="esq">na denominação do <em>header</em></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">32</td>
+    <td width="45" >N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#103">103</a></td>
+    <td width="200" class="esq">do Banco de Liquidação (1)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CONTA</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">36</td>
+    <td width="45" >N</td>
+    <td width="70"><a target="explicac" href="../../Campos/campos2.htm#132">132</a></td>
+    <td width="200" class="esq">(1) (2)</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td class="esq" nowrap><span class="esq">(1) -&nbsp;&nbsp; </span></td>
+    <td class="just"><span class="esq">Campos preenchidos apenas no caso de Participantes
+    para os quais a liquidação financeira é efectuada por outra Instituição, ou seja,
+    sempre que o campo </span><a href="../../Campos/camp2300.htm#2397">TIP-ENT</a><span
+    class="esq">, presente no <em>Header</em> do ficheiro, é diferente de &quot;B&quot;.</span></td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2"><span class="esq">&nbsp; </span></td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap><span class="esq">(2) -&nbsp;&nbsp; </span></td>
+    <td class="just"><span class="esq">Identifica a conta de liquidação da Instituição
+    destinatária do ficheiro, isto é, o número da sua conta no Banco de Liquidação. O
+    valor&nbsp; incluído neste campo, bem como o saldo dos campos <a
+    href="../../Campos/campos2.htm#108" target="explicac">TOTDEB</a> e <a
+    href="../../Campos/campos2.htm#109" target="explicac">TOTCRED</a> do registo, são
+    enviados ao Banco de Liquidação, no <a href="mov-5.htm">registo tipo 5</a>, destinado à
+    representação financeira de outros participantes, do ficheiro MOV5.</span></td>
+  </tr>
+</table>
+
+<p><br>
+Se a dimensão do registo de detalhe for inferior a 69 bytes
+(dimensão do <em>HEADER</em>), incluímos um campo de <em>Filler</em> até atingir aquele
+valor. <br>
+No caso da dimensão do registo de detalhe ser maior ou igual a 69
+bytes, a dimensão do <em>HEADER</em> e do <em>TRAILER</em> é ajustada até esse valor
+através de um campo <em>filler</em> de dimensão adequada.</p>
+
+<p>A Compensação Multibanco é efectuada de acordo com o seguinte horário, todos os
+dias (incluindo sábados, domingos e feriados):</p>
+
+<blockquote>
+  <ul>
+    <li>09h00 -&gt; Sub-fecho</li>
+    <li>14h00 -&gt; Sub-fecho</li>
+    <li>20h00 -&gt; Fecho</li>
+  </ul>
+</blockquote>
+
+<p><br>
+A base do processamento são os ficheiros <em>LOG</em> do Serviço Multibanco, isto é, o
+suporte no qual são registadas todas as operações que ocorrem no Sistema Multibanco.</p>
+
+<p>A SIBS disponibiliza os ficheiros uma vez por dia, após a realização do fecho da
+Compensação.</p>
+
+<p>Os campos a considerar para a imputação contabilística de cada ficheiro são
+indicados na respectiva descrição.</p>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="regras">REGRAS</a> DE ENVIO DE FICHEIROS DO GRUPO 1</h3>
+
+<p><br>
+O Grupo 1 dos ficheiros de Compensação pode ter um processamento segregado por CPD ou
+por uma conjugação de CPD e BIN. De acordo com as opções determinadas por BIN pelo
+Emissor, a identificação e o envio dos ficheiros deste Grupo obedece às seguintes
+indicações:</p>
+
+<p>&nbsp;</p>
+
+<p><strong>SEGMENTAÇÃO POR CPD</strong></p>
+
+<p><br>
+Quando se considera a segmentação por CPD, <u>sempre aplicada</u> dado que se considera,
+por defeito, o CPD1, o Emissor (ou um Representante no qual delegou essa função) recebe
+um ficheiro por cada CPD que possua cartões associados.</p>
+
+<p style="page-break-before: always" ><br>
+Este ficheiro é identificado no <em>File Transfer</em> com um nome externo obtido por:</p>
+
+<blockquote>
+  <blockquote>
+    <p>(<a href="../../Campos/campos2.htm#101" target="explicac">101</a>) APLIC + (<a
+    target="explicac" href="../../Campos/campos2.htm#102">102</a>) FICH + código_do_CPD (se
+    CPD não principal)</p>
+  </blockquote>
+</blockquote>
+
+<p><br>
+Ex.: um Emissor que possua dois CPDs recebe dois ficheiros <a href="dst-1.htm">Destinos</a>:</p>
+
+<blockquote>
+  <blockquote>
+    <table border="0" cellpadding="6" cellspacing="0" width="156">
+      <tr>
+        <td class="esq10" width="82">- MDST5</td>
+        <td class="esq10" width="74">(CPD 1)</td>
+      </tr>
+      <tr>
+        <td class="esq10" width="82">- MDST502</td>
+        <td class="esq10" width="74">(CPD 2)</td>
+      </tr>
+    </table>
+  </blockquote>
+</blockquote>
+
+<p>Para possibilitar o encaminhamento e tratamento adequado de vários ficheiros
+recebidos no mesmo destino de <em>File Transfer</em>, o campo hora existente no <em>File
+Transfer</em> é preenchido, para todos os ficheiros do Grupo 1, com a identificação de
+instituição financeira atribuída pelo Banco de Portugal, constante do <em>header</em>
+do ficheiro a ser transmitido.</p>
+
+<blockquote>
+  <p>&nbsp;</p>
+</blockquote>
+
+<p><strong>SEGMENTAÇÃO POR BIN</strong></p>
+
+<p><strong><br>
+</strong>
+
+<ol class="negro">
+  <li class="tipreg">Identificação dos ficheiros no <em>File Transfer</em></li>
+</ol>
+
+<blockquote>
+  <p>Como exemplo, considere-se que o Emissor pretende segmentar o processamento
+  por BIN e previamente caracterizou 2 CPDs e 3 BINs com as seguintes condições:</p>
+  <p><br>
+  </p>
+</blockquote>
+
+<ol>
+  <blockquote>
+    <blockquote>
+      <table CELLSPACING="0" BORDER="1" CELLPADDING="4" WIDTH="335">
+        <tr>
+          <td  width="37"><strong>CPD</strong></td>
+          <td COLSPAN="2"  width="282"><strong>Entidade de<em> File Transfer</em> associada</strong></td>
+        </tr>
+        <tr>
+          <td  width="37">1</td>
+          <td COLSPAN="2"  width="282">FT_X</td>
+        </tr>
+        <tr>
+          <td  width="37">2</td>
+          <td COLSPAN="2"  width="282">FT_Z</td>
+        </tr>
+        <tr>
+          <td class="mid" width="37"><strong>BIN</strong></td>
+          <td  width="105"><strong>Entidade F.T. associada</strong></td>
+          <td  width="169"><strong>CPDs nos quais existem cartões do BIN</strong></td>
+        </tr>
+        <tr>
+          <td  width="37">A</td>
+          <td  width="105">FT_X (*)</td>
+          <td  width="169">1</td>
+        </tr>
+        <tr>
+          <td  width="37">B</td>
+          <td  width="105">FT_Y (*)</td>
+          <td  width="169">1, 2</td>
+        </tr>
+        <tr>
+          <td  width="37">C</td>
+          <td  width="105">&nbsp;</td>
+          <td  width="169">1, 2</td>
+        </tr>
+      </table>
+    </blockquote>
+  </blockquote>
+</ol>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <table border="0" cellpadding="0" cellspacing="0" width="335">
+        <tr>
+          <td class="esq" nowrap>(*)&nbsp;&nbsp;</td>
+          <td class="esq"> Para este exemplo, considere-se que não foi
+  definido para o BIN o segundo <i>File Transfer</i> (opcional), para envio do
+  ficheiro <a href="aut.htm">MAUT5</a>.</td>
+        </tr>
+      </table>
+    </blockquote>
+  </blockquote>
+  <p><br>
+  Os ficheiros relativos ao BIN &#145;A&#146; são enviados através da entidade de <em>File
+  Transfer</em> &#145;FT_X&#146;.</p>
+  <p>Para o BIN &#145;B&#146;, existem cartões nos dois CPDs, originando por esse
+  motivo a produção de dois ficheiros distintos com a desagregação por CPD. Ambos os
+  ficheiros são enviados para a entidade indicada para o BIN (&#145;FT_Y&#146;).</p>
+  <p>Não existindo indicação da entidade a utilizar para o BIN &#145;C&#146;,
+  considera-se que os processamentos relativos a este BIN são efectuados no âmbito do
+  cenário geral, de processamento por CPD. Uma vez que existem cartões do BIN
+  &#145;C&#146; quer no CPD 1 quer no CPD 2, são enviados ficheiros para ambos os CPDs,
+  i.e., para as entidades &#145;FT_X&#146; e &#145;FT_Z&#146;.</p>
+  <p>Os ficheiros a enviar têm uma identificação (nome externo) no <em>File
+  Transfer</em> de acordo com a seguinte regra:</p>
+</blockquote>
+
+<ol>
+  <blockquote>
+    <p>(<a href="../../Campos/campos2.htm#101" target="explicac">101</a>) APLIC + (<a
+    target="explicac" href="../../Campos/campos2.htm#102">102</a>) FICH + código_do_CPD (se
+    CPD não principal)</p>
+  </blockquote>
+</ol>
+
+<blockquote>
+  <p><br>
+  Assim, utilizando como exemplo o ficheiro <a href="dst-1.htm">Destinos</a>, os registos
+  relativos aos três BINs seriam agregados e enviados nos ficheiros que a seguir se
+  indicam:</p>
+  <p><br>
+  </p>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <table BORDER="1" CELLSPACING="0" CELLPADDING="4" WIDTH="435">
+      <tr>
+        <td class="mid" width="79" rowspan="2"><strong>Entidade F.T.</strong></td>
+        <td class="mid" width="86" rowspan="2"><strong>Ficheiros Enviados</strong></td>
+        <td class="mid" width="240"><strong>Observações</strong></td>
+      </tr>
+      <tr>
+        <td class="esq" width="240">Os ficheiros incluem registos referentes a:</td>
+      </tr>
+      <tr>
+        <td class="mid" width="79">FT_X</td>
+        <td class="mid" width="86">MDST5</td>
+        <td  width="240">Cartões do BIN &#145;A&#146;;<br>
+        Cartões do BIN &#145;C&#146; no CPD1</td>
+      </tr>
+      <tr>
+        <td ROWSPAN="2" class="mid" width="79">FT_Y</td>
+        <td  width="86">MDST5</td>
+        <td  width="240">Cartões do BIN &#145;B&#146; no CPD 1</td>
+      </tr>
+      <tr>
+        <td  width="86">MDST502</td>
+        <td  width="240">Cartões do BIN &#145;B&#146; no CPD 2</td>
+      </tr>
+      <tr>
+        <td  width="79">FT_Z</td>
+        <td  width="86">MDST502</td>
+        <td  width="240">Cartões do BIN &#145;C&#146; no CPD 2</td>
+      </tr>
+    </table>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <p>(NOTA: para os restantes ficheiros do Grupo 1 aplica-se a mesma regra de
+  formação do nome externo do ficheiro)</p>
+</blockquote>
+
+<p><strong><br>
+</strong>
+
+<ol class="tipreg" start="2">
+  <li><em>Header</em> interno dos ficheiros</li>
+</ol>
+
+<blockquote>
+  <p>A sequência (campo (<a target="explicac" href="../../Campos/campos1.htm#061">061</a>)
+  IDFICH) é incrementada por CPD e por destino de <em>File Transfer</em>. </p>
+  <p>Por período de Compensação, o número de ficheiros enviado para cada um
+  dos Participantes é constante: nas situações em que, num determinado período da
+  Compensação, não existam registos para alimentar um dos ficheiros, este é enviado,
+  contendo unicamente os registos de <em>header</em> e <em>trailer</em>. <br>
+  Assim, a sequência interna dos ficheiros enviados para os diversos destinos de <em>File
+  Transfer</em>, correspondentes a uma mesma sessão de compensação, é idêntica.</p>
+</blockquote>
+
+<p>No caso de representantes que recebam ficheiros com o campo (<a
+target="explicac" href="../../Campos/campos1.htm#061">061</a>) IDFICH preenchido com
+valores idênticos mas relativos a diferentes Emissores, a identificação inequívoca do
+ficheiro recebido e o respectivo controlo de sequências é assegurado pela conjugação
+dos valores dos campos campos (<a target="explicac" href="../../Campos/campos1.htm#061">061</a>)
+IDFICH, (<a target="explicac" href="../../Campos/campos5.htm#412">412</a>) IDCLIFAC e (<a
+target="explicac" href="../../Campos/campos2.htm#104">104</a>) CPD.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>RELAÇÃO ENTRE INFORMAÇÃO ENVIADA NOS FICHEIROS DST5 E MOV5:</strong></p>
+
+<p><br>
+<strong>Exemplo de Compra com <em>Acquiring</em> (Produto Financeiro <span class="symbol">¹</span>
+&#145;Multibanco&#146;)</strong></p>
+
+<p><br>
+As operações cliente realizadas com cartão num TPA da Rede Multibanco podem ser
+informadas a quatro tipos de intervenientes: 
+
+<ul >
+  <li><em>Acquirer</em> da transacção </li>
+  <li>Banco de suporte do <em>Acquirer</em></li>
+  <li>Entidade de apoio do terminal</li>
+  <li>Emissor do cartão</li>
+</ul>
+
+<p>Em resultado das operações efectuadas, os diferentes intervenientes recebem
+registos para movimentação das contas respectivas através do ficheiro <a
+href="mov-0.htm">MOV5</a>. Adicionalmente, o Emissor, quando corresponda a um banco
+autónomo, recebe o detalhe das transacções através do ficheiro <a href="dst-1.htm">DST5</a>.</p>
+
+<p style="page-break-before: always" >Para compreensão da informação enviada aos diferentes intervenientes e da
+interligação entre os ficheiros <a href="mov-0.htm">MOV5</a> e <a href="dst-1.htm">DST5</a>
+apresenta-se de seguida, como exemplo, os processamentos associados à operação de
+compra, quando o Produto Financeiro sob o qual se realiza a transacção não é o
+Multibanco, considerando os elementos principais que podem existir neste tipo de
+operação: 
+
+<ul >
+  <li>Montante da transacção (a debitar ao Cliente; a creditar ao Comerciante)</li>
+  <li>Taxa de Cliente (a debitar ao Cliente; a creditar ao Emissor)</li>
+  <li>Comissão suportada pelo Comerciante (a debitar ao Comerciante; a creditar ao <em>Acquirer</em>)</li>
+  <li><em>Interchange Fee</em> (a debitar ao <em>Acquirer</em>; a creditar ao Emissor)</li>
+</ul>
+
+<p><br>
+Na explicação que a seguir se apresenta são detalhados dois cenários distintos: 
+
+<ol TYPE="A" >
+  <li>Emissor não Autónomo (centro de autorizações das transacções é uma entidade que
+    não o próprio Emissor)</li>
+  <li>Emissor corresponde a um Banco Autónomo</li>
+</ol>
+
+<p><br>
+A explicação apresentada considera operações de compra concluídas com sucesso e um
+crédito ao comerciante após fecho do período contabilístico do terminal. Os aspectos
+particulares relacionados, por exemplo, com a aplicação de um diferimento no crédito ao
+Comerciante ou com a existência de um indicador de risco &#145;Activo&#146; para o
+Comerciante são detalhados no ficheiro <a href="mov-0.htm">MOV5</a>.</p>
+
+<p>&nbsp;</p>
+
+<p><strong><a name="A.">A.</a> EMISSOR NÃO AUTÓNOMO</strong></p>
+
+<p>A realização de uma compra com <em>Acquirer</em>, i.e., uma compra
+realizada no âmbito de um Produto Financeiro diferente do &#145;Multibanco&#146; e o
+subsequente fecho de período contabilístico do terminal, pode ser decomposta em 4 fluxos
+financeiros: 
+
+<ul >
+  <li>1º Débito ao cliente pelo valor da transacção e de uma Taxa Cliente (quando exista);
+  </li>
+  <li>2º Crédito ao <em>Acquirer</em> pelo valor do comissionamento suportado pelo
+    Comerciante; </li>
+  <li>3º Crédito da Taxa Cliente (quando exista), na óptica de um fluxo para
+    o <em>Acquirer</em>;
+  </li>
+  <li>4º Crédito ao Comerciante. </li>
+</ul>
+
+<p><br>
+Descrevem-se de seguida as movimentações associadas a cada fluxo e, num quinto ponto, os
+elementos adicionalmente transmitidos ao <em>Acquirer</em> a título informativo.</p>
+
+<p><br>
+<strong>1º Débito ao Cliente</strong></p>
+
+<p>O movimento correspondente à operação realizada pelo cliente é enviado
+num <a href="mov-1.htm">tipo de registo 1</a> (&quot;MOVIMENTO CARTÃO <em>ACQUIRER</em>&quot;)
+do MOV5 enviado ao <em>Acquirer</em>. Este registo possui valor contabilístico. </p>
+
+<p>O <em>Acquirer</em> é <u>debitado</u> pelo valor da transacção e da taxa
+cliente, quando exista (indicada no <a href="#resumo">quadro resumo</a>, abaixo, como
+&quot;Taxa Cliente (Cliente)&quot;), sendo que a posterior apresentação destes valores
+ao Emissor é efectuada pelo <em>Acquirer</em>, através de interfaces próprios definidos
+entre estes dois intervenientes. Com a recepção destes elementos, o Emissor efectua os
+necessários lançamentos contabilísticos à conta do cliente.</p>
+
+<p>Como contrapartida do movimento supracitado, o valor em causa totaliza, com
+sinal contrário (i.e., a <u>crédito</u>), para um <a href="mov-5.htm">tipo de registo 5</a>,
+com (<a target="explicac" href="../../Campos/campos1.htm#063">063</a>) TIPMOV=
+&#145;0101&#146;, do MOV5 enviado ao <em>Acquirer</em> (registo referente a
+&quot;MOVIMENTAÇÃO DE CONTAS DE <em>ACQUIRING</em>&quot;), igualmente com valor
+contabilístico. Neste <a href="mov-5.htm">tipo de registo 5</a> a informação é
+agregada por Produto Financeiro e pelo código (ou códigos) de Banco de apoio do terminal
+em que se realizaram transacções. </p>
+
+<p style="page-break-before: always" >O <em>Acquirer</em> pode associar a cada Produto Financeiro uma conta única
+ou uma conta por cada código de Banco. Na segunda hipótese, se definir várias contas
+para o mesmo Produto deve indicar uma &quot;conta principal&quot;, que é utilizada quando
+se verifiquem transacções em terminais para os quais não exista uma conta posicionada
+no sistema para o respectivo código de Banco de apoio associado. O <em>Acquirer</em>
+recebe tantos <a href="mov-5.htm">registo(s) de tipo 5</a> quantas as combinações de
+Produtos Financeiros e contas que posicionou para os mesmos no sistema.</p>
+
+<p><br>
+<strong>2º Crédito do comissionamento ao <em>Acquirer</em></strong></p>
+
+<p>O valor correspondente ao comissionamento suportado pelo Comerciante é
+enviado no mesmo <a href="mov-1.htm">registo de tipo 1</a> do MOV5 enviado ao <em>Acquirer</em>,
+referido em &quot;1º Débito ao Cliente&quot;. Este valor corresponde a um <u>crédito</u>
+ao <em>Acquirer</em> pelo montante correspondente à comissão suportada pelo Comerciante,
+definida para o Produto Financeiro que suporta a transacção.</p>
+
+<p>A repartição deste comissionamento com o Emissor é desencadeada pelo <em>Acquirer</em>.
+No entanto, o <i>Acquirer</i> recebe no mesmo <a href="mov-1.htm">registo de tipo 1</a> 
+do MOV5, nos dados adicionais, informação sobre a fracção a entregar ao Emissor.</p>
+
+<p>Os valores são apresentados ao Emissor através de interfaces próprios definidos entre
+este e o <em>Acquirer</em>.</p>
+
+<p>Este crédito tem igualmente como contrapartida um valor de sinal contrário
+(i.e., <u>débito</u>), englobado no mesmo <a href="mov-5.htm">tipo de registo 5</a> do
+MOV5 enviado ao <em>Acquirer</em>, referido em &quot;1º Débito ao Cliente&quot;.</p>
+
+<p><br>
+<strong>3º Crédito da Taxa Cliente enquanto fluxo para o <em>Acquirer</em></strong></p>
+
+<p>Os valores adicionais cobrados a título de uma Taxa Cliente constituem um
+proveito entregue num primeiro momento ao <em>Acquirer</em> (&quot;Taxa Cliente (<em>Acquirer</em>)&quot; no <a
+href="#resumo">quadro resumo</a>, abaixo). Caso este proveito seja partilhado ou
+entregue ao
+Emissor, tal é efectuado por apresentação ao Emissor do valor respectivo pelo
+próprio <em>Acquirer</em>, através de interfaces próprios definidos entre os dois
+intervenientes.</p>
+
+<p>Assim, é incluído no mesmo <a href="mov-1.htm">tipo de registo 1</a> do
+MOV5 enviado ao <em>Acquirer</em>, referido em &quot;1º Débito ao Cliente&quot;, um
+valor a <u>crédito</u> correspondente ao valor da Taxa Cliente que corresponde a um
+valor entregue ao <em>Acquirer</em>.</p>
+
+<p>Como contrapartida, este montante é englobado a <u>débito</u>  no
+mesmo <a
+href="mov-5.htm">tipo de registo 5</a> do MOV5 enviado ao <em>Acquirer</em>, referido em &quot;1º Débito ao Cliente&quot;.</p>
+
+<p><br>
+<strong>4º Crédito ao Comerciante</strong></p>
+
+<p>O Comerciante recebe um valor correspondente ao montante da transacção
+subtraído do comissionamento que tem que suportar, definido para o Produto Financeiro sob
+o qual se realizou a transacção. O valor a entregar ao Comerciante é determinado no
+momento do fecho do Período Contabilístico do terminal.</p>
+
+<p>A movimentação na conta do Comerciante é efectuada pelo envio de um <a
+href="mov-3.htm">registo de tipo 3</a>, com valor contabilístico, num ficheiro MOV5 do
+Banco de apoio do Comerciante. Este registo transporta um valor a <u>crédito</u>,
+correspondente ao montante da transacção, e um valor a <u>débito</u>, correspondente ao
+comissionamento suportado pelo Comerciante. A conta do Comerciante deve ser movimentada
+pelo saldo dos dois campos. </p>
+
+<p>A movimentação para o <em>Acquirer</em> é concretizada pelo envio do
+montante da transacção a <u>débito</u> e do comissionamento suportado pelo Comerciante
+a <u>crédito</u>, englobados num <a href="mov-5.htm">registo de tipo 5</a>  de
+um ficheiro MOV5 enviado ao Banco de suporte do <em>Acquirer</em>.</p>
+
+<p>Assim, o <a href="mov-5.htm">registo
+de tipo 5</a>, enviado via ficheiro MOV5 ao Banco de suporte do <i> Acquirer,</i>
+transporta a contrapartida financeira dos <a href="mov-3.htm">registos
+de tipo 3</a> enviados no MOV5 do Banco de apoio do Comerciante.
+</p>
+<p style="page-break-before: always" >Adicionalmente, o <a href="mov-5.htm">registo
+de tipo 5</a>, enviado no ficheiro MOV5 do Banco de suporte do <i> Acquirer</i>, efectua a
+movimentação financeira associada à taxa cliente, transportando os seguintes
+valores:&nbsp;
+</p>
+<ul >
+  <li>Taxa Cliente enquanto custo para o Cliente - montante a débito;</li>
+  <li>Taxa Cliente enquanto valor a entregar ao <i> Acquirer</i> - montante a crédito.</li>
+</ul>
+
+<p><br>
+<strong>Informação adicional para o <em>Acquirer</em></strong></p>
+
+<p>O <em>Acquirer</em> recebe <a href="mov-4.htm">registos de tipo 4</a> no
+ficheiro MOV5, que contêm informação agregada por cada um dos seus Produtos Financeiros
+relativa aos seguintes elementos: 
+
+<ul >
+  <li>montantes das transacções;</li>
+  <li>comissionamentos aplicados;</li>
+  <li>montantes adicionais suportados pelo Cliente, a entregar ao <i> Acquirer</i>&nbsp;
+    (&quot;Taxa Cliente (<i>Acquirer)&quot;</i>). </li>
+</ul>
+
+<p>Estes <a href="mov-4.htm">registos de tipo 4</a> enviados ao <em>Acquirer</em>
+não têm valor contabilístico.</p>
+
+<p><br>
+<u><strong><a name="resumo">Quadro resumo</a></strong></u></p>
+
+<p><br>
+Uma operação de compra realizada no âmbito de um Produto Financeiro que não seja o
+&#145;Multibanco&#146; ((<a target="explicac" href="../../Campos/campos5.htm#434">434</a>)
+PRODFIN <span class="symbol">¹</span> 00001) desencadeia informação transmitida em 5
+registos diferentes:</p>
+
+<p><br>
+</p>
+
+<table id="table" BORDER="1" CELLSPACING="0" CELLPADDING="2">
+  <tr>
+    <td WIDTH="140" class="dtamid"><b>Destinatário:</b></td>
+    <td WIDTH="93" class="mid"><i>Acquirer</i></td>
+    <td class="mid" width="85"><i>Acquirer</i></td>
+    <td class="mid" width="85"><i>Acquirer</i></td>
+    <td width="81">B. Apoio Comerciante</td>
+    <td width="89">B. Suporte <i>Acquirer</i></td>
+  </tr>
+  <tr>
+    <td WIDTH="140" class="dta"><b>Ficheiro:</b></td>
+    <td WIDTH="93">MOV5</td>
+    <td width="85">MOV5</td>
+    <td width="85">MOV5</td>
+    <td width="81">MOV5</td>
+    <td width="89">MOV5</td>
+  </tr>
+  <tr>
+    <td WIDTH="140" class="dta"><b>Tipo de registo:</b></td>
+    <td WIDTH="93">TIPREG=1</td>
+    <td width="85">TIPREG=4</td>
+    <td width="85">TIPREG=5</td>
+    <td width="81">TIPREG=3</td>
+    <td width="89">TIPREG=5</td>
+  </tr>
+  <tr>
+    <td WIDTH="140" class="dtamid"><b>Impacto financeiro:</b></td>
+    <td WIDTH="93">Com valor contabilístico</td>
+    <td class="mid" width="85">Informativo</td>
+    <td width="85">Com valor contabilístico</td>
+    <td width="81">Com valor contabilístico</td>
+    <td width="89">Com valor contabilístico</td>
+  </tr>
+  <tr>
+    <td WIDTH="140" class="dta"><b><span class="a">TIPMOV:</span></b></td>
+    <td WIDTH="93" class="a">n.a.</td>
+    <td class="a" width="85">n.a.</td>
+    <td width="85" class="a">0101</td>
+    <td width="81" class="a">n.a.</td>
+    <td width="89" class="a">0101</td>
+  </tr>
+  <tr>
+    <td WIDTH="140" height="33" class="mid"><b>Elementos
+    informados:</b></td>
+    <td WIDTH="446" height="33" colspan="5" class="esqmid"><strong>&nbsp;&nbsp;
+    Sinal:</strong></td>
+  </tr>
+  <tr>
+    <td WIDTH="140">Montante da transacção</td>
+    <td WIDTH="93">D</td>
+    <td width="85">D</td>
+    <td width="85">C</td>
+    <td width="81">C</td>
+    <td width="89">D</td>
+  </tr>
+  <tr>
+    <td WIDTH="140">Taxa Cliente (Cliente)</td>
+    <td WIDTH="93">D</td>
+    <td width="85">-</td>
+    <td width="85">C</td>
+    <td width="81">-</td>
+    <td width="89">D</td>
+  </tr>
+  <tr>
+    <td WIDTH="140">Taxa Cliente (<em>Acquirer</em>)</td>
+    <td WIDTH="93">C</td>
+    <td width="85" >C</td>
+    <td width="85" >D</td>
+    <td width="81">-</td>
+    <td width="89" >C</td>
+  </tr>
+  <tr>
+    <td WIDTH="140">Comissão Comerciante</td>
+    <td WIDTH="93">C</td>
+    <td width="85" >C / C</td>
+    <td width="85">D</td>
+    <td width="81">D</td>
+    <td width="89">C</td>
+  </tr>
+  <tr>
+    <td WIDTH="140" ><i>Interchange Fee</i></td>
+    <td WIDTH="93" >(N.A.)</td>
+    <td width="85" >-</td>
+    <td width="85" >-</td>
+    <td width="81" >-</td>
+    <td width="89" >-</td>
+  </tr>
+</table>
+
+<p style="page-break-before: always" ><br>
+Os montantes referentes a cada elemento são incluídos nos seguintes campos:</p>
+
+<p><br>
+</p>
+
+<table id="table" BORDER="1" CELLSPACING="0" CELLPADDING="2" width="605">
+  <tr>
+    <td WIDTH="137" class="dtamid"><b>Destinatário:</b></td>
+    <td class="mid" width="96"><i>Acquirer</i></td>
+    <td class="mid" width="91"><i>Acquirer</i></td>
+    <td class="mid" width="83"><i>Acquirer</i></td>
+    <td width="80">B. Apoio <br>
+    Comerciante</td>
+    <td width="87">B. Suporte <br>
+      <i>Acquirer</i></td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dta"><b>Ficheiro:</b></td>
+    <td class="tahoma" width="96">MOV5</td>
+    <td class="tahoma" width="91">MOV5</td>
+    <td class="tahoma" width="83">MOV5</td>
+    <td class="tahoma" width="80">MOV5</td>
+    <td class="tahoma" width="87">MOV5</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dta"><b>Tipo de registo:</b></td>
+    <td class="tahoma" width="96">TIPREG=1</td>
+    <td class="tahoma" width="91">TIPREG=4</td>
+    <td class="tahoma" width="83">TIPREG=5</td>
+    <td class="tahoma" width="80">TIPREG=3</td>
+    <td class="tahoma" width="87">TIPREG=5</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dtamid" height="33"><b>Elementos
+    informados:</b></td>
+    <td WIDTH="461" class="esqmid" height="33" colspan="5"><span class="tahoma"><strong>&nbsp;&nbsp;
+    Campo:</strong></span></td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="tahoma">Montante da transacção</td>
+    <td width="96">(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E</td>
+    <td width="91">(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E</td>
+    <td width="83">(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E</td>
+    <td width="80">(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E</td>
+    <td width="87">(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="tahoma">Taxa Cliente (Cliente)</td>
+    <td width="96">(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI</td>
+    <td width="91">-</td>
+    <td width="83">(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI</td>
+    <td width="80">-</td>
+    <td width="87" >(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="tahoma">Taxa Cliente (<i>Acquirer</i>)</td>
+    <td width="96">(<a target="explicac" href="../../Campos/camp2300.htm#2341">2341</a>)
+    MNT-R-DST</td>
+    <td width="91">(<a target="explicac" href="../../Campos/camp2300.htm#2341">2341</a>)
+    MNT-R-DST</td>
+    <td width="83" >(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E</td>
+    <td width="80">-</td>
+    <td width="87" >(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="mid">
+ Comissão Comerciante
+    </td>
+    <td class="mid" width="96">(<a target="explicac" href="../../Campos/camp2300.htm#2341">2341</a>)
+      MNT-R-DST</td>
+    <td  width="91">(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI / (<a target="explicac" href="../../Campos/camp2300.htm#2341">2341</a>)
+    MNT-R-DST</td>
+    <td class="mid" width="83">
+ (<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E
+    </td>
+    <td class="mid" width="80">
+ (<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI
+    </td>
+    <td class="mid" width="87">
+ (<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E
+    </td>
+  </tr>
+  <tr>
+    <td WIDTH="137" >
+ <i>Interchange Fee (a)</i>
+    </td>
+    <td  width="96">(<a target="explicac" href="../../Campos/camp2400.htm#2411">2411</a>)
+      MNTAUX-E (3)</td>
+    <td  width="91">-</td>
+    <td  width="83">
+ -
+    </td>
+    <td  width="80">
+ -
+    </td>
+    <td  width="87">
+ -
+    </td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellpadding="0" cellspacing="0" id="table" width="570">
+  <tr>
+    <td class="esq" nowrap>(a) -&nbsp;&nbsp;<br>
+      &nbsp;</td>
+    <td class="esq">O valor deste elemento é menor ou, no limite, igual ao
+      valor informado ao <i>Acquirer</i>, identificado como &quot;Comissão
+      Comerciante&quot;.</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><strong><a name="B.">B.</a> BANCO AUTÓNOMO</strong></p>
+
+<p>Quando a operação é efectuada por um cartão de um Banco autónomo, são
+aplicáveis todas as movimentações anteriormente indicadas em &quot;<a href="#A">A.</a>
+EMISSOR NÃO AUTÓNOMO&quot; (ou seja, este cenário incorpora o especificado para
+Emissores não autónomos). </p>
+
+<p>Adicionalmente, no caso do Emissor ser um <u>Banco autónomo</u>, os
+montantes dos movimentos que no ponto anterior se indicou que seriam apresentados ao
+Emissor pelo próprio <em>Acquirer</em>, através de interfaces próprios definidos entre
+ambos, são enviados ao Emissor através da Compensação Multibanco. </p>
+
+<p>Assim, à movimentação anteriormente indicada são adicionados os registos
+necessários, para o <em>Acquirer</em> e para o Emissor (Banco autónomo), para informar
+valores referentes a: 
+
+<ul >
+  <li>1º Débito ao Cliente pelo valor da transacção e da Taxa Cliente, quando exista (o
+    detalhe das transacções é enviado ao Emissor);</li>
+  <li>2º Crédito ao Emissor pela componente do comissionamento suportado pelo Comerciante
+    que lhe corresponde (<em>Interchange Fee</em>);</li>
+  <li>3º Crédito da componente da Taxa Cliente (quando exista) que constitui um proveito do
+    Emissor.</li>
+</ul>
+
+<p class="a">Com o objectivo de minimizar o número de lançamentos na conta do <i>Acquirer</i>, o pagamento efectuado por cada
+Banco emissor não é efectuado de forma desagregada numa conta do <i> Acquirer</i> junto de cada
+Emissor autónomo, sendo efectuado de forma agregada numa conta de suporte ao Produto Financeiro em causa.</p>
+
+<p><br>
+Descrevem-se de seguida as movimentações associadas a cada fluxo e, num quarto ponto, os
+elementos adicionalmente transmitidos ao <em>Acquirer</em> a título informativo.</p>
+
+<p><br>
+<strong>1º Débito ao Cliente</strong></p>
+
+<p>O movimento correspondente à operação realizada pelo Cliente é enviado
+num <a href="dst-1.htm#= 1">tipo de registo 1</a> do ficheiro DST5 enviado ao Emissor
+(obrigatoriamente um Banco autónomo). Este registo possui valor contabilístico. </p>
+
+<p>O Emissor é <u>debitado</u> pelo valor da transacção e da Taxa Cliente
+(quando exista). Com a recepção destes elementos, o Emissor efectua os necessários
+lançamentos contabilísticos à conta do Cliente.</p>
+
+<p>Como contrapartida, os valores da operação e da Taxa Cliente totalizam, com
+sinal contrário (i.e., a <u>crédito</u>), para um <a href="mov-5.htm">tipo de registo 5</a>
+do MOV5 enviado ao Emissor (registo referente a &quot;MOVIMENTAÇÃO DE CONTAS DE <em>ACQUIRING</em>&quot;,
+com (<a target="explicac" href="../../Campos/campos1.htm#063">063</a>) TIPMOV =
+&#145;0102&#146;), igualmente com valor contabilístico. Neste <a href="mov-5.htm">tipo de
+registo 5</a> a informação é agregada por BIN e extensão de BIN.</p>
+
+<p><br>
+<strong>2º Crédito do comissionamento ao Emissor (<em>Interchange Fee</em>)</strong></p>
+
+<p>O proveito resultante do valor suportado pelo Comerciante a título de
+comissionamento é normalmente repartido entre o <em>Acquirer</em> e o Emissor.</p>
+
+<p>A componente que constitui um proveito do Emissor é habitualmente
+identificada como &quot;<em>Interchange Fee</em>&quot;. Este proveito é calculado e
+enviado ao Emissor como um valor a <u>crédito</u> no mesmo <a href="dst-1.htm#= 1">tipo
+de registo 1</a> do ficheiro DST5, referido em &quot;1º Débito ao Cliente&quot;. O
+montante informado tem valor contabilístico.</p>
+
+<p>Este valor totaliza a <u>débito</u> para o mesmo <a href="mov-5.htm">registo
+de tipo 5</a> enviado ao Emissor no ficheiro MOV5, referido em &quot;1º Débito ao
+Cliente&quot;.</p>
+
+<p><br>
+<strong>3º Crédito da Taxa Cliente ao Emissor</strong></p>
+
+<p>Quando existe um valor adicional à transacção que é suportado pelo
+Cliente, este pode constituir uma receita repartida entre o <em>Acquirer</em>  e
+o Emissor ou constituir uma receita apenas para
+um dos dois intervenientes.</p>
+
+<p>Quando uma componente do valor constitui um proveito do Emissor,
+esta é enviada ao Emissor a <u>crédito</u>
+no mesmo <a href="dst-1.htm#= 1">tipo de registo 1</a> do ficheiro DST5, referido em
+&quot;1º Débito ao Cliente&quot;. O montante informado tem valor contabilístico.</p>
+
+<p>O valor indicado totaliza a <u>débito</u> para o mesmo <a href="mov-5.htm">registo
+de tipo 5</a> enviado ao Emissor no ficheiro MOV5, referido em &quot;1º Débito ao
+Cliente&quot;. </p>
+
+<p><br>
+<strong>Informação adicional para o <em>Acquirer</em></strong></p>
+
+<p class="a">Para informação da movimentação relativa às transacções
+efectuadas por cartões do Banco
+Emissor, o <i> Acquirer</i> recebe <a href="mov-5.htm">registos de tipo 5</a>, com (<a
+target="explicac" href="../../Campos/campos1.htm#063">063</a>) TIPMOV = &#145;0102&#146;,
+no seu ficheiro MOV5. Estes registos apresentam os mesmos montantes que os <a href="mov-5.htm">registos de
+tipo 5</a> enviados ao Banco Emissor mas com sinal contrário (campo (<a href="../../Campos/campos4.htm#318" target="explicac">318</a>)
+SINAL),
+correspondendo a valores agregados por BIN+Extensão. </p>
+
+<p>Estes <a href="mov-5.htm">registos de tipo 5</a>
+enviados ao <em>Acquirer</em> não têm impacto financeiro (AV/CUTOFF = 1).</p>
+
+<p>Adicionalmente, os <a href="mov-1.htm">registos de tipo 1</a> e os
+<a href="mov-4.htm">registos de tipo 4</a> do ficheiro
+MOV5 enviado ao <em>Acquirer</em> são complementados com informação relativa
+à <em>Interchange Fee</em> entregue ao Emissor.<br>
+No caso dos <a href="mov-1.htm">registos de tipo 1</a>, este montante é incluído no campo
+informativo (<a target="explicac" href="../../Campos/camp2400.htm#2411">2411</a>)
+MNTAUX-E (3). No caso dos
+<a href="mov-4.htm">registos de tipo 4</a>, a <em>Interchange Fee<i> é
+incluída </i></em>no campo (<a target="explicac"
+href="../../Campos/camp2300.htm#2340">2340</a>) MNT-P-DST.&nbsp;
+
+<p class="a"><br>
+<b>Agregação da movimentação por Produto Financeiro</b>
+
+<p class="a">Para minimizar o número de lançamentos em contas do <i>Acquirer</i>, a movimentação financeira é efectuada num único valor por Produto Financeiro numa conta indicada pelo
+<i>Acquirer</i> num Banco de Suporte à movimentação em causa.
+
+<p class="a">Assim, o Banco de Suporte do <i> Acquirer</i> recebe registos de tipo 5, com
+(<a
+target="explicac" href="../../Campos/campos1.htm#063">063</a>) TIPMOV= ‘0103’, no seu ficheiro MOV5. Estes registos de tipo 5 enviados ao Banco de Suporte do
+<i> Acquirer</i> têm impacto financeiro (AV/CUTOFF = 2).
+
+<p class="a">Adicionalmente, o <i> Acquirer</i> recebe registos de tipo 5, com (<a
+target="explicac" href="../../Campos/campos1.htm#063">063</a>) TIPMOV= ‘0103’, semelhantes aos enviados ao seu Banco de Suporte. Estes registos de tipo 5 enviados ao Banco de Suporte do
+<i> Acquirer</i> são apenas informativos (AV/CUTOFF = 1).
+<p style="page-break-before: always" ><br>
+<u><strong>Quadro resumo</strong></u></p>
+
+<p><br>
+Quando o Banco emissor do cartão é autónomo, para além da informação transmitida
+através dos 5 registos indicados no ponto &quot;<a href="#A.">A.</a> EMISSOR NÃO
+AUTÓNOMO&quot;, uma operação de compra realizada no âmbito de um Produto Financeiro
+que não seja o &#145;Multibanco&#146; ((<a target="explicac"
+href="../../Campos/campos5.htm#434">434</a>) PRODFIN <span class="symbol">¹</span> 00001)
+implica a criação e envio dos seguintes registos:</p>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" id="table" width="605">
+  <tr>
+    <td class="dtamid" width="73"><b>Destinatário:</b></td>
+    <td class="mid" width="61"><i>Acquirer</i></td>
+    <td  width="56"><i>Acquirer</i></td>
+    <td ROWSPAN="5" class="mid" width="14">...<br>
+    <br>
+    (<a href="#a">a</a>)</td>
+    <td class="mid" width="68"><i>Acquirer</i></td>
+    <td COLSPAN="2" width="138" >Emissor&nbsp;<br>
+ (Banco autónomo)</td>
+    <td class="a" width="73" ><i>Acquirer</i></td>
+    <td class="a" width="72" >Banco de&nbsp;<br>
+      Suporte do&nbsp;<br>
+      <i>Acquirer</i></td>
+  </tr>
+  <tr>
+    <td class="dta" width="73"><b>Ficheiro:</b></td>
+    <td  width="61">MOV5</td>
+    <td  width="56" >MOV5</td>
+    <td  width="68">MOV5</td>
+    <td  width="63">DST5</td>
+    <td  width="69">MOV5</td>
+    <td  width="73" class="a">MOV5</td>
+    <td  width="72" class="a" >MOV5</td>
+  </tr>
+  <tr>
+    <td class="dtamid" width="73"><b>Tipo de registo:</b></td>
+    <td class="mid" width="61">TIPREG=1</td>
+    <td  width="56">TIPREG=4</td>
+    <td  width="68" nowrap>TIPREG=5<br>
+    (por BIN+Ext)</td>
+    <td class="mid" width="63">TIPREG=1</td>
+    <td  width="69">TIPREG=5<br>
+    (por BIN+Ext)</td>
+    <td  width="73" class="a">TIPREG=5<br>
+      (por PRODFIN)</td>
+    <td  width="72" class="a">TIPREG=5<br>
+      (por PRODFIN)</td>
+  </tr>
+  <tr>
+    <td class="dtamid" height="33" width="73"><b>Impacto
+    financeiro:</b></td>
+    <td width="61"  >Com valor <br>
+    contabilístico</td>
+    <td width="56" >Informativo</td>
+    <td width="68" class="mid">Informativo</td>
+    <td width="63" >Com valor<br>
+    contabilístico</td>
+    <td width="69" class="a" >Informativo</td>
+    <td width="73" class="a" >Informativo</td>
+    <td width="72" class="a" >Com valor<br>
+    contabilístico</td>
+  </tr>
+  <tr>
+    <td WIDTH="73" class="dta"><b><span class="a">TIPMOV:</span></b></td>
+    <td WIDTH="61" class="a">n.a.</td>
+    <td width="56" class="a" >n.a.</td>
+    <td width="68" class="a">0102</td>
+    <td width="63" class="a" >n.a.</td>
+    <td width="69" class="a" >0102</td>
+    <td width="73" class="a" >0103</td>
+    <td width="72" class="a" >0103</td>
+  </tr>
+  <tr>
+    <td height="33" class="mid" width="73"><b>Elementos
+    informados:</b></td>
+    <td height="33" colspan="8" class="esqmid" width="518">&nbsp;<b>&nbsp;
+      Sinal:</b></td>
+  </tr>
+  <tr>
+    <td width="73" >Montante da transacção</td>
+    <td width="61" >D</td>
+    <td width="56"  >D</td>
+    <td  rowspan="6" width="14">
+    ...<br>
+    <br>
+    (<a href="#a">a</a>)</td>
+    <td width="68" >C</td>
+    <td width="63" >D</td>
+    <td width="69" class="a" >D</td>
+    <td width="73" class="a" >C</td>
+    <td width="72" class="a" >C</td>
+  </tr>
+  <tr>
+    <td width="73" >Taxa Cliente (Cliente)</td>
+    <td width="61" >D</td>
+    <td width="56"  >-</td>
+    <td width="68" >C</td>
+    <td width="63" >D</td>
+    <td width="69" class="a" >D</td>
+    <td width="73" class="a" >C</td>
+    <td width="72" class="a" >C</td>
+  </tr>
+  <tr>
+    <td width="73" >Taxa Cliente (<i>Acquirer</i>)</td>
+    <td width="61" >C</td>
+    <td width="56"  >C</td>
+    <td width="68" >-</td>
+    <td width="63" >-</td>
+    <td width="69" class="a" >-</td>
+    <td width="73" class="a" >-</td>
+    <td width="72" class="a" >-</td>
+  </tr>
+  <tr>
+    <td width="73" >Comissão Comerciante</td>
+    <td width="61" >C</td>
+    <td width="56"  >C / C</td>
+    <td width="68" >-</td>
+    <td width="63" >-</td>
+    <td width="69" class="a" >-</td>
+    <td width="73" class="a" >-</td>
+    <td width="72" class="a" >-</td>
+  </tr>
+  <tr>
+    <td width="73" >Taxa Cliente (Emissor)</td>
+    <td width="61"  >-</td>
+    <td width="56"  >D</td>
+    <td width="68" >D</td>
+    <td width="63" >C</td>
+    <td width="69" class="a" >C</td>
+    <td width="73" class="a" >D</td>
+    <td width="72" class="a" >D</td>
+  </tr>
+  <tr>
+    <td width="73" ><i>Interchange Fee</i></td>
+    <td width="61"  >(N.A.)</td>
+    <td width="56"  >D</td>
+    <td width="68" >D</td>
+    <td width="63" >C</td>
+    <td width="69" class="a" >C</td>
+    <td width="73" class="a" >D</td>
+    <td width="72" class="a" >D</td>
+  </tr>
+</table>
+
+<p><br>
+Os montantes referentes a cada elemento são incluídos nos seguintes campos:</p>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" id="table" width="605">
+  <tr>
+    <td class="dtamid" width="73"><b>Destinatário:</b></td>
+    <td class="mid" width="77"><i>Acquirer</i></td>
+    <td width="142" ><i>Acquirer</i></td>
+    <td ROWSPAN="3" class="mid" width="18">... <br>
+    <br>
+    (<a href="#a">a</a>)</td>
+    <td class="mid" width="89"><i>Acquirer</i></td>
+    <td COLSPAN="2" width="146" >Emissor&nbsp;<br>
+ (Banco autónomo)</td>
+    <td class="a" width="65" ><i>Acquirer</i></td>
+    <td class="a" width="69" >Banco de&nbsp;<br>
+      Suporte do&nbsp;<br>
+      <i>Acquirer</i></td>
+  </tr>
+  <tr>
+    <td class="dtamid" width="73"><b>Ficheiro:</b></td>
+    <td width="77" >MOV5</td>
+    <td width="142"  >MOV5</td>
+    <td width="89" >MOV5</td>
+    <td width="72" >DST5</td>
+    <td width="68" >MOV5</td>
+    <td  width="65" class="a">MOV5</td>
+    <td  width="69" class="a" >MOV5</td>
+  </tr>
+  <tr>
+    <td class="dtamid" width="73"><b>Tipo de registo:</b></td>
+    <td class="mid" width="77">TIPREG=1</td>
+    <td width="142" >TIPREG=4</td>
+    <td width="89" >TIPREG=5<br>
+    (por BIN+Ext)</td>
+    <td class="mid" width="72">TIPREG=1</td>
+    <td width="68" >TIPREG=5 <br>
+    (por BIN+Ext)</td>
+    <td  width="65" class="a">TIPREG=5<br>
+      (por PRODFIN)</td>
+    <td  width="69" class="a">TIPREG=5<br>
+      (por PRODFIN)</td>
+  </tr>
+  <tr>
+    <td class="mid" height="33" width="73"><b>Elementos
+    informados:</b></td>
+    <td colspan="8" class="esqmid" height="33" width="632">&nbsp;&nbsp; <b>Campo:</b></td>
+  </tr>
+  <tr>
+    <td class="tahoma7" width="73">Montante da transacção</td>
+    <td width="77" >(<a href="../../Campos/camp2300.htm#2326"
+    target="explicac">2326</a>)<br>
+      MNT-E</td>
+    <td width="142"  >(<a href="../../Campos/camp2300.htm#2326"
+    target="explicac">2326</a>) MNT-E</td>
+    <td  rowspan="6" width="18">
+    ...<br>
+    <br>
+    (<a href="#a">a</a>)</td>
+    <td width="89" >(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)&nbsp;<br>
+    MNT-E</td>
+    <td width="72" >(<a href="../../Campos/camp2300.htm#2326"
+    target="explicac">2326</a>)<br>
+      &nbsp;MNT-E</td>
+    <td width="68" >(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)<br>
+      &nbsp;MNT-E</td>
+    <td width="65" class="a" >(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)<br>
+      &nbsp;MNT-E</td>
+    <td width="69" class="a" >(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)<br>
+      &nbsp;MNT-E</td>
+  </tr>
+  <tr>
+    <td width="73" >Taxa Cliente (Cliente)</td>
+    <td width="77" >(<a target="explicac"
+    href="../../Campos/camp2300.htm#2327">2327</a>)<br>
+      MNT-ADI</td>
+    <td width="142"  >-</td>
+    <td width="89" >(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)<br>
+      MNT-ADI</td>
+    <td width="72" >(<a target="explicac"
+    href="../../Campos/camp2300.htm#2327">2327</a>)&nbsp;<br>
+ MNT-ADI</td>
+    <td width="68" >(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)<br>
+      &nbsp;MNT-ADI</td>
+    <td width="65" class="a" >C</td>
+    <td width="69" class="a" >C</td>
+  </tr>
+  <tr>
+    <td width="73" >Taxa Cliente (<i>Acquirer</i>)</td>
+    <td width="77" >(<a target="explicac"
+    href="../../Campos/camp2300.htm#2341">2341</a>)<br>
+      MNT-R-DST</td>
+    <td width="142" >(<a target="explicac"
+    href="../../Campos/camp2300.htm#2341">2341</a>)&nbsp;<br>
+ MNT-R-DST</td>
+    <td class="mid" width="89">-</td>
+    <td class="mid" width="72">-</td>
+    <td class="mid" width="68">-</td>
+    <td width="65" class="a" >C</td>
+    <td width="69" class="a" >C</td>
+  </tr>
+  <tr>
+    <td class="mid" width="73">Comissão Comerciante</td>
+    <td class="mid" width="77">(<a target="explicac"
+    href="../../Campos/camp2300.htm#2341">2341</a>)<br>
+      MNT-R-DST</td>
+    <td width="142" >(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI /<br>
+      (<a target="explicac"
+    href="../../Campos/camp2300.htm#2341">2341</a>) MNT-R-DST</td>
+    <td class="mid" width="89">-</td>
+    <td class="mid" width="72">-</td>
+    <td class="mid" width="68">-</td>
+    <td width="65" class="a" >-</td>
+    <td width="69" class="a" >-</td>
+  </tr>
+  <tr>
+    <td width="73" >Taxa Cliente (Emissor)&nbsp;(<a href="#b">b</a>)</td>
+    <td width="77" >-</td>
+    <td width="142">(<a target="explicac"
+    href="../../Campos/camp2300.htm#2340">2340</a>)<br>
+      &nbsp;MNT-P-DST</td>
+    <td class="mid" width="89">(<a target="explicac"
+    href="../../Campos/camp2300.htm#2327">2327</a>)&nbsp;<br>
+ MNT-ADI</td>
+    <td class="mid" width="72">(<a target="explicac"
+    href="../../Campos/camp2300.htm#2341">2341</a>)<br>
+      &nbsp;MNT-R-DST</td>
+    <td class="mid" width="68">(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)<br>
+      &nbsp;MNT-ADI</td>
+    <td width="65" class="a" >-</td>
+    <td width="69" class="a" >-</td>
+  </tr>
+  <tr>
+    <td width="73"><i>Interchange Fee</i>&nbsp;(<a href="#c">c</a>)</td>
+    <td width="77" >(<a target="explicac" href="../../Campos/camp2400.htm#2411">2411</a>)<br>
+      &nbsp;MNTAUX-E<br>
+      &nbsp;(3)</td>
+    <td width="142">(<a target="explicac"
+    href="../../Campos/camp2300.htm#2340">2340</a>)<br>
+      &nbsp;MNT-P-DST</td>
+    <td class="mid" width="89">(<a target="explicac"
+    href="../../Campos/camp2300.htm#2327">2327</a>)<br>
+      &nbsp;MNT-ADI</td>
+    <td class="mid" width="72">(<a target="explicac"
+    href="../../Campos/camp2300.htm#2341">2341</a>)<br>
+      &nbsp;MNT-R-DST</td>
+    <td class="mid" width="68">(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)<br>
+      &nbsp;MNT-ADI</td>
+    <td width="65" class="a" >D</td>
+    <td width="69" class="a" >D</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="esq" nowrap>(<a name="a">a</a>) -&nbsp; </td>
+    <td class="just">São criados e enviados os restantes três registos tal como indicados
+    no ponto &quot;<a href="#A)">A)</a> EMISSOR NÃO AUTÓNOMO&quot;, nomeadamente:<ul
+    class="nove">
+      <li>para o <em>Acquirer</em>: <a href="mov-5.htm">TIPREG=5</a> no MOV5, com valor
+        contabilístico, com valores agregados por Produto Financeiro e Banco de apoio (campo (<a
+        target="explicac" href="../../Campos/campos1.htm#063">063</a>) TIPMOV= &#145;0101&#146;);</li>
+      <li>para o Banco de apoio do Comerciante: <a href="mov-3.htm">TIPREG=3</a> no MOV5, com
+        valor contabilístico;</li>
+      <li>para o Banco (ou Bancos) de suporte do <em>Acquirer</em>: <a href="mov-5.htm">TIPREG=5</a>
+        no MOV5, com valor contabilístico, com valores agregados por Produto Financeiro e Banco
+        de apoio (campo (<a target="explicac" href="../../Campos/campos1.htm#063">063</a>) TIPMOV=
+        &#145;0101&#146;).</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="b">b</a>) -&nbsp; </td>
+    <td class="just">O valor deste elemento é menor ou, no limite, igual ao valor informado
+    ao <em>Acquirer</em>, identificado como &quot;Taxa Cliente (<em>Acquirer</em>)&quot;.</td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>(<a name="c">c</a>) -&nbsp; </td>
+    <td class="just">O valor deste elemento é menor ou, no limite, igual ao valor informado
+    ao <em>Acquirer</em>, identificado como &quot;Comissão Comerciante&quot;.</td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="e3.htm" target="main">Anterior</a>/<a target="main" href="e5.htm">Seguinte</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

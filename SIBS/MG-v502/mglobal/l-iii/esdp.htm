@@ -1,0 +1,586 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>SALDOS DISPONÍVEIS PMB</title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME DO FICHEIRO: &nbsp; SALDOS DISPONÍVEIS PMB</td>
+        <td class="fichdta">&quot;FICH&quot; = ESDP </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Este ficheiro é produzido quando um Banco emissor de cartões pretender receber a
+posição dos seus cartões PMB.</p>
+
+<p>O saldo calculado com base nos campos do registo de <em>trailer</em> deste ficheiro
+correspondem à posição da conta do Banco, para o serviço PMB, à excepção dos
+depósitos efectuados somente pelos totais de Emissor. </p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registos: 
+
+<ul>
+  <li>o registo de <em>Header</em> &quot;TIPREG=0&quot;;</li>
+  <li>um registo de detalhe &quot;TIPREG=1&quot;, por cada cartão PMB;</li>
+  <li>um registo de sub-totais &quot;TIPREG=7&quot;, para os totais dos PMB de uma agência;</li>
+  <li>um registo de sub-totais &quot;TIPREG=8&quot;, para os totais dos PMB de um certo
+    tarifário &quot;TARCLIPMB&quot; (<a href="../../Campos/campos5.htm#439" target="explicac">439</a>);</li>
+  <li>o registo de <em>Trailer</em> &quot;TIPREG=9&quot;, com o total do ficheiro.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h6><u>ORDENAÇÃO</u></h6>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="120">&nbsp; </td>
+    <td>&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="120" class="esq10">TIPREG</td>
+    <td class="esq10">(campo <a href="../../Campos/campos2.htm#111" target="explicac">111</a>)</td>
+  </tr>
+  <tr>
+    <td width="120" class="esq10">TARCLIPMB </td>
+    <td class="esq10">(campo <a href="../../Campos/campos5.htm#439">439</a>)</td>
+  </tr>
+  <tr>
+    <td width="120" class="esq10">CODAGE</td>
+    <td class="esq10">(campo <a href="../../Campos/campos2.htm#134">134</a>)</td>
+  </tr>
+</table>
+
+<p><br>
+O ficheiro é constituído por registos de comprimento fixo com 89 bytes.</p>
+
+<p><br>
+</p>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td width="43" class="esq10"><strong>Nota: </strong></td>
+    <td width="720" class="esq10"><em>O trailer do ficheiro pode ser utilizado para calcular o
+    Saldo da &quot;Conta&quot; do Banco, associada a cartões Porta Moedas. Este saldo
+    corresponde à diferença entre os campos TOTCRED (<a href="../../Campos/campos2.htm#109"
+    target="explicac">109</a>) e TOTDEB (<a href="../../Campos/campos2.htm#108"
+    target="explicac">108</a>). <br>
+    O trailer do ficheiro apresenta-se com o formato descrito no capítulo <a target="main"
+    href="e6.htm#TRAILER">E.6</a>. <br>
+    O campo TOTREG (<a href="../../Campos/campos2.htm#107" target="explicac">107</a>) está
+    preenchido com o número de registos de detalhe. <br>
+    Os campos TOTDEB (<a href="../../Campos/campos2.htm#108" target="explicac">108</a>) e
+    TOTCRED (<a href="../../Campos/campos2.htm#109" target="explicac">109</a>) são calculados
+    a partir dos campos TOTSINI (<a href="../../Campos/campos5.htm#462" target="explicac">462</a>)
+    e TIMPORT (<a href="../../Campos/campos5.htm#463" target="explicac">463</a>) dos registos
+    com referência 8, tendo em conta o respectivo sinal. </em></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">ESDP - TIPO DE REGISTO = 1 (CARTÃO
+PMB)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111" target="explicac">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARCLIPMB</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#439">439</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODAGE</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#134">134</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDPMB</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#431">431</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ESTPMB</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">16</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#447">447</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DTESTPMB</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">17</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#456">456</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CNTPMB</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#455">455</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DTCNTPMB</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">26</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#457">457</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN </td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">34</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200" class="narrow">preenchido apenas se cartão combinado</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN </td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">40</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200" class="narrow">preenchido apenas se cartão combinado</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUMCAR </td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">42</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#128">128</a></td>
+    <td width="200" class="narrow">preenchido apenas se cartão combinado</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SALDINI</td>
+    <td class="dta" width="45">5</td>
+    <td class="dta" width="45">49</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#458">458</a></td>
+    <td class="esq" width="200">saldo inicial do ano</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">54</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IMPCARR</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">55</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#459">459</a></td>
+    <td class="esq" width="200">total de carregamentos</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">63</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IMPGPMB</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">64</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#460">460</a></td>
+    <td class="esq" width="200">total de compras</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">72</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IMPDEV</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">73</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#461">461</a></td>
+    <td class="esq" width="200">total de saldos devolvidos p/Banco</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">81</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SALDOPMB</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">82</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#435">435</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">89</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">ESDP - TIPO DE REGISTO = 7 (TOTAL POR AGÊNCIA)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111" target="explicac">111</a></td>
+    <td class="esq" width="200">= 7</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARCLIPMB</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#439">439</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODAGE</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#134">134</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTSINI</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#462" target="explicac">462</a></td>
+    <td class="esq" width="200">saldo inicial do ano</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">21</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIMPORT</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">22</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#463">463</a></td>
+    <td class="esq" width="200">total de carregamentos</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">35</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIMPORT</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">36</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#463">463</a></td>
+    <td class="esq" width="200">total de compras</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">49</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIMPORT</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">50</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#463">463</a></td>
+    <td class="esq" width="200">total de saldos devolvidos p/Banco</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">63</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTSALPMB</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">64</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#464">464</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">77</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FILLER</td>
+    <td class="dta" width="45">12</td>
+    <td class="dta" width="45">78</td>
+    <td width="45">A</td>
+    <td width="85">&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">ESDP - TIPO DE REGISTO = 8 (TOTAL POR
+TARCLIPMB)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111" target="explicac">111</a></td>
+    <td class="esq" width="200">= 8</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TARCLIPMB</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#439">439</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTSINI</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#462" target="explicac">462</a></td>
+    <td class="esq" width="200">saldo inicial do ano</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">17</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIMPORT</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">18</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#463">463</a></td>
+    <td class="esq" width="200">total de carregamentos</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">31</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIMPORT</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">32</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#463">463</a></td>
+    <td class="esq" width="200">total de compras</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">45</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIMPORT</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">46</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#463">463</a></td>
+    <td class="esq" width="200">total de saldos devolvidos p/Banco</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">59</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIMPORT</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">60</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#463">463</a></td>
+    <td class="esq" width="200">total compras sem detalhe</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">73</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTSALPMB</td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">74</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos5.htm#464">464</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">87</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FILLER</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">88</td>
+    <td width="45">A</td>
+    <td width="85">&nbsp;</td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

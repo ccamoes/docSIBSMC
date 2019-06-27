@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>K.1 COMPENSAÇÃO DA REDE MULTIBANCO</title>
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="_self">
+<script>top.captulos.location='indicek.htm#K';</script>
+</head>
+
+<body>
+
+<h1>K.1 COMPENSAÇÃO DAS OPERAÇÕES DO SISTEMA MULTIBANCO</h1>
+
+<p>&nbsp; </p>
+
+<p>Última revisão: 2004/03/19</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="K.1.1">K.1.1</a> OBJECTIVOS</h2>
+
+<p><br>
+A Compensação Multibanco surge na sequência da entrada em funcionamento da Rede
+Multibanco, tendo como objectivo o apuramento diário dos saldos interbancários
+resultantes das operações realizadas naquela rede. Os saldos são informados ao Banco de
+Portugal, servindo de base à sua liquidação no Sistema de Pagamentos de Grandes
+Transacções (SPGT).</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="K.1.2">K.1.2</a> CARACTERÍSTICAS GERAIS</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.1.2.1">K.1.2.1</a> PRINCÍPIOS</h3>
+
+<p><br>
+O Sistema Multibanco apresenta entre os seus princípios bases: 
+
+<ul >
+  <li>O acesso a serviços disponibilizados através da Rede Multibanco é realizado através
+    de um cartão válido, emitido pelos Bancos aderentes ou por Emissores internacionais com
+    os quais exista acordo Multibanco.&nbsp;<br>
+    Em alguns casos, o cartão é essencial para a disponibilização/activação de
+    determinado serviço ao seu titular, embora não seja utilizado fisicamente na
+    realização das operações (vd. operações Via Verde, TeleMultibanco ou MBNet).&nbsp;<br>
+    Em determinados pontos de acesso, como por exemplo no acesso telefónico, podem ser
+    desencadeadas operações no Sistema Multibanco baseadas no NIB do cliente (caso do
+    Pagamento de Serviços/Compras), sendo a componente de validação garantida pelo Banco.</li>
+  <li>A troca da informação entre as Entidades participantes por via electrónica (mensagens
+    e/ou ficheiros).</li>
+  <li>A realização de operações em tempo real.</li>
+</ul>
+
+<p>Cada operação na Rede Multibanco dá origem a uma troca de mensagens e/ou ficheiros
+entre o terminal onde decorre a operação, o respectivo Banco de Apoio, a SIBS e o Banco
+Emissor do cartão utilizado na operação. Para o apuramento dos saldos de compensação,
+a SIBS utiliza o registo de todas mensagens trocadas com os Bancos ao longo da sessão.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.1.2.2">K.1.2.2</a> INTERVENIENTES DIRECTOS</h3>
+
+<p><br>
+Como intervenientes directos na Compensação Multibanco temos: 
+
+<ul>
+  <li>Os Bancos, que assumem a posição de Bancos de Apoio (quando a operação decorre num
+    terminal cuja movimentação contabilística tem reflexo no Banco) e/ou de Bancos
+    Emissores (quando o cartão utilizado na operação foi emitido pelos mesmos).</li>
+  <li>A SIBS, que desempenha as funções de gestão e controlo do sistema, procedendo à
+    compensação da informação recebida e ao envio dos ficheiros dela resultantes.</li>
+  <li>O Banco de Portugal, que procede à liquidação de saldos no SPGT, de acordo com a
+    informação disponibilizada pela SIBS, e os comunica aos Participantes após
+    liquidação.</li>
+</ul>
+
+<p><br>
+A participação dos Bancos no Sistema Multibanco pode realizar-se a dois níveis: 
+
+<ol >
+  <li>Participante Directo: envia e recebe informação da SIBS, em ficheiros e mensagens
+    próprias. Esta sociedade procede ao apuramento diário dos saldos de compensação do
+    Participante, para liquidação no Banco de Portugal, via SPGT.</li>
+  <li>Participante Indirecto Activo: envia e recebe informação da SIBS, em ficheiros e
+    mensagens próprias. No entanto, a liquidação de valores no Banco de Portugal é
+    realizada através do Participante Directo que o representa, ou seja, sem determinação
+    de saldos específicos para o Banco Representado por parte da SIBS (os saldos de
+    compensação que lhe corresponderiam afectam os saldos da Instituição sua
+    representante).</li>
+</ol>
+
+<p>&nbsp;</p>
+
+<h3 table><a name="K.1.2.3">K.1.2.3</a> OPERAÇÕES SUBJACENTES</h3>
+
+<p><br>
+A Compensação da Rede Multibanco é resultante do processamento de todos os registos
+informáticos produzidos em virtude do funcionamento da rede, registados no <i>log</i> da
+SIBS, num determinado período de compensação.&nbsp;</p>
+
+<p>Envolve, nomeadamente, todas as operações realizadas nos vários pontos de acesso à
+Rede Multibanco, de acordo com o apresentado na seguinte tabela:</p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="1" cellspacing="0" cellpadding="4" width="98%">
+<thead>
+  <tr>
+    <th class="esq" width="208">Ponto de acesso à rede </th>
+    <th class="esq" width="450">Operações </th>
+  </tr>
+</thead>
+  <tr>
+    <td class="esqmid" width="208">Caixas Automáticos </td>
+    <td class="esq" width="450">Levantamentos, Consultas, Depósitos, Pagamentos,
+    Transferências, Serviços Especiais, etc. </td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="208">Caixas Automáticos no estrangeiro </td>
+    <td class="esq" width="450">Operações com cartões nacionais em CA no estrangeiro, por
+    exemplo, Levantamentos. </td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="208" nowrap>Terminais de Pagamento Automático </td>
+    <td class="esq" width="450">Compras, Consultas, Devoluções, Pagamentos, etc. </td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="208">Pagamento Automático estrangeiro </td>
+    <td class="esq" width="450">Operações com cartões nacionais em TPA no estrangeiro, por
+    exemplo, Compras. </td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="208">Terminais Porta Moedas Multibanco </td>
+    <td class="esq" width="450">Compras PMB. </td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="208">Terminais Baixo Valor </td>
+    <td class="esq" width="450">Operações baixo valor: pagamento de portagens, parques ou
+    telefones públicos. </td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="208">Internet </td>
+    <td class="esq" width="450">MBNet: Compras. Acesso ao Multibanco: Consultas, Pagamentos
+    de Serviços, Transferências entre Contas do Cartão, Pedidos de Livros de Cheques. </td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="208">Telefone Móvel </td>
+    <td class="esq" width="450">TeleMultibanco: Consultas, Pagamentos de Serviços,
+    Transferências entre Contas do Cartão, Pedidos de Livros de Cheques, etc. </td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="208">Terminal de Serviços SIBS </td>
+    <td class="esq" width="450">Pagamentos, Devolução de Transferência Bancária, etc. </td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="208">Sistema central dos Bancos </td>
+    <td class="esq" width="450">Transferência Bancária, Pagamentos, etc. </td>
+  </tr>
+  <tr>
+    <td class="esqmid" width="208">Terminal Unicre </td>
+    <td class="esq" width="450">Compras, Devoluções, etc. </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.1.2.4">K.1.2.4</a> TROCA DE INFORMAÇÃO</h3>
+
+<p><br>
+Em cada processamento de compensação, a SIBS, depois de ter recebido toda a informação
+com as operações do dia, organiza a mesma, por forma a que os Participantes do sistema
+sejam informados relativamente às operações em que estiveram envolvidos e aos
+respectivos saldos de compensação, a movimentar no SPGT pelo Banco de Portugal. Deste
+modo, a SIBS envia, no final de cada fecho de compensação, ficheiros para os
+Participantes e para o Banco de Portugal (consultar o Livro III - capítulo <a
+href="../l-iii/e4.htm">E.4 </a>para a descrição dos ficheiros).&nbsp; </p>
+
+<p>Nos ficheiros enviados aos Participantes, informa: 
+
+<ul >
+  <li>as operações processadas pela SIBS envolvendo o Banco nas suas várias vertentes face
+    às operações em causa;</li>
+  <li>cada Banco relativamente ao impacto que cada ficheiro recebido da Compensação
+    Multibanco teve no apuramento do respectivo saldo de compensação;</li>
+</ul>
+
+<p>Ao Banco de Portugal, a SIBS envia os ficheiros que informam, relativamente a
+cada Banco: 
+
+<ul >
+  <li>os saldos relativos às operações da sessão.</li>
+</ul>
+
+<p>A disponibilização de fundos ao beneficiário das operações processadas
+no Sistema Multibanco, por parte do respectivo Banco, deve ser efectiva até ao final do
+dia útil subsequente ao da liquidação financeira no Banco de Portugal. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.1.2.5">K.1.2.5</a> HORÁRIOS</h3>
+
+<p><br>
+O fecho de cada compensação realiza-se no final de cada dia de calendário, no horário
+estabelecido pelo Regulamento do SICOI, ocorrendo a liquidação no dia útil seguinte de
+funcionamento do SPGT, efectuada pelo Banco de Portugal no início da sessão.</p>
+
+<p>Por forma a diminuir o volume de dados a processar em cada compensação&nbsp;e a
+reduzir o risco inerente relativamente a eventuais problemas de processamento, a SIBS
+realiza diariamente três sub-fechos, a que corresponde uma única compensação. As
+compensações realizadas aos fins-de-semana e feriados são liquidadas pelo Banco de
+Portugal no SPGT, no dia útil seguinte deste sistema.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="K.1.2.6">K.1.2.6</a> TARIFÁRIO E FACTURAÇÃO</h3>
+
+<p><br>
+O tarifário relativo a este subsistema de compensação assenta em três vertentes:&nbsp;
+
+<ul >
+  <li>Tarifário Interbancário, o qual tem subjacente uma lógica de fluxos entre os Bancos,
+    decorrentes da prestação de serviços recíprocos.</li>
+  <li>Tarifário SIBS, que se enquadra na cobrança por parte desta sociedade dos serviços
+    prestados na rede.</li>
+  <li>Cobranças a Entidades não bancárias, por conta de Entidades que solicitam este
+    serviço à SIBS, de acordo com procedimentos pré-definidos ou a definir com esta
+    sociedade.</li>
+</ul>
+
+<p>O apuramento do Tarifário Interbancário é realizado diariamente através da
+Compensação Multibanco. </p>
+
+<p>Relativamente ao Tarifário SIBS, no início de cada mês, a SIBS envia aos Bancos a
+factura resumo correspondente aos serviços prestados e, via ficheiro, a informação
+detalhada que deu origem ao total da factura.</p>
+
+<p table>O Tarifário SIBS baseia-se nos seguintes princípios: 
+
+<ul>
+  <li>Coexistência de tarifas fixas e variáveis, por forma a reflectir, por um lado os
+    custos fixos e variáveis que a Rede Multibanco implica e, por outro, proporcionar
+    economias de escala às Entidades utilizadoras que aportam maiores volumes para o sistema;</li>
+  <li>O tarifário de cada serviço da Rede Multibanco deve reflectir os respectivos custos,
+    por forma a evitar a existência de subsidiação cruzada entre os diferentes serviços.</li>
+</ul>
+
+<p style="page-break-before: always">&nbsp;</p>
+
+<h2><a name="K.1.3">K.1.3</a> DOCUMENTAÇÃO</h2>
+
+<p><br>
+O Regulamento do SICOI estabelece as regras e procedimentos a considerar para o subsistema
+de Compensação Multibanco. O presente Modelo Global constitui a documentação de
+referência funcional e técnica detalhada deste subsistema.</p>
+
+<p class="dta"><br>
+<a href="k2.htm" target="main">Seguinte</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,476 @@
+Touts tables doive être efface intégralement.
+Le chargement doit être intégral ou partiel, dépendant de la table.
+
+Table		Type de chargement
+
+TBADRES		Partiel - voir la liste de dossier a chargé.
+TBAGENC		Intégral.
+TBAGLAC		Intégral.
+TBAGLAG		Intégral.
+TBAGLEC		Intégral.
+TBAGLFI		Intégral.
+TBAGLNT		Intégral.
+TBAGLSH		Intégral.
+TBAGREL		Intégral.
+TBAGSYN		Intégral.
+TBALCLI		Partiel - voir la liste de dossier a chargé.
+TBALDOS		Partiel - voir la liste de dossier a chargé.
+TBALPHA		Partiel - voir la liste de dossier a chargé.
+TBALPHC		Intégral.
+TBARCHE		Intégral.
+TBARPCO		Intégral.
+TBARPST		Intégral.
+TBASNEF		Intégral.
+TBBECRAC	Intégral.
+TBBICEX		Intégral.
+TBBICOM		Intégral.
+TBBICVA		Intégral.
+TBBLOCN		Partiel - voir la liste de dossier a chargé.
+TBBPDIF		Intégral.
+TBBPENT		Intégral.
+TBBPPAR		Intégral.
+TBBPTVX		Intégral.
+TBBQNOM		Intégral.
+TBBQRIB		Partiel - voir la liste de dossier a chargé.
+TBCACCD		Intégral.
+TBCARTA		Intégral.
+TBCBAUT		Partiel - voir la liste de dossier a chargé.
+TBCEPCT		Intégral.
+TBCHIMP		Intégral.
+TBCLASS		Partiel - voir la liste de dossier a chargé.
+TBCLFOY		Partiel - voir la liste de dossier a chargé.
+TBCLIDE		Partiel - voir la liste de dossier a chargé.
+TBCLNUM		Partiel - voir la liste de dossier a chargé.
+TBCLPRC		Partiel - voir la liste de dossier a chargé.
+TBCLPRE		Partiel - voir la liste de dossier a chargé.
+TBCLPRF		Partiel - voir la liste de dossier a chargé.
+TBCLPRV		Partiel - voir la liste de dossier a chargé.
+TBCLREL		Partiel - voir la liste de dossier a chargé.
+TBCLSEG		Intégral.
+TBCLTEL		Intégral.
+TBCTNID		Intégral.
+TBCPNUM		Intégral.
+TBCTDCC		Intégral.
+TBDOASS		Partiel - voir la liste de dossier a chargé.
+TBDOCAR		Partiel - voir la liste de dossier a chargé.
+TBDOCAU		Partiel - voir la liste de dossier a chargé.
+TBDOCBL		Partiel - voir la liste de dossier a chargé.
+TBDOCOM		Partiel - voir la liste de dossier a chargé.
+TBDOCPL		Partiel - voir la liste de dossier a chargé.
+TBDOCP2		Partiel - voir la liste de dossier a chargé.
+TBDOCTR		Partiel - voir la liste de dossier a chargé.
+TBDOEPU		Partiel - voir la liste de dossier a chargé.
+TBDOEXT		Partiel - voir la liste de dossier a chargé.
+TBDOFEF		Partiel - voir la liste de dossier a chargé.
+TBDOFPR		Partiel - voir la liste de dossier a chargé.
+TBDOHEX		Partiel - voir la liste de dossier a chargé.
+TBDOHIS		Partiel - voir la liste de dossier a chargé.
+TBDOIRR		Partiel - voir la liste de dossier a chargé.
+TBDOMAT		Partiel - voir la liste de dossier a chargé.
+TBDOMSO		Partiel - voir la liste de dossier a chargé.
+TBDOOCT		Partiel - voir la liste de dossier a chargé.
+TBDOPRN		Partiel - voir la liste de dossier a chargé.
+TBDORAC		Partiel - voir la liste de dossier a chargé.
+TBDORAP		Partiel - voir la liste de dossier a chargé.
+TBDORBT		Intégral.
+TBDOREV		Partiel - voir la liste de dossier a chargé.
+TBDOSCO		Intégral.
+TBDOTMB		Partiel - voir la liste de dossier a chargé.
+TBDOTRF		Intégral.
+TBECDOS		Partiel - voir la liste de dossier a chargé.
+TBECIMO		Partiel - voir la liste de dossier a chargé.
+TBECMES		Partiel - voir la liste de dossier a chargé.
+TBECOUT		Partiel - voir la liste de dossier a chargé.
+TBECRAC		Partiel - voir la liste de dossier a chargé.
+TBECTVX		Partiel - voir la liste de dossier a chargé.
+TBECVEH		Partiel - voir la liste de dossier a chargé.
+TBENCPL		Partiel - voir la liste de dossier a chargé.
+TBENDIR		Partiel - voir la liste de dossier a chargé.
+TBENIDE		Partiel - voir la liste de dossier a chargé.
+TBENPRF		Partiel - voir la liste de dossier a chargé.
+TBERARM		Intégral.
+TBERDB2		Intégral.
+TBERDL1		Intégral.
+TBERMAP		Intégral.
+TBERROR		Intégral.
+TBEXCLI		Intégral.
+TBEXDOS		Intégral.
+TBEXFOY		Intégral.
+TBEXVDR		Intégral.
+TBFICT6		Intégral.
+TBFIRET		Intégral.
+TBFOURNI	Intégral.
+TBFOURVA	Intégral.
+TBHIST1		Intégral.
+TBHIST2		Intégral.
+TBHIST3		Intégral.
+TBHIST4		Intégral.
+TBHIST5		Intégral.
+TBIMPBP		Intégral.
+TBJEST1		Intégral.
+TBLISFI		Intégral.
+TBLICMO		Intégral.
+TBLIINS		Intégral.
+TBLIMOT		Intégral.
+TBMCACC		Intégral.
+TBMCAUT		Partiel - voir la liste de dossier a chargé.
+TBMCFTP		Intégral.
+TBMCLOG		Intégral.
+TBMCMVT		Intégral.
+TBMCPAE		Intégral.
+TBMCPAN		Intégral.
+TBNUMER		Intégral.
+TBORAAG		Intégral.
+TBORAGC		Intégral.
+TBORBNC		Intégral.
+TBORCOL		Intégral.
+TBORCSG		Intégral.
+TBORDAG		Intégral.
+TBORDLG		Intégral.
+TBORHAG		Intégral.
+TBORTAG		Intégral.
+TBORXAG		Intégral.
+TBPARMI		Intégral.
+TBPEACT		Intégral.
+TBPEFCO		Intégral.
+TBPEFON		Intégral.
+TBPRCOM		Partiel - voir la liste de dossier a chargé.
+TBPRCOR		Partiel - voir la liste de dossier a chargé.
+TBPROED		Intégral.
+TBPROTP		Partiel - voir la liste de dossier a chargé.
+TBPROAM		nao mexer
+TBPROCL		nao mexer
+TBPRODO		nao mexer
+TBPTAGC		Intégral.
+TBPTGEM		Intégral.
+TBPTGEO		Intégral.
+TBPTRDG		Intégral.
+TBRECLC		Partiel - voir la liste de dossier a chargé.
+TBREDOC		Partiel - voir la liste de dossier a chargé.
+TBREFIL		Partiel - voir la liste de dossier a chargé.
+TBREORG		Intégral.
+TBREST1		Intégral.
+TBREST2		Intégral.
+TBREST3		Intégral.
+TBREST4		Intégral.
+TBRGBOR		Intégral.
+TBRGREG		Intégral.
+TBRLLRC		Intégral.
+TBRLRCH		Intégral.
+TBRLSTK		Intégral.
+TBSCOCP		Intégral.
+TBSVABN		Intégral.
+TBSVAID		Intégral.
+TBSVAIS		Intégral.
+TBSVCOM		Intégral.
+TBSVVDR		Intégral.
+TBSICLA		Partiel - voir la liste de dossier a chargé.
+TBSIIRR		Partiel - voir la liste de dossier a chargé.
+TBSIMUL		Partiel - voir la liste de dossier a chargé.
+TBSIPRC		Partiel - voir la liste de dossier a chargé.
+TBSIREV		Partiel - voir la liste de dossier a chargé.
+TBSKACT		Intégral.
+TBSKRIH		Intégral.
+TBSKRIS		Intégral.
+TBSAAAG		Intégral.
+TBSAAUS		Intégral.
+TBSACAG		Intégral.
+TBSACTC		Intégral.
+TBSACUS		Intégral.
+TBSAOAG		Intégral.
+TBSAOUS		Intégral.
+TBSCAAG		Intégral.
+TBSCCAG		Intégral.
+TBSTCUM		Intégral.
+TBSTNUM		Intégral.
+TBSTIND		Intégral.
+TBSYCOL		Intégral.
+TBSYDAT		Intégral.
+TBSYDBS		Intégral.
+TBSYERR		Intégral.
+TBSYHLP		Intégral.
+TBSYIDX		Intégral.
+TBSYTBL		Intégral.
+TBTEWEB		Partiel - voir la liste de dossier a chargé.
+TBTLIT1		Intégral.
+TBTLIT2		Intégral.
+TBTRCLI		Partiel - voir la liste de dossier a chargé.
+TBTRDOS		Partiel - voir la liste de dossier a chargé.
+TBVDALP		Intégral.
+TBVDBNO		Intégral.
+TBVDBQE		Intégral.
+TBVDBVT		Intégral.
+TBVDCNT		Intégral.
+TBVDOPT		Intégral.
+TBVDPRO		Intégral.
+TBVDSTA		Intégral.
+TBVDVDR		Intégral.
+TBVDVR1		Intégral.
+TBVDVR2		Intégral.
+TBVDVR3		Intégral.
+TBWEBBI		Partiel - voir la liste de dossier a chargé.
+TBWEBBI2	Partiel - voir la liste de dossier a chargé.
+TBWEBFO		Partiel - voir la liste de dossier a chargé.      
+TBWEBHI		Partiel - voir la liste de dossier a chargé.
+TBWEBID		Partiel - voir la liste de dossier a chargé.
+TBWEBPR		Partiel - voir la liste de dossier a chargé.
+TBWEBSE		Intégral.
+TBWEBST		Intégral.
+
+
+cl cofidis
+4257600470
+4257600496
+4257599458
+4257599532
+4257597536
+
+
+cl ctlm
+4257591323
+4257585259
+4257470452
+4200009217
+4200009282
+
+
+cp cofidis
+4257597692
+4257597809
+4257597908
+4257597957
+4257597965
+
+
+cp7 car
+4200040683
+4200125856
+
+
+aur
+4200040717
+4200126367
+4200135442
+
+
+
+4200409250
+4200409441
+4200409508
+4200409698
+4200409987
+4200410217
+4200410373
+4200410464
+4200410753
+4200410910
+4200410969
+4200411090
+4200411116
+4200411231
+4200411470
+4200411512
+4200411884
+4200412015
+4200412023
+4200412080
+4200412387
+4200412551
+4200412676
+4200412775
+4200412791
+4200412858
+4200413195
+4200413252
+4200413278
+4200413435
+4200474379
+4200718908
+4200719096
+4200719534
+4200719682
+4200719690
+4200719732
+4200719815
+4200719930
+4200720318
+4200720631
+4200720680
+4200720706
+4200721068
+4200721142
+4200721282
+4200721415
+4200721639
+4203315371
+4203315744
+4203315751
+4203316064
+4203316304
+4203316320
+4203316924
+4203316973
+4203317518
+4203318144
+4203318276
+4203318284
+4203318904
+4203319050
+4203319316
+4203334067
+4203334133
+4203334174
+4203352945
+4203353026
+4203353059
+4203353166
+4203353364
+4203353794
+4203353968
+4203354156
+4203354420
+4203354552
+4203354776
+4203355096
+4203355401
+4203355781
+4203355989
+4203590296
+4203692332
+4203767985
+4203768009
+4203768033
+4203768058
+4203768165
+4203768405
+4203768447
+4203769148
+4203769403
+4203769684
+4203769791
+4203769825
+4203771946
+4257564395
+4257559643
+4257560070
+4257560575
+4257560591
+4257560609
+4257560690
+4257561144
+4257561284
+4257561326
+4257561334
+4257561375
+4257561417
+4257561441
+4257561466
+4257561482
+4257561490
+4257486169
+4257584153
+4257591463
+4257591471
+4257591539
+4257591547
+4257485914
+4257481475
+4257596439
+4257598906
+4257486011
+
+
+
+
+linklib 
+
+PPOR.CICS.LINKLIB        
+PPOR.NEUGES.LINKLIB      
+PPOR.NEUGES.MAPLINK      
+PPOR.PASPROD.CICSLINK      ???
+PPOR.PASPROD.CICSLINK.OLD  ???
+PPOR.PASPROD.MAPLINK       ???
+PPOR.PASPROD.TABLINK       ???
+PPOR.TABLES.CICSLINK     
+PPOR.TABLES.LINKLIB      
+PPOR.TABLES.TEMPLINK       ???
+PPOR.TS130.TABLINK         ???
+PPOR.TS230.TABLINK         ???
+
+
+
+
+VSM
+PPOR.VSM.APBGAD
+PPOR.VSM.APBGUI
+PPOR.VSM.APBGUPTT
+PPOR.VSM.APBPTT
+PPOR.VSM.BAREME
+PPOR.VSM.BARIMP
+PPOR.VSM.BASXPC
+PPOR.VSM.BASXPL
+PPOR.VSM.BPCOM1
+PPOR.VSM.BPCOM2
+PPOR.VSM.BPSEQ
+PPOR.VSM.BPVSM
+PPOR.VSM.CHEQUE
+PPOR.VSM.COMBILCA
+PPOR.VSM.EPUCLC
+PPOR.VSM.EPUDOC
+PPOR.VSM.FIDXPF
+PPOR.VSM.JALBIS
+PPOR.VSM.LETBAT
+PPOR.VSM.LETCRE
+PPOR.VSM.LETVAR
+PPOR.VSM.LOGALPHA
+PPOR.VSM.LOGCINFO
+PPOR.VSM.MOUCHS
+PPOR.VSM.MOUCHSE1
+PPOR.VSM.MOUCHSE2
+PPOR.VSM.MOUCHSNF
+PPOR.VSM.MOUCHX
+PPOR.VSM.NOCPTE
+PPOR.VSM.OBJECTS
+PPOR.VSM.PNFART
+PPOR.VSM.PNFEXT
+PPOR.VSM.PVDEMA
+PPOR.VSM.PVRESU
+PPOR.VSM.REFSIBS
+PPOR.VSM.SECHAL
+PPOR.VSM.STASSR
+PPOR.VSM.STINDC
+PPOR.VSM.STINDL
+PPOR.VSM.STOFIN
+PPOR.VSM.TABCGI
+PPOR.VSM.TBALPO
+PPOR.VSM.TFTITR
+PPOR.VSM.TITETU
+PPOR.VSM.TITPEP
+PPOR.VSM.TJOP
+PPOR.VSM.TPTJOP
+PPOR.VSM.TPTJOU
+PPOR.VSM.TRFBIL
+
+
+PPERm
+
+PPOR.PPERM.MOEPAIS               
+PPOR.PPERM.PARGRL.FPARAM         
+PPOR.PPERM.PARGRL.FPARAM.VPRODCOM
+PPOR.PPERM.PBICON.FSELCRM        
+PPOR.PPERM.PCFNMC.FCRMSEL        
+PPOR.PPERM.PCMCF7.FCRMSEL        
+PPOR.PPERM.PCRCRM.FNAOREN        
+PPOR.PPERM.PCRCRM.FRENCRM        
+PPOR.PPERM.PDECOUH.FICHTSC       
+PPOR.PPERM.PDECOUH.FICHTSM       
+PPOR.PPERM.PDECOUH.FTSTMP        
+PPOR.PPERM.PEREIRF.CCAM.NIBS     
+PPOR.PPERM.PFCHQ.TABFICLT        
+PPOR.PPERM.PFCHQ.TABFICOF        
+PPOR.PPERM.PFIN.TABFIPAP         
+PPOR.PPERM.PFMA.FIBQUE           
+PPOR.PPERM.PMLJOU.DEFTJOU 
+PPOR.PPERM.PNTLIT.FCARTA  
+PPOR.PPERM.PPEDID.ENTRADA 
+

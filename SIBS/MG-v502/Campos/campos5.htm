@@ -1,0 +1,1329 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos5 (400-499)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.</td>
+    <td class="fundo">REP.</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="400" name="400">400</a></td>
+    <td class="esq"><u>VERSÃO DE TARIFÁRIO</u> <p>É versão da Tabela de Tarifário que
+    serviu para a produção da factura da SIBS. Corresponde à versão aprovada pela
+    Assembleia Geral da SIBS. Inicia-se em 10. Será incrementada de 1 em 1. É invocada no <a
+    href="../mglobal/l-iii/efac.htm" target="main">EFAC</a> e sempre que seja diferente do
+    ficheiro anterior indica que se inclui um <a href="../mglobal/l-iii/etar.htm"
+    target="main">ETAR</a> (Tarifário) para o Banco.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>VERTAR</td>
+  </tr>
+  <tr>
+    <td><a id="401" name="401">401</a></td>
+    <td class="esq"><u>DATA DA VERSÃO DE TARIFÁRIO</u> <p>Data da Assembleia em que foi
+    aprovado o Tarifário. Se não houver alteração de Tarifário de uma Assembleia para a
+    outra, manteremos a versão de Tarifário (<a href="campos5.htm#400">400</a>) mas
+    indicaremos a data da última Assembleia.<br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (ex: versão 10, DASEQTAR = 9212)</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>AAMM</td>
+    <td>DTVERTAR</td>
+  </tr>
+  <tr>
+    <td><a id="402" name="402">402</a></td>
+    <td class="esq"><u>MOTIVO DA RECLAMAÇÃO</u> <p>Código que identifica o motivo que deu
+    origem à inserção da reclamação da operação. Ver os valores na <a href="402.htm"
+    target="main">tabela</a>.&nbsp;&nbsp;</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MOT-RECLAM</td>
+  </tr>
+  <tr>
+    <td><a id="403" name="403">403</a></td>
+    <td class="esq"><u>TAXA IVA</u> <p>Percentagem correspondente ao imposto IVA aplicado pela
+    SIBS no cálculo da factura.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>2 int.<br />
+    1 dec.</td>
+    <td>TAXAIVA</td>
+  </tr>
+  <tr>
+    <td><a id="404" name="404">404</a></td>
+    <td class="esq"><u>GRUPO / SUBGRUPO 1/ SUBGRUPO2</u> <p>Trata-se da decomposição do
+    campo (<a href="campos4.htm#324">324</a>) TARSIBS de modo a permitir a associação dos
+    títulos das rubricas:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq">1ª posição preenchida</td>
+        <td class="esq">-&gt; Rubrica de Grupo</td>
+      </tr>
+      <tr>
+        <td class="esq">1ª e 2ª posição preenchida</td>
+        <td class="esq">-&gt; Rubrica de Subgrupo</td>
+      </tr>
+      <tr>
+        <td class="esq">1ª, 2ª e 3ª posição preenchida&nbsp; </td>
+        <td class="esq">-&gt; Rubrica Sub-subgrupo</td>
+      </tr>
+    </table>
+    <p>As posições não significativas num TARSIBS estarão a espaços.</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>GRUPO</td>
+  </tr>
+  <tr>
+    <td><a id="405" name="405">405</a></td>
+    <td class="esq"><u>DESCRITIVO DE RUBRICA</u> <p>Título da rubrica do grupo ou dos
+    subgrupos.</td>
+    <td class="dta">22</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DESCRUB</td>
+  </tr>
+  <tr>
+    <td><a id="406" name="406">406</a></td>
+    <td class="esq"><u>TARIFA</u> <p>Preço unitário associado à rubrica do Tarifário.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>10 int.<br />
+    3 dec.</td>
+    <td>TARIFA</td>
+  </tr>
+  <tr>
+    <td><a id="407" name="407">407</a></td>
+    <td class="esq"><u>LIMITE DE ESCALÃO</u> <p>É o número de unidades que delimita
+    superiormente o escalão da rubrica do Tarifário.<br />
+    O limite inferior é zero ou o limite superior do escalão anterior + 1.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>LIMESCAL</td>
+  </tr>
+  <tr>
+    <td><a id="408" name="408">408</a></td>
+    <td class="esq"><u>DATA DE EMISSÃO DA FACTURA</u> <p>Data do último dia do mês a que
+    respeita a facturação.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTEMFAC</td>
+  </tr>
+  <tr>
+    <td><a id="409" name="409">409</a></td>
+    <td class="esq"><u>MÊS DA FACTURA</u> <p>Mês a que respeitam os serviços facturados.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MESFAC</td>
+  </tr>
+  <tr>
+    <td><a id="410" name="410">410</a></td>
+    <td class="esq"><u>FACTURA/NOTA CRÉDITO/FACTURA RECIBO</u> <p>Código que identifica a
+    natureza do documento produzido:</p>
+    <p>&nbsp;&nbsp; 1 - Factura<br />
+    &nbsp;&nbsp; 2 - Nota de Crédito</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FC/NC</td>
+  </tr>
+  <tr>
+    <td><a id="411" name="411">411</a></td>
+    <td class="esq"><u>NÚMERO DO DOCUMENTO</u> <p>Identificação do documento produzido pela
+    SIBS.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMDOC</td>
+  </tr>
+  <tr>
+    <td><a id="412" name="412">412</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO CLIENTE SIBS</u> <p>Identificação do cliente na
+    nomenclatura da contabilidade da SIBS.<br />
+    Corresponde ao Código de Empresa/Comerciante atribuído no Sistema Multibanco.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDCLIFAC</td>
+  </tr>
+  <tr>
+    <td><a id="413" name="413">413</a></td>
+    <td class="esq"><u>NÚMERO FISCAL</u> <p>Número fiscal do cliente da SIBS.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NFISCAL</td>
+  </tr>
+  <tr>
+    <td><a id="414" name="414">414</a></td>
+    <td class="esq"><u>SERVIÇO DE CONTROLO DA FACTURAÇÃO</u> <p>Designação do serviço
+    que controla a factura da SIBS, a quem a factura e o ficheiro vão endereçados.</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>SCONTROL</td>
+  </tr>
+  <tr>
+    <td><a id="415" name="415">415</a></td>
+    <td class="esq"><u>CONTACTO</u> <p>Responsável do Serviço descrito em (<a
+    href="campos5.htm#414">414</a>).</td>
+    <td class="dta">30</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CONTACTO</td>
+  </tr>
+  <tr>
+    <td><a id="416" name="416">416</a></td>
+    <td class="esq"><u>DATA DE REFERÊNCIA DOS DADOS</u> <p>Data do processo a que se referem
+    os dados que são objecto de Tarifação.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>REFDTA</td>
+  </tr>
+  <tr>
+    <td><a id="417" name="417">417</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DOS DADOS</u> <p>Identificação do processo a que se
+    reportam os dados facturados.</td>
+    <td class="dta">25</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>REFID</td>
+  </tr>
+  <tr>
+    <td><a id="418" name="418">418</a></td>
+    <td class="esq"><u>QUANTIDADES DA LINHA</u> <p>Número de unidades contadas e inscritas na
+    linha da factura referente à rubrica do Tarifário.<br />
+    O primeiro byte indica a que potência o campo está elevado (1+12).</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>QUANTLIN</td>
+  </tr>
+  <tr>
+    <td><a id="419" name="419">419</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DA LINHA</u> <p>Importância associada à linha da
+    factura.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>IMPLIN</td>
+  </tr>
+  <tr>
+    <td><a id="420" name="420">420</a></td>
+    <td class="esq"><u>TOTAL DE DETALHE</u> <p>Somatório dos campos (<a
+    href="campos5.htm#419">419</a>) IMPLIN de todas as linhas pertencentes ao detalhe da
+    factura, isto é, ao subgrupo em questão.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>TOTDET</td>
+  </tr>
+  <tr>
+    <td><a id="421" name="421">421</a></td>
+    <td class="esq"><u>TOTAL DO DOCUMENTO</u> <p>Somatório dos campos (<a
+    href="campos5.htm#420">420</a>) TOTDET de todos os detalhes pertencentes ao documento em
+    causa.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>TOTDOC</td>
+  </tr>
+  <tr>
+    <td><a id="422" name="422">422</a></td>
+    <td class="esq"><u>VALOR DO IVA</u> <p>Importância calculada para o IVA. Obtido pela
+    multiplicação de (<a href="campos5.htm#403">403</a>) TAXAIVA pelo campo (<a
+    href="campos5.htm#421">421</a>) TOTDOC arredondado ao escudo seguinte.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>VALIVA</td>
+  </tr>
+  <tr>
+    <td><a id="423" name="423">423</a></td>
+    <td class="esq"><u>SEQUÊNCIA VERSÃO DE TARIFÁRIO</u> <p>Trata-se de uma identificação
+    complementar da versão de Tarifário. Inicia-se em zero sempre que há uma nova versão
+    de Tarifário (<a href="campos5.htm#400">400</a>). É incrementado de 1 quando houve
+    alteração de tarifas que não estão dependentes da Assembleia Geral:</p>
+    <p>&nbsp; - alteração custos de portes postais<br />
+    &nbsp; - alteração da Taxa de IVA<br />
+    &nbsp; - novos serviços que entram em funcionamento ao longo do ano</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SEQTAR</td>
+  </tr>
+  <tr>
+    <td><a id="424" name="424">424</a></td>
+    <td class="esq"><u>TOTAL DE GRUPO</u> <p>Somatório dos campos (<a href="campos5.htm#420">420</a>)
+    TOTDET dos detalhes pertencentes ao grupo.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>TOTGRUPO</td>
+  </tr>
+  <tr>
+    <td><a id="425" name="425">425</a></td>
+    <td class="esq"><u>TOTAL LÍQUIDO DO DOCUMENTO</u> <p>Importância líquida da factura ou
+    da Nota de Crédito resultante da soma algébrica de (<a href="campos5.htm#421">421</a>)TOTDOC
+    + (<a href="campos5.htm#422">422</a>)VALIVA.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>TOTLIQDOC</td>
+  </tr>
+  <tr>
+    <td><a id="426" name="426">426</a></td>
+    <td class="esq"><u>NÚMERO LOTE LISTAGEM</u> <p>Número que identifica o lote de listagem
+    do Sistema da SIBS, onde o pedido de listagem foi incluído.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="427" name="427">427</a></td>
+    <td class="esq"><u>CÓDIGO DE RESPOSTA A SERVIÇO ESPECIAL</u> <p>Trata-se de um código
+    que identifica todas as possíveis respostas do Banco ao serviço em causa. A definir para
+    cada caso.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODRESPSE</td>
+  </tr>
+  <tr>
+    <td><a id="428" name="428">428</a></td>
+    <td class="esq"><u>NÚMERO DE OCORRÊNCIAS</u> <p>Número de vezes em que ocorrem os
+    conjuntos de campos definidos a seguir e que se encontram assinalados com (*).</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMOCORR</td>
+  </tr>
+  <tr>
+    <td><a id="429" name="429">429</a></td>
+    <td class="esq"><u>NÚMERO IDENTIFICAÇÃO BANCÁRIA</u> <p>Número de Identificação
+    Bancária correspondente à conta.</td>
+    <td class="dta">21</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NIB</td>
+  </tr>
+  <tr>
+    <td><a id="430" name="430">430</a></td>
+    <td class="esq"><u>DATA LIMITE PAGAMENTO</u> <p>Indica até que data pode ser efectuada a
+    liquidação do efeito (campo <a href="campos4.htm#392">392</a>).</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTLIMPAG</td>
+  </tr>
+  <tr>
+    <td><a id="431" name="431">431</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO PMB</u> <p>A identificação do Porta Moedas Multibanco
+    de um cartão anónimo ou dual. É um número sequencial e único por Banco emissor. O
+    código de Banco não está incluído neste campo.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDPMB</td>
+  </tr>
+  <tr>
+    <td><a id="432" name="432">432</a></td>
+    <td class="esq"><u>TARIFA OPERAÇÃO PMB</u> <p>Tarifa por operação de compra PMB
+    definida entre o Comerciante e o Banco. Em escudos.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>3 int.<br />
+    2 dec.</td>
+    <td>TARIFAOP</td>
+  </tr>
+  <tr>
+    <td><a id="433" name="433">433</a></td>
+    <td class="esq"><u>CONTRATO TPA</u> <p>Tipo de contrato entre o comerciante e o Banco
+    relativo ao equipamento em uso:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td nowrap>&nbsp;&nbsp; 1 -</td>
+        <td class="esq"><span class="cor">Contrato Star</span> - Contrato para aquisição de TPA
+        que teve participação do PEDIP.</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 2 -</td>
+        <td class="esq"><span class="cor">Contrato Expansão -</span> Contrato para aquisição de
+        TPA. Duração: 36 meses findos os quais a propriedade é do Comerciante.</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 3 -</td>
+        <td class="esq"><p class="cor">ALUGUER</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CONTTPA</td>
+  </tr>
+  <tr>
+    <td><a id="434" name="434">434</a></td>
+    <td class="esq"><u>PRODUTO FINANCEIRO</u> <p>Código do produto financeiro que está
+    associado ao acordo do representante (ver <a href="434-452.htm" target="main">tabela</a>).</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>5 int.</td>
+    <td>PRODFIN</td>
+  </tr>
+  <tr>
+    <td><a id="435" name="435">435</a></td>
+    <td class="esq"><u>SALDO PMB</u> <p>Importância do saldo disponível no cartão Porta
+    Moedas (PMB).</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>5 int.<br />
+    2 dec.</td>
+    <td>SALDOPMB</td>
+  </tr>
+  <tr>
+    <td><a id="436" name="436">436</a></td>
+    <td class="esq"><u>TOTAL CARTÕES PMB</u> <p>Número de cartões PMB anónimos que o Banco
+    pretende produzir.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOTPMB</td>
+  </tr>
+  <tr>
+    <td><a id="437" name="437">437</a></td>
+    <td class="esq"><u>SITUAÇÃO PMB</u> <p>É o estado do cartão no circuito de cartões
+    capturados.</p>
+    <p>&nbsp;&nbsp; 0 - em circulação<br />
+    &nbsp;&nbsp; 1 - capturado<br />
+    &nbsp;&nbsp; 2 - Devolvido ao utilizador<br />
+    &nbsp;&nbsp; 3 - PMB devolvido ao Emissor</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SITPMB</td>
+  </tr>
+  <tr>
+    <td><a id="438" name="438">438</a></td>
+    <td class="esq"><u>DATA INÍCIO CONTRATO</u> <p>Data de início de contrato de Aluguer ou
+    Expansão, após 36 meses dá-se o fim do contrato e portanto da sua facturação.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTINCONT</td>
+  </tr>
+  <tr>
+    <td><a id="439" name="439">439</a></td>
+    <td class="esq"><u>TARIFÁRIO CLIENTE PMB</u> <p>Código atribuído ao Tarifário de
+    Cliente a aplicar nos serviços de PMB (Porta Moedas Multibanco). Foi descrito pelo Banco
+    na &quot;Caracterização de Emissor&quot;. Normalmente será &quot;01&quot;.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TARCLIPMB</td>
+  </tr>
+  <tr>
+    <td><a id="440" name="440">440</a></td>
+    <td class="esq"><u>AGÊNCIA ATRIBUÍDA</u> <p>Código que indica se o campo (<a
+    href="campos2.htm#134">134</a>) Agência se encontra preenchido com o código de Agência
+    válido(1) ou não(0).</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>AGATRI</td>
+  </tr>
+  <tr>
+    <td><a id="441" name="441">441</a></td>
+    <td class="esq"><u>APLICAÇÃO EXTERIOR</u> <p>Código que indica a aplicação exterior
+    que está personalizada no cartão PMB. Código atribuído pela SIBS caso a caso.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>APLEXT</td>
+  </tr>
+  <tr>
+    <td><a id="442" name="442">442</a></td>
+    <td class="esq"><u>PERCENTAGEM DE BONIFICAÇÃO</u> <p>Usado no serviço de Cartão de
+    Crédito. O campo é preenchido com a percentagem de bonificação pretendida para a Conta
+    Crédito.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>2 int.<br />
+    1 dec.</td>
+    <td>PERBON</td>
+  </tr>
+  <tr>
+    <td><a id="443" name="443">443</a></td>
+    <td class="esq"><u>INDICADOR DO TARIFÁRIO</u> <p>Código que indica se a rubrica do
+    tarifário pertence à SIBS (=1) ou ao Tarifário Interbancário (=2).</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDTAR</td>
+  </tr>
+  <tr>
+    <td><a id="444" name="444">444</a></td>
+    <td class="esq"><u>TOTAL OPERAÇÕES TARIFADAS</u> <p>Indica o número total de
+    operações tarifadas em cada rubrica.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>OPERTAR</td>
+  </tr>
+  <tr>
+    <td><a id="445" name="445">445</a></td>
+    <td class="esq"><u>PREÇO PMB</u> <p>Preço de venda de um cartão PMB anónimo. Definido
+    pelo Banco de Apoio de um terminal dispensador de cartões. Deve ter IVA incluído
+    expresso em escudos.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>4 int.<br />
+    2 dec.</td>
+    <td>PRECOPMB</td>
+  </tr>
+  <tr>
+    <td><a id="446" name="446">446</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DA VENDA DE PMB</u> <p>Resultado do produto do número de
+    cartões PMB novos, dispensados no período local, multiplicado pelo valor do campo (<a
+    href="campos5.htm#445">445</a>). No caso de haver IVA, este está incluído.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>6 int.<br />
+    2 dec.</td>
+    <td>IMPVENDPMB</td>
+  </tr>
+  <tr>
+    <td><a id="447" name="447">447</a></td>
+    <td class="esq"><u>ESTADO DO PMB</u> <p>Indica o estado do cartão desde a
+    personalização ao seu abate:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td nowrap>&nbsp;&nbsp; 0 -&nbsp;</td>
+        <td class="esq">em personalização (assumido durante personalização na SIBS)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 1 -&nbsp;</td>
+        <td class="esq">personalizado (pode iniciar funcionamento)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 2 -&nbsp;</td>
+        <td class="esq">activo após 1º carregamento</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 3 -&nbsp;</td>
+        <td class="esq">expirado p/ carregamento; já não é possível fazer carregamentos</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 4 -&nbsp;</td>
+        <td class="esq">expirado; não é possível fazer carregamentos e pagamentos</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 5 -&nbsp;</td>
+        <td class="esq">abatido; o emissor deu ordem de abate</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 9 -&nbsp;</td>
+        <td class="esq">Inibido; o cartão está avariado já não funciona. Irá cumprir o ciclo
+        de expiração.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ESTPMB</td>
+  </tr>
+  <tr>
+    <td><a id="448" name="448">448</a></td>
+    <td class="esq"><u>ANO E MÊS DA OPERAÇÃO PMB</u> <p>Ano e mês da operação feita com
+    o cartão PMB. No pagamento é retirada da data de início do lote; no carregamento e
+    outras operações é a da transacção (<em>on-line</em>).</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>AAAAMM</td>
+    <td>ANO/MES-OP</td>
+  </tr>
+  <tr>
+    <td><a id="449" name="449">449</a></td>
+    <td class="esq"><u>DIA E HORA DA OPERAÇÃO PMB</u> <p>Dia e hora da operação feita com
+    o cartão PMB.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>DDHH</td>
+    <td nowrap="nowrap">DIA/HORA-OP</td>
+  </tr>
+  <tr>
+    <td><a id="450" name="450">450</a></td>
+    <td class="esq"><u>NÚMERO OPERAÇÃO PMB</u> <p>Número sequencial atribuído a cada
+    operação pelo PMB.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NOPERPMB</td>
+  </tr>
+  <tr>
+    <td><a id="451" name="451">451</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DA OPERAÇÃO PMB</u> <p>Importância da operação de
+    pagamento PMB, ou do carregamento ou outra importância que tenha afectado o saldo
+    disponível do PMB.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>3 int.<br />
+    2 dec.</td>
+    <td>IMPORTPMB</td>
+  </tr>
+  <tr>
+    <td><a id="452" name="452">452</a></td>
+    <td class="esq"><u>SECTOR PMB</u> <p>Código do sector de pagamento PMB. O campo só está
+    preenchido nas op de pagamento. Nos carregamentos é preenchido com &quot;00&quot;. Ver <a
+    href="434-452.htm#452" target="main">tabela</a>.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SECTORPMB</td>
+  </tr>
+  <tr>
+    <td><a id="453" name="453">453</a></td>
+    <td class="esq"><u>BANCO DO TERMINAL OU DO CARREGAMENTO</u> <p>Código da outra Inst.
+    Bancária com quem a op. se realizou:</p>
+    <p>No pagamento PMB - Banco de Apoio do terminal<br />
+    No carregamento - Banco emissor cartão bancário<br />
+    Nos outros - não está preenchido</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>BANTER/CAR</td>
+  </tr>
+  <tr>
+    <td><a id="454" name="454">454</a></td>
+    <td class="esq"><u>TOTAL DAS IMPORTÂNCIAS DAS OP. PMB</u> <p>Soma dos campos (<a
+    href="campos5.htm#451">451</a>)IMPORTPMB dos registos de detalhe condicionados pela
+    natureza da operação:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="20"></td>
+        <td width="60">CODTRN =</td>
+        <td width="210" class="esq">43 - carregamentos -&gt; 1º total</td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td width="60">CODTRN =</td>
+        <td width="210" class="esq">10, 04, 48 - Compra, Consulta Saldos*,<br />
+        Dev. Saldo PMB ao cliente -&gt; 2º total</td>
+      </tr>
+      <tr>
+        <td width="20"></td>
+        <td width="60">CODTRN =</td>
+        <td width="210" class="esq">49 - Dev. Saldo ao Banco -&gt; 3º total</td>
+      </tr>
+    </table>
+    <p>* Apenas quando o Saldo remanescente do cartão é creditado na conta do cliente.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br />
+    2 dec.</td>
+    <td>TIMPORTPMB</td>
+  </tr>
+  <tr>
+    <td><a id="455" name="455">455</a></td>
+    <td class="esq"><u>ESTADO DE CONTABILIZAÇÃO DO PMB</u> <p>Indica em que estado
+    contabilístico é que se encontra o PMB. Só é preenchido quando (<a
+    href="campos5.htm#447">447</a>)ESTPMB = 4 (expirado) ou 5 (abatido):</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td nowrap>&nbsp;&nbsp; 1 -&nbsp;</td>
+        <td class="esq">&quot;A compensar cliente&quot; - se for combinado após 2 semanas</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 2 -&nbsp;</td>
+        <td class="esq">&quot;A compensar emissor&quot; - se for anónimo após 2 semanas</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 3 -&nbsp;</td>
+        <td class="esq">&quot;Creditado cliente&quot; - estado final de cartão combinado</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 4 -&nbsp;</td>
+        <td class="esq">&quot;Creditado emissor&quot; - estado final de cartão anónimo</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 5 -&nbsp;</td>
+        <td class="esq">&quot;Saldo Nulo&quot; - estado final se passado 2 semanas o saldo for
+        nulo</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CNTPMB</td>
+  </tr>
+  <tr>
+    <td><a id="456" name="456">456</a></td>
+    <td class="esq"><u>DATA DO ESTADO PMB</u> <p>Data em que foi assumido o estado descrito em
+    (<a href="campos5.htm#447">447</a>) ESTADO DO PMB.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTESTPMB</td>
+  </tr>
+  <tr>
+    <td><a id="457" name="457">457</a></td>
+    <td class="esq"><u>DATA DO ESTADO DE CONTABILIZAÇÃO DO PMB</u> <p>Data em que foi
+    iniciado o estado apresentado no campo (<a href="campos5.htm#455">455</a>) &quot;Estado de
+    Contabilização do PMB&quot;.<br />
+    O registo deixa de estar presente no ficheiro desde que tenha passado um mês da data do
+    estado = 3, 4 ou 5.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTCNTPMB</td>
+  </tr>
+  <tr>
+    <td><a id="458" name="458">458</a></td>
+    <td class="esq"><u>SALDO INÍCIO DE ANO DO PMB</u> <p>É o saldo apurado na última
+    Compensação Multibanco de um ano, obtido pela soma algébrica de: <em>Total carregam.-
+    total de pagam.</em><br />
+    No caso de já ser o 2º ano, inclui-se também o &quot;Saldo inicial&quot; existente no
+    começo do ano.<br />
+    O novo saldo apurado passa a ser o considerado contabilisticamente, e o total de
+    carregamentos e de pagamentos são azerados.<br />
+    Em euros, com duas decimais.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SALDINI</td>
+  </tr>
+  <tr>
+    <td><a id="459" name="459">459</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DE CARREGAMENTOS NO ANO</u> <p>Somatório das operações
+    de carregamento feitas para o cartão PMB no ano.<br />
+    Em euros, com duas decimais.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IMPCARR</td>
+  </tr>
+  <tr>
+    <td><a id="460" name="460">460</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DE PAGAMENTOS NO ANO</u> <p>Somatório das operações de
+    pagamento feitas com o cartão PMB. Inclui as tarifas deduzidas ao saldo PMB ou
+    operações do Terminal Agência em que se debita o PMB para creditar o cliente.<br />
+    Em euros, com duas decimais.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IMPGPMB</td>
+  </tr>
+  <tr>
+    <td><a id="461" name="461">461</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DE DEVOLUÇÕES AO EMISSOR</u> <p>Importância da
+    operação (se ocorrer) em que o Emissor ordenou o crédito do saldo remanescente no
+    Banco.<br />
+    Esta importância, anteriormente creditada ao Banco para carregamentos, passa apenas a
+    estar à disposição do Banco para outros fins.<br />
+    Para o Saldo da conta de PMB corresponde a uma saída (débito). Interbancariamente não
+    tem efeitos.<br />
+    Em euros, com duas decimais.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IMPDEV</td>
+  </tr>
+  <tr>
+    <td><a id="462" name="462">462</a></td>
+    <td class="esq"><u>TOTAL DE SALDO INICIAL DE PMB/AG</u> <p>Somatório do campo (<a
+    href="campos5.htm#458">458</a>) SALDINI (do ano) de todos os PMB emitidos por uma agência
+    (TIPREG=7) ou dos PMB com o mesmo tarifário (TIPREG=8).<br />
+    Em euros, com duas decimais.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOTSINI</td>
+  </tr>
+  <tr>
+    <td><a id="463" name="463">463</a></td>
+    <td class="esq"><u>TOTAL DE IMPORTÂNCIAS</u> <p>Total dos campos:</p>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td width="87" class="esq" nowrap="nowrap">(<a href="campos5.htm#459">459</a>) IMPCARR -</td>
+        <td class="esq">dos carregamentos de PMB de uma dada Agência ou de PMB de um certo
+        tarifário.</td>
+      </tr>
+      <tr>
+        <td width="87" class="esq" nowrap="nowrap">(<a href="campos5.htm#460">460</a>) IMPGPMB -</td>
+        <td class="esq">das op. de pagamento feitas com cartões PMB de uma agência ou dum tipo
+        de tarifário.</td>
+      </tr>
+      <tr>
+        <td width="87" class="esq" nowrap="nowrap">(<a href="campos5.htm#461">461</a>) IMPDEV -</td>
+        <td class="esq">das op. de devolução para o emissor que ocorreram com cartões PMB da
+        agência ou de um tipo de tarifário.</td>
+      </tr>
+    </table>
+    <p>Em euros, com duas decimais.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIMPORT</td>
+  </tr>
+  <tr>
+    <td><a id="464" name="464">464</a></td>
+    <td class="esq"><u>TOTAL DE SALDOS PMB</u> <p>Somatório dos campos (<a
+    href="campos5.htm#435">435</a>) SALDOPMB de todos os cartões PMB de uma dada agência ou
+    dos cartões PMB de um certo &quot;tarifário&quot;.<br />
+    Em euros, com duas decimais.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOTSALPMB</td>
+  </tr>
+  <tr>
+    <td><a id="465" name="465">465</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO EXTERNA DO TITULAR</u> <p>Trata-se de um número
+    recebido de uma entidade terceira (por ex.: uma empresa, uma escola) para que a produção
+    do cartão inclua esta identificação na personalização do cartão.<br />
+    Pode ser a chave de identificação de um ficheiro com dados adicionais necessários à
+    produção de cartões.</td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>IDEXTIT</td>
+  </tr>
+  <tr>
+    <td><a id="466" name="466">466</a></td>
+    <td class="esq"><u>IMAGEM</u> <p>Trata-se da identificação da imagem
+    (ex:&nbsp;fotografia e/ou assinatura do titular do cartão) para quem vai ser produzido um
+    cartão com imagem.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IMAGEM</td>
+  </tr>
+  <tr>
+    <td><a id="467" name="467">467</a></td>
+    <td class="esq"><u>NÚMERO DE CARTÕES PMB VENDIDOS</u> <p>Nº de cartões PMB vendidos ou
+    entregues no período contabilístico do CA ou do terminal dispensador de cartões.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PMBVEND</td>
+  </tr>
+  <tr>
+    <td><a id="468" name="468">468</a></td>
+    <td class="esq"><u>ENTIDADE</u> <p>Identificação de uma entidade cobradora no Pagamento
+    de Serviços/Compras, ou de um Serviço Especial.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ENTIDADE</td>
+  </tr>
+  <tr>
+    <td><a id="469" name="469">469</a></td>
+    <td class="esq"><u>CONTRATO</u> <p>Identificação do acordo entre a SIBS e o Banco para
+    definir o preço e as características da produção de cartões.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CONTRATO</td>
+  </tr>
+  <tr>
+    <td><a id="470" name="470">470</a></td>
+    <td class="esq"><u>CÓDIGO DA MENSAGEM BS</u> <p>Código da mensagem na sessão Banco -
+    SIBS.</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODMSG-BS</td>
+  </tr>
+  <tr>
+    <td><a id="471" name="471">471</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO MENSAGEM DO BANCO</u> <p>No caso da mensagem ser
+    originada do CPD de um Banco, o seu preenchimento tem o formato que este quiser. No caso
+    da mensagem ser de um terminal bancário:</p>
+    <table border="0" cellpadding="0" cellspacing="0" width="127">
+      <tr>
+        <td width="117" class="esq">&nbsp;&nbsp; COD. TERMINAL</td>
+        <td width="10">6</td>
+      </tr>
+      <tr>
+        <td width="117" class="esq">&nbsp;&nbsp; NUM. PERÍODO</td>
+        <td width="10">2</td>
+      </tr>
+      <tr>
+        <td width="117" class="esq">&nbsp;&nbsp; NUM. TRANSACÇÃO</td>
+        <td width="10">5</td>
+      </tr>
+      <tr>
+        <td width="117" class="esq">&nbsp;&nbsp; COD. OPERADOR</td>
+        <td width="10">1</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">14</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>IDMSGBAN</td>
+  </tr>
+  <tr>
+    <td><a id="472" name="472">472</a></td>
+    <td class="esq"><u>TEXTO RESPOSTA</u> <p>Texto preenchido pela SIBS, numa mensagem
+    recusada, com os textos que justificam a recusa para o cliente.</td>
+    <td class="dta">45</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TEXTRESP</td>
+  </tr>
+  <tr>
+    <td><a id="473" name="473">473</a></td>
+    <td class="esq"><u>MONTANTE MÁXIMO</u> <p>Montante máximo informado p/ entidade
+    cobradora e que está associado à referência do Pagamento de Serviços/Compras. Poderá
+    ser zero, se não for conhecido da SIBS. </td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>8 int.<br />
+    2 dec.</td>
+    <td>MONTMAXPSC</td>
+  </tr>
+  <tr>
+    <td><a id="474" name="474">474</a></td>
+    <td class="esq"><u>DATA LIMITE PAGAMENTO</u> <p>Data limite para aceitação do Pagamento
+    de Serviço, indicada pela entidade cobradora. A operação é aceite até às 24.00 horas
+    do dia, excepto em casos especiais que é até ao início da Compensação MB.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTLIMPS</td>
+  </tr>
+  <tr>
+    <td><a id="475" name="475">475</a></td>
+    <td class="esq"><u>ESTADO DO PAGAMENTO</u> <p>Código atribuído pela SIBS indicando se o
+    pagamento:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 1 -&nbsp;</td>
+        <td class="esq">está a pagamento</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 2 -&nbsp;</td>
+        <td class="esq">já foi pago na totalidade</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 3 -&nbsp;</td>
+        <td class="esq">foi pago parcialmente</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 4 -&nbsp;</td>
+        <td class="esq">pago mas pode ser aceite novo pagamento com os mesmos dados (entidades sem
+        validação de duplicados)</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ESTPAGS</td>
+  </tr>
+  <tr>
+    <td><a id="476" name="476">476</a></td>
+    <td class="esq"><u>MONTANTE (PAGAMENTO SERVIÇOS/COMPRAS)</u> <p>Montante associado a uma
+    dada referência de Pagamento de Serviços/Compras. Pode corresponder ao montante que já
+    cobrado até à data, ou ao montante que foi pago numa dada operação.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>8 int.<br />
+    2 dec.</td>
+    <td>MONTPSC</td>
+  </tr>
+  <tr>
+    <td><a id="477" name="477">477</a></td>
+    <td class="esq"><u>NIB ORDENANTE</u> <p>Número de Identificação Bancária da conta
+    associada ao cartão (ou apenas do cliente), que pretende fazer um Pagamento de Serviços
+    ou uma Ordem de Transferência Interbancária.</td>
+    <td class="dta">21</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NIBORD</td>
+  </tr>
+  <tr>
+    <td><a id="478" name="478">478</a></td>
+    <td class="esq"><u>IDENTIF. ORDENANTE</u> <p>Campo constituído por vários subcampos
+    conforme tipo de operação em causa.</p>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td width="30" height="114">a)</td>
+        <td class="esq" height="114">No caso da operação ter sido iniciada por um cartão:<br />
+        Tipo operação = &quot;1&quot; (cartão)<br />
+        (<a href="campos3.htm#261">261</a>) BIN - 6<br />
+        (<a href="campos4.htm#319">319</a>) EXBIN - 2<br />
+        (<a href="campos2.htm#128">128</a>) NUMCAR - 7<br />
+        (<a href="campos2.htm#129">129</a>) SEQPAN - 1<br />
+        (<a href="campos2.htm#132">132</a>) CONTA - 15<br />
+        (<a href="campos2.htm#119">119</a>) SEQMOV - 2</td>
+      </tr>
+      <tr>
+        <td width="30" height="62">b)</td>
+        <td class="esq" height="62">No caso da operação ter sido iniciada por um NIB:<br />
+        Tipo operação = &quot;2&quot; (NIB)<br />
+        (<a href="campos5.htm#477">477</a>) NIBORD - 21<br />
+        (<a href="campos5.htm#471">471</a>) IDMSGBAN - 14</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">36</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>IDORDEN</td>
+  </tr>
+  <tr>
+    <td><a id="479" name="479">479</a></td>
+    <td class="esq"><u>LOCALIDADE MORADA DO TERMINAL (ABREVIADA)</u> &nbsp; <p>Descritivo que
+    deve ser remetido pelo Banco para informar a entidade cobradora do local (abreviado) da
+    operação.</td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>LOCMORTER</td>
+  </tr>
+  <tr>
+    <td><a id="480" name="480">480</a></td>
+    <td class="esq"><u>DESCRITIVO ENTIDADE</u> <p>Sigla da Instituição associada ao
+    serviço.</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DESCENT</td>
+  </tr>
+  <tr>
+    <td><a id="481" name="481">481</a></td>
+    <td class="esq"><u>REFERÊNCIA ADICIONAL</u> <p>Números complementares que são
+    necessários acrescentar ao campo (<a href="campos3.htm#250">250</a>) REFERÊNCIA no caso
+    do serviço especial, para o pagamento de Impostos na Rede MB.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>REFAD</td>
+  </tr>
+  <tr>
+    <td><a id="482" name="482">482</a></td>
+    <td class="esq"><u>TIPO ORDENANTE</u> <p>Código que indica se a operação foi solicitada
+    por um cartão com um PIN (1), pela recepção de um NIB de um CPD de um Banco ou
+    autenticada por um cartão supervisor de Agência Bancária (2).</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPORD</td>
+  </tr>
+  <tr>
+    <td><a id="483" name="483">483</a></td>
+    <td class="esq"><u>TIPO DE DOCUMENTO</u> <p>Código do tipo de documento de
+    identificação usado pelo cliente titular da conta crédito.</p>
+    <p>Valores possíveis:<br>
+    &nbsp;&nbsp; 0 - Sem Identif.<br />
+    &nbsp;&nbsp; 1 - Bilhete de Identidade<br />
+    &nbsp;&nbsp; 2 - Cédula Pessoal<br />
+    &nbsp;&nbsp; 3 - Passaporte<br />
+    &nbsp;&nbsp; 4 - Nº de Contribuinte<br>
+    &nbsp;&nbsp; 5 - B.I. Militar<br>
+    &nbsp;&nbsp; 9 - Outros Docs. </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPODOC</td>
+  </tr>
+  <tr>
+    <td><a id="484" name="484">484</a></td>
+    <td class="esq"><u>NÚMERO DE DOCUMENTO IDENTIF.</u> <p>Número do documento de
+    identificação do titular de uma conta crédito.</td>
+    <td class="dta">10</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DOCNUM</td>
+  </tr>
+  <tr>
+    <td><a id="485" name="485">485</a></td>
+    <td class="esq"><u>CRÉDITO AO DESTINATÁRIO</u> <table border="0" cellspacing="0"
+    cellpadding="0">
+      <tr>
+        <td colspan="2">&nbsp; </td>
+      </tr>
+      <tr>
+        <td class="esq" nowrap>&nbsp;&nbsp; 1 -&nbsp;</td>
+        <td class="esq">Via compensação Multibanco</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp; 2 -&nbsp;</td>
+        <td class="esq">Via compensação de Transferências Electrónicas Interbancárias (TEIs).</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CREDDEST</td>
+  </tr>
+  <tr>
+    <td><a id="486" name="486">486</a></td>
+    <td class="esq"><u>CÓDIGO DE OPERAÇÃO</u> <p>Código de Operação atribuído pelo
+    Sistema da SIBS às transacções originais recebidas no processo de acolhimento do
+    Ficheiro de Facturação da UNICRE:</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td nowrap="nowrap">&nbsp;&nbsp; 10 -&nbsp;</td>
+        <td class="esq">Movimento de Compra</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 11 -&nbsp;</td>
+        <td class="esq">Movimento de Cash Advance</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 12 -&nbsp;</td>
+        <td class="esq">Movimento de Anulação de Compra</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 13 -&nbsp;</td>
+        <td class="esq">Movimento de Anulação de <em>Cash Advance</em></td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 14 -&nbsp;</td>
+        <td class="esq">Movimento de Devolução de Compra</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 15 -&nbsp;</td>
+        <td class="esq">Movimento de Devolução de <em>Cash Advance</em></td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 16 -&nbsp;</td>
+        <td class="esq">Movimento de Anulação de Devolução de Compra</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 17 -&nbsp;</td>
+        <td class="esq">Movimento de Anulação de Devolução de <em>Cash Advance</em></td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 20 -&nbsp;</td>
+        <td class="esq">Movimento de Autorização</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 54 -&nbsp;</td>
+        <td class="esq">Custos de Emissão de Lista Negra</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>COD-OPE-UNI</td>
+  </tr>
+  <tr>
+    <td><a id="487" name="487">487</a></td>
+    <td class="esq"><u>TIPO DE OPERAÇÃO</u> <p>Indica o tipo de operação:</p>
+    <p>&nbsp;&nbsp; O - Original<br />
+    &nbsp;&nbsp; R - Regularização<br />
+    &nbsp;&nbsp; C - <em>Chargeback</em><br />
+    &nbsp;&nbsp; A - <em>Arbitration / Second Chargeback</em><br />
+    &nbsp;&nbsp; E - Reapresentação<br />
+    &nbsp;&nbsp; 2 - Segunda Reapresentação<br />
+    &nbsp;&nbsp; K - Aviso de Fraude<br />
+    &nbsp;&nbsp; G - Incluída por Compensação MB<br />
+    &nbsp;&nbsp; P - Aguarda Confirmação (Compensação MB)<br />
+    &nbsp;&nbsp; Q - Confirmada (Compensação MB)<br />
+    &nbsp;&nbsp; 9 - Degradação noutro Sistema<br />
+    &nbsp;&nbsp; U - Reapresentação recebida como Original</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIPO-OP</td>
+  </tr>
+  <tr>
+    <td><a id="488" name="488">488</a></td>
+    <td class="esq"><u>DIFERIMENTO</u> <p>Indica qual o processo de produção pretendido pelo
+    Emissor:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td nowrap>&nbsp;&nbsp; 0 -&nbsp;</td>
+        <td class="esq">emissão normal. Os cartões e as cartas de PIN são emitidas no momento
+        da emissão lógica dos cartões.</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 1 -&nbsp;</td>
+        <td class="esq">cartão emitido posteriormente</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 2 -&nbsp;</td>
+        <td class="esq">emissão do cartão; carta de PIN emitida posteriormente</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 3 -&nbsp;</td>
+        <td class="esq">emissão lógica do cartão; emissão carta PIN.</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 4 -&nbsp;</td>
+        <td class="esq"><em>replacement card</em></td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 5 -&nbsp;</td>
+        <td class="esq">emissão lógica do cartão; carta de PIN emitida posteriormente</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp; 9 -&nbsp;</td>
+        <td class="esq">emissão do cartão sem cálculo lógico</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DIFERIMENTO</td>
+  </tr>
+  <tr>
+    <td><a id="489" name="489">489</a></td>
+    <td class="esq"><u>GERIR TELECÓDIGO</u> <p>Indica a acção que o Banco pretende fazer
+    sobre o telecódigo:</p>
+    <p>&nbsp;&nbsp; 1 - anular telecódigo<br />
+    &nbsp;&nbsp; 2 - inserir telecódigo<br />
+    &nbsp;&nbsp; 3 - alterar telecódigo</p>
+    <p>A anulação do telecódigo implica que o serviço deixe de se poder fazer até o
+    cliente posicionar outro telecódigo (no Serviço Especial ou comunicado pelo Banco).</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>GERETEL</td>
+  </tr>
+  <tr>
+    <td><a id="490" name="490">490</a></td>
+    <td class="esq"><u>TELECÓDIGO</u> <p>Número de quatro algarismos que autenticam um
+    titular de um cartão apenas nas operações de serviço telefónico.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TELECODIG</td>
+  </tr>
+  <tr>
+    <td><a id="491" name="491">491</a></td>
+    <td class="esq"><u>CÓDIGO DE TIPO DE CLIENTE</u> <p>Código definido pelo Gestor
+    Financeiro, para cada produto financeiro, definindo a natureza do cliente no produto (ex.:
+    Empregado do Banco, Cliente do Banco).</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>COD-TIP-CLI</td>
+  </tr>
+  <tr>
+    <td><a id="492" name="492">492</a></td>
+    <td class="esq"><u>CÓDIGO DE RESPOSTA DA MENSAGEM DA SIBS</u> <p>Código de resposta da
+    mensagem de sessão Banco -&gt; SIBS.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODRESPS</td>
+  </tr>
+  <tr>
+    <td><a id="493" name="493">493</a></td>
+    <td class="esq"><u>CÓDIGO DE RECUSA DA MENSAGEM PELA SIBS</u> <p>Código da recusa da
+    SIBS a uma mensagem na sessão Banco -&gt; SIBS.</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODRECS</td>
+  </tr>
+  <tr>
+    <td><a id="494" name="494">494</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO PINBLOCK</u> <p>Usado nos campos em que a emissão
+    de cartões é efectuada com PIN fixo; identifica o PINBLOCK a associar ao cartão.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDPINBLOCK</td>
+  </tr>
+  <tr>
+    <td><a id="495" name="495">495</a></td>
+    <td class="esq"><u>DATA DE INSERÇÃO DA CONTA</u> <p>Data de inserção do cliente
+    crédito. Pode ser actualizada aquando da actualização dos dados pessoais, ou
+    personalização do cliente.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTA-INS-CTA</td>
+  </tr>
+  <tr>
+    <td><a id="496" name="496">496</a></td>
+    <td class="esq"><u>CVV1/CVC1</u> <p><em>&quot;Card Validation value&quot;</em><br />
+    Trata-se do valor que é escrito na pista 2 do cartão Visa e Eurocard/Mastercard que
+    serve para validar a autenticidade de um cartão a partir apenas dos dados da pista 2 em
+    operações sem PIN.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CVV1-CVC1</td>
+  </tr>
+  <tr>
+    <td><a id="497" name="497">497</a></td>
+    <td class="esq"><u>SECTOR INSTITUCIONAL</u> <p>Identificação do sector a que pertence a
+    empresa. O código é necessário para estatísticas do Banco de Portugal. <em>(Valores da
+    <a href="497-510.htm" target="main">tabela</a>)</em></td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>SECINS</td>
+  </tr>
+  <tr>
+    <td><a id="498" name="498">498</a></td>
+    <td class="esq"><u>TIPO DE PARTICIPAÇÃO</u> <p>Código do tipo de participação que o
+    Banco tem na empresa.</p>
+    <p>&nbsp;&nbsp; 0 - Sem ligação ao Banco<br />
+    &nbsp;&nbsp; 1 - Participada<br />
+    &nbsp;&nbsp; 2 - Coligada</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPPAR</td>
+  </tr>
+  <tr>
+    <td><a id="499" name="499">499</a></td>
+    <td class="esq"><u>FUNÇÕES DO CARTÃO NO ATM</u> <p>Código que indica se o cartão pode
+    aceder ao serviço Caixa Automático ou não.</p>
+    <p>&nbsp;&nbsp; 0 - Não pode<br />
+    &nbsp;&nbsp; 1 - Pode</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FUNATM</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

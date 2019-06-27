@@ -1,0 +1,181 @@
+      * +--------------------------------------------------------------+
+      * -                                                              -
+      * -                     CP SISTEMAS DE PAGO                      -
+      * -                          CROD997                             -
+      * -                                                              -
+      * -              RUTINA PARA CALCULO CHECK DE LUHN               -
+      * -                                                              -
+      * +--------------------------------------------------------------+
+       IDENTIFICATION DIVISION.
+      *-----------------------.
+
+       PROGRAM-ID.    CROD997.
+       AUTHOR.        CP SISTEMAS DE PAGO.
+       DATE-WRITTEN.  16 DE FEBRERO DE 1990.
+       DATE-COMPILED.
+
+      * +--------------------------------------------------------------+
+      * -                  D A T A   D I V I S I O N                   -
+      * -                  =========================                   -
+      * +--------------------------------------------------------------+
+
+       DATA DIVISION.
+      *-------------.
+
+      * +--------------------------------------------------------------+
+      * -        W O R K I N G - S T O R A G E   S E C T I O N         -
+      * -        =============================================         -
+      * +--------------------------------------------------------------+
+
+       WORKING-STORAGE SECTION.
+      *
+       01  FILLER                             PIC X(25)
+                 VALUE 'COMIENZO WORKING CROD997'.
+
+       01  VARIABLES-WORKING.
+
+           05  NUM-CARS-CON-CHECK             PIC  9(02).
+           05  NUM-CARS-SIN-CHECK             PIC  9(02).
+
+           05  IND-TAB-CARS                   PIC 99.
+           05  TAB-CARS.
+               10  CAR-TAB                    PIC  X OCCURS 30 TIMES.
+
+           05  CAR-X.
+               10  CAR-N                      PIC  9.
+
+           05  PESO-ACTUAL                    PIC  9(02).
+
+           05  SUMA                           PIC  9(04).
+           05  SUMA-X   REDEFINES  SUMA.
+               10  FILLER                     PIC  X(03).
+               10  DIG-1-SUMA                 PIC  9.
+
+           05  INC-SUMA                       PIC  9(02).
+
+           05  RESTO-A-10-X.
+               10  RESTO-A-10                 PIC  9.
+
+           05  CAR-COMERCIO.
+               10 COMER-CON-CHECK             PIC X(09).
+               10 FILLER                      PIC X(21).
+
+       01  FILLER                             PIC  X(25)
+                 VALUE 'FINAL    WORKING CROD997'.
+
+      ***************************************************************
+      * ESTA COPY SON LOS COMERCIOS DE CAIXA QUE NO CUMPLEN EL CHECK
+      * DE LUHN.
+      ***************************************************************
+       COPY CRYK0421.
+
+       01  AREA-COMAREA-RUTINAS.
+           05 FILLER         PIC X(200).
+
+       COPY CRYL0453.
+      * +--------------------------------------------------------------+
+      * -                 L I N K A G E    S E C T I O N               -
+      * -                 ==============================               -
+      * +--------------------------------------------------------------+
+
+       LINKAGE SECTION.
+
+       01   DFHCOMMAREA    PIC X(200).
+
+      * +--------------------------------------------------------------+
+      * -             P R O C E D U R E   D I V I S I O N              -
+      * -             ===================================              -
+      * +--------------------------------------------------------------+
+
+       PROCEDURE DIVISION.
+      *-------------------
+
+      * +--------------------------------------------------------------+
+      * -                 MODULO : 1-COMIENZO-CROD997                  -
+      * +--------------------------------------------------------------+
+
+       1-COMIENZO-CROD997.
+      *-------------------.
+
+           MOVE DFHCOMMAREA TO ATMULUHN.
+
+           INITIALIZE   VARIABLES-WORKING   REPLACING
+                        ALPHANUMERIC  DATA  BY  SPACES.
+
+           INITIALIZE   VARIABLES-WORKING   REPLACING
+                        NUMERIC       DATA  BY  ZEROS.
+
+           IF LONGITUD EQUAL 9
+              MOVE CARS-CON-CHECK-LUHN TO CAR-COMERCIO
+
+              SET IND-CON-VAL TO 1
+
+              SEARCH ELEMENTO-TABLA-COM
+              WHEN COMER-CON-CHECK EQUAL COMERCIO-CAIXA(IND-CON-VAL)
+              MOVE 1               TO FG-CHECK-LUHN-VALIDO
+              MOVE ATMULUHN TO DFHCOMMAREA
+              GO TO 1-FIN-CROD997.
+
+           MOVE LONGITUD            TO   NUM-CARS-CON-CHECK
+                                         NUM-CARS-SIN-CHECK.
+
+           SUBTRACT 1               FROM NUM-CARS-SIN-CHECK.
+
+           MOVE NUM-CARS-SIN-CHECK  TO   IND-TAB-CARS.
+           MOVE 2                   TO   PESO-ACTUAL.
+           MOVE CARS-CON-CHECK-LUHN TO   TAB-CARS.
+
+           PERFORM  11-CICLO-CALCULA-CHECK
+              THRU  11-CICLO-CALCULA-CHECK-FIN
+                    UNTIL IND-TAB-CARS = 0.
+
+           IF DIG-1-SUMA  EQUAL  ZERO
+              MOVE 0               TO   RESTO-A-10
+           ELSE
+               SUBTRACT DIG-1-SUMA FROM 10
+                                    GIVING RESTO-A-10.
+
+           MOVE RESTO-A-10-X        TO   CHECK-LUHN.
+
+           IF CHECK-LUHN  EQUAL  CAR-TAB ( LONGITUD )
+              MOVE 1               TO FG-CHECK-LUHN-VALIDO
+           ELSE
+               MOVE 0               TO FG-CHECK-LUHN-VALIDO.
+
+           MOVE ATMULUHN TO DFHCOMMAREA.
+
+       1-FIN-CROD997.
+      *--------------.
+
+           GOBACK.
+
+      * +--------------------------------------------------------------+
+      * -                 MODULO : 11-CICLO-CALCULA-CHECK              -
+      * -                                                              -
+      * -          ACUMULA   PESO X DIGITO     SEGUN NORMA LUHN        -
+      * +--------------------------------------------------------------+
+
+       11-CICLO-CALCULA-CHECK.
+      *----------------------.
+
+           MOVE CAR-TAB ( IND-TAB-CARS )  TO CAR-X.
+
+           IF PESO-ACTUAL  EQUAL  1
+              MOVE CAR-N                 TO INC-SUMA
+              MOVE 2                     TO PESO-ACTUAL
+           ELSE
+               MOVE CAR-N                 TO INC-SUMA
+               ADD  CAR-N                 TO INC-SUMA
+               MOVE 1                     TO PESO-ACTUAL
+
+               IF INC-SUMA  NOT  LESS  10
+                  SUBTRACT 9             FROM INC-SUMA.
+
+           ADD      INC-SUMA TO   SUMA
+           SUBTRACT 1        FROM IND-TAB-CARS.
+
+       11-CICLO-CALCULA-CHECK-FIN.
+      *--------------------------.
+
+           EXIT.
+

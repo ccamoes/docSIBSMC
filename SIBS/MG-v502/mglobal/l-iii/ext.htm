@@ -1,0 +1,1742 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+
+<title>EXTRACTOS PARA COMERCIANTES - EXT#</title>
+</head>
+
+<body>
+
+<h2 align="center" class="center">EXTRACTOS TERMINAL DE PAGAMENTO AUTOMÁTICO</h2>
+
+<p>&nbsp;</p>
+
+&nbsp; -&gt; Extracto por Fecho TPA - <a target="main" href="#ext1">EXT1<br>
+</a>&nbsp; -&gt; Extracto por Fecho e Detalhe das Comissões MB/PMB - <a href="#ext3" target="main">EXT3<br>
+</a>&nbsp; -&gt; Extracto por Fecho e Comissões para produtos específicos - <a href="#ext2" target="main">EXT2<br>
+</a>&nbsp; -&gt; Extracto Resumo Mensal de Pagamentos - <a href="#ext4" target="main">EXT4</a>
+
+<p>&nbsp;</p>
+
+<p><strong><em>
+HEADER</em> DOS FICHEIROS</strong></p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '0'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">APLIC</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#101">101</a></td>
+    <td width="200" class="esq">= 'M'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">3</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#102">102</a></td>
+    <td class="esq">Preenchido</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">VERFICH</td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#064">064</a></td>
+    <td class="esq">(a)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td class="esq">(b)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CPD</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">13</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#104">104</a></td>
+    <td class="esq">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#061">061</a></td>
+    <td class="esq">= AAAAMMDDSSS</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT</td>
+    <td class="dta" width="45">11</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#062">062</a></td>
+    <td class="esq">= zeros&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DATAVALOR</td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">36</td>
+    <td width="45">N</td>
+    <td><a target="explicac" href="../../Campos/campos2.htm#110">110</a></td>
+    <td class="esq">= 00AAAAMM&nbsp; (c)</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODMOEDA</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">44</td>
+    <td width="45">N</td>
+    <td><a target="explicac" href="../../Campos/campos3.htm#233">233</a></td>
+    <td class="esq">= '978'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDCLIFAC</td>
+    <td class="dta" width="45">7</td>
+    <td class="dta" width="45">47</td>
+    <td width="45" >N</td>
+    <td><a target="explicac" href="../../Campos/campos5.htm#412" target="explicac">412</a></td>
+    <td class="esq">Preenchido</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td nowrap class="esq">(a) -&nbsp;</td>
+    <td class="esq">Indicada na descrição de cada ficheiro. Igual a &#145;00&#146; sempre
+    que nos registos de detalhe não esteja indicada uma versão.</td>
+  </tr>
+  <tr>
+    <td nowrap class="esq" colspan="2">&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">(b) -&nbsp;</td>
+    <td class="esq">Igual a zeros sempre que o Participante não possua um código atribuído
+    pelo Banco de Portugal. </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq">(c) -&nbsp;</td>
+    <td class="esq">Mês a que respeitam os dados incluídos no ficheiro. </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><strong><em>
+TRAILER</em> DOS FICHEIROS</strong></p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '9'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTREG </td>
+    <td class="dta" width="45">8</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td><a target="explicac" href="../../Campos/campos2.htm#107">107</a></td>
+    <td width="200" class="esq">Preenchido</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTDEB </td>
+    <td class="dta" width="45">16</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">N</td>
+    <td><a target="explicac" href="../../Campos/campos2.htm#108">108</a></td>
+    <td class="esq">= '0'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTCRED </td>
+    <td class="dta" width="45">16</td>
+    <td class="dta" width="45">26</td>
+    <td width="45">N</td>
+    <td><a target="explicac" href="../../Campos/campos2.htm#109">109</a></td>
+    <td class="esq">= '0'</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+<p style="page-break-before: always"><a name="ext1">&nbsp;</a></p>
+
+<table border="1" cellpadding="11" cellspacing="0" width="99%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%" cellpadding="0">
+      <tr>
+        <td class="fichesq">NOME: MOVIMENTOS DE FECHO
+          CONTABILÍSTICO DOS TPAs</td>
+        <td class="fichdta">&quot;FICH&quot;=EXT1</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Este ficheiro apresenta a lista de movimentos de fecho contabilístico dos TPAs
+dos Comerciantes/Estabelecimentos apoiados pelo Banco.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de <em>Header</em> do ficheiro &quot;TIPREG=0&quot;;</li>
+</ul>
+
+<ul>
+  <li>registos de Detalhe &quot;TIPREG=1&quot;</li></ul>
+<blockquote>
+  <ul type="square">
+    <li>Referência 10 - Informação do destinatário da listagem</li>
+    <li>Referência 20 - Data, Banco e número de páginas</li>
+    <li>Referência 30 - Endereço de extracto</li>
+    <li>Referência 40 - Lista das operações de fecho</li>
+    <li>Referência 50 - Totais;</li>
+  </ul>
+</blockquote>
+<ul>
+  <li>o registo de <em>Trailer</em> &quot;TIPREG=9&quot;. </li></ul>
+
+<p><br>
+O ficheiro é disponibilizado mensalmente nos primeiros dias de cada mês.<br>
+Os movimentos incluídos reportam-se até à última Compensação realizada no mês indicado (cerca das 20h).</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">EXT1  - TIPO DE
+REGISTO = 1</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '1'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">REFER</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#342">342</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Inf. do Destinatário</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">Refª 10</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIP-SER-EXT</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1103">1103</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NOT_IVA_EXT</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2700.htm#2795">2795</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDCOMEMP</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDEST</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#328">328</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Banco, Data e Pag.</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq">Refª 20</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DT_EXT</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/camp2700.htm#2793">2793</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DT_EMI_EXT</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/camp2700.htm#2794">2794</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NOMEST</td>
+    <td class="dta" width="45">40</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos2.htm#179">179</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUM_PAG</td>
+    <td class="dta" width="45">3</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp2700.htm#2796">2796</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID-COM-REP</td>
+    <td class="dta" width="45">7</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp1000.htm#1007">1007</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Endereço de extracto</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">Refª 30</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NOME_CLI</td>
+    <td class="dta" width="45">30</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#080">080</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ENDER_CLI</td>
+    <td class="dta" width="45">40</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#081">081</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LOC_CLI</td>
+    <td class="dta" width="45">20</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#082">082</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">C_POST_CLI</td>
+    <td class="dta" width="45">8</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#083">083</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">L_POST_CLI</td>
+    <td class="dta" width="45">25</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#084">084</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Operações de fecho</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">Refª 40</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DT_FECHO</td>
+    <td class="dta" width="45">8</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp900.htm#931">931</a></td>
+    <td class="esq">Até 45 linhas</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">HR_FECHO</td>
+    <td class="dta" width="45">4</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp900.htm#932">932</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDTERMINAL</td>
+    <td class="dta" width="45">10</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#006">006</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUM-PER-CNT</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp900.htm#934">934</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUM-OPE</td>
+    <td class="dta" width="45">3</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp1000.htm#1082">1082</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOT_OPE</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp1000.htm#1042">1042</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Totais</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">Refª 50</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUM-OPE</td>
+    <td class="dta" width="45">3</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp1000.htm#1082">1082</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOT-COMERC-CRE</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp2100.htm#2106">2106</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0">
+</table>
+
+<p class="nove"><br>
+<b>Notas:</b></p>
+<p class="nove">As referências iniciais apresentam os dados de identificação, tipo de serviço posicionado, endereçamento dos comerciantes contratados, e a data a que os movimentos se reportam.&nbsp;</p>
+<p class="nove">A referência 40 apresenta os dados necessários à impressão da listagem (ou à sua disponibilização num canal desmaterializado) de fechos de TPA registados no mês em causa a emitir por cada
+Comerciante/Estabelecimento contratado.</p>
+<p class="nove">O ficheiro está formatado para permitir a impressão até 45 linhas de fecho por página.</p>
+<p><br>
+</p>
+<p style="page-break-before: always"><a name="ext3">&nbsp;</a></p>
+
+<table border="1" cellpadding="11" cellspacing="0" width="99%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%" cellpadding="0">
+      <tr>
+        <td class="fichesq">NOME: MOVIMENTOS FECHO
+          CONTABILÍSTICO TPAs E TSCs</td>
+        <td class="fichdta">&quot;FICH&quot;=EXT3</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+É um extracto complementar ao descrito no <a href="#ext1" target="main">MEXT1</a>,
+emitido por terminal.&nbsp;</p>
+
+<p>Este ficheiro apresenta a lista de movimentos de fecho contabilístico dos TPAs relativamente ao acordo MB/PMB com o detalhe das respectivas comissões.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de <em>Header</em> do ficheiro &quot;TIPREG=0&quot;;</li>
+</ul>
+
+<ul>
+  <li>registos de Detalhe &quot;TIPREG=1&quot;</li></ul>
+<blockquote>
+  <ul type="square">
+    <li>Referência 10 - Informação do Emissor da listagem</li>
+    <li>Referência 20 - Data e número de páginas</li>
+    <li>Referência 21 - Banco e morada</li>
+    <li>Referência 22 - Comerciante e morada</li>
+    <li>Referência 30 - Endereço de extracto</li>
+    <li>Referência 40 - Lista das operações de fecho</li>
+    <li>Referência 50 - Totais;</li>
+  </ul>
+</blockquote>
+<ul>
+  <li>o registo de <em>Trailer</em> &quot;TIPREG=9&quot;. </li></ul>
+
+<p><br>
+O ficheiro é disponibilizado mensalmente nos primeiros dias de cada mês.<br>
+Os movimentos incluídos reportam-se até à última Compensação realizada no mês indicado (cerca das 20h).</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">EXT3 - TIPO DE
+REGISTO = 1</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '1'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">REFER</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#342">342</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Informação do </b><b>Emissor</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">Refª 10</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIP-SER-EXT</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1103">1103</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDCOMEMP</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDEST</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#328">328</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b> Data e Pagamento</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq">Refª 20</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DT_EXT</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/camp2700.htm#2793">2793</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DT_EMI_EXT</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/camp2700.htm#2794">2794</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUM_PAG</td>
+    <td class="dta" width="45">3</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp2700.htm#2796">2796</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Banco e Morada</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq">Refª 21</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BAC_EXT</td>
+    <td class="dta" width="45">32</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/camp2700.htm#2797">2797</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NPCCOM</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#375">375</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">MOR_BAN_EXT</td>
+    <td class="dta" width="45">40</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/camp2700.htm#2798">2798</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CP_MOR_BAN_EXT</td>
+    <td class="dta" width="45">33</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/camp2700.htm#2799">2799</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Comerciante e Morada</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq">Refª 22</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDCOMEMP</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">COMERCIANTE</td>
+    <td class="dta" width="45">20</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#284">284</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDEST</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#328">328</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NOMEST</td>
+    <td class="dta" width="45">40</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#179">179</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NPCCOM</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#375">375</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDTERMINAL</td>
+    <td class="dta" width="45">10</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#006">006</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Endereço de extracto</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">Refª 30</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NOME_CLI</td>
+    <td class="dta" width="45">30</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#080">080</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ENDER_CLI</td>
+    <td class="dta" width="45">40</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#081">081</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LOC_CLI</td>
+    <td class="dta" width="45">20</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#082">082</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">C_POST_CLI</td>
+    <td class="dta" width="45">8</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#083">083</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">L_POST_CLI</td>
+    <td class="dta" width="45">25</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#084">084</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Operações de fecho</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">Refª 40</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DT_FECHO</td>
+    <td class="dta" width="45">8</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp900.htm#931">931</a></td>
+    <td class="esq">Até 38 linhas</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">HR_FECHO</td>
+    <td class="dta" width="45">4</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp900.htm#932">932</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUM-PER-CNT</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp900.htm#934">934</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">N_LOT_PMB</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp2800.htm#2800">2800</a></td>
+    <td class="esq">Só se PMB</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUM-OPE</td>
+    <td class="dta" width="45">3</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp1000.htm#1082">1082</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOT_OPE</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp1000.htm#1042">1042</a></td>
+    <td class="esq">MB/PMB</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">MB/PMB</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOT_COM</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp900.htm#923">923</a></td>
+    <td class="esq">MB/PMB</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">MB/PMB</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Totais</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">Refª 50</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUM-OPE</td>
+    <td class="dta" width="45">6</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos4.htm#399">399</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOT-COMERC-CRE</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp2100.htm#2106">2106</a></td>
+    <td class="esq">MB/PMB</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">MB/PMB</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOT-COM-CRE-COM</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp2100.htm#2108">2108</a></td>
+    <td class="esq">MB/PMB</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">MB/PMB</td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0">
+</table>
+
+<p class="nove"><br>
+<b>Notas:</b></p>
+<p class="nove">As referências iniciais apresentam os dados de identificação, tipo de serviço posicionado, endereçamento
+do emissor do extracto e dos comerciantes contratados, e a data a que os movimentos se reportam.&nbsp;</p>
+<p class="nove">A referência 40 apresenta os dados necessários à impressão da listagem (ou à sua disponibilização num canal desmaterializado) de fechos de TPA
+relativos às operações MB/PMB, a emitir por terminal presente em cada
+Comerciante/Estabelecimento contratado. Estas discriminam as TSCs MB aplicadas em cada fecho realizado e o respectivo total.<br>
+<br>
+O ficheiro está formatado para permitir a impressão até 38 linhas de fecho por página.</p>
+<p><br>
+</p>
+<p><a name="ext2">&nbsp;</a></p>
+
+<table border="1" cellpadding="11" cellspacing="0" width="99%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%" cellpadding="0">
+      <tr>
+        <td class="fichesq">NOME: MOVIMENTOS REPRESENTANTE</td>
+        <td class="fichdta">&quot;FICH&quot;=EXT2</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+Ficheiro destinado a Representantes
+de produtos específicos. Actualmente são emitidos extractos para o BCP/AMEX e
+para a Crediplus. No caso do BCP/AMEX, além dos movimentos em TPA, são ainda
+incluídos os movimentos recebidos via ficheiro (ver <a href="#ext4" target="main">MEXT4</a>).</p>
+
+<p>Este ficheiro apresenta a lista de movimentos de fecho contabilístico dos
+TPAs relativamente a um particular produto financeiro com o detalhe das
+respectivas comissões.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de <em>Header</em> do ficheiro &quot;TIPREG=0&quot;;</li>
+</ul>
+
+<ul>
+  <li>registos de Detalhe &quot;TIPREG=1&quot;</li></ul>
+<blockquote>
+  <ul type="square">
+    <li>Referência 10 - Informação do destinatário da listagem</li>
+    <li>Referência 20 - Data, Representante e número de páginas</li>
+    <li>Referência 30 - Endereço de extracto</li>
+    <li>Referência 40 - Lista das operações de fecho</li>
+    <li>Referência 50 - Totais;</li>
+  </ul>
+</blockquote>
+<ul>
+  <li>o registo de <em>Trailer</em> &quot;TIPREG=9&quot;. </li></ul>
+
+<p><br>
+O ficheiro é disponibilizado mensalmente nos primeiros dias de cada mês.<br>
+Os movimentos incluídos reportam-se até à última Compensação realizada no mês indicado (cerca das 20h).</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">EXT2 - TIPO DE
+REGISTO = 1</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '1'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">REFER</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#342">342</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Informação do Destinatário </b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">Refª 10</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIP-SER-EXT</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1103">1103</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NOT_IVA_EXT</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp2700.htm#2795">2795</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDCOMEMP</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">COMERCIANTE</td>
+    <td class="dta" width="45">20</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos3.htm#284">284</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDEST</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#328">328</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NOMEST</td>
+    <td class="dta" width="45">40</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos2.htm#179">179</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NPCCOM</td>
+    <td class="dta" width="45">9</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#375">375</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Rep., Data e Pag.</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq">Refª 20</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DT_EXT</td>
+    <td class="dta" width="45">14</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/camp2700.htm#2793">2793</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DT_EMI_EXT</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/camp2700.htm#2794">2794</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">REPRESENTANTE</td>
+    <td class="dta" width="45">40</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#376">376</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUM_PAG</td>
+    <td class="dta" width="45">3</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp2700.htm#2796">2796</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID-COM-REP</td>
+    <td class="dta" width="45">7</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp1000.htm#1007">1007</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Endereço de extracto</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">Refª 30</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NOME_CLI</td>
+    <td class="dta" width="45">30</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#080">080</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ENDER_CLI</td>
+    <td class="dta" width="45">40</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#081">081</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LOC_CLI</td>
+    <td class="dta" width="45">20</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#082">082</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">C_POST_CLI</td>
+    <td class="dta" width="45">8</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#083">083</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">L_POST_CLI</td>
+    <td class="dta" width="45">25</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#084">084</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Operações de fecho</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">Refª 40</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DT_FECHO</td>
+    <td class="dta" width="45">8</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp900.htm#931">931</a></td>
+    <td class="esq">Até 45 linhas</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">HR_FECHO</td>
+    <td class="dta" width="45">4</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp900.htm#932">932</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDTERMINAL</td>
+    <td class="dta" width="45">10</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#006">006</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUM-PER-CNT</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp900.htm#934">934</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUM-OPE</td>
+    <td class="dta" width="45">3</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp1000.htm#1082">1082</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOT_OPE</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp1000.htm#1042">1042</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOT_COM</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp900.htm#923">923</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Totais</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">Refª 50</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUM-OPE</td>
+    <td class="dta" width="45">6</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos4.htm#399">399</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOT-COMERC-CRE</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp2100.htm#2106">2106</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOT-COMERC-DEB</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp2100.htm#2107">2107</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOT-COM-CRE-COM</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp2100.htm#2108">2108</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOT-COM-DEB-COM</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp2100.htm#2109">2109</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0">
+</table>
+
+<p style="page-break-before: always" class="nove"><br>
+<b>Notas:</b></p>
+<p class="nove">As referências iniciais apresentam os dados de identificação, tipo de serviço posicionado, endereçamento
+dos comerciantes contratados, e a data a que os movimentos se reportam.&nbsp;</p>
+<p class="nove">A referência 40 apresenta os dados necessários à impressão da listagem (ou à sua disponibilização num canal desmaterializado) de fechos de TPA
+relativos a um determinado produto financeiro, a emitir por cada Comerciante/Estabelecimento
+contratado pela respectiva entidade contratante.&nbsp;<br>
+Discrimina o montante apurado para o produto financeiro em causa e o respectivo
+comissionamento.<br>
+<br>
+O ficheiro está formatado para permitir a impressão até 45 linhas de fecho por página.</p>
+<p><br>
+</p>
+<p><a name="ext4">&nbsp;</a></p>
+
+<table border="1" cellpadding="11" cellspacing="0" width="99%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%" cellpadding="0">
+      <tr>
+        <td class="fichesq">NOME: MOVIMENTOS REPRESENTANTE </td>
+        <td class="fichdta">&quot;FICH&quot;=EXT4</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>Ficheiro destinado a Representantes de produtos específicos para a emissão de um
+extracto de pagamentos efectuados. Actualmente são emitidos extractos deste
+tipo para o BCP/AMEX.</p>
+
+<p>Este ficheiro apresenta a lista de movimentos creditados ao
+Comerciante por contrapartida da apresentação das facturas manuais processadas,
+detalhando o desconto aplicado em cada movimento.&nbsp;<br>
+Destina-se a possibilitar a emissão de documentos
+comprovativos para os Comerciantes contratados pelo Representante.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: 
+
+<ul>
+  <li>o registo de <em>Header</em> do ficheiro &quot;TIPREG=0&quot;;</li>
+</ul>
+
+<ul>
+  <li>registos de Detalhe &quot;TIPREG=1&quot;</li></ul>
+<blockquote>
+  <ul type="square">
+    <li>Referência 10 - Informação do emissor da listagem, data e número de
+      páginas</li>
+    <li>Referência 20 - Comerciante, Banco de Apoio e NIB</li>
+    <li>Referência 30 - Endereço de extracto</li>
+    <li>Referência 40 - Lista das operações de fecho</li>
+  </ul>
+</blockquote>
+<ul>
+  <li>o registo de <em>Trailer</em> &quot;TIPREG=9&quot;. </li></ul>
+
+<p><br>
+O ficheiro é disponibilizado mensalmente nos primeiros dias de cada mês.<br>
+Os movimentos incluídos reportam-se até à última Compensação realizada no mês indicado (cerca das 20h).</p>
+
+<p>&nbsp;</p>
+
+<p style="page-break-before: always" class="tipreg">EXT4 - TIPO DE
+REGISTO = 1</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= '1'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">REFER</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#342">342</a></td>
+    <td class="esq" width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Inf. do Emissor, Data e Pag.</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td width="200" class="esq">Refª 10</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIP-SER-EXT</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/camp1100.htm#1103">1103</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDCOMEMP</td>
+    <td class="dta" width="45">7</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#327">327</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDEST</td>
+    <td class="dta" width="45">4</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#328">328</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DT_EMI_EXT</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/camp2700.htm#2794">2794</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NUM_PAG</td>
+    <td class="dta" width="45">3</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp2700.htm#2796">2796</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>BAC, N.º Est. e NIB</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="85">&nbsp;</td>
+    <td class="esq">Refª 20</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">COD_AMX_PT</td>
+    <td class="dta" width="45">3</td>
+    <td width="45">N</td>
+    <td><a href="../../Campos/camp2800.htm#2801">2801</a></td>
+    <td class="esq">= 955</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDCOMREP</td>
+    <td class="dta" width="45">7</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp800.htm#855">855</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NOME_BAN</td>
+    <td class="dta" width="45">40</td>
+    <td width="45">A</td>
+    <td><a href="../../Campos/camp1800.htm#1838">1838</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODBAN</td>
+    <td class="dta" width="45">4</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos2.htm#103">103</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CODAGE</td>
+    <td class="dta" width="45">4</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos2.htm#134">134</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NCONTA</td>
+    <td class="dta" width="45">11</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos3.htm#257">257</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">CDNIB</td>
+    <td class="dta" width="45">2</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/campos4.htm#321">321</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Endereço de extracto</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">Refª 30</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NOME_CLI</td>
+    <td class="dta" width="45">30</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#080">080</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ENDER_CLI</td>
+    <td class="dta" width="45">40</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#081">081</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">LOC_CLI</td>
+    <td class="dta" width="45">20</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#082">082</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">C_POST_CLI</td>
+    <td class="dta" width="45">8</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#083">083</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">L_POST_CLI</td>
+    <td class="dta" width="45">25</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos1.htm#084">084</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">&nbsp;</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160"><b>Operações</b></td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45" >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esq">Refª 40</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">REF_LINHA</td>
+    <td class="dta" width="45">31</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/camp2800.htm#2805">2805</a></td>
+    <td class="esq">Até 45 linhas</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DT_FECHO</td>
+    <td class="dta" width="45">8</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp900.htm#931">931</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTDEB</td>
+    <td class="dta" width="45">16</td>
+    <td width="45" >N</td>
+    <td><a target="explicac" href="../../Campos/campos2.htm#108">108</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTCRED</td>
+    <td class="dta" width="45">16</td>
+    <td width="45" >N</td>
+    <td><a target="explicac" href="../../Campos/campos2.htm#109">109</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">DESC</td>
+    <td class="dta" width="45">8</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp900.htm#937">937</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">MNT-LIQ</td>
+    <td class="dta" width="45">13</td>
+    <td width="45" >N</td>
+    <td><a href="../../Campos/camp900.htm#944">944</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL</td>
+    <td class="dta" width="45">1</td>
+    <td width="45" >A</td>
+    <td><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td class="esq">&nbsp;</td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0">
+</table>
+
+<p class="nove"><br>
+<b>Notas:</b></p>
+<p class="nove">As referências iniciais apresentam os dados de identificação, tipo de serviço posicionado, endereçamento dos comerciantes contratados, e a data a que os movimentos se reportam.&nbsp;</p>
+<p class="nove">A referência 40 apresenta os dados necessários à impressão da listagem (ou à sua disponibilização num canal desmaterializado)
+das facturas manuais apresentadas de um determinado produto financeiro, a emitir
+para cada Comerciante contratado pela respectiva entidade contratante.<br>
+Discrimina o montante de cada movimento e o respectivo desconto aplicado.<br>
+<br>
+O ficheiro está formatado para permitir a impressão até 45 linhas de fecho por página.</p>
+
+
+<p>&nbsp;</p>
+
+
+</body>
+</html>

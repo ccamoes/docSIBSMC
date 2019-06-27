@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="subject" content="MODELO GLOBAL">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Caracterização do CPD do Banco</title>
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicei.htm#I';</script>
+</head>
+
+<body>
+
+<h1><br>
+Para visualizar o formulário, clique <a href="i_a1b.doc">aqui</a>. </h1>
+
+<h1>Para preencher o formulário, siga as <a href="i_a1b.htm#*">instruções</a>.</h1>
+
+<p>&nbsp;</p>
+
+<h3>CARACTERIZAÇÃO DO CENTRO DE PROCESSAMENTO DE DADOS (CPD) DO EMISSOR </h3>
+
+<p><br>
+A parametrização de vários Centros de Processamento de Dados (CPD) possibilita a
+existência de vários cenários de funcionamento para o mesmo emissor. <br>
+O preenchimento deste conjunto deve ter como base as características de funcionamento do
+Centro de Processamento de Dados (CPD) do Emissor. Se houver mais do que um, deve ser
+preenchido um impresso por cada CPD. </p>
+
+<p>O Emissor deve preencher e enviar à SIBS este documento aquando do início
+de funcionamento de um novo CPD. Sempre que se pretenda alterar uma das parametrizações
+em uso, deve ser utilizada a funcionalidade de <a href="i3.htm#I.3.16">Pedido de
+Caracterização de Emissores</a> disponibilizada no Terminal de Serviços SIBS. Para
+situações de excepção em que tal não seja possível, o impresso anexo deve ser
+preenchido e remetido à SIBS. </p>
+
+<p class="a">O Emissor indica o ambiente em que pretende realizar parametrizações por escolha de uma das opções para o “Tipo de Caracterização”: </p>
+
+<ul class="a">
+  <li>Pré-Produção - as parametrizações indicadas referem-se exclusivamente ao ambiente de Pré-Produção. O Emissor indica posteriormente se pretende anular estas parametrizações ou integrá-las em Produção;</li>
+  <li>Produção (e em Pré-Produção) - as parametrizações indicadas são efectuadas em paralelo nos ambientes de Pré-Produção e de Produção.</li>
+</ul>
+
+<h6><br>
+1. CÓDIGO DO EMISSOR</h6>
+
+<p>Indique o número de identificação da instituição de crédito no sistema
+Multibanco. </p>
+
+<h6><br>
+2. CPD</h6>
+
+<p>Indique o número do CPD a que dizem respeito os dados preenchidos. <br>
+O Emissor deve seguir uma numeração sequencial com início no '1', que equivale ao CPD
+principal, isto é, aquele para onde são expedidos os ficheiros que apresentam o saldo da
+Instituição de Crédito nas compensações financeiras, nomeadamente o ficheiro de
+Resumo de Compensação Multibanco (<a href="../l-iii/rmb.htm">ERMB</a>). </p>
+
+<h6 class="a"><br>
+3. ELEMENTOS GENÉRICOS</h6>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esqa" nowrap><strong><br>
+      3.1.&nbsp;&nbsp;</strong></td>
+    <td class="esqa"><br>
+      <strong>LOCAL DO CENTRO DE PROCESSAMENTO&nbsp;</strong><p>Indique a localização usualmente utilizada para designar o CPD (por exemplo, Lisboa,
+Porto, Açores ou Madeira). </td>
+  </tr>
+  <tr>
+    <td><strong>&nbsp; </strong></td>
+    <td>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esqa"><strong><br>
+      3.2.</strong></td>
+    <td class="esqa"><br>
+      <strong>ENDEREÇOS PARA ENVIO DE FICHEIROS POR CPD</strong><p class="a">Indique a identificação do destino de
+      <i> File Transfer</i> para o envio de ficheiros por CPD. Este endereço é utilizado para o envio dos ficheiros Destinos
+      (<a href="../l-iii/dst-1.htm">DST5</a>) e Captura e Lista Negra (<a href="../l-iii/cln.htm">CLN5</a>). </td>
+  </tr>
+  <tr>
+    <td><strong>&nbsp; </strong></td>
+    <td>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esqa"><strong><br>
+      3.3.</strong></td>
+    <td class="esqa"><br>
+      <strong>INDICADOR DE ENVIO DE FICHEIRO DE DETALHE</strong>
+      <p class="a">Indique se é pretendido o envio do ficheiro Detalhes (<a href="../l-iii/det.htm">DET5</a>) para o endereço de
+      <i> File Transfer</i> de envio de Ficheiros para BIN ou, em omissão, para o endereço de
+      <i> File Transfer </i> de envio de Ficheiros por CPD:</p>
+      <ul class="a">
+        <li>Não - envio de Detalhes por CPD</li>
+        <li>Sim - envio de Detalhes por BIN</li>
+      </ul>
+ </td>
+  </tr>
+</table>
+
+<h6>
+4. CENÁRIO DE FUNCIONAMENTO</h6>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap><strong><br>
+    4.1.&nbsp;&nbsp;</strong></td>
+    <td class="esq"><br>
+    <strong>CENÁRIOS DE FUNCIONAMENTO</strong><ul>
+      <li>Na primeira linha, assinale o cenário de funcionamento geral para o CPD. </li>
+      <li>Na segunda linha e se o CPD tiver <em>Real-Time</em> (RT), assinale o cenário de
+        funcionamento de degradação do RT, ou seja, o cenário de autorização das operações
+        que vigora quando o Emissor não está disponível para responder. </li>
+      <li>Na terceira linha, assinale o cenário de funcionamento controlado (e com supervisão
+        humana), para quando existirem alterações planeadas ao funcionamento do CPD. </li>
+    </ul>
+    <p>Para mais informações, consulte o capítulo '<a href="a1.htm">Cenários de
+    Funcionamento</a>'. </td>
+  </tr>
+  <tr>
+    <td><strong>&nbsp; </strong></td>
+    <td>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq"><strong><br>
+    4.2.</strong></td>
+    <td class="esq"><br>
+    <strong>CENÁRIO DE SALDO DE CRÉDITO DISPONÍVEL</strong> <p>Cenário a indicar no caso
+    do Emissor possuir cartões que funcionam sob o cenário de Saldo de Crédito Disponível.
+    </p>
+    <p>Para mais informações, consulte o capítulo '<a href="a1.htm#A.1.3.2">Saldo de
+    Crédito Disponível</a>'. </td>
+  </tr>
+</table>
+
+<h6><br>
+5. <em>REAL-TIME</em></h6>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq"><strong><br>
+      5.1.&nbsp;&nbsp;</strong></td>
+    <td class="esq"><br>
+    <strong>ACTUALIZAÇÃO DO SALDO DE CRÉDITO DISPONÍVEL EM <em>REAL-TIME </em></strong><p>O
+    Emissor pode indicar à SIBS que pretende que o &quot;Saldo de Crédito Disponível&quot;
+    residente na SIBS seja actualizado com todas as mensagens de resposta do RT onde é
+    transmitido o saldo da conta do cliente, e não apenas pela informação do ficheiro
+    Comunicação de Saldos de Crédito (<a href="../l-iii/escd.htm">ESCD</a>). <br>
+    <br>
+    Para mais informações, consulte o capítulo '<a href="a1.htm#A.1.3.2">Saldo de Crédito
+    Disponível</a>'. </td>
+  </tr>
+  <tr>
+    <td><strong>&nbsp; </strong></td>
+    <td>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esq"><strong><br>
+      5.2.</strong></td>
+    <td class="esq"><br>
+    <strong>ACTUALIZAÇÃO DO SALDO DE CONTA EM RT </strong><p>O Emissor pode indicar à SIBS
+    que pretende que o &quot;Saldo de Conta&quot; residente na SIBS seja actualizado com todas
+    as mensagens de resposta do RT onde é transmitido o saldo da conta do cliente, e não
+    apenas pela informação do ficheiro Comunicação de Saldos de Véspera (<a
+    href="../l-iii/ecsv.htm">ECSV</a>). </p>
+    <p>Para mais informações, consulte o capítulo '<a href="a1.htm#A.1.1.2">Cenário de
+    Saldo de Conta</a>'. </td>
+  </tr>
+  <tr>
+    <td><strong>&nbsp; </strong></td>
+    <td>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esqa"><strong><br>
+      5.3.</strong></td>
+    <td class="esqa"><br>
+      <strong>PARÂMETROS DAS SESSÕES DE <em>REAL-TIME </em></strong>
+      <p>Para mais informações, consulte o capítulo <a href="a1.htm#Quais">A.1.1.1</a>
+(nomeadamente 'Quais são os procedimentos após a interrupção de sessão de <em>Real-Time</em>?'). </td>
+  </tr>
+</table>
+
+<h6 class="a"><br>
+6. SERVIÇO TELEMULTIBANCO</h6>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esqa" nowrap><strong><br>
+      6.1.&nbsp;&nbsp;</strong></td>
+    <td class="esqa"><br>
+      <strong>DISPONIBILIZAÇÃO DO SERVIÇO</strong><p class="a">Indique se pretende disponibilizar o acesso ao serviço Telemultibanco através deste CPD. </td>
+  </tr>
+  <tr>
+    <td><strong>&nbsp; </strong></td>
+    <td>&nbsp; </td>
+  </tr>
+  <tr>
+    <td class="esqa"><strong><br>
+      6.2.</strong></td>
+    <td class="esqa"><br>
+      <strong>PARAMETRIZAÇÃO DO ACESSO AO SERVIÇO</strong><p class="a">Se o Emissor pretende disponibilizar o serviço Telemultibanco aos seus clientes, é necessário que neste ponto defina a forma como são criadas as condições de acesso ao serviço disponibilizado aos seus clientes. Para tal, determina:
+      <ul class="a">
+        <li>
+          <p class="a">quem inscreve os clientes no serviço (o Emissor ou o Operador móvel);</li>
+        <li>
+          <p class="a">se o telecódigo de acesso, do conhecimento do cliente, permite aceder apenas às contas do
+          Banco ou a todas as contas que o cliente venha a associar ao seu telemóvel. A segunda opção possibilita que o cliente possua um telecódigo único e comum para acesso ao serviço através do seu telemóvel;</li>
+        <li>
+          <p class="a">se a associação de um qualquer cartão do Emissor a um telemóvel é efectuada em operação no Caixa Automático ou por uma acção do Emissor no Terminal de Serviços SIBS.</li>
+      </ul>
+ </td>
+  </tr>
+</table>
+
+<h6 class="a">7. PEDIDO DE CHEQUES PERSONALIZADOS </h6>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esqa" nowrap><strong><br>
+      7.1.&nbsp;&nbsp;</strong></td>
+    <td class="esqa"><br>
+      <strong>OPÇÕES APRESENTADAS AO CLIENTE NOS CAIXAS AUTOMÁTICOS</strong>
+      <p class="a">Se o Emissor pretende disponibilizar aos seus clientes a operação de Pedido de Cheques Personalizados (código de operação 0DB), indique o tipo de cheque a emitir (cruzado ou não cruzado), o local de entrega dos cheques e as opções (no máximo de 8) para o número de cheques que podem ser solicitados, apresentadas no Caixa Automático para escolha pelo cliente. </td>
+  </tr>
+</table>
+
+<h6 class="a"><br>
+8.
+    <strong>COMPRAS COM PAGAMENTO FRACCIONADO </strong> </h6>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq"><strong><br>
+      8.1.&nbsp;&nbsp;</strong></td>
+    <td class="esq"><br>
+    <strong>COMPRAS COM PAGAMENTO FRACCIONADO (Funcionalidade Linha de Crédito) </strong><p
+    >Se o Emissor pretender disponibilizar esta funcionalidade para os seus cartões
+    EMV, tem obrigatoriamente que definir neste ponto quais os cenários aplicáveis para
+    decisão das operações de compra com Pagamento Fraccionado. </p>
+    <p>Para mais informações, consulte o capítulo <a href="a7.htm">A.7</a>. </td>
+  </tr>
+</table>
+
+<h6><br>
+9. OPERAÇÕES POR CENÁRIOS DE FUNCIONAMENTO </h6>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap><strong><br>
+      9.1.&nbsp;&nbsp;</strong></td>
+    <td class="esq"><br>
+    <strong>OPERAÇÕES DISPONÍVEIS </strong><p>Indique quais as operações que
+    devem estar disponíveis para cada um dos cenários possíveis do CPD, podendo o Emissor
+    não estar interessado em (ou preparado para) disponibilizar alguma dessas operações. À
+    medida que aquelas forem testadas entre a SIBS e o Emissor, podem enviar uma
+    actualização da Caracterização do CPD, logo que hajam mais operações prontas. </p>
+    <p>Para mais informações, consulte o capítulo <a href="a6.htm">A.6</a>. </td>
+  </tr>
+</table>
+
+<p><strong><br>
+<a name="*">Instruções</a> de preenchimento:</strong> 
+
+<ul>
+  <li>Clique <a href="i_a1b.doc">aqui</a> com o botão do lado direito do rato;</li>
+  <li>Escolha a opção &quot;Save target as...&quot; (ou &quot;Guardar destino
+    como...&quot;);</li>
+  <li>Grave o ficheiro num directório;</li>
+  <li>Preencha o formulário, utilizando o Microsoft Word.</li>
+</ul>
+
+<p>O envio do documento deve efectuar-se alguns dias antes da data pretendida para a
+entrada em funcionamento por e-mail para o <span class="a">Departamento de Produção
+da SIBS, Área de Regularizações (regularizacoes@sibs.pt).</span> </p>
+
+<p>Alternativamente pode imprimi-lo e envia-lo por correio/fax para o destinatário acima
+referido.</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

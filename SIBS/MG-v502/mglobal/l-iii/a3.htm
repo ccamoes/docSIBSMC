@@ -1,0 +1,491 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<title>A.3 COMUNICAÇÕES COM MÓDULOS DE SEGURANÇA (HSMs)</title>
+<script>top.captulos.location='indicea.htm#A';</script>
+
+</head>
+
+<body>
+
+<h1><a name="A.3">A.3</a> COMUNICAÇÕES COM MÓDULOS DE SEGURANÇA (HSMs)</h1>
+
+<p>&nbsp;</p>
+
+<p>Pretende-se neste capítulo apresentar, em linhas gerais, os requisitos
+necessários para estabelecer comunicações em TCP-IP entre Aplicações CICS e
+HSMs (modelos SSM16K fornecidos pela SIBS), bem como apresentar sugestões de
+desenho base para a implementação de um interface, que proporcione às Aplicações
+cliente um acesso fácil e simples.
+
+</p>
+<p>As sugestões adiante apresentadas, não sendo a única forma de abordar o
+problema, foram as que serviram de base ao desenvolvimento efectuado para uso na
+SIBS.
+
+</p>
+<p>&nbsp;
+
+</p>
+<h2><a name="A.3.1">A.3.1</a>  LIGAÇÕES FÍSICAS</h2>
+<p class="center"><br>
+<img border="0" src="imagens3/a3-1.gif" alt="a3-1.gif" width="384" height="422">
+
+</p>
+<p><br>
+O <i>router</i> Cisco 2600, deve ter uma porta <i> Ethernet</i> e uma placa de 16 linhas assíncronas
+(NM-16A), cujos cabos terão terminações RJ45.<br>
+Os cabos devem ser ligados à portas dos HSMs usando conversores RJ45 para
+DB9 fêmea.<br>
+O <i>router</i> deve ser parametrizado, de forma a ter um endereço IP atribuído e
+uma porta a cada cabo de ligação aos HSMs (assim cada HSM fica
+identificado em termos de endereçamento por um IP <i> address/port</i>).
+
+</p>
+<p>&nbsp;
+
+</p>
+<h2><a name="A.3.2">A.3.2</a> LIGAÇÕES LÓGICAS
+
+</h2>
+<p>
+<br>
+O desenho seguinte mostra as camadas de <i> software</i> de base e rede, envolvidas
+na comunicação entre uma Aplicação CICS e o Módulo de Segurança (SSM 16K).
+</p>
+<p class="center">
+<br>
+&nbsp;<img border="0" src="imagens3/a3-2.gif" width="529" height="262">
+</p>
+<p><br>
+O rectângulo que representa a Aplicação, pode na prática dividir-se em
+Aplicação Cliente e uma ou duas camadas que implementam o interface.
+</p>
+<p>Essa(s) camada(s) tem(êm) como funções:
+
+</p>
+<ul>
+  <li> Tratar o
+protocolo usado pelos HSMs (envelopagem das mensagens);</li>
+  <li> Escolher
+e controlar o uso dos vários HSMs disponíveis;</li>
+  <li> Gerir o
+manuseamento dos <i>sockets</i> TCP a usar;</li>
+  <li> Efectuar
+todos os serviços de interface com o <i> socket</i> (<i>Connect</i>, <i>Write</i>,
+    <i>Read</i>, <i>Close</i>, etc.).</li>
+</ul>
+<p>
+&nbsp;
+</p>
+<h2><a name="A.3.3">A.3.3</a> SUGESTÕES DE IMPLEMENTAÇÃO
+
+</h2>
+<p><br>
+A comunicação com um HSM inserido no conjunto de <i>hardware</i> atrás
+apresentado, faz-se por meio de <i>sockets</i> TCP, a abrir entre uma transacção CICS
+e um endereço IP (atribuído ao <i> Router</i> que liga ao HSM) e uma porta (atribuída
+a cada um dos HSMs).
+
+</p>
+<p>Os serviços de comunicação a implementar, devem usar o “CICS TCP-IP
+Socket Interface (TCP-IP for MVS)”.
+
+</p>
+<p>Em particular as seguintes funções são necessárias:
+
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INITAPI<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SOCKET<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONNECT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WRITE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELECT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; READ<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLOSE
+
+</p>
+<p>(Consultar Manual “CICS TCP-IP Socket Interface Guide” da IBM)
+
+</p>
+<p>
+Com vista a uma implementação modular, sugere-se a criação de uma rotina
+para efectuar o manuseamento dos <i>sockets</i>, capaz de efectuar 4 serviços
+distintos, sendo-lhe passados como argumentos o serviço requerido e os parâmetros
+adequados ao mesmo.
+</p>
+<p>
+&nbsp;
+</p>
+<h3><a name="A.3.3.1">A.3.3.1</a> ROTINA DE COMUNICAÇÃO
+
+</h3>
+<p>
+&nbsp;<br>
+O quadro seguinte dá uma ideia dos parâmetros requeridos, e funções
+envolvidas em cada serviço.
+</p>
+<p>
+<br>
+</p>
+<table border="1" cellspacing="0" cellpadding="3" width="578">
+  <tr>
+    <th width="54" >Serviço
+      
+    </th>
+    <th width="110" >Parâmetros
+      
+    </th>
+    <th width="337" >Processo
+      
+    </th>
+    <th width="67" >Funções
+      do <i> socket</i>
+      
+    </th>
+  </tr>
+  <tr>
+    <td width="54" class="esq" >Abrir <i> socket</i>
+      
+    </td>
+    <td class="esq" width="110" >Id. Destino
+      (HSM)
+      
+    </td>
+    <td class="esq" width="337" >Fazer
+      mapeamento da id. Destino para um endereço IP e <i> port</i> ( deve haver uma
+      tabela, para que o cliente não tenha de lidar com endereços).<br>
+      Preparar e efectuar os <i>calls</i> necessários ao EZASOCKET.<br>
+      Devolver indicador de sucesso.
+    </td>
+    <td width="67" class="esq" >INITAPI<br>
+      SOCKET<br>
+      CONNECT
+    </td>
+  </tr>
+  <tr>
+    <td width="54" class="esq" >Enviar MSG
+      
+    </td>
+    <td class="esq" width="110" >Tamanho da
+      MSG<br>
+      MSG
+    </td>
+    <td class="esq" width="337" >Preparar e
+      efectuar <i>call</i>.<br>
+      Devolver indicador de sucesso.
+    </td>
+    <td width="67" class="esq" >WRITE
+      
+    </td>
+  </tr>
+  <tr>
+    <td width="54" class="esq" >Receber MSG
+      
+    </td>
+    <td class="esq" width="110" >Tamanho do <i>
+      buffer</i><br>
+      <i>BUFFER</i>
+    </td>
+    <td class="esq" width="337" >Preparar e
+      efectuar <i> call</i> ‘select’ (timeout).<br>
+      Verificar se tem dados para receber.<br>
+      Receber dados.<br>
+      Verificar se recebeu tudo (senão volta a receber).<br>
+      Verificar se cabe no <i>buffer</i>.<br>
+      Devolver MSG e indicador de sucesso.
+    </td>
+    <td width="67" class="esq" >SELECT<br>
+      READ
+    </td>
+  </tr>
+  <tr>
+    <td width="54" class="esq" >Fechar <i> socket</i>
+      
+    </td>
+    <td class="esq" width="110" >-
+      
+    </td>
+    <td class="esq" width="337" >Efectuar <i>call</i>.
+      
+    </td>
+    <td width="67" class="esq" >CLOSE
+      
+    </td>
+  </tr>
+</table>
+<p><br>
+Embora para o caso do HSM, os serviços “enviar MSG” e “receber MSG”
+pudessem ser reunidos numa só execução (a seguir a um pedido ao HSM tem de
+haver sempre uma resposta deste), a implementação de dois serviços distintos
+pode trazer vantagens para outras aplicações.
+
+</p>
+<p>Esta rotina tem a vantagem de poder ser usada em qualquer das hipóteses
+adiante sugeridas, bem como em outras aplicações.
+
+</p>
+<p>
+&nbsp;
+</p>
+<h3><a name="A.3.3.2">A.3.3.2</a>  ROTINA DE INTERFACE COM UM HSM
+
+</h3>
+<p><br>
+Esta é a rotina que a Aplicação Cliente deve chamar quando quer
+enviar um pedido a um HSM e receber a respectiva resposta.
+</p>
+<p>O serviço é só um (sempre que se envia deve-se receber a resposta no
+retorno) e o argumento deve ser a MSG pedido a enviar/MSG resposta a receber (ou um argumento para o pedido e outro para a resposta).
+
+</p>
+<p>As funções desta rotina podem ser:
+
+</p>
+<ul>
+  <li>Escolher
+um HSM a usar (haverá uma pool, mapeada numa tabela ); *</li>
+  <li>Marcar o
+HSM escolhido, para não ser usado por outro processo;</li>
+  <li>Envelopar a mensagem (colocar DLE STX, <i> byte sttufing</i>, DLE ETX, LRC);</li>
+  <li>Enviar a
+mensagem e receber a resposta (apresenta-se mais adiante duas hipóteses de
+processo de envio, onde se descreve esta parte);</li>
+  <li>Desenvelopar a mensagem (o contrário da envelopagem com validação do
+    LRC);</li>
+  <li>Libertar
+HSM usado;</li>
+  <li>Devolver
+a mensagem à aplicação mais indicador de sucesso.</li>
+</ul>
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap>*&nbsp;&nbsp;</td>
+    <td class="just"> A tabela de HSMs deve ter, além de uma identificação para cada um,
+um indicador de uso, possíveis características ou estados diferentes,
+contadores estatísticos de pedidos, erros, etc. e outra <i>flag</i>, que são
+      referidas adiante. A escolha deve ter em conta estes parâmetros, bem como um
+algoritmo de utilização (rotativo, o primeiro livre, etc.).</td>
+  </tr>
+</table>
+<p>Esta rotina também deve ser usada em qualquer das duas hipótese que se
+seguem.
+
+</p>
+&nbsp;<h3><a name="A.3.3.3">A.3.3.3</a>  HIPÓTESE 1 - TODO O INTERFACE
+INCORPORADO NA APLICAÇÃO
+
+</h3>
+<p class="center"><br>
+<img border="0" src="imagens3/a3-3.gif" alt="a3-3.gif" width="496" height="275">
+
+</p>
+<p>Neste caso, a rotina de interface com o HSM chama directamente 4 vezes a
+rotina de comunicação (usando os 4 serviços definidos), para abrir comunicação,
+enviar MSG, receber resposta e fechar comunicação.
+
+</p>
+<p>O <i>socket</i> fica portanto associado à transacção cliente, não havendo outras
+transacções envolvidas, e sendo usado um <i> socket</i> para cada transacção cliente
+que queira enviar um pedido ao HSM.
+
+</p>
+<p>Esta hipótese, sendo a mais simples de implementar, não é no entanto a
+mais “performante”, dado que implica uma abertura e um fecho de <i> socket</i> por
+cada pedido ao HSM.
+
+</p>
+<p>&nbsp;
+</p>
+<h3><a name="A.3.3.4">A.3.3.4</a>  HIPÓTESE 2 - TRANSACÇÃO DE COMUNICAÇÃO
+SEPARADA DA TRANSACÇÃO CLIENTE
+
+</h3>
+<p class="center">
+<br>
+<img border="0" src="imagens3/a3-4.gif" alt="a3-4.gif" width="528" height="380">
+</p>
+<p>Nesta hipótese, temos uma transacção CICS dedicada à comunicação, que,
+sem fechar o <i>socket</i>, pode satisfazer sucessivos pedidos de diferentes transacções
+cliente.
+
+</p>
+<p>Existe uma instância desta transacção para cada HSM *, associada
+portanto a cada ocorrência da tabela de HSMs.
+</p>
+<p>A tabela de HSMs deve ter indicadores de estado (o HSM está disponível,
+a respectiva Trans. está à espera de trabalho, o HSM está a ser usado, etc.), que
+permitam a sincronização entre a rotina de interface com HSM e a transacção
+de comunicação.
+
+</p>
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq" nowrap>*&nbsp;&nbsp;&nbsp;</td>
+    <td class="just"> Também é possível fazer um desenho desta transacção, que permita que
+uma só instância sirva todos os HSMs e todas as Aplicações Cliente. Porém
+esse desenho torna-se um pouco mais complexo, uma vez que o mesmo programa tem
+de manusear em simultâneo vários <i>sockets</i>.</td>
+  </tr>
+</table>
+<p><br>
+A rotina de interface com HSM, após preparar a mensagem para enviar, deve
+usar a seguinte lógica:
+
+</p>
+<ul>
+  <li> Colocar
+a MSG na área de passagem para a transacção de comunicação;</li>
+  <li> Acordar
+a transacção de comunicação (CANCEL REQID). Se esta não estiver
+“viva”, arrancá-la por START;</li>
+  <li> Esperar
+pela resposta (DELAY com REQID), por um tempo limitado (<i>timeout</i>);</li>
+  <li> Obter a
+resposta na área de passagem da transacção de comunicação.</li>
+</ul>
+<p><br>
+A transacção de comunicação deve ter a seguinte lógica:
+
+</p>
+<ol>
+  <li>
+Procurar uma ocorrência adequada no tabela de HSMs;</li>
+  <li>
+Marcar a ocorrência;</li>
+  <li>
+Abrir a comunicação com o HSM (primeiro serviço da rotina de comunic.);</li>
+  <li>
+Mudar estado do HSM na tabela para “ocupado”;</li>
+  <li>
+Verificar se tem novo serviço para executar;</li>
+  <li> Se não
+tiver, passar ao ponto 15;</li>
+  <li> Se o
+serviço indicar que deve terminar, fechar a comunicação (serviço de fecho
+da rotina de comunic.) e terminar;</li>
+  <li> Ler a
+nova MSG a enviar;</li>
+  <li> Enviar
+a MSG ao HSM (serviço da rotina de comunic.);</li>
+  <li>
+Receber a MSG resposta&nbsp;&nbsp; “&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    “&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; “&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    “&nbsp; ;</li>
+  <li>
+Verificar se a resposta é um NACK (se for, voltar a enviar a mensagem);</li>
+  <li>
+Devolver resposta à rotina de interface com HSM;</li>
+  <li>
+“Acordar” a rotina (CANCEL REQID indicado na tabela de HSM);</li>
+  <li> Mudar
+estado do HSM na tabela para “à espera de trabalho”;</li>
+  <li> Ficar
+à espera de novo trabalho (DELAY REQID);</li>
+  <li>
+Voltar ao ponto 4.</li>
+</ol>
+<p><br>
+<b>Passagem de dados (MSGs) entre a rotina de interface com HSM e a transacção
+de comunicação:</b>
+
+</p>
+<ul>
+  <li>As
+mensagens podem ser passadas da rotina para a transacção de comunicação e
+vice-versa de várias maneiras;</li>
+  <li><i>Buffer</i>
+de memória integrado ou associado a cada ocorrência da tabela de HSMs;</li>
+  <li><i> Queue
+Temporary Storage</i>;</li>
+  <li><i> Queue
+Transient Data</i>;</li>
+  <li> Etc.</li>
+</ul>
+<p>
+<br>
+<b>Fim da transacção:</b>
+</p>
+<ul>
+  <li>A
+transacção de comunicação, tem de ter uma forma de terminar controladamente;</li>
+  <li>Uma
+possibilidade, é receber um pedido especial, que indique que deve terminar;</li>
+  <li>Esse
+pedido pode ser feito por um programa específico, a executar no fecho do CICS,
+ou a executar por outro processo.</li>
+</ul>
+<p>
+&nbsp;
+</p>
+<h3><a name="A.3.3.5">A.3.3.5</a>  PRESSUPOSTOS E POSSÍVEIS DIVERGÊNCIAS
+
+</h3>
+<p><br>
+As hipóteses apresentadas acima são no pressuposto de que a comunicação
+vai ser estabelecida directamente da região CICS onde corre a Aplicação (AOR) para o HSM.
+
+</p>
+<p>Nada impede que cada AOR, estabeleça no entanto a suas comunicações com um
+ou vários HSMs, mas cada HSM não pode ser partilhado por diferentes AORs. Significa isto que, cada AOR
+deve ter uma <i> pool</i> de HSMs própria.
+
+</p>
+<p>Se se pretender ter as comunicações concentradas numa única região CICS,
+sendo todos os HSMs ligados a essa região e usados pelas diferentes AORs,
+então a 1ª hipótese não é viável e a 2ª tem de ser adaptada:
+
+</p>
+<ul>
+  <li>A
+transacção de comunicação deve correr na região de comunicações, onde
+também devem residir as tabelas;</li>
+  <li>A rotina
+de interface com HSM também passa a correr na região de comunicações,
+mas deve ser chamada por LINK e os argumentos têm de ser passados em
+COMMAREA.</li>
+</ul>
+<p>
+&nbsp;
+</p>
+<h3><a name="A.3.3.6">A.3.3.6</a>  GESTÃO DAS TABELAS
+
+</h3>
+<p><br>
+As tabelas referidas (tabela de HSMs e tabela de endereços IP) devem
+ter um suporte com acessos múltiplos, rápidos e no caso da tabela de HSMs,
+actualizável em cada serviço executado:
+
+</p>
+<ul>
+  <li> Tabela <i>
+assembler</i></li>
+  <li> GETMAIN <i>
+Shared</i></li>
+  <li> Tabela
+DB2</li>
+  <li>Outro</li>
+</ul>
+<p>Para a sua actualização (inserção, modificação, abate ou consulta de
+ocorrências), deve ser implementada uma transacção&nbsp;ou outro
+processo equivalente.
+
+</p>
+<p>No caso de se usarem áreas de memória volátil, devem obviamente ter um
+suporte em disco para as informações base (a carregar em cada arranque de
+CICS).
+
+</p>
+
+<p class="dta"><br>
+<a href="a2.htm">Anterior</a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+</body>
+</html>

@@ -1,0 +1,1618 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>D.3.2 LISTA DAS MENSAGENS</title>
+<base target="main">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indiced.htm#D';</script>
+</head>
+
+<body>
+
+<h2>D.3.2 LISTA DAS MENSAGENS</h2>
+
+<p><br>
+As mensagens encontram-se distribuídas pelos grupos a seguir indicados, dado que se
+destinam a diferentes tipos de Participantes no Sistema MB e efectuam pedidos ou
+transportam informação de natureza diferenciada:</p>
+
+<p>&nbsp;</p>
+
+<p><strong>GRUPO 1 - Emissores de Cartões com serviços de processamento
+através da SIBS</strong></p>
+
+<p>Mensagens para: 
+
+<ul >
+  <li>operação com Cartão (ex.: Levantamento, Consulta de Saldos);</li>
+  <li>pedido de dados de Cliente (suporte ao SIDF - Sistema Interbancário de Detecção de
+    Fraude);</li>
+  <li>suporte a serviços especiais próprios de um Participante.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><strong>GRUPO 2: Bancos MB (domiciliatários de contas D.O.)</strong></p>
+
+<p>Mensagens para: 
+
+<ul >
+  <li>operação com NIB (ex.: Transferência Bancária para o Destinatário);</li>
+  <li>operação de Comerciante (ex.: Fecho de TPA).</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><strong>GRUPO 3: <em>Acquirers</em> com serviços de processamento através
+da SIBS:</strong></p>
+
+<p>Mensagens para: 
+
+<ul >
+  <li>operações de TPAs (ex: Totais por Fecho TPA);</li>
+  <li>informações para bloqueamento (Lista Negra, Lista Cinzenta), dos cartões que
+    representam;</li>
+  <li>operações com cartões (realizadas no âmbito da sua contratação).</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><strong>GRUPO 4: Representantes de Cartões, com serviços de processamento
+através da SIBS</strong></p>
+
+<p>Mensagens para: 
+
+<ul >
+  <li>operação com Cartão com representação (ex.: Compras, Autorizações de Operações
+    no Estrangeiro).</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>Do ponto de vista técnico, as mensagens podem ainda ser de três tipos: </p>
+
+<p><br>
+
+<ul>
+  <li>TIPO DE MENSAGEM: <a href="d32.htm#TIPO DE MENSAGEM: 1" target="main">1</a>
+    (Transacções <em>Real-Time</em>) <br>
+    Mensagens enviadas a quente, ou seja, envio de operações cuja aprovação depende do
+    Participante.</li>
+</ul>
+
+<p><br>
+
+<ul>
+  <li>TIPO DE MENSAGEM: <a href="d32.htm#TIPO DE MENSAGEM: 2" target="main">2</a> (Anulação
+    Transacções <em>Real-Time</em>)<br>
+    Anulações de mensagens originais cujo envio pode ter sido efectuado
+    através de uma mensagem <em>Real-Time</em> ou de uma mensagem de <em>Reentrie</em>.
+  </li>
+</ul>
+
+<p align="right"><br>
+</p>
+
+<ul style="page-break-before: always">
+  <li>TIPO DE MENSAGEM: <a href="d32.htm#TIPO DE MENSAGEM: 3" target="main">3</a> (Envio de
+    Pendentes - <em>Reentries</em>)<br>
+    Mensagens enviadas a frio, ou seja, para dar conhecimento ao Participante da operação
+    efectuada.</li>
+</ul>
+
+<p><br>
+É a seguinte a lista das mensagens existentes nas sessões SIBS -&gt; Participante:</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellspacing="0" width="100%" cellpadding="3">
+  <tr>
+    <td class="oito">&nbsp;</td>
+    <td width="17%" class="fundo">TIPO DE <br>
+    MENSAGEM 1<br>
+    (<em>Real-Time</em>)</td>
+    <td width="20%" class="fundo">TIPO DE <br>
+    MENSAGEM 2 <br>
+    (Anulação)</td>
+    <td width="18%" class="fundo">TIPO DE<br>
+    MENSAGEM 3 <br>
+    (Pendente)</td>
+    <th width="39%">DESCRIÇÃO</th>
+  </tr>
+  <tr>
+    <td class="mid"><strong>Grupos</strong></td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq">Pedido</td>
+      </tr>
+      <tr>
+        <td class="dta">Resposta</td>
+      </tr>
+    </table>
+    </td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq">Pedido</td>
+      </tr>
+      <tr>
+        <td class="dta">Resposta</td>
+      </tr>
+    </table>
+    </td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq">Pedido</td>
+      </tr>
+      <tr>
+        <td class="dta">Resposta</td>
+      </tr>
+    </table>
+    </td>
+    <th width="39%">&nbsp;</th>
+  </tr>
+  <tr>
+    <td class="mid"><strong>1</strong></td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="116x316x.htm">1161</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="126x.htm">1261</a></td>
+      </tr>
+    </table>
+    </td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="216x.htm">2161</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="22xx32xx.htm">2261</a></td>
+      </tr>
+    </table>
+    </td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="116x316x.htm">3161</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="22xx32xx.htm">3261</a></td>
+      </tr>
+    </table>
+    </td>
+    <td class="esqmid">Operação com Cartão <br>
+    (Emissor)</td>
+  </tr>
+  <tr>
+    <td class="mid"><strong>1</strong></td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="116x316x.htm">1162</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="126x.htm">1262</a></td>
+      </tr>
+    </table>
+    </td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="216x.htm">2162</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="22xx32xx.htm">2262</a></td>
+      </tr>
+    </table>
+    </td>
+    <td>&nbsp; </td>
+    <td class="esqmid">Consulta Saldos e Movimentos</td>
+  </tr>
+  <tr>
+    <td class="mid"><strong>1</strong></td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="1172.htm">1172</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="1272.htm">1272</a></td>
+      </tr>
+    </table>
+    </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="esqmid">Pedido de Dados de Cliente <br>
+    (SIDF e PJ)</td>
+  </tr>
+  <tr>
+    <td class="mid"><strong>1</strong></td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="11823182.htm">1182</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="1282.htm">1282</a></td>
+      </tr>
+    </table>
+    </td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="2182.htm">2182</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="22xx32xx.htm">2282</a></td>
+      </tr>
+    </table>
+    </td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="11823182.htm">3182</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="22xx32xx.htm">3282</a></td>
+      </tr>
+    </table>
+    </td>
+    <td class="esqmid">Serviço Especial Proprietário</td>
+  </tr>
+  <tr>
+    <td class="mid"><strong>2</strong></td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="11633163.htm">1163</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="126x.htm">1263</a></td>
+      </tr>
+    </table>
+    </td>
+    <td>&nbsp;</td>
+    <td><table border="0" cellspacing="0" width="100%" cellpadding="0">
+      <tr>
+        <td class="esq"><a href="11633163.htm">3163</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="22xx32xx.htm">3263</a></td>
+      </tr>
+    </table>
+    </td>
+    <td class="esqmid">Operação com NIB</td>
+  </tr>
+  <tr>
+    <td class="mid"><strong>2</strong></td>
+    <td>&nbsp;</td>
+    <td >
+      <table border="0" width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+        <td class="esq"><a href="2164.htm">2164</a></td>
+        </tr>
+        <tr>
+        <td class="dta"><a href="22xx32xx.htm">2264</a></td>
+        </tr>
+      </table>
+    </td>
+    <td><table border="0" cellspacing="0" width="100%" cellpadding="0">
+      <tr>
+        <td class="esq"><a href="3164.htm">3164</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="22xx32xx.htm">3264</a></td>
+      </tr>
+    </table>
+    </td>
+    <td class="esqmid">Operação Comerciante <br>
+    (Fecho TPA)</td>
+  </tr>
+  <tr>
+    <td class="mid"><strong>3</strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="3135.htm">3135</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="22xx32xx.htm">3235</a></td>
+      </tr>
+    </table>
+    </td>
+    <td class="esqmid">Operação Comerciante <br>
+    (Totais <em>Acquirer</em>)</td>
+  </tr>
+  <tr>
+    <td class="mid"><strong>3</strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="3136.htm">3136</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="22xx32xx.htm">3236</a></td>
+      </tr>
+    </table>
+    </td>
+    <td class="esqmid">Informação Situação de Cartão <br>
+    <em>(Acquirer</em>)</td>
+  </tr>
+  <tr>
+    <td class="mid"><strong>3</strong></td>
+    <td ><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="1137.htm">1137</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="1237.htm">1237</a></td>
+      </tr>
+    </table>
+    </td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="2137.htm">2137</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="22xx32xx.htm">2237</a></td>
+      </tr>
+    </table>
+    </td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="3137.htm">3137</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="22xx32xx.htm">3237</a></td>
+      </tr>
+    </table>
+    </td>
+    <td class="esqmid">Operação com Cartão <br>
+    <em>(Acquirer</em>)</td>
+  </tr>
+  <tr>
+    <td class="mid"><strong>4</strong></td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="11473147.htm">1147</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="1247.htm">1247</a></td>
+      </tr>
+    </table>
+    </td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="2147.htm">2147</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="22xx32xx.htm">2247</a></td>
+      </tr>
+    </table>
+    </td>
+    <td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="esq"><a href="11473147.htm">3147</a></td>
+      </tr>
+      <tr>
+        <td class="dta"><a href="22xx32xx.htm">3247</a></td>
+      </tr>
+    </table>
+    </td>
+    <td class="esqmid">Operação com Cartão <br>
+    (Representante)</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h6><a name="TIPO DE MENSAGEM: 1">TIPO DE MENSAGEM: 1</a> (Transacções <em>Real-Time</em>)</h6>
+
+<blockquote>
+  <p><a href="116x316x.htm">1161</a> Pedido de operação com cartão (Emissor)<br>
+  <a href="126x.htm">1261</a> Resposta ao pedido de operação com cartão (Emissor)<br>
+  <a href="116x316x.htm">1162</a> Pedido de Consulta de Saldos e Movimentos<br>
+  <a href="126x.htm">1262</a> Resposta ao pedido de Consulta de Saldos e Movimentos<br>
+  <a href="11633163.htm">1163</a> Pedido de operação com NIB<br>
+  <a href="126x.htm">1263</a> Resposta a pedido de operação com NIB<br>
+  <a href="1172.htm">1172</a> Pedido de Dados de Cliente (SIDF e PJ)<br>
+  <a href="1272.htm">1272</a> Resposta a pedido de Dados de Cliente&nbsp;(SIDF e PJ)<br>
+  <a href="11823182.htm">1182</a> Pedido de Serviço Especial Proprietário<br>
+  <a href="1282.htm">1282</a> Resposta a pedido de Serviço Especial Proprietário<br>
+  <a href="1137.htm">1137</a> Pedido de operação com cartão (<em>Acquirer)</em><br>
+  <a href="1237.htm">1237</a> Resposta ao pedido de operação com cartão (<em>Acquirer)</em><br>
+  <a href="11473147.htm">1147</a> Pedido de operação com cartão (Representante)<br>
+  <a href="1247.htm">1247</a> Resposta ao pedido de operação com cartão (Representante)</p>
+</blockquote>
+
+<h6 style="page-break-before: always"><br>
+<a name="TIPO DE MENSAGEM: 2">TIPO DE MENSAGEM: 2</a> (Anulação Transacções RT)</h6>
+
+<blockquote>
+  <p><a href="216x.htm">2161</a> Pedido de anulação de operação com cartão (Emissor)<br>
+  <a href="22xx32xx.htm">2261</a> Resposta ao pedido de anulação de operação com cartão
+  (Emissor)<br>
+  <a href="216x.htm">2162</a> Pedido de anulação de Consulta de Saldos e Movimentos<br>
+  <a href="22xx32xx.htm">2262</a> Resposta ao pedido de anulação de Consulta de Saldos e
+  Movimentos<br>
+  <a href="2164.htm">2164</a> Pedido de anulação de
+  operação Comerciante (Fecho TPA)<br>
+  <a href="22xx32xx.htm">2264 </a>Resposta ao pedido de anulação
+  de operação Comerciante (Fecho TPA)<br>
+  <a href="2137.htm">2137</a> Pedido de anulação de operação com cartão (<em>Acquirer</em>)<br>
+  <a href="22xx32xx.htm">2237</a> Resposta ao pedido de anulação de operação com cartão
+  (<em>Acquirer</em>)<br>
+  <a href="2182.htm">2182</a> Pedido de anulação de Serviço Especial Proprietário<br>
+  <a href="22xx32xx.htm">2282</a> Resposta ao pedido de anulação de Serviço Especial
+  Proprietário<br>
+  <a href="2147.htm">2147</a> Pedido de anulação de operação com cartão (Representante)<br>
+  <a href="22xx32xx.htm">2247</a> Resposta ao pedido de anulação de operação com cartão
+  (Representante)</p>
+</blockquote>
+
+<h6><br>
+<a name="TIPO DE MENSAGEM: 3">TIPO DE MENSAGEM: 3</a> (Envio de Pendentes - <em>Reentries</em>)</h6>
+
+<blockquote>
+  <p><a href="116x316x.htm">3161</a> Pedido de operação com cartão pendente (Emissor)<br>
+  <a href="22xx32xx.htm">3261</a> Resposta a pedido de operação com cartão pendente
+  (Emissor)<br>
+  <a href="11633163.htm">3163</a> Pedido de operação com NIB pendente<br>
+  <a href="22xx32xx.htm">3263</a> Resposta a pedido de operação com NIB pendente<br>
+  <a href="3164.htm">3164</a> Pedido de operação Comerciante (Fecho TPA) pendente <br>
+  <a href="22xx32xx.htm">3264</a> Resposta a pedido de operação Comerciante (Fecho TPA)
+  pendente <br>
+  <a href="3135.htm">3135</a> Pedido de operação Comerciante (Totais <em>Acquirer</em>)
+  pendente <br>
+  <a href="22xx32xx.htm">3235</a> Resposta a pedido de operação Comerciante (Totais <em>Acquirer</em>)
+  pendente <br>
+  <a href="3136.htm">3136</a> Pedido de informação de situação de cartão pendente (<em>Acquirer</em>)
+  <br>
+  <a href="22xx32xx.htm">3236</a> Resposta a pedido de informação de situação de cartão
+  pendente (<em>Acquirer</em>) <br>
+  <a href="3137.htm">3137</a> Pedido de operação com cartão pendente (<em>Acquirer</em>)<br>
+  <a href="22xx32xx.htm">3237</a> Resposta a pedido de operação com cartão pendente (<em>Acquirer</em>)<br>
+  <a href="11823182.htm">3182</a> Pedido de Serviço Especial Proprietário pendente<br>
+  <a href="22xx32xx.htm">3282</a> Resposta a pedido de Serviço Especial Proprietário
+  pendente<br>
+  <a href="11473147.htm">3147</a> Pedido de operação com cartão pendente (Representante)<br>
+  <a href="22xx32xx.htm">3247</a> Resposta a pedido de operação com cartão pendente
+  (Representante)</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p>Indicam-se em <a name="seguida">seguida</a> as
+mensagens pelas quais podem ser enviados os diferentes tipos de operação:</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+  <tr>
+    <th rowspan="2" colspan="2" width="38%" class="fundo">Código de Transacção<br>
+    (<a href="../../Campos/campos7.htm#699" target="explicac">699</a>)
+    CODTRN-E</th>
+    <th colspan="9">CÓDIGOS DE MENSAGEM</th>
+  </tr>
+  <tr>
+    <td class="fundo"><a href="116x316x.htm">1161</a></td>
+    <td class="fundo"><a href="216x.htm">2161</a></td>
+    <td class="fundo"><a href="116x316x.htm">3161</a></td>
+    <td class="fundo"><a href="1137.htm">1137</a></td>
+    <td class="fundo"><a href="2137.htm">2137</a></td>
+    <td class="fundo"><a href="3137.htm">3137</a></td>
+    <td class="fundo"><a href="11473147.htm">1147</a></td>
+    <td class="fundo"><a href="2147.htm">2147</a></td>
+    <td class="fundo"><a href="11473147.htm">3147</a></td>
+  </tr>
+  <tr>
+    <td >001</td>
+    <td class="esq">Levantamento</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >002</td>
+    <td class="esq">Pedido de livro de cheques</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >005</td>
+    <td class="esq">Alteração de PIN</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >006</td>
+    <td class="esq">Aviso de depósito em numerário</td>
+    <td>&nbsp; </td>
+    <td>&nbsp; </td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >036</td>
+    <td class="esq">Depósito em numerário confirmado</td>
+    <td>&nbsp; </td>
+    <td>&nbsp; </td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >007</td>
+    <td class="esq">Aviso de depósito em valores</td>
+    <td>&nbsp; </td>
+    <td>&nbsp; </td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="a" >502</td>
+    <td class="esqa">Emissão de cheques</td>
+    <td class="a">X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >506</td>
+    <td class="esq">Depósito de notas com validação</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="a" >532</td>
+    <td class="esqa">Confirmação de emissão de cheques</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="a">X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="a" >533</td>
+    <td class="esqa">Anulação de emissão de cheques</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="a">X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >536</td>
+    <td class="esq">Depósito notas - confirmação notas suspeitas</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >537</td>
+    <td class="esq">Depósito notas - validação Banco de Portugal</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >X</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td >507</td>
+    <td class="esq">Aviso depósito de cheques com validação</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >008</td>
+    <td class="esq">Transferência entre contas do cartão</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >009</td>
+    <td class="esq">Pagamento de serviços/compras (MB)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >010</td>
+    <td class="esq">Compra (MB)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >011</td>
+    <td class="esq">Devolução de compra (MB)</td>
+    <td>&nbsp; </td>
+    <td>&nbsp; X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >012</td>
+    <td class="esq">Autorização (estrangeiro)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+  </tr>
+  <tr>
+    <td >013</td>
+    <td class="esq">Autorização <em>outdoor</em></td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >025</td>
+    <td class="esq">Compra <em>outdoor</em> (MB)</td>
+    <td>&nbsp; </td>
+    <td>&nbsp; </td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >015</td>
+    <td class="esq">Compra (outras vertentes)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td >016</td>
+    <td class="esq">Devolução de compra (outras vertentes)</td>
+    <td>&nbsp; </td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td >017</td>
+    <td class="esq">Autorização (outras vertentes)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td >018</td>
+    <td class="esq">Autorização <em>outdoor</em> (outras vertentes)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td >X</td>
+    <td >&nbsp;</td>
+    <td>X</td>
+    <td >X</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td >026</td>
+    <td class="esq">Compra <em>outdoor</em> (outras vertentes)</td>
+    <td>&nbsp; </td>
+    <td>&nbsp; </td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td >019</td>
+    <td class="esq" nowrap>Cancelamento de autorização (outras vertentes)</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td >X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td >X</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td >022</td>
+    <td class="esq">Serviço Especial bancário</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >023</td>
+    <td class="esq">Serviço Especial não bancário</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >027</td>
+    <td class="esq">Compra após autorização</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td >031</td>
+    <td class="esq">Levantamento a crédito</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >032</td>
+    <td class="esq">Depósito (em agência bancária)</td>
+    <td>&nbsp; </td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >034</td>
+    <td class="esq">Adiantamento de dinheiro (MB)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >037</td>
+    <td class="esq">Transferência bancária (ordenante)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >038</td>
+    <td class="esq">Pagamento de letra/recibo</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >039</td>
+    <td class="esq">Adiantamento de dinheiro (outras vertentes)</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td >043</td>
+    <td class="esq">Carregamento de PMB</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td >094</td>
+    <td nowrap class="esq">Autorização MBNet</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td >095</td>
+    <td nowrap class="esq">Cancelamento de autorização MBNet</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td >071</td>
+    <td nowrap class="esq">Comunicação de captura de cartão (Emissor)</td>
+    <td>&nbsp; </td>
+    <td>&nbsp; </td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="mid">072</td>
+    <td nowrap class="esq">Alteração de situação de cartão / Comunicação <br>
+    de inclusão de cartão em LN urgente (Emissor)</td>
+    <td>&nbsp; </td>
+    <td>&nbsp; </td>
+    <td class="mid">X</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="mid">0P0</td>
+    <td class="esq" nowrap>Pagamento serviços/compras&nbsp;(outras vertentes)</td>
+    <td class="mid">X</td>
+    <td class="mid">X</td>
+    <td class="mid">X</td>
+    <td >&nbsp;</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td >&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="mid">051</td>
+    <td class="esq">Levantamento internacional (<em>not-on-us)</em></td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td >&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="mid">065</td>
+    <td class="esq">Compra a crédito (<em>not-on-us)</em></td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td >X</td>
+    <td>X</td>
+    <td>X</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="mid">067</td>
+    <td class="esq">Autorização a crédito (<em>not-on-us)</em></td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td >X</td>
+    <td>X</td>
+    <td>X</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="mid">068</td>
+    <td class="esq">Autorização <em>outdoor</em> a crédito (<em>not-on-us)</em></td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td >X</td>
+    <td >X</td>
+    <td>X</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="mid">069</td>
+    <td class="esq">Cancelamento a crédito (<em>not-on-us)</em></td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td >X</td>
+    <td>X</td>
+    <td>X</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="mid">076</td>
+    <td class="esq">Compra <em>outdoor</em> a crédito (<em>not-on-us)</em></td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td >&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="mid">081</td>
+    <td class="esq">Levantamento a crédito (sem vertente MB)</td>
+    <td >X</td>
+    <td >X</td>
+    <td >X</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="mid">089</td>
+    <td class="esq">Adiantamento a crédito (<em>not-on-us)</em></td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td >X</td>
+    <td>X</td>
+    <td>X</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="mid">0P7</td>
+    <td class="esq">Pagamento de serviços/compras (<em>not-on-us)</em></td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td >X</td>
+    <td>X</td>
+    <td>X</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+    <td class="mid">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+  <tr>
+    <th rowspan="2" colspan="2" width="38%" class="fundo">Código de Transacção<br>
+    (<a href="../../Campos/campos7.htm#699" target="explicac">699</a>)
+    CODTRN-E</th>
+    <th colspan="5" width="7%">CÓDIGOS DE MENSAGEM</th>
+  </tr>
+  <tr>
+    <td width="7%" class="fundo"><a href="116x316x.htm">1162</a></td>
+    <td width="7%" class="fundo"><a href="216x.htm">2162</a></td>
+    <td width="7%" class="fundo"><a href="1172.htm">1172</a></td>
+    <td width="7%" class="fundo"><a href="11633163.htm">1163</a></td>
+    <td width="7%" class="fundo"><a href="11633163.htm">3163</a></td>
+  </tr>
+  <tr>
+    <td >003</td>
+    <td class="esq">Consulta de saldos</td>
+    <td width="7%">X</td>
+    <td width="7%" >&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td >004</td>
+    <td class="esq">Consulta de movimentos</td>
+    <td width="7%">X</td>
+    <td width="7%" >&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td >AVN</td>
+    <td class="esq">Pedido de dados cliente - SIDF</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp; </td>
+    <td width="7%">X</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp; </td>
+  </tr>
+  <tr>
+    <td >AVP</td>
+    <td class="esq">Pedido de dados cliente - PJ notas falsas</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">X</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td >052</td>
+    <td class="esq">Transferência bancária (destinatário)</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">X</td>
+  </tr>
+  <tr>
+    <td >0CN</td>
+    <td class="esq">Consulta a NIB destinatário</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">X</td>
+    <td width="7%">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table style="page-break-before: always" border="1" cellpadding="2" cellspacing="0" width="100%">
+  <tr>
+    <th rowspan="2" colspan="2" width="38%" class="fundo">Código de Transacção<br>
+    (<a href="../../Campos/campos7.htm#699" target="explicac">699</a>)
+    CODTRN-E</th>
+    <th colspan="7" width="7%">CÓDIGOS DE MENSAGEM</th>
+  </tr>
+  <tr>
+    <td width="7%" class="fundo"><a href="3164.htm">3164</a></td>
+    <td width="7%" class="fundo"><a href="2164.htm">2164</a></td>
+    <td width="7%" class="fundo"><a href="3135.htm">3135</a></td>
+    <td width="7%" class="fundo"><a href="3136.htm">3136</a></td>
+    <td width="7%" class="fundo"><a href="11823182.htm">1182</a></td>
+    <td width="7%" class="fundo"><a href="2182.htm">2182</a></td>
+    <td width="7%" class="fundo"><a href="11823182.htm">3182</a></td>
+  </tr>
+  <tr>
+    <td >033</td>
+    <td class="esq">Fecho TPA (Banco de Apoio)</td>
+    <td width="7%">X</td>
+    <td width="7%" >X</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td >0F6</td>
+    <td class="esq">Fecho TPA (Totais <em>Acquirer</em>)</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%" >&nbsp;</td>
+    <td width="7%">X</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td >172</td>
+    <td class="esq">Alteração de situação de cartão (<em>Acquirer</em>)</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%" >&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">X</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td >0DB</td>
+    <td class="esq">S.E. Pedido de cheques</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%" >&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="7%">X</td>
+    <td width="7%">X</td>
+    <td width="7%">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h6><a name="CÓDIGOS">CÓDIGOS</a> DE RESPOSTA
+ADMITIDOS NAS MENSAGENS DE RESPOSTA</h6>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellspacing="0" width="100%">
+  <tr>
+    <td rowspan="2" class="oito"><strong>CÓDIGO DA<br>
+    MENSAGEM</strong></td>
+    <td class="oito"><strong>Aprovada</strong></td>
+    <td class="oito"><strong>Pedido <br>
+    Degrad.</strong></td>
+    <td class="oito"><strong>Não<br>
+    Aprovada</strong></td>
+    <td class="oito"><strong>Saldo <br>
+    Insufic.</strong></td>
+    <td class="oito"><strong>Erro <br>
+    Aplic.</strong></td>
+    <td class="oito"><strong>Captura <br>
+    Cartão</strong></td>
+    <td class="oito"><strong>Suspeita<br>
+    Fraude</strong></td>
+    <td class="oito"><strong>Aprovada<br>
+    c/identif.</strong></td>
+  </tr>
+  <tr>
+    <td class="oito">0</td>
+    <td class="oito">1</td>
+    <td class="oito">4</td>
+    <td class="oito">5</td>
+    <td class="oito">6</td>
+    <td class="oito">7</td>
+    <td class="oito">8</td>
+    <td class="oito">9</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="116x316x.htm">1161</a></td>
+    <td class="oito">x</td>
+    <td class="oito">x(d)</td>
+    <td class="oito">x</td>
+    <td class="oito">x</td>
+    <td class="oito">x</td>
+    <td class="oito">x(a)</td>
+    <td class="oito">x(e)</td>
+    <td class="oito">x(e)</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="116x316x.htm">1162</a></td>
+    <td class="oito">x</td>
+    <td class="oito">x(b)</td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x</td>
+    <td class="oito">x(a)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="11633163.htm">1163</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="1137.htm">1137</a></td>
+    <td class="oito">x</td>
+    <td class="oito">x(d)</td>
+    <td class="oito">x</td>
+    <td class="oito">x</td>
+    <td class="oito">x</td>
+    <td class="oito">x(a)</td>
+    <td class="oito">x(e)</td>
+    <td class="oito">x(e)</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="11473147.htm">1147</a></td>
+    <td class="oito">x</td>
+    <td class="oito">x(d)</td>
+    <td class="oito">x</td>
+    <td class="oito">x</td>
+    <td class="oito">x</td>
+    <td class="oito">x(a)</td>
+    <td class="oito">x(e)</td>
+    <td class="oito">x(e)</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="1172.htm">1172</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="11823182.htm">1182</a></td>
+    <td class="oito">x</td>
+    <td class="oito">x(d)</td>
+    <td class="oito">x</td>
+    <td class="oito">x</td>
+    <td class="oito">x</td>
+    <td class="oito">x(a)</td>
+    <td class="oito">x(e)</td>
+    <td class="oito">x(e)</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="216x.htm">2161</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="216x.htm">2162</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="2164.htm">2164</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="2137.htm">2137</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="2147.htm">2147</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="2182.htm">2182</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="116x316x.htm">3161</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="11633163.htm">3163</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="3164.htm">3164</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="3135.htm">3135</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="3136.htm">3136</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="3137.htm">3137</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="11473147.htm">3147</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="oito"><a href="11823182.htm">3182</a></td>
+    <td class="oito">x</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">x(c)</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+    <td class="oito">&nbsp;</td>
+  </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%">&nbsp; </td>
+  </tr>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="5%" rowspan="5" class="oito">Notas: </td>
+    <td width="5%" class="oito">(a)</td>
+    <td class="oitoesq">Só é possível se o campo Tipo de Terminal (<a
+    href="../../Campos/campos1.htm#003" target="explicac">003</a>) enviado na mensagem de
+    pedido for igual a &#145;A&#146; ou &#145;C&#146; (Caixa Automático).</td>
+  </tr>
+  <tr>
+    <td width="5%" class="oito">(b)</td>
+    <td class="oitoesq">Só é possível se o cenário de degradação for para saldo de conta
+    (<em>online</em>).</td>
+  </tr>
+  <tr>
+    <td width="5%" class="oito">(c)</td>
+    <td class="oitoesq">Caso o código da resposta seja 4 ou 6, o movimento é repetido no
+    ficheiro correspondente a esse período de Compensação, à semelhança do que acontece para o código de resposta 0.</td>
+  </tr>
+  <tr>
+    <td width="5%" class="oito">(d)</td>
+    <td class="oitoesq">Só é possível se o Emissor/<i>Acquirer</i>&nbsp; tiver posicionado na SIBS um cenário de
+    degradação, saldo de conta, saldo de cartão ou controlo limite crédito na SIBS. </td>
+  </tr>
+  <tr>
+    <td width="5%" class="oito">(e)</td>
+    <td class="oitoesq">Só é possível se o campo CODTRN-E (<a
+    href="../../Campos/campos7.htm#699" target="explicac">699</a>) enviado na mensagem
+    de pedido for igual a &#145;012&#146; (pedido de autorização), '<span
+    >010</span>' (compra) ou '015' (compra a crédito) e o
+    campo Tipo de Terminal (<a href="../../Campos/campos1.htm#003" target="explicac">003</a>)
+    for igual a 'B' (POS) ou &#145;F&#146; Terminal Unicre. </td>
+  </tr>
+</table>
+
+<p class="dta"><br>
+<a href="d31.htm">Anterior</a>/<a href="d33.htm">Seguinte</a></p>
+</body>
+</html>

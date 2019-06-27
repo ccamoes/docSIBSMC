@@ -1,0 +1,872 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="explicac">
+<title>H003 - PAGAMENTO DE SERVIÇO ESPECIAL (V02)</title>
+</head>
+
+<body>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" width="100%">
+  <tr>
+    <td colspan="10" class="corfundo" height="30">H003 - S003 :&nbsp; PAGAMENTO SERVIÇOS
+    ESPECIAIS&nbsp; (<a href="#V02" target="main">V02</a>)<br>
+      <span class="corfund2">Última actualização: 2005-07-05 / Entrada em Produção:
+    2003-05-12</span></td>
+  </tr>
+  <tr>
+    <th class="fundo2" rowspan="2">N.º<br>
+    Campo</th>
+    <th class="fundo2" rowspan="2">Símbolo do Campo</th>
+    <th class="fundo2" rowspan="2">Comp.</th>
+    <th class="fundo2" rowspan="2">Rep.</th>
+    <th class="fundo2" colspan="2">Pedido</th>
+    <th class="fundo2" colspan="2">Resp. Aceite</th>
+    <th class="fundo2" colspan="2">Resp. Recusada</th>
+  </tr>
+  <tr>
+    <th class="fundo2">Contém</th>
+    <th class="fundo2">Posição</th>
+    <th class="fundo2">Contém</th>
+    <th class="fundo2">Posição</th>
+    <th class="fundo2">Contém</th>
+    <th class="fundo2">Posição</th>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><strong>HEADER</strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <th>&nbsp;</th>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos5.htm#470">470</a></td>
+    <td class="esq">CODMSG-BS</td>
+    <td class="dta">4</td>
+    <td>A</td>
+    <td>S</td>
+    <td>1</td>
+    <td>S</td>
+    <td>1</td>
+    <td>S</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#002">002</a></td>
+    <td class="esq">VERMSG</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>S</td>
+    <td>5</td>
+    <td>S</td>
+    <td>5</td>
+    <td>S</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos5.htm#471">471</a></td>
+    <td class="esq">IDMSGBAN</td>
+    <td class="dta">14</td>
+    <td>A</td>
+    <td>S</td>
+    <td>7</td>
+    <td>S</td>
+    <td>7</td>
+    <td>S</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#004">004</a></td>
+    <td class="esq">DHMSG</td>
+    <td class="dta">14</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>21</td>
+    <td>S</td>
+    <td>21</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos5.htm#492">492</a></td>
+    <td class="esq">CODRESPS</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>35</td>
+    <td>S</td>
+    <td>35</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq"><strong>TEXTO</strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos5.htm#477">477</a></td>
+    <td class="esq">NIBORD</td>
+    <td class="dta">21</td>
+    <td>N</td>
+    <td>S</td>
+    <td>21</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos5.htm#468">468</a></td>
+    <td class="esq">ENTIDADE</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>S</td>
+    <td>42</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos7.htm#687">687</a></td>
+    <td class="esq">TIPO DE PAGAMENTO/SERVIÇO</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>S</td>
+    <td>47</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos3.htm#250">250</a></td>
+    <td class="esq">REFPAG</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>S</td>
+    <td>50</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos7.htm#688">688</a></td>
+    <td class="esq">REFª SERVIÇO ESPECIAL MB</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>S</td>
+    <td>59</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos7.htm#689">689</a></td>
+    <td class="esq">REFª ADICIONAL SERV. ESPECIAL</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>S</td>
+    <td>74</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos3.htm#205">205</a></td>
+    <td class="esq">N.º CONTRIBUINTE</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>S</td>
+    <td>82</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos5.htm#479">479</a></td>
+    <td class="esq">LOCMORTER</td>
+    <td class="dta">15</td>
+    <td>A</td>
+    <td>S</td>
+    <td>91</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="esq">&nbsp;</td>
+    <td class="dta">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos4.htm#320">320</a></td>
+    <td class="esq">ID. LOG</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>38</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos2.htm#117">117</a></td>
+    <td class="esq">N.º REGISTO LOG</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>42</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos5.htm#480">480</a></td>
+    <td class="esq">DESCENT</td>
+    <td class="dta">20</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>50</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos3.htm#263">263</a></td>
+    <td class="esq">TIPSER</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>70</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos7.htm#686">686</a></td>
+    <td class="esq">N.º FACTURA</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>72</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos1.htm#008">008</a></td>
+    <td class="esq">MONTANTE</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>S</td>
+    <td>106</td>
+    <td>S</td>
+    <td>80</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos3.htm#233">233</a></td>
+    <td class="esq">CODMOEDA</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>93</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/camp1200.htm#1293">1293</a></td>
+    <td class="esq">REFERÊNCIA PARA RESPOSTA</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>96</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos5.htm#493">493</a></td>
+    <td class="esq">CODRECS</td>
+    <td class="dta">8</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>38</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos5.htm#472">472</a></td>
+    <td class="esq">TEXTRESP</td>
+    <td class="dta">45</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>46</td>
+  </tr>
+  <tr>
+    <td><a href="../../Campos/campos5.htm#472">472</a></td>
+    <td class="esq">TEXTRESP</td>
+    <td class="dta">45</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>S</td>
+    <td>91</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="dta"><strong>Número total de Bytes</strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><strong>118</strong></td>
+    <td>&nbsp;</td>
+    <td><strong>104</strong></td>
+    <td>&nbsp;</td>
+    <td><strong>135</strong></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="esq10" nowrap><strong><a name="V02">V02</a> -&nbsp;</strong></td>
+    <td class="esq10">Relativamente à <a target="main" href="h003v01.htm">V01</a>:<ul>
+      <li>Foi incluído um novo campo na resposta, designado de Referência para Resposta, com o
+        código de atributo <a href="../../Campos/camp1200.htm#1293">1293</a>.<br>
+        Este campo é necessário para impressão do comprovativo do carregamento, pois a
+        informação introduzida no campo <a href="../../Campos/campos3.htm#250">250</a> -
+        Referência de Pagamento, pode diferir da Referência para resposta.</li>
+      <li>Em resultado do ponto anterior, o comprimento máximo da mensagem S003, passou de 95
+        para 104 bytes.</li>
+      <li>Foi alterado o capital social da Optimus, devendo essa mesma alteração ser reflectida
+        nos casos em que se emite um talão com características de factura/recibo.</li>
+      <li>Foram incluídas duas novas operações - Carregamentos Vodafone <span >e Pagamento Sapo ADSL</span>.</li>
+      <li><span >No caso das operações Carregamento Netpac e Pagamento Sapo foram alterados os dados para efeitos de impressão de
+        talão com características de factura/recibo.</span></li>
+      <li class="a">No caso da operação Pagamentos ao Estado, o campo <a href="../../Campos/campos7.htm#687">687</a> - Tipo Pagamento/Serviço
+        passou a ser preenchido a zeros.</li>
+      <li>Foi descontinuada a operação Pagamentos 95.</li>
+    </ul>
+    </td>
+  </tr>
+</table>
+
+<p style="page-break-before: always"><strong><u><br>
+<a name="valid">Validações</a> adicionais</u></strong></p>
+
+<p>Efectuadas pela SIBS, específicas de cada serviço:</p>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Operação &quot;Carregamento TMN&quot;</strong></li>
+</ul>
+
+<ul type="square">
+  <ul type="disc">
+    <li>O campo <a href="../../Campos/campos5.htm#468">468</a> - Entidade tem de ser igual a
+      &#145;10091&#146;.</li>
+    <li>O campo <a href="../../Campos/campos3.htm#250">250</a> - Referência do Pagamento
+      é
+      preenchido com o N.º de Referência que o cliente indicar.</li>
+    <li>O campo <a href="../../Campos/campos1.htm#008">008</a> - Montante&nbsp;só
+      pode aceitar
+      ser preenchido com os seguintes valores em euros: 5,00; 10,00; 25,00; 50,00; 75,00; 100,00
+      e 150,00.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#687">687</a> - Tipo Pagamento/Serviço é igual
+      a &#145;010&#146;.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#688">688</a> - Refª Serv. Esp. MB,
+      deve ser
+      preenchido a zeros.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#689">689</a> - Refª Adicional
+      deve ser
+      preenchido a zeros.</li>
+    <li>O campo <a href="../../Campos/campos3.htm#205">205</a> - N.º de Contribuinte do Titular,
+      deve ser preenchido a zeros, excepto se o cliente solicitar a emissão de um documento
+      comprovativo, para efeitos fiscais. Neste caso deve ser preenchido com um Número de
+      Contribuinte válido.</li>
+  </ul>
+  <p><br>
+  </p>
+  <li><strong>Operação &quot;Carregamento Netpac&quot;&nbsp;</strong></li>
+</ul>
+
+<ul type="square">
+  <ul type="disc">
+    <li>O campo <a href="../../Campos/campos5.htm#468">468</a> - Entidade tem de ser igual a
+      &#145;10089&#146;.</li>
+    <li>O campo <a href="../../Campos/campos3.htm#250">250</a> - Referência do Pagamento
+      é
+      preenchido com o N.º de Referência que o cliente indicar.</li>
+    <li>O campo <a href="../../Campos/campos1.htm#008">008</a> - Montante só pode ser
+      preenchido de acordo com as seguintes regras:</li>
+  </ul>
+</ul>
+<div align="center"><center>
+
+<table BORDER="1" CELLPADDING="2" WIDTH="428" cellspacing="0">
+  <tr>
+    <td width="223"><strong>Campo </strong><a href="../../Campos/campos3.htm#250">250</a></td>
+    <td width="205"><strong>Montante válido em euros</strong></td>
+  </tr>
+  <tr>
+    <td class="esq" width="223">2º dígito da Referência (de 9 dígitos) é igual a
+    &#145;0&#146;, &#145;1&#146;, &#145;3&#146;, &#145;4&#146;, &#145;5&#146;, &#145;6&#146;
+    ou &#145;7&#146;.</td>
+    <td width="205">5,00 e 24,94</td>
+  </tr>
+  <tr>
+    <td class="esq" width="223">2º dígito da Referência (de 9 dígitos) é igual a
+    &#145;2.&#146;</td>
+    <td width="205">5,00 ;&nbsp; 24,94 ;&nbsp; 49,88</td>
+  </tr>
+  <tr>
+    <td class="esq" width="223">2º dígito da Referência (de 9 dígitos) é igual a
+    &#145;8.&#146;</td>
+    <td width="205">29,43 ;&nbsp; 79,31 ;&nbsp; 144,15</td>
+  </tr>
+  <tr>
+    <td class="esq" width="223">2º dígito da Referência (de 9 dígitos) é igual a
+    &#145;9.&#146;</td>
+    <td width="205">10,00 ;&nbsp; 30,00 ;&nbsp; 50,00</td>
+  </tr>
+</table>
+</center></div>
+
+<ul type="square">
+  <ul type="disc">
+    <li>O campo <a href="../../Campos/campos7.htm#687">687</a> - Tipo Pagamento/Serviço é igual
+      a &#145;015&#146;.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#688">688</a> - Refª Serv. Esp. MB,
+      deve
+      estar preenchido a zeros.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#689">689</a> - Refª Adicional
+      deve estar
+      preenchido a zeros.</li>
+    <li>O campo <a href="../../Campos/campos3.htm#205">205</a> - N.º de Contribuinte do Titular,
+      deve ser preenchido a zeros, excepto se o cliente solicitar a emissão de um documento
+      comprovativo, para efeitos fiscais. Neste caso deve ser preenchido com um Número de
+      Contribuinte válido.</li>
+  </ul>
+</ul>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Operação &quot;Pagamento Sapo&quot;&nbsp;</strong></li>
+</ul>
+
+<ul type="square">
+  <ul type="disc">
+    <li>O campo <a href="../../Campos/campos5.htm#468">468</a> - Entidade tem de ser igual a
+      &#145;10079&#146; (carregamento em euros).</li>
+    <li>O campo <a href="../../Campos/campos3.htm#250">250</a> - Referência do Pagamento
+      é
+      preenchido com o N.º de Referência que o cliente indicar.</li>
+    <li>O campo <a href="../../Campos/campos1.htm#008">008</a> - Montante tem de ser
+      preenchido
+      com um valor superior a 4,99 Euros.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#687">687</a> - Tipo Pagamento/Serviço é igual
+      a &#145;020&#146;.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#688">688</a> - Refª Serv. Esp. MB,
+      deve
+      estar preenchido a zeros.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#689">689</a> - Refª Adicional
+      deve estar
+      preenchido a zeros.</li>
+    <li>O campo <a href="../../Campos/campos3.htm#205">205</a> - N.º de Contribuinte do Titular,
+      deve ser preenchido a zeros, excepto se o cliente solicitar a emissão de um documento
+      comprovativo, para efeitos fiscais. Neste caso deve ser preenchido com um Número de
+      Contribuinte válido.</li>
+  </ul>
+</ul>
+
+<p><br>
+
+<ul style="page-break-before: always" type="square">
+  <li><strong>Operação &quot;Pagamento Sapo ADSL&quot;&nbsp;</strong></li>
+</ul>
+
+<ul type="square">
+  <ul type="disc">
+    <li>O campo <a href="../../Campos/campos5.htm#468">468</a> - Entidade tem de ser igual a
+      &#145;10082&#146;.</li>
+    <li>O campo <a href="../../Campos/campos3.htm#250">250</a> - Referência do Pagamento
+      é preenchido com o N.º de Referência que o cliente indicar.</li>
+    <li>O campo <a href="../../Campos/campos1.htm#008">008</a> - Montante tem de ser
+      preenchido
+      com um valor igual a 15,00, 22,50 ou 45,00.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#687">687</a> - Tipo Pagamento/Serviço é igual
+      a &#145;025&#146;.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#688">688</a> - Refª Serv. Esp. MB,
+      deve
+      estar preenchido a zeros.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#689">689</a> - Refª Adicional
+      deve estar
+      preenchido a zeros.</li>
+    <li>O campo <a href="../../Campos/campos3.htm#205">205</a> - N.º de Contribuinte do Titular,
+      deve ser preenchido a zeros, excepto se o cliente solicitar a emissão de um documento
+      comprovativo, para efeitos fiscais. Neste caso deve ser preenchido com um Número de
+      Contribuinte válido.</li>
+  </ul>
+</ul>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Operação &quot;Pagamentos ao Estado&quot;</strong></li>
+</ul>
+
+<blockquote>
+  <p>São possíveis pagamentos referentes a DUCs (Documento Único de Cobrança) com
+  Emissão Prévia, Auto-Liquidações e ainda os documentos que foram submetidos via
+  Internet.</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>O campo <a href="../../Campos/campos5.htm#468">468</a> - Entidade é preenchido com
+      &#145;10095&#146;.</li>
+    <li>O campo <a href="../../Campos/campos1.htm#008">008</a> - Montante deve ser preenchido
+      com o valor em euros indicado pelo cliente. No caso de documentos com emissão prévia,
+      esse valor é validado pela SIBS contra o ficheiro de documentos informado pela
+      Direcção Geral do Tesouro. </li>
+    <li>Os campos <a href="../../Campos/campos3.htm#205">205</a> - N.º de Contribuinte do
+      Titular, <a href="../../Campos/campos7.htm#689">689</a> - Refª Adicional e <a
+      href="../../Campos/campos3.htm#250">250</a> - Referência do Pagamento, são preenchidos a
+      zeros.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#688">688</a> - Refª Serv. Esp. MB&nbsp; é
+      preenchido com o valor (15 dígitos) introduzido pelo cliente e que corresponde aos
+      elementos constantes na &quot;Referência a Pagamento&quot; presente no documento que tem
+      em sua posse.</li>
+    <li class="a">O campo <a href="../../Campos/campos7.htm#687">687</a> - Tipo
+      Pagamento/Serviço é preenchido a zeros. </li>
+  </ul>
+</blockquote>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Operação &quot;Pagamentos Via Card&quot; </strong></li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>O campo <a href="../../Campos/campos5.htm#468">468</a> - Entidade tem de ser igual a
+      &#145;10076&#146;.</li>
+    <li>O campo <a href="../../Campos/campos3.htm#250">250</a> - Referência do Pagamento
+      é preenchido com o N.º de Referência que o cliente indicar.</li>
+    <li>O campo <a href="../../Campos/campos1.htm#008">008</a> - Montante só pode estar
+      preenchido com os seguintes valores em euros: 15,00; 25,00 e 40,00. </li>
+    <li>O campo <a href="../../Campos/campos7.htm#687">687</a> - Tipo Pagamento/Serviço =
+      &#145;040&#146;. </li>
+    <li>O campo <a href="../../Campos/campos7.htm#688">688</a> - Refª Serv. Esp. MB,
+      deve
+      estar preenchido a zeros. </li>
+    <li>O campo <a href="../../Campos/campos7.htm#689">689</a> - Refª Adicional
+      deve ser
+      preenchido a zeros. </li>
+    <li>O campo <a href="../../Campos/campos3.htm#205">205</a> - N.º de Contribuinte do Titular,
+      deve ser preenchido a zeros, excepto se o cliente solicitar a emissão de um documento
+      comprovativo, para efeitos fiscais. Neste caso deve ser preenchido com um Número de
+      Contribuinte válido.</li>
+  </ul>
+</blockquote>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Operação &quot;Carregamento de Cartões Optimus&quot; </strong></li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>O campo <a href="../../Campos/campos5.htm#468">468</a> - Entidade tem de ser igual a
+      &#145;10075&#146;.</li>
+    <li>O campo <a href="../../Campos/campos3.htm#250">250</a> - Referência do Pagamento
+      é
+      preenchido com o N.º de Referência que o cliente indicar.</li>
+    <li>O campo <a href="../../Campos/campos1.htm#008">008</a> - Montante tem de ser preenchido
+      com um valor superior a 7,47 Euros.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#687">687</a> - Tipo Pagamento/Serviço =
+      &#145;050&#146;. </li>
+    <li>O campo <a href="../../Campos/campos7.htm#688">688</a> - Refª Serv. Esp. MB,
+      deve
+      estar preenchido a zeros. </li>
+    <li>O campo <a href="../../Campos/campos7.htm#689">689</a> - Refª Adicional
+      deve ser
+      preenchido a zeros. </li>
+  </ul>
+</blockquote>
+
+<p><br>
+
+<ul style="page-break-before: always" type="square">
+  <li><strong>Operação &quot;Carregamento de Pacotes de Mensagens Optimus&quot; </strong></li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>O campo <a href="../../Campos/campos5.htm#468">468</a> - Entidade tem de ser igual a
+      &#145;10073&#146;.</li>
+    <li>O campo <a href="../../Campos/campos3.htm#250">250</a> - Referência do Pagamento
+      é
+      preenchido com o N.º de Referência que o cliente indicar.</li>
+    <li>O campo <a href="../../Campos/campos1.htm#008">008</a> - Montante tem de ser igual a
+      5,00; 10,00 ou 20,00 Euros.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#687">687</a> - Tipo Pagamento/Serviço =
+      &#145;051&#146;. </li>
+    <li>O campo <a href="../../Campos/campos7.htm#688">688</a> - Refª Serv. Esp. MB,
+      deve
+      estar preenchido a zeros. </li>
+    <li>O campo <a href="../../Campos/campos7.htm#689">689</a> - Refª Adicional
+      deve ser
+      preenchido a zeros. </li>
+  </ul>
+</blockquote>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Operação &quot;Carregamentos Vodafone&quot;</strong></li>
+</ul>
+
+<blockquote>
+  <ul type="disc">
+    <li>O campo <a href="../../Campos/campos5.htm#468">468</a> - Entidade tem de ser igual a
+      &#145;10074&#146;.</li>
+    <li>O campo <a href="../../Campos/campos3.htm#250">250</a> - Referência do Pagamento
+      é
+      preenchido com o N.º de Referência que o cliente indicar.</li>
+    <li>O campo <a href="../../Campos/campos1.htm#008">008</a> - Montante tem de ser preenchido
+      com um valor superior a 4,99 euros.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#687">687</a> - Tipo Pagamento/Serviço =
+      &#145;060&#146;.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#688">688</a> - Refª Serv. Esp. MB,
+      deve
+      estar preenchido a zeros.</li>
+    <li>O campo <a href="../../Campos/campos7.htm#689">689</a> - Refª Adicional
+      deve ser
+      preenchido a zeros.</li>
+  </ul>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h6><strong><u>Comprovativo dos Pagamentos</u>:</strong></h6>
+
+<p>No caso dos Serviços Especiais abaixo referidos, o cliente pode solicitar a emissão
+de um documento comprovativo, para efeitos fiscais.</p>
+
+<p>Nos casos em que os clientes pretendam a emissão dessa factura, o Banco deverá emitir
+ou permitir ao cliente a emissão, de um documento do qual conste a seguinte informação:
+</p>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Quando a operação for &quot;Carregamento TMN&quot;</strong></li>
+</ul>
+
+<ul type="square">
+  <p>TMN - TELECOMUNICAÇÕES MÓVEIS NACIONAIS , S.A.<br>
+  AV. 5 DE OUTUBRO, 208, 1050 LISBOA<br>
+  N.I.P.C.: 502 600 268<br>
+  CAPITAL SOCIAL: 47.000.000,00 Euros<br>
+  MATRÍCULA N.º 2675 NA CRC DE LISBOA<br>
+  FACTURA/RECIBO N.º XXXXXXXX (informação constante no campo <a
+  href="../../Campos/campos7.htm#686">686</a>)<br>
+  MONTANTE PAGO: 999.999,99 (informação constante no campo <a
+  href="../../Campos/campos1.htm#008">008</a>)<br>
+  (IVA INCLUÍDO À TAXA EM VIGOR)<br>
+  N.º CARTÃO: (informação constante no campo <a href="../../Campos/camp1200.htm#1293">1293</a>)<br>
+  NOME: (dados do cliente)<br>
+  MORADA: (dados do cliente)<br>
+  N.º DE IDENTIFICAÇÃO FISCAL: 999 999 999 (informação constante no campo <a
+  href="../../Campos/campos3.htm#205">205</a>)</p>
+  <p><br>
+  </p>
+  <li><strong>Quando a operação for &quot;Carregamento Netpac&quot;, &quot;Pagamento
+    Sapo&quot; <span >ou &quot;Pagamento
+    Sapo ADSL&quot;</span></strong></li>
+</ul>
+
+<ul type="square">
+  <p><span >PT.COM - COMUNICAÇÕES INTERACTIVAS, S.A.<br>
+  RUA ANDRADE CORVO, N.º 6, 1050-009 LISBOA<br>
+  N.I.P.C.: 504 818 180<br>
+  CAPITAL SOCIAL: 196.381.518,50 Euros</span><br>
+  FACTURA/RECIBO N.º XXXXXXXX (informação constante no campo <a
+  href="../../Campos/campos7.htm#686">686</a>)<br>
+  MONTANTE PAGO: 999.999,99 (informação constante no campo <a
+  href="../../Campos/campos1.htm#008">008</a>)<br>
+  (IVA INCLUÍDO À TAXA EM VIGOR)<br>
+  REFERÊNCIA MB: (informação constante no campo <a href="../../Campos/camp1200.htm#1293">1293</a>)<br>
+  NOME: (dados do cliente)<br>
+  MORADA: (dados do cliente)<br>
+  N.º DE IDENTIFICAÇÃO FISCAL: 999 999 999 (informação constante no campo <a
+  href="../../Campos/campos3.htm#205">205</a>)</p>
+</ul>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Quando a operação for &quot;Pagamento Via Card&quot; </strong></li>
+</ul>
+
+<blockquote>
+  <p>LUSOPONTE, CONCESSIONÁRIA P/ TRAVESSIA DO TEJO, S.A.<br>
+  EDÍFICIO DA PORTAGEM, 2870 &#150; MONTIJO<br>
+  N.I.P.C.: 503 174 688<br>
+  CAPITAL SOCIAL: 25.000.000,00 EUROS<br>
+  C.R.C. MONTIJO, N.º 02426<br>
+  FACTURA/RECIBO N.º XXXXXXXX (informação constante no campo <a
+  href="../../Campos/campos7.htm#686">686</a>)<br>
+  MONTANTE PAGO: 999.999,99 (informação constante no campo <a
+  href="../../Campos/campos1.htm#008">008</a>)<br>
+  (IVA INCLUÍDO À TAXA EM VIGOR)<br>
+  REFERÊNCIA MB: (informação constante no campo <a href="../../Campos/camp1200.htm#1293">1293</a>)<br>
+  NOME: (dados do cliente)<br>
+  MORADA: (dados do cliente)<br>
+  N.º DE IDENTIFICAÇÃO FISCAL: 999 999 999 (informação constante no campo <a
+  href="../../Campos/campos3.htm#205">205</a>)</p>
+</blockquote>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Quando a operação for &quot;Carregamento de Cartões&quot; e &quot;
+    Carregamento de Pacotes de Mensagens&quot; da Optimus</strong></li>
+</ul>
+
+<blockquote>
+  <p>OPTIMUS, TELECOMUNICAÇÕES, S.A.<br>
+  LUGAR DO ESPIDO, VIA NORTE, 4471-909 MAIA<br>
+  N.I.P.C.: 503 922 692<br>
+  CAPITAL SOCIAL: 425.000.000,00 EUROS<br>
+  C.R.C. MAIA, N.º 8639<br>
+  FACTURA/RECIBO N.º XXXXXXXX (informação constante no campo <a
+  href="../../Campos/campos7.htm#686">686</a>)<br>
+  MONTANTE PAGO: 999.999,99 (informação constante no campo <a
+  href="../../Campos/campos1.htm#008">008</a>)<br>
+  (IVA INCLUÍDO À TAXA EM VIGOR)<br>
+  REFERÊNCIA MB: (informação constante no campo <a href="../../Campos/camp1200.htm#1293">1293</a>)<br>
+  NOME: (dados do cliente)<br>
+  MORADA: (dados do cliente)<br>
+  N.º DE IDENTIFICAÇÃO FISCAL: 999 999 999 (informação constante no campo <a
+  href="../../Campos/campos3.htm#205">205</a>)</p>
+</blockquote>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Quando a operação for &quot;Carregamentos Vodafone&quot; </strong></li>
+</ul>
+
+<blockquote>
+  <p><span >VODAFONE PORTUGAL - COMUNICAÇÕES PESSOAIS, SA<br>
+  AV. D. JOÃO II, L 1.04.01, 8º, 1990-017 LISBOA</span><br>
+  N.I.P.C.: 502544180<br>
+  CAPITAL SOCIAL: 107.500.000 EUROS<br>
+  C.R.C. LISBOA, Nº 2424<br>
+  FACTURA/RECIBO N.º XXXXXXXX (informação constante no campo <a
+  href="../../Campos/campos7.htm#686">686</a>)<br>
+  MONTANTE PAGO: 999.999,99 (informação constante no campo <a
+  href="../../Campos/campos1.htm#008">008</a>)<br>
+  (IVA INCLUÍDO À TAXA EM VIGOR)<br>
+  N.º TELEMÓVEL VODAFONE: (informação constante no campo <a
+  href="../../Campos/camp1200.htm#1293">1293</a>)<br>
+  NOME: (dados do cliente)<br>
+  MORADA: (dados do cliente)<br>
+  N.º DE IDENTIFICAÇÃO FISCAL: 999 999 999 (informação constante no campo <a
+  href="../../Campos/campos3.htm#205">205</a>)</p>
+</blockquote>
+
+  <p>&nbsp;</p>
+</body>
+</html>

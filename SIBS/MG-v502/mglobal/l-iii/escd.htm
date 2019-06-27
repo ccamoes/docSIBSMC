@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>COMUNICAÇÃO SALDOS DE CRÉDITO &quot;FICH&quot;=ESCD </title>
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="1" cellpadding="12" cellspacing="0" width="97%">
+  <tr>
+    <td width="100%"><table border="0" cellspacing="0" width="100%">
+      <tr>
+        <td class="fichesq">NOME FICHEIRO:&nbsp; COMUNICAÇÃO SALDOS DE CRÉDITO</td>
+        <td class="fichdta">&quot;FICH&quot; = ESCD </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h6><u>OBJECTIVO</u></h6>
+
+<p><br>
+É um ficheiro que o Emissor envia à SIBS para actualizar os saldos disponíveis das
+contas crédito geridas pelo Emissor, a que estão associados cartões.</p>
+
+<p>&nbsp;</p>
+
+<h6><u>ORDENAÇÃO</u></h6>
+
+<table border="0" cellspacing="0" width="214">
+  <tr>
+    <td width="95">&nbsp; </td>
+    <td width="115">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="95" class="esq10">TIPREG</td>
+    <td width="115" class="esq10">(campo <a href="../../Campos/campos2.htm#111"
+    target="explicac">111</a>) </td>
+  </tr>
+  <tr>
+    <td width="95" class="esq10">BIN</td>
+    <td width="115" class="esq10">(campo <a href="../../Campos/campos3.htm#261">261</a>) </td>
+  </tr>
+  <tr>
+    <td width="95" class="esq10">EXBIN</td>
+    <td width="115" class="esq10">(campo <a href="../../Campos/campos4.htm#319">319</a>) </td>
+  </tr>
+  <tr>
+    <td class="esq10" width="95">NRCONTACR</td>
+    <td width="115" class="esq10">(campo <a href="../../Campos/campos1.htm#085">085</a>) </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h6><u>ESTRUTURA</u></h6>
+
+<p><br>
+O ficheiro é constituído pelos seguintes tipos de registo: <br>
+
+<ul>
+  <li>o registo de <em>Header</em> do ficheiro &quot;TIPREG=0&quot;, em que o campo (<a
+    href="../../Campos/campos2.htm#110">110</a>) DATAVALOR deve estar preenchido com a hora de
+    produção do ficheiro no Emissor, com o formato '00HHMMSS';</li>
+</ul>
+
+<ul>
+  <li>o registo de Detalhe &quot;TIPREG=1&quot;;</li>
+</ul>
+
+<ul>
+  <li>o registo de <em>Trailer</em> &quot;TIPREG=9&quot;, em que o campo (<a
+    href="../../Campos/campos2.htm#109">109</a>) TOTCRED deve estar preenchido com o
+    somatório dos campos (<a href="../../Campos/campos1.htm#087">087</a>) SDISPGER de sinal
+    positivo e o campo (<a href="../../Campos/campos2.htm#108">108</a>) TOTDEB deve estar
+    preenchido com o somatório dos campos (<a href="../../Campos/campos1.htm#087">087</a>)
+    SDISPGER de sinal negativo.</li>
+</ul>
+
+<p><br>
+O ficheiro é constituído por registos de comprimento fixo com 52 bytes.</p>
+
+<p>&nbsp;</p>
+
+<p class="tipreg">ESCD - TIPO DE REGISTO = 1 (SALDOS DISPONÍVEIS CONTAS CRÉDITO)</p>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="fundoesq" width="160">Nome do Campo</td>
+    <td class="fundo" width="45">Comp.</td>
+    <td class="fundo" width="45">Pos.</td>
+    <td class="fundo" width="45">Rep.</td>
+    <td class="fundo" width="85">N.º Campo</td>
+    <td class="fundo" width="200">Obs.</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td class="esq" width="200">= 1</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">BIN</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos3.htm#261">261</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">EXBIN </td>
+    <td class="dta" width="45">2</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos4.htm#319">319</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">NRCONTACR</td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">10</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#085">085</a></td>
+    <td class="esq" width="200">= 0000NNNNNNNEEEE</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SDISPGER </td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">25</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#087">087</a></td>
+    <td class="esq" width="200">na denominação do <em>Header</em></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">38</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SDISPCASH </td>
+    <td class="dta" width="45">13</td>
+    <td class="dta" width="45">39</td>
+    <td width="45">N</td>
+    <td width="85"><a href="../../Campos/campos1.htm#088">088</a></td>
+    <td class="esq" width="200">na denominação do <em>Header</em></td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">SINAL </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">52</td>
+    <td width="45">A</td>
+    <td width="85"><a href="../../Campos/campos4.htm#318">318</a></td>
+    <td width="200">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>

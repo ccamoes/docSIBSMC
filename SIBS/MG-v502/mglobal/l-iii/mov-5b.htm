@@ -1,0 +1,3206 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+
+<style>
+<!--
+#table tbody td { font-family: Tahoma; font-size: 8pt; color:#006400; vertical-align: middle;}
+#tablet tbody td { font-family: Tahoma; font-size: 8pt; color:#006400; vertical-align: top;}
+-->
+</style>
+<title>MOVIMENTOS (MOV5 - TIPREG=5 - Parte B)</title>
+</head>
+
+<body>
+
+<p><a href="mov-5.htm" target="main"><img src="../images/seta-ant.gif" align="absmiddle" alt="seta-ant.gif " border="0" width="22" height="21"></a> </p>
+
+<p>&nbsp;</p>
+
+<p><strong><a name="B">B</a>. MOVIMENTOS PARA ENTIDADES DE APOIO AO <em>CLEARING</em></strong></p>
+
+<p>&nbsp;</p>
+
+<p><strong>
+Dados do Sistema de Pagamento</strong></p>
+
+<p>O campo (<a href="../../Campos/campos3.htm#221">221</a>) SISTEMA identifica se o
+movimento teve como base operações electrónicas e também se os movimentos correspondem
+a movimentos destinados: 
+
+<ul>
+  <li>a contas abertas e aprovisionadas pelas entidades estrangeiras na Entidade
+    de Apoio
+    (SISTEMA=&#145;2&#146;):</li>
+</ul>
+
+<ul>
+  <li>a contas da Entidade de Apoio ao Sistema de Pagamento; a partir destes registos,
+    esta Entidade desencadeia uma ordem de transferência para movimentação da conta no Banco de <em>Settlement</em>
+    do país ou do sistema em questão (SISTEMA=&#145;7&#146;).</li>
+</ul>
+
+<p>O primeiro tipo de movimentos corresponde geralmente a débitos, e são relativos ao
+total de operações realizadas na Rede MB por cartões de um dado Sistema de Pagamento ou
+país.</p>
+
+<p>Neste caso, a entidade destinatária recebe os campos de identificação do Sistema de Pagamento
+preenchidos, (<a href="../../Campos/campos3.htm#221">221</a>) e (<a href="../../Campos/campos3.htm#222">222</a>). A identificação do período do Sistema de
+Pagamento (campo (<a href="../../Campos/campos3.htm#223">223</a>) IDPERSP, nos dados
+adicionais) possibilita que a entidade destinatária associe o ficheiro ou mensagem
+recebida com o movimento na sua conta.</p>
+
+<p>O segundo tipo de movimentos corresponde geralmente a créditos ou registos
+informativos, e são relativos à movimentação de cartões nacionais no país
+estrangeiro ou no Sistema de Pagamento.</p>
+
+<p>No campo (<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG apresenta-se o
+código do Sistema de Pagamento, completado nalguns casos com a identificação da central
+de <em>Clearing</em> (<a href="../../Campos/campos3.htm#227">227</a>) IDCC (dados
+adicionais).</p>
+
+<p>&nbsp;</p>
+
+<p><strong><a name="B.1">B.1</a> OPERAÇÕES DE CLIENTES INTERNACIONAIS
+EFECTUADAS EM PORTUGAL</strong></p>
+
+<p><br>
+Na Compensação, a SIBS apura o total das operações realizadas com cartões emitidos
+por clientes de um Centro de <em>Clearing</em>.</p>
+
+<p>Assim, sempre que o campo (<a href="../../Campos/campos3.htm#221">221</a>) SISTEMA for
+igual a &#145;2&#146;, este grupo de dados permite enviar à Entidade de Apoio: 
+
+<ul>
+  <li>Um registo correspondente ao <em>Telex-Advice</em> expedido para o estrangeiro
+    (AV/CUTOFF=1), onde se informa o total de operações electrónicas aceites, com a
+    importância e a data valor apropriada;</li>
+  <li>Outro registo (expedido na data valor indicada) preenchido com AV/CUTOFF=2 tem o efeito
+    de debitar a conta da central de <em>Clearing</em> pela importância da remessa (<a href="../../Campos/camp2300.htm#2326">2326</a>).</li>
+</ul>
+
+<p class="a"><br>
+Os processamentos a efectuar na Compensação Multibanco dependem das respostas a um conjunto de 3 questões:</p>
+
+<p class="a">&nbsp;1ª - O <i> Acquirer</i>  recebe o ficheiro de Movimentos
+(MOV5)?<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Sim. O tratamento dos movimentos efectuados é realizado pelo
+<i> Acquirer.</i><br>
+&nbsp; &nbsp;&nbsp; - Não. O tratamento dos movimentos efectuados é realizado pela SIBS.</p>
+
+<p class="a">&nbsp;2ª - O Banco de Suporte do <i> Acquirer</i> recebe subtotais de negócio no seu ficheiro de Movimentos (MOV5)?<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Sim. (*)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Não.</p>
+
+<p class="a">&nbsp;3ª - A SIBS dialoga com o Sistema de Pagamento? Qual o processamento efectuado pela SIBS?<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Não. Nenhum (A SIBS não dialoga com Sistema de Pagamento).<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Sim. Envio de totais de <i> Cut-off</i>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Sim. Processamento de ficheiro de <i> Clearing</i>.<br>
+&nbsp; &nbsp;&nbsp; - Sim. Envio de totais de <i> Cut-off</i> e processamento de Ficheiro de
+<i> Clearing</i>.</p>
+
+<p class="a">&nbsp;&nbsp; (*) Esta opção é obrigatória se, em resposta à primeira questão, o
+<i> Acquirer</i> não recebe o ficheiro MOV5.</p>
+
+<p class="a"><br>
+<b>
+Combinações possíveis:&nbsp;</b></p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="603" id="table">
+  <tr>
+    <td width="123" class="dta"><b>1ª Questão =&gt;</b></td>
+    <td COLSPAN="2" width="229"><i>Acquirer</i> recebe MOV5</td>
+    <td COLSPAN="2" width="231"><i>Acquirer</i> NÃO recebe MOV5</td>
+  </tr>
+  <tr>
+    <td width="123" class="dta"><b>2ª Questão =&gt;</b></td>
+    <td width="126">B.Sup. <i>Acquirer</i> não recebe Subtotais de negócio</td>
+    <td width="97">B.Sup. <i>Acquirer</i> recebe Subtotais de negócio</td>
+    <td width="122">B.Sup. <i>Acquirer</i> não recebe Subtotais de negócio</td>
+    <td width="103">B.Sup. <i>Acquirer</i> recebe Subtotais de negócio</td>
+  </tr>
+  <tr>
+    <td width="123" class="esq">
+      <b>
+      3ª Questão</b><br>
+      SIBS dialoga com S.P.?</td>
+    <td class="fundo" width="126">&nbsp;</td>
+    <td class="fundo" width="97">&nbsp;</td>
+    <td class="fundo" width="122">&nbsp;</td>
+    <td class="fundo" width="103">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="123" class="esq">
+      - Não</td>
+    <td width="126">Cenário A<br>
+      (2)</td>
+    <td width="97">(1)</td>
+    <td width="122">(1)</td>
+    <td width="103">(2)</td>
+  </tr>
+  <tr>
+    <td width="123" class="esq">
+      - Sim; <i> Cut-off</i></td>
+    <td width="126">Cenário B</td>
+    <td width="97">(1)</td>
+    <td width="122">(1)</td>
+    <td width="103">Cenário D</td>
+  </tr>
+  <tr>
+    <td width="123" class="esq">
+      - Sim; <i> Clearing</i></td>
+    <td width="126">Cenário C</td>
+    <td width="97">(1)</td>
+    <td width="122">(1)</td>
+    <td width="103">Cenário E</td>
+  </tr>
+  <tr>
+    <td width="123" class="esq">
+      - Sim; <i> Cut-off</i> + <i> Clearing</i></td>
+    <td width="126">(3)</td>
+    <td width="97">(1) (3)</td>
+    <td width="122">(1) (3)</td>
+    <td width="103">Cenário F<br>
+      (4)</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="600" id="tablet">
+  <tr>
+    <td nowrap>
+
+&nbsp;&nbsp;&nbsp; (1) -&nbsp;
+
+    </td>
+    <td class="esq">
+
+ As 1ª e 2ª questões são mutuamente exclusivas.&nbsp;<br>
+Em função da entidade que processa o tráfego de <i>Acquiring</i>, a SIBS
+ envia:<br>
+ &nbsp;&nbsp; - ao <i>Acquirer</i>, registos de Detalhe (<a href="mov-1.htm" target="main">registos tipo 1</a> do MOV5) ou&nbsp;<br>
+ &nbsp;&nbsp; - ao Banco de Suporte do <i>Acquirer</i>,  registos de Subtotais de negócio (registos tipo 5 do MOV5)
+
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">
+
+    &nbsp;&nbsp;
+
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>
+
+&nbsp;&nbsp; (2) -&nbsp;
+
+    </td>
+    <td class="esq">
+
+ Quando a SIBS não dialoga com o Sistema de Pagamento, o envio dos registos de detalhe ao
+ <i> Acquirer</i> (<a href="mov-1.htm" target="main">registos tipo 1</a> do MOV5) é obrigatório, de forma a possibilitar a este a informação necessária à preparação dos elementos a apresentar ao Sistema de Pagamento.
+
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">
+
+    &nbsp;&nbsp;
+
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>
+
+&nbsp;&nbsp; (3) -&nbsp;
+
+    </td>
+    <td class="esq">
+
+ Como regra geral, a combinação de parâmetros em que a SIBS dialoga com o Sistema de Pagamento enviando totais de
+ <i> Cut-off</i> e, paralelamente, processa o <i>Clearing</i>, não tem correspondência num cenário suportado pela SIBS.
+
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">
+
+    &nbsp;&nbsp;
+
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>
+
+&nbsp;&nbsp; (4) -&nbsp;
+
+    </td>
+    <td class="esq">
+
+ Cenário de excepção. A SIBS envia totais de <i> Cut-off</i> e processa <i> Clearing.</i>
+
+    </td>
+  </tr>
+</table>
+
+<p class="a"><br>
+Assim, considerando as 3 questões apresentadas anteriormente, existem 6 cenários de processamento de
+<i> Acquiring</i> suportados.<br>
+A resposta às 3 questões anteriores determina também processamentos adicionais a efectuar pela SIBS:</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="3" WIDTH="610" id="table">
+  <tr>
+    <td class="fundo" width="16">&nbsp;</td>
+    <td class="fundo" width="149"><b>Questões</b></td>
+    <td class="fundo" width="42"><b>Cen. A</b></td>
+    <td class="fundo" width="42"><b>Cen. B</b></td>
+    <td class="fundo" width="70"><b>Cen. C</b></td>
+    <td class="fundo" width="42"><b>Cen. D</b></td>
+    <td class="fundo" width="70"><b>Cen. E</b></td>
+    <td class="fundo" width="111"><b>Cen. F</b></td>
+  </tr>
+  <tr>
+    <td width="16">1</td>
+    <td class="esq" width="149"><i>Acquirer</i> recebe MOV5?</td>
+    <td width="42">Sim</td>
+    <td width="42">Sim</td>
+    <td width="70">Sim</td>
+    <td width="42">-</td>
+    <td width="70">-</td>
+    <td width="111">-</td>
+  </tr>
+  <tr>
+    <td width="16">2<br>
+      &nbsp;</td>
+    <td class="esq" width="149">B. Suporte do ACQ recebe&nbsp;<br>
+ subtotais no MOV5?</td>
+    <td width="42">-</td>
+    <td width="42">-</td>
+    <td width="70">-</td>
+    <td width="42">Sim</td>
+    <td width="70">Sim</td>
+    <td width="111">Sim</td>
+  </tr>
+  <tr>
+    <td width="16">3<br>
+      &nbsp;</td>
+    <td class="esq" width="149">SIBS dialoga com Sistema de Pagamento?</td>
+    <td width="42">-</td>
+    <td width="42"><i>Cut-off</i></td>
+    <td width="70">Ficheiro de <i> Clearing</i></td>
+    <td width="42"><i>Cut-off</i></td>
+    <td width="70">Ficheiro de <i> Clearing</i></td>
+    <td width="111"><i>Cut-off</i>&nbsp;<br>
+      +&nbsp;<br>
+ Ficheiro de <i> Clearing</i></td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;<br>
+      &nbsp;&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="3" WIDTH="610" id="table">
+  <tr>
+    <td class="fundo" width="14">&nbsp;</td>
+    <td class="fundo" width="153"><b>Processamentos adicionais</b></td>
+    <td class="fundo" width="42"><b>Cen. A</b></td>
+    <td class="fundo" width="42"><b>Cen. B</b></td>
+    <td class="fundo" width="70"><b>Cen. C</b></td>
+    <td class="fundo" width="42"><b>Cen. D</b></td>
+    <td class="fundo" width="70"><b>Cen. E</b></td>
+    <td class="fundo" width="111"><b>Cen. F</b></td>
+  </tr>
+  <tr>
+    <td width="14">4<br>
+      <br>
+      <br>
+      &nbsp;</td>
+    <td width="153" class="esq">SIBS gera registos para apresentação de transacções?<br>
+      (TIPMOV=0104, 1 ou 3 registos)</td>
+    <td width="42" class="mid">-</td>
+    <td COLSPAN="5" width="367" class="esq">
+      <table border="0" cellpadding="0" width="100%" cellspacing="1" id="tablet">
+        <tr>
+          <td colspan="2" class="esq">
+      Se <i> Acquirer</i> = Entidade de Apoio ao <i> Settlement</i>:</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;•&nbsp;&nbsp;</td>
+          <td class="esq">&nbsp;É enviado um MOV5, TIPREG=5, com TIPMOV=0104 e AV/CUTOFF=1
+        (registo informativo) à Entidade de Apoio ao <i> Settlement</i>.</td>
+        </tr>
+        <tr>
+          <td class="esq" colspan="2">&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="esq">Se <i> Acquirer</i> &#8800; Entidade de Apoio ao
+            <i> Settlement</i>:</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;•&nbsp;</td>
+          <td class="esq"> É enviado um MOV5, TIPREG=5, com TIPMOV=0104 e AV/CUTOFF=2
+        (contabilístico) à Entidade de Apoio ao <i> Settlement</i>.</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;•&nbsp;</td>
+          <td class="esq"> É enviado um MOV5, TIPREG=5, com TIPMOV=0104 e AV/CUTOFF=2
+        (contabilístico) ao Banco de Suporte do <i> Acquirer</i>.</td>
+        </tr>
+        <tr>
+          <td class="esq" nowrap>&nbsp;•&nbsp;</td>
+          <td class="esq"> É enviado um MOV5, TIPREG=5, com TIPMOV=0104 e AV/CUTOFF=1
+        (registo informativo) ao <i> Acquirer</i>.</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td width="14">5<br>
+      <br>
+      <br>
+      &nbsp;</td>
+    <td width="153" class="esq">SIBS envia registos de valores confirmados/aceites pelo Sistema de
+      Pagamento? (TIPMOV=0105)</td>
+    <td width="42" class="mid">-</td>
+    <td width="42">-</td>
+    <td width="70">Sim</td>
+    <td width="42">-</td>
+    <td width="70">Sim</td>
+    <td width="111">-</td>
+  </tr>
+  <tr>
+    <td width="14">6<br>
+      <br>
+      &nbsp;</td>
+    <td width="153" class="esq">SIBS envia registos relativos a disputas?<br>
+      (TIPMOV=0105)</td>
+    <td width="42" class="mid">-</td>
+    <td width="42">-</td>
+    <td width="70">Sim</td>
+    <td width="42">-</td>
+    <td width="70">Sim</td>
+    <td width="111">-</td>
+  </tr>
+</table>
+
+<p class="a">&nbsp;</p>
+
+<p class="a"><b><u>Movimentações possíveis, efectuadas pela Compensação</u></b></p>
+
+<p class="a"><b><br>
+Movimentação de contas de <i> Acquiring</i></b></p>
+
+<p class="a">Esta movimentação corresponde ao processamento efectuado pela SIBS que gera os registos que constituem o ficheiro de Movimentos (MOV5), criado por
+<i>Acquirer</i>.<br>
+Em função da resposta à primeira questão de caracterização de um <i>Acquirer</i>...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i><b>&nbsp;
+&quot;O Acquirer recebe o ficheiro de Movimentos (MOV5)?"</b></i><br>
+... o ficheiro MOV5 por <i> Acquirer</i> resultante deste processamento pode ser enviado ao
+<i> Acquirer</i> respectivo ou tratado pela SIBS.</p>
+
+<p class="a"><br>
+<b>Ambiente POS</b></p>
+
+<table id="table" BORDER="1" CELLSPACING="0" CELLPADDING="2" width="613">
+  <tr>
+    <td WIDTH="137" class="fundo" height="33"><b>Ficheiro/Tipo registo:</b></td>
+    <td width="96" class="fundo" height="33">MOV5/1</td>
+    <td width="91" class="fundo" height="33">MOV5/5</td>
+    <td width="83" class="fundo" height="33">MOV5/5</td>
+    <td width="80" class="fundo" height="33">MOV5/3</td>
+    <td width="96" class="fundo" height="33">MOV5/4</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dtamid"><b>Destinatário:</b></td>
+    <td width="96"><i>Acquirer<br>
+      </i>(ou SIBS)</td>
+    <td width="91"><i>Acquirer<br>
+      </i>(ou SIBS)</td>
+    <td width="83">B. Suporte <br>
+      <i>Acquirer</i></td>
+    <td width="80">B. Apoio <br>
+    Comerciante</td>
+    <td width="96"><i>Acquirer<br>
+      </i>(ou SIBS)</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dta"><b>Contab./Inform.:</b></td>
+    <td width="96">Contabilístico</td>
+    <td width="91">Contabilístico</td>
+    <td width="83">Contabilístico</td>
+    <td width="80">Contabilístico</td>
+    <td width="96">Informativo</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dta"><b>TIPMOV&nbsp; :</b></td>
+    <td width="96">n.a.</td>
+    <td width="91">0101</td>
+    <td width="83">0101</td>
+    <td width="80">n.a.</td>
+    <td width="96">n.a.</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dta" height="33"><b>Elementos
+    informados:</b></td>
+    <td WIDTH="464" class="esq" height="33" colspan="5"><strong>&nbsp;&nbsp;
+      Campo e Sinal :</strong></td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="esq">&nbsp;&nbsp; Montante</td>
+    <td width="96">(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      D</td>
+    <td width="91">(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      C</td>
+    <td width="83">(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      D</td>
+    <td width="80">(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      C</td>
+    <td width="96">(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      D</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="esq">
+ &nbsp;&nbsp; Comissão Comerciante
+    </td>
+    <td width="96">(<a target="explicac" href="../../Campos/camp2300.htm#2341">2341</a>)
+      MNT-R-DST<br>
+      C</td>
+    <td  width="91">(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      D</td>
+    <td width="83">
+ (<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+ C
+    </td>
+    <td width="80">
+ (<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI<br>
+ D
+    </td>
+    <td  width="96">(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI&nbsp;<br>
+      C<br>
+      &nbsp;(<a target="explicac" href="../../Campos/camp2300.htm#2341">2341</a>)
+      MNT-R-DST<br>
+      C</td>
+  </tr>
+</table>
+
+<p class="a">&nbsp;<br>
+<b>Ambiente ATM</b></p>
+
+<table id="table" BORDER="1" CELLSPACING="0" CELLPADDING="2" width="613">
+  <tr>
+    <td WIDTH="137" class="fundo" height="33"><b>Ficheiro/Tipo registo:</b></td>
+    <td class="fundo" height="33">MOV5/1</td>
+    <td class="fundo" height="33">MOV5/5</td>
+    <td class="fundo" height="33">MOV5/5</td>
+    <td class="fundo" height="33"><a href="ori.htm#= 1" target="main">ORI5/1</a></td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dtamid"><b>Destinatário:</b></td>
+    <td><i>Acquirer<br>
+      </i>(ou SIBS)</td>
+    <td><i>Acquirer<br>
+      </i>(ou SIBS)</td>
+    <td>B. Suporte <br>
+      <i>Acquirer</i></td>
+    <td>B. Apoio <br>
+      Terminal</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dta"><b>Contab./Inform.:</b></td>
+    <td>Contabilístico</td>
+    <td>Contabilístico</td>
+    <td>Contabilístico</td>
+    <td>Contabilístico</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dta"><b>TIPMOV&nbsp; :</b></td>
+    <td>n.a.</td>
+    <td>0101</td>
+    <td>0101</td>
+    <td>n.a.</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dta" height="33"><b>Elementos
+    informados:</b></td>
+    <td class="esq" height="33" colspan="4"><strong>&nbsp;&nbsp; Campo e Sinal :</strong></td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="esq">&nbsp;&nbsp; Montante</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      D</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      C</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      D</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      C</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;&nbsp; Taxa Cliente (Cliente)</td>
+    <td>(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI<br>
+      D</td>
+    <td>(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI<br>
+      C</td>
+    <td>(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI<br>
+      D</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;&nbsp; Taxa Cliente (<i>Acquirer</i>)</td>
+    <td>(<a target="explicac" href="../../Campos/camp2300.htm#2341">2341</a>)
+    MNT-R-DST<br>
+      C&nbsp; (+100%)</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      D (-100%)</td>
+    <td >(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      C&nbsp; (+100%)</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="esq">
+ &nbsp;&nbsp; Taxa Cliente (B. Apoio)
+    </td>
+    <td>(<a target="explicac" href="../../Campos/camp2300.htm#2341">2341</a>)
+      MNT-R-DST<br>
+      D (-75%)</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      C (+75%)</td>
+    <td>
+ (<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+ D (-75%)
+    </td>
+    <td>
+ (<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI<br>
+ C (+75%)
+    </td>
+  </tr>
+</table>
+
+<p class="a"><br>
+<b>Processamento de <i> Clearing</i> (<i>Cut-off </i>/ apresentação)</b></p>
+
+<p class="a">Em função da resposta à terceira questão de caracterização de um
+<i>Acquirer</i>...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i><b>&nbsp;
+</b></i><b>&quot;A SIBS dialoga com o Sistema de Pagamento?"</b><br>
+... sempre que a SIBS dialogue com o Sistema de Pagamento em causa, enviando totais de
+<i> Cut-off</i> ou processando ficheiros de <i>clearing</i>, são formatados registos para apresentação ao Sistema de Pagamento dos valores considerados.</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<table id="table" BORDER="1" CELLSPACING="0" CELLPADDING="2" width="550">
+  <tr>
+    <td WIDTH="137" class="fundo" height="33"><b>Ficheiro/Tipo registo:</b></td>
+    <td class="fundo" height="33">MOV5/1</td>
+    <td class="fundo" height="33">MOV5/5</td>
+    <td class="fundo" height="33">MOV5/5</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dtamid"><b>Destinatário:</b></td>
+    <td><i>Acquirer</i></td>
+    <td>B. Suporte <br>
+      <i>Acquirer</i></td>
+    <td>Entidade Apoio <br>
+      <i>Settlement</i></td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dta"><b>Contab./Inform.:</b></td>
+    <td>Contabilístico<br>
+      ou<br>
+      Não existe (1)</td>
+    <td>Contabilístico<br>
+      ou<br>
+      Não existe (1)</td>
+    <td>Contabilístico<br>
+      ou<br>
+      Informativo (1)</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dta"><b>TIPMOV&nbsp; :</b></td>
+    <td>0104<br>
+      (apresentação)</td>
+    <td>0104<br>
+      (apresentação)</td>
+    <td>0104<br>
+      (apresentação)</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="dta" height="33"><b>Elementos
+    informados:</b></td>
+    <td class="esq" height="33" colspan="3"><strong>&nbsp;&nbsp; Campo e Sinal :</strong></td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="esq">&nbsp;&nbsp; Montante</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      C</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      C</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      D</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;&nbsp; IF do SPI<br>
+      &nbsp;&nbsp; (se POS)</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      D</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      D</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      C</td>
+  </tr>
+  <tr>
+    <td class="esq">&nbsp;&nbsp; Taxa Cliente&nbsp;<br>
+      &nbsp;&nbsp; (se ATM)</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      C</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      C</td>
+    <td>(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      D</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="esq">
+ &nbsp;&nbsp; Remuneração<br>
+ &nbsp;&nbsp; ACQ =&gt; EAS
+    </td>
+    <td>(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI<br>
+      D</td>
+    <td>(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI<br>
+      D</td>
+    <td>(<a target="explicac" href="../../Campos/camp2300.htm#2327">2327</a>)
+    MNT-ADI<br>
+      C</td>
+  </tr>
+  <tr>
+    <td WIDTH="137" class="esq">
+ &nbsp;&nbsp; DADOS&nbsp;<br>
+ &nbsp;&nbsp; ADICIONAIS
+    </td>
+    <td colspan="3" class="esq">&nbsp;&nbsp; (2)</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="600" id="tablet">
+  <tr>
+    <td nowrap>
+
+&nbsp;&nbsp; (1) -&nbsp;
+
+    </td>
+    <td class="esq">
+
+ Quando o <i> Acquirer</i> e a Entidade de Apoio ao <i> Settlement</i> correspondem à mesma entidade, apenas é enviado um TIPMOV=0104 para a Entidade de Apoio ao
+ <i> Settlement</i> com AV/CUTOFF=1 (registo informativo).
+
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" colspan="2">
+
+    &nbsp;&nbsp;
+
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>
+
+&nbsp;&nbsp; (2) -&nbsp;
+
+    </td>
+    <td class="esq">
+
+ Incluem indicador “Âmbito de movimentação”:<br>
+ •	No caso dos registos com TIPMOV=0104, o âmbito indica sempre “01 - INTs – Apresentações enviadas”.
+
+    </td>
+  </tr>
+</table>
+
+<p class="a"><br>
+Podem ser enviados vários registos com TIPMOV=0104, que incluem valores agregados em função da combinação de factores previamente determinados como chave:&nbsp;
+</p>
+
+<ul class="a">
+  <li>
+    <p class="a">Centro de <i> Clearing</i> - campo (<a href="../../Campos/campos3.htm#227">227</a>) IDCC</li>
+  <li>
+    <p class="a">Tipo de Cartão - campo (<a href="../../Campos/camp800.htm#806">806</a>) TIPOCART</li>
+  <li>
+    <p class="a">Tipo de Terminal - campo (<a href="../../Campos/campos1.htm#003">003</a>) TIPOTERM&nbsp;</li>
+  <li>
+    <p class="a">Produto Financeiro - campo (<a href="../../Campos/campos5.htm#434">434</a>) PRODFIN</li>
+</ul>
+
+<p class="a"><br>
+<b>
+Processamento de Ficheiro de <i> Clearing</i></b></p>
+
+<p class="a">
+Quando a SIBS dialoga com o Sistema de Pagamento por outro meio que não através do envio de totais de
+<i>Cut-off</i>, o processamento do ficheiro de <i> clearing</i> recebido do Sistema de Pagamento cria registos de tipo 5 no ficheiro de Movimentos (MOV5) enviado à Entidade de Apoio ao
+<i>Settlement</i>.&nbsp;<br>
+Os valores movimentados relativos a disputas (Reapresentações e <i>Chargebacks</i>) têm como contrapartida contas de regularização do
+<i>Acquirer</i>.&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<table id="table" BORDER="1" CELLSPACING="0" CELLPADDING="2" width="331">
+  <tr>
+    <td WIDTH="155" class="fundo" height="33"><b>Ficheiro/Tipo registo:</b></td>
+    <td class="fundo" height="33" width="174">MOV5/5</td>
+  </tr>
+  <tr>
+    <td WIDTH="155" class="dtamid"><b>Destinatário:</b></td>
+    <td width="174">Entidade Apoio <i>Settlement</i></td>
+  </tr>
+  <tr>
+    <td WIDTH="155" class="dta"><b>Contab./Inform.:</b></td>
+    <td width="174">Informativo<br>
+      ou<br>
+      Contabilístico</td>
+  </tr>
+  <tr>
+    <td WIDTH="155" class="dta"><b>TIPMOV&nbsp; :</b></td>
+    <td width="174">0105</td>
+  </tr>
+  <tr>
+    <td WIDTH="155" class="dta" height="33"><b>Elementos
+    informados:</b></td>
+    <td class="esq" height="33" width="174"><strong>&nbsp;&nbsp; Campo e Sinal :</strong></td>
+  </tr>
+  <tr>
+    <td WIDTH="155" class="esq">&nbsp;&nbsp; Montante</td>
+    <td width="174">(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      C ou D</td>
+  </tr>
+  <tr>
+    <td WIDTH="155" class="esq">
+ &nbsp;&nbsp; DADOS&nbsp;<br>
+ &nbsp;&nbsp; ADICIONAIS
+    </td>
+    <td class="esq" width="174">&nbsp; (1)</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" id="tablet" width="550">
+  <tr>
+    <td class="esq" colspan="2">
+
+    &nbsp;&nbsp;
+
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>
+
+&nbsp;&nbsp; (1) -&nbsp;
+
+    </td>
+    <td class="esq">
+
+ Incluem indicador “Âmbito de movimentação”, que pode assumir diferentes valores em função da movimentação a que se refere o registo:<br>
+ •	Apresentações - confirmação de valores apresentados através do TIPMOV=0104  (registos informativos)<br>
+ •	Reapresentações enviadas - confirmação  (registos com impacto contabilístico)<br>
+ • <i>	Chargebacks</i> recebidos  (registos com impacto contabilístico)<br>
+ • <i>	Fees</i> do Sistema de Pagamento diversas  (registos com impacto contabilístico)
+    </td>
+  </tr>
+</table>
+
+<p class="a">Podem ser enviadas várias ocorrências de registos com TIPMOV=0105.
+</p>
+
+<p class="cor"><b>A agregação dos diferentes registos de tipo 5 em que é apresentado TIPMOV=0105 traduz os totais dos ficheiros de
+<i> Clearing</i> do Sistema de Pagamento.</b></p>
+
+<p class="a">Os registos com TIPMOV=0105 são também utilizados para indicação dos valores de operações de cartões nacionais realizadas no estrangeiro.&nbsp;<br>
+A distinção entre os diferentes registos com TIPMOV=0105 é efectuada pela indicação de diferentes valores para os campos
+(<a href="../../Campos/campos3.htm#221">221</a>) SISTEMA e (<a href="../../Campos/camp2800.htm#2817">2817</a>) SPI-AMBITO.</p>
+
+<p class="a"><br>
+<b>Processamento de subtotais de negócio</b></p>
+
+<p class="a">Consultar ponto <a href="#B.3" target="main">B.3</a>.</p>
+
+<p class="center"><br>
+<span class="a"><b>Quadro-resumo do processamento efectuado, por Cenário</b></span></p>
+
+<center>
+<table BORDER="1" CELLSPACING="0" CELLPADDING="3" WIDTH="480">
+  <tr>
+    <th class="a">Cenário</th>
+    <th class="a">Processamento</th>
+  </tr>
+  <tr>
+    <td class="a">A</td>
+    <td class="esqa">
+      MOV5 é enviado ao <i> Acquirer</i><br>
+      É enviado TIPMOV=0101<br>
+      NÃO é enviado TIPMOV=0104<br>
+      NÃO é enviado TIPMOV=0105<br>
+      NÃO são enviados TIPMOV=0201, 0202, 0203, 0204 (subtotais de
+      negócio)</td>
+  </tr>
+  <tr>
+    <td class="a">
+      B</td>
+    <td class="esqa">
+      MOV5 é enviado ao <i> Acquirer</i><br>
+      É enviado TIPMOV=0101<br>
+      É enviado TIPMOV=0104 (registo de <i>Cut-off</i>)<br>
+      NÃO é enviado TIPMOV=0105<br>
+      NÃO são enviados TIPMOV=0201, 0202, 0203, 0204 (subtotais de
+      negócio)</td>
+  </tr>
+  <tr>
+    <td class="a">
+      C</td>
+    <td class="esqa">
+      MOV5 é enviado ao <i> Acquirer</i><br>
+      É enviado TIPMOV=0101<br>
+      É enviado TIPMOV=0104<br>
+      É enviado TIPMOV=0105<br>
+      NÃO são enviados TIPMOV=0201, 0202, 0203, 0204 (subtotais de
+      negócio)</td>
+  </tr>
+  <tr>
+    <td class="a">
+      D</td>
+    <td class="esqa">
+      MOV5 NÃO é enviado ao <i> Acquirer</i><br>
+      NÃO É enviado TIPMOV=0101<br>
+      É enviado TIPMOV=0104 (registo de <i>Cut-off</i>)<br>
+      NÃO é enviado TIPMOV=0105<br>
+      São enviados TIPMOV=0201, 0202, 0203, 0204 (subtotais de negócio)</td>
+  </tr>
+  <tr>
+    <td class="a">
+      E</td>
+    <td class="esqa">
+      MOV5 NÃO é enviado ao <i> Acquirer</i><br>
+      NÃO É enviado TIPMOV=0101<br>
+      É enviado TIPMOV=0104<br>
+      É enviado TIPMOV=0105<br>
+      São enviados TIPMOV=0201, 0202, 0203, 0204 (subtotais de negócio)</td>
+  </tr>
+  <tr>
+    <td class="a">
+      F</td>
+    <td class="esqa">
+      MOV5 NÃO é enviado ao <i> Acquirer</i><br>
+      NÃO É enviado TIPMOV=0101<br>
+      É enviado TIPMOV=0104 (registo de <i>Cut-off</i>)<br>
+      NÃO é enviado TIPMOV=0105<br>
+      São enviados TIPMOV=0201, 0202, 0203, 0204 (subtotais de negócio)</td>
+  </tr>
+</table>
+</center>
+
+<p>&nbsp;</p>
+
+<p class="a"><b>PREENCHIMENTO DO REGISTO&nbsp;</b></p>
+
+<p class="a">O preenchimento do tipo de registo 5 para operações de clientes internacionais efectuadas em Portugal é o que a seguir se apresenta.</p>
+
+<p class="a">&nbsp;</p>
+
+<p class="tiprega"><b><a name="B.1.1">
+B.1.1</a> CARTÕES INTERNACIONAIS NA REDE MB - APRESENTAÇÃO DE TRANSACÇÕES (TIPMOV=0104)</b></p>
+
+<p class="a">Este tipo de movimento transporta informação relativa a duas componentes:</p>
+
+<ol class="a" type="a">
+  <li>Apresentação do tráfego de cartões internacionais ao respectivo Sistema de Pagamento internacional. Ou seja, os registos em que se apresenta TIPMOV=0104 reflectem um pagamento ao Sistema de Pagamento Internacional.</li>
+  <li>Particionamento doméstico dos comissionamentos existentes (remuneração do
+    <i> Acquirer</i> à Entidade de Apoio ao <i>Settlement</i>).&nbsp;</li>
+</ol>
+
+<p class="a">Os registos com TIPMOV=0104 podem ser meramente informativos ou possuir valor contabilístico, em função do
+<i> Acquirer</i> e da Entidade de Apoio ao <i> Settlement</i> em causa:</p>
+
+<p class="a"><i>1) Se Acquirer = Entidade de Apoio ao Settlement</i></p>
+
+<ul class="a">
+  <li>É enviado apenas um MOV5-5, a débito, com TIPMOV=0104 e AV/CUTOFF=1 (registo informativo) à Entidade de Apoio ao
+    <i> Settlement</i>.</li>
+</ul>
+<p class="a"><i>2) Se Acquirer &#8800; Entidade de Apoio ao Settlement</i></p>
+<ul class="a">
+  <li>É enviado um MOV5-5, a débito, com TIPMOV=0104 e AV/CUTOFF=2 (contabilístico) à Entidade de Apoio ao
+    <i> Settlement.</i></li>
+  <li>É enviado um MOV5-5, a crédito, com TIPMOV=0104 e AV/CUTOFF=2 (contabilístico) ao Banco de Suporte do
+    <i> Acquirer.</i></li>
+  <li>É enviado um MOV5-5, a crédito, com TIPMOV=0104 e AV/CUTOFF=1 (registo informativo) ao
+    <i>Acquirer</i>, para lhe dar a conhecer do movimento efectuado numa sua conta, no seu Banco de Suporte.&nbsp;</li>
+</ul>
+<p class="a"><b><br>
+Estrutura:</b></p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="594">
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td class="oitomida" width="144"><strong>MOV5 do <em>Acquirer</em></strong></td>
+    <td class="oitomida" width="143"><strong>MOV5 do Banco de<br>
+    Suporte do <em>Acquirer</em></strong></td>
+    <td class="oitomida" width="146"><strong>MOV5 da Entidade&nbsp;<br>
+      Apoio <em>Settlement</em></strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos2.htm#132">132</a>) CONTA</td>
+    <td width="144" class="a">= indicada pelo <em>Acquirer</em></td>
+    <td width="143" class="a">= indicada pelo <em>Acquirer</em></td>
+    <td width="146" class="a">= indicada pela Ent.Apoio (conta de <em>Settlement)</em></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="144" class="a">&nbsp;</td>
+    <td width="143" class="a">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2329">2329</a>) TOTOPER-E</td>
+    <td width="144" class="a">= zeros</td>
+    <td width="143" class="a">= zeros</td>
+    <td width="146" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="144" class="a">&nbsp;</td>
+    <td width="143" class="a">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E</td>
+    <td width="144" class="a">preenchido <b>(a)</b></td>
+    <td  width="143" class="a">preenchido <b>(a)</b></td>
+    <td width="146" class="a">preenchido <b>(a)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="144" class="a">= C ou D</td>
+    <td width="143" class="a">= C ou D</td>
+    <td width="146" class="a">= D ou C</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2327">2327</a>) MNT-ADI</td>
+    <td width="144" class="a">preenchido <b>(b)</b></td>
+    <td  width="143" class="a">preenchido <b>(b)</b></td>
+    <td width="146" class="a">preenchido <b>(b)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="144" class="a">= D</td>
+    <td width="143" class="a">= D</td>
+    <td width="146" class="a">= C&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="144" class="a">&nbsp;</td>
+    <td width="143" class="a">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2328">2328</a>)
+    COD-MOD-NEG</td>
+    <td width="144" class="a">= espaços</td>
+    <td  width="143" class="a">= espaços</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2300">2300</a>) TARSIBS-E</td>
+    <td width="144" class="a">= espaços</td>
+    <td  width="143" class="a">= espaços</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2301">2301</a>) TARINT-E
+    (1)</td>
+    <td width="144" class="a">= espaços</td>
+    <td  width="143" class="a">= espaços</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2301">2301</a>) TARINT-E
+    (2)</td>
+    <td width="144" class="a">= espaços</td>
+    <td  width="143" class="a">= espaços</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="144" class="a">&nbsp;</td>
+    <td width="143" class="a">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos1.htm#063">063</a>) TIPMOV</td>
+    <td width="144" class="a">= 0104</td>
+    <td width="143" class="a">= 0104</td>
+    <td width="146" class="a">= 0104</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#221">221</a>) SISTEMA</td>
+    <td width="144" class="a">= 2 (Multibanco)</td>
+    <td width="143" class="a">= 2 (Multibanco)</td>
+    <td width="146" class="a">= 2 (Multibanco)</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG</td>
+    <td width="144" class="a">preenchido</td>
+    <td  width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#225">225</a>) BPAGAPOIO</td>
+    <td width="144" class="a">= 6 (<em>Acquirer</em>)</td>
+    <td width="143" class="a">= 2 (Banco de Apoio)</td>
+    <td width="146" class="a">= 7 (Contratante MB)</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#228">228</a>) AV/CUTOFF</td>
+    <td width="143" class="a">= 1</td>
+    <td width="146" class="a">= 2</td>
+    <td width="146" class="a">= 1 ou 2</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos2.htm#105">105</a>) DTHORA</td>
+    <td width="144" class="a">preenchido</td>
+    <td  width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos2.htm#110">110</a>) DATAVALOR</td>
+    <td width="144" class="a" >preenchido</td>
+    <td width="143" class="a" >preenchido</td>
+    <td width="146" class="a" >preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="144" class="a">&nbsp;</td>
+    <td width="143" class="a">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135"><em>DADOS ADICIONAIS</em> </td>
+    <td width="144" class="a">&nbsp;</td>
+    <td width="143" class="a">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#227">227</a>) IDCC</td>
+    <td width="149" class="a"><b>(c)</b></td>
+    <td width="148" class="a"><b>(c)</b></td>
+    <td width="148" class="a"><b>(c)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#223">223</a>) IDPERSP</td>
+    <td width="149" class="a"><b>(c)</b></td>
+    <td width="148" class="a"><b>(c)</b></td>
+    <td width="148" class="a"><b>(c)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2400.htm#2401">2401</a>) BANCOSUP</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#226">226</a>)
+      CODPAIS</td>
+    <td width="149" class="a"><b>(c)</b></td>
+    <td width="148" class="a"><b>(c)</b></td>
+    <td width="148" class="a"><b>(c)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO</td>
+    <td width="149" class="a">= 01</td>
+    <td width="148" class="a">= 01</td>
+    <td width="148" class="a">=01</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp800.htm#806">806</a>)
+      TIPOCART</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135"> (<a href="../../Campos/campos1.htm#003">003</a>) TIPOTERM</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos5.htm#434">434</a>) PRODFIN</td>
+    <td width="149" class="a"><b>(d)</b></td>
+    <td width="148" class="a"><b>(d)</b></td>
+    <td width="148" class="a"><b>(d)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a target="explicac" href="../../Campos/camp2400.htm#2411">2411</a>)
+      MNTAUX-E (1)</td>
+    <td width="433" class="a" colspan="3">Componente de (<a href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E ; informa valor das transacções apresentadas ao Sistema de Pagamento Internacional</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="144" class="a">= C ou D</td>
+    <td width="143" class="a">= C ou D</td>
+    <td width="146" class="a">= D ou C</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a target="explicac" href="../../Campos/camp2400.htm#2411">2411</a>)
+      MNTAUX-E (2)</td>
+    <td width="433" class="a" colspan="3">Componente de (<a href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E ; informa valor
+      dos comissionamentos apresentados ao Sistema de Pagamento Internacional</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="144" class="a">= C ou D</td>
+    <td width="143" class="a">= C ou D</td>
+    <td width="146" class="a">= D ou C</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;</td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="1" width="600" id="tablet">
+  <tr>
+    <td class="esqa" nowrap>&nbsp;&nbsp; (a) -&nbsp;</td>
+    <td class="esqa">O campo (<a href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E inclui os valores a apresentar ao Sistema de Pagamento:<br>
+      &nbsp;&nbsp; •&nbsp; montante das transacções apresentadas<br>
+      &nbsp;&nbsp; •&nbsp; comissões a suportar ou a receber</td>
+  </tr>
+  <tr>
+    <td class="esqa" nowrap>&nbsp;&nbsp; (b) -&nbsp;</td>
+    <td class="esqa">O campo (<a href="../../Campos/camp2300.htm#2327">2327</a>) MNT-ADI é
+      preenchido sempre que exista domesticamente uma partilha do comissionamento. O valor do campo
+      (<a href="../../Campos/camp2300.htm#2327">2327</a>) MNT-ADI corresponde ao valor a entregar pelo
+      <i> Acquirer</i> à Entidade de Apoio ao <i> Settlement</i></td>
+  </tr>
+  <tr>
+    <td class="esqa" nowrap>&nbsp;&nbsp; (c) -&nbsp;</td>
+    <td class="esqa">Preenchimento em função do campo (<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG</td>
+  </tr>
+  <tr>
+    <td class="esqa" nowrap>&nbsp;&nbsp; (d) -&nbsp;</td>
+    <td class="esqa">Preenchido quando o campo (<a href="../../Campos/campos1.htm#003">003</a>) TIPOTERM
+      assume um valor diferente de ATM</td>
+  </tr>
+</table>
+
+<p class="a">&nbsp;<br>
+<b>Preenchimento dos dados adicionais por Sistema de Pagamento:</b></p>
+
+<p class="a"><br>
+Se (<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG = A
+(MasterCard)</p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="594">
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td class="oitomida" width="144"><strong>MOV5 do <em>Acquirer</em></strong></td>
+    <td class="oitomida" width="143"><strong>MOV5 do Banco de<br>
+    Suporte do <em>Acquirer</em></strong></td>
+    <td class="oitomida" width="146"><strong>MOV5 da Entidade&nbsp;<br>
+      Apoio <em>Settlement</em></strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#227">227</a>) IDCC</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#223">223</a>) IDPERSP</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2400.htm#2401">2401</a>) BANCOSUP</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#226">226</a>)
+      CODPAIS</td>
+    <td width="149" class="a">= zeros</td>
+    <td width="148" class="a">= zeros</td>
+    <td width="148" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO</td>
+    <td width="149" class="a">= 01</td>
+    <td width="148" class="a">= 01</td>
+    <td width="148" class="a">=01</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp800.htm#806">806</a>)
+      TIPOCART</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135"> (<a href="../../Campos/campos1.htm#003">003</a>) TIPOTERM</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos5.htm#434">434</a>) PRODFIN</td>
+    <td width="149" class="a">preenchido ou zeros</td>
+    <td width="148" class="a">preenchido ou zeros</td>
+    <td width="148" class="a">preenchido ou zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="580" colspan="4">Campos relativos a subtotais
+      (montantes) estão preenchidos quando aplicável</td>
+  </tr>
+</table>
+
+<p class="a"><br>
+Se (<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG = C (VISA)</p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="594">
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td class="oitomida" width="144"><strong>MOV5 do <em>Acquirer</em></strong></td>
+    <td class="oitomida" width="143"><strong>MOV5 do Banco de<br>
+    Suporte do <em>Acquirer</em></strong></td>
+    <td class="oitomida" width="146"><strong>MOV5 da Entidade&nbsp;<br>
+      Apoio <em>Settlement</em></strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#227">227</a>) IDCC</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#223">223</a>) IDPERSP</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2400.htm#2401">2401</a>) BANCOSUP</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#226">226</a>)
+      CODPAIS</td>
+    <td width="149" class="a">= zeros</td>
+    <td width="148" class="a">= zeros</td>
+    <td width="148" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO</td>
+    <td width="149" class="a">= 01</td>
+    <td width="148" class="a">= 01</td>
+    <td width="148" class="a">=01</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp800.htm#806">806</a>)
+      TIPOCART</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135"> (<a href="../../Campos/campos1.htm#003">003</a>) TIPOTERM</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos5.htm#434">434</a>) PRODFIN</td>
+    <td width="149" class="a">preenchido ou zeros</td>
+    <td width="148" class="a">preenchido ou zeros</td>
+    <td width="148" class="a">preenchido ou zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="580" colspan="4">Campos relativos a subtotais
+      (montantes) estão preenchidos quando aplicável</td>
+  </tr>
+</table>
+
+<p class="a"><br>
+Se (<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG = 3 (Amex)</p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="594">
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td class="oitomida" width="144"><strong>MOV5 do <em>Acquirer</em></strong></td>
+    <td class="oitomida" width="143"><strong>MOV5 do Banco de<br>
+    Suporte do <em>Acquirer</em></strong></td>
+    <td class="oitomida" width="146"><strong>MOV5 da Entidade&nbsp;<br>
+      Apoio <em>Settlement</em></strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#227">227</a>) IDCC</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#223">223</a>) IDPERSP</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2400.htm#2401">2401</a>) BANCOSUP</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#226">226</a>)
+      CODPAIS</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO</td>
+    <td width="149" class="a">= 01</td>
+    <td width="148" class="a">= 01</td>
+    <td width="148" class="a">=01</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp800.htm#806">806</a>)
+      TIPOCART</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135"> (<a href="../../Campos/campos1.htm#003">003</a>) TIPOTERM</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos5.htm#434">434</a>) PRODFIN</td>
+    <td width="149" class="a">preenchido ou zeros</td>
+    <td width="148" class="a">preenchido ou zeros</td>
+    <td width="148" class="a">preenchido ou zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="580" colspan="4">Campos relativos a subtotais
+      (montantes) estão preenchidos quando aplicável</td>
+  </tr>
+</table>
+
+<p class="a"><br>
+Se (<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG = 4 (Savings
+Bank)</p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="594">
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td class="oitomida" width="144"><strong>MOV5 do <em>Acquirer</em></strong></td>
+    <td class="oitomida" width="143"><strong>MOV5 do Banco de<br>
+    Suporte do <em>Acquirer</em></strong></td>
+    <td class="oitomida" width="146"><strong>MOV5 da Entidade&nbsp;<br>
+      Apoio <em>Settlement</em></strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#227">227</a>) IDCC</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#223">223</a>) IDPERSP</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2400.htm#2401">2401</a>) BANCOSUP</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#226">226</a>)
+      CODPAIS</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO</td>
+    <td width="149" class="a">= 01</td>
+    <td width="148" class="a">= 01</td>
+    <td width="148" class="a">=01</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp800.htm#806">806</a>)
+      TIPOCART</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135"> (<a href="../../Campos/campos1.htm#003">003</a>) TIPOTERM</td>
+    <td width="144" class="a">preenchido</td>
+    <td width="143" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos5.htm#434">434</a>) PRODFIN</td>
+    <td width="149" class="a">preenchido ou zeros</td>
+    <td width="148" class="a">preenchido ou zeros</td>
+    <td width="148" class="a">preenchido ou zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="580" colspan="4">Campos relativos a subtotais
+      (montantes) estão preenchidos quando aplicável</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="tiprega">
+<a name="B.1.2">B.1.2</a> CARTÕES INTERNACIONAIS NA REDE MB - PROCESSAMENTO DE FICHEIRO DE
+<i> CLEARING</i> (TIPMOV=0105)</p>
+
+<p class="a">Os registos com este tipo de movimento apresentam os valores obtidos por processamento do
+<i> clearing</i> do Sistema de Pagamento Internacional. O montante indicado nestes registos pode resultar das seguintes componentes:</p>
+
+<ol class="a" type="a">
+  <li>Confirmações de Apresentações: valores aceites pelo Sistema de Pagamento Internacional, i.e., confirmação dos valores apresentados através dos registos com TIPMOV=0104</li>
+  <li>Confirmações de reapresentações enviadas</li>
+  <li><i>Chargebacks</i> recebidos</li>
+  <li><i>Fees</i> do Sistema de Pagamento</li>
+</ol>
+
+<p class="a">Os registos com estes TIPMOV destinam-se unicamente à Entidade de Apoio ao
+<i>Settlement</i>.<br>
+Os valores movimentados relativos a disputas (Reapresentações e <i>Chargebacks</i>) têm como contrapartida contas de regularização do
+<i>Acquirer</i>.</p>
+
+<p class="a"><b><br>
+Estrutura:</b></p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="300">
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td class="oitomida" width="146"><strong>MOV5 da Entidade&nbsp;<br>
+      Apoio <em>Settlement</em></strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos2.htm#132">132</a>) CONTA</td>
+    <td width="146" class="a">= indicada pela Ent.Apoio (conta de <em>Settlement)</em></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2329">2329</a>) TOTOPER-E</td>
+    <td width="146" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E</td>
+    <td width="146" class="a">preenchido&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="146" class="a">= C ou D</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2327">2327</a>) MNT-ADI</td>
+    <td width="146" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="146" class="a">= C&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2328">2328</a>)
+    COD-MOD-NEG</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2300">2300</a>) TARSIBS-E</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2301">2301</a>) TARINT-E
+    (1)</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2301">2301</a>) TARINT-E
+    (2)</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos1.htm#063">063</a>) TIPMOV</td>
+    <td width="146" class="a">= 0105</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#221">221</a>) SISTEMA</td>
+    <td width="146" class="a">= 2 (Multibanco)</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#225">225</a>) BPAGAPOIO</td>
+    <td width="146" class="a">= 7 (Contratante MB)</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#228">228</a>) AV/CUTOFF</td>
+    <td width="146" class="a">= 1 ou 2</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos2.htm#105">105</a>) DTHORA</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos2.htm#110">110</a>) DATAVALOR</td>
+    <td width="146" class="a" >preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135"><em>DADOS ADICIONAIS</em> </td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#227">227</a>) IDCC</td>
+    <td width="148" class="a"><b>(a)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#223">223</a>) IDPERSP</td>
+    <td width="148" class="a"><b>(a)</b> <b>(b)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2400.htm#2401">2401</a>) BANCOSUP</td>
+    <td width="146" class="a"><b>(a)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#226">226</a>)
+      CODPAIS</td>
+    <td width="148" class="a"><b>(a)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO</td>
+    <td width="148" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2600.htm#2600">2600</a>)
+      VISA-TIP-SET</td>
+    <td width="146" class="a"><b>(a)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2818">2818</a>)
+      SPI-IDFICH</td>
+    <td width="146" class="a"><b>(a)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2819">2819</a>)
+      SPI-ENTFILE</td>
+    <td width="146" class="a"><b>(a)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#233">233</a>)
+      CODMOEDA</td>
+    <td width="146" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#236">236</a>)
+    CAMBIO</td>
+    <td width="146" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#253">253</a>)
+    VMOEDA</td>
+    <td width="146" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#248">248</a>)
+    VMOEDATX</td>
+    <td width="148" class="a">= zeros</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;</td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="1" width="600">
+  <tr>
+    <td class="esqa" nowrap>&nbsp;&nbsp; (a) -&nbsp;</td>
+    <td class="esqa">Preenchimento em função do campo (<a href="../../Campos/campos3.htm#222">222</a>)
+      SISTPAG</td>
+  </tr>
+  <tr>
+    <td class="esqa" nowrap>&nbsp;&nbsp; (b) -&nbsp;</td>
+    <td class="esqa">Campo que permite efectuar o emparelhamento entre os
+      TIPMOV=0105 relativos a confirmação de apresentações (campo (<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO = ‘02’) e o TIPMOV=0104 previamente enviado</td>
+  </tr>
+</table>
+
+<p class="a"><br>
+<b>Preenchimentos particulares dos dados adicionais:</b></p>
+
+<p class="a"><br>
+Se (<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG = A
+(MasterCard)</p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="380">
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td class="oitomida" width="233"><strong>MOV5 da Entidade&nbsp;<br>
+      Apoio <em>Settlement</em></strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#227">227</a>) IDCC</td>
+    <td width="233" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#223">223</a>) IDPERSP</td>
+    <td width="233" class="a">preenchido se (<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO = '02'<br>
+      = zeros se (<a href="../../Campos/camp2800.htm#2817">2817</a>) SPI-AMBITO &#8800;
+      '02'</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2400.htm#2401">2401</a>) BANCOSUP</td>
+    <td width="233" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#226">226</a>)
+      CODPAIS</td>
+    <td width="235" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO</td>
+    <td width="235" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2600.htm#2600">2600</a>)
+      VISA-TIP-SET</td>
+    <td width="233" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2818">2818</a>)
+      SPI-IDFICH</td>
+    <td width="233" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2819">2819</a>)
+      SPI-ENTFILE</td>
+    <td width="233" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#233">233</a>)
+      CODMOEDA</td>
+    <td width="233" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#236">236</a>)
+    CAMBIO</td>
+    <td width="233" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#253">253</a>)
+    VMOEDA</td>
+    <td width="233" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#248">248</a>)
+    VMOEDATX</td>
+    <td width="235" class="a">= zeros</td>
+  </tr>
+</table>
+
+<p class="a"><br>
+Se (<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG = C (VISA)</p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="380">
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td class="oitomida" width="233"><strong>MOV5 da Entidade&nbsp;<br>
+      Apoio <em>Settlement</em></strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#227">227</a>) IDCC</td>
+    <td width="233" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#223">223</a>) IDPERSP</td>
+    <td width="233" class="a">preenchido se (<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO = '02'<br>
+      = zeros se (<a href="../../Campos/camp2800.htm#2817">2817</a>) SPI-AMBITO &#8800;
+      '02'</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2400.htm#2401">2401</a>) BANCOSUP</td>
+    <td width="233" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#226">226</a>)
+      CODPAIS</td>
+    <td width="235" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO</td>
+    <td width="235" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2600.htm#2600">2600</a>)
+      VISA-TIP-SET</td>
+    <td width="233" class="a">= 0 ou 8</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2818">2818</a>)
+      SPI-IDFICH</td>
+    <td width="233" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2819">2819</a>)
+      SPI-ENTFILE</td>
+    <td width="233" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#233">233</a>)
+      CODMOEDA</td>
+    <td width="233" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#236">236</a>)
+    CAMBIO</td>
+    <td width="233" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#253">253</a>)
+    VMOEDA</td>
+    <td width="233" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#248">248</a>)
+    VMOEDATX</td>
+    <td width="235" class="a">= zeros</td>
+  </tr>
+</table>
+
+<p class="a"><br>
+Se (<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG = 4 (Savings
+Bank)</p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="380">
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td class="oitomida" width="233"><strong>MOV5 da Entidade&nbsp;<br>
+      Apoio <em>Settlement</em></strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#227">227</a>) IDCC</td>
+    <td width="233" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#223">223</a>) IDPERSP</td>
+    <td width="233" class="a">preenchido se (<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO = '02'<br>
+      = zeros se (<a href="../../Campos/camp2800.htm#2817">2817</a>) SPI-AMBITO &#8800;
+      '02'</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2400.htm#2401">2401</a>) BANCOSUP</td>
+    <td width="233" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#226">226</a>)
+      CODPAIS</td>
+    <td width="235" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO</td>
+    <td width="235" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2600.htm#2600">2600</a>)
+      VISA-TIP-SET</td>
+    <td width="233" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2818">2818</a>)
+      SPI-IDFICH</td>
+    <td width="233" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2819">2819</a>)
+      SPI-ENTFILE</td>
+    <td width="233" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#233">233</a>)
+      CODMOEDA</td>
+    <td width="233" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#236">236</a>)
+    CAMBIO</td>
+    <td width="233" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#253">253</a>)
+    VMOEDA</td>
+    <td width="233" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#248">248</a>)
+    VMOEDATX</td>
+    <td width="235" class="a">= zeros</td>
+  </tr>
+</table>
+
+<p class="a"><br>
+Se (<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG = 3 (Amex)</p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="380">
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td class="oitomida" width="233"><strong>MOV5 da Entidade&nbsp;<br>
+      Apoio <em>Settlement</em></strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#227">227</a>) IDCC</td>
+    <td width="233" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#223">223</a>) IDPERSP</td>
+    <td width="233" class="a">preenchido se (<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO = '02'<br>
+      = zeros se (<a href="../../Campos/camp2800.htm#2817">2817</a>) SPI-AMBITO &#8800;
+      '02'</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2400.htm#2401">2401</a>) BANCOSUP</td>
+    <td width="233" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#226">226</a>)
+      CODPAIS</td>
+    <td width="235" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO</td>
+    <td width="235" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2600.htm#2600">2600</a>)
+      VISA-TIP-SET</td>
+    <td width="233" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2818">2818</a>)
+      SPI-IDFICH</td>
+    <td width="233" class="a">preenchido com valor de&nbsp;<br>
+      (<a href="../../Campos/camp2400.htm#2408">2408</a>) IDFICH_AMEX</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2819">2819</a>)
+      SPI-ENTFILE</td>
+    <td width="233" class="a">preenchido com valor de&nbsp;<br>
+      (<a href="../../Campos/camp2400.htm#2407">2407</a>) ENT_AMEX</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#233">233</a>)
+      CODMOEDA</td>
+    <td width="233" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#236">236</a>)
+    CAMBIO</td>
+    <td width="233" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#253">253</a>)
+    VMOEDA</td>
+    <td width="233" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#248">248</a>)
+    VMOEDATX</td>
+    <td width="235" class="a">= zeros</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><strong><a name="B.2">B.2</a> OPERAÇÕES DE CLIENTES NACIONAIS EFECTUADAS NO
+ESTRANGEIRO</strong></p>
+
+<p><br>
+Sempre que o campo (<a href="../../Campos/campos3.htm#221">221</a>) SISTEMA for igual a
+&#145;7&#146;, o registo informa a Entidade de Apoio do Sistema de Pagamento do montante e
+data valor dos próximos débitos a realizar nos países aceitantes dos cartões
+nacionais, de acordo com informação recebida do estrangeiro. </p>
+
+<p>Os registos com o campo AV/CUTOFF=2, creditam a importância (<a href="../../Campos/camp2300.htm#2326">2326</a>) da remessa
+à Entidade de Apoio. Com esses
+registos, esta Entidade desencadeia uma ordem de transferência para crédito da conta do país
+em questão.</p>
+
+<p>Este grupo de dados inclui informações relativas ao total de <em>cut-off</em> ou
+total de <em>settlement</em> centralizado, relativo a operações electrónicas efectuadas
+por clientes com cartões nacionais que utilizam o Sistema EFT desse país, ou desse
+Sistema de Pagamento.</p>
+
+<p>No caso de operações realizadas em Saving Banks, a SIBS envia um registo por cada
+total (de <em>cut-off</em>, ou de <em>settlement</em>) com AV/CUTOFF=2, com o campo (<a href="../../Campos/campos3.htm#236">236</a>) CAMBIO igual a zeros. É sempre enviado
+também pelo menos um registo com AV/CUTOFF=1 por cada valor de câmbio posicionado. Caso
+tenha havido diferenças no câmbio informado para a SIBS pelo Banco de Apoio, ao longo do
+período, são enviados vários registos respeitantes ao mesmo movimento na conta do Banco
+no estrangeiro (a chave desses movimentos deve ser <a href="../../Campos/campos3.htm#221">221</a>,
+<a href="../../Campos/campos3.htm#222">222</a>, <a href="../../Campos/campos3.htm#226">226</a>,
+<a href="../../Campos/campos3.htm#223">223</a>). O objectivo é informar em (<a href="../../Campos/campos3.htm#236">236</a>) CAMBIO o valor preciso, transmitido, e não
+um valor médio.</p>
+
+<p><strong><br>
+Liquidação Financeira no Sistema Multibanco</strong></p>
+
+<p>Os participantes no Sistema Multibanco não autorizados a participar directamente no
+SICOI têm obrigatoriamente que designar qual a entidade que os representa na
+Compensação Multibanco. É esta entidade, designada por Banco Liquidador, que é
+responsável pela movimentação financeira das operações a liquidar no âmbito do
+Sistema Multibanco, via Banco de Portugal.</p>
+
+<p>O Banco Liquidador recebe no ficheiro MOV5 registos de tipo 5 com os saldos a
+movimentar referentes a cada uma das entidades que representa. Por cada ficheiro da
+Compensação enviado à entidade representada, o Banco Liquidador recebe um tipo de
+registo 5 em que (<a href="../../Campos/campos3.htm#221">221</a>) SISTEMA=2, (<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG=9 e (<a href="../../Campos/campos3.htm#225">225</a>) BPAGAPOIO=5.</p>
+
+<p>Estes movimentos têm sempre valor contabilístico, pelo que o campo (<a href="../../Campos/campos3.htm#228">228</a>) AV/CUTOFF é sempre preenchido com o valor
+&#145;2&#146;. O campo (<a href="../../Campos/campos2.htm#132">132</a>) CONTA identifica a
+conta da entidade representada a movimentar, no Banco Liquidador.</p>
+
+<p>Os tipos de registo 5 enviados ao Banco Liquidador transportam um conjunto de dados
+adicionais que permitem a correcta identificação da entidade que representa (campos (<a href="../../Campos/campos5.htm#412">412</a>) IDCLIFAC e (<a href="../../Campos/campos2.htm#103">103</a>) CODBAN) e que identificam a origem dos
+montantes que estão a ser liquidados (campos (<a href="../../Campos/campos2.htm#102">102</a>)
+FICH e (<a href="../../Campos/campos1.htm#061">061</a>) IDFICH). </p>
+
+<p class="a"><br>
+<b>Movimentação </b><strong>Financeira no Sistema Multibanco</strong></p>
+
+<p class="a">
+A movimentação associada à utilização de cartões nacionais no estrangeiro é efectuada através de registos de tipo 5 do ficheiro de Movimentos, com TIPMOV=0105.</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<table id="table" BORDER="1" CELLSPACING="0" CELLPADDING="2" width="300">
+  <tr>
+    <td WIDTH="135" class="fundo" height="33"><b>Ficheiro/Tipo registo:</b></td>
+    <td class="fundo" height="33" width="163">MOV5/5</td>
+  </tr>
+  <tr>
+    <td WIDTH="135" class="dtamid"><b>Destinatário:</b></td>
+    <td width="163">Entidade Apoio <i>Settlement</i></td>
+  </tr>
+  <tr>
+    <td WIDTH="135" class="dta"><b>Contab./Inform.:</b></td>
+    <td width="163">
+      Contabilístico</td>
+  </tr>
+  <tr>
+    <td WIDTH="135" class="dta"><b>TIPMOV&nbsp; :</b></td>
+    <td width="163">0105</td>
+  </tr>
+  <tr>
+    <td WIDTH="135" class="dta" height="33"><b>Elementos
+    informados:</b></td>
+    <td class="esq" height="33" width="163"><strong>&nbsp;&nbsp; Campo e Sinal :</strong></td>
+  </tr>
+  <tr>
+    <td WIDTH="135" class="esq">&nbsp;&nbsp; Montante</td>
+    <td width="163">(<a href="../../Campos/camp2300.htm#2326" target="explicac">2326</a>)
+    MNT-E<br>
+      C ou D</td>
+  </tr>
+  <tr>
+    <td WIDTH="135" class="esq">
+ &nbsp;&nbsp; DADOS&nbsp;<br>
+ &nbsp;&nbsp; ADICIONAIS
+    </td>
+    <td class="esq" width="163">&nbsp; (1)</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" id="tablet">
+  <tr>
+    <td class="esq" colspan="2">
+
+    &nbsp;&nbsp;
+
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>
+
+&nbsp;&nbsp; (1) -&nbsp;
+
+    </td>
+    <td class="esq">
+
+ Incluem indicador “Âmbito de movimentação”, que pode assumir diferentes valores em função da movimentação a que se refere o registo:<br>
+ •	Apresentações - operações no estrangeiro (registos com impacto contabilístico)<br>
+ •	Reapresentações recebidas (registos com impacto contabilístico)<br>
+ • <i>	Chargebacks</i> enviados  (registos com impacto contabilístico)<br>
+ • <i>	Fees</i> do Sistema de Pagamento diversas  (registos com impacto contabilístico)
+    </td>
+  </tr>
+</table>
+
+<p class="a">Podem ser enviadas várias ocorrências de registos com TIPMOV=0105.
+</p>
+
+<p class="cor"><b>A agregação dos diferentes registos de tipo 5 em que é apresentado TIPMOV=0105 traduz os totais dos ficheiros de
+<i> Clearing</i> do Sistema de Pagamento.</b></p>
+
+<p class="a">Os registos com TIPMOV=0105 são também utilizados para efectuar a movimentação doméstica de cartões
+<i>not-on-us</i>.&nbsp;<br>
+A distinção entre os diferentes registos com TIPMOV=0105 é efectuada pela indicação de diferentes valores para os campos
+(<a href="../../Campos/campos3.htm#221">221</a>) SISTEMA e (<a href="../../Campos/camp2800.htm#2817">2817</a>) SPI-AMBITO.</p>
+
+<p>&nbsp;</p>
+
+<p class="a"><strong>PREENCHIMENTO DO REGISTO</strong></p>
+
+<p class="a">
+O preenchimento do tipo de registo 5 para operações de clientes nacionais efectuadas
+no estrangeiro é o que a seguir se apresenta.</p>
+
+<p class="a">
+&nbsp;</p>
+
+<p class="tiprega">
+<a name="B.2.1">B.2.1</a> CARTÕES NACIONAIS NO ESTRANGEIRO (TIPMOV=0105)</p>
+
+<p class="a">Os registos relativos à movimentação de cartões nacionais no estrangeiro têm a mesma estrutura que os registos com TIPMOV=0105 já analisados para a movimentação doméstica de cartões
+<i>not-on-us</i>. Existem contudo diferenças de processamento de acordo com a seguinte regra:&nbsp;</p>
+
+<ol class="a" type="a">
+  <li><b>Sistemas <i> dual-message:</i></b> esta é a situação mais usual. Neste caso, relativamente à movimentação de um período determinado, é formatado um único registo com TIPMOV=0105</li>
+  <li><b> Sistemas <i> single-message:</i></b> existem dois registos com TIPMOV=0105, correspondentes ao processamento de totais de
+    <i>Cut-off</i>.</li>
+</ol>
+
+<p class="a"><b><br>
+Estrutura:</b></p>
+
+    <p class="a"> <u> Sistemas <i>dual-message</i></u></p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0" width="300">
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td class="oitomida" width="146"><strong>MOV5 da Entidade&nbsp;<br>
+      Apoio <em>Settlement</em></strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos2.htm#132">132</a>) CONTA</td>
+    <td width="146" class="a">= indicada pela Ent.Apoio (conta de <em>Settlement)</em></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2329">2329</a>) TOTOPER-E</td>
+    <td width="146" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E</td>
+    <td width="146" class="a">preenchido&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="146" class="a">= C ou D</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2327">2327</a>) MNT-ADI</td>
+    <td width="146" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="146" class="a">= C&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2328">2328</a>)
+    COD-MOD-NEG</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2300">2300</a>) TARSIBS-E</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2301">2301</a>) TARINT-E
+    (1)</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2301">2301</a>) TARINT-E
+    (2)</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos1.htm#063">063</a>) TIPMOV</td>
+    <td width="146" class="a">= 0105</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#221">221</a>) SISTEMA</td>
+    <td width="146" class="a">= 7 (Rede Estrangeira)</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#225">225</a>) BPAGAPOIO</td>
+    <td width="146" class="a">= 7 (Contratante MB)</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#228">228</a>) AV/CUTOFF</td>
+    <td width="146" class="a">= 1 ou 2</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos2.htm#105">105</a>) DTHORA</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos2.htm#110">110</a>) DATAVALOR</td>
+    <td width="146" class="a" ><b>(a)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135"><em>DADOS ADICIONAIS</em> </td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#227">227</a>) IDCC</td>
+    <td width="148" class="a"><b>(a)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#223">223</a>) IDPERSP</td>
+    <td width="148" class="a"><b>(a)</b> </td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2400.htm#2401">2401</a>) BANCOSUP</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#226">226</a>)
+      CODPAIS</td>
+    <td width="148" class="a"><b>(a)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO</td>
+    <td width="148" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2600.htm#2600">2600</a>)
+      VISA-TIP-SET</td>
+    <td width="146" class="a"><b>(a)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2818">2818</a>)
+      SPI-IDFICH</td>
+    <td width="146" class="a"><b>(a)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2800.htm#2819">2819</a>)
+      SPI-ENTFILE</td>
+    <td width="146" class="a"><b>(a)</b></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#233">233</a>)
+      CODMOEDA</td>
+    <td class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#236">236</a>)
+    CAMBIO</td>
+    <td class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#253">253</a>)
+    VMOEDA</td>
+    <td class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#248">248</a>)
+    VMOEDATX</td>
+    <td class="a">= zeros</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;</td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="1" width="600" id="tablet">
+  <tr>
+    <td class="esqa" nowrap>&nbsp;&nbsp; (a) -&nbsp;</td>
+    <td class="esqa">Preenchimento em função do campo (<a href="../../Campos/campos3.htm#222">222</a>)
+      SISTPAG</td>
+  </tr>
+  <tr>
+    <td class="esqa" nowrap>&nbsp;&nbsp; (b) -&nbsp;</td>
+    <td class="esqa">Campo que permite efectuar o emparelhamento entre os
+      TIPMOV=0105 relativos a confirmação de apresentações (campo (<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO = ‘02’) e o TIPMOV=0104 previamente enviado</td>
+  </tr>
+</table>
+
+<p class="a"><br>
+</p>
+    <p class="a"><u>Sistemas <i> single-message</i> (exemplo: Savings Banks)</u>
+
+<p class="a">No caso da movimentação de cartões nacionais no estrangeiro no âmbito de um sistema em que as transacções são realizadas em
+<i>single-message</i>, existem registos incluídos no MOV5 da Entidade de Apoio ao
+<i> Settlement</i> em dois momentos:</p>
+
+<p class="a">&nbsp;1º - registos contabilísticos, de apuramento dos valores movimentados, agrupados por:</p>
+
+<ul class="a">
+  <li>
+    <p class="a">compensação</li>
+  <li>
+    <p class="a">câmbio (aplicável actualmente apenas à movimentação de cartões nacionais na Suiça - rede de Savings Banks)</li>
+</ul>
+<p class="a">&nbsp;2º - registos informativos (totais de <i>Cut-off</i>)</p>
+
+<p class="a"><br>
+O preenchimentos particular dos registos para <u> Savings Banks</u> é o seguinte:</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;</td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0" width="500">
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td class="oitomida" width="292" colspan="2"><strong>MOV5 da&nbsp;<br>
+ Entidade&nbsp;Apoio <em>Settlement</em></strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos2.htm#111">111</a>)
+      TIPREG</td>
+    <td width="146" class="a">= 5</td>
+    <td width="146" class="a">= 5</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp1700.htm#1709">1709</a>)
+      APLIC_N</td>
+    <td width="146" class="a">preenchido&nbsp;</td>
+    <td width="146" class="a">preenchido&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos4.htm#320">320</a>)
+      IDLOG</td>
+    <td width="146" class="a">preenchido&nbsp;</td>
+    <td width="146" class="a">preenchido&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos2.htm#117">117</a>)
+      NRLOG</td>
+    <td width="146" class="a">= '00000001'</td>
+    <td width="146" class="a">preenchido&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos2.htm#132">132</a>) CONTA</td>
+    <td width="292" class="a" colspan="2">= indicada pela Ent.Apoio (conta de <em>Settlement)</em></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2329">2329</a>) TOTOPER-E</td>
+    <td width="146" class="a">= zeros</td>
+    <td width="146" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E</td>
+    <td width="146" class="a">preenchido&nbsp;</td>
+    <td width="146" class="a">preenchido&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="146" class="a">= D</td>
+    <td width="146" class="a">= D</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2327">2327</a>) MNT-ADI</td>
+    <td width="146" class="a">= zeros</td>
+    <td width="146" class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="146" class="a">= C&nbsp;</td>
+    <td width="146" class="a">= C&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2328">2328</a>)
+    COD-MOD-NEG</td>
+    <td width="146" class="a">= espaços</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2300">2300</a>) TARSIBS-E</td>
+    <td width="146" class="a">= espaços</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2301">2301</a>) TARINT-E
+    (1)</td>
+    <td width="146" class="a">= espaços</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/camp2300.htm#2301">2301</a>) TARINT-E
+    (2)</td>
+    <td width="146" class="a">= espaços</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos1.htm#063">063</a>) TIPMOV</td>
+    <td width="146" class="a">= 0105</td>
+    <td width="146" class="a">= 0105</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#221">221</a>) SISTEMA</td>
+    <td width="146" class="a">= 7 (Rede Estrangeira)</td>
+    <td width="146" class="a">= 7 (Rede Estrangeira)</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG</td>
+    <td width="146" class="a">= 4 (Savings Bank)</td>
+    <td width="146" class="a">= 4 (Savings Bank)</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#225">225</a>) BPAGAPOIO</td>
+    <td width="146" class="a">= 7 (Contratante MB)</td>
+    <td width="146" class="a">= 7 (Contratante MB)</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos3.htm#228">228</a>) AV/CUTOFF</td>
+    <td width="146" class="a">= 2</td>
+    <td width="146" class="a">= 1</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos2.htm#105">105</a>) DTHORA</td>
+    <td width="146" class="a">preenchido</td>
+    <td width="146" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">(<a href="../../Campos/campos2.htm#110">110</a>) DATAVALOR</td>
+    <td width="146" class="a" >= zeros</td>
+    <td width="146" class="a" >preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="135"><i>DADOS ADICIONAIS</i></td>
+    <td width="146" class="a">&nbsp;</td>
+    <td width="146" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa">(<a href="../../Campos/campos3.htm#227">227</a>) IDCC</td>
+    <td class="a">preenchido</td>
+    <td class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa">(<a href="../../Campos/campos3.htm#223">223</a>) IDPERSP</td>
+    <td class="a">preenchido</td>
+    <td class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa">(<a href="../../Campos/camp2400.htm#2401">2401</a>) BANCOSUP</td>
+    <td class="a">preenchido</td>
+    <td class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa">(<a href="../../Campos/campos3.htm#226">226</a>)
+      CODPAIS</td>
+    <td class="a">preenchido</td>
+    <td class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa">(<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO</td>
+    <td class="a">preenchido</td>
+    <td class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa">(<a href="../../Campos/camp2600.htm#2600">2600</a>)
+      VISA-TIP-SET</td>
+    <td width="146" class="a">= espaços</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa">(<a href="../../Campos/camp2800.htm#2818">2818</a>)
+      SPI-IDFICH</td>
+    <td width="146" class="a">= espaços</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa">(<a href="../../Campos/camp2800.htm#2819">2819</a>)
+      SPI-ENTFILE</td>
+    <td width="146" class="a">= espaços</td>
+    <td width="146" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa">(<a href="../../Campos/campos3.htm#233">233</a>)
+      CODMOEDA</td>
+    <td class="a">preenchido</td>
+    <td class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa">(<a href="../../Campos/campos3.htm#236">236</a>)
+    CAMBIO</td>
+    <td class="a">preenchido</td>
+    <td class="a">= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa">(<a href="../../Campos/campos3.htm#253">253</a>)
+    VMOEDA</td>
+    <td class="a">preenchido</td>
+    <td class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa">(<a href="../../Campos/campos3.htm#248">248</a>)
+    VMOEDATX</td>
+    <td class="a">= zeros</td>
+    <td class="a">preenchido</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="a"><b><a name="B.3">B.3</a> PROCESSAMENTO DE SUBTOTAIS (<i>ACQUIRING ON-US</i> E
+<i>NOT-ON-US</i>)&nbsp;</b></p>
+
+<p class="a"><br>
+Nas situações em que o <i> Acquirer</i> não pretenda recepcionar o ficheiro de Movimentos (MOV5), inclui-se alternativamente no ficheiro de Movimentos enviado ao seu
+Banco de suporte um conjunto de registos de Subtotais.&nbsp;<br>
+O objectivo implícito da formatação e envio destes registos prende-se com a necessidade de transmitir informações de negócio relevantes para o
+<i>Acquirer</i>. Assim, apesar do <i> Acquirer</i> não receber a informação de detalhe das transacções
+(<a href="mov-1.htm" target="main">registos tipo 1</a> do ficheiro MOV5), recebe um conjunto de subtotais operacionais.<br>
+Estes registos têm carácter informativo.</p>
+
+<p class="a">
+<br>
+</p>
+
+<table id="table" BORDER="1" CELLSPACING="0" CELLPADDING="2" width="504">
+  <tr>
+    <td WIDTH="222" class="dtamid">&nbsp;</td>
+    <td width="143">Movimentação na rede de POSs domésticos (1)</td>
+    <td width="143">Movimentação na rede de ATMs domésticos</td>
+    <td width="127">Movimentação&nbsp;<br>
+      em terminais&nbsp;<br>
+      de Baixo Valor domésticos</td>
+    <td width="161">Facturas Manuais (<i>Vouchers </i>/ Contrapartida das TEIs)</td>
+  </tr>
+  <tr>
+    <td WIDTH="222" class="fundo" height="33"><b>Ficheiro/Tipo registo:</b></td>
+    <td class="fundo" height="33" width="143">MOV5/5</td>
+    <td class="fundo" height="33" width="143">MOV5/5</td>
+    <td class="fundo" height="33" width="127">MOV5/5</td>
+    <td class="fundo" height="33" width="161">MOV5/5</td>
+  </tr>
+  <tr>
+    <td WIDTH="222" class="dtamid"><b>Destinatário:</b></td>
+    <td width="143">B. Suporte <i>Acquirer</i></td>
+    <td width="143">B. Suporte <i>Acquirer</i></td>
+    <td width="127">B. Suporte <i>Acquirer</i></td>
+    <td width="161">B. Suporte <i>Acquirer</i></td>
+  </tr>
+  <tr>
+    <td WIDTH="222" class="dta"><b>Contab./Inform.:</b></td>
+    <td width="143">Informativo</td>
+    <td width="143">Informativo</td>
+    <td width="127">Informativo</td>
+    <td width="161">Informativo</td>
+  </tr>
+  <tr>
+    <td WIDTH="222" class="dta"><b>TIPMOV&nbsp; :</b></td>
+    <td width="143">0201</td>
+    <td width="143">0202</td>
+    <td width="127">0203</td>
+    <td width="161">0204</td>
+  </tr>
+  <tr>
+    <td WIDTH="222" class="esq">
+ &nbsp;&nbsp; DADOS&nbsp;<br>
+ &nbsp;&nbsp; ADICIONAIS
+    </td>
+    <td class="esq" width="574" colspan="4">&nbsp;&nbsp;&nbsp;&nbsp; (2)</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="1" id="tablet">
+  <tr>
+    <td class="esq" colspan="2">
+
+    &nbsp;&nbsp;
+
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>
+
+&nbsp;&nbsp; (1) -&nbsp;
+
+    </td>
+    <td class="esq">
+
+ Inclui as transacções realizadas em terminais de tipo &quot;M -
+ Internet&quot;
+    </td>
+  </tr>
+  <tr>
+    <td class="esq" nowrap>
+
+&nbsp;&nbsp; (2) -&nbsp;
+
+    </td>
+    <td class="esq">
+
+ Incluem a discriminação dos montantes do regsito por:<br>
+ &nbsp; •&nbsp; Cartões <i>on-us</i><br>
+ &nbsp; •&nbsp; Cartões <i>not-on-us</i>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class="a"><b>PREENCHIMENTO DO REGISTO&nbsp;</b></p>
+
+<p class="a">O preenchimento do tipo de registo 5 para operações de clientes internacionais efectuadas em Portugal é o que a seguir se apresenta.</p>
+
+<p class="a">&nbsp;</p>
+
+<p class="tiprega">
+<a name="B.3.1">B.3.1</a> PROCESSAMENTO DE SUBTOTAIS (TIPMOV=0201, 0202, 0203 e 0204)</p>
+
+<p class="a"><b><br>
+Estrutura:</b></p>
+
+<table border="1" cellpadding="2" cellspacing="0" width="594">
+  <tr>
+    <td class="esqa" width="134">&nbsp;</td>
+    <td width="100" class="mida">Movimentação na rede de POSs domésticos <b>(a)</b></td>
+    <td width="110" class="mida">Movimentação na rede de ATMs domésticos</td>
+    <td width="109" class="a">Movimentação&nbsp;<br>
+      em terminais&nbsp;<br>
+      de Baixo Valor domésticos</td>
+    <td width="109" class="a">Facturas Manuais (<i>Vouchers </i>/ Contrapartida
+      das TEIs)</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">&nbsp;</td>
+    <td class="oitomida" width="446" colspan="4"><strong>MOV5 do Banco de<br>
+    Suporte do <em>Acquirer</em></strong></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos2.htm#132">132</a>) CONTA</td>
+    <td width="100" class="a">= indicada pelo <em>Acquirer</em></td>
+    <td width="110" class="a">= indicada pelo <em>Acquirer</em></td>
+    <td width="109" class="a">= indicada pelo <em>Acquirer</em></td>
+    <td width="109" class="a">= indicada pelo <em>Acquirer</em></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">&nbsp;</td>
+    <td width="100" class="a">&nbsp;</td>
+    <td width="110" class="a">&nbsp;</td>
+    <td width="109" class="a">&nbsp;</td>
+    <td width="109" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/camp2300.htm#2329">2329</a>) TOTOPER-E</td>
+    <td width="100" class="a">preenchido</td>
+    <td  width="110" class="a">preenchido</td>
+    <td  width="109" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">&nbsp;</td>
+    <td width="100" class="a">&nbsp;</td>
+    <td width="110" class="a">&nbsp;</td>
+    <td width="109" class="a">&nbsp;</td>
+    <td width="109" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E</td>
+    <td width="100" class="a">preenchido</td>
+    <td  width="110" class="a">preenchido</td>
+    <td  width="109" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="100" class="a">= C ou D</td>
+    <td width="110" class="a">= C ou D</td>
+    <td width="109" class="a">= C ou D</td>
+    <td width="109" class="a">= C ou D</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/camp2300.htm#2327">2327</a>) MNT-ADI</td>
+    <td width="100" class="a">preenchido</td>
+    <td  width="110" class="a">preenchido</td>
+    <td  width="109" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="100" class="a">= C ou D</td>
+    <td width="110" class="a">= C ou D</td>
+    <td width="109" class="a">= C ou D</td>
+    <td width="109" class="a">= C ou D</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">&nbsp;</td>
+    <td width="100" class="a">&nbsp;</td>
+    <td width="110" class="a">&nbsp;</td>
+    <td width="109" class="a">&nbsp;</td>
+    <td width="109" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/camp2300.htm#2328">2328</a>)
+    COD-MOD-NEG</td>
+    <td width="100" class="a">= espaços</td>
+    <td  width="110" class="a">= espaços</td>
+    <td  width="109" class="a">= espaços</td>
+    <td width="109" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/camp2300.htm#2300">2300</a>) TARSIBS-E</td>
+    <td width="100" class="a">= espaços</td>
+    <td  width="110" class="a">= espaços</td>
+    <td  width="109" class="a">= espaços</td>
+    <td width="109" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/camp2300.htm#2301">2301</a>) TARINT-E
+    (1)</td>
+    <td width="100" class="a">= espaços</td>
+    <td  width="110" class="a">= espaços</td>
+    <td  width="109" class="a">= espaços</td>
+    <td width="109" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/camp2300.htm#2301">2301</a>) TARINT-E
+    (2)</td>
+    <td width="100" class="a">= espaços</td>
+    <td  width="110" class="a">= espaços</td>
+    <td  width="109" class="a">= espaços</td>
+    <td width="109" class="a">= espaços</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">&nbsp;</td>
+    <td width="100" class="a">&nbsp;</td>
+    <td width="110" class="a">&nbsp;</td>
+    <td width="109" class="a">&nbsp;</td>
+    <td width="109" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos1.htm#063">063</a>) TIPMOV</td>
+    <td width="100" class="a">= 0201</td>
+    <td width="110" class="a">= 0202</td>
+    <td width="109" class="a">= 0203</td>
+    <td width="109" class="a">= 0204</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos3.htm#221">221</a>) SISTEMA</td>
+    <td width="100" class="a">= 2 (Multibanco)</td>
+    <td width="110" class="a">= 2 (Multibanco)</td>
+    <td width="109" class="a">= 2 (Multibanco)</td>
+    <td width="109" class="a">= 2 (Multibanco)</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG</td>
+    <td width="100" class="a">preenchido</td>
+    <td  width="110" class="a">preenchido</td>
+    <td  width="109" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos3.htm#225">225</a>) BPAGAPOIO</td>
+    <td width="100" class="a">= 2 (Banco Apoio)</td>
+    <td  width="110" class="a">= 2 (Banco Apoio)</td>
+    <td  width="109" class="a">= 2 (Banco Apoio)</td>
+    <td width="109" class="a">= 2 (Banco Apoio)</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos3.htm#228">228</a>) AV/CUTOFF</td>
+    <td width="100" class="a">= 1</td>
+    <td width="110" class="a">= 1</td>
+    <td width="109" class="a">= 1</td>
+    <td width="109" class="a">= 1</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos2.htm#105">105</a>) DTHORA</td>
+    <td width="100" class="a">preenchido</td>
+    <td  width="110" class="a">preenchido</td>
+    <td  width="109" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos2.htm#110">110</a>) DATAVALOR</td>
+    <td width="100" class="a" >= zeros</td>
+    <td width="110" class="a" >= zeros</td>
+    <td width="109" class="a" >= zeros</td>
+    <td width="109" class="a" >= zeros</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">&nbsp;</td>
+    <td width="100" class="a">&nbsp;</td>
+    <td width="110" class="a">&nbsp;</td>
+    <td width="109" class="a">&nbsp;</td>
+    <td width="109" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134"><em>DADOS ADICIONAIS</em> </td>
+    <td width="100" class="a">&nbsp;</td>
+    <td width="110" class="a">&nbsp;</td>
+    <td width="109" class="a">&nbsp;</td>
+    <td width="109" class="a">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos3.htm#227">227</a>) IDCC</td>
+    <td width="100" class="a">preenchido</td>
+    <td width="110" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos3.htm#223">223</a>) IDPERSP</td>
+    <td width="100" class="a">preenchido</td>
+    <td width="110" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/camp2400.htm#2401">2401</a>) BANCOSUP</td>
+    <td width="100" class="a">preenchido</td>
+    <td width="110" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos3.htm#226">226</a>)
+      CODPAIS</td>
+    <td width="100" class="a">preenchido</td>
+    <td width="110" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/camp2800.htm#2817">2817</a>)
+      SPI-AMBITO</td>
+    <td width="100" class="a">preenchido</td>
+    <td width="110" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/camp800.htm#806">806</a>)
+      TIPOCART</td>
+    <td width="100" class="a">preenchido</td>
+    <td width="110" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134"> (<a href="../../Campos/campos1.htm#003">003</a>) TIPOTERM</td>
+    <td width="100" class="a">preenchido</td>
+    <td width="110" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+    <td width="109" class="a">preenchido</td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos5.htm#434">434</a>) PRODFIN</td>
+    <td width="100" class="a"><b>(b)</b></td>
+    <td width="110" class="a"><b>(b)</b></td>
+    <td width="109" class="a"><b>(b)</b></td>
+    <td width="109" class="a"><b>(b)</b></td>
+  </tr>
+  <tr>
+    <td class="esqmida" width="134">(<a target="explicac" href="../../Campos/camp2400.htm#2411">2411</a>)
+      MNTAUX-E (1)</td>
+    <td width="446" class="a" colspan="4">Componente de (<a href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E ;&nbsp;<br>
+ informa valor relativo a operações de cartões <i>on-us</i></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="100" class="a">= C</td>
+    <td width="110" class="a">= C</td>
+    <td width="109" class="a">= C</td>
+    <td width="109" class="a">= C</td>
+  </tr>
+  <tr>
+    <td class="esqmida" width="134">(<a target="explicac" href="../../Campos/camp2400.htm#2411">2411</a>)
+      MNTAUX-E (2)</td>
+    <td width="446" class="a" colspan="4">Componente de (<a href="../../Campos/camp2300.htm#2327">2327</a>)
+      MNT-ADI ;&nbsp;<br>
+ informa valor relativo a operações de cartões <i>on-us</i></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="100" class="a">= C ou D</td>
+    <td width="110" class="a">= C ou D</td>
+    <td width="109" class="a">= C ou D</td>
+    <td width="109" class="a">= D ou C</td>
+  </tr>
+  <tr>
+    <td class="esqmida" width="134">(<a target="explicac" href="../../Campos/camp2400.htm#2411">2411</a>)
+      MNTAUX-E (3)</td>
+    <td width="446" class="a" colspan="4">Componente de (<a href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E ;&nbsp;<br>
+ informa valor relativo a operações de cartões <i>not-on-us</i></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="100" class="a">= D</td>
+    <td width="110" class="a">= D</td>
+    <td width="109" class="a">= D</td>
+    <td width="109" class="a">= D</td>
+  </tr>
+  <tr>
+    <td class="esqmida" width="134">(<a target="explicac" href="../../Campos/camp2400.htm#2411">2411</a>)
+      MNTAUX-E (4)</td>
+    <td width="446" class="a" colspan="4">Componente de (<a href="../../Campos/camp2300.htm#2327">2327</a>)
+      MNT-ADI ;&nbsp;<br>
+ informa valor relativo a operações de cartões <i>not-on-us</i></td>
+  </tr>
+  <tr>
+    <td class="esqa" width="134">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+    <td width="100" class="a">= C ou D</td>
+    <td width="110" class="a">= C ou D</td>
+    <td width="109" class="a">= C ou D</td>
+    <td width="109" class="a">= D ou C</td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%">&nbsp;&nbsp;</td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="1">
+  <tr>
+    <td class="esqa" nowrap>&nbsp;&nbsp; (a) -&nbsp;</td>
+    <td class="esqa">Inclui as transacções realizadas em terminais de tipo
+      &quot;M - Internet&quot;</td>
+  </tr>
+  <tr>
+    <td class="esqa" nowrap>&nbsp;&nbsp; (b) -&nbsp;</td>
+    <td class="esqa">Preenchido quando o campo (<a href="../../Campos/campos1.htm#003">003</a>) TIPOTERM
+      assume um valor diferente de ATM</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><strong><a name="B.4">B.4</a> MULTIBANCO - <em>SETTLEMENT</em> CENTRALIZADO</strong></p>
+
+<p>&nbsp;
+</p>
+
+<p><strong>PREENCHIMENTO DO REGISTO</strong></p>
+
+<p>
+O preenchimento do tipo de registo 5 para operações de clientes nacionais
+efectuadas na Rede Multibanco é o que a seguir se apresenta.
+</p>
+
+<p><br>
+<b>Estrutura:</b>
+</p>
+
+  <table border="1" cellspacing="0" width="400" cellpadding="2">
+    <tr>
+      <td class="esq">(<a href="../../Campos/campos2.htm#132">132</a>) CONTA</td>
+      <td class="esq">preenchido (conta da entidade representada no Banco de Liquidação)</td>
+    </tr>
+    <tr>
+      <td class="esq">&nbsp; </td>
+      <td class="esq">&nbsp; </td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/camp2300.htm#2329">2329</a>) TOTOPER-E</td>
+      <td class="esq">= zeros</td>
+    </tr>
+    <tr>
+      <td class="esq">&nbsp; </td>
+      <td class="esq">&nbsp; </td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/camp2300.htm#2326">2326</a>) MNT-E</td>
+      <td class="esq">preenchido</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+      <td class="esq">= C ou D</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/camp2300.htm#2327">2327</a>) MNT-ADI</td>
+      <td class="esq">= zeros</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/campos4.htm#318">318</a>) SINAL</td>
+      <td class="esq">= C</td>
+    </tr>
+    <tr>
+      <td class="esq">&nbsp; </td>
+      <td class="esq">&nbsp; </td>
+    </tr>
+    <tr>
+      <td class="esq" nowrap>(<a href="../../Campos/camp2300.htm#2328">2328</a>) COD-MOD-NEG
+      &nbsp; </td>
+      <td class="esq">= espaços</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/camp2300.htm#2300">2300</a>) TARSIBS-E</td>
+      <td class="esq">= espaços</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/camp2300.htm#2301">2301</a>) TARINT-E (1)</td>
+      <td class="esq">= espaços</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/camp2300.htm#2301">2301</a>) TARINT-E (2)</td>
+      <td class="esq">= espaços</td>
+    </tr>
+    <tr>
+      <td class="esq">&nbsp; </td>
+      <td class="esq">&nbsp; </td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/campos1.htm#063">063</a>) TIPMOV</td>
+      <td class="esq">= zeros</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/campos3.htm#221">221</a>) SISTEMA</td>
+      <td class="esq">= 2 (Multibanco)</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/campos3.htm#222">222</a>) SISTPAG</td>
+      <td class="esq">= 9 (SIBS)</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/campos3.htm#225">225</a>) BPAGAPOIO</td>
+      <td class="esq">= 5 (B. Liquidação)</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/campos3.htm#228">228</a>) AV/CUTOFF</td>
+      <td class="esq">= 2</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/campos2.htm#105">105</a>) DTHORA</td>
+      <td class="esq">preenchido</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/campos2.htm#110">110</a>) DATAVALOR</td>
+      <td class="esq">preenchido</td>
+    </tr>
+    <tr>
+      <td class="esq">&nbsp; </td>
+      <td class="esq">&nbsp; </td>
+    </tr>
+    <tr>
+      <td class="esq"><em>DADOS ADICIONAIS</em></td>
+      <td class="esq">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/campos5.htm#412">412</a>) IDCLIFAC</td>
+      <td class="esq">preenchido</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/campos2.htm#103">103</a>) CODBAN</td>
+      <td class="esq">= zeros se entidade representada não tiver código atribuído pelo Banco
+      de Portugal; preenchido nos restantes casos</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/campos2.htm#102">102</a>) FICH</td>
+      <td class="esq">preenchido</td>
+    </tr>
+    <tr>
+      <td class="esq">(<a href="../../Campos/campos1.htm#061">061</a>) IDFICH</td>
+      <td class="esq">preenchido</td>
+    </tr>
+  </table>
+<p>&nbsp;</p>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<base target="explicac">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<script>top.captulos.location='indicee.htm#E';</script>
+
+
+<title>E.7 FICHEIROS PARA O BANCO DE PORTUGAL</title>
+</head>
+
+<body>
+
+<h1>E.7 FICHEIROS PARA O BANCO DE PORTUGAL</h1>
+
+<p>&nbsp;</p>
+
+<p>Neste capítulo&nbsp;é descrito o ficheiro enviado pela SIBS ao Banco de
+Portugal no âmbito do Sistema Multibanco. </p>
+
+<p class="a">Destina-se à comunicação dos saldos apurados para as Instituições de Crédito
+autorizadas pelo Banco de Portugal a participar directamente no SICOI. </p>
+
+<p><br>
+</p>
+
+<table border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="380"></td>
+    <td width="90" class="oito">Designação para<br>
+    <em>file transfer *</em></td>
+    <td width="90" class="oito">Comprimento <br>
+    do registo</td>
+  </tr>
+  <tr>
+    <td width="380" class="esq10"><strong>Ficheiro expedido pela SIBS para o Banco de
+    Portugal</strong></td>
+    <td width="90" class="oito"></td>
+    <td width="90" class="oito"></td>
+  </tr>
+  <tr>
+    <td width="380" class="esq" colspan="3">&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="380" class="esq10">&nbsp;&nbsp;&#150;&nbsp; SALDOS DA COMPENSAÇÃO MULTIBANCO</td>
+    <td width="90" class="dez"><a href="cme.htm" target="main">MCME</a></td>
+    <td width="90" class="dez">21</td>
+  </tr>
+</table>
+
+<p class="oito">* Constituída pelos campos (<a href="../../Campos/campos2.htm#101"
+target="explicac">101</a>) APLIC e (<a href="../../Campos/camp2300.htm#2378"
+target="explicac">2378</a>) FICH-BP.</p>
+
+<p>&nbsp;</p>
+
+<p><strong><em>HEADER</em>  DO FICHEIRO</strong></p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <th width="160" >Nome do Campo</th>
+    <th width="45" >Comp.</th>
+    <th width="45" >Pos.</th>
+    <th width="45" >Rep.</th>
+    <th width="70" >Nº Campo</th>
+    <th width="200" >Obs. </th>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="70"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td width="200" class="esq">= '0'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">APLIC</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">A</td>
+    <td width="70"><a href="../../Campos/campos2.htm#101">101</a></td>
+    <td width="200" class="esq">= 'M'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FICH-BP</td>
+    <td class="dta" width="45">3</td>
+    <td class="dta" width="45">3</td>
+    <td width="45">A</td>
+    <td width="70"><a href="../../Campos/camp2300.htm#2378" target="explicac">2378</a></td>
+    <td width="200" class="esq">= 'CME' ou 'INS'</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID-INS-ORD</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">6</td>
+    <td width="45">N</td>
+    <td width="70"><a href="../../Campos/camp2300.htm#2373" target="explicac">2373</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">ID-INS-DST</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">12</td>
+    <td width="45">N</td>
+    <td width="70"><a href="../../Campos/camp2300.htm#2374" target="explicac">2374</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICH-BP</td>
+    <td class="dta" width="45">10</td>
+    <td class="dta" width="45">18</td>
+    <td width="45">N</td>
+    <td width="70"><a href="../../Campos/camp2300.htm#2379" target="explicac">2379</a></td>
+    <td width="200" class="esq">= AAAAMMDDSSS </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">IDFICHANT-BP</td>
+    <td class="dta" width="45">10</td>
+    <td class="dta" width="45">28</td>
+    <td width="45">N</td>
+    <td width="70"><a href="../../Campos/camp2300.htm#2380" target="explicac">2380</a></td>
+    <td width="200" class="esq">= AAAAMMDDSSS </td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FECHO</td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">38</td>
+    <td width="45">N</td>
+    <td width="70"><a href="../../Campos/camp2300.htm#2381" target="explicac">2381</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTAL</td>
+    <td class="dta" width="45">38</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="70">&nbsp;</td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p><strong><a name="TRAILER"><em>TRAILER</em></a>  DO FICHEIRO</strong></p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp; </td>
+  </tr>
+</table>
+
+<table border="1" cellpadding="2" cellspacing="0">
+  <tr>
+    <th width="160" >Nome do Campo </th>
+    <th width="45" >Comp.</th>
+    <th width="45" >Pos.</th>
+    <th width="45" >Rep.</th>
+    <th width="70" >Nº Campo </th>
+    <th width="200" >Obs.</th>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TIPREG </td>
+    <td class="dta" width="45">1</td>
+    <td class="dta" width="45">1</td>
+    <td width="45">N</td>
+    <td width="70"><a href="../../Campos/campos2.htm#111">111</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTREG-BP </td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">2</td>
+    <td width="45">N</td>
+    <td width="70"><a href="../../Campos/camp2300.htm#2375" target="explicac">2375</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTDEB-BP </td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">8</td>
+    <td width="45">N</td>
+    <td width="70"><a href="../../Campos/camp2300.htm#2376" target="explicac">2376</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTCRED-BP </td>
+    <td class="dta" width="45">15</td>
+    <td class="dta" width="45">23</td>
+    <td width="45">N</td>
+    <td width="70"><a href="../../Campos/camp2300.htm#2377" target="explicac">2377</a></td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">FILLER</td>
+    <td class="dta" width="45">6</td>
+    <td class="dta" width="45">38</td>
+    <td width="45">A</td>
+    <td width="70">&nbsp;</td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="esq" width="160">TOTAL</td>
+    <td class="dta" width="45">43</td>
+    <td class="dta" width="45">&nbsp;</td>
+    <td width="45">&nbsp;</td>
+    <td width="70">&nbsp;</td>
+    <td width="200" class="esq">&nbsp;</td>
+  </tr>
+</table>
+
+<p><br>
+<strong>Nota:</strong><br>
+Se a dimensão do registo de detalhe for inferior a 43 bytes (dimensão do <em>TRAILER</em>),
+inclui-se um campo de <em>Filler</em> até atingir aquele valor. <br>
+No caso da dimensão do registo de detalhe ser maior ou igual a 43 bytes, a dimensão dos
+registos <em>HEADER</em> e <em>TRAILER</em>&nbsp; é ajustada até esse valor através de
+um campo <em>filler</em> de dimensão adequada, preenchido a espaços.</p>
+
+<p class="dta"><br>
+<a target="main" href="e6.htm">Anterior</a></p>
+</body>
+</html>

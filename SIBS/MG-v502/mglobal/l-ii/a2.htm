@@ -1,0 +1,1350 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="_self">
+<title>A.2 EMISSÃO DE CARTÕES</title>
+<script>top.captulos.location='indicea.htm#A';</script>
+</head>
+
+<body>
+
+<h1>A.2 EMISSÃO DE CARTÕES </h1>
+
+<p>&nbsp;</p>
+
+<p>A emissão de um produto financeiro baseada na produção de um cartão implica que
+este seja devidamente caracterizado antes de se iniciarem as tarefas para a sua
+execução. </p>
+
+<p><br>
+Assim, este capítulo tem cinco objectivos: 
+
+<ol>
+  <li  type="disc">Explicitar o processo de emissão lógica de cartões (Produção
+    Remota) (<a target="main" href="#A.2.1">A.2.1</a>);</li>
+  <li>Apresentar a natureza e tipificação dos cartões no Sistema Multibanco
+    (<a target="main" href="#A.2.2">A.2.2</a>);</li>
+  <li>Apresentar os diferentes tipos de produção e opções adicionalmente
+    disponíveis na emissão lógica de cartões (<a target="main" href="#A.2.3">A.2.3</a>);</li>
+  <li>Apoiar o capítulo <a href="../l-iii/e2.htm">E.2</a> do Livro III, para a
+    implementação dos ficheiros de produção de cartões (<a target="main" href="#A.2.4">A.2.4</a>);</li>
+  <li  type="disc">Identificar os cenários alternativos de estrutura da Base de
+    Dados de cartões de débito/crédito disponibilizados aos Emissores (<a target="main"
+    href="#A.2.5">A.2.5</a>).</li>
+</ol>
+
+<p>&nbsp;</p>
+
+<h2 ><a name="A.2.1">A.2.1</a> PRODUÇÃO LÓGICA DE CARTÕES - PRODUÇÃO REMOTA</h2>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="A.2.1.1">A.2.1.1</a> ENQUADRAMENTO E IMPLICAÇÕES</h3>
+
+<p><br>
+Na sequência de solicitações apresentadas pela generalidade dos Emissores e tendo em
+vista melhorar a produção lógica de cartões, permitindo libertar os Emissores da
+necessidade de presença física de colaboradores seus na SIBS, aquando da produção
+lógica de ficheiros, procedeu-se a uma reformulação dos processos inerentes, tendo como
+pressuposto dois princípios de base: (1) minimização dos impactos nos Emissores e (2)
+criação de condições de auditabilidade.</p>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="A.2.1.2">A.2.1.2</a> DESCRIÇÃO GERAL</h3>
+
+<p><br>
+
+<ul >
+  <li>Considera-se a recepção de um ficheiro de produção de cartões como o despoletar do
+    processo de emissão. Não é necessária a presença ou intervenção do representante do
+    Emissor, ou de outrem e o processamento funciona 24x7;<br>
+    <br>
+  </li>
+  <li>Implementou-se o conceito de produção urgente. Não se considera urgência de
+    produção por cartão; uma produção urgente é realizada através de um ficheiro
+    próprio para esse efeito. Este é identificado através do respectivo contrato de
+    produção de cartões;<br>
+    <br>
+  </li>
+  <li>A impressão das cartas de PIN é desencadeada pela SIBS, sem necessidade de
+    intervenção adicional por parte do emissor;<br>
+    <br>
+  </li>
+  <li>Deixa de existir o conceito de &quot;<em>wait</em>&quot; por cartão. O &quot;<em>wait</em>&quot;
+    passa a ser por ficheiro e é dependente da urgência da produção. Caso não estejam
+    presentes todos os ficheiros necessários à produção, o ficheiro <a
+    href="../l-iii/eecb.htm">EECB</a> é colocado em espera por um determinado período de
+    tempo.</li>
+</ul>
+
+<p><br>
+De acordo com os princípios supracitados, foi possível simplificar a aplicação de
+produção de cartões, tendo esta passado a suportar-se apenas em duas fases de
+processamento distintas: a primeira é relativa ao acolhimento e validação dos ficheiros
+e a segunda relativa ao cálculo lógico e aos respectivos <em>outputs</em>.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>1º Fase de Processamento</strong></p>
+
+<p>Os ficheiros de produção de cartões (<a href="../l-iii/eecb.htm">EECB</a>,
+<a href="../l-iii/edacdacb.htm">EDAC</a>, <a href="../l-iii/imgbmimg.htm">IMGB</a>)
+remetidos pelos Emissores chegam à SIBS via <em>File Transfer</em> e são submetidos
+automaticamente à aplicação de cartões. Iniciam-se desde logo os procedimentos de
+validação. </p>
+
+<p>As validações genéricas a que o ficheiro é submetido são: 
+
+<ul >
+  <li>Verificação da sequência de ficheiro; </li>
+  <li>Validação da formatação dos registos;</li>
+  <li>Verificação da existência de contrato de produção de cartões, e se o mesmo é
+    válido para a produção em causa;</li>
+  <li>Para os ficheiros <a href="../l-iii/eecb.htm">EECB</a>, verifica-se através do contrato
+    a eventual necessidade de outros recursos (<a href="../l-iii/edacdacb.htm">EDAC</a>, <a
+    href="../l-iii/imgbmimg.htm">IMGB</a>).</li>
+</ul>
+
+<p>Se o ficheiro não cumpre alguma das validações indicadas, transita para a
+fase seguinte, na qual é criado o correspondente ficheiro de erros. O processamento é
+terminado. </p>
+
+<p>Se o ficheiro cumpre todas as validações genéricas, transita para o
+processo de verificação que dá início à 2º fase do processamento.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>2º Fase de Processamento</strong></p>
+
+<p>A passagem a esta fase de processamento é efectuada automaticamente mediante
+a validação do seguinte conjunto de regras: 
+
+<ul >
+  <li>Caso se aplique, verifica-se se já foram recepcionados todos os ficheiros necessários
+    à produção em causa (<a href="../l-iii/edacdacb.htm">EDAC</a>, <a
+    href="../l-iii/imgbmimg.htm">IMGB</a>, ou <a href="../l-iii/edacdacb.htm">EDAC</a>+<a
+    href="../l-iii/imgbmimg.htm">IMGB</a>);</li>
+  <li>Verifica-se se contrato indicado implica tratamento urgente;</li>
+  <li>Verifica-se se existe infra-estrutura de segurança (módulos de segurança)
+    disponível.</li>
+</ul>
+
+<p>Se não estiverem presentes todos os ficheiros necessários à produção em
+causa o ficheiro <a href="../l-iii/eecb.htm">EECB</a> é colocado em espera durante um
+determinado período, consoante se trate ou não de uma produção urgente. </p>
+
+<p>Estando presentes todos os ficheiros necessários à produção em causa,
+verifica-se se a infra-estrutura de segurança está disponível. Se não existirem
+módulos de segurança disponíveis para o cálculo lógico, o ficheiro fica em espera
+até ser possível o respectivo acesso. </p>
+
+<p>Se as validações descritas forem concluídas com sucesso, e se estiverem
+satisfeitas as condições necessárias, dá-se início ao cálculo lógico. </p>
+
+<p>&nbsp;</p>
+
+<p><strong><em>Outputs</em> do Cálculo Lógico</strong></p>
+
+<p>Após o fim do processo de carregamento da Base de Dados, os seguintes
+ficheiros são formatados e remetidos aos Emissores: 
+
+<ul >
+  <li>Erros de Cartões (<a href="../l-iii/eerr.htm">EERR</a>);</li>
+  <li>Confirmação de Cartões (<a href="../l-iii/eccf.htm">ECCF</a>);</li>
+  <li>Emissão Lógica de Cartões (<a href="../l-iii/eelc.htm">EELC</a> ou <a
+    href="../l-iii/pemv.htm">PEMV</a>), se aplicável.</li>
+</ul>
+
+<p>Os ficheiros <a href="../l-iii/eerr.htm">EERR</a> e <a
+href="../l-iii/eccf.htm">ECCF</a> são enviados ao emissor em todos os casos. O <a
+href="../l-iii/eelc.htm">EELC</a> ou o <a href="../l-iii/pemv.htm">PEMV</a> apenas são
+enviados para os Emissores que utilizam unidades de personalização externas à SIBS.</p>
+
+<p style="page-break-before: always">&nbsp;</p>
+
+<h3 ><a name="A.2.1.3">A.2.1.3</a> ASPECTOS PARTICULARES</h3>
+
+<p><br>
+<strong>Cartões Supervisor</strong></p>
+
+<p>Para comunicar ao Emissor a conclusão destas produções é criado um
+ficheiro de erros (<a href="../l-iii/eerr.htm">EERR</a>), retorno do processamento do
+ficheiro POS, por contrato, e que informa o número dos cartões emitidos, de acordo com a
+lógica utilizada com as cartas de PIN aleatórias - EPAL (vd. Modelo Global, Livro III,
+capítulo <a href="../l-iii/e2.htm">E.2</a>). <br>
+A informação em causa permite a auditabilidade da facturação da SIBS relativamente a
+este serviço.</p>
+
+<p><br>
+<strong>Cartas de PIN Aleatórias</strong></p>
+
+<p>Os Emissores requisitam as cartas de PIN aleatórias que pretendem via
+Terminal de Serviços SIBS, através de uma mensagem própria para esse efeito e em que se
+obriga a utilização do cartão de supervisor (mensagem com segurança). </p>
+
+<p><br>
+<strong>Cartões Não Personalizados</strong></p>
+
+<p>A produção de cartões não personalizados realiza-se também com recurso
+ao registo tipo 2. Os Emissores atribuem a numeração dos cartões envolvidos, e não
+apenas a definição da <em>tranche</em>. Os campos necessários à personalização devem
+ser preenchidos a espaços.</p>
+
+<p><br>
+<strong>Mecanismos de Acompanhamento de Processos</strong></p>
+
+<p>Possibilita-se o acompanhamento dos diversos acontecimentos através da
+disponibilização de consultas via <a href="i3.htm#I.3.18">Terminal de Serviços SIBS</a>,
+que permitem controlar o processo de produção na óptica dos Emissores, possibilitando
+as seguintes consultas: 
+
+<ul >
+  <li>Produções do dia</li>
+  <li>Produções entre datas</li>
+  <li>Elementos de uma Produção em particular</li>
+</ul>
+
+<p>&nbsp;A partir de uma das opções de consulta supracitadas, possibilita-se a
+visualização do detalhe de uma determinada Produção, apresentando-se os seguintes
+elementos. 
+
+<ul >
+  <li>a Entidade origem da produção, o tipo de ficheiro e a sua identificação;</li>
+  <li>a data/hora de início do processo, a data/hora do fim das validações, bem como o
+    resultado destas;</li>
+  <li>a indicação se a produção é urgente;</li>
+  <li>a indicação se existem outros recursos envolvidos, e se estes estão em falta;</li>
+  <li>a data/hora de início e fim da impressão das cartas de PIN e o número de cartas
+    envolvidas;</li>
+  <li>a indicação se existiu repetição da impressão de PIN e as respectivas data/hora.</li>
+</ul>
+
+<p>Os Emissores devem indicar à SIBS (a/c DPR-Sistemas Distribuídos) quais os
+Terminais de Serviços SIBS (número do Terminal) para os quais pretendem disponibilizar
+este serviço.</p>
+
+<p>&nbsp;</p>
+
+<h2 style="page-break-before: always"><a name="A.2.2">A.2.2</a> NATUREZA DOS CARTÕES </h2>
+
+<p><br>
+Um Emissor pode emitir cartões com diferentes finalidades:</p>
+
+<blockquote>
+  <ul>
+    <li><a href="#A.2.2.1">Cartões de débito ou crédito</a></li>
+    <li><a target="_self" href="#A.2.2.2">Cartões Porta Moedas anónimos</a></li>
+    <li><a href="#A.2.2.3">Cartões de supervisão de TPA</a></li>
+  </ul>
+  <ul type="square">
+    <li><a href="#A.2.2.4">Cartões para outras finalidades</a> (ex: IAPA) </li>
+  </ul>
+</blockquote>
+
+<p><br>
+Considerando os cartões de débito ou crédito como instrumento de pagamento, este
+sub-capítulo destina-se à descrição das características que podem ser assumidas por
+um produto-cartão no Sistema MB. </p>
+
+<p class="center"><br>
+<strong>&nbsp;&nbsp;&nbsp; TIPIFICAÇÃO DE CARTÕES</strong></p>
+
+<p class="center"><br>
+<img src="imagens2/a2-1.gif" alt="a2-1.gif" WIDTH="572" HEIGHT="495"></p>
+
+<p><br>
+O que verdadeiramente caracteriza o cartão é o cenário de decisão e as operações que
+pode efectuar. </p>
+
+<p style="page-break-before: always">Um cartão está normalmente associado a uma conta de
+depósitos à ordem, a uma conta-crédito ou ambas, podendo pertencer a um particular ou a
+uma empresa e tem principalmente serviços electrónicos. Pode ter outros, como serviço
+de garantia de cheques; pode pertencer a um Sistema de Pagamento Internacional; pode ter
+autenticação apenas com PIN ou também com assinatura. Adicionalmente pode ter um
+microprocessador com a aplicação Porta Moedas, passando a designar-se como cartão
+&quot;COMBINADO&quot;. <br>
+Pode ter a aplicação de pagamento de débito/crédito apenas baseada nas tarjas
+magnéticas ou também no <em>chip</em> (ver capítulo <a href="a3.htm">A.3</a>).</p>
+
+<p>Todas estas distinções são definidas através da parametrização do
+produto-cartão, materializada na <a href="i3.htm#I.3.16">Caracterização do BIN</a>. O
+BIN (<em>Bank Identifier Number</em>) corresponde ao código associado a cada
+produto-cartão. Este código é atribuído ao Emissor pelas entidades internacionais
+responsáveis pela gestão dos mesmos ao nível mundial. No caso de cartões possuidores
+de uma marca internacional, essa atribuição é realizada pelo correspondente Sistema de
+Pagamento (ex.: Visa, MasterCard, Amex). No caso de cartões de âmbito exclusivamente
+Multibanco, esta atribuição é efectuada pela ABA (<em>American Bankers Association</em>)
+como órgão operacional da ISO (<em>International Organisation for Standardisation</em>).
+</p>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="A.2.2.1">A.2.2.1</a> CARTÕES DE DÉBITO OU CRÉDITO</h3>
+
+<p><br>
+Os cartões podem ser: 
+
+<ul>
+  <li>de <strong>débito</strong>, quando possuem apenas contas de Depósitos à Ordem
+    associadas ao cartão;</li>
+  <li>de <a name="crédito"><strong>crédito</strong></a>, quando possuem apenas
+    contas-crédito associadas ao cartão;</li>
+  <li><a name="Misto"><strong>misto</strong></a>, por exemplo quando a primeira conta do
+    cartão é uma conta de Depósito à Ordem e a segunda, uma conta-crédito.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.2.2.1.1">A.2.2.1.1</a> CARTÃO PARA UTILIZAÇÃO GENÉRICA&nbsp; (<a
+href="../../Campos/campos2.htm#129" target="explicac">SEQPAN</a>=1)</h5>
+
+<p>O Emissor de cartões determina a forma de funcionamento e o âmbito de utilização de
+um produto-cartão através do seu cenário de decisão (detalhado no ponto <a
+href="a1.htm">A.1</a>) e das operações disponíveis para aquele (detalhadas no ponto <a
+href="a6.htm">A.6</a> e <a href="a8.htm">A.8</a>). </p>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.2.2.1.2">A.2.2.1.2</a> CARTÃO PARA UTILIZAÇÃO RESTRITA</h5>
+
+<h5><br>
+<a name="A)">A)</a> CARTÃO DE SERVIÇO</h5>
+
+<p>O cenário utilizado para estes cartões é um cenário de decisão que combina o
+funcionamento <em>Real-Time</em> ou Saldo de Conta, com limites atribuídos ao cartão,
+que não resultam de restrições relacionadas com o risco (como é o caso no cenário de
+saldo de cartão puro), mas com restrições do utilizador do cartão. </p>
+
+<p>Está normalmente associado a uma Conta de Depósitos à Ordem, geralmente pertencente
+a uma empresa. </p>
+
+<p>Só pode pertencer a um Sistema de Pagamento Internacional, se: 
+
+<ul>
+  <li>o BIN/extensão for um cartão de serviço <a href="#universal">universal</a> (<a
+    href="../../Campos/campos2.htm#129" target="explicac">SEQPAN</a>=2);</li>
+  <li>o BIN/extensão for parametrizado para ser de uso nacional e com inserção obrigatória
+    do PIN (service code = 520); </li>
+  <li>o Emissor apresentar uma comunicação do representante nacional do Sistema de Pagamento
+    Internacional, expressando o acordo com o lançamento de tal produto.</li>
+</ul>
+
+<p>É normalmente para uso electrónico exclusivo com autenticação por PIN. Estes
+cartões podem ter diversas formas de ser produzidos (Personalizados e Não
+Personalizados). </p>
+
+<h6><br>
+Aplicabilidade dos Cartões de Serviço</h6>
+
+<p>Os cartões de serviço foram criados a pensar nas empresas que: 
+
+<ul>
+  <li>têm pessoal deslocado ou a trabalhar longe dos escritórios centrais e por isso
+    necessitam de acorrer a despesas com estadia e transporte. Pode evitar viagens do pessoal
+    propositadamente para obter adiantamentos de caixa, admitindo que estas possam ser
+    substituídas por levantamentos em CA ou TPAs, que podem posteriormente ser justificadas
+    com facturas ou comprovantes;</li>
+  <li>têm carros de serviço utilizáveis por vários funcionários, substituindo o processo
+    de adiantamento de caixa, cheques ou senhas, pela emissão de cartões de serviço de
+    sector gasolineiro. Neste caso, evitam a imobilização do capital na compra de senhas,
+    passando o débito à sua conta a ser feito apenas quando o automóvel é efectivamente
+    atestado de combustível;</li>
+  <li>têm uma relação especial com uma determinada cadeia comercial e pretendem que
+    empregados seus possam efectuar regularmente pagamentos electrónicos por débito da sua
+    conta. Nesta situação a empresa pretende garantir que os referidos cartões só possam
+    usar os TPAs da referida cadeia comercial e não outros.</li>
+</ul>
+
+<h6><br>
+Cartão de Serviço - Suas Restrições de Uso </h6>
+
+<p>Com o cenário descrito em <a href="#A)">A)</a> proporciona-se um serviço que pode ser
+associado a contas com saldos muito altos ou com linhas de crédito associadas. <br>
+As operações só são autorizadas se o saldo do cartão e o saldo da conta o permitirem.
+Mesmo que o Emissor funcione em RT, o controlo do saldo de cartão é assegurado pela
+SIBS. <br>
+Existe a possibilidade do Emissor definir serviços ainda mais restritos conforme a
+conveniência da empresa a quem se destinam. </p>
+
+<h5><br>
+<a name="universal">Cartões</a> de Serviço Universais (<a
+href="../../Campos/campos2.htm#129" target="explicac">SEQPAN</a>=2)</h5>
+
+<p>Este tipo de cartão pode aceder aos CAs e TPAs pertencentes à Rede Multibanco, e aos
+serviços no estrangeiro estabelecidos nos <a href="../l-i/c3.htm#C.3.2">acordos
+bilaterais</a> do Sistema Multibanco com outras redes (actualmente sem
+aplicação). </p>
+
+<h5><br>
+Cartões de Serviço Pagamento Automático (<a href="../../Campos/campos2.htm#129"
+target="explicac">SEQPAN</a>=3)</h5>
+
+<p>São cartões com o princípio de funcionamento atrás descrito e cujo âmbito de
+acesso é apenas à rede de TPAs nacional. <br>
+Os cartões são expulsos quando tentam utilizar Caixas Automáticos, excepto se o Emissor
+pretender que se mantenham disponíveis algumas das seguintes operações: 
+
+<ul>
+  <li>Alteração de PIN (<a href="a6.htm#005">005</a>)</li>
+  <li>Consulta a Movimentos de Baixo Valor (<a href="a6.htm#046">046</a>)</li>
+  <li>Consulta a NIB (<a href="a6.htm#0CN">0CN</a>)</li>
+</ul>
+
+<h5><br>
+Cartões de Serviço CA (<a href="../../Campos/campos2.htm#129" target="explicac">SEQPAN</a>=4)</h5>
+
+<p>Este tipo de cartões só pode ter acesso à Rede de CAs Multibanco, sendo rejeitados
+sempre que pretendam utilizar TPAs. <br>
+O levantamento está também condicionado à disponibilidade de saldo de cartão,
+combinada com o saldo de conta ou com a resposta do Emissor num cenário <em>real-time</em>.
+</p>
+
+<h5><br>
+Cartões de Serviço de Sector (<a href="../../Campos/campos2.htm#129" target="explicac">SEQPAN</a>=5)</h5>
+
+<p>São cartões com o mesmo cenário de decisão, mas que só podem aceder a TPAs
+instalados em estabelecimentos pertencentes a um determinado tipo de actividade
+económica. <br>
+Por ex.: só pode aceder a estações de serviço gasolineiras ou restaurantes, etc. </p>
+
+<p>O acesso aos CAs está limitado às seguintes operações: 
+
+<ul>
+  <li>Alteração de PIN (<a href="a6.htm#005">005</a>)</li>
+  <li>Consulta a Movimentos de Baixo Valor (<a href="a6.htm#046">046</a>)</li>
+  <li>Consulta a NIB (<a href="a6.htm#0CN">0CN</a>)</li>
+  <li>Via Verde, se o código do sector de actividade do comerciante (<a
+    href="../../Campos/campos3.htm#264" target="explicac">IDENTCS</a>) for 71161 ou 00001.</li>
+</ul>
+
+<h5 table><br>
+Cartões de Serviço Comerciante (<a href="../../Campos/campos2.htm#129" target="explicac">SEQPAN</a>=6)</h5>
+
+<p>São cartões emitidos também sobre contas de empresas, sujeitos ao cenário de
+autorização descrito anteriormente e que só podem utilizar TPAs instalados em
+estabelecimentos de uma dada rede comercial. <br>
+Neste caso, quando os cartões são emitidos é indicada a identificação do comerciante
+em causa. </p>
+
+<h5><br>
+<a name="B)">B)</a> CARTÕES DE REDE PRIVADA (<a href="../../Campos/campos2.htm#129"
+target="explicac">SEQPAN</a>=8)</h5>
+
+<p>Tratam-se de cartões que podem efectuar operações contabilísticas apenas em
+determinados TPAs. O âmbito da sua aceitação corresponde aos estabelecimentos para os
+quais tenha sido posicionado pelo Emissor/representante destes cartões um acordo, cuja
+identificação é informada pelo Emissor no momento da emissão do cartão. </p>
+
+<p>Os cenários de funcionamento destes cartões são os existentes para o respectivo BIN,
+não estando sujeitos às condicionantes dos restantes cartões de serviço (SEQ.PAN 2 a
+6). </p>
+
+<p>Estes cartões são aceites também na rede de CAs, podendo efectuar as seguintes
+operações, desde que estas se encontrem disponíveis para o respectivo BIN: 
+
+<ul>
+  <li>Alteração de PIN,</li>
+  <li>Consulta de saldos,</li>
+  <li>Consulta de movimentos e</li>
+  <li>Consulta às operações Multibanco.</li>
+</ul>
+
+<p>As operações em TPAs efectuadas pelos cartões estão sujeitas às condições
+contratuais constantes do respectivo acordo, ou seja, debita-se ao comerciante a comissão
+posicionada no acordo correspondente, não sendo aplicável tarifário interbancário. </p>
+
+<h6><br>
+Procedimentos a efectuar</h6>
+
+<p>Após a negociação com um determinado grupo de comerciantes para a aceitação de um
+novo tipo de cartão, o Emissor envia: 
+
+<ul>
+  <li>à SIBS: </li>
+</ul>
+
+<blockquote>
+  <ul type="square">
+    <li>O '<a href="a_a2.pdf">Formulário para Matrícula De Acordo</a>', solicitando a
+      matrícula do respectivo acordo;</li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li >especificamente à Unidade de Produção de Cartões da SIBS:</li>
+</ul>
+
+<blockquote>
+  <ul type="square">
+    <li>O 'Contrato de Produção de Cartão', elaborado em conjunto pelo Emissor e pela Unidade de Produção de Cartões, identificando a forma de
+      personalização dos plásticos a emitir para este acordo, a fim de ser atribuído um
+      código de tipo de produção/contrato. </li>
+  </ul>
+</blockquote>
+
+<p>A SIBS informa o Emissor dos códigos atribuídos ao acordo e ao tipo de
+produção/contrato. </p>
+
+<p>O Emissor obtém junto dos comerciantes a identificação dos estabelecimentos
+abrangidos pelo acordo e, utilizando a função de inserção de condições contratuais
+disponível na gestão de estabelecimentos do Terminal de Serviços SIBS, insere o novo
+acordo em cada um desses estabelecimentos. </p>
+
+<p style="page-break-before: always">O Emissor inicia a produção de cartões, enviando
+ficheiros <a href="../l-iii/eecb.htm">EECB</a> distintos, por tipo de produção/contrato
+e por acordo, posicionando no campo IDENTCS (<a href="../../Campos/campos3.htm#264"
+target="explicac">264</a>) a identificação do produto. </p>
+
+<p table>Sempre que é lançado um novo produto, é aconselhável a emissão inicial de
+apenas um ou dois cartões para permitir ao Emissor testar todo o circuito, previamente à
+sua distribuição pelos clientes. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.2.2.2">A.2.2.2</a> CARTÃO PORTA MOEDAS ANÓNIMO</h3>
+
+<p><br>
+Tratam-se de cartões que são vendidos pelos Emissores a qualquer utilizador, sem que
+implique que este detenha uma conta ou qualquer outra relação comercial. </p>
+
+<p>O cartão pode ser &quot;carregado&quot; com importâncias que ficam disponíveis para
+compras a efectuar posteriormente em estabelecimentos aderentes e máquinas próprias
+(pagamento antecipado). </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.2.2.3">A.2.2.3</a> EMISSÃO DE CARTÕES SUPERVISÃO E OUTROS </h3>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.2.2.3.1">A.2.2.3.1</a> TPAs - PROPRIEDADE DO BANCO</h5>
+
+<p>O pedido de produção de cartões de supervisão para instalação de Terminais de
+Pagamento Automático (TPA) processa-se de modo diferente dos cartões de cliente. O Banco
+pode dispor de: 
+
+<ul>
+  <li>Um Terminal de Serviços SIBS, ligado ao Sistema Multibanco onde solicita a quantidade
+    de cartões pretendida depois de indicar o Comerciante e o Estabelecimento onde se
+    encontra o TPA; </li>
+  <li>Para uso só em caso excepcionais e como <em>backup</em> do Terminal de Serviços SIBS;
+    admite-se o envio de documentação para a SIBS, solicitando a introdução desses dados. </li>
+</ul>
+
+<p>Os cartões de supervisão solicitados pelo Banco são produzidos antes da emissão dos
+cartões cliente e entregues ao Representante do Banco, sem outros comprovantes especiais.
+O controlo por parte do Banco deve fazer-se com a informação prestada pelo Terminal de
+Serviços SIBS. </p>
+
+<p>No caso de terminais <em>offline</em> em que seja necessário efectuar o pedido de
+Cartões de Depósito PMB (cartões com microprocessador integrado) destinado aos
+comerciantes, estes são também pedidos pelos dois processos descritos. </p>
+
+<p>&nbsp;</p>
+
+<h5><a name="A.2.2.3.2">A.2.2.3.2</a> TPAs - PROPRIEDADE DE REPRESENTANTE DE CARTÕES</h5>
+
+<p>Como proprietários de TPAs podem existir outras organizações como por ex.: a Unicre
+e a American Express. Estes podem actuar no Sistema Multibanco, inserindo os seus
+Comerciantes, Estabelecimentos e TPAs, aceitantes dos cartões que representam. Neste
+contexto pode pedir a produção de cartões de Supervisão para as contas bancárias
+indicadas pelos comerciantes. Estes dados da conta bancária devem ser validados pelo
+Banco (verificar as assinaturas e a correcção do número de conta informado). </p>
+
+<p>No ficheiro de Terminais (TRMC) é incluído um <a
+href="../l-iii/trmc.htm#= 5">registo</a> por cada estabelecimento para quem foram
+produzidos cartões de supervisão. Esse registo é enviado para a Entidade de Apoio no
+dia do início do processo de produção. </p>
+
+<p>&nbsp;</p>
+
+<h3 style="page-break-before: always"><a name="A.2.2.4">A.2.2.4</a> EMISSÃO DE CARTÕES
+NÃO BANCÁRIOS</h3>
+
+<p><br>
+A Unidade de Produção de Cartões da SIBS pode efectuar a
+emissão de outros cartões de plástico que fazem uso (ou não) de tarja magnética. Este
+serviço é usado por Emissores (ex.: produção de cartões IAPA) ou outras empresas (ex:
+Shell, BP, Gasóleo Verde). </p>
+
+<p>Para este tipo de produção são necessários os mesmos requisitos já enunciados
+(definição do calendário de produção, definição do desenho do cartão, etc.),
+exceptuando o tipo de ficheiro a entregar para a produção que, neste caso, é o ficheiro
+de Dados Adicionais (<a href="../l-iii/edacdacb.htm">EDAC</a>). </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.2.3">A.2.3</a> TIPOS DE PRODUÇÃO DE CARTÕES E CARTAS DE PIN</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.2.3.1">A.2.3.1</a> TIPOS DE PRODUÇÃO BÁSICOS</h3>
+
+<p><br>
+O circuito para a produção do cartão tem importância para avaliar o impacto nos
+serviços operacionais do Emissor e para a previsão do número de dias que devem decorrer
+entre o pedido do cartão pelo cliente e a sua recepção. </p>
+
+<p>Desde a definição dos clientes que são o objecto do lançamento do cartão até à
+definição do modo de entrega do cartão ao cliente, existem várias alternativas aquando
+da produção do cartão. </p>
+
+<p><br>
+<strong>Cartões não personalizados</strong></p>
+
+<p>São cartões que estando emitidos (ou seja, após as acções de magnetização, <em>embossing</em>
+dos plásticos e a produção da carta de código secreto), à priori não têm ainda uma
+conta associada. Neste tipo de produção, o cliente interessado no produto pode
+levantá-lo no primeiro contacto com o balcão. O cliente não possui o seu nome sobre o
+cartão devendo usar o painel de assinatura. Os dados da conta são informados
+posteriormente pelo Emissor para actualização do cartão. O cliente só pode fazer uso
+do cartão após a entrega da carta com o código secreto. </p>
+
+<p><br>
+<strong>Cartões personalizados</strong></p>
+
+<p>São cartões que foram produzidos para um cliente específico, a pedido deste ou por
+iniciativa do Emissor. O cliente tem períodos de espera entre o momento do pedido, a
+recepção da carta com o código secreto e a entrega do cartão. </p>
+
+<p><br>
+<strong>Cartões não personalizados mas com conta associada</strong></p>
+
+<p>São cartões que estão &quot;personalizados&quot;, pelo menos no que respeita aos
+dados da conta de depósito à ordem que lhe está associada, permitindo que, no caso de
+um novo cliente do Emissor, este possa utilizar o seu cartão logo após a sua obtenção,
+sem os inconvenientes de não ter o número de conta explícito. Como no caso dos cartões
+não personalizados, anteriormente descritos, continua a não apresentar o nome do cliente
+no plástico. A carta com o código secreto é entregue ao cliente pelo Emissor. Os
+cartões de crédito fazem uso do processo de produção de cartões personalizados. </p>
+
+<p>No que diz respeito à emissão das cartas de PIN, o Emissor pode optar por ter um
+processo através do qual a carta do código secreto seja expedida pelo correio para a
+casa do cliente, solicitando o levantamento do plástico no Balcão (apropriado a cartões
+onde não haja utilizações exclusivamente electrónicas). O circuito contrário (entrega
+da carta com o código secreto ao Balcão e a expedição pelo correio do cartão) não
+deve ser aplicado a cartões com serviços baseados na assinatura. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.2.3.2">A.2.3.2</a> SERVIÇO DE GUARDA DE <em>PINBLOCKS</em></h3>
+
+<p><br>
+Este serviço consiste em guardar na SIBS um ficheiro <em>online</em> com a informação
+referente aos <em>pinblocks</em> (PINs cifrados) associados aos cartões. Permite-se assim
+que os Emissores possam emitir cartões para os seus clientes cujo PIN se mantém
+constante para os cartões subsequentes (renovações e/ou substituições). Na eventual
+alteração do PIN por parte do cliente, a informação relativa ao respectivo <em>pinblock</em>
+é actualizada. </p>
+
+<p>A geração de um <em>pinblock</em> a conservar centralmente em ficheiro pode ter duas
+origens distintas: 
+
+<ul>
+  <li>Numa produção inicial, o Emissor envia um ficheiro <a href="../l-iii/eecb.htm">MEECB</a>
+    com a indicação que o PIN se mantém fixo (TIPPIN (<a target="explicac"
+    href="../../Campos/campos6.htm#519">519</a>) = 1); a SIBS produz um cartão e uma carta de
+    PIN, e gera um <em>pinblock</em> cuja identificação é o número desse cartão.<br>
+    Neste caso, o cartão e o PIN são produzidos simultaneamente; nas renovações ou
+    substituições posteriores apenas se produz o cartão.</li>
+</ul>
+
+<ul>
+  <li>O Emissor utiliza a função &quot;Geração aleatória de PINs&quot; na produção de
+    cartões, que desencadeia primeiro a emissão de cartas de PIN a entregar aos clientes sem
+    produzir cartões. Quando o Emissor pretender produzir cartões para esses clientes, deve
+    enviar os correspondentes registos no ficheiro <a href="../l-iii/eecb.htm">MEECB</a>, com
+    o campo TIPPIN (<a target="explicac" href="../../Campos/campos6.htm#519">519</a>) = 2 (PIN
+    aleatório sem emissão de carta de PIN) e indicar os números inscritos nas cartas de PIN
+    entregues aos clientes no campo IDPINBLOCK (<a href="../../Campos/campos5.htm#494"
+    target="explicac">494</a>). A numeração destas cartas de PIN geradas aleatoriamente é
+    sequencial e distinta da numeração dos cartões.</li>
+</ul>
+
+<p>Em ambos os casos, quando ocorrer uma renovação ou substituição de um cartão
+(emitido num destes processos), para o qual o Emissor pretenda que o cliente mantenha o
+PIN em uso, deve enviar um ficheiro <a href="../l-iii/eecb.htm">MEECB</a> com o campo
+TIPPIN (<a target="explicac" href="../../Campos/campos6.htm#519">519</a>) = 1 (PIN fixo) e
+indicando o número do cartão renovado/substituído nos campos IDPINBLOCK (<a
+href="../../Campos/campos5.htm#494" target="explicac">494</a>) e NUMCAR (antigo) (<a
+href="../../Campos/campos2.htm#128" target="explicac">128</a>).&nbsp;Não
+existem restrições relativas ao BIN dos dois cartões. A renovação ou
+substituição de cartões com manutenção do PIN do cartão anterior é
+possível mesmo que o BIN ou extensão de BIN dos dois cartões seja distinta. </p>
+
+<p>O preenchimento dos campos do ficheiro <a href="../l-iii/eecb.htm">MEECB</a>, em
+função das várias possibilidades anteriormente descritas, comparando com a produção
+normal sem guarda de <em>pinblock</em>, pode resumir-se no seguinte quadro:</p>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="100%">
+  <tr>
+    <th COLSPAN="4" class="oito">Tipo de serviço</th>
+    <th COLSPAN="4" class="oito">Campos do <a href="../l-iii/eecb.htm">MEECB</a> a preencher</th>
+  </tr>
+  <tr>
+    <th>&nbsp;</th>
+    <th class="oito">Cartão</th>
+    <th class="oito">Guarda de <em>pinblock</em></th>
+    <th class="oito">Emissão de carta de PIN</th>
+    <th class="oito">TIPPIN (<a target="explicac" href="../../Campos/campos6.htm#519">519</a>)</th>
+    <th class="oito">TIPEMICAR (<a target="explicac" href="../../Campos/campos6.htm#518">518</a>)</th>
+    <th class="oito">NUMCAR (anterior) (<a href="../../Campos/campos2.htm#128"
+    target="explicac">128</a>)</th>
+    <th class="oito">IDPINBLOCK (<a href="../../Campos/campos5.htm#494" target="explicac">494</a>)</th>
+  </tr>
+  <tr>
+    <td ROWSPAN="2" class="oitomid">Produção de carta de PIN sem guarda de <em>pinblock</em></td>
+    <td class="oitomid">Novo/inicial</td>
+    <td class="oitomid">Não</td>
+    <td class="oitomid">Sim</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">1</td>
+    <td class="oitomid">zeros</td>
+    <td class="oitomid">zeros</td>
+  </tr>
+  <tr>
+    <td class="oitomid">Renovação ou substituição</td>
+    <td class="oitomid">Não</td>
+    <td class="oitomid">Sim</td>
+    <td class="oitomid">0</td>
+    <td class="oitomid">2 a 7</td>
+    <td class="oitomid">N.º do cartão anterior</td>
+    <td class="oitomid">zeros</td>
+  </tr>
+  <tr>
+    <td ROWSPAN="3" class="oitomid">Produção de carta de PIN fixo</td>
+    <td class="oitomid">Novo/inicial</td>
+    <td class="oitomid">Sim</td>
+    <td class="oitomid">Sim</td>
+    <td class="oitomid">1</td>
+    <td class="oitomid">1</td>
+    <td class="oitomid">zeros</td>
+    <td class="oitomid">noves</td>
+  </tr>
+  <tr>
+    <td class="oitomid">Renovação ou substituição <strong>(a)</strong></td>
+    <td class="oitomid">O PIN mantém-se</td>
+    <td class="oitomid">Não</td>
+    <td class="oitomid">1</td>
+    <td class="oitomid">2 a 7</td>
+    <td class="oitomid">N.º do cartão anterior</td>
+    <td class="oitomid">zeros <strong>(b)</strong></td>
+  </tr>
+  <tr>
+    <td class="oitomid">Renovação ou substituição <strong>(c)</strong></td>
+    <td class="oitomid">Sim</td>
+    <td class="oitomid">Sim</td>
+    <td class="oitomid">1</td>
+    <td class="oitomid">2 a 7</td>
+    <td class="oitomid">N.º do cartão anterior</td>
+    <td class="oitomid">noves</td>
+  </tr>
+  <tr>
+    <td ROWSPAN="2" class="oitomid">Produção de carta de PIN com 'Geração Aleatória de
+    PINs'</td>
+    <td class="oitomid">Novo/inicial</td>
+    <td class="oitomid">No momento da emissão da carta</td>
+    <td class="oitomid">Carta de PIN emitida previamente</td>
+    <td class="oitomid">2</td>
+    <td class="oitomid">1</td>
+    <td class="oitomid">zeros</td>
+    <td class="oitomid">N.º da carta de PIN aleatório</td>
+  </tr>
+  <tr>
+    <td class="oitomid">Renovação ou substituição</td>
+    <td class="oitomid">O PIN mantém-se</td>
+    <td class="oitomid">Não</td>
+    <td class="oitomid">2</td>
+    <td class="oitomid">2 a 7</td>
+    <td class="oitomid">N.º do cartão anterior</td>
+    <td class="oitomid">N.º da carta de PIN aleatório</td>
+  </tr>
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td nowrap class="oitoesq"><br>
+    <strong><br>
+    (a)</strong>&nbsp; </td>
+    <td class="just8"><br>
+    <br>
+    Renovação ou substituição de um cartão anterior emitido inicialmente pela produção
+    de carta de PIN fixo ou pela produção de carta de PIN com 'Geração Aleatória de
+    PINs'.</td>
+  </tr>
+  <tr>
+    <td nowrap class="oitoesq"><strong><br>
+    (b)</strong></td>
+    <td class="just8"><br>
+    Preenchimento indicado refere-se às versões 02 ou superior do <a
+    href="../l-iii/eecb.htm">EECB</a>; na versão 00 ou 01 do <a href="../l-iii/eecb.htm">EECB</a>,
+    o campo &#145;(<a href="../../Campos/campos5.htm#494" target="explicac">494</a>)
+    IDPINBLOCK&#146; deve ser preenchido com o número do cartão anterior</td>
+  </tr>
+  <tr>
+    <td nowrap class="oitoesq"><strong><br>
+    (c)</strong></td>
+    <td class="just8"><br>
+    Opção disponível para a versão 02 ou superior do <a href="../l-iii/eecb.htm">EECB</a></td>
+  </tr>
+</table>
+
+<p style="page-break-before: always"><br>
+Caso o Emissor deseje utilizar este serviço, deve essa intenção ser formalizada pelo
+Chefe de Projecto do Emissor junto da SIBS com um mínimo de 15 dias de antecedência
+relativamente à data em que pretenda dar início ao mesmo. </p>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="A.2.3.3">A.2.3.3</a> PRODUÇÃO DE CARTÕES COM DIFERIMENTO ENTRE A
+EMISSÃO DO CARTÃO E A DA CARTA DE PIN</h3>
+
+<p><br>
+A SIBS disponibiliza várias hipóteses de produção de cartões e respectivas cartas de
+PIN, em que a sua emissão pode ser diferida no tempo, bem como a personalização do
+cartão na SIBS ou no Emissor: </p>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Emissão normal do cartão e da carta de PIN na SIBS - DIFERIMENTO (<a
+    target="explicac" href="../../Campos/campos5.htm#488">488</a>) = '0'</strong><br>
+    <br>
+    Neste caso, o registo do ficheiro de emissão de cartões (<a href="../l-iii/eecb.htm">MEECB</a>)
+    tem o campo DIFERIMENTO (<a target="explicac" href="../../Campos/campos5.htm#488">488</a>)
+    igual a '0', que desencadeia a emissão física dos cartões e cartas de PIN (*) na SIBS,
+    no momento da emissão lógica (**) dos cartões.<table border="0" cellspacing="0"
+    cellpadding="0">
+      <tr>
+        <td class="esq">&nbsp; </td>
+        <td class="esq"><span class="verdana8"><br>
+        (*) </span></td>
+        <td class="esq"><br>
+        A emissão das cartas de PIN depende do Emissor utilizar ou não o serviço de guarda de
+        pinblocks.</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp; </td>
+        <td class="esq" nowrap><span class="verdana8">(**)&nbsp;</span></td>
+        <td class="esq">Cálculos de segurança (PVV's, CCD, CVV's), e carregamento da base de
+        dados positiva de cartões do Sistema Multibanco.</td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Emissão diferida do cartão na SIBS - DIFERIMENTO (<a target="explicac"
+    href="../../Campos/campos5.htm#488">488</a>) = '1'</strong><br>
+    <br>
+    O ficheiro <a href="../l-iii/eecb.htm">MEECB</a> deve ter os campos NUMCON (<a
+    href="../../Campos/campos2.htm#131" target="explicac">131</a>) e CONTA(SAN1/SAN2) (<a
+    target="explicac" href="../../Campos/campos2.htm#132">132</a>) preenchidos a zeros, e o
+    NOME (<a target="explicac" href="../../Campos/campos2.htm#137">137</a>) a espaços. O
+    processamento deste ficheiro desencadeia o cálculo lógico do cartão e a emissão
+    física da carta de PIN. O cartão é personalizado logicamente e emitido fisicamente na
+    SIBS após o envio e processamento de um ficheiro <a href="../l-iii/ednpepcg.htm">MEPCG</a>,
+    contendo os dados de personalização e a associação às respectivas contas.</li>
+</ul>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Emissão diferida da carta de PIN - DIFERIMENTO (<a target="explicac"
+    href="../../Campos/campos5.htm#488">488</a>) = '2'</strong><br>
+    <br>
+    O Emissor envia um ficheiro <a href="../l-iii/eecb.htm">MEECB</a> com os campos NUMCON (<a
+    href="../../Campos/campos2.htm#131" target="explicac">131</a>) e CONTA (SAN1/SAN2) (<a
+    target="explicac" href="../../Campos/campos2.htm#132">132</a>) preenchidos a zeros, e com
+    o NOME (<a target="explicac" href="../../Campos/campos2.htm#137">137</a>) a espaços,
+    desencadeando a emissão lógica e a produção física dos respectivos plásticos pela
+    SIBS. <br>
+    Quando pretender a emissão da carta de PIN, o Emissor envia o ficheiro <a
+    href="../l-iii/ednpepcg.htm">MEPCG</a> (versão 01), com o mesmo tipo de DIFERIMENTO (<a
+    target="explicac" href="../../Campos/campos5.htm#488">488</a>) enviado no <a
+    href="../l-iii/eecb.htm">MEECB</a>, que desencadeia a personalização dos dados do
+    cartão na base de dados da SIBS e a emissão da carta de PIN.</li>
+</ul>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Emissão diferida de cartão no Emissor - DIFERIMENTO (<a target="explicac"
+    href="../../Campos/campos5.htm#488">488</a>) = '3'</strong><br>
+    <br>
+    O Emissor envia um ficheiro <a href="../l-iii/eecb.htm">MEECB</a> em que o campo
+    DIFERIMENTO (<a target="explicac" href="../../Campos/campos5.htm#488">488</a>) é igual a
+    3 e os dados do cartão estão preenchidos. É efectuado o cálculo lógico, o
+    carregamento do cartão na base de dados e é produzida a carta de PIN. Neste momento é
+    devolvido um ficheiro <a href="../l-iii/eelc.htm">MEELC</a> (emissão de
+    cartões não-EMV) ou o <a href="../l-iii/pemv.htm">MPEMV</a> (emissão de cartões com <em>chip</em>
+    EMV), que constitui o retorno positivo com as características lógicas e de
+    segurança dos cartões emitidos logicamente e que servem de suporte à emissão do
+    plástico no Emissor.</li>
+</ul>
+
+<p><br>
+
+<ul type="square">
+  <li style="page-break-before: always"><strong>Emissão de &#145;Replacement cards&#146; -
+    DIFERIMENTO (<a target="explicac" href="../../Campos/campos5.htm#488">488</a>) = '4'</strong><br>
+    <br>
+    Os replacement cards (RC), são cartões de substituição que se destinam a serem
+    entregues aos clientes que tenham ficado sem o seu cartão no estrangeiro (por perda ou
+    roubo). O plástico é emitido e entregue no estrangeiro, apenas com pista 2, mediante
+    valores de segurança da pista fornecidos pelo Emissor, sem existência de PIN, não
+    permitindo a utilização em ATMs.</li>
+</ul>
+
+<blockquote>
+  <p>Procedimentos para a emissão de Replacement Cards:</p>
+</blockquote>
+
+<blockquote>
+  <ul type="square">
+    <li>O Emissor envia um <a href="../l-iii/eecb.htm">MEECB</a> com um lote de cartões que
+      pretende reservar para efeitos de emissão de RC, em que indica:</li>
+  </ul>
+  <blockquote>
+    <ul>
+      <li>O valor 4 no campo DIFERIMENTO (<a target="explicac" href="../../Campos/campos5.htm#488">488</a>)
+        no registo de parâmetros;</li>
+      <li>O número de contrato de produção específico para os replacement cards no campo
+        CONTRATO (<a target="explicac" href="../../Campos/campos5.htm#469">469</a>), e</li>
+      <li>O nome a espaços, os números de conta, data de expiração e o TIPPIN (<a
+        target="explicac" href="../../Campos/campos6.htm#519">519</a>) a zeros, nos registos de
+        detalhe;</li>
+    </ul>
+  </blockquote>
+  <ul type="square">
+    <li>Os cartões são carregados apenas na base de dados, sem que se proceda ao cálculo dos
+      dados de segurança (PVV e CVV) e sem emissão de cartas de PIN;</li>
+    <li>Quando o Emissor pretender atribuir um RC a um cliente, personaliza o cartão através
+      da função existente no Terminal de Serviços SIBS, enviando o número do cartão, data
+      de expiração, nome do cliente, agência e número de conta;</li>
+    <li>Na resposta são devolvidos os dados que o Emissor transmite ao Sistema de Pagamento que
+      vai produzir e entregar o plástico ao cliente: o PAN completo do cartão, o nome do
+      cliente, a data de expiração, os CVVs e o <i>service code</i>.</li>
+  </ul>
+</blockquote>
+
+<p><br>
+
+<ul type="square">
+  <li><strong>Personalização lógica e emissão de carta de PIN diferidas - DIFERIMENTO (<a
+    target="explicac" href="../../Campos/campos5.htm#488">488</a>) = '5'</strong><br>
+    <br>
+    O Emissor envia um ficheiro <a href="../l-iii/eecb.htm">MEECB</a>, em que os registos de
+    detalhe têm o nome a espaços e os números de conta a zeros. É efectuado o cálculo
+    lógico no momento do carregamento cartão na base de dados, sendo então devolvido um
+    ficheiro, o <a href="../l-iii/eelc.htm">MEELC </a>(emissão de cartões
+    não-EMV) ou o <a href="../l-iii/pemv.htm">MPEMV</a> (emissão de cartões com <em>chip</em>
+    EMV), que constitui o retorno positivo com as características lógicas e de
+    segurança dos cartões emitidos logicamente e que servem de suporte à emissão do
+    plástico no Emissor.<br>
+    Quando pretender a emissão da carta de PIN, o Emissor envia o ficheiro <a
+    href="../l-iii/ednpepcg.htm">MEPCG</a> (versão 01), com o mesmo tipo de DIFERIMENTO (<a
+    target="explicac" href="../../Campos/campos5.htm#488">488</a>) enviado no <a
+    href="../l-iii/eecb.htm">MEECB</a>, que desencadeia a personalização dos dados do
+    cartão na base de dados da SIBS e a emissão da carta de PIN.</li>
+</ul>
+
+<p>Em qualquer das situações, as condições definidas no <a href="a_a6.htm">contrato de
+produção de cartões</a> determinam se a carta de PIN é expedida para o cliente ou
+entregue ao Emissor. </p>
+
+<p style="page-break-before: always"><br>
+Resume-se em seguida o preenchimento dos campos e os ficheiros trocados entre a SIBS e o
+Emissor em função das várias possibilidades:</p>
+
+<p><br>
+</p>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="100%">
+  <tr>
+    <th COLSPAN="2" ROWSPAN="2">Dados no ficheiro de emissão de cartões (<a
+    href="../l-iii/eecb.htm">MEECB</a>)</th>
+    <th COLSPAN="4">Acções concretizadas na SIBS com o processamento do <a
+    href="../l-iii/eecb.htm">MEECB</a></th>
+    <th ROWSPAN="3">Acções <br>
+    subsequentes no Emissor</th>
+  </tr>
+  <tr>
+    <th COLSPAN="3">Cartão</th>
+    <th ROWSPAN="2">Emissão de Carta de PIN</th>
+  </tr>
+  <tr>
+    <th>DIFER. (<a target="explicac" href="../../Campos/campos5.htm#488">488</a>)</th>
+    <td><strong>NUMCON (<a href="../../Campos/campos2.htm#131" target="explicac">131</a>)<br>
+    CONTA (<a target="explicac" href="../../Campos/campos2.htm#132">132</a>)<br>
+    NOME (<a target="explicac" href="../../Campos/campos2.htm#137">137</a>)</strong></td>
+    <th>Cálculo lógico</th>
+    <th>Personalização lógica</th>
+    <th>Emissão física</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>Valores significativos</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Zeros/espaços</td>
+    <td class="wingding">ü</td>
+    <td>Diferida, após envio de <a href="../l-iii/ednpepcg.htm">MEPCG</a></td>
+    <td>Diferida, após envio de <a href="../l-iii/ednpepcg.htm">MEPCG</a></td>
+    <td class="wingding">ü</td>
+    <td class="esq">Envio de <a href="../l-iii/ednpepcg.htm">MEPCG</a></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Zeros/espaços</td>
+    <td class="wingding">ü</td>
+    <td>Diferida, após envio de <a href="../l-iii/ednpepcg.htm">MEPCG</a></td>
+    <td class="wingding">ü</td>
+    <td>Diferida, após envio de <a href="../l-iii/ednpepcg.htm">MEPCG</a></td>
+    <td class="esq">Envio de <a href="../l-iii/ednpepcg.htm">MEPCG</a></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Valores significativos</td>
+    <td class="wingding">ü</td>
+    <td class="wingding">ü</td>
+    <td>-</td>
+    <td class="wingding">ü</td>
+    <td class="esq">Emissão física do cartão, após recepção de <a
+    href="../l-iii/eelc.htm">MEELC</a> ou <a href="../l-iii/pemv.htm">MPEMV</a></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Zeros/espaços<br>
+    <strong>a)</strong></td>
+    <td class="wingding">ü</td>
+    <td>Diferida, após associação cartão a cliente, via Terminal de Serviços SIBS</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="esq">Associação cartão a cliente, via Terminal de Serviços SIBS</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Zeros/espaços</td>
+    <td class="wingding">ü</td>
+    <td>Diferida, após envio de <a href="../l-iii/ednpepcg.htm">MEPCG</a></td>
+    <td>-</td>
+    <td>Diferida, após envio de <a href="../l-iii/ednpepcg.htm">MEPCG</a></td>
+    <td class="esq">-&gt; Envio de <a href="../l-iii/ednpepcg.htm">MEPCG</a><br>
+    -&gt; Emissão física do cartão, após recepção de <a href="../l-iii/eelc.htm">MEELC</a>
+    ou <a href="../l-iii/pemv.htm">MPEMV</a></td>
+  </tr>
+</table>
+
+<blockquote>
+  <p class="nove"><strong>a)</strong> O campo TIPO DE PIN A EMITIR (<a target="explicac"
+  href="../../Campos/campos6.htm#519">519</a>) é preenchido a zeros. </p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.2.4">A.2.4</a> INFORMAÇÃO PARA A PRODUÇÃO DE CARTÕES</h2>
+
+<p><br>
+A SIBS pode receber um ou vários ficheiros Emissão de Cartões (<a
+href="../l-iii/eecb.htm" target="main">EECB</a>), mas cada ficheiro lógico deve
+referir-se a um só Tipo de Produção (<a href="../../Campos/campos2.htm#122"
+target="explicac">122</a>) de Cartões, isto é, considera-se que a cada tipo corresponde
+um plástico com <i>design</i> diferente. A cada unidade de processamento (ficheiro) tem
+que corresponder um conjunto de plásticos que têm que ser posicionados no equipamento de
+<i>embossing</i>. </p>
+
+<p>Os ficheiros têm que ser apresentados à SIBS com sequencialidade, conforme o campo <a
+href="../../Campos/campos1.htm#061" target="explicac">061</a> (IDFICH). Dentro de cada
+ficheiro a atribuição do número do cartão (<a href="../../Campos/campos2.htm#128"
+target="explicac">128</a>) pode ser aleatória, desde que estes não existam na base de
+dados da SIBS. O não cumprimento destes princípios provoca a rejeição de um cartão ou
+do ficheiro. </p>
+
+<p>O Emissor pode criar vários ficheiros lógicos a nível do seu CPD e transmiti-los de
+uma só vez na véspera da data calendarizada para a produção regular do Emissor. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.2.4.1">A.2.4.1</a> REGISTO DE PARÂMETROS </h3>
+
+<p><br>
+O registo de parâmetros reúne os campos que são comuns aos cartões a produzir. Alguns
+destes campos podem estar também definidos no registo de detalhe do cartão. Neste caso
+utiliza-se o informado no detalhe, sendo usados os do registo de parâmetros para aqueles
+que não contenham o campo preenchido. </p>
+
+<p>O BIN e a extensão de BIN dos cartões a produzir passaram a ser solicitados em todas
+as produções. <br>
+O Emissor deve indicar o número do contrato (<a target="explicac"
+href="../../Campos/campos5.htm#469">469</a>) atribuído para executar a personalização
+do cartão. </p>
+
+<p>As chaves lógicas do Emissor, necessárias à produção do código secreto e de
+outros campos de segurança, são determinadas logo no início do processo de produção e
+seleccionadas a partir dos campos &quot;COMBCH&quot; (<a
+href="../../Campos/campos2.htm#123" target="explicac">123</a>) e, no caso de cartões de
+Sistemas de Pagamento Internacionais, também com o campo &quot;COMCHINT&quot; (<a
+href="../../Campos/campos3.htm#251" target="explicac">251</a>).<br>
+O Emissor pode ter permanentes 6 (seis) conjuntos de chaves lógicas. Neste campo &quot;<a
+href="../../Campos/campos2.htm#123" target="explicac">COMBCH</a>&quot; identifica qual o
+que pretende aplicar. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.2.4.2">A.2.4.2</a> REGISTO DE CARTÃO </h3>
+
+<p><br>
+Os dados respeitantes a cada cartão personalizado, ou informados posteriormente (pelo
+ficheiro <a href="../l-iii/ednpepcg.htm" target="main">EDNP</a>), servem para a SIBS
+preencher um registo do ficheiro de cartões. Este ficheiro faz parte do modelo de
+segurança do Sistema MB e serve também para acolher os vários serviços que o Emissor
+pretenda implementar, como seja: 
+
+<ul>
+  <li>Associar restrições de âmbito de acesso ou uso. O campo SEQPAN (<a
+    href="../../Campos/campos2.htm#129" target="explicac">129</a>) indica se o cartão
+    pertence a um cliente bancário com todos os serviços (1) ou se é um cartão de serviço
+    (2 a 5). <br>
+    <br>
+  </li>
+  <li>Associar a Serviço de Crédito ou combinado com débito. O campo VERCAR (<a
+    href="../../Campos/campos3.htm#273" target="explicac">273</a>) define se o cartão é
+    visto no Sistema Multibanco apenas como cartão de débito, só crédito ou misto.<br>
+    <br>
+  </li>
+  <li>Associar a um saldo de cartão particular. Os campos MONTP3 (<a
+    href="../../Campos/campos2.htm#154" target="explicac">154</a>) e PLAF-SALD (<a
+    href="../../Campos/campos3.htm#232" target="explicac">232</a>) informam qual a
+    importância dos saldos a atribuir ao cliente sempre que funcionar o cenário de saldo de
+    cartão.<br>
+    <br>
+  </li>
+  <li>Associar uma só conta D.O. ou duas. O preenchimento de um ou dois conjuntos de campos (<a
+    href="../../Campos/campos2.htm#132" target="explicac">132</a>, <a
+    href="../../Campos/campos2.htm#133" target="explicac">133</a>, <a
+    href="../../Campos/campos2.htm#134" target="explicac">134</a>) apresentam a
+    identificação da(s) conta(s) no Emissor, bem como as restrições que estas têm em
+    termos de <a href="a6.htm#A.6.3">operações disponíveis</a>. <br>
+  </li>
+  <li>Caracterizar a rotatividade do limite de crédito para o cliente, no cenário de Saldo
+    de Conta, pelos campos LIMES (<a href="../../Campos/campos2.htm#135" target="explicac">135</a>)
+    e DIA (<a href="../../Campos/campos2.htm#136" target="explicac">136</a>). O Emissor
+    delimita os picos positivos dos Saldos Disponíveis da conta e indica o dia do mês em que
+    o limite mensal deve ser reposicionado.</li>
+</ul>
+
+<p><br>
+O Emissor envia também os dados que são necessários ao preenchimento do endereço, para
+a carta do Código Secreto ou da carta do cartão. </p>
+
+<p>O NOMECLI (2) (<a href="../../Campos/campos2.htm#172" target="explicac">172</a>) e
+EMBOSSP (<a href="../../Campos/campos3.htm#274" target="explicac">274</a>) estão
+disponíveis para conterem textos necessários ao embossing do cartão, como por ex.: NOME
+EMPRESA. </p>
+
+<p>No caso do Emissor pretender associar os cenários de LIMITE de AUTORIZAÇÃO, pode
+informar o máximo autorizável para o cartão (caso dos cartões EDC). </p>
+
+<p><br>
+Como é natural, os <strong>cartões com fotografia</strong> não podem ser do tipo não
+personalizados. O Pedido de Produção é enviado à SIBS pelo ficheiro <a
+href="../l-iii/eecb.htm" target="main">EECB</a>. Neste ficheiro, o Emissor pode indicar o
+número de cartão pedido, bem como a identificação do documento - associado à
+fotografia e/ou assinatura e ainda a identificação do indivíduo noutro sistema de
+informação alheio (por ex.: o número de aluno ou empregado). </p>
+
+<p>É a SIBS que assegura a associação entre as imagens e os dados bancários
+necessários à produção do cartão. Se os &quot;dados bancários&quot; são
+recepcionados antes dos dados da imagem, a SIBS retém num ficheiro a informação,
+aguardando a chegada do resto dos dados para produzir o cartão. Se os &quot;dados
+bancários&quot; são recepcionados depois dos da imagem, o cartão é imediatamente
+produzido. </p>
+
+<p>A SIBS prepara um ficheiro de Confirmação de Cartões (<a href="../l-iii/eccf.htm">ECCF</a>)
+para o Emissor com um registo por cada cartão produzido (pedidos em diferentes ficheiros <a
+href="../l-iii/eecb.htm" target="main">EECB</a>).<br>
+Mantém-se a produção do ficheiro de Erros (<a href="../l-iii/eerr.htm" target="main">EERR</a>)
+para controlo do tratamento e facturação da produção de cartões. </p>
+
+<p style="page-break-before: always">O Emissor pode indicar o número de Contrato (<a
+href="../../Campos/campos5.htm#469" target="explicac">469</a>) a nível do detalhe do
+cartão, no caso deste ser diferente de cartão para cartão, embora use sempre o mesmo
+plástico físico.</p>
+
+<p>A produção de cartões não personalizados passou a realizar-se também com
+recurso ao registo tipo 2, passando os emissores a atribuir a numeração dos cartões
+envolvidos, e não apenas a definição da <i>tranche</i>. Os campos necessários à
+personalização devem ser preenchidos a espaços.</p>
+
+<p>Na produção de cartões não personalizados, são emitidos cartões cujos
+dados magnéticos são idênticos (ex.: duração, saldo cartão e elementos de
+segurança). Após a recepção e processamento do ficheiro Dados não Personalizados (<a
+href="../l-iii/ednpepcg.htm">EDNP</a>) procede-se à actualizaçao de cada registo do
+Sistema da SIBS com os elementos do cliente. </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.2.5">A.2.5</a> CHAVE DE ACESSO À BASE DE DADOS DE CARTÕES DO SISTEMA
+MULTIBANCO</h2>
+
+<p><br>
+<strong>Enquadramento</strong></p>
+
+<p>Desde o início do Sistema Multibanco e até 2002, os cartões eram identificados no <i>Database</i>
+residente na SIBS apenas através de uma chave única com base no código do Emissor e
+número sequencial de cartão (7 dígitos). </p>
+
+<p>Para satisfazer necessidades de diversos Emissores, nomeadamente resultantes de
+directrizes do Banco de Portugal (extinção de códigos identificativos de Emissores),
+procedeu-se a extensas alterações nas aplicações do Sistema Multibanco (componente de
+segurança, processamento transaccional, sistemas internos, interface Emissor SIBS, etc.),
+de modo a aumentar significativamente as possibilidades de emissão e gestão de cartões.</p>
+
+<p>Desde Junho de 2002 é possível que a chave de acesso ao <i>Database</i> possa ser o
+PAN do cartão (Bin, ExtBin, número cartão), permitindo desta forma a existência de 10
+milhões de cartões por BIN.</p>
+
+<p>Adicionalmente, desde Setembro de 2002 é possível a emissão e gestão de cartões
+identificados pelo PAN e pela data de expiração. Consequentemente, podem existir
+diversos cartões com o mesmo número (PAN), desde que tenham datas de expiração
+diferentes. </p>
+
+<p>Sintetizando, existem três cenários possíveis para os Emissores em termos de
+estrutura da Base de Dados: 
+
+<ol>
+  <li>Número de cartão único por Emissor (cenário base).</li>
+  <li>Número de cartão único por BIN identificado pelo PAN.</li>
+  <li>Número de cartão único composto por PAN e Data expiração.</li>
+</ol>
+
+<p>Note-se que estes cenários são mutuamente exclusivos. Um Emissor que pretenda a
+alteração do cenário em que se enquadra, deve realizar uma comunicação prévia nesse
+sentido, e com a antecedência necessária às conversões de Bases de Dados que tal
+implica.</p>
+
+<p>Adicionalmente, a migração para um cenário mais complexo impede o
+retrocesso para um outro cenário. Um Emissor que se posicione no cenário 2 (Cartão
+único por BIN) não pode migrar para o cenário 1 (cartão único por Emissor). De igual
+forma, um Emissor no cenário 3 (PAN e Data de expiração) não pode migrar para o
+cenário 1 ou 2.</p>
+
+<p>No anexo <a href="a_a3.pdf">A.AX.3</a> apresenta-se a lista de acções
+necessárias à migração para o cenário 2 ou 3.</p>
+
+<p>No lote de alterações realizadas foi também incluído o cheque-dígito do PAN do
+cartão (sendo opcional o seu preenchimento nos ficheiros Emissor-&gt;SIBS). Relativamente
+às cartas de PIN, passa a ser preenchido na carta a totalidade do PAN com os caracteres
+centrais obscurecidos por asteriscos devido a questões de segurança.</p>
+
+<p style="page-break-before: always">De realçar que os Emissores que optem pelo cenário
+3 deixam de poder contar com o conceito de renovações automáticas existente nas
+emissões de cartões MB, dado que a data de expiração é chave de acesso ao cartão.
+Assim, a renovação é da responsabilidade do Emissor para todos os cartões. </p>
+
+<p>Apresenta-se a seguir a relação das alterações realizadas ao interface entre os
+Emissores e a SIBS que suportam os objectivos referidos. </p>
+
+<h6><br>
+ALTERAÇÕES REALIZADAS NOS INTERFACES EMISSOR-&gt;SIBS</h6>
+
+<p><br>
+<strong>Ficheiro <a href="../l-iii/eecb.htm">MEECB</a></strong> 
+
+<ul>
+  <li>Alterações na descrição do Objectivo, Estrutura e Observações do ficheiro;</li>
+  <li>Alterações no quadro resumo do Serviço de Guarda de <i>Pinblocks</i>;</li>
+  <li>Introdução da versão 02 do registo tipo 1 - Parâmetros;</li>
+  <li>Introdução da versão 02 do registo tipo 2 - Cartões personalizados;</li>
+  <li>Introdução da versão 02 do registo tipo 3 - Cartões não personalizados.</li>
+</ul>
+
+<p><br>
+<strong>Ficheiro <a href="../l-iii/ednpepcg.htm">MEDNP/MEPCG</a></strong> 
+
+<ul>
+  <li>Alterações na descrição da Estrutura do ficheiro;</li>
+  <li>Introdução da versão 01 do registo tipo 1 - Dados dos Titulares - no ficheiro MEDNP;</li>
+  <li>Introdução da versão 02 do registo tipo 1 - Personalização de Cartões - no
+    ficheiro MEPCG.</li>
+</ul>
+
+<p><br>
+<strong>Ficheiro <a href="../l-iii/egcc.htm">MEGCC</a></strong> 
+
+<ul>
+  <li>Alterações na descrição da Estrutura do ficheiro;</li>
+  <li>Eliminação dos códigos de gestão relacionados com a gestão de contas crédito;</li>
+  <li>Introdução da versão 01 do registo tipo 1 para os códigos de gestão respectivos;</li>
+  <li>Introdução de um código de gestão para permitir a gestão de parâmetros EMV.</li>
+</ul>
+
+<p><br>
+<strong>Ficheiro <a href="../l-iii/easc.htm">MEASC</a></strong> 
+
+<ul>
+  <li>Introdução da versão 01 do registo tipo 1 - Alt. Sit. de Cartão;</li>
+  <li>Introdução da versão 01 do registo tipo 3 - Alt. Sit. de Cartão no Sistema de
+    Pagamento.</li>
+</ul>
+
+<p><br>
+<strong>Ficheiro <a href="../l-iii/epme.htm">MEPME</a></strong> 
+
+<ul>
+  <li>Introdução da versão 01 do registo tipo 1 - Confirmação de Cartões.</li>
+</ul>
+
+<p><br>
+<strong>Ficheiro <a href="../l-iii/ecst.htm">MECST</a></strong> 
+
+<ul>
+  <li>Alterações na descrição da estrutura; </li>
+  <li>Introdução da versão 01 do registo tipo 1 - Cartões existentes;</li>
+  <li>Introdução de um registo tipo 2 - Cartas de PIN aleatórias existentes.</li>
+</ul>
+
+<p><br>
+<strong>Ficheiro <a href="../l-iii/ercm.htm">MERCM</a></strong> 
+
+<ul>
+  <li>Introdução da versão 01 do registo tipo 1 - Revalidação de cartões.</li>
+</ul>
+
+<p style="page-break-before: always"><br>
+<strong>Ficheiro <a href="../l-iii/cln.htm">MCCLN</a></strong> 
+
+<ul>
+  <li>Alteração nos registos tipo 1, 2 e 3. Para o cenário 3 é incluída a Data de
+    Expiração no fim do registo. </li>
+</ul>
+
+<p><br>
+<strong>Mensagem <em>Host-to-Host</em> <a href="../../MSG/msg/h315v03.htm">H315</a></strong>
+
+<ul>
+  <li>Introdução da versão 03 desta mensagem por forma a permitir a gestão de cartões por
+    BIN/Ext.BIN/Cartão em lugar de Emissor/Cartão, assim como a emissão de cartões com o
+    mesmo número diferenciados pela data de expiração.</li>
+</ul>
+
+<p class="dta"><br>
+<a href="a1.htm" target="main">Anterior</a>/<a target="main" href="a3.htm">Seguinte</a></p>
+</body>
+</html>

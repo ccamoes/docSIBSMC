@@ -1,0 +1,42 @@
+Pds 27.07.2007
+
+PRT - Protocole Real-Time
+1-Quand les sessions PRTClient sont montées côte Cetelem, le première message envoyé a partir de SIBS n'est pas jamais tenu en compte, cet problème arrive en tous les sessions. C'est une problème déjà connu pour tous mais malheureusement il n'est pas encore résolu. 
+	SIBS n'a pas encore repondu sur ce sujet.
+	No entanto sugeriram duas coisas:
+	  a. Se o PRTServidor e os PRTClientes 	    estiverem em máquinas diferentes 	    fazer a ligação entre as máquinas 	    por TELNET primeiro.
+	  b. Se não for o caso verificar o 	    software dos PRTClientes.
+
+Simulador Bancada de Testes
+1-Continuamos sem acesso ao simulador, a SIBS tem um cartão supervisor e um cartão cliente nosso para verificar o problema, mas ainda não nos deu resposta.
+
+Operações
+1-Consulta de movimentos está pendente de novos testes para identificação do problema. Tinha sido realizada uma correcção que não resolveu a situação.
+
+2-Compra Outdoor (outras vertentes), a transacção foi enviada pela SIBS mas o Cetelem não a registou, não actualizou o saldo na telemática nem foi enviada no ficheiro PSIBSFIN.
+	Penso que esta anomalia já tinha sido 	corrigida pela Stecard, provável 	problema de versões do software de 	Recette.
+
+3-Cancelamentos de Autorizações de crédito, não estão a ser registados pelo Cetelem, não actualiza o saldo na telemática nem vem no ficheiro PSIBSFIN. Temos ainda pendente na SIBS uma resposta sobre a forma de emparelhar estas transacções.
+
+4-Anulações de operações, embora esteja em análise pela SIBS penso que este problema esteja resolvido, uma vez que nos testes de 27.07.2007 provocámos duas anulações e ambas funcionaram na perfeição. Falta testar as anulações em offline.
+
+5-Transferências Bancárias, temos vários problemas com esta operação
+  a. Falta preencher o numero de dossier 	(não é o NIB) no registo enviado no 	ficheiro PSIBSFIN
+   b. A operação vem também no ficheiro de 	financiamentos telemáticos como de uma 	OF telemática se tratasse. Esta 	operação não pode vir no ficheiro de 	financiamentos telemáticos ou então 	tem que vir formatado da mesma forma 	que vêm os outros financiamentos SIBS, 	uma vez que não tem nada a ver com as 	OF telemáticas, são realizadas e 	compensadas num canal totalmente 	distinto das transacções on-us.
+    c. Em contacto telefónico com Antoine 	Fabry foi sugerido que este tema 	estaria sujeito a uma evolução e 	provável custo financeiro, remeti a 	questão para ser tratada pelos meus 	superiores e desde logo informei do 	meu desacordo.
+ Falta testar a anulação desta mensagem.
+
+6-Anulação de Autorizações no Estrangeiro, não foram testadas devido à indisponibilidade do simulador.
+
+7-As mensagens de captura e alteração de situação de cartão geradas em Real-Time pela SIBS não estão a ser reflectidas no ficheiro PSIBSFIN, isto provoca um atraso de um dia na colocação de verrou no dossier permitindo que o cliente possa realizar operações, em principio não com o cartão porque fica retido, mas pode realizar OF por telefone o operações na internet se tiver os dados do cartão. Por isso é necessário que as mensagens sejam incluídas no ficheiro PSIBSFIN.
+
+8-O campo IDLOG-O está sistematicamente alimentado em todos os registos do ficheiro PSIBSFIN.
+
+9-Saldo disponível:
+	O saldo disponível na consulta de 	saldos que está actualmente a ser 	enviado não reflecte a diferença do 	CRU para o CMA.
+	Isto provoca que nas operações Outdoor 	só se consiga realizar a compra pelo 	valor do saldo disponível sem o 	remanescente do CMA.
+	Embora nas outras transacções se 	consiga utilizar o valor remanescente 	até ao CMA.
+		a. É necessário definir se o		saldo a apresentar ao cliente		deve reflectir o CMA e se o		cliente o pode utilizar antes		de existir um aumento do CRU?
+
+Em relação ao ponto 5.a 5.b e 7 é necessário definir se trata de anomalias ou evoluções, uma vez que o Coorporate necessita de esclarecer a situação para iniciar os desenvolvimentos e por causa de custos a aplicar ou não. Eu penso que se tratam de anomalias.
+

@@ -1,0 +1,1344 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<link REL="StyleSheet" HREF="../main.css" TYPE="text/css">
+<base target="_self">
+<script>top.captulos.location='indicea.htm#A';</script>
+
+<title>A.1 CENÁRIOS DE FUNCIONAMENTO</title>
+</head>
+
+<body>
+
+<h1>A.1 CENÁRIOS DE FUNCIONAMENTO</h1>
+
+<p>&nbsp;</p>
+
+<p>A realização de operações com cartões de pagamento está dependente da sua
+autorização. Para tal, o Sistema MB possibilita a existência de vários cenários de
+funcionamento, de modo a adequar o modo de decisão à estratégia individual de cada
+Emissor:</p>
+
+<blockquote>
+  <p><strong><br>
+  Cenários básicos de funcionamento</strong></p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><em><a href="a1.htm#A.1.1.1">Real-Time</a></em></li>
+    <li><a href="a1.htm#A.1.1.2">Saldo de Conta</a></li>
+    <li><a href="a1.htm#A.1.1.3">Saldo de Cartão</a></li>
+    <li><a href="a1.htm#A.1.1.4">Serviço Reduzido</a></li>
+    <li ><a href="#A.1.1.5"><em>Offline</em></a> (aplicável a cartões com <em>chip</em>
+      EMV)</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p><strong><br>
+  Cenários adicionais de funcionamento</strong></p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><a href="a1.htm#A.1.3.1">Limite de Autorização</a></li>
+    <li><a href="a1.htm#A.1.3.2">Saldo de Crédito Disponível</a></li>
+    <li ><a href="#A.1.3.3">Saldo para Compras com Pagamento Fraccionado</a></li>
+  </ul>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.1.1">A.1.1</a> CENÁRIOS BÁSICOS DE FUNCIONAMENTO</h2>
+
+<p><br>
+Quando um cartão com <em>chip</em> EMV é utilizado num terminal - Caixa Automático (CA)
+ou Terminal de Pagamento Automático (TPA) - com capacidades EMV, o terminal procura obter
+um conjunto de dados posicionados no <em>chip</em>: 
+
+<ul >
+  <li>Se for possível ler os elementos existentes no <em>chip</em>, a transacção prossegue
+    sobre <em>chip</em>. O diálogo entre terminal e cartão determina a lista de aplicações
+    EMV candidatas para realização da transacção seleccionada. Após escolha da
+    Aplicação a ser utilizada, existe um diálogo adicional entre terminal e cartão para
+    aferir da possibilidade de realização da transacção em cenário de <a href="#A.1.1.5"><em>offline</em></a>.
+  </li>
+</ul>
+
+<ul>
+  <li >A impossibilidade de leitura dos dados contidos no <em>chip</em> é
+    devidamente identificada. Quando se verifique que, para um cartão com <em>chip</em> EMV
+    utilizado num terminal com capacidades EMV, foi desencadeada uma transacção com base nos
+    dados contidos na pista magnética, existe um conjunto de elementos de risco a validar
+    (parâmetros de <em>Fallback</em>, definidos na <a href="i3.htm#I.3.16">Caracterização
+    do BIN</a>), independentes do cenário de decisão aplicável. </li>
+</ul>
+
+<p>Na sequência dos pontos anteriores, se não for possível realizar a
+transacção em <em>offline</em>, é desencadeado o envio de uma mensagem para o <em>Host</em>
+da SIBS com os elementos da transacção e elementos de segurança recolhidos. </p>
+
+<p>Aí, independentemente do cenário de funcionamento, o sistema valida se: 
+
+<ul>
+  <li>O cartão existe na base de dados de cartões da SIBS;</li>
+  <li>Os dados das pistas magnéticas* do cartão ou do <em>chip</em>, no caso de cartões
+    EMV, são consistentes com a informação da referida base de dados;</li>
+  <li>O <em>Crypt Check Digit</em> (CCD) está correcto;</li>
+  <li>O código secreto inserido pelo cliente está correcto;</li>
+  <li>A situação do cartão é admissível para o cartão efectuar a operação escolhida;</li>
+  <li>A operação pode ser autorizada, nomeadamente sob o ponto de vista contabilístico, em
+    função do(s) cenário(s) parametrizado(s).</li>
+</ul>
+
+<blockquote>
+  <p class="nove">* Pistas 2 e 3 ou apenas a pista 2, dependendo do Terminal</p>
+</blockquote>
+
+<p>As operações realizadas noutros canais (ex.: MBNet, TeleMultibanco e AMB) são
+objecto do conjunto destas validações aplicáveis à sua forma de concretização
+particular.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.1.1.1">A.1.1.1</a> CENÁRIO DE <em>REAL-TIME</em></h3>
+
+<p><br>
+<strong>Descrição</strong></p>
+
+<p>No cenário de <em>Real-Time</em> (RT) e se não existirem motivos para recusa,
+resultantes das validações atrás descritas, a SIBS envia uma mensagem ao Centro de
+Processamento de Dados (CPD) do Emissor, que tem um período de tempo parametrizável para
+responder; se tal não acontecer, a operação passa para o cenário de degradação desse
+CPD, conforme posicionado na <a href="i3.htm#I.3.16">Caracterização do CPD</a>, ou seja,
+<a href="a1.htm#A.1.1.2">Saldo de Conta</a> ou <a href="a1.htm#A.1.1.3">Saldo de Cartão</a>.
+(Ver adiante, &#145;<a href="a1.htm#Quais">Quais são os procedimentos após a
+interrupção de sessão de <em>Real-Time</em>?</a>&#146;)</p>
+
+<p>Se o Emissor responder dentro do tempo disponível, a SIBS regista a resposta e devolve
+uma mensagem ao terminal. </p>
+
+<p><br>
+</p>
+
+<p><img src="imagens2/a1-1.gif" alt="a1-1.gif" WIDTH="568" HEIGHT="401"></p>
+
+<p>&nbsp;</p>
+
+<p><em><strong>Quem decide as operações?</strong></em></p>
+
+<p>No cenário de <em>Real-Time</em>, é o Emissor que decide em tempo real a realização
+(ou não) das operações. Na sua resposta, o Emissor pode: 
+
+<ul>
+  <li>Aceitar a operação;</li>
+  <li>Pedir à SIBS para decidir a autorização no cenário de degradação existente;</li>
+  <li>Recusar a operação (por saldo insuficiente, erro aplicacional, suspeita de fraude ou
+    outro motivo); ou</li>
+  <li>Pedir para capturar o cartão (segundo os seus critérios internos), através do Código
+    de Resposta (<a href="../../Campos/campos1.htm#012" target="explicac">012</a>) presente
+    nas mensagens <em>real-time</em>.</li>
+</ul>
+
+<p><br>
+<em><strong>Quais são os parâmetros utilizados para tomar essa decisão?</strong></em></p>
+
+<p>A decisão do Emissor relativamente às <strong>operações financeiras</strong> é
+efectuada em função do saldo disponível na conta do cliente e de eventuais limites
+internos de autorização, permitindo a actualização imediata da conta e a total
+integração com outros lançamentos de retaguarda ou realizados nos terminais do Emissor.
+<br>
+Exceptuam-se as operações Levantamento (<a href="a6.htm#001">001</a>) e Levantamento a
+Crédito (<a href="a6.htm#031">031</a>) que estão sujeitas a um limite específico da
+Rede Multibanco. </p>
+
+<p>A concretização das <strong>operações não financeiras</strong> (por exemplo,
+consulta de movimentos), quando disponibilizadas pelo Emissor, não está dependente do
+saldo mas sim da existência de informação relevante para apresentar ao cliente. </p>
+
+<p><br>
+<em><strong>O que é necessário para utilizar este cenário de funcionamento?</strong></em></p>
+
+<p>Para a utilização deste modo de funcionamento, o CPD do Emissor necessita implementar
+o Protocolo De Diálogo (PDD) (Livro III - capítulo<a href="../l-iii/b1.htm"> B</a>) e
+desenvolver as mensagens aplicacionais entre a SIBS e o Emissor (Livro III - capítulo <a href="../l-iii/d1.htm">D</a>). </p>
+
+<p>No Sistema Multibanco existem presentemente várias sessões de <em>real-time</em> em
+paralelo entre a SIBS e o Emissor: 
+
+<ul>
+  <li>Sistema de Caixas Automáticos</li>
+  <li>Sistema de Pagamento Automático</li>
+  <li>Sistema de Estrangeiro</li>
+  <li>Sistema de Outros Terminais</li>
+</ul>
+
+<p>Estas sessões podem ser alargadas como forma de assegurar o melhor &quot;<em>Up-time</em>&quot;
+do serviço na sua globalidade. </p>
+
+<p><br>
+<em><strong><a name="Quais">Quais</a> são os procedimentos após a interrupção de
+sessão de Real-Time?</strong></em></p>
+
+<p>Após a interrupção da sessão de RT, a SIBS envia as <a href="../l-iii/d32.htm">mensagens
+&quot;a frio&quot;</a> (cujo campo CODMSG (<a href="../../Campos/campos1.htm#001" target="explicac">001</a>) começa por 2 ou 3) relativas às operações por ela
+autorizadas durante aquele período, para que o Emissor tome conhecimento e actualize o
+seu sistema de informação. </p>
+
+<p>Este pode optar por: 
+
+<ul>
+  <li>receber a totalidade das operações existentes na SIBS, antes de começar a aceitar
+    quaisquer novas operações, i.e., <a href="../l-iii/d32.htm">mensagens &quot;a
+    quente&quot;</a> (cujo campo CODMSG (<a href="../../Campos/campos1.htm#001" target="explicac">001</a>) começa por 1), ou</li>
+  <li>receber em paralelo, operações já aceites (i.e., mensagens a frio) e operações
+    novas (a quente), que estão a acontecer.</li>
+</ul>
+
+<p>Estes parâmetros são estabelecidos pelo Emissor quando este define os parâmetros de
+funcionamento de um CPD, na <a href="i3.htm#I.3.16">Caracterização do CPD</a>.</p>
+
+<p>Para mais informações, consulte o capítulo<a href="../l-iii/b1.htm"> B</a> do Livro
+III. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.1.1.2">A.1.1.2</a> CENÁRIO DE SALDO DE CONTA</h3>
+
+<p><br>
+<strong>Descrição</strong></p>
+
+<p>No cenário de Saldo de Conta e se não existirem motivos para recusa, resultantes das
+validações descritas no início do capítulo <a href="a1.htm#A.1.1">A.1.1</a>, as
+operações são decididas pela SIBS com base nos limites de decisão parametrizados pelo
+Emissor e na informação residente na SIBS relativamente ao saldo disponível da conta
+associada ao cartão utilizado, a qual pode ser actualizada com base nos ficheiros de
+Comunicação de Saldos de Véspera (<a href="../l-iii/ecsv.htm">MECSV</a>) enviados
+periodicamente pelo Emissor. Estes ficheiros contêm a informação relativa aos saldos,
+disponível e contabilístico, das contas que sofreram variações desde o último
+ficheiro (<a href="../l-iii/ecsv.htm">MECSV</a>) enviado pelo Emissor. A actualização
+também pode ser efectuada em tempo real (ver <a href="a1.htm#Quais 2">abaixo</a>).</p>
+
+<p><br>
+</p>
+
+<p><img src="imagens2/a1-2.gif" alt="a1-2.gif" WIDTH="584" HEIGHT="403"></p>
+
+<p>&nbsp;</p>
+
+<p>Sempre que o Emissor transmitir um novo ficheiro (<a href="../l-iii/ecsv.htm">ECSV</a>),
+pressupõe-se que este indica o novo saldo de uma conta. Se tal não acontecer para uma
+conta cujos cartões efectuaram operações financeiras na Rede MB, a SIBS actualiza os
+respectivos saldos disponível e contabilístico com os últimos valores informados pelo
+Emissor, isto é, desprezando as importâncias das operações entretanto feitas pelos
+clientes na Rede MB. </p>
+
+<p><br>
+<em><strong>Quem autoriza as operações?</strong></em></p>
+
+<p>No cenário de Saldo de Conta, é a SIBS que gere as autorizações. </p>
+
+<p><br>
+<em><strong><a name="Quais 2">Quais</a> são os parâmetros utilizados para tomar essa
+decisão?</strong></em></p>
+
+<p>A decisão de uma operação pela SIBS é efectuada com base nos seguintes valores: 
+
+<ul>
+  <li>Saldo disponível da conta associada ao cartão, enviado no ficheiro (<a href="../l-iii/ecsv.htm">ECSV</a>), que também pode ser actualizado pelo valor do campo
+    Saldo Disponível (<a href="../../Campos/campos1.htm#027" target="explicac">027</a>)
+    enviado nas mensagens de resposta <em>real-time</em> (ver Livro III - capítulo <a href="../l-iii/d32.htm">D.3.2</a>), no caso do Emissor posicionar o indicador
+    &quot;Actualização do Saldo de Conta em <em>Real-Time</em>&quot; na <a href="i3.htm#I.3.16">Caracterização do CPD</a>; </li>
+  <li>Montante máximo diário para operações em TPAs, até ao qual a SIBS pode autorizar
+    operações de compras, pagamento de serviços/compras e transferências interbancárias
+    na Rede MB, podendo o Emissor parametrizar este montante para cada um dos BINs, na <a href="i3.htm#I.3.16">Caracterização do BIN</a>;</li>
+  <li>O limite diário para CAs relativamente às operações Levantamento (<a href="a6.htm#001">001</a>) e Levantamento a Crédito (<a href="a6.htm#031">031</a>).</li>
+</ul>
+
+<p style="page-break-before: always">Diariamente, na primeira operação do cartão, o
+menor destes dois valores é utilizado como o montante disponível para decidir
+operações: 
+
+<ul>
+  <li>Se o valor de uma operação a débito for inferior ou igual ao montante disponível,
+    aquela é autorizada e o seu valor é deduzido a este até ser igual a zero.</li>
+  <li>Em caso contrário, aquela é recusada.</li>
+</ul>
+
+<p>Se a SIBS aceitar uma operação a crédito, adiciona o valor desta ao saldo
+disponível da conta associada ao cartão. </p>
+
+<p><br>
+</p>
+
+<p><img src="imagens2/a1-3.gif" alt="a1-3.gif" WIDTH="570" HEIGHT="397">&nbsp;</p>
+
+<p><strong><br>
+Limite Mensal</strong></p>
+
+<p>O cenário de Saldo de Conta permite a introdução de um limite mensal para uma conta,
+que define o risco do cliente, ou seja, é o valor máximo para a realização de todos os
+movimentos aceites dos cartões dessa conta, sendo reposto no mesmo dia de cada mês. </p>
+
+<p>O limite mensal é ignorado nos ficheiros de Emissão de Cartões (<a href="../l-iii/eecb.htm">EECB</a>) e de Gestão de Cartões e Contas (<a href="../l-iii/egcc.htm">EGCC</a>) se: 
+
+<ul>
+  <li>o campo Valor Limite Mensal (<a href="../../Campos/campos2.htm#135" target="explicac">135</a>)
+    for igual a 9999 e</li>
+  <li>o campo Dia do Mês (de renovação) (<a target="explicac" href="../../Campos/campos2.htm#136">136</a>) for igual a 00.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.1.1.3">A.1.1.3</a> CENÁRIO DE SALDO DE CARTÃO</h3>
+
+<p><br>
+<strong>Descrição</strong></p>
+
+<p>No cenário de Saldo de Cartão e se não existirem motivos para recusa, resultantes
+das validações descritas no início do capítulo <a href="a1.htm#A.1.1">A.1.1</a>, as
+operações são decididas pela SIBS com base no saldo geral de cartão e no saldo de
+cartão. </p>
+
+<p><br>
+<em><strong>Quem autoriza as operações?</strong></em></p>
+
+<p>No cenário de Saldo de Cartão, é a SIBS que gere as autorizações. </p>
+
+<p><br>
+<em><strong>Quais são os parâmetros utilizados para tomar essa decisão?</strong></em></p>
+
+<p>A autorização de uma operação pela SIBS é efectuada com base nos seguintes
+conceitos: 
+
+<ul>
+  <li><strong>Saldo Geral de Cartão</strong> - é o montante utilizável para autorizar
+    operações de débito (levantamentos, compras, pagamento de serviços/compras,
+    transferências interbancárias, serviços especiais na Rede MB), e</li>
+  <li><strong>Saldo de Cartão</strong> - é o montante utilizável para autorizar apenas
+    operações de levantamento em Caixas Automáticos (CAs) da Rede Multibanco. Se aquele for
+    posicionado a zero, o levantamento é impossível quando o Sistema Multibanco está em <a href="a1.htm#A.1.1.4">Serviço Reduzido</a>.</li>
+</ul>
+
+<p><br>
+<em><u>Levantamentos</u></em></p>
+
+<p>A decisão de uma operação de levantamento na Rede Multibanco pela SIBS é efectuada
+com base nos seguintes valores: 
+
+<ul>
+  <li>Saldo de Cartão</li>
+  <li>Saldo Geral de Cartão</li>
+  <li>Limite máximo diário de levantamento (valor da Rede MB)</li>
+</ul>
+
+<p>No início do período de utilização (ver adiante, &#145;<a href="a1.htm#Como">Como
+definir saldos para um determinado cartão?</a>&#146;) definido para o cartão, o menor
+destes três valores é utilizado como o montante disponível para decidir operações: 
+
+<ul>
+  <li>Se o valor de uma operação a débito for inferior ao montante disponível, aquela é
+    autorizada e o seu valor é deduzido a este até ser igual a zero.</li>
+  <li>Em caso contrário, aquela é recusada.</li>
+</ul>
+
+<p><br>
+<em><u>Restantes operações a débito</u></em></p>
+
+<p>A autorização das restantes operações a débito pela SIBS é efectuada com base no
+Saldo Geral de Cartão: 
+
+<ul>
+  <li>Se o valor da operação a débito for inferior ao Saldo Geral de Cartão, aquela é
+    autorizada e o seu valor é deduzido a este até ser igual a zero.</li>
+  <li>Em caso contrário, aquela é recusada.</li>
+</ul>
+
+<p><br>
+<em><strong><a name="Como">Como</a> definir saldos para um determinado cartão?</strong></em></p>
+
+<p>Estes saldos são definidos individualmente para cada cartão: 
+
+<ul>
+  <li>no momento da sua produção, através do ficheiro de Emissão de Cartões (<a href="../l-iii/eecb.htm">EECB</a>) e</li>
+  <li>em eventuais alterações que ocorram ao longo da vida do cartão, através do ficheiro
+    de Gestão de Cartões e Contas (<a href="../l-iii/egcc.htm">EGCC</a>).</li>
+</ul>
+
+<p>O Saldo de Cartão está associado a um período diário, semanal ou mensal que
+estabelece o intervalo de tempo em que o saldo pode ser utilizado, enquanto que o Saldo
+Geral de Cartão tem uma periodicidade diária. </p>
+
+<p style="page-break-before: always" >O Saldo de Cartão é guardado centralmente e gravado na pista 3 de cada
+cartão no momento da sua emissão. Para cartões que apenas possuem tarja magnética
+(cartões sem <em>chip</em> EMV) regravável, a Pista 3 é reescrita sempre que se
+verifique uma alteração ao montante do Saldo de Cartão. </p>
+
+<p>O montante do Saldo de Cartão está tecnicamente limitado ao montante de 490 euros. </p>
+
+<p><br>
+<strong><em>Como se <a name="valida">valida</a> o Saldo de Cartão?</em></strong></p>
+
+<p>Historicamente, a validação do Saldo de Cartão é efectuada sobre o valor
+gravado na Pista 3. No entanto, para cartões que possuam pista magnética de alta
+coercividade (inclui cartões EMV nacionais) não é possível a reescrita das pistas na
+Rede Multibanco. Os dados inscritos na Pista 3 no momento da emissão não podem ser
+actualizados, pelo que não são efectuadas validações sobre os montantes gravados na
+Pista 3.</p>
+
+<p>Assim, a validação do montante de Saldo de Cartão depende do indicador de
+tecnologia da pista, gravado na própria: 
+
+<ul >
+  <li>Se o cartão não possui <em>chip</em> EMV e a tarja é de baixa coercividade -
+    valida-se o Saldo de Cartão gravado na Pista 3. As alterações ao valor do Saldo de
+    Cartão implicam a actualização (reescrita) da Pista 3;</li>
+  <li>Se o cartão é EMV, ou não sendo EMV possui pista de alta coercividade - a Pista 3
+    não pode ser actualizada na Rede Multibanco. A gestão e validação do valor do Saldo de
+    Cartão é efectuada no sistema central da SIBS. </li>
+</ul>
+
+<p class="center"><br>
+Validação de dados de <strong>Saldo de Cartão</strong> (resumo)</p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="0" CELLPADDING="2" WIDTH="502">
+  <tr>
+    <td WIDTH="47%" COLSPAN="2" ROWSPAN="2">&nbsp;</td>
+    <td WIDTH="53%" COLSPAN="2" class="mid">Tecnologia do cartão</td>
+  </tr>
+  <tr>
+    <td WIDTH="27%" BGCOLOR="#ffffff" class="mid">Apenas com tarja magnética</td>
+    <td WIDTH="27%" BGCOLOR="#ffffff" class="mid">Com <em>chip</em> EMV</td>
+  </tr>
+  <tr>
+    <td WIDTH="9%" ROWSPAN="2" class="mid">Pistas</td>
+    <td WIDTH="38%" BGCOLOR="#ffffff" class="mid">Alta coercividade (Hi-Co)</td>
+    <td WIDTH="27%" class="mid">Valida valor guardado centralmente</td>
+    <td WIDTH="27%" class="mid">Valida valor guardado centralmente</td>
+  </tr>
+  <tr>
+    <td WIDTH="38%" BGCOLOR="#ffffff" class="mid">Baixa coercividade</td>
+    <td WIDTH="27%" class="mid"><strong>VALIDA P3 do <br>
+    cartão físico<br>
+    </strong>(situação actual)</td>
+    <td WIDTH="27%" class="mid">Valida valor guardado centralmente</td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<h3 table><a name="A.1.1.4">A.1.1.4</a> SERVIÇO REDUZIDO</h3>
+
+<p><br>
+<strong>Descrição</strong></p>
+
+<p>No caso de interrupções ocasionais ou programadas do sistema central, as operações
+não podem realizar-se segundo os cenários de funcionamento indicados pelo Emissor,
+entrando em funcionamento o Serviço Reduzido, apoiado em equipamentos <em>Front-End</em>
+(FEP). </p>
+
+<p><br>
+<strong>Coexistência entre dois sistemas de FEP</strong></p>
+
+<p>Na sua implementação inicial, o cenário de Serviço Reduzido para
+transacções realizadas em CAs baseia-se nos elementos gravados na Pista 3 física do
+cartão. A existência de cartões com pistas magnéticas que não são reescritas na Rede
+Multibanco após a emissão (pistas de alta coercividade) constituía um impedimento aos
+processamentos em CA já existentes. Por esse motivo, foi necessário reequacionar as
+condições de funcionamento do cenário de Serviço Reduzido, criando-se um novo sistema
+de FEP com processamentos comuns aos ambientes de TPAs e CAs. </p>
+
+<p style="page-break-before: always" >Nas operações em CA, são retiradas as validações sobre a Pista 3 física
+dos cartões, validando-se os elementos equivalentes guardados centralmente. </p>
+
+<p>Porque não se pretende criar entropias no
+funcionamento normal da Rede Multibanco, a migração dos terminais para o novo sistema de
+FEP é efectuada de forma faseada. Assim: 
+
+<ul >
+  <li>Cada terminal (TPA ou CA) é suportado por um único dos sistemas de FEP;</li>
+  <li>Os dois sistemas de FEP coexistem, existindo terminais suportados pelo sistema inicial e
+    outros suportados no novo sistema;</li>
+  <li>Os terminais suportados no sistema de FEP inicial serão migrados progressivamente para
+    o novo sistema de FEP;</li>
+  <li>Esta migração completar-se-á durante o ano de 2005. Todos os terminais (TPAs e CAs)
+    ficam suportados no novo sistema de FEP.</li>
+</ul>
+
+<p><br>
+<em><strong>Quem autoriza as operações?</strong></em></p>
+
+<p>No cenário de Serviço Reduzido, é a SIBS que gere as autorizações
+através dos equipamentos <em>Front-End</em>, que efectuam as validações de segurança e
+decidem as operações. </p>
+
+<p><br>
+<em><strong>Quais são os parâmetros utilizados para tomar essa decisão?</strong></em></p>
+
+<p><em><u><br>
+Sistema de FEP inicial</u></em></p>
+
+<p>As operações provenientes dos TPAs são decididas com base no: 
+
+<ul>
+  <li>ficheiro positivo de cartões e</li>
+  <li>limite máximo por cartão, que é definido na <a href="i3.htm#I.3.16">Caracterização
+    do BIN</a>.</li>
+</ul>
+
+<p>As operações provenientes dos CAs Multibanco são decididas em função do: 
+
+<ul>
+  <li>ficheiro de Lista Negra completo do Serviço MB e</li>
+  <li>Saldo de Cartão, gravado na pista 3 do cartão.</li>
+</ul>
+<font FACE="Arial" SIZE="2">
+
+<p>Porque o processamento das transacções é suportado nos dados contidos na
+Pista 3 física, os CAs abrangidos pelo sistema de FEP inicial não têm a possibilidade
+de processar em Serviço Reduzido transacções de cartões com pistas não actualizáveis
+na Rede Multibanco (cartões com pistas de alta coercividade, incluindo cartões com <em>chip</em>
+EMV). Estas transacções em Serviço Reduzido são recusadas. </p>
+
+<p></font><br>
+<u><em>Novo sistema de FEP</em></u></p>
+
+<p>As operações provenientes dos TPAs são decididas com base no: 
+
+<ul >
+  <li>ficheiro positivo de cartões e </li>
+  <li>limite máximo por cartão, que é definido na <a href="i3.htm#I.3.16">Caracterização
+    do BIN</a>. </li>
+</ul>
+
+<p>As operações provenientes dos CAs Multibanco são decididas em função do:
+
+<ul >
+  <li>ficheiro positivo de cartões e </li>
+  <li>Saldo de Cartão (consulte cenário Saldo de Cartão, ponto &quot;<a href="#valida">Como
+    se valida o Saldo de Cartão?</a>&quot;).</li>
+</ul>
+
+<p>O novo sistema de FEP suporta processamento em Serviço Reduzido de cartões
+com <em>chip</em> EMV. No entanto, se a operação for realizada por um cartão EMV num
+terminal EMV, mas não é possível efectuar a leitura de elementos contidos no <em>chip</em>
+necessários à autorização, a transacção é recusada (no cenário de Serviço
+Reduzido, não se possibilita que cartões com <em>chip</em> EMV efectuem transacções
+com recurso ao <em>Fallback</em> para a pista magnética).</p>
+
+<p><br>
+<em><strong>Como se actualiza o ficheiro positivo de cartões?</strong></em></p>
+
+<p>O ficheiro positivo contém informação sobre os cartões que foram
+efectivamente utilizados na Rede Multibanco após a sua emissão. </p>
+
+<p>Sempre que um cartão for utilizado estando a vigorar um cenário diferente
+do Serviço Reduzido, o sistema central da SIBS transmite ao FEP as actualizações
+existentes à informação necessária para decisão das transacções. A informação
+transmitida é utilizada para actualização do ficheiro positivo de cartões. </p>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="A.1.1.5">A.1.1.5</a> CENÁRIO DE <em>OFFLINE</em></h3>
+
+<p><br>
+<strong>Descrição</strong></p>
+
+<p>Quando o terminal suporta as especificações EMV, e o cartão possui <em>chip</em>
+EMV e contém neste uma ou mais aplicações de pagamento, as transacções podem ser
+aprovadas entre o cartão e o terminal (<em>offline</em>), sem que seja necessário
+efectuar o seu envio para decisão central. </p>
+
+<p>No diálogo entre cartão e terminal, são validadas as componentes de
+segurança aplicáveis e verificados parâmetros posicionados no <em>chip</em> do próprio
+cartão correspondentes a limites de risco que o Emissor está disposto a assumir para
+este tipo de transacções. </p>
+
+<p>Quando o valor de uma qualquer transacção supera um dos limites
+aplicáveis, esta não pode ser autorizada <em>offline</em>. A transacção tem que ser
+enviada para decisão <em>online</em>, e a decisão da operação é efectuada no cenário
+de funcionamento que for aplicável.</p>
+
+<p>Os limites para decisão de transacções em <em>offline</em> são
+posicionados no momento da emissão dos cartões, a partir dos elementos parametrizados na
+<a href="i3.htm#I.3.16">Caracterização do BIN</a>. Podem ser alterados em qualquer
+momento posterior à emissão, através do ficheiro de Gestão de Cartões e Contas (<a href="../l-iii/egcc.htm">EGCC</a>).</p>
+
+<p><br>
+<em><strong>Quem autoriza as operações?</strong></em></p>
+
+<p>No cenário de <em>offline</em> as transacções são aprovadas entre o
+terminal e o cartão, com base nos parâmetros posicionados no cartão.</p>
+
+<p><br>
+<em><strong>Quais são os parâmetros utilizados para tomar essa decisão?</strong></em></p>
+
+<p>Uma qualquer transacção realizada com utilização de dados de <em>chip</em>
+EMV só pode ser aceite <em>offline</em> se verificar todos os valores posicionados no
+cartão, na respectiva Aplicação EMV, para os seguintes parâmetros: 
+
+<ul >
+  <li>Limites em valor</li>
+</ul>
+
+<blockquote>
+  <ul  type="square">
+    <li>Valor acumulado para transacções <em>offline</em> realizadas nas moedas principal e
+      secundária (quando exista):</li>
+  </ul>
+  <blockquote>
+    <ul >
+      <li>Máximo quando o terminal pode efectuar a transacção <em>online</em> &#150; se o valor
+        de uma transacção adicionada aos valores já dispendidos em <em>offline</em>
+        ultrapassarem este limite, o terminal tenta enviar a transacção para decisão <em>online</em>.
+        Se não for possível, a transacção pode ser aceite <em>offline</em> (depende dos
+        restantes parâmetros);</li>
+      <li>Máximo a partir do qual a transacção tem obrigatoriamente que ser decidida <em>online</em>
+        &#150; se o valor de uma transacção adicionada aos valores já dispendidos em <em>offline</em>
+        ultrapassarem este limite, essa transacção é rejeitada.</li>
+    </ul>
+  </blockquote>
+</blockquote>
+
+<ul type="square">
+  <li  type="disc">Limites em número máximo de transacções consecutivas</li>
+</ul>
+
+<blockquote>
+  <ul  type="square">
+    <li>Transacções internacionais:</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <ul >
+      <li>Número de transacções quando o código de MOEDA é diferente do código de moeda
+        principal da aplicação EMV;</li>
+      <li>Número de transacções quando o código de PAÍS é diferente do código de país da
+        aplicação EMV.</li>
+    </ul>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <ul  type="square">
+    <li>Limites globais (aplicável a quaisquer transacções):</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <ul >
+      <li>Número de transacções quando o terminal pode efectuar a transacção <em>online;</em></li>
+      <li>Número de transacções a partir do qual a transacção tem obrigatoriamente que ser
+        decidida <em>online.</em></li>
+    </ul>
+  </blockquote>
+</blockquote>
+
+<p>Para os cartões EMV nacionais, aconselha-se que os parâmetros para número
+máximo de &quot;transacções internacionais&quot; consecutivas, nas aplicações de um
+Sistema de Pagamentos Internacional habitualmente visto como de débito (ex.: VISA
+ELECTRON e MAESTRO), sejam parametrizados a zeros, por forma a garantir que as
+transacções realizadas são 100% autorizadas. Esta é, no entanto, uma decisão que cabe
+ao Emissor.</p>
+
+<p><br>
+<em><strong>Como definir os limites para um determinado cartão?</strong></em></p>
+
+<p>Os parâmetros de risco para autorização de transacções <em>offline</em>
+são inicialmente definidos através da <a href="i3.htm#I.3.16">Caracterização do BIN</a>
+ou da informação recebida para emissão dos cartões. </p>
+
+<p>No momento da emissão, as possibilidades de definição dos parâmetros de
+risco são função da versão do ficheiro <a href="../l-iii/eecb.htm">EECB</a> utilizada:
+
+<ul >
+  <li>Versão 03 - o Emissor não tem a possibilidade de determinar parâmetros de risco
+    individualmente, para cada cartão. Os valores destes parâmetros são posicionados de
+    acordo com a Caracterização do BIN. Para definir parâmetros distintos por cartão, o
+    Emissor tem que enviar um ficheiro (<a href="../l-iii/egcc.htm">EGCC</a>) após a emissão
+    para posicionamento dos valores pretendidos. </li>
+</ul>
+
+<ul >
+  <li>Versão 04 - o Emissor pode optar por indicar parâmetros para autorização de
+    transacções <em>offline</em> por cartão (consultar <a href="../l-iii/eecb.htm#= 2">tipo
+    de registo 2</a>, do ficheiro EECB)</li>
+</ul>
+
+<p>Sempre que o Emissor envia um novo ficheiro (<a href="../l-iii/egcc.htm">EGCC</a>),
+são formatados <i>scripts</i> para envio ao cartão dos novos valores. Os parâmetros de
+risco posicionados no <em>chip</em> do cartão são actualizados num primeiro momento em
+que tal seja possível, quando se realizar uma transacção <em>online</em>.</p>
+
+<p><br>
+<b><i>Que valores são posicionados para os limites offline de cada aplicação EMV
+existente no cartão?</i></b></p>
+
+<p>Todas as aplicações EMV existentes no cartão possuem parâmetros de risco
+próprios e independentes dos valores posicionados para as restantes aplicações que
+coexistam no <em>chip</em>.</p>
+
+<p>Genericamente, podem ser identificadas duas tipologias de cartões nacionais
+com <em>chip</em> EMV: 
+
+<ol >
+  <li>Cartões em que coexistem no <em>chip</em> uma ou mais aplicações EMV de um Sistema de
+    Pagamento Internacional com a aplicação Multibanco;</li>
+  <li>Cartões Multibanco puros, i.e., cartões com <em>chip</em> EMV em que a única
+    aplicação existente no <em>chip</em> é a aplicação Multibanco.</li>
+</ol>
+
+<p>No primeiro caso, no momento da emissão dos cartões, <u>os parâmetros de
+risco posicionados ao nível da caracterização do BIN são colocados apenas na
+aplicação principal do Sistema de Pagamento Internacional em causa </u>(aplicação de
+maior prioridade). A aplicação MB tem os limites para autorização <em>offline</em>
+posicionados a zeros no momento da emissão.<br>
+No segundo caso, quando a única aplicação EMV existente no <em>chip</em> é a
+aplicação Multibanco, são posicionados para esta os parâmetros de risco para
+autorização de transacções <em>offline</em> que sejam definidos apenas se o cartão
+suportar DDA. Para cartões SDA que possuam no <em>chip</em> apenas a aplicação
+Multibanco não é possível a realização de transacções <em>offline</em> (todas as
+transacções de cartões SDA em terminais que suportam EMV são decididas <em>online</em>),
+pelo que os parâmetros de risco são iniciados a zero no momento da emissão.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.1.2">A.1.2</a> UTILIZAÇÃO MÚLTIPLA DE CENÁRIOS</h2>
+
+<p><br>
+É sempre possível que um Emissor inicie a sua actividade num determinado cenário e
+posteriormente evolua para outros. </p>
+
+<p>Normalmente os CPDs dos Emissores cujo cenário de funcionamento principal é o <em>Real-Time</em>
+têm um cenário de degradação (Saldo de Conta ou Saldo de Cartão) como meio
+alternativo de decisão, no caso de ocorrerem interrupções da sessão <em>real-time</em>.
+</p>
+
+<p>Adicionalmente, o Emissor pode definir um cenário controlado para as situações em
+que planeia desligar a sessão de <em>real-time</em> (por exemplo, num fim de semana ou
+feriado para proceder à manutenção ou melhoramento do seu sistema). </p>
+
+<p>Embora estes sejam os cenários básicos de funcionamento do Sistema Multibanco, foram
+desenvolvidos outros para contemplar necessidades de novos serviços:</p>
+
+<p><br>
+<strong>Cenário Saldo de Cartão/Saldo de Conta (ou RT) associado aos <a href="a2.htm#A.2.1.3.1">cartões de serviço</a></strong></p>
+
+<p>Com o objectivo de viabilizar certos tipos de serviços, tais como cartões emitidos
+sobre contas de empresa, viabilizou-se um cenário que valida a disponibilidade de saldo
+de cartão antes de verificar o saldo de conta ou efectuar a mensagem <em>real-time</em>
+para o Emissor. </p>
+
+<p>Assim, as operações dos utilizadores estão controladas por um saldo individual de
+cartão, mas a totalidade dos movimentos de todos os cartões de uma conta não pode
+ultrapassar o limite posicionado na conta (saldo de conta) ou existente no Emissor (RT). </p>
+
+<p>&nbsp;</p>
+
+<h2><a name="A.1.3">A.1.3</a> CENÁRIOS ADICIONAIS DE FUNCIONAMENTO</h2>
+
+<p>&nbsp;</p>
+
+<h3><a name="A.1.3.1">A.1.3.1</a> CENÁRIO DE LIMITE DE AUTORIZAÇÃO</h3>
+
+<p><b><br>
+Descrição</b> </p>
+
+<p>O cenário de Limite de Autorização destina-se a operações realizadas no
+estrangeiro, por cartões nacionais pertencentes a um Sistema de Pagamento Internacional,
+sempre que as mensagens desencadeadas em tempo real, do terminal ou ponto de serviço para
+a SIBS, são apenas 'pedidos de autorização' e não mensagens financeiras. </p>
+
+<p><br>
+<em><strong>Quem autoriza as operações?</strong></em></p>
+
+<p>No cenário de Limite de Autorização, a gestão das autorizações é processada
+consoante o cenário principal do CPD do Emissor para as operações acima referidas. </p>
+
+<p><br>
+<strong>CENÁRIO A</strong></p>
+
+<p>O cenário posicionado na SIBS é o <em>Real-Time</em>  com o Emissor. Neste
+cenário, as mensagens são
+enviadas como pedidos de autorização (mensagem <a href="../l-iii/116x316x.htm">1161</a>
+em que o <a href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=012)
+e é o Emissor que decide o pedido, conforme
+detalhado mais adiante neste <a href="a1.htm#CENÁRIO A">capítulo</a>. </p>
+
+<p><br>
+<strong>CENÁRIO B</strong></p>
+
+<p>O cenário posicionado para o Emissor é um dos seguintes: 
+
+<ul>
+  <li><em>Real-Time</em> com o Emissor, mas, embora o Emissor processe os pedidos de autorização (mensagem
+    <a href="../l-iii/116x316x.htm">1161</a> em que o <a href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=012), este respondeu com um pedido
+    de degradação na SIBS, ou não respondeu a tempo e posicionou um cenário de
+    degradação na SIBS;</li>
+  <li>Saldo de Conta ou Saldo de Crédito Disponível;</li>
+  <li>Saldo de Cartão.</li>
+</ul>
+
+<p>
+Nestes casos é a SIBS que, por delegação do Emissor, decide o pedido de autorização.
+A decisão é tomada de acordo com os valores posicionados nos montantes máximos diários
+por BIN, nos saldos disponíveis informados por conta, D.O. ou conta crédito (competindo
+ao Emissor garantir a sua actualização, quando posiciona novos valores na SIBS), ou no
+valor presente no saldo de cartão. No ponto seguinte descreve-se a forma de decisão
+conforme a operação em causa e o cenário em que esta se processa. </p>
+
+<p><br>
+<em><strong>Como é decidido um pedido de autorização? </strong></em></p>
+
+<table border="0" cellspacing="0" width="100%" cellpadding="0">
+  <tr>
+    <td class="just10a"><p>Com o objectivo de reduzir o factor de risco e antes de
+    se verificar qual o cenário de processamento da autorização, efectua-se uma validação
+    prévia às autorizações de Levantamento ou autorizações de <em>Cash Advance</em>
+    parametrizadas para serem decididas como Levantamento sobre:</td>
+  </tr>
+</table>
+
+<ul >
+  <li>o montante máximo diário para levantamentos, caso o Emissor o tenha informado na <a href="i3.htm#I.3.16">Caracterização do BIN</a>, ou</li>
+  <li>o valor pré-definido de 500 euros.</li>
+</ul>
+
+<p><br>
+<b>CENÁRIO C</b>
+</p>
+<p>O cenário posicionado na SIBS é o <i>Real-Time</i> com um
+Representante de cartões. Neste cenário, as mensagens são enviadas como
+pedidos de autorização (mensagem <a href="../l-iii/11473147.htm">1147</a> em
+que o <a href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=012)
+e é o Representante que decide o pedido, conforme detalhado mais adiante neste <a href="#CENÁRIO C">capítulo</a>.&nbsp;</p>
+
+<p><strong><a name="CENÁRIO A">CENÁRIO A</a> DO LIMITE DE AUTORIZAÇÃO</strong></p>
+
+<p><strong><br>
+Cenário <em>Real-time</em> com Emissor </strong></p>
+
+<p>
+As mensagens recebidas de um Sistema de Pagamento são enviadas pela SIBS em <em>real-time</em>
+ao Emissor como pedidos de autorização (mensagem <a href="../l-iii/116x316x.htm">1161</a>
+em que o <a href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=012), sendo o Emissor que decide, em tempo real, a realização (ou
+não) das operações: 
+
+<ul>
+  <li>aceitando a autorização;</li>
+  <li>pedindo à SIBS para decidir a autorização em função do cenário de degradação
+    existente (passando a ser aplicado um dos <a href="a1.htm#CENÁRIO B">CENÁRIO B</a>);</li>
+  <li>recusando o pedido (por saldo insuficiente, suspeita de fraude ou outro motivo);</li>
+  <li>pedindo para capturar o cartão.</li>
+</ul>
+
+<p>O Emissor tem de cumprir os tempos mínimos de resposta impostos pelos sistemas
+internacionais, que não podem exceder os 2 segundos. </p>
+
+<p>As autorizações concretizadas são enviadas pela
+Compensação Multibanco (Ficheiro Destinos (MDST5) <a href="../l-iii/dst-1.htm#= 1">tipo
+de registo = 1</a>, <a href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=012). A Compensação efectuada pelo Sistema de Pagamento (<em>Clearing</em>)
+pode ser processada pela SIBS ou directamente pelo Emissor. No primeiro caso, sempre que a
+SIBS receba, no <em>Clearing</em> do sistema internacional uma operação firme que
+consiga emparelhar com uma mensagem de autorização prévia, preenche o correspondente <a href="../l-iii/dst-1.htm#= 1">registo</a> do ficheiro Destinos MDST5 (<a href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a> = 001,
+010 ou 0C0) de modo a informar o Emissor deste facto. Incluem-se mais detalhes no <a href="../l-iii/dst-1.htm">MDST5</a> (Livro III, capítulo E). </p>
+
+<p>Adicionalmente, para operações de levantamento, o Emissor pode ter indicado à SIBS
+um montante máximo diário para levantamentos, que é validado previamente ao envio do
+pedido de autorização ao Emissor, sendo este recusado, caso o montante de autorizações
+relativas a operações de levantamento tenha excedido, no dia, o limite posicionado. </p>
+
+<p>Neste cenário, o Emissor pode obter serviço de degradação da SIBS e controlo total
+dos pedidos recebidos incluindo as operações que foram aceites em RT pelo CPD do
+Emissor. </p>
+
+<p><br>
+<u>NOTA 1</u>:<strong> </strong></p>
+
+<p>Caso o Emissor não pretenda utilizar o serviço de degradação da SIBS, deve indicar
+qual a resposta a enviar pela SIBS ao Sistema de Pagamento, sempre que não seja obtida
+uma resposta em tempo real do Emissor: 
+
+<ul>
+  <li>recusa; </li>
+  <li>pedido de degradação no Sistema de Pagamento (nos parâmetros de <em>stand-in</em>
+    previamente posicionados pelo Emissor);</li>
+  <li>pedido de <em>referral</em> (este pedido ocorre quando o Emissor não consegue aprovar a
+    operação, segundo os processos habituais, mas não quer que o cliente saia sem realizar
+    a operação; por isso pede ao comerciante para telefonar ao aceitante/representante local
+    do cartão, no sentido de obter mais informações sobre a operação em causa para ajudar
+    à sua concretização).</li>
+</ul>
+
+<p><br>
+<u><a name="NOTA 2">NOTA 2</a></u>:</p>
+
+<p>O Emissor pode ainda parametrizar qual destes três tipos de resposta devem ser
+enviados pela SIBS, caso tenha sido activado um dos cenários de degradação descritos em
+seguida e a autorização exceda os limites posicionados na SIBS. </p>
+
+<p>&nbsp;</p>
+
+<p><strong><a name="CENÁRIO B">CENÁRIO B</a> DO LIMITE DE AUTORIZAÇÃO</strong></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<strong><a href="a1.htm#B1">B1</a> - Cenário Saldo de Conta <br>
+<a href="a1.htm#B2">B2</a> - Cenário Saldo de Cartão<br>
+<a href="a1.htm#B3">B3</a> - Cenário Saldo Disponível da Conta Crédito</strong></p>
+
+<p><br>
+ </p>
+
+<p>Qualquer destes três cenários pode ser utilizado como
+cenário principal para o 'limite de autorização' ou como cenário de degradação
+do
+cenário <a href="a1.htm#CENÁRIO A">A</a>. </p>
+
+<p style="page-break-before: always"><br>
+<strong>CENÁRIO B - LEVANTAMENTOS</strong></p>
+
+<blockquote>
+  <p><br>
+  <strong>
+  <a name="B1">B1</a> - Cenário de Saldo de Conta</strong></p>
+  <p>A decisão de uma operação pela SIBS é efectuada com base nos seguintes valores:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><em>Saldo disponível </em>da conta associada ao cartão, enviado no ficheiro (<a href="../l-iii/ecsv.htm">ECSV</a>)</li>
+    <li><em>Montante máximo diário para levantamentos</em>, até ao qual a SIBS pode autorizar
+      operações de levantamento no estrangeiro, parametrizado na <a href="i3.htm#I.3.16">Caracterização
+      do BIN</a>.</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Diariamente, na primeira operação do cartão, o menor destes dois valores é
+  utilizado como o montante disponível para decidir autorizações:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Se o valor do pedido de autorização for inferior ao montante disponível, aquele é
+      autorizado e o seu valor é deduzido a este até ser igual a zero.</li>
+    <li>Em caso contrário, aquele é recusado (ver <a href="a1.htm#NOTA 2">Nota 2</a> do
+      Cenário A).</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p><br>
+  <strong><a name="B2">B2</a> - Cenário de Saldo de Cartão</strong></p>
+  <p>A decisão de uma operação pela SIBS é efectuada com base nos seguintes valores:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><em>Saldo de Cartão </em>- é o montante utilizável para autorizar apenas operações
+      de levantamento em Caixas Automáticos (Montante Pista 3 gravado na tarja
+      ou guardado centralmente. Ver ponto &quot;<a href="#valida">Como se valida o Saldo de
+      Cartão?</a>&quot;).</li>
+    <li><em>Montante máximo diário para levantamentos,</em> até ao qual a SIBS pode autorizar
+      operações de levantamento no estrangeiro, parametrizado na <a href="i3.htm#I.3.16">Caracterização
+      do BIN</a>.</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Diariamente, na primeira operação do cartão, o menor destes dois valores é
+  utilizado como o montante disponível para decidir autorizações:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Se o valor do pedido de autorização for inferior ao montante disponível, aquele é
+      autorizado e o seu valor é deduzido a este até ser igual a zero.</li>
+    <li>Em caso contrário, aquele é recusado (ver <a href="a1.htm#NOTA 2">Nota 2</a> do
+      Cenário A).</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p><br>
+  <strong><a name="B3">B3</a> - Cenário de Saldo Disponível da Conta Crédito</strong></p>
+  <p>A decisão de uma operação pela SIBS é efectuada com base no: </p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><em>Saldo disponível</em> para <em>cash advance</em> da conta crédito associada ao
+      cartão, enviado no ficheiro <a href="../l-iii/escd.htm">ESCD</a>, que também pode ser
+      actualizado pelas mensagens de resposta <em>real-time</em> a pedidos de levantamento a
+      crédito que contenham o campo Saldo Disponível (<a href="../../Campos/campos1.htm#027" target="explicac">027</a>) provenientes de CAs (ver Livro III - capítulo <a href="../l-iii/d32.htm">D.3.2</a>).</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Diariamente, na primeira operação do cartão, este saldo é utilizado como o montante
+  disponível para decidir autorizações:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Se o valor do pedido de autorização for inferior ao montante disponível, aquele é
+      autorizado e o seu valor é deduzido a este até ser igual a zero.</li>
+    <li>Em caso contrário, aquele é recusado (ver <a href="a1.htm#NOTA 2">Nota 2</a> do
+      Cenário A).</li>
+  </ul>
+</blockquote>
+
+<p style="page-break-before: always"><br>
+<strong>CENÁRIO B - OUTRAS OPERAÇÕES (TPAs)</strong></p>
+
+<p>As descrições seguintes reportam-se sempre a um Total de Autorizações Pendentes.
+Este corresponde ao somatório dos montantes de operações em TPAs autorizadas que ainda
+não se tornaram &quot;firmes&quot; (isto é, das quais ainda não foi recebido o
+respectivo movimento financeiro no ficheiro de <em>Clearing</em> do Sistema de Pagamento)
+e que não atingiram o limite do número de dias posicionado pelo Emissor para o BIN, para
+manutenção de uma autorização como pendente. </p>
+
+<blockquote>
+  <p><br>
+  <strong> Cenário de <em>Real-Time</em></strong></p>
+  <p>A decisão a um pedido de autorização, enviado sob a forma de mensagem de Consulta de
+  Saldos no Estrangeiro (<a href="../l-iii/116x316x.htm">1162</a>), é efectuada com base
+  nos seguintes valores:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><em>Saldo disponível</em> da conta associada ao cartão, recebido na resposta da
+      consulta (<a href="../l-iii/126x.htm">1262</a>) e</li>
+    <li><em>Total de autorizações pendentes.</em></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>O processo de decisão do pedido de autorização é o seguinte:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Se o somatório do valor do pedido de autorização com o total das autorizações
+      pendentes for inferior ao saldo disponível, aquele é autorizado e o seu valor é
+      adicionado ao total das autorizações.</li>
+    <li>Em caso contrário, aquele é recusado.</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p><br>
+  <strong><a name="B1a">B1</a> - Cenário de Saldo de Conta</strong></p>
+  <p>A decisão de uma operação pela SIBS é efectuada com base nos seguintes valores:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><em>Saldo disponível</em> da conta associada ao cartão, enviado no ficheiro (<a href="../l-iii/ecsv.htm">ECSV</a>), que também pode ser actualizado pelas mensagens de
+      resposta <em>real-time</em> que contenham o campo Saldo Disponível (<a href="../../Campos/campos1.htm#027" target="explicac">027</a>) provenientes de CAs (ver
+      Livro III - capítulo <a href="../l-iii/d32.htm">D.3.2</a>)</li>
+    <li><em>Total de autorizações pendentes.</em></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>O processo de decisão do pedido de autorização é o seguinte:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Se o somatório do valor do pedido de autorização com o total das autorizações
+      pendentes for inferior ao saldo disponível, aquele é autorizado e o seu valor é
+      adicionado ao total das autorizações.</li>
+    <li>Em caso contrário, aquele é recusado (ver <a href="a1.htm#NOTA 2">Nota 2</a> do
+      Cenário A).</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p><br>
+  <strong><a name="B2a">B2</a> - Cenário de Saldo de Cartão</strong></p>
+  <p>A decisão de uma operação pela SIBS é efectuada com base nos seguintes valores:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><em>Montante máximo diário para outras operações (POS</em>), até ao qual a SIBS
+      pode autorizar outras operações (que não levantamentos) no estrangeiro, parametrizado
+      na <a href="i3.htm#I.3.16">Caracterização do BIN</a>. </li>
+    <li><em>Total de autorizações pendentes.</em></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>O processo de decisão do pedido de autorização é o seguinte:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Se o somatório do valor do pedido de autorização com o total das autorizações
+      pendentes for inferior ao montante máximo diário, aquele é autorizado e o seu valor é
+      adicionado ao total das autorizações.</li>
+    <li>Em caso contrário, aquele é recusado (ver <a href="a1.htm#NOTA 2">Nota 2</a> do
+      Cenário A).</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p><br>
+  <strong><a name="B3a">B3</a> - Cenário de Saldo Disponível da Conta Crédito</strong></p>
+  <p>A decisão de uma operação pela SIBS é efectuada com base nos seguintes valores:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><em>Saldo disponível</em> da conta crédito associada ao cartão, enviado no ficheiro <a href="../l-iii/escd.htm">ESCD</a>, que também pode ser actualizado pelas mensagens de
+      resposta <em>real-time</em> a pedidos de levantamento a crédito que contenham o campo
+      Saldo Disponível (<a target="explicac" href="../../Campos/campos1.htm#027">027</a>)
+      provenientes de CAs (ver Livro III - capítulo <a href="../l-iii/d32.htm">D.3.2</a>)</li>
+    <li><em>Total de autorizações pendentes</em>.</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>O processo de decisão do pedido de autorização é o seguinte:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Se o somatório do valor do pedido de autorização com o total das autorizações
+      pendentes for inferior ao saldo disponível, aquele é autorizado e o seu valor é
+      adicionado ao total das autorizações.</li>
+    <li>Em caso contrário, aquele é recusado (ver <a href="a1.htm#NOTA 2">Nota 2</a> do
+      Cenário A).</li>
+  </ul>
+</blockquote>
+
+<p>Diariamente, todas as autorizações que tenham sido dadas há mais de x dias (x =
+número indicado pelo Emissor para cada BIN, ou 4 dias por defeito) são decrementadas do
+total de autorizações pendentes, pois considera-se que a operação já não será
+enviada ou foi enviada e não foi possível emparelhá-la com uma autorização prévia. </p>
+
+<p>A SIBS valida todas as autorizações para detectar operações duplicadas e todas as
+anulações de autorizações prévias, são deduzidas ao total de autorizações
+pendentes. </p>
+
+<p>Os cenários <a href="a1.htm#CENÁRIO A">A</a> e <a href="#B3">B3</a> acima
+descritos são também aplicáveis no caso de pedidos de autorização relativas a
+operações em Portugal, recebidos do <em>Acquirer</em> Unicre. </p>
+
+<p>&nbsp; </p>
+
+<p><b><a name="CENÁRIO C">CENÁRIO C</a> DO LIMITE DE AUTORIZAÇÃO</b></p>
+<p><br>
+<b>
+Cenário <i>Real-Time</i> com o Representante</b></p>
+<p>Este cenário é semelhante ao cenário <a href="a1.htm#CENÁRIO A">A</a>,
+<i>Real-Time</i>
+com o Emissor, mas neste cenário as mensagens <i>real-time</i> são trocadas entre a
+SIBS e um Representante de cartões.</p>
+<p>As mensagens recebidas de um Sistema de Pagamento são enviadas
+pela SIBS em <i> real-time</i> ao Representante como pedidos de autorização (mensagem
+<a href="../l-iii/11473147.htm">1147</a> em
+que o <a href="../../Campos/campos7.htm#699" target="explicac">CODTRN-E</a>=012), sendo o Representante que decide, em tempo real, a realização (ou não)
+das operações:&nbsp;</p>
+  <ul >
+    <li >
+      aceitando a autorização;&nbsp;</li>
+    <li>
+      recusando o pedido (por saldo insuficiente, suspeita de fraude ou outro
+motivo);&nbsp;</li>
+    <li>
+      pedindo para capturar o cartão.&nbsp;</li>
+  </ul>
+<p>O Representante tem de cumprir os tempos mínimos de resposta
+impostos pelos Sistemas Internacionais, que não podem exceder os 2
+segundos.&nbsp;</p>
+<p>As autorizações concretizadas são apresentadas ao Emissor pelo
+Representante, através de interfaces próprios definidos entre ambos. A
+Compensação efectuada pelo Sistema de Pagamento (<i>Clearing</i>) é processada pelo
+Representante.</p>
+  <p>Para operações de levantamento, o Emissor pode ter indicado à
+SIBS um montante máximo diário para levantamentos, que é validado previamente
+ao envio do pedido de autorização ao Representante. A SIBS recusa o
+levantamento se o montante de autorizações relativas a operações de
+levantamento tenha excedido, no dia, o limite posicionado. Nestas circunstâncias,
+não é enviada ao Representante nenhuma mensagem de pedido de autorização.</p>
+<p>Este cenário não inclui serviço de degradação na SIBS.</p>
+<p>Para as situações em que não exista uma recusa da SIBS
+resultante da validação prévia do montante para operações de levantamento,
+o Emissor deve indicar qual a resposta a enviar pela SIBS ao Sistema de
+Pagamento sempre que não seja obtida uma resposta em tempo real do
+Representante:&nbsp;</p>
+  <ul >
+    <li >
+      recusa;&nbsp;</li>
+    <li >
+      pedido de degradação no Sistema de Pagamento (nos parâmetros de
+      <i> stand-in</i>
+previamente posicionados pelo Emissor);&nbsp;</li>
+    <li >
+      pedido de <i> referral</i> (este pedido ocorre quando o Representante não consegue
+aprovar a operação, segundo os processos habituais, mas o Emissor não quer
+que o cliente saia sem realizar a operação; por isso pede ao comerciante para
+telefonar ao aceitante/representante local do cartão, no sentido de obter mais
+informações sobre a operação em causa para ajudar à sua concretização).&nbsp;</p>
+    </li>
+  </ul>
+
+<p>&nbsp; </p>
+
+<h3><a name="A.1.3.2">A.1.3.2</a> CENÁRIO DE SALDO DE CRÉDITO DISPONÍVEL</h3>
+
+<p><br>
+<b>Descrição</b> </p>
+
+<p>O cenário de Saldo de Crédito Disponível é utilizado quando o Emissor delega a
+decisão das operações dos seus cartões de crédito na SIBS, quer por interrupção
+temporária da sessão de <em>real-time</em>, quer com cenário principal para esses
+cartões. </p>
+
+<p>Neste cenário e se não existirem motivos para recusa, resultantes das validações
+descritas no início do capítulo <a href="a1.htm#A.1.1">A.1.1</a>, as operações são
+decididas pela SIBS com base nos ficheiros de Comunicação de Saldos de Crédito (<a href="../l-iii/escd.htm">ESCD</a>) enviados periodicamente pelo Emissor, com a
+informação relativa aos saldos disponíveis, geral e para levantamentos, das respectivas
+contas-crédito que sofreram variações desde o último ficheiro <a href="../l-iii/escd.htm">ESCD</a> enviado pelo Emissor. </p>
+
+<p>Sempre que o Emissor transmitir um novo ficheiro <a href="../l-iii/escd.htm">ESCD</a>,
+pressupõe-se que indica os novos saldos de uma conta-crédito. Se tal não acontecer para
+uma conta cujos cartões efectuaram operações financeiras na Rede MB, a SIBS actualiza
+os respectivos saldos com os últimos valores informados pelo Emissor, isto é,
+desprezando as importâncias das operações entretanto feitas pelos clientes na Rede MB. </p>
+
+<p><br>
+<em><strong>Quem autoriza as operações?</strong></em></p>
+
+<p>No cenário de Saldo de Crédito Disponível, é a SIBS que gere as autorizações. </p>
+
+<p><br>
+<em><strong>Quais são os parâmetros utilizados para tomar essa decisão?</strong></em></p>
+
+<p><em><u><br>
+Levantamentos a crédito</u></em></p>
+
+<p>A decisão de uma operação de levantamento pela SIBS é efectuada com base nos
+seguintes valores: 
+
+<ul>
+  <li>Saldo disponível geral da conta-crédito associada ao cartão, enviado no ficheiro <a href="../l-iii/escd.htm">ESCD</a>;</li>
+  <li>Saldo disponível para levantamentos da mesma conta-crédito, enviado no ficheiro <a href="../l-iii/escd.htm">ESCD</a>.</li>
+</ul>
+
+<p>Diariamente, na primeira operação do cartão, o menor destes dois valores é
+utilizado como o montante disponível para decidir operações: 
+
+<ul>
+  <li>Se o valor de uma operação for inferior ao montante disponível, aquela é autorizada
+    e o seu valor é deduzido a este até ser igual a zero;</li>
+  <li>Em caso contrário, aquela é recusada.</li>
+</ul>
+
+<p><em><u><br>
+Restantes operações a crédito</u></em></p>
+
+<p>A autorização das restantes operações pela SIBS é efectuada com base no Saldo
+Disponível Geral da conta-crédito: 
+
+<ul>
+  <li>Se o valor da operação a débito for inferior ao no Saldo Disponível Geral da
+    conta-crédito, aquela é autorizada e o seu valor é deduzido a este até ser igual a
+    zero;</li>
+  <li>Em caso contrário, aquela é recusada.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3 ><a name="A.1.3.3">A.1.3.3</a> SALDO PARA COMPRAS COM PAGAMENTO FRACCIONADO</h3>
+
+<p><br>
+<b>Descrição</b></p>
+
+<p>Este cenário é aplicável exclusivamente a compras com pagamento
+fraccionado (códigos de transacção 10 ou 15), funcionalidade que se encontra
+disponível apenas para operações de compra de cartões EMV em Terminais de Pagamento
+Automático EMV-compatíveis (consulte o ponto <a href="a7.htm#A.7.2.2">A.7.2.2</a> para
+mais informações sobre a funcionalidade &quot;Compra com pagamento fraccionado&quot;).</p>
+
+<p>O cenário de Saldo para Compras com Pagamento Fraccionado é utilizado
+quando o Emissor delega na SIBS a decisão das operações em causa, por interrupção
+temporária da sessão de <i>real-time </i>ou por não pretender autorizar estas compras
+particulares em <i>real-time</i>. Este cenário é utilizável em conjugação com o
+cenário Saldo de Crédito Disponível, em função da indicação do Emissor na <a href="i3.htm#I.3.16">Caracterização do CPD</a>.</p>
+
+<p>Se não existirem motivos para recusa,
+resultantes das validações descritas no início do capítulo <a href="#A.1.1">A.1.1</a>,
+as operações realizadas no âmbito deste cenário são decididas pela SIBS considerando
+um <em>plafond</em> por cartão definido pelo Emissor. </p>
+
+<p>Se não for utilizado o conceito de <a href="#Limite">limite mensal</a>
+sempre que o Emissor actualize o valor deste <em>plafond</em> (via ficheiro <a href="../l-iii/egcc.htm">EGCC</a>), pressupõe-se que indica o novo saldo disponível. A
+SIBS actualiza o valor respectivo desprezando a informação existente sobre as compras
+com pagamento fraccionado efectuadas previamente a essa actualização.</p>
+
+<p>&nbsp;<br>
+<b><i>Quem autoriza as operações?</i></b></p>
+
+<p>No cenário de Saldo para Compras com Pagamento Fraccionado é a SIBS que
+gere as autorizações. </p>
+
+<p><br>
+<b><i>Quais são os parâmetros utilizados para tomar essa decisão?</i></b></p>
+
+<p>Para decisão de uma compra com pagamento fraccionado é considerado o <em>plafond</em>
+disponível para a realização destas operações de compra particulares</p>
+
+<p>A definição do <em>plafond</em> por cartão aplicável para compras com
+pagamento fraccionado tem em consideração as seguintes informações: 
+
+<ul >
+  <li>O <em>plafond</em> por cartão é definido pelo Emissor, no momento da emissão (via
+    ficheiro <a href="../l-iii/eecb.htm">EECB</a>, versão 04) ou após a personalização
+    física (via ficheiro <a href="../l-iii/egcc.htm">EGCC</a>);</li>
+  <li>O Emissor pode actualizar o <em>plafond</em> por cartão através do ficheiro <a href="../l-iii/egcc.htm">EGCC</a>;</li>
+  <li>O valor disponível para este <em>plafond</em> é decrementado apenas pelo valor total
+    das compras realizadas com pagamento fraccionado, incluindo as que tenham sido realizadas
+    em cenário de <i>Real-Time</i>.</li>
+</ul>
+
+<p><a name="Limite"><br>
+<b>Limite</a> Mensal</b></p>
+
+<p>O cenário de Saldo para Compras com Pagamento Fraccionado possibilita ao
+Emissor a definição de um limite mensal para compras com pagamento fraccionado. </p>
+
+<p>O valor máximo disponível para um cartão para realização de compras com
+pagamento fraccionado é reposto no mesmo dia de cada mês, quando este seja indicado pelo
+Emissor nos ficheiros de Emissão de Cartões (<a href="../l-iii/eecb.htm">EECB</a>) ou de
+Gestão de Cartões e Contas (<a href="../l-iii/egcc.htm">EGCC</a>).</p>
+
+<p>O limite mensal é ignorado nos ficheiros <a href="../l-iii/eecb.htm">EECB</a>
+e <a href="../l-iii/egcc.htm">EGCC</a> se: 
+
+<ul >
+  <li>O campo (<a href="../../Campos/camp2300.htm#2305" target="explicac">2305</a>)
+    CRE-PLAFOND for igual a 999999999 e </li>
+  <li>O campo (<a href="../../Campos/camp2300.htm#2306" target="explicac">2306</a>)
+    CRE-PLAFDIA for igual a 00. </li>
+</ul>
+
+<p class="dta"><br>
+<a href="a2.htm" target="main">Seguinte</a></p>
+</body>
+</html>

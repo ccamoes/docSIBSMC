@@ -1,0 +1,1220 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0" />
+<base target="explicac" />
+<link rel="StyleSheet" href="campos.css" type="text/css" />
+<title>Campos4 (300-399)</title>
+</head>
+
+<body>
+
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<table border="1" cellpadding="4" cellspacing="0" width="100%">
+  <tr>
+    <td class="fundo">Nº DO<br />
+    CAMPO</td>
+    <td class="fundo">NOME/DESCRIÇÃO</td>
+    <td class="fundo">COMP.</td>
+    <td class="fundo">REP.</td>
+    <td class="fundo">FORMATO</td>
+    <td class="fundo">SÍMBOLO</td>
+  </tr>
+  <tr>
+    <td><a id="300" name="300">300</a></td>
+    <td class="esq"><u>CÓDIGO DE TERMINAL - NÚMERO DO ATM NA AGÊNCIA</u> <p>Identificação do CA na Agência do Banco
+    que o apoia (pode assumir valores de 01 a 99).</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NSEQATM</td>
+  </tr>
+  <tr>
+    <td><a id="301" name="301">301</a></td>
+    <td class="esq"><u>DATA HORA DE SUPERVISÃO</u> <p>Data e hora em que foi feita a
+    operação de Fecho do CA. No caso de estar preenchido a zero, significa que se informam
+    valores parciais.</td>
+    <td class="dta">12</td>
+    <td>N</td>
+    <td>AAAAMMDD<br />
+    HHMM</td>
+    <td>DTHSUPERV</td>
+  </tr>
+  <tr>
+    <td><a id="302" name="302">302</a></td>
+    <td class="esq"><u>SITUAÇÃO PEDIDO ESCLARECIMENTO (RECLAMAÇÃO)</u> <p>Código que
+    identifica o estado da reclamação no momento.<br />
+    <br />
+    Poderá assumir os seguintes valores:<br />
+    &nbsp;&nbsp; &nbsp; 0 - Por responder<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 1 - Aguarda resposta pergunta SIBS<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 7 - Aguarda validação<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 8 - Respondido com regularização<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 9 - Respondido sem regularização</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="303" name="303">303</a></td>
+    <td class="esq"><u>NÚMERO DE OPERAÇÕES TARIFADAS</u> <p>Indica o número de operações
+    bem concluídas às quais se aplica a rubrica de tarifário interbancário indicada no (<a
+    href="campos4.htm#325">325</a>) TARINT que precede este campo.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMOPTARI</td>
+  </tr>
+  <tr>
+    <td><a id="304" name="304">304</a></td>
+    <td class="esq"><u>VALOR DO TARIFÁRIO INTERBANCÁRIO</u> <p>Inclui a importância, na
+    denominação da compensação Multibanco, correspondente ao produto do valor da rubrica
+    do tarifário interbancário indicada no campo (<a href="campos4.htm#325">325</a>) TARINT
+    pelo número de operações indicado no campo (<a href="campos4.htm#303">303</a>)
+    NUMOPTARI.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br />
+    2 dec.</td>
+    <td>VALTARINT</td>
+  </tr>
+  <tr>
+    <td><a id="305" name="305">305</a></td>
+    <td class="esq"><u>NÚMERO DE OPERAÇÕES TARIFADAS - SIBS</u> <p>Indica o número de
+    operações bem concluídas às quais se aplica a rubrica de tarifário SIBS indicada nos
+    campos (<a href="campos4.htm#324">324</a>) TARSIBS que precede este campo.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMOPTARS</td>
+  </tr>
+  <tr>
+    <td><a id="306" name="306">306</a></td>
+    <td class="esq"><u>CÓDIGO DE OPERAÇÃO (APLICAÇÃO DE CARTÃO DE CRÉDITO)</u> <p>Código
+    de operação realizada. A descrição correspondente encontra-se no campo <a
+    href="campos8.htm#708">708</a>.<br />
+    Ver <a target="main" href="306-708.htm">Tabela</a> de Códigos de Operação.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>COD-OPE-C</td>
+  </tr>
+  <tr>
+    <td><a id="307" name="307">307</a></td>
+    <td class="esq"><u>TIPO DE OPERAÇÃO (APLICAÇÃO DE CARTÃO DE CRÉDITO)</u> <p>Tipo de
+    operação realizada:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; 1 - Original<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 2 - Anulação<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 3 - Reclamações do mês<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 4 - Reclamações do mês anterior<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 5 - Conclusões de reclamação</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TIP-OPE-C</td>
+  </tr>
+  <tr>
+    <td><a id="308" name="308">308</a></td>
+    <td class="esq"><u>ÂMBITO DA OPERAÇÃO (APLICAÇÃO DE CARTÃO DE CRÉDITO)</u> <p>Âmbito
+    da operação realizada:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 1 - Montante<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 2 - Comissão comerciante<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 3 - Juros<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 4 - Impostos<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 5 - Despesas cash<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 6 - Taxa cash<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; 7 - Comissão de transacção</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>AMB-OPE-C</td>
+  </tr>
+  <tr>
+    <td><a id="309" name="309">309</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DO CRÉDITO ORIGINAL</u> <p>Importância, em euros,
+    compensada a crédito para o fecho do período local a que respeita a regularização.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>IMPCREDE-O</td>
+  </tr>
+  <tr>
+    <td><a id="310" name="310">310</a></td>
+    <td class="esq"><u>IMPORTÂNCIA REGULARIZADA</u> <p>Importância, em euros, da
+    regularização feita pela SIBS ao Banco. O campo poderá também informar a comissão, em
+    euros, entregue ao Banco, resultante de uma anulação de levantamento internacional
+    (total ou parcial).</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>IMPORTREG</td>
+  </tr>
+  <tr>
+    <td><a id="311" name="311">311</a></td>
+    <td class="esq"><u>TOTAL COMISSÕES INTERBANCÁRIAS</u> <p>Total em escudos das
+    importâncias recebidas de:</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="20">a)</td>
+        <td class="esq">comissões internacionais pelas utilizações feitas no CA nesse período,
+        se campo (<a href="campos4.htm#314">314</a>) NACINT=2</td>
+      </tr>
+      <tr>
+        <td width="20">b)</td>
+        <td class="esq">tarifário de CA proveniente de emissores nacionais, se campo (<a
+        href="campos4.htm#314">314</a>) NACINT=1.</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>7 int.<br />
+    2 dec.</td>
+    <td>TOTCOMINT</td>
+  </tr>
+  <tr>
+    <td><a id="312" name="312">312</a></td>
+    <td class="esq"><u>APLICAÇÃO PDD</u> <p>Código utilizado nas mensagens e nos registos
+    de detalhe correspondentes a cada operação e que indica ao Banco qual o subsistema
+    transaccional em que esta se realizou.<br />
+    <br />
+    Valores possíveis:<br>
+    &nbsp;&nbsp;&nbsp; 1 - ATM<br />
+    &nbsp;&nbsp;&nbsp; 2 - POS1<br />
+    &nbsp;&nbsp;&nbsp; 3 - INT.<br />
+    &nbsp;&nbsp;&nbsp; 4 - BX. V.<br />
+    &nbsp;&nbsp;&nbsp; 5 - ATM-OLO 1<br />
+    &nbsp;&nbsp;&nbsp; 6 - PMB<br />
+    &nbsp;&nbsp;&nbsp; 7 - ATM-OLO 2<br />
+    &nbsp;&nbsp;&nbsp; 8 - POS2<br>
+    &nbsp;&nbsp; A - Registos Batch</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>APLICPDD</td>
+  </tr>
+  <tr>
+    <td><a id="313" name="313">313</a></td>
+    <td class="esq"><u>INDICADOR DE ESTORNO</u> <p>Código que indica se a operação é:</p>
+      &nbsp;&nbsp;0 -&nbsp;original<br>
+      &nbsp;&nbsp;1 -&nbsp;anulação de transacção já enviada<br>
+      &nbsp;&nbsp;2 -&nbsp;regularização de reclamação para lançamento no cliente<br>
+      &nbsp;&nbsp;3 -&nbsp;fim de reclamação para lançamento no cliente
+    <p>Nos casos 1, 2 e 3, o grupo de dados da anulação está preenchido com os dados da
+    operação original.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDESTR</td>
+  </tr>
+  <tr>
+    <td><a id="314" name="314">314</a></td>
+    <td class="esq"><u>NACIONAIS OU INTERNACIONAIS</u> <p>Código que permite que o Banco
+    detecte se as operações informadas resultam da compensação de:</p>
+    <p>&nbsp;&nbsp; 1 -&nbsp; operações nacionais<br>
+    &nbsp;&nbsp; 2 -&nbsp; operações internacionais </td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NACINT</td>
+  </tr>
+  <tr>
+    <td><a id="315" name="315">315</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO PERÍODO LOCAL ORIGINAL</u> <p>Identificação do
+    período local do CA a que respeita a regularização a efectuar.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDPLOC-O</td>
+  </tr>
+  <tr>
+    <td><a id="316" name="316">316</a></td>
+    <td class="esq"><u>IMPORTÂNCIA DO CRÉDITO ORIGINAL</u> <p>Importância, em escudos, do
+    crédito informado para o fecho do período local a que respeita a regularização.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>IMPCRED-O</td>
+  </tr>
+  <tr>
+    <td><a id="317" name="317">317</a></td>
+    <td class="esq"><u>IMPORTÂNCIA REGULARIZADA ORIGINAL</u> <p>Importância em escudos da
+    regularização feita pela SIBS ao Banco. O campo poderá também informar a comissão, em
+    escudos, entregue ao Banco, resultante de uma anulação de levantamento internacional
+    (total ou parcial). Este campo terá valores significativos enquanto se reportar a fechos
+    locais nos quais o CA ainda se encontrava carregado com escudos. Estará a zeros quando,
+    no fecho local indicado no campo (<a href="campos4.htm#315">315</a>) IDPLOC-O, o CA tiver
+    sido carregado com euros.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>IMPREG-O</td>
+  </tr>
+  <tr>
+    <td><a id="318" name="318">318</a></td>
+    <td class="esq"><u>SINAL</u> <p>Preenchido com C, movimento a Crédito do
+      Banco; preenchido com D, movimento de Débito ao Banco.</p>
+    </td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>SINAL</td>
+  </tr>
+  <tr>
+    <td><a id="319" name="319">319</a></td>
+    <td class="esq"><u>EXTENSÃO DE BIN</u> <p>Campo reservado para a extensão do BIN do
+    cartão do Banco a utilizar em casos especiais. Se não é utilizado estará preenchido a
+    espaços.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>EXBIN</td>
+  </tr>
+  <tr>
+    <td><a id="320" name="320">320</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO LOG CENTRAL</u> <p>Identificação do número do
+    ficheiro de <i>log</i> da SIBS onde foi registada a operação.<br />
+    Este campo combinado com os campos <a href="campos2.htm#117">117</a>  (NRLOG) e <a
+    href="campos4.htm#312">312</a>  (APLICPDD) ou <a href="camp1700.htm#1709">1709</a>
+      (APLIC_N), constitui uma chave única da operação.<br />
+    A SIBS usa mais do que um ficheiro de <i>log</i> por dia, pelo que num mesmo ficheiro da
+    Compensação MB, são encaminhadas operações de vários ficheiros de <i>log</i>
+      , os do dia e
+    eventualmente também os de dias precedentes, caso tenha havido algo que impediu a
+    compensação desse <i>log</i> .</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDLOG</td>
+  </tr>
+  <tr>
+    <td><a id="321" name="321">321</a></td>
+    <td class="esq"><u>CHEQUE DÍGITO DO NIB</u> <p>Cheque dígito (mod. 97) calculado sobre
+    todo o número de identificação Bancário (código de Banco, código de agência e
+    número de conta).</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CDNIB</td>
+  </tr>
+  <tr>
+    <td><a id="322" name="322">322</a></td>
+    <td class="esq"><u>APLICAÇÃO PDD DA MENSAGEM ORIGEM</u> <p>Campo que numa mensagem ou
+    registo correspondente a uma anulação, indica qual o código do processo transaccional
+    da transacção a anular pelo Banco (valor do campo <a href="campos4.htm#312">312</a> da
+    transacção a anular).</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>APLICPDD-O</td>
+  </tr>
+  <tr>
+    <td><a id="323" name="323">323</a></td>
+    <td class="esq"><u>NÚMERO DE REGISTO LOCAL</u> <p>Identificação do registo da
+    operação no período contabilístico local (campo <a href="campos2.htm#118">118</a>) do
+    terminal e que deve figurar no recibo da mesma, quando este existe. No caso dos TPAs tem o
+    formato 00nnn.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMREGLOC</td>
+  </tr>
+  <tr>
+    <td><a id="324" name="324">324</a></td>
+    <td class="esq"><u>TARIFA SIBS</u> <p>Apresenta o código da rubrica do Tarifário da SIBS
+    onde a op. foi contabilizada. Permite ao Banco actualizar totalizadores equivalentes para
+    poder auditar a factura da SIBS no fim do mês.<br />
+    No caso do Ficheiro Origens, a tarifa refere-se a operações feitas por cartões
+    internacionais. No caso do Ficheiro Terminais apresenta a rubrica do tarifário referente
+    à inserção, ligação mensal e à emissão de extracto.</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TARSIBS</td>
+  </tr>
+  <tr>
+    <td><a id="325" name="325">325</a></td>
+    <td class="esq"><u>TARIFA INTERBANCÁRIA</u> <p>Apresenta o código da rubrica do
+    tarifário interbancário aplicada. Permite que o Banco valide o montante debitado ou
+    creditado na Compensação MB.</td>
+    <td class="dta">3</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>TARINT</td>
+  </tr>
+  <tr>
+    <td><a id="326" name="326">326</a></td>
+    <td class="esq"><u>NÚMERO DE OPERAÇÕES</u> <p>Número de operações realizadas.</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUM-OPE-C</td>
+  </tr>
+  <tr>
+    <td><a id="327" name="327">327</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DE COMERCIANTE/EMPRESA</u> <p>Código atribuído pela
+    SIBS aquando da inserção de um comerciante ou empresa no sistema MB.<br>
+      Neste processo identifica a Entidade a facturar, pela prestação do
+      serviço de emissão de listagens.</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDCOMEMP</td>
+  </tr>
+  <tr>
+    <td><a id="328" name="328">328</a></td>
+    <td class="esq"><u>IDENTIFICAÇÃO DO ESTABELECIMENTO/LOCAL</u> <p>Código atribuído ao
+    estabelecimento associado ao código de comerciante. No caso de ser uma empresa,
+    identifica o Departamento onde se encontra o terminal que acede ao Sistema MB.</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>IDEST</td>
+  </tr>
+  <tr>
+    <td><a id="329" name="329">329</a></td>
+    <td class="esq"><u>CONTA EM FORMATO NIB</u> <p>Nos ficheiros da compensação MB, indica o
+    balcão e o número de conta do NIB destinatário de uma operação. O código de banco é
+    o do header do ficheiro e o cheque dígito encontra-se informado no campo (<a
+    href="campos4.htm#321">321</a>) CDNIB.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CONTANIB</td>
+  </tr>
+  <tr>
+    <td><a id="330" name="330">330</a></td>
+    <td class="esq"><u>PREVISÃO DE LEVANTAMENTOS INTERNACIONAIS</u> <p>Campo preenchido com o
+    total dos levantamentos internacionais feitos no período do CA. O campo só será
+    preenchido quando for enviado, no Ficheiro Origens, para um determinado período local, um
+    registo com o campo (<a href="campos4.htm#314">314</a>) NACINT igual a '1' (nacionais) e o
+    campo (<a href="campos4.htm#301">301</a>) DTHSUPERV preenchido. Não tem valor
+    contabilístico.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>PREVLEVINT</td>
+  </tr>
+  <tr>
+    <td><a id="331" name="331">331</a></td>
+    <td class="esq"><u>TOTAL DE OPERAÇÕES COMERCIANTE</u> <p>Apresenta o número de
+    operações de compra ou de cobrança incluídas no ficheiro enviado pelo Pagamento de
+    Serviços/Compras. Para efeitos de facturação da SIBS, este campo é utilizado para
+    aplicar a rubrica relativa a Banco de Apoio a POS.</td>
+    <td class="dta">5</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOTOPER</td>
+  </tr>
+  <tr>
+    <td><a id="332" name="332">332</a></td>
+    <td class="esq"><u>DATA DE INÍCIO DA FALHA</u> <p>Data do 1º extracto sem pagamento
+    mínimo.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTA-INI-FALH</td>
+  </tr>
+  <tr>
+    <td><a id="333" name="333">333</a></td>
+    <td class="esq"><u>SALDO DE IMPOSTO 120-A</u> <p>Importância do imposto 120-A que está
+    por cobrar proveniente do extracto anterior.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>SALD-A-IMP-A</td>
+  </tr>
+  <tr>
+    <td><a id="334" name="334">334</a></td>
+    <td class="esq"><u>TIPO DE POS</u> <p>Código que identifica a configuração do
+    equipamento. Ver <a href="334-5-6.htm" target="main">tabela</a> respectiva.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPPOS</td>
+  </tr>
+  <tr>
+    <td><a id="335" name="335">335</a></td>
+    <td class="esq"><u>TIPO DE ESTABELECIMENTO</u> <p>Codifica o estabelecimento onde está
+    instalado o POS, de modo a agrupá-los por grandes classes. Ver <a href="334-5-6.htm#335"
+    target="main">tabela</a> respectiva.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPEST</td>
+  </tr>
+  <tr>
+    <td><a id="336" name="336">336</a></td>
+    <td class="esq"><u>TIPO DE COMUNICAÇÃO</u> <p>Codifica o modo de comunicação utilizado
+    pelo POS. Ver <a href="334-5-6.htm#336" target="main">tabela</a> respectiva.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TIPCOM</td>
+  </tr>
+  <tr>
+    <td><a id="337" name="337">337</a></td>
+    <td class="esq"><u>MARCA E MODELO</u> <p>Codifica a marca e o modelo do POS ou CA.<br />
+    Ver <a href="337.htm" target="main">tabela</a> respectiva.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>MARCAMOD</td>
+  </tr>
+  <tr>
+    <td><a id="338" name="338">338</a></td>
+    <td class="esq"><u>REFERÊNCIA DE ENTRADA NA SIBS DA RECLAMAÇÃO</u> <p>Número
+    atribuído pelo sistema da SIBS que permite identificar uma reclamação que foi inserida,
+    quer remotamente (Terminal de Regularizações) quer centralmente.</td>
+    <td class="dta">6</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="339" name="339">339</a></td>
+    <td class="esq"><u>TIPO DE RECLAMAÇÃO</u> <p>Código que identifica o tipo de
+    reclamação no sistema da SIBS. </p>
+    <p>Poderá ter os valores:<br />
+    &nbsp;&nbsp;&nbsp; 01 - Cartão Nacional<br />
+    &nbsp;&nbsp;&nbsp; 02 - Cartão Internacional<br />
+    &nbsp;&nbsp;&nbsp; 03 - Fecho de ATM<br />
+    &nbsp;&nbsp;&nbsp; 04 - Fecho de POS<br />
+    &nbsp;&nbsp;&nbsp; 05 - Totais de Empresa<br />
+    &nbsp;&nbsp;&nbsp; 06 - Totais de Cut-Off<br />
+    &nbsp;&nbsp;&nbsp; 07 - Central de Clearing</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a id="340" name="340">340</a></td>
+    <td class="esq"><u>VALOR DAS COMISSÕES DO BANCO</u> <p>Indica o valor total dos
+    custos/receitas do Banco.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>VALCOM</td>
+  </tr>
+  <tr>
+    <td><a id="341" name="341">341</a></td>
+    <td class="esq"><u>MÊS</u> <p>Código do mês a que respeitam os dados. Valores de 01 a
+    12.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>MES</td>
+  </tr>
+  <tr>
+    <td><a id="342" name="342">342</a></td>
+    <td class="esq"><u>REFERÊNCIA</u> <p>Código da referência do conjunto de dados.<br />
+    <br />
+    Pode assumir os valores:<br />
+    &nbsp; &nbsp; 01 - Cartões Emissão e Actividade<br />
+    &nbsp;&nbsp;&nbsp; 02 - Cartões Movimentação<br />
+    &nbsp;&nbsp;&nbsp; 03 - Cartões PMB - Emissão e Actividade<br />
+    &nbsp;&nbsp;&nbsp; 04 - Terminais<br />
+    &nbsp;&nbsp;&nbsp; 06 - Cartões Movimentação por Representante<br>
+      &nbsp;&nbsp;&nbsp; 07 - Entidades de Pagamentos - Banco de Apoio<br>
+      &nbsp;&nbsp;&nbsp; 08 - TeleMultibanco</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>REFER</td>
+  </tr>
+  <tr>
+    <td><a id="343" name="343">343</a></td>
+    <td class="esq"><u>INDICADOR ORIGEM</u> <p>Tipo de entidade destino de estatística.
+    Emissor Multibanco&quot;0&quot;.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>INDIORI</td>
+  </tr>
+  <tr>
+    <td><a id="344" name="344">344</a></td>
+    <td class="esq"><u>CÓDIGO DE EMISSOR</u> <p>Identificação da entidade a quem se destina
+    o ficheiro ou entidade emissora dos cartões; nos registos destinados a Bancos emissores
+    do Ficheiro <a href="../mglobal/l-iii/eemm.htm" target="main">MEEMM</a>, é preenchido com
+    o código do Banco ou a zeros (total da rede).</td>
+    <td class="dta">7</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CODEMI</td>
+  </tr>
+  <tr>
+    <td><a id="345" name="345">345</a></td>
+    <td class="esq"><u>SALDO DE IMPOSTO 120-B</u> <p>Importância do imposto 120-B que está
+    por cobrar proveniente do extracto anterior.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>SALD-A-IMP-B</td>
+  </tr>
+  <tr>
+    <td><a id="346" name="346">346</a></td>
+    <td class="esq"><u>CARTÕES EMITIDOS</u> <p>Apresenta o número total de cartões emitidos
+    pelo Banco e que se encontram no ficheiro da SIBS na data da emissão das estatísticas e
+    facturação.<br />
+    No registo EXISTÊNCIAS, contam aqueles que existem; no registo INCREMENTO, os que foram
+    emitidos nesse mês.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CARTEMI</td>
+  </tr>
+  <tr>
+    <td><a id="347" name="347">347</a></td>
+    <td class="esq"><u>CARTÕES EM LISTA NEGRA</u> <p>Apresenta o número de cartões que
+    constam na Lista Negra, isto é, que o Banco ordenou que fossem colocados na situação de
+    inibição.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CARTLN</td>
+  </tr>
+  <tr>
+    <td><a id="348" name="348">348</a></td>
+    <td class="esq"><u>CARTÕES EXPIRADOS</u> <p>Apresenta o número de cartões que expiraram
+    nesse mês.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CARTEXP</td>
+  </tr>
+  <tr>
+    <td><a id="349" name="349">349</a></td>
+    <td class="esq"><u>CARTÕES ACTIVOS EM ATM E POS</u> <p>Indica o número de cartões que
+    têm pelo menos uma operação em ATM e uma operação em POS.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CARTACTAP</td>
+  </tr>
+  <tr>
+    <td><a id="350" name="350">350</a></td>
+    <td class="esq"><u>CARTÕES ACTIVOS EM ATM</u> <p>Indica o número de cartões que têm
+    pelo menos uma operação em ATM.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CARTACTATM</td>
+  </tr>
+  <tr>
+    <td><a id="351" name="351">351</a></td>
+    <td class="esq"><u>CARTÕES ACTIVOS EM POS</u> <p>Indica o número de cartões que têm
+    pelo menos uma operação em POS.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>CARTACTPOS</td>
+  </tr>
+  <tr>
+    <td><a id="352" name="352">352</a></td>
+    <td class="esq"><u>NÚMERO DE OPERAÇÕES</u> <p>Indica o número de operações de um
+    determinado tipo (indicado no registo) que foram feitas pelos cartões emitidos pelo
+    Banco, ou em terminais apoiados pelo Banco.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMOPER</td>
+  </tr>
+  <tr>
+    <td><a id="353" name="353">353</a></td>
+    <td class="esq"><u>MONTANTE DE OPERAÇÕES</u> <p>Indica o montante das operações de um
+    determinado tipo (indicado no registo) que foram feitas pelos cartões emitidos pelo
+    Banco, ou em terminais apoiados pelo Banco.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>MONTOPER</td>
+  </tr>
+  <tr>
+    <td><a id="354" name="354">354</a></td>
+    <td class="esq"><u>SALDO DE JUROS DE PENALIZAÇÃO</u> <p>Importância a pagar de juros de
+    penalização proveniente do extracto anterior.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>SALD-A-PEN</td>
+  </tr>
+  <tr>
+    <td><a id="355" name="355">355</a></td>
+    <td class="esq"><u>SALDO DE JUROS NORMAIS</u> <p>Importância a pagar de juros normais
+    proveniente do extracto anterior.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>SALD-A-JUR</td>
+  </tr>
+  <tr>
+    <td><a id="356" name="356">356</a></td>
+    <td class="esq"><u>CAPITAL EM DÍVIDA</u> <p>Importância da dívida dos meses anteriores,
+    ou a importância dessa dívida que ainda não foi paga.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>SALD-A-CAP</td>
+  </tr>
+  <tr>
+    <td><a id="357" name="357">357</a></td>
+    <td class="esq"><u>DÉBITO DE IMPOSTO 120-A</u> <p>Dívida constituída pela incidência
+    de impostos (imp. selo 120-A), ou dívida que ficou por cobrir no pagamento e que pertence
+    aos impostos.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>DEB-IMP-120A</td>
+  </tr>
+  <tr>
+    <td><a id="358" name="358">358</a></td>
+    <td class="esq"><u>DÉBITO DE IMPOSTO 120-B</u> <p>Total de Imposto 120-B calculado neste
+    fecho de extracto e que se encontra em liquidação.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>DEB-IMP-120B</td>
+  </tr>
+  <tr>
+    <td><a id="359" name="359">359</a></td>
+    <td class="esq"><u>DÉBITO DE JUROS DE PENALIZAÇÃO</u> <p>Importância dos juros
+    penalizados calculados no mês. Incide sobre a parte da dívida que não foi coberta pelo
+    montante mínimo obrigatório (<a href="campos3.htm#246">246</a>). A taxa que incide é (<a
+    href="campos3.htm#208">208</a>).</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>DEB-JUR-PEN</td>
+  </tr>
+  <tr>
+    <td><a id="360" name="360">360</a></td>
+    <td class="esq"><u>DÉBITO DE JUROS</u> <p>Importância dos juros normais calculados no
+    mês.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>DEB-JUR</td>
+  </tr>
+  <tr>
+    <td><a id="361" name="361">361</a></td>
+    <td class="esq"><u>DÉBITO DE DESPESAS DO GESTOR FINANCEIRO</u> <p>Dívida originada por
+    anuidades e outras despesas efectuadas pelo cliente e pagas ao Gestor Financeiro.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>DEB-DESP-GF</td>
+  </tr>
+  <tr>
+    <td><a id="362" name="362">362</a></td>
+    <td class="esq"><u>DÉBITO DE COMPRAS</u> <p>Dívida originada por compras em comerciantes
+    no período.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>DEB-COMP</td>
+  </tr>
+  <tr>
+    <td><a id="363" name="363">363</a></td>
+    <td class="esq"><u>DÉBITO DE OUTROS</u> <p>Dívida originada por serviços prestados a
+    outrém - seguros, etc.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>DEB-OUT</td>
+  </tr>
+  <tr>
+    <td><a id="364" name="364">364</a></td>
+    <td class="esq"><u>DÉBITO DE CHEQUES DE SERVIÇO</u> <p>Débito de cheques de serviço no
+    período.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>DEB-CH-S</td>
+  </tr>
+  <tr>
+    <td><a id="365" name="365">365</a></td>
+    <td class="esq"><u>TOTAL DE CRÉDITOS</u> <p>Somatório de todas as importâncias
+    recebidas do cliente no período de liquidação (Pagamento de Serviços/Compras, cheques,
+    numerário, transferência). Preenchido no fim do período de liquidação.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>TOT-CRE</td>
+  </tr>
+  <tr>
+    <td><a id="366" name="366">366</a></td>
+    <td class="esq"><u>TOTAL DE CRÉDITOS PARA DÍVIDA</u> <p>Montante de créditos que
+    participou na cobertura da dívida.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>TOT-CRE-DIV</td>
+  </tr>
+  <tr>
+    <td><a id="367" name="367">367</a></td>
+    <td class="esq"><u>CÓDIGO DE SERVIÇO</u> <p>Código atribuído aos serviços associados.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>COD-SERV</td>
+  </tr>
+  <tr>
+    <td><a id="368" name="368">368</a></td>
+    <td class="esq"><u>DATA DE INÍCIO DO SERVIÇO</u> <p>Data de inserção do serviço ou
+    tarifa no sistema e no cliente.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTA-INI</td>
+  </tr>
+  <tr>
+    <td><a id="369" name="369">369</a></td>
+    <td class="esq"><u>MONTANTE DO SERVIÇO</u> <p>Importância do serviço a lançar no
+    extracto.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>MNT-SERV</td>
+  </tr>
+  <tr>
+    <td><a id="370" name="370">370</a></td>
+    <td class="esq"><u>GESTÃO DE TERMINAL</u> <p>Código indicativo do conjunto de dados
+    enviados no registo do Ficheiro Terminais. </p>
+      <p>&nbsp;&nbsp; 01 - Inserção CA<br />
+    &nbsp;&nbsp; 02 - Inserção TPA<br />
+    &nbsp;&nbsp; 03 - Alteração estado Func.<br />
+    &nbsp;&nbsp; 04 - Início contrato de Represent. Cartão<br />
+    &nbsp;&nbsp; 05 - Remessa cartões superv/oper.<br />
+    &nbsp;&nbsp; 06 - Alterações CA<br />
+    &nbsp;&nbsp; 07 - Alterações TPA<br />
+    &nbsp;&nbsp; 08 - Alteração contrato Repr. Cartão<br />
+    &nbsp;&nbsp; 09 - Suspensão contrato Repr. Cartão<br />
+    &nbsp;&nbsp; 10 - Abate conta supervisor<br />
+    &nbsp;&nbsp; 11 - Carregamento de chaves<br />
+    &nbsp;&nbsp; 12 - Alterações PINPAD<br />
+    &nbsp;&nbsp; 13 - Suspensão contrato PINPAD<br />
+    &nbsp;&nbsp; 14 - Inserção de Comerciante<br />
+    &nbsp;&nbsp; 15 - Alterações ao Comerciante<br />
+    &nbsp;&nbsp; 16 - Abate de Comerciante<br />
+    &nbsp;&nbsp; 17 - Inserção de Estabelecimento<br />
+    &nbsp;&nbsp; 18 - Alterações ao Estabelecimento<br />
+    &nbsp;&nbsp; 19 - Abate de Estabelecimento<br>
+    &nbsp;&nbsp; 20 - Inserção de Acordo<br>
+    &nbsp;&nbsp; 21 - Alteração de Acordo<br>
+    &nbsp;&nbsp; 22 - Inserção de Acordo Padrão<br>
+    &nbsp;&nbsp; 23 - Alteração de Acordo Padrão<br>
+    &nbsp;&nbsp; 24 - Inserção de dados operacionais<br>
+    &nbsp;&nbsp; 25 - Alteração de dados operacionais<br>
+    &nbsp;&nbsp; 26 - Abate de Acordo<br>
+      &nbsp;&nbsp; 27 - Abate de Acordo Padrão<br>
+      &nbsp;&nbsp; 28 - Abate de dados operacionais<br />
+    &nbsp;&nbsp; 50 - ESPECIAL - Controlo carreg. CA<br>
+    &nbsp;&nbsp; 99 - Versão base</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>GESTRM</td>
+  </tr>
+  <tr>
+    <td><a id="371" name="371">371</a></td>
+    <td class="esq"><u>ESTADOS DE FUNCIONAMENTO</u> <p>Indica o estado de funcionamento
+    existente no Sistema Multibanco para um dado Terminal.</p>
+    <p>Valores possíveis:<br />
+    &nbsp;&nbsp;&nbsp; &nbsp; 00 - CA - Por inicializar<br />
+    &nbsp;&nbsp;&nbsp; &nbsp; 02 - CA - Em funcionamento<br />
+    &nbsp; &nbsp; &nbsp; 04 - CA - Fora de Serviço<br />
+    &nbsp;&nbsp;&nbsp; &nbsp; 05 - CA - Em supervisão<br />
+    &nbsp; &nbsp; &nbsp; 11 - TPA - PINPAD POR ATRIBUIR<br />
+    &nbsp;&nbsp;&nbsp; &nbsp; 12 - TPA - Em funcionamento<br />
+    &nbsp;&nbsp;&nbsp; &nbsp; 18 - TPA - Func. suspenso (Banco)<br />
+    &nbsp; &nbsp; &nbsp; 19 - TPA - Func. suspenso (Período Encerrado)<br />
+    &nbsp;&nbsp;&nbsp; &nbsp; 21 - PINPAD carregado com chave<br />
+    &nbsp;&nbsp;&nbsp; &nbsp; 22 - PINPAD em uso<br />
+    &nbsp;&nbsp;&nbsp; &nbsp; 23 - PINPAD funcionamento susp.</p>
+    <p>No caso do ficheiro ETRM, a tabela usada para os valores possíveis deste campo sofre a
+    seguinte alteração:<br />
+    &nbsp;&nbsp;&nbsp; &nbsp; 00 - Campo não aplicável no registo em causa<br />
+    &nbsp; &nbsp;&nbsp;&nbsp; 01 - CA - Por inicializar</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>FUNCION</td>
+  </tr>
+  <tr>
+    <td><a id="372" name="372">372</a></td>
+    <td class="esq"><u>CÓDIGO DE TARIFA</u> <p>Código do tipo de tarifa a aplicar ao
+    Comerciante quando aceita uma compra com cartões do Gestor Financeiro.</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>COD-TAR</td>
+  </tr>
+  <tr>
+    <td><a id="373" name="373">373</a></td>
+    <td class="esq"><u>DATA DO ESTADO DE FUNCIONAMENTO</u> <p>Data associada ao estado de
+    funcionamento.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATAFUNC</td>
+  </tr>
+  <tr>
+    <td><a id="374" name="374">374</a></td>
+    <td class="esq"><u>NÚMERO DE PESSOA COLECTIVA DO PROPRIETÁRIO</u> <p>Número de Pessoa
+    Colectiva da empresa que adquiriu e colocou o terminal na rede. No caso de ser o
+    comerciante (ou o Banco) é preenchido a zeros.<br />
+    <br />
+    Valores possíveis:<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; UNICRE - 500282941</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NPCPROP</td>
+  </tr>
+  <tr>
+    <td><a id="375" name="375">375</a></td>
+    <td class="esq"><u>NÚMERO PESSOA COLECTIVA DO COMERCIANTE</u> <p>Número de Pessoa
+    Colectiva do Comerciante ou Empresa.</td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NPCCOM</td>
+  </tr>
+  <tr>
+    <td><a id="376" name="376">376</a></td>
+    <td class="esq"><u>NOME COMERCIANTE</u> <p>Nome do Comerciante (ou empresa) onde serão
+    instalados terminais. No caso de vir associado ao pedido de cartões de supervisão, será
+    o titular da conta associada.</td>
+    <td class="dta">40</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>NOMECOM</td>
+  </tr>
+  <tr>
+    <td><a id="377" name="377">377</a></td>
+    <td class="esq"><u>NÚMERO PESSOA COLECTIVA DO REPRESENTANTE</u> <p>Número de Pessoa
+    Colectiva da organização ou empresa representante de cartões que efectuou um contrato
+    com o comerciante do terminal.</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="esq" colspan="2">Valores possíveis:</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; UNICRE:</td>
+        <td class="esq">500292841</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; CREDIFLASH:</td>
+        <td class="esq">971358591</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; BCP:</td>
+        <td class="esq">501525882</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; SHELL:</td>
+        <td class="esq">500246963</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; BP:</td>
+        <td class="esq">500068186</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; ESSO:</td>
+        <td class="esq">500099804</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; TOTAL:</td>
+        <td class="esq">501810480</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; CEPSA:</td>
+        <td class="esq">500530295</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; MOBIL:</td>
+        <td class="esq">500194670</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; REPSOL:</td>
+        <td class="esq">501348891</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; UNIFINA:</td>
+        <td class="esq">502933577</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; PÃO DE AÇÚCAR:&nbsp; </td>
+        <td class="esq">502607920</td>
+      </tr>
+      <tr>
+        <td class="esq">&nbsp;&nbsp;&nbsp; AMEX:</td>
+        <td class="esq">980048249</td>
+      </tr>
+    </table>
+    </td>
+    <td class="dta">9</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NPCREP</td>
+  </tr>
+  <tr>
+    <td><a id="378" name="378">378</a></td>
+    <td class="esq"><u>ÚLTIMO NÚMERO CARTÃO INFORMADO</u> <p>Último número de cartão
+    produzido para o estabelecimento em questão depois da produção pedida se ter realizado
+    (poderá ser cartão operador ou supervisor conforme preenchimento do campo <a
+    href="campos4.htm#379">379</a>).</td>
+    <td class="dta">3</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>ULTNCAR</td>
+  </tr>
+  <tr>
+    <td><a id="379" name="379">379</a></td>
+    <td class="esq"><u>TOTAL DE CARTÕES TPA</u> <p>Total de cartões pedidos para o
+    estabelecimento com TPA. Poderão ser cartões de operador ou de supervisor.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOTCARTPA</td>
+  </tr>
+  <tr>
+    <td><a id="380" name="380">380</a></td>
+    <td class="esq"><u>DATA PROCESSAMENTO</u> <p>Data em que foram inseridos os eventos
+    (pedido produção de cartões superv./oper.; ou inserção do acordo).</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DATAPROC</td>
+  </tr>
+  <tr>
+    <td><a id="381" name="381">381</a></td>
+    <td class="esq"><u>DENOMINAÇÃO DA NOTA</u> <p>Denominação das notas carregadas no
+    cacifo em contos, ou em euros.<br />
+    &nbsp;&nbsp;&nbsp; (ex.: 1.000$00 = 01; 5 euros = 05)</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>DENOMIN</td>
+  </tr>
+  <tr>
+    <td><a id="382" name="382">382</a></td>
+    <td class="esq"><u>TOTAL DE NOTAS CARREGADAS</u> <p>Número de notas carregadas no cacifo
+    tal como o supervisor do CA informou na operação de supervisão.<br />
+    &nbsp;&nbsp;&nbsp; (ex.: 2000 = 1000$00 x 2000 = 2.000.00$00)</td>
+    <td class="dta">4</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOTCARR</td>
+  </tr>
+  <tr>
+    <td><a id="383" name="383">383</a></td>
+    <td class="esq"><u>TOTAL DE RECEBIDOS</u> <p>Número de registos de detalhe enviados e
+    recebidos pela SIBS.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOTREC</td>
+  </tr>
+  <tr>
+    <td><a id="384" name="384">384</a></td>
+    <td class="esq"><u>TOTAL DE TRATADOS</u> <p>Número de registos de detalhe tratados pela
+    SIBS e sem erros. No caso dos campos <a href="campos4.htm#383">383</a> e 384 serem iguais,
+    significa que o Ficheiro original não teve erros.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>TOTRAT</td>
+  </tr>
+  <tr>
+    <td><a id="385" name="385">385</a></td>
+    <td class="esq"><u>RENOVAÇÕES</u> <p>Número de renovações que já foram efectuadas.
+    Se preenchido com &quot;1&quot;, significa que o cartão vai iniciar o seu 2º período de
+    actividade; se &quot;2&quot;, vai iniciar o seu 3º período de actividade. O campo não
+    pode assumir mais valores. No fim deste 3º período expira obrigatoriamente.</td>
+    <td class="dta">1</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>RENOV</td>
+  </tr>
+  <tr>
+    <td><a id="386" name="386">386</a></td>
+    <td class="esq"><u>TOTAL DE CARTÕES</u> <p>Número total de cartões considerados como
+    afectos ao Banco e incluídos no ficheiro <a href="../mglobal/l-iii/ecst.htm"
+    target="main">ECST</a>. Considera os cartões cuja situação é diferente de OB.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>TOTALCAR</td>
+  </tr>
+  <tr>
+    <td><a id="387" name="387">387</a></td>
+    <td class="esq"><u>TOTAL DE CARTÕES EM LN</u><p>Número total de cartões considerados em
+    Lista Negra. Consideram-se os cartões cuja situação (<a href="campos2.htm#161">161</a>)
+    = 06, 0A, 0B.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>TOTCARLN</td>
+  </tr>
+  <tr>
+    <td><a id="388" name="388">388</a></td>
+    <td class="esq"><u>PARES DE MENSAGENS</u> <p>O campo é preenchido com o número de
+    mensagens (pedido/resposta) entre o terminal e a SIBS necessário à operação de
+    serviço especial e que deverá ser considerado para a rubrica de Tarifário G7.2.</td>
+    <td class="dta">2</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>PARMSG</td>
+  </tr>
+  <tr>
+    <td><a id="389" name="389">389</a></td>
+    <td class="esq"><u>CÓDIGO SERVIÇO ESPECIAL (BANCOS)</u> <p>Trata-se de um Código
+    atribuído a cada Serviço Especial desenvolvido para o Banco. A sua codificação será
+    indicada caso a caso e para o Banco a quem interessar (ex.: Pedido de NIB-AA)</td>
+    <td class="dta">2</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>CODSE</td>
+  </tr>
+  <tr>
+    <td><a id="390" name="390">390</a></td>
+    <td class="esq"><u>INDICADOR INF. LISTA NEGRA AOS REPRESENTANTES</u> <p>Trata-se de um
+    código que indica se a inserção ou alteração de dados de Lista Negra de um cartão
+    pertencente a uma família de cartões internacionais, deve ser informada aos
+    representantes respectivos.</p>
+    <p>&nbsp;&nbsp; 0 - não informa<br />
+    &nbsp;&nbsp; 1 - informa Repr. Nacional<br />
+    &nbsp;&nbsp; 2 - informa Repr. Nacional e Internacional<br>
+    &nbsp;&nbsp; 4 - informa Repr. Internacional</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>COMREP</td>
+  </tr>
+  <tr>
+    <td><a id="391" name="391">391</a></td>
+    <td class="esq"><u>MONTANTE DA TARIFA</u> <p>Importância da tarifa quando é
+    automaticamente aplicada pelo sistema.</td>
+    <td class="dta">13</td>
+    <td>N</td>
+    <td>11 int.<br />
+    2 dec.</td>
+    <td>MNT-TAR</td>
+  </tr>
+  <tr>
+    <td><a id="392" name="392">392</a></td>
+    <td class="esq"><u>NÚMERO DO EFEITO</u> <p>Identificação do Efeito, é composto por 4
+    sub-campos:&nbsp;</p>
+    <p><em>Código Banco tomador(4) + Código Balcão(4) + Número do Efeito(11) + Cheque
+    Dígito(2).</em></td>
+    <td class="dta">21</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUMEFEITO</td>
+  </tr>
+  <tr>
+    <td><a id="393" name="393">393</a></td>
+    <td class="esq"><u>TOTAL DE DESPESAS</u> <p>Total de despesas do cliente durante o
+    período.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>TOT-DESP</td>
+  </tr>
+  <tr>
+    <td><a id="394" name="394">394</a></td>
+    <td class="esq"><u>TOTAL DE PAGAMENTOS</u> <p>Total de pagamentos do cliente durante o
+    período.</td>
+    <td class="dta">16</td>
+    <td>N</td>
+    <td>14 int.<br />
+    2 dec.</td>
+    <td>TOT-PAG</td>
+  </tr>
+  <tr>
+    <td><a id="395" name="395">395</a></td>
+    <td class="esq"><u>DÉBITO OU CRÉDITO</u> <p>Indica se o totalizador é a débito ou a
+    crédito.</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>DEB_CRE</td>
+  </tr>
+  <tr>
+    <td><a id="396" name="396">396</a></td>
+    <td class="esq"><u>MONTANTE</u> <p>Montante do totalizador.</td>
+    <td class="dta">15</td>
+    <td>N</td>
+    <td>9(13)V99</td>
+    <td>MONTANTE</td>
+  </tr>
+  <tr>
+    <td><a id="397" name="397">397</a></td>
+    <td class="esq"><u>ORIGEM</u> <p>Código que identifica a origem do lançamento da
+    compensação:</p>
+    <p>&nbsp;&nbsp; 1 - Débitos na Rede MB<br />
+    &nbsp;&nbsp; 2 - Pagamento de Serviços/Compras<br />
+    &nbsp;&nbsp; 3 - PSC<br />
+    &nbsp;&nbsp; 4 - Emissão de Extractos<br />
+    &nbsp;&nbsp; 5 - Unicre<br />
+    &nbsp;&nbsp; 6 - Base II<br />
+    &nbsp;&nbsp; 7 - Pagamentos</td>
+    <td class="dta">1</td>
+    <td>A</td>
+    <td>&nbsp;</td>
+    <td>ORIGEM</td>
+  </tr>
+  <tr>
+    <td><a id="398" name="398">398</a></td>
+    <td class="esq"><u>DATA DE PROCESSAMENTO</u> <p>Data de processamento do ficheiro.</td>
+    <td class="dta">8</td>
+    <td>N</td>
+    <td>AAAAMMDD</td>
+    <td>DTA-PRO</td>
+  </tr>
+  <tr>
+    <td><a id="399" name="399">399</a></td>
+    <td class="esq"><u>NÚMERO DE OPERAÇÕES</u> <p>Número de operações realizadas.</td>
+    <td class="dta">6</td>
+    <td>N</td>
+    <td>&nbsp;</td>
+    <td>NUM-OPE</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>
