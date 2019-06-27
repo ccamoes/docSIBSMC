@@ -1,0 +1,1048 @@
+VDR       	 N. UNICRE        	  CADEIA    	 NOME                                    	                                                  
+2278281	0	9113424	 CONTINENTE                              	                                                  
+2278299	0	9113440	 MODELO                                  	                                                  
+2278307	0	9113697	 SPORTZONE                               	                                                  
+2278315	0	9113499	 VOBIS                                   	                                                  
+2278323	0	9113465	 WORTEN                                  	                                                  
+2282317	7261114	9113697	 SPORTZONE ALBUFEIRA                     	                                                  
+2282325	7261126	9113697	 SPORTZONE ALMADA                        	                                                  
+2282333	7261105	9113697	 SPORTZONE AVEIRO                        	                                                  
+2282341	7261120	9113697	 SPORTZONE BARREIRO                      	                                                  
+2282358	7261111	9113697	 SPORTZONE BEJA                          	                                                  
+2282366	7261119	9113697	 SPORTZONE BRAGA II                      	                                                  
+2282374	7261137	9113697	 SPORTZONE BRAGANCA                      	                                                  
+2282382	7261108	9113697	 SPORTZONE CASCAIS                       	                                                  
+2282390	7261124	9113697	 SPORTZONE CHIADO II                     	                                                  
+2282408	7261102	9113697	 SPORTZONE COLOMBO                       	                                                  
+2282416	7261122	9113697	 SPORTZONE FARO                          	                                                  
+2282424	7261128	9113697	 SPORTZONE GAIA II                       	                                                  
+2282432	7261116	9113697	 SPORTZONE GUIA                          	                                                  
+2282440	7261117	9113697	 SPORTZONE LEIRIA                        	                                                  
+2282457	7261115	9113697	 SPORTZONE MADEIRA SHOP                  	                                                  
+2282465	7261103	9113697	 SPORTZONE MAIA                          	                                                  
+2282473	7261123	9113697	 SPORTZONE MARCO                         	                                                  
+2282481	2222121	9113697	 SPORTZONE MEM MARTINS                   	                                                  
+2282499	7261138	9113697	 SPORTZONE MINHO CENTER                  	                                                  
+2282507	7261130	9113697	 SPORTZONE MONTIJO                       	                                                  
+2282515	7261106	9113697	 SPORTZONE NORTE SHOP                    	                                                  
+2282523	7261118	9113697	 SPORTZONE OEIRAS                        	                                                  
+2282531	1772011	9113697	 SPORTZONE PONTA DELGADA                 	                                                  
+2282549	7261125	9113697	 SPORTZONE PORTIMAO                      	                                                  
+2282556	7261131	9113697	 SPORTZONE RIO TINTO                     	                                                  
+2282564	7261112	9113697	 SPORTZONE SEIXAL                        	                                                  
+2282572	7261109	9113697	 SPORTZONE VASCO DA GAMA                 	                                                  
+2282580	7261110	9113697	 SPORTZONE VIA CATARINA                  	                                                  
+2282598	7261134	9113697	 SPORTZONE VIANA                         	                                                  
+2282606	7261141	9113697	 SPORTZONE ARRABIDA                      	                                                  
+2282614	7261142	9113697	 SPORTZONE VILA REAL                     	                                                  
+2282622	7261143	9113697	 SPORTZONE EIRAS                         	                                                  
+2282630	7261145	9113697	 SPORTZONE STD COIMBRA                   	                                                  
+2282648	7261144	9113697	 SPORTZONE FORUM MADEIRA                 	                                                  
+2282655	7261146	9113697	 SPORTZONE ANTAS                         	                                                  
+2282663	7261148	9113697	 SPORTZONE FLORESTA CENTER               	                                                  
+2282671	7261151	9113697	 SPORTZONE TORRES SHOPPING               	                                                  
+2282689	7261192	9113697	 SPORTZONE RIA SHOPP OLHAO               	                                                  
+2282697	2469601	9113697	 SPORTZONE DOLCE VITA TEJO               	                                                  
+2282705	2469602	9113697	 SPORTZONE TAVIRA                        	                                                  
+2282713	7261191	9113697	 SPORTZONE SPC OLIVAIS                   	                                                  
+2282721	7261152	9113697	 SPORTZONE AMOREIRAS                     	                                                  
+2282739	7261149	9113697	 SPORTZONE VISEU                         	                                                  
+2282747	7261150	9113697	 SPORTZONE FORUM VISEU                   	                                                  
+2282754	7261154	9113697	 SPORTZONE COVILHA SERRA SPG             	                                                  
+2282762	0	9113697	 SPORTZONE PORTO ALTO                    	                                                  
+2282770	7261153	9113697	 SPORTZONE LOURES SPG                    	                                                  
+2282788	7261155	9113697	 SPORTZONE COIMBRA                       	                                                  
+2282796	7261156	9113697	 SPORTZONE PORTO ALTO                    	                                                  
+2282804	7261158	9113697	 SPORTZONE RIO SUL                       	                                                  
+2282812	7261160	9113697	 SPORTZONE PACOS FERREIRA                	                                                  
+2282820	7261159	9113697	 SPORTZONE AVEIRO (CARREFOUR)            	                                                  
+2282838	7261161	9113697	 SPORTZONE GUIMARAES                     	                                                  
+2282846	7261162	9113697	 SPORTZONE SANTAREM                      	                                                  
+2282853	7261163	9113697	 SPORTZONE FIGUEIRA DA FOZ               	                                                  
+2282861	7261164	9113697	 SPORTZONE OVAR                          	                                                  
+2282879	7261165	9113697	 SPORTZONE AMADORA                       	                                                  
+2282887	0	9113697	 SPORTZONE BRAGA RET CENTER              	                                                  
+2282895	7261166	9113697	 SPORTZONE BRAGA RET CENTER              	                                                  
+2282903	7261167	9113697	 SPORTZONE RET PRQ CHAVES                	                                                  
+2282911	7261168	9113697	 SPORTZONE S  J  MADEIRA                 	                                                  
+2282929	7261169	9113697	 SPORTZONE TORRES VEDRAS                 	                                                  
+2282937	7261170	9113697	 SPORTZONE ALVERCA                       	                                                  
+2282945	7261171	9113697	 SPORTZONE CASTELO BRANCO                	                                                  
+2282952	7261172	9113697	 SPORTZONE DOLCE VITA FUNCHAL            	                                                  
+2282960	7261174	9113697	 SPORTZONE TOMAR                         	                                                  
+2282978	7261175	9113697	 SPORTZONE VISEU PALACIO GELO            	                                                  
+2282986	7261176	9113697	 SPORTZONE SANTAREM II                   	                                                  
+2282994	7261182	9113697	 SPORTZONE IKEA MATOSINHOS               	                                                  
+2283000	7261184	9113697	 SPORTZONE ABRANTES RP                   	                                                  
+2283018	7261186	9113697	 SPORTZONE FORUM BARREIRO                	                                                  
+2283026	7261181	9113697	 SPORTZONE VIVACI GUARDA                 	                                                  
+2283034	7261187	9113697	 SPORTZONE VIVACI CLDS RAINHA            	                                                  
+2283042	7261189	9113697	 SPORTZONE PORTIMAO RC                   	                                                  
+2283059	7261179	9113697	 SPORTZONE VALONGO                       	                                                  
+2283067	2469603	9113697	 SPORTZONE MAIA VIVACI                   	                                                  
+2283075	2469604	9113697	 SPORTZONE ESP.GUIMARAES                 	                                                  
+2283083	2469606	9113697	 SPORTZONE MAIA JARDIM                   	                                                  
+2283091	2469607	9113697	 SPORTZONE FREEP ALCOCHETE               	                                                  
+2283109	2221255	9113697	 SPORTZONE NA COLOMBO                    	                                                  
+2283117	9098404	9113465	 ESTEVAO NEVES CANCELA                   	                                                  
+2283125	9098407	9113465	 WORTEN MADEIRA SHOP                     	                                                  
+2283133	9098402	9113465	 ESTEVAO NEVES RIBEIRA BRAVA             	                                                  
+2283141	9098408	9113465	 ESTEVAO NEVES SANTA LUZIA               	                                                  
+2283158	9098412	9113465	 WORTEN CANICO                           	                                                  
+2283166	7654021	9113465	 WORTEN MATOSINHOS                       	                                                  
+2283174	7654031	9113465	 WORTEN S J MADEIRA                      	                                                  
+2283182	7654001	9113465	 WORTEN COLOMBO                          	                                                  
+2283190	7654054	9113465	 WORTEN MONTIJO                          	                                                  
+2283208	222905	9113465	 WORTEN TORRES NOVAS                     	                                                  
+2283216	7654009	9113465	 WORTEN TORRES VEDRAS                    	                                                  
+2283224	7654022	9113465	 WORTEN VASCO DA GAMA                    	                                                  
+2283232	7654048	9113465	 WORTEN VIA CATARINA                     	                                                  
+2283240	7654012	9113465	 WORTEN VILA FRANCA XIRA                 	                                                  
+2283257	7654035	9113465	 WORTEN VILA REAL                        	                                                  
+2283265	7654016	9113465	 WORTEN AGUEDA                           	                                                  
+2283273	7654041	9113465	 WORTEN ALBUFEIRA                        	                                                  
+2283281	7654037	9113465	 WORTEN AMADORA                          	                                                  
+2283299	7654010	9113465	 WORTEN AMARANTE                         	                                                  
+2283307	7654032	9113465	 WORTEN BARREIRO                         	                                                  
+2283315	7654028	9113465	 WORTEN BEJA                             	                                                  
+2283323	7654019	9113465	 WORTEN BRAGA                            	                                                  
+2283331	7654003	9113465	 WORTEN BRAGANCA                         	                                                  
+2283349	7654023	9113465	 WORTEN CASCAIS                          	                                                  
+2283356	7654013	9113465	 WORTEN CASTELO BRANCO                   	                                                  
+2283364	222922	9113465	 WORTEN CHAVES                           	                                                  
+2283372	7654017	9113465	 WORTEN COIMBRASHOPP                     	                                                  
+2283380	7654042	9113465	 WORTEN GUIA                             	                                                  
+2283398	7654006	9113465	 WORTEN GUARDA                           	                                                  
+2283406	7654025	9113465	 WORTEN FANZERES                         	                                                  
+2283414	7654024	9113465	 WORTEN FARO II                          	                                                  
+2283422	7654004	9113465	 WORTEN GAIASHOPPING                     	                                                  
+2283430	2222930	9113465	 WORTEN RIO TINTO                        	                                                  
+2283448	7654038	9113465	 WORTEN GUIMARAES                        	                                                  
+2283455	7654049	9113465	 WORTEN VISEU                            	                                                  
+2283463	7654044	9113465	 WORTEN LAGOS                            	                                                  
+2283471	7654040	9113465	 WORTEN LEIRIA                           	                                                  
+2283489	7654020	9113465	 WORTEN LOUREL                           	                                                  
+2283497	7654007	9113465	 WORTEN MAFRA                            	                                                  
+2283505	7654029	9113465	 WORTEN MAIA                             	                                                  
+2283513	7654051	9113465	 WORTEN MARCO DE CANAVESES               	                                                  
+2283521	7654047	9113465	 WORTEN MOITA                            	                                                  
+2283539	7654027	9113465	 WORTEN OLHAO                            	                                                  
+2283547	7654052	9113465	 WORTEN OLIVEIRA AZEMEIS                 	                                                  
+2283554	222944	9113465	 WORTEN PACOS FERREIRA                   	                                                  
+2283562	7654039	9113465	 WORTEN PAREDES                          	                                                  
+2283570	7654043	9113465	 WORTEN PINHAL NOVO                      	                                                  
+2283588	7654018	9113465	 WORTEN PORTIMAO                         	                                                  
+2283596	7654045	9113465	 WORTEN POVOA VARZIM                     	                                                  
+2283604	7654036	9113465	 WORTEN QUINTA CONDE                     	                                                  
+2283612	7654033	9113465	 WORTEN SANTAREM                         	                                                  
+2283620	7654030	9113465	 WORTEN SEIXAL                           	                                                  
+2283638	7654053	9113465	 WORTEN SILVES                           	                                                  
+2283646	7654008	9113465	 WORTEN TAPADA MERCES                    	                                                  
+2283653	7654055	9113465	 WORTEN FELGUEIRAS                       	                                                  
+2283661	2222955	9113465	 WORTEN ARRABIDA SHOPPING NA             	                                                  
+2283679	7654026	9113465	 WORTEN VALBOM                           	                                                  
+2283687	999957	9113465	 WORTEN VALE CAMBRA                      	                                                  
+2283695	7654059	9113465	 WORTEN CARTAXO                          	                                                  
+2283703	7654060	9113465	 WORTEN ERMESINDE                        	                                                  
+2283711	7654015	9113465	 WORTEN VILA CONDE                       	                                                  
+2283729	7654063	9113465	 WORTEN VIANA DO CASTELO                 	                                                  
+2283737	7654064	9113465	 WORTEN ELVAS                            	                                                  
+2283745	7654065	9113465	 WORTEN PORTO ALTO                       	                                                  
+2283752	7654066	9113465	 WORTEN SANTO TIRSO                      	                                                  
+2283760	7654067	9113465	 WORTEN GULPILHARES                      	                                                  
+2283778	7654068	9113465	 WORTEN EIRAS - COIMBRA                  	                                                  
+2283786	7654069	9113465	 WORTEN OVAR                             	                                                  
+2283794	7654070	9113465	 WORTEN STADIUM COIMBRA                  	                                                  
+2283802	7654072	9113465	 WORTEN ANTAS                            	                                                  
+2283810	7654073	9113465	 WORTEN PONTE DE SOR                     	                                                  
+2283828	7654074	9113465	 WORTEN MARINHA GRANDE                   	                                                  
+2283836	7654075	9113465	 WORTEN LOURESHOPPING                    	                                                  
+2283844	7654078	9113465	 WORTEN COVILHA                          	                                                  
+2283851	7654079	9113465	 WORTEN ESPOSENDE                        	                                                  
+2283869	7654080	9113465	 WORTEN ALMEIRIM                         	                                                  
+2283877	7654081	9113465	 WORTEN RECHOUSA                         	                                                  
+2283885	7654082	9113465	 WORTEN FAFE                             	                                                  
+2283893	7654083	9113465	 WORTEN ARROJA                           	                                                  
+2283901	7654094	9113465	 WORTEN PORTALEGRE                       	                                                  
+2283919	7654095	9113465	 WORTEN ALCOBACA                         	                                                  
+2283927	7654099	9113465	 WORTEN ALHOS VEDROS                     	                                                  
+2283935	7654096	9113465	 WORTEN LOUSADA                          	                                                  
+2283943	222983	9113465	 WORTEN ABRANTES                         	                                                  
+2283950	999984	9113465	 WORTEN TROFA                            	                                                  
+2283968	222985	9113465	 WORTEN VALONGO                          	                                                  
+2283976	999986	9113465	 WORTEN CANTANHEDE                       	                                                  
+2283984	999987	9113465	 WORTEN GRANDOLA                         	                                                  
+2283992	999988	9113465	 WORTEN REGUENGOS                        	                                                  
+2284008	222989	9113465	 WORTEN LAGOA                            	                                                  
+2284016	999991	9113465	 WORTEN NAZARE                           	                                                  
+2284024	999992	9113465	 WORTEN OVAR                             	                                                  
+2284032	0	9113465	 WORTEN MATOSINHOS NA                    	                                                  
+2284040	999994	9113465	 WORTEN CALDAS RAINHA                    	                                                  
+2284057	999996	9113465	 WORTEN RET PRQ CHAVES                   	                                                  
+2284065	999997	9113465	 WORTEN PONTE DE LIMA                    	                                                  
+2284073	999998	9113465	 WORTEN MONCAO                           	                                                  
+2284081	992000	9113465	 WORTEN TORRES NOVAS R.PRK               	                                                  
+2284099	992001	9113465	 WORTEN ALVERCA                          	                                                  
+2284107	992002	9113465	 WORTEN FOR.CASTELO BRANCO               	                                                  
+2284115	992003	9113465	 WORTEN ESTREMOZ                         	                                                  
+2284123	992008	9113465	 WORTEN S FELIX MARINHA                  	                                                  
+2284131	992009	9113465	 WORTEN SETUBAL                          	                                                  
+2284149	992016	9113465	 WORTEN DV FUNCHAL                       	                                                  
+2284156	992017	9113465	 WORTEN OUREM                            	                                                  
+2284164	992020	9113465	 WORTEN TORRES NOVAS BP                  	                                                  
+2284172	222021	9113465	 WORTEN GAIA MGS                         	                                                  
+2284180	222022	9113465	 WORTEN VISEU RETAIL PARK                	                                                  
+2284198	222023	9113465	 WORTEN OEIRAS                           	                                                  
+2284206	222024	9113465	 WORTEN PORTIMAO RET PARK                	                                                  
+2284214	222025	9113465	 WORTEN TELHEIRAS                        	                                                  
+2284222	992026	9113465	 WORTEN AVEIRO SHOP                      	                                                  
+2284230	222027	9113465	 WORTEN VALE SOUSA                       	                                                  
+2284248	222028	9113465	 WORTEN BRAGA                            	                                                  
+2284255	222029	9113465	 WORTEN LOURES                           	                                                  
+2284263	222030	9113465	 WORTEN MONTIJO MGS                      	                                                  
+2284271	992031	9113465	 WORTEN FORUM COIMBRA                    	                                                  
+2284289	992032	9113465	 WORTEN TOMAR                            	                                                  
+2284297	992035	9113465	 WORTEN FUNDAO                           	                                                  
+2284305	992036	9113465	 WORTEN ARRABIDA SHOPP MEGAST            	                                                  
+2284313	992037	9113465	 WORTEN MACHICO                          	                                                  
+2284321	992038	9113465	 WORTEN LOULE                            	                                                  
+2284339	992039	9113465	 WORTEN LOUSA                            	                                                  
+2284347	992040	9113465	 WORTEN FAMALICAO                        	                                                  
+2284354	992043	9113465	 WORTEN VALONGO                          	                                                  
+2284362	992047	9113465	 WORTEN BOMBARRAL                        	                                                  
+2284370	992049	9113465	 WORTEN ABRANTES RP                      	                                                  
+2284388	992050	9113465	 WORTEN FORUM BARREIRO                   	                                                  
+2284396	992054	9113465	 WORTEN VIVACI GUARDA                    	                                                  
+2284404	992056	9113465	 WORTEN OEIRAS EX-CARREF                 	                                                  
+2284412	992059	9113465	 WORTEN PALMELA                          	                                                  
+2284420	992060	9113465	 WORTEN MANGUALDE                        	                                                  
+2284438	992063	9113465	 WORTEN FORUM MONTIJO                    	                                                  
+2284446	992064	9113465	 WORTEN LOURES                           	                                                  
+2284453	992065	9113465	 WORTEN TELHEIRAS                        	                                                  
+2284461	992066	9113465	 WORTEN ARRABIDA                         	                                                  
+2284479	222067	9113465	 WORTEN NA OEIRAS                        	                                                  
+2284487	992068	9113465	 WORTEN S J TALHA                        	                                                  
+2284495	992069	9113465	 WORTEN MOZELOS                          	                                                  
+2284503	992070	9113465	 WORTEN AVINTES                          	                                                  
+2284511	992072	9113465	 WORTEN PORTIMAO RC                      	                                                  
+2284529	222073	9113465	 WORTEN NA PORTIMAO RC                   	                                                  
+2284537	222075	9113465	 WORTEN NA DOLCE VITA TEJO               	                                                  
+2284545	992076	9113465	 WORTEN DOLCE VITA TEJO                  	                                                  
+2284552	992078	9113465	 WORTEN TAVIRA                           	                                                  
+2284560	992080	9113465	 WORTEN SESIMBRA                         	                                                  
+2284578	992082	9113465	 WORTEN FERRARA PLAZA                    	                                                  
+2284586	992083	9113465	 WORTEN MEM MARTINS                      	                                                  
+2284594	992084	9113465	 WORTEN NA GUIMARAES                     	                                                  
+2284602	992086	9113465	 WORTEN MAIA VIVACI                      	                                                  
+2284610	992088	9113465	 WORTEN REGUA                            	                                                  
+2284628	222089	9113465	 WORTEN AVEIRO SHOP                      	                                                  
+2284636	992091	9113465	 WORTEN MAIA JARDIM                      	                                                  
+2284644	992093	9113465	 WORTEN LIXA                             	                                                  
+2284651	0	9113465	 WORTEN SITE                             	                                                  
+2284669	9999999999	9113481	 INSCO RIBEIRA GRANDE - WRT              	                                                  
+2284677	1772028	9113481	 INSCO ANGRA HEROISMO - WRT              	                                                  
+2284685	1772020	9113481	 INSCO HORTA - WORTEN                    	                                                  
+2284693	999999999	9113481	 INSCO LAGOA - WORTEN                    	                                                  
+2284701	1772001	9113481	 INSCO PONTA DELGADA - WRT               	                                                  
+2284719	1772023	9113481	 INSCO PRAIA VITORIA - WORTEN            	                                                  
+2284727	222876	9113705	 WORTEN MOBILE FERRARA PLAZA             	                                                  
+2284735	999877	9113705	 WORTEN MOBILE PORTALEGRE                	                                                  
+2284743	999878	9113705	 WORTEN MOBILE VISEU P.GELO              	                                                  
+2284750	999879	9113705	 WORTEN MOBILE GLICINIAS                 	                                                  
+2284768	1393809	9113705	 WORTEN MOBILE CO LEIRIA                 	                                                  
+2284776	999882	9113705	 WORTEN MOBILE COLOMBO                   	                                                  
+2284784	999883	9113705	 WORTEN MOBILE BRAGA PARQUE              	                                                  
+2284792	7654071	9113705	 WORTEN MOBILE STD COIMBRA               	                                                  
+2284800	7654084	9113705	 WORTEN MOBILE BEJA                      	                                                  
+2284818	7654092	9113705	 WORTEN MOBILE TORRES NOVAS              	                                                  
+2284826	7654091	9113705	 WORTEN MOBILE VISEU                     	                                                  
+2284834	7654086	9113705	 WORTEN MOBILE CASCAIS                   	                                                  
+2284842	7654087	9113705	 WORTEN MOBILE LEIRIA                    	                                                  
+2284859	7654089	9113705	 WORTEN MOBILE SEIXAL                    	                                                  
+2284867	7654085	9113705	 WORTEN MOBILE AMADORA                   	                                                  
+2284875	7654097	9113705	 WORTEN MOBILE GUIMARAES                 	                                                  
+2284883	7654088	9113705	 WORTEN MOBILE S J MADEIRA               	                                                  
+2284891	7654090	9113705	 WORTEN MOBILE VIANA                     	                                                  
+2284909	7654093	9113705	 WORTEN MOBILE NORTESHOPPING             	                                                  
+2284917	999897	9113705	 WORTEN MOBILE VILA REAL                 	                                                  
+2284925	999898	9113705	 WORTEN MOBILE CALDAS RAINHA             	                                                  
+2284933	999990	9113705	 WORTEN MOBILE PORTIMAO                  	                                                  
+2284941	999995	9113705	 WORTEN MOBILE VASCO GAMA                	                                                  
+2284958	992004	9113705	 WORTEN MOBILE ALBUFEIRA                 	                                                  
+2284966	992005	9113705	 WORTEN MOBILE OLHAO                     	                                                  
+2284974	992006	9113705	 WORTEN MOBILE TOMAR                     	                                                  
+2284982	992007	9113705	 WORTEN MOBILE MONTIJO II                	                                                  
+2284990	992013	9113705	 WORTEN MOBILE GUIA                      	                                                  
+2285005	992015	9113705	 WORTEN MOBILE LOULE                     	                                                  
+2285013	992019	9113705	 WORTEN MOBILE SANTAREM                  	                                                  
+2285021	992041	9113705	 WORTEN MOBILE GAIASHOPPING              	                                                  
+2285039	992042	9113705	 WORTEN MOBILE F AVEIR                   	                                                  
+2285047	992044	9113705	 WORTEN MOBILE VALONGO                   	                                                  
+2285054	992046	9113705	 WORTEN MOBILE AVEIRO                    	                                                  
+2285062	992051	9113705	 WORTEN MOBILE ALVERCA                   	                                                  
+2285070	992052	9113705	 WORTEN MOBILE FOR.ALMADA                	                                                  
+2285088	992053	9113705	 WORTEN MOBILE FOR.BARREIRO              	                                                  
+2285096	992055	9113705	 WORTEN MOBILE GARE ORIENTE              	                                                  
+2285104	992057	9113705	 WORTEN MOBILE LOURES                    	                                                  
+2285112	222061	9113705	 WORTEN MOBILE LOULE II                  	                                                  
+2285120	992062	9113705	 WORTEN MOBILE ABRANTES                  	                                                  
+2285138	992071	9113705	 WORTEN MOBILE EVORA                     	                                                  
+2285146	992074	9113705	 WORTEN MOBILE RIA SHOP OLHAO            	                                                  
+2285153	992077	9113705	 WORTEN MOBILE DOLCE VITA TEJO           	                                                  
+2285161	992079	9113705	 WORTEN MOBILE TAVIRA                    	                                                  
+2285179	992081	9113705	 WORTEN MOBILE CAIS SODRE                	                                                  
+2285187	992085	9113705	 WORTEN MOBILE ESP GUIMARAES             	                                                  
+2285195	992087	9113705	 WORTEN MOBILE MAIA VIVACI               	                                                  
+2285203	992090	9113705	 WORTEN MOBILE MARCOSHOP                 	                                                  
+2285211	992092	9113705	 WORTEN MOBILE MAIA JARDIM               	                                                  
+2285229	992048	9113473	 WORTEN GAMER AMADORA                    	                                                  
+2285237	992058	9113473	 WORTEN GAMER NORTE SHOPP                	                                                  
+2285245	222801	9113499	 VOBIS AVEIRO                            	                                                  
+2285252	999802	9113499	 VOBIS COLOMBO                           	                                                  
+2285260	222803	9113499	 VOBIS GAIA                              	                                                  
+2285278	999804	9113499	 VOBIS GUIA                              	                                                  
+2285286	999805	9113499	 VOBIS NORTE SHOPPING                    	                                                  
+2285294	999806	9113499	 VOBIS VASCO GAMA                        	                                                  
+2285302	999807	9113499	 VOBIS ALMADA                            	                                                  
+2285310	222808	9113499	 VOBIS MADEIRA SHOPPING                  	                                                  
+2285328	222809	9113499	 VOBIS PARQUE NASCENTE                   	                                                  
+2285336	222810	9113499	 VOBIS VIANA DO CASTELO                  	                                                  
+2285344	222811	9113499	 VOBIS BRAGANCA                          	                                                  
+2285351	999812	9113499	 VOBIS EIRAS-COIMBRA                     	                                                  
+2285369	222813	9113499	 VOBIS FORUM MADEIRA                     	                                                  
+2285377	222814	9113499	 VOBIS BRAGA PARQUE                      	                                                  
+2285385	999815	9113499	 VOBIS STADIUM COIMBRA                   	                                                  
+2285393	222816	9113499	 VOBIS ANTAS                             	                                                  
+2285401	222817	9113499	 VOBIS FLORESTA CENTER                   	                                                  
+2285419	999818	9113499	 VOBIS LOURES                            	                                                  
+2285427	222819	9113499	 VOBIS MONTIJO                           	                                                  
+2285435	999821	9113499	 VOBIS SEIXAL                            	                                                  
+2285443	0	9113499	 VOBIS SITE                              	                                                  
+2285450	222856	9113507	 INSCO PONTA DELGADA -VOBIS              	                                                  
+2285468	888001	9113424	 CONTINENTE MATOSINHOS                   	                                                  
+2285476	888002	9113424	 CONTINENTE AMADORA                      	                                                  
+2285484	888003	9113424	 CONTINENTE CASCAIS                      	                                                  
+2285492	888004	9113424	 CONTINENTE GAIA SHOPPING                	                                                  
+2285500	888005	9113424	 CONTINENTE LEIRIA                       	                                                  
+2285518	888006	9113424	 CONTINENTE COIMBRA SHOPP                	                                                  
+2285526	888007	9113424	 CONTINENTE SEIXAL                       	                                                  
+2285534	888008	9113424	 CONTINENTE GUIMARAES                    	                                                  
+2285542	888009	9113424	 CONTINENTE COLOMBO                      	                                                  
+2285559	888010	9113424	 CONTINENTE MAIA                         	                                                  
+2285567	888011	9113424	 CONTINENTE LOURES SHOPP                 	                                                  
+2285575	888012	9113424	 CONTINENTE VASCO GAMA                   	                                                  
+2285583	888013	9113424	 CONTINENTE GUIA                         	                                                  
+2285591	888014	9113424	 CONTINENTE ANTAS                        	                                                  
+2285609	888016	9113424	 CONTINENTE OVAR                         	                                                  
+2285617	888029	9113424	 CONTINENTE BRAGA R.CENTER               	                                                  
+2285625	888202	9113424	 CONTINENTE PORTIMAO                     	                                                  
+2285633	888203	9113424	 CONTINENTE VISEU                        	                                                  
+2285641	888204	9113424	 CONTINENTE VILA REAL                    	                                                  
+2285658	555207	9113424	 CONTINENTE BEJA                         	                                                  
+2285666	888209	9113424	 CONTINENTE VIANA                        	                                                  
+2285674	888210	9113424	 CONTINENTE S J MADEIRA                  	                                                  
+2285682	888212	9113424	 CONTINENTE COVILHA                      	                                                  
+2285690	555215	9113424	 CONTINENTE SANTAREM                     	                                                  
+2285708	888333	9113424	 CONTINENTE MAIA JARDIM                  	                                                  
+2285716	888439	9113424	 CONTINENTE MAFRA                        	                                                  
+2285724	888446	9113424	 CONTINENTE LOULE                        	                                                  
+2285732	888458	9113424	 CONTINENTE AVEIRO                       	                                                  
+2285740	888459	9113424	 CONTINENTE BRAGA                        	                                                  
+2285757	888460	9113424	 CONTINENTE GAIA                         	                                                  
+2285765	888461	9113424	 CONTINENTE LOURES                       	                                                  
+2285773	888462	9113424	 CONTINENTE MONTIJO                      	                                                  
+2285781	888463	9113424	 CONTINENTE OEIRAS                       	                                                  
+2285799	888464	9113424	 CONTINENTE TELHEIRAS                    	                                                  
+2285807	888465	9113424	 CONTINENTE FORUM COIMBRA                	                                                  
+2285815	888466	9113424	 CONTINENTE VALE DO SOUSA                	                                                  
+2285823	888467	9113424	 CONTINENTE PORTIMAO RET PARK            	                                                  
+2285831	888468	9113424	 CONTINENTE TORRES NOVAS                 	                                                  
+2285849	222471	9113424	 CONTINENTE VISEU RETAIL PARK            	                                                  
+2285856	888940	9113424	 CONTINENTE VALONGO                      	                                                  
+2285864	881051	9113424	 CONTINENTE TAVIRA                       	                                                  
+2285872	881077	9113424	 CONTINENTE OUTLET VISEU                 	                                                  
+2285880	881231	9113424	 CONTINENTE OTFREEP ALCOCHETE            	                                                  
+2285898	818001	9113424	 CONTINENTE MATOSINHOS                   	                                                  
+2285906	828002	9113424	 CONTINENTE AMADORA                      	                                                  
+2285914	818003	9113424	 CONTINENTE CASCAIS                      	                                                  
+2285922	818004	9113424	 CONTINENTE GAIA SHOPPING                	                                                  
+2285930	818005	9113424	 CONTINENTE LEIRIA                       	                                                  
+2285948	818006	9113424	 CONTINENTE COIMBRA SHOPPING             	                                                  
+2285955	818007	9113424	 CONTINENTE SEIXAL                       	                                                  
+2285963	818008	9113424	 CONTINENTE GUIMARAES                    	                                                  
+2285971	818009	9113424	 CONTINENTE COLOMBO                      	                                                  
+2285989	818010	9113424	 CONTINENTE MAIA                         	                                                  
+2285997	818011	9113424	 CONTINENTE LOURES SHOPPING              	                                                  
+2286003	818012	9113424	 CONTINENTE VASCO GAMA                   	                                                  
+2286011	818014	9113424	 CONTINENTE ANTAS                        	                                                  
+2286029	828016	9113424	 CONTINENTE OVAR                         	                                                  
+2286037	818203	9113424	 CONTINENTE VISEU                        	                                                  
+2286045	818204	9113424	 CONTINENTE VILA REAL                    	                                                  
+2286052	818209	9113424	 CONTINENTE VIANA                        	                                                  
+2286060	828212	9113424	 CONTINENTE COVILHA                      	                                                  
+2286078	818460	9113424	 CONTINENTE GAIA                         	                                                  
+2286086	828001	9113424	 CONTINENTE MATOSINHOS                   	                                                  
+2286094	828003	9113424	 CONTINENTE CASCAIS                      	                                                  
+2286102	828004	9113424	 CONTINENTE GAIA SHOPPING                	                                                  
+2286110	828006	9113424	 CONTINENTE COIMBRA SHOPPING             	                                                  
+2286128	828007	9113424	 CONTINENTE SEIXAL                       	                                                  
+2286136	828009	9113424	 CONTINENTE COLOMBO                      	                                                  
+2286144	828011	9113424	 CONTINENTE LOURES SHOPPING              	                                                  
+2286151	828203	9113424	 CONTINENTE VISEU                        	                                                  
+2286169	0	9113432	 CONTINENTE ON LINE MATOSINHOS           	                                                  
+2286177	0	9113432	 CONTINENTE ON LINE AMADORA              	                                                  
+2286185	0	9113432	 CONTINENTE ON LINE CASCAIS              	                                                  
+2286193	0	9113432	 CONTINENTE ON LINE GAIA                 	                                                  
+2286201	0	9113432	 CONTINENTE ON LINE COIMBRA              	                                                  
+2286219	0	9113432	 CONTINENTE ON LINE SEIXAL               	                                                  
+2286227	0	9113432	 CONTINENTE ON LINE LOJ GUIMAR           	                                                  
+2286235	0	9113432	 CONTINENTE ON LINE COLOMBO              	                                                  
+2286243	0	9113432	 CONTINENTE ON LINE LOURES               	                                                  
+2286250	0	9113432	 CONTINENTE ON LINE GUIA                 	                                                  
+2286268	0	9113432	 CONTINENTE ON LINE LOJA ANTAS           	                                                  
+2286276	0	9113432	 CONTINENTE ON LINE OVAR                 	                                                  
+2286284	0	9113432	 CONTINENTE ON LINE VINHOS               	                                                  
+2286292	0	9113432	 CONTINENTE ON LINE VISEU                	                                                  
+2286300	0	9113432	 CONTINENTE ON LINE VILA REAL            	                                                  
+2286318	0	9113432	 CONTINENTE ON LINE COVILHA              	                                                  
+2286326	0	9113432	 CONTINENTE ON LINE MONTIJO              	                                                  
+2286334	0	9113432	 CONTINENTE ON LINE OEIRAS               	                                                  
+2286342	0	9113432	 CONTINENTE ON LINE TELHEIRAS            	                                                  
+2286359	0	9113432	 CONTINENTE ON LINE PORTIMRPARK          	                                                  
+2286367	0	9113432	 CONTINENTE ON LINE MATOSINHOS           	                                                  
+2286375	0	9113432	 CONTINENTE ON LINE AMADORA              	                                                  
+2286383	0	9113432	 CONTINENTE ON LINE CASCAIS              	                                                  
+2286391	0	9113432	 CONTINENTE ON LINE GAIA                 	                                                  
+2286409	0	9113432	 CONTINENTE ON LINE COIMBRA              	                                                  
+2286417	0	9113432	 CONTINENTE ON LINE SEIXAL               	                                                  
+2286425	0	9113432	 CONTINENTE ON LINE LOJ GUIMARA          	                                                  
+2286433	0	9113432	 CONTINENTE ON LINE COLOMBO              	                                                  
+2286441	0	9113432	 CONTINENTE ON LINE LOURES               	                                                  
+2286458	0	9113432	 CONTINENTE ON LINE GUIA                 	                                                  
+2286466	0	9113432	 CONTINENTE ON LINE LOJA ANTAS           	                                                  
+2286474	0	9113432	 CONTINENTE ON LINE OVAR                 	                                                  
+2286482	0	9113432	 CONTINENTE ON LINE VINHOS               	                                                  
+2286490	0	9113432	 CONTINENTE ON LINE VISEU                	                                                  
+2286508	0	9113432	 CONTINENTE ON LINE VILA REAL            	                                                  
+2286516	0	9113432	 CONTINENTE ON LINE COVILHA              	                                                  
+2286524	888201	9113440	 CONTINENTE MODELO ALBUFEIRA             	                                                  
+2286532	888205	9113440	 CONTINENTE MODELO CALDAS                	                                                  
+2286540	888206	9113440	 CONTINENTE MODELO MONTIJO               	                                                  
+2286557	222207	9113440	 CONTINENTE MODELO BEJA                  	                                                  
+2286565	888208	9113440	 CONTINENTE MODELO LOULE                 	                                                  
+2286573	0	9113440	 CONTINENTE MODELO S J MADEIRA           	                                                  
+2286581	888211	9113440	 CONTINENTE MODELO FELGUEIRAS            	                                                  
+2286599	888213	9113440	 CONTINENTE MODELO T NOVAS               	                                                  
+2286607	888214	9113440	 CONTINENTE MODELO TOMAR                 	                                                  
+2286615	222215	9113440	 CONTINENTE MODELO SANTAREM              	                                                  
+2286623	888216	9113440	 CONTINENTE MODELO MARCO                 	                                                  
+2286631	888217	9113440	 CONTINENTE MODELO EVORA                 	                                                  
+2286649	888218	9113440	 CONTINENTE MODELO PORTALEGRE            	                                                  
+2286656	888219	9113440	 CONTINENTE MODELO STO TIRSO             	                                                  
+2286664	888220	9113440	 CONTINENTE MODELO ABRANTES              	                                                  
+2286672	888221	9113440	 CONTINENTE MODELO ALCOBACA              	                                                  
+2286680	888222	9113440	 CONTINENTE MODELO AMARANTE              	                                                  
+2286698	888223	9113440	 CONTINENTE MODELO T VEDRAS              	                                                  
+2286706	888224	9113440	 CONTINENTE MODELO CHAVES                	                                                  
+2286714	888226	9113440	 CONTINENTE MODELO GAIA                  	                                                  
+2286722	888228	9113440	 CONTINENTE MODELO MAIA                  	                                                  
+2286730	888229	9113440	 CONTINENTE MODELO ELVAS                 	                                                  
+2286748	888230	9113440	 CONTINENTE MODELO GUARDA                	                                                  
+2286755	888231	9113440	 CONTINENTE MODELO V CAMBRA              	                                                  
+2286763	888232	9113440	 CONTINENTE MODELO T MERCES              	                                                  
+2286771	888233	9113440	 CONTINENTE MODELO SILVES                	                                                  
+2286789	888234	9113440	 CONTINENTE MODELO MAFRA                 	                                                  
+2286797	888235	9113440	 CONTINENTE MODELO RIO TINTO             	                                                  
+2286805	888236	9113440	 CONTINENTE MODELO AGUEDA                	                                                  
+2286813	888237	9113440	 CONTINENTE MODELO PRT ALTO              	                                                  
+2286821	888238	9113440	 CONTINENTE MODELO CARTAXO               	                                                  
+2286839	888239	9113440	 CONTINENTE MODELO BRAGANCA              	                                                  
+2286847	888240	9113440	 CONTINENTE MODELO V F  XIRA             	                                                  
+2286854	888241	9113440	 CONTINENTE MODELO C  BRANCO             	                                                  
+2286862	888242	9113440	 CONTINENTE MDL P FERREIRA               	                                                  
+2286870	888244	9113440	 CONTINENTE MODELO V CONDE               	                                                  
+2286888	888245	9113440	 CONTINENTE MODELO BRAGA                 	                                                  
+2286896	888246	9113440	 CONTINENTE MODELO SINTRA                	                                                  
+2286904	888247	9113440	 CONTINENTE MODELO PAREDES               	                                                  
+2286912	888248	9113440	 CONTINENTE MDL REBORDOSA                	                                                  
+2286920	888249	9113440	 CONTINENTE MODELO FANZERES              	                                                  
+2286938	888250	9113440	 CONTINENTE MODELO S  COSME              	                                                  
+2286946	888251	9113440	 CONTINENTE MODELO FARO II               	                                                  
+2286953	888252	9113440	 CONTINENTE MODELO OLHAO                 	                                                  
+2286961	888253	9113440	 CONTINENTE MODELO BARREIRO              	                                                  
+2286979	222254	9113440	 CONTINENTE MODELO COIMBRA               	                                                  
+2286987	888255	9113440	 CONTINENTE MODELO PINHAL NOVO           	                                                  
+2286995	888256	9113440	 CONTINENTE MODELO QTA CONDE             	                                                  
+2287001	888257	9113440	 CONTINENTE MDL MADEIRA SHOP             	                                                  
+2287019	888258	9113440	 CONTINENTE MODELO LAGOS                 	                                                  
+2287027	888259	9113440	 CONTINENTE MODELO MOITA                 	                                                  
+2287035	888260	9113440	 CONTINENTE MDL PONTE DE SOR             	                                                  
+2287043	888261	9113440	 CONTINENTE MODELO O AZEMEIS             	                                                  
+2287050	888262	9113440	 CONTINENTE MODELO P VARZIM              	                                                  
+2287068	888263	9113440	 CONTINENTE MODELO MONCAO                	                                                  
+2287076	888265	9113440	 CONTINENTE MODELO ERMESINDE             	                                                  
+2287084	888266	9113440	 CONTINENTE MODELO S MAGOS               	                                                  
+2287092	888267	9113440	 CONTINENTE MODELO ANADIA                	                                                  
+2287100	888268	9113440	 CONTINENTE MODELO VAGOS                 	                                                  
+2287118	888269	9113440	 CONTINENTE MODELO M GRANDE              	                                                  
+2287126	888270	9113440	 CONTINENTE MODELO ALMEIRIM              	                                                  
+2287134	888271	9113440	 CONTINENTE MODELO ARROJA                	                                                  
+2287142	888272	9113440	 CONTINENTE MDL GULPILHARES              	                                                  
+2287159	888273	9113440	 CONTINENTE MODELO LOUSADA               	                                                  
+2287167	222274	9113440	 CONTINENTE MODELO LAGOA ALG             	                                                  
+2287175	888275	9113440	 CONTINENTE MDL CANTANHEDE               	                                                  
+2287183	222276	9113440	 CONTINENTE MODELO VALONGO               	                                                  
+2287191	888277	9113440	 CONTINENTE MODELO TROFA                 	                                                  
+2287209	888278	9113440	 CONTINENTE MDL ALHOS VEDROS             	                                                  
+2287217	888279	9113440	 CONTINENTE MODELO FUNDAO                	                                                  
+2287225	888280	9113440	 CONTINENTE MODELO FAFE                  	                                                  
+2287233	888281	9113440	 CONTINENTE MODELO ESPOSENDE             	                                                  
+2287241	888282	9113440	 CONTINENTE MODELO S J VER               	                                                  
+2287258	888283	9113440	 CONTINENTE MODELO GRANDOLA              	                                                  
+2287266	888284	9113440	 CONTINENTE MDL REGUENGOS                	                                                  
+2287274	888288	9113440	 CONTINENTE MDL S F MARINHA              	                                                  
+2287282	888289	9113440	 CONTINENTE  MODELO ALVERCA              	                                                  
+2287290	888290	9113440	 CONTINENTE MODELO MACHICO               	                                                  
+2287308	888291	9113440	 CONTINENTE MDL ESTREMOZ                 	                                                  
+2287316	888293	9113440	 CONTINENTE MODELO LOUSA                 	                                                  
+2287324	888294	9113440	 CONTINENTE MODELO SETUBAL               	                                                  
+2287332	888295	9113440	 CONTINENTE MDL MANGUALDE                	                                                  
+2287340	888296	9113440	 CONTINENTE MODELO PALMELA               	                                                  
+2287357	888297	9113440	 CONTINENTE MODELO OUREM                 	                                                  
+2287365	888298	9113440	 CONTINENTE MODELO NAZARE                	                                                  
+2287373	888299	9113440	 CONTINENTE MDL PONTE LIMA               	                                                  
+2287381	888334	9113440	 CONTINENTE MDL FAMALICAO                	                                                  
+2287399	888375	9113440	 CONTINENTE MDL BOMBARRAL                	                                                  
+2287407	888379	9113440	 CONTINENTE MDL MEM MARTINS              	                                                  
+2287415	888389	9113440	 CONTINENTE MODELO S J TALHA             	                                                  
+2287423	0	9113440	 CONTINENTE MODELO MACHICO               	                                                  
+2287431	818471	9113440	 CONTINENTE MODELO VISEU                 	                                                  
+2287449	888801	9113440	 CONTINENTE MDL P DELGADA                	                                                  
+2287456	888803	9113440	 CONTINENTE MODELO  HORTA                	                                                  
+2287464	888804	9113440	 CONTINENTE MDL A HEROISMO               	                                                  
+2287472	888805	9113440	 CONTINENTE MDL P VICTORIA               	                                                  
+2287480	888806	9113440	 CONTINENTE MODELO R GRANDE              	                                                  
+2287498	888807	9113440	 CONTINENTE MODELO LAGOA                 	                                                  
+2287506	888841	9113440	 CONTINENTE MDL CENTROMAR                	                                                  
+2287514	888842	9113440	 CONTINENTE MODELO CANCELA               	                                                  
+2287522	888843	9113440	 CONTINENTE MODELO RIB  BRAVA            	                                                  
+2287530	888845	9113440	 CONTINENTE MODELO VIVEIROS              	                                                  
+2287548	888847	9113440	 CONTINENTE MODELO CANICO                	                                                  
+2287555	888867	9113440	 CONTINENTE MDL CAMARA LOBOS             	                                                  
+2287563	881000	9113440	 CONTINENTE MODELO MOZELOS               	                                                  
+2287571	881004	9113440	 CONTINENTE MODELO LECA BALIO            	                                                  
+2287589	881008	9113440	 CONTINENTE MODELO AVINTES               	                                                  
+2287597	881053	9113440	 CONTINENTE MDL MAIA VIVACI              	                                                  
+2287605	881054	9113440	 CONTINENTE MDL SESIMBRA                 	                                                  
+2287613	881055	9113440	 CONTINENTE MODELO REGUA                 	                                                  
+2287621	881056	9113440	 CONTINENTE MODELO LIXA                  	                                                  
+2287639	881169	9113440	 CONTINENTE MODELO OVAR                  	                                                  
+2287647	222302	9113457	 CONTINENTE BDIA V CATARINA              	                                                  
+2287654	888303	9113457	 CONTINENTE BDIA CAMPO GRD               	                                                  
+2287662	888304	9113457	 CONTINENTE BDIA V FORMOSO               	                                                  
+2287670	888305	9113457	 CONTINENTE BDIA QTA LAMBERT             	                                                  
+2287688	888307	9113457	 CONTINENTE BDIA NORTE SHOPP             	                                                  
+2287696	888309	9113457	 CONTINENTE BOM DIA OEIRAS               	                                                  
+2287704	222310	9113457	 CONTINENTE BDIA MONTEZELO               	                                                  
+2287712	888312	9113457	 CONTINENTE BDIA ST QUITERIA             	                                                  
+2287720	888313	9113457	 CONTINENTE BDIA SACAVEM                 	                                                  
+2287738	888314	9113457	 CONTINENTE BOM DIA LECA                 	                                                  
+2287746	888315	9113457	 CONTINENTE BOM DIA MAIA                 	                                                  
+2287753	888317	9113457	 CONTINENTE BDIA BARREIRO                	                                                  
+2287761	888318	9113457	 CONTINENTE BOM DIA PRELADA              	                                                  
+2287779	888319	9113457	 CONTINENTE BDIA S JOAO FOZ              	                                                  
+2287787	888320	9113457	 CONTINENTE BOM DIA QUELUZ               	                                                  
+2287795	888321	9113457	 CONTINENTE BDIA ALM BARROSO             	                                                  
+2287803	888322	9113457	 CONTINENTE BOM DIA AMADORA              	                                                  
+2287811	888323	9113457	 CONTINENTE BOM DIA MASSAMA NRT          	                                                  
+2287829	888324	9113457	 CONTINENTE BOM DIA AV REPUBLIC          	                                                  
+2287837	888325	9113457	 CONTINENTE B DIA BOUCINHAS              	                                                  
+2287845	888326	9113457	 CONTINENTE BOM DIA AREOSA               	                                                  
+2287852	888327	9113457	 CONTINENTE BOM DIA BENFICA              	                                                  
+2287860	888328	9113457	 CONTINENTE BOM DIA PRAGAL               	                                                  
+2287878	888329	9113457	 CONTINENTE BOM DIA VIANA                	                                                  
+2287886	888330	9113457	 CONTINENTE BOM DIA PAREDE               	                                                  
+2287894	888335	9113457	 CONTINENTE B DIA LARANJEIRO             	                                                  
+2287902	888340	9113457	 CONTINENTE BDIA MASSARELOS              	                                                  
+2287910	212302	9113457	 CONTINENTE BDIA V CATARINA              	                                                  
+2287928	818303	9113457	 CONTINENTE BDIA CAMPO GRANDE            	                                                  
+2287936	818304	9113457	 CONTINENTE BDIA VALE FORMOSO            	                                                  
+2287944	818305	9113457	 CONTINENTE BDIA QTA LAMBERT             	                                                  
+2287951	818307	9113457	 CONTINENTE B DIA NORTESHOPP             	                                                  
+2287969	818309	9113457	 CONTINENTE BOM DIA OEIRAS               	                                                  
+2287977	212310	9113457	 CONTINENTE BDIA MONTEZELO               	                                                  
+2287985	818312	9113457	 CONTINENTE BDIA ST QUITERIA             	                                                  
+2287993	818313	9113457	 CONTINENTE BOM DIA SACAVEM              	                                                  
+2288009	818314	9113457	 CONTINENTE BOM DIA LECA                 	                                                  
+2288017	818315	9113457	 CONTINENTE BOM DIA MAIA                 	                                                  
+2288025	818317	9113457	 CONTINENTE BOM DIA BARREIRO             	                                                  
+2288033	818319	9113457	 CONTINENTE BDIA S JOAO FOZ              	                                                  
+2288041	818320	9113457	 CONTINENTE BOM DIA QUELUZ               	                                                  
+2288058	818321	9113457	 CONTINENTE BDIA ALM BARROSO             	                                                  
+2288066	818324	9113457	 CONTINENTE B DIA AV REPUBLICA           	                                                  
+2288074	818327	9113457	 CONTINENTE BOM DIA BENFICA              	                                                  
+2288082	818328	9113457	 CONTINENTE BOM DIA PRAGAL               	                                                  
+2288090	818330	9113457	 CONTINENTE BOM DIA PAREDE               	                                                  
+2288108	888331	9113457	 CONTINENTE BOM DIA ALGES                	                                                  
+2288116	888025	9113606	 FRM VALONGO                             	                                                  
+2288124	888027	9113606	 FRM MACHICO                             	                                                  
+2288132	888048	9113606	 FRM PALMELA                             	                                                  
+2288140	888086	9113606	 FRM S J TALHA                           	                                                  
+2288157	888088	9113606	 FRM AVEIRO                              	                                                  
+2288165	888089	9113606	 FRM MAFRA                               	                                                  
+2288173	888090	9113606	 FRM MARCO CANAVESES                     	                                                  
+2288181	888200	9113606	 FRM SANTAREM                            	                                                  
+2288199	888338	9113606	 FRM VIVACI CALDAS RAINHA                	                                                  
+2288207	888339	9113606	 FRM VIVACI GUARDA                       	                                                  
+2288215	888343	9113606	 FRM AMARANTE                            	                                                  
+2288223	888380	9113606	 FRM MEM MARTINS                         	                                                  
+2288231	888408	9113606	 FRM RIO TINTO                           	                                                  
+2288249	888448	9113606	 FRM VISEU                               	                                                  
+2288256	888450	9113606	 FRM GUIA                                	                                                  
+2288264	888482	9113606	 FRM VILA DO CONDE                       	                                                  
+2288272	888484	9113606	 FRM FORUM COIMBRA                       	                                                  
+2288280	888485	9113606	 FRM TELHEIRAS                           	                                                  
+2288298	888490	9113606	 FRM CASTELO BRANCO                      	                                                  
+2288306	888491	9113606	 FRM ABRANTES                            	                                                  
+2288314	888492	9113606	 FRM SANTO TIRSO                         	                                                  
+2288322	888493	9113606	 FRM OEIRAS                              	                                                  
+2288330	888673	9113606	 FRM VIVEIROS                            	                                                  
+2288348	222686	9113606	 FRM LAGOA                               	                                                  
+2288355	888687	9113606	 FRM LOULE                               	                                                  
+2288363	888697	9113606	 FRM ALCOBACA                            	                                                  
+2288371	222732	9113606	 FRM VALONGO                             	                                                  
+2288389	888733	9113606	 FRM CANTANHEDE                          	                                                  
+2288397	888734	9113606	 FRM ALHOS VEDROS                        	                                                  
+2288405	888736	9113606	 FRM GAIA RECHOUSA                       	                                                  
+2288413	888737	9113606	 FRM FELGUEIRAS                          	                                                  
+2288421	888738	9113606	 FRM VILA FRANCA DE XIRA                 	                                                  
+2288439	888739	9113606	 FRM ARROJA                              	                                                  
+2288447	222741	9113606	 FRM COIMBRA EIRAS                       	                                                  
+2288454	888743	9113606	 FRM TROFA                               	                                                  
+2288462	888744	9113606	 FRM S J MADEIRA                         	                                                  
+2288470	888745	9113606	 FRM ALBUFEIRA                           	                                                  
+2288488	888746	9113606	 FRM MARINHA GRANDE                      	                                                  
+2288496	888747	9113606	 FRM ALMEIRIM                            	                                                  
+2288504	888752	9113606	 FRM FAFE                                	                                                  
+2288512	888753	9113606	 FRM PONTE DE SOR                        	                                                  
+2288520	888754	9113606	 FRM S  COSME                            	                                                  
+2288538	888755	9113606	 FRM LEIRIA                              	                                                  
+2288546	888756	9113606	 FRM FUNDAO                              	                                                  
+2288553	888757	9113606	 FRM REGUENGOS                           	                                                  
+2288561	888758	9113606	 FRM GRANDOLA                            	                                                  
+2288579	888759	9113606	 FRM GUIMARAES                           	                                                  
+2288587	888760	9113606	 FRM ANTAS                               	                                                  
+2288595	888763	9113606	 FRM OVAR                                	                                                  
+2288603	888765	9113606	 FRM MATOSINHOS                          	                                                  
+2288611	888767	9113606	 FRM COIMBRA                             	                                                  
+2288629	888771	9113606	 FRM BEJA                                	                                                  
+2288637	888772	9113606	 FRM ESPOSENDE                           	                                                  
+2288645	888773	9113606	 FRM NAZARE                              	                                                  
+2288652	888774	9113606	 FRM MOITA                               	                                                  
+2288660	888775	9113606	 FRM PINHAL NOVO                         	                                                  
+2288678	888776	9113606	 FRM MADEIRA SHOPPING                    	                                                  
+2288686	888781	9113606	 FRM PORTIMAO                            	                                                  
+2288694	888792	9113606	 FRM SILVES                              	                                                  
+2288702	888793	9113606	 FRM P LIMA                              	                                                  
+2288710	888794	9113606	 FRM S FELIX MARINHA                     	                                                  
+2288728	888795	9113606	 FRM ALVERCA                             	                                                  
+2288736	888796	9113606	 FRM ESTREMOZ                            	                                                  
+2288744	888797	9113606	 FRM MONCAO                              	                                                  
+2288751	888816	9113606	 FRM PONTA DELGADA - INSCO               	                                                  
+2288769	888830	9113606	 FRM AGUEDA                              	                                                  
+2288777	888836	9113606	 FRM BRAGA                               	                                                  
+2288785	888855	9113606	 FRM TORRES VEDRAS                       	                                                  
+2288793	888856	9113606	 FRM PAREDES                             	                                                  
+2288801	888882	9113606	 FRM VIANA DO CASTELO                    	                                                  
+2288819	888883	9113606	 FRM TORRES NOVAS                        	                                                  
+2288827	888884	9113606	 FRM TOMAR                               	                                                  
+2288835	888885	9113606	 FRM BARREIRO                            	                                                  
+2288843	888886	9113606	 FRM EVORA                               	                                                  
+2288850	888892	9113606	 FRM CHAVES                              	                                                  
+2288868	888893	9113606	 FRM SETUBAL                             	                                                  
+2288876	888896	9113606	 FRM OUREM                               	                                                  
+2288884	888914	9113606	 FRM GUARDA                              	                                                  
+2288892	888942	9113606	 FRM COLOMBO                             	                                                  
+2288900	888951	9113606	 FRM MONTIJO                             	                                                  
+2288918	888952	9113606	 FRM QUINTA DO CONDE                     	                                                  
+2288926	888958	9113606	 FRM MAIA                                	                                                  
+2288934	0	9113606	 FRM                                     	                                                  
+2288942	881012	9113606	 FRM MOZELOS                             	                                                  
+2288959	881031	9113606	 FRM LOURES                              	                                                  
+2288967	881119	9113606	 FRM FANZERES                            	                                                  
+2288975	881140	9113606	 FRM TAPADA MERCES                       	                                                  
+2288983	881141	9113606	 FRM ARRABIDA                            	                                                  
+2288991	881142	9113606	 FRM AVINTES                             	                                                  
+2289007	881143	9113606	 FRM FORUM MONTIJO                       	                                                  
+2289015	881145	9113606	 FRM POVOA VARZIM                        	                                                  
+2289023	881146	9113606	 FRM PACOS FERREIRA                      	                                                  
+2289031	881149	9113606	 FRM DOLCE VITA TEJO                     	                                                  
+2289049	881151	9113606	 FRM MAFRA 2                             	                                                  
+2289056	881152	9113606	 FRM MAIA VIVACI                         	                                                  
+2289064	881153	9113606	 FRM TAVIRA                              	                                                  
+2289072	881156	9113606	 FRM SESIMBRA                            	                                                  
+2289080	881158	9113606	 FRM REGUA                               	                                                  
+2289098	881172	9113606	 FRM TORRES NOVAS 2                      	                                                  
+2289106	881204	9113606	 FRM OVAR 2                              	                                                  
+2289114	881208	9113606	 FRM MAIA JARDIM                         	                                                  
+2289122	881249	9113606	 FRM BRAGANCA                            	                                                  
+2289130	888082	9113606	 FRM MANGUALDE                           	                                                  
+2289148	881254	9113606	 FRM FERRARA PLAZA                       	                                                  
+2289155	888100	9113630	 CAFETARIA MAFRA                         	                                                  
+2289163	888174	9113630	 CAFETARIA ALCOBACA                      	                                                  
+2289171	888180	9113630	 CAFETARIA EVORA                         	                                                  
+2289189	888300	9113630	 CAFETARIA LOULE                         	                                                  
+2289197	888337	9113630	 CAFETARIA FAMALICAO                     	                                                  
+2289205	888431	9113630	 CAFETARIA MOITA                         	                                                  
+2289213	888342	9113630	 CAFETARIA BOMBARRAL                     	                                                  
+2289221	888346	9113630	 BOM BOCADO MEM MARTINS                  	                                                  
+2289239	888349	9113630	 CAFETARIA S J TALHA                     	                                                  
+2289247	888362	9113630	 BOM BOCADO RIO TINTO                    	                                                  
+2289254	888364	9113630	 CAFETARIA VAGOS                         	                                                  
+2289262	888410	9113630	 CAFETARIA CALDAS RAINHA                 	                                                  
+2289270	888417	9113630	 CAFETARIA GULPILHARES                   	                                                  
+2289288	888422	9113630	 CAFETARIA CAMARA DE LOBOS               	                                                  
+2289296	888423	9113630	 CAFETARIA ERMESINDE                     	                                                  
+2289304	888425	9113630	 CAFETARIA PONTE DE SOR                  	                                                  
+2289312	888426	9113630	 CAFETARIA MARINHA GRANDE                	                                                  
+2289320	888427	9113630	 CAFETARIA FAFE                          	                                                  
+2289338	888428	9113630	 CAFETARIA ARROJA                        	                                                  
+2289346	222429	9113630	 CAFETARIA LAGOA                         	                                                  
+2289353	888430	9113630	 CAFETARIA CANTANHEDE                    	                                                  
+2289361	888432	9113630	 CAFETARIA NAZARE                        	                                                  
+2289379	888433	9113630	 CAFETARIA PONTE DE LIMA                 	                                                  
+2289387	888434	9113630	 CAFETARIA S FELIX MARINHA               	                                                  
+2289395	888435	9113630	 CAFETARIA ALVERCA                       	                                                  
+2289403	888436	9113630	 CAFETARIA MACHICO                       	                                                  
+2289411	888437	9113630	 CAFETARIA ESTREMOZ                      	                                                  
+2289429	888438	9113630	 CAFETARIA MONCAO                        	                                                  
+2289437	222440	9113630	 CAFETARIA VALONGO                       	                                                  
+2289445	888441	9113630	 CAFETARIA TROFA                         	                                                  
+2289452	888442	9113630	 CAFETARIA ALHOS VEDROS                  	                                                  
+2289460	888443	9113630	 CAFETARIA FUNDAO                        	                                                  
+2289478	888444	9113630	 CAFETARIA GRANDOLA                      	                                                  
+2289486	888445	9113630	 CAFETARIA REGUENGOS                     	                                                  
+2289494	888451	9113630	 CAFETARIA LOUSA                         	                                                  
+2289502	888452	9113630	 CAFETARIA SETUBAL                       	                                                  
+2289510	888453	9113630	 CAFETARIA MANGUALDE                     	                                                  
+2289528	888454	9113630	 CAFETARIA PALMELA                       	                                                  
+2289536	888455	9113630	 CAFETARIA OUREM                         	                                                  
+2289544	888457	9113630	 CAFETARIA RECHOUSA                      	                                                  
+2289551	888469	9113630	 CAFETARIA LOUSADA                       	                                                  
+2289569	888470	9113630	 CAFETARIA ALMEIRIM                      	                                                  
+2289577	888481	9113630	 CAFETARIA ESPOSENDE                     	                                                  
+2289585	888694	9113630	 BOM BOCADO TORRES VEDRAS                	                                                  
+2289593	888844	9113630	 CAFETARIA VALONGO                       	                                                  
+2289601	881003	9113630	 CAFETARIA MOZELOS                       	                                                  
+2289619	881007	9113630	 BOM BOCADO LECA BALIO                   	                                                  
+2289627	881011	9113630	 CAFETARIA AVINTES                       	                                                  
+2289635	881014	9113630	 BOM BOCADO SANTO TIRSO                  	                                                  
+2289643	881022	9113630	 CAFETARIA PINHAL NOVO                   	                                                  
+2289650	881023	9113630	 CAFETARIA GUARDA                        	                                                  
+2289668	881046	9113630	 CAFETARIA OVAR                          	                                                  
+2289676	881061	9113630	 BOM BOCADO ABRANTES                     	                                                  
+2289684	881064	9113630	 BOM BOCADO DOLCE VITA TEJO              	                                                  
+2289692	881065	9113630	 BOM BOCADO MAIA VIVACI                  	                                                  
+2289700	881066	9113630	 BOM BOCADO TAVIRA                       	                                                  
+2289718	881069	9113630	 BOM BOCADO SESIMBRA                     	                                                  
+2289726	881070	9113630	 BOM BOCADO REGUA                        	                                                  
+2289734	881072	9113630	 BOM BOCADO LIXA                         	                                                  
+2289742	881099	9113630	 CAFETARIA MARCO CANAVESES               	                                                  
+2289759	881120	9113630	 BOM BOCADO ANADIA                       	                                                  
+2289767	881129	9113630	 BOM BOCADO SILVES                       	                                                  
+2289775	881161	9113630	 BOM BOCADO MAFRA                        	                                                  
+2289783	881183	9113630	 BOM BOCADO OLIVEIRA AZEMEIS             	                                                  
+2289791	881185	9113630	 CAFETARIA FELGUEIRAS                    	                                                  
+2289809	881186	9113630	 CAFETARIA PAREDES                       	                                                  
+2289817	881190	9113630	 BOM BOCADO MAIA JARDIM                  	                                                  
+2289825	881203	9113630	 BOM BOCADO OVAR                         	                                                  
+2289833	881209	9113630	 BOM BOCADO MASSARELOS                   	                                                  
+2289841	881232	9113630	 BOM BOCADO AMADORA                      	                                                  
+2289858	881250	9113630	 BOM BOCADO AVEIRO                       	                                                  
+2289866	888024	9113648	 BOOK IT MARCO CANAVESES                 	                                                  
+2289874	888036	9113648	 BOOK IT CHAVES                          	                                                  
+2289882	888087	9113648	 BOOK IT TOMAR                           	                                                  
+2289890	888198	9113648	 OIA TOMAR                               	                                                  
+2289908	888345	9113648	 BOOK IT ABRANTES                        	                                                  
+2289916	888510	9113648	 BAZAR VALE CAMBRA                       	                                                  
+2289924	888706	9113648	 OIA NAZARE                              	                                                  
+2289932	888750	9113648	 DEL GARDEN COIMBRA                      	                                                  
+2289940	881164	9113648	 BOOK IT VALONGO                         	                                                  
+2289957	881165	9113648	 BOOK IT RIO TINTO                       	                                                  
+2289965	881166	9113648	 BOOK IT RIA SHOPPING OLHAO              	                                                  
+2289973	881167	9113648	 BOOK IT MAIA VIVACI                     	                                                  
+2289981	881168	9113648	 BOOK IT TAVIRA                          	                                                  
+2289999	881173	9113648	 BOOK IT PACOS DE FERREIRA               	                                                  
+2290005	881174	9113648	 BOOK IT DOLCE VITA TEJO                 	                                                  
+2290013	881182	9113648	 PETS E PLANTS RIO TINTO                 	                                                  
+2290021	881199	9113648	 BOOK IT OVAR                            	                                                  
+2290039	881200	9113648	 PETS E PLANTS OVAR                      	                                                  
+2290047	881227	9113648	 BOOK IT ESPACO GUIMARAES                	                                                  
+2290054	881247	9113648	 BOOK IT TORRES NOVAS                    	                                                  
+2290062	881118	9113614	 OPTICA VISEU                            	                                                  
+2290070	881202	9113614	 OPTICA TAVIRA                           	                                                  
+2290088	881205	9113614	 OPTICA VILA REAL                        	                                                  
+2290096	881210	9113614	 OPTICA CALDAS RAINHA                    	                                                  
+2290104	881212	9113614	 OPTICA MONTIJO                          	                                                  
+2290112	881253	9113614	 OPTICA COVILHA                          	                                                  
+2290120	222254	9113614	 OPTICA FERRARA PLAZA                    	                                                  
+2290138	881256	9113614	 OPTICA MAIA JARDIM                      	                                                  
+2290146	881261	9113614	 OPTICA MATOSINHOS                       	                                                  
+2290153	881262	9113614	 OPTICA VIANA DO CASTELO                 	                                                  
+2293785	0	9113697	 SPORTZONE RSF                           	                                                  
+2293793	0	9113697	 SPORTZONE SEDE                          	                                                  
+2293801	2293801	9113697	 SPORTZONE CETELEM TESTE                 	                                                  
+2293819	0	9113697	 KANGURU EVENTOS SPORT ZONE              	                                                  
+2293827	992094	9113465	 WORTEN SEDE SONAE                       	                                                  
+2293835	992096	9113465	 WORTEN MONTELAVAR                       	                                                  
+2293843	222097	9113465	 WORTEN NA MINHO CENTER                  	                                                  
+2293850	992098	9113465	 WORTEN MINHO CENTER                     	                                                  
+2293868	992100	9113465	 WORTEN POMBAL                           	                                                  
+2293876	0	9113465	 WORTEN RSF                              	                                                  
+2293884	0	9113465	 WORTEN SEDE                             	                                                  
+2293892	9315	9113465	 WORTEN CETELEM TESTE                    	                                                  
+2293900	7654061	9113465	 TORRES TESTES MATOSINHOS                	                                                  
+2293918	0	9113465	 WORTEN COLABORADORES                    	                                                  
+2293926	0	9113465	 WORTEN MAGARENHA VISEU BP               	                                                  
+2293934	0	9113481	 VOBIS SEIXAL                            	                                                  
+2293942	992095	9113705	 WORTEN MOBILE SETE RIOS                 	                                                  
+2293959	992099	9113705	 WORTEN MOBILE FORUM MONTIJO             	                                                  
+2293967	0	9113499	 VOBIS TORRES NOVAS BP                   	                                                  
+2293975	0	9113499	 VOBIS RSF                               	                                                  
+2293983	0	9113499	 VOBIS SEDE                              	                                                  
+2293991	2293991	9113499	 VOBIS CETELEM TESTE                     	                                                  
+2294007	0	9113499	 VOBIS COLABORADORES - VOBIS             	                                                  
+2294015	3500000	9113424	 CONTINENTE  PORTAL CLIENTE              	                                                  
+2294023	881424	9113424	 CONTINENTE ICE FERR.BORGES              	                                                  
+2294031	9999315	9113424	 CONTINENTE CETELEM TESTE                	                                                  
+2294049	0	9113424	 CONTINENTE SEDE CETELEM                 	                                                  
+2294056	0	9113432	 CONTINENTE ON LINE TLANTIC              	                                                  
+2294064	0	9113432	 CONTINENTEONLINE VINHOS-ANTIGA          	                                                  
+2294072	0	9113440	 CONTINENTE MDL CANTANHEDE               	                                                  
+2294080	888908	9113440	 CONTINENTE MODELO GUARDA                	                                                  
+2294098	0	9113440	 CONTINENTE MODELO PORTAL CLTE           	                                                  
+2294106	888494	9113440	 CONTINENTE MODELO POMBAL                	                                                  
+2294114	881057	9113440	 CONTINENTE MODELO MONTELAVAR            	                                                  
+2294122	3666666	9113440	 CONTINENTE MDL CETELEM TESTE            	                                                  
+2294130	0	9113440	 CONTINENTE MDL SEDE CETELEM             	                                                  
+2294148	0	9113606	 FRM FELGUEIRAS                          	                                                  
+2294155	0	9113606	 FRM GUARDA                              	                                                  
+2294163	888080	9113606	 FRM POMBAL                              	                                                  
+2294171	888447	9113606	 ASD COVILHA                             	                                                  
+2294189	888449	9113606	 ASD VILA REAL                           	                                                  
+2294197	888486	9113606	 ASD CONTINENTE GAIA                     	                                                  
+2294205	888487	9113606	 ASD LOURES SHOPPING                     	                                                  
+2294213	888488	9113606	 ASD AMADORA                             	                                                  
+2294221	888489	9113606	 ASD SEIXAL                              	                                                  
+2294239	888719	9113606	 ASD CALDAS DA RAINHA                    	                                                  
+2294247	881160	9113606	 FRM MONTELAVAR                          	                                                  
+2294254	881264	9113606	 FRM RIBEIRA GRANDE - INSCO              	                                                  
+2294262	881265	9113606	 FRM LAGOA - INSCO                       	                                                  
+2294270	881325	9113606	 ASD LECA BALIO                          	                                                  
+2294288	0	9113630	 BOM BOCADO MANGUALDE                    	                                                  
+2294296	888344	9113630	 BOM BOCADO POMBAL                       	                                                  
+2294304	888356	9113630	 CAFETARIA AGUEDA                        	                                                  
+2294312	888357	9113630	 CAFETARIA AREOSA                        	                                                  
+2294320	888361	9113630	 CAFETARIA REBORDOSA                     	                                                  
+2294338	888456	9113630	 CAFETARIA MAIA                          	                                                  
+2294346	888698	9113630	 CAFETARIA QUINTA CONDE                  	                                                  
+2294353	888815	9113630	 CAFETARIA CHAVES                        	                                                  
+2294361	881044	9113630	 CAFETARIA VISEU                         	                                                  
+2294379	881045	9113630	 CAFETARIA SANTAREM                      	                                                  
+2294387	881068	9113630	 CAFETARIA TAPADA MERCES                 	                                                  
+2294395	881071	9113630	 BOM BOCADO MONTELAVAR                   	                                                  
+2294403	881075	9113630	 BOM BOCADO LEIRIA SHOPPING              	                                                  
+2294411	881130	9113630	 CAFETARIA BARREIRO                      	                                                  
+2294429	881184	9113630	 CAFETARIA AMARANTE                      	                                                  
+2294437	881285	9113630	 BOM BOCADO MAIA SHOPPING                	                                                  
+2294445	881307	9113648	 BOOK IT BRAGANCA                        	                                                  
+2294452	881315	9113648	 BOOK IT VIANA ESTACAO                   	                                                  
+2294460	882000	9113648	 BOOK IT ESPACO GUIMARAES 2              	                                                  
+2294478	881322	9113614	 OPTICA LEIRIA SHOPPING                  	                                                  
+2294486	881427	9113614	 OPTICA FUNDAO                           	                                                  
+2294494	881428	9113614	 OPTICA TOMAR                            	                                                  
+2294502	881429	9113614	 OPTICA VILA CONDE                       	                                                  
+2294510	881430	9113614	 OPTICA BRAGA                            	                                                  
+2294528	881432	9113614	 OPTICA CASTELO BRANCO                   	                                                  
+2294536	881433	9113614	 OPTICA S J MADEIRA                      	                                                  
+2294544	0	9113424	 BOM BOCADO DOLCE VITA TEJO              	                                                  
+2294551	0	9113424	 FRM DOLCE VITA TEJO                     	                                                  
+2294569	0	9113697	 SPORTZONE ELCHE                         	                                                  
+2294577	0	9113697	 SPORTZONE ALZAMORA                      	                                                  
+2294585	0	9113697	 SPORTZONE FUENLABRADA                   	                                                  
+2294593	0	9113697	 SPORTZONE VILLAMARINA                   	                                                  
+2294601	0	9113697	 SPORTZONE LORCA                         	                                                  
+2294619	0	9113697	 SPORTZONE MADRID                        	                                                  
+2294627	0	9113697	 SPORTZONE FERROL                        	                                                  
+2294635	0	9113697	 SPORTZONE ZARAGOZA                      	                                                  
+2294643	0	9113697	 SPORTZONE CORUNHA                       	                                                  
+2294650	0	9113697	 SPORTZONE LA GAVIA MADRID               	                                                  
+2294668	0	9113697	 SPORTZONE MURCIA                        	                                                  
+2294676	0	9113697	 SPORTZONE SITE ESPANHA                  	                                                  
+2294684	0	9113697	 SPORTZONE CORUNHA II                    	                                                  
+2294692	0	9113697	 SPORTZONE GRAN MANZANA                  	                                                  
+2294700	0	9113697	 SPORTZONE CORNELLA SPLAU                	                                                  
+2294718	0	9113697	 SPORTZONE ALGECIRAS                     	                                                  
+2294726	0	9113697	 SPORTZONE TRES AGUAS                    	                                                  
+2294734	0	9113697	 SPORTZONE ARENA MULTIESPACIO            	                                                  
+2294742	0	9113697	 SPORTZONE CC PARQUE CORREDOR            	                                                  
+2294759	0	9113697	 SPORTZONE ZARAGOZA LOS ENLACES          	                                                  
+2294767	0	9113697	 SPORTZONE AQUA MULTIESPACIO             	                                                  
+2294775	0	9113697	 SPORTZONE VIGO                          	                                                  
+2294783	0	9113697	 SPORTZONE ESPAI GIRONES                 	                                                  
+2294791	0	9113697	 SPORTZONE XANADU                        	                                                  
+2294809	0	9113697	 SPORTZONE VECINDARIO CC                 	                                                  
+2294817	0	9113697	 SPORTZONE CCLASARENAS-GRANCANA          	                                                  
+2294825	0	9113697	 SPORTZONE CARREFOUR TENERIFE            	                                                  
+2294833	0	9113697	 SPORTZONE DEILAND CC                    	                                                  
+2294841	992101	9113465	 WORTEN BARREIRO 2                       	                                                  
+2294858	992102	9113465	 WORTEN PENICHE                          	                                                  
+2294866	992103	9113465	 WORTEN BARCELOS                         	                                                  
+2294874	992104	9113465	 WORTEN RIO MAIOR                        	                                                  
+2294882	888927	9113424	 CONTINENTE BARREIRO                     	                                                  
+2294890	881425	9113424	 CONTINENTE ICE DAMIAO GOIS              	                                                  
+2294908	881391	9113440	 CONTINENTE MODELO RIO MAIOR             	                                                  
+2294916	881392	9113440	 CONTINENTE MODELO PENICHE               	                                                  
+2294924	881393	9113440	 CONTINENTE MODELO BARCELOS              	                                                  
+2294932	888085	9113606	 FRM BARCELOS                            	                                                  
+2294940	881154	9113606	 FRM BARREIRO 2                          	                                                  
+2294957	881324	9113606	 FRM PENICHE                             	                                                  
+2294965	881329	9113606	 FRM RIO MAIOR                           	                                                  
+2294973	881060	9113630	 CAFETARIA LOULE II                      	                                                  
+2294981	881076	9113630	 BOM BOCADO BARREIRO                     	                                                  
+2294999	881248	9113630	 CAFETARIA PACOS FERREIRA                	                                                  
+2295004	881287	9113630	 BOM BOCADO RIO MAIOR                    	                                                  
+2295012	881289	9113630	 BOM BOCADO PENICHE                      	                                                  
+2295020	881297	9113630	 BOM BOCADO BARCELOS                     	                                                  
+2295038	881447	9113630	 BOM BOCADO CASCAIS                      	                                                  
+2295046	881251	9113606	 PET E PLANTS LECA BALIO                 	                                                  
+2295053	881310	9113606	 BOOK IT FERREIRA BORGES                 	                                                  
+2295061	881314	9113606	 BOOK IT BARCELOS                        	                                                  
+2295079	881163	9113606	 OPTICA GULPILHARES                      	                                                  
+2295087	881431	9113606	 OPTICA AGUEDA                           	                                                  
+2295095	881452	9113606	 OPTICA BARREIRO                         	                                                  
+2295103	881455	9113606	 OPTICA MODELO FELGUEIRAS                	                                                  
+2295111	881459	9113606	 OPTICA TORRES NOVAS                     	                                                  
+2299121	0	9113705	 WORTEN MOBILE VASCO DA GAMA             	                                                  
+2299139	0	9113697	 SPORTZONE                               	                                                  
+2299147	0	9113515	 CONTINENTE PRE-ACEITES                  	                                                  
+2299154	0	9113523	 CONTINENTE PRE ACEITESCFAMILIA          	                                                  
+2299162	0	9113523	 CONTINENTE PRE ACEITES CRDF             	                                                  
+2299170	0	9113531	 CONTINENTE MODELO PRE-ACEITES           	                                                  
+2299188	0	9113531	 CONTINENTE MDL PRE ACEITES CRD          	                                                  
+2299196	0	9113671	 PPR PA SPORTZONE                        	                                                  
+2299204	0	9113671	 PPR PC SPORTZONE                        	                                                  
+2299212	0	9113655	 PPR PA WORTEN                           	                                                  
+2299220	0	9113655	 PPR PC WORTEN                           	                                                  
+2299238	0	9113663	 PPR PA VOBIS                            	                                                  
+2299246	0	9113663	 PPR PC VOBIS                            	                                                  
+2299303	0	9113580	 SPORTZONE PRE-ACEITES CLT CCL           	                                                  
+2299311	0	9113580	 SPORTZONE PREACEIT CLT CETELEM          	                                                  
+2299329	0	9113580	 SPORTZONE PRE-ACEITES CLT FIDE          	                                                  
+2299337	0	9113598	 SPORTZONE  BICONTRATO                   	                                                  
+2299345	0	9113549	 WORTEN PRE-ACEITES                      	                                                  
+2299352	0	9113556	 WORTEN BI-CONTRATO                      	                                                  
+2299360	0	9113564	 VOBIS PRE-ACEITES                       	                                                  
+2299378	0	9113572	 VOBIS BI-CONTRATO                       	                                                  
+2299386	0	9113648	 BOOK IT DOLCE VITA TEJO                 	                                                  
+2299394	0	9113697	 SPORTZONE LAS PALMERAS                  	                                                  
+2299402	0	9113697	 SPORTZONE LAS ROTONDAS                  	                                                  
+2299410	0	9113432	 CONTINENTE ON LINE TLANTIC              	                                                  
+2299428	0	9113432	 CONTINENTEONLINE VINHOS-ANTIGA          	                                                  
+2299436	881293	9113630	 BOM BOCADO NORTESHOP                    	                                                  
+2299444	838001	9113424	 CONTINENTE MATOSINHOS                   	                                                  
+2302206	0	9113432	 COL CREDSCORE VIRTUAL                   	                                                  
+2302214	0	9113465	 WOL CREDSCORE VIRTUAL                   	                                                  
+2302735	999666	9113424	 TESTE FUSAO PILOTO SIBS SONAE           	                                                  
+2302875	0	9113432	 CONTINENTE ONLINE                       	                                                  
+2304491	888766	9113606	 FRM VASCO GAMA                          	                                                  
+2304517	2304517	9113424	 CONTINENTE MAIA JARDIM                  	                                                  
+2304525	2304525	9113424	 CONTINENTE O.FREEP ALCOCHETE            	                                                  
+2304533	2304533	9113457	 CONTINENTE B DIA MASSARELOS             	                                                  
+2304541	2304541	9113440	 CONTINENTE MODELO LIXA                  	                                                  
+2304558	2304558	9113440	 CONTINENTE MDL MAIA VIVACI              	                                                  
+2304566	2304566	9113465	 WORTEN MAIA VIVACI                      	                                                  
+2304574	2304574	9113440	 CONTINENTE MODELO REGUA                 	                                                  
+2304582	2304582	9113465	 WORTEN REGUA                            	                                                  
+2304590	2304590	9113440	 CONTINENTE MODELO POMBAL                	                                                  
+2304608	2304608	9113465	 WORTEN MAIA JARDIM                      	                                                  
+2304616	2304616	9113440	 CONTINENTE MDL MONTELAVAR               	                                                  
+2304624	2304624	9113705	 WORTEN MOBILE SETE RIOS                 	                                                  
+2304632	2304632	9113424	 CONTINENTE ICE FERR BORGES              	                                                  
+2304640	2304640	9113465	 WORTEN LIXA                             	                                                  
+2304657	2304657	9113424	 CONTINENTE ICE DAMIAO GOIS              	                                                  
+2304665	2304665	9113705	 WORTEN MOBILE MAIA JARDIM               	                                                  
+2304673	2304673	9113424	 CONTINENTE MAIA JRADIM                  	                                                  
+2304681	2304681	9113424	 CONTINENTE TAVIRA                       	                                                  
+2304699	2304699	9113705	 WORTEN MOBILE ESP.GUIMARAES             	                                                  
+2304707	2304707	9113440	 CONTINENTE MDL LECA BALIO               	                                                  
+2304715	2304715	9113424	 CONTINENTE O FREEP ALCOCHETE            	                                                  
+2304723	2304723	9113440	 CONTINENTE MODELO OVAR                  	                                                  
+2304731	2304731	9113440	 CONTINENTE MODELO SESIMBRA              	                                                  
+2304749	2304749	9113465	 WORTEN MONTELAVAR                       	                                                  
+2304756	2304756	9113457	 CONTINENTE BDIA MASSARELOS              	                                                  
+2304764	2304764	9113465	 WORTEN TAVIRA                           	                                                  
+2304772	2304772	9113465	 WORTEN POMBAL                           	                                                  
+2304780	2304780	9113705	 WORTEN MOBILE D.VITA TEJO               	                                                  
+2304798	2304798	9113705	 WORTEN MOBILE TAVIRA                    	                                                  
+2304806	2304806	9113440	 CONTINENTE MODELO LIXA                  	                                                  
+2304814	2304814	9113697	 SPORTZONE MAIA VIVACI                   	                                                  
+2304822	2304822	9113697	 SPORTZONE MAIA JARDIM                   	                                                  
+2304830	2304830	9113440	 CONTINENTE MDL MAIA VIVACI              	                                                  
+2304848	2304848	9113465	 WORTEN DOLCE VITA TEJO                  	                                                  
+2304855	2304855	9113697	 SPORTZONE FREEP.ALCOCHETE               	                                                  
+2304863	2304863	9113440	 CONTINENTE MODELO REGUA                 	                                                  
+2304871	2304871	9113465	 WORTEN FERRARA PLAZA                    	                                                  
+2304889	2304889	9113465	 WORTEN SESIMBRA                         	                                                  
+2304897	2304897	9113697	 SPORTZONE FREEP.ALCOCHETE               	                                                  
+2304905	2304905	9113440	 CONTINENTE MODELO POMBAL                	                                                  
+2304913	2304913	9113440	 CONTINENTE MDL MONTELAVAR               	                                                  
+2304921	2304921	9113697	 SPORTZONE ESPACO GUIMARAES              	                                                  
+2304939	2304939	9113424	 CONTINENTE ICE FERR.BORGES              	                                                  
+2304947	2304947	9113697	 SPORTZONE TAVIRA                        	                                                  
+2304954	2304954	9113697	 SPORTZONE DOLCE VITA TEJO               	                                                  
+2304962	2304962	9113705	 WORTEN MOBILE MARCOSHOP                 	                                                  
+2304970	2304970	9113440	 CONTINENTE MDL CANTANHEDE               	                                                  
+2304988	2304988	9113440	 CONTINENTE MODELO S J VER               	                                                  
+2304996	2304996	9113440	 CONTINENTE MDL S F MARINHA              	                                                  
+2305001	2305001	9113465	 WORTEN MINHO CENTER                     	                                                  
+2305019	2305019	9113440	 CONTINENTE MODELO ALVERCA               	                                                  
+2305027	2305027	9113440	 CONTINENTE MDL PONTE LIMA               	                                                  
+2305035	2305035	9113457	 CONTINENTE BOM DIA VIANA                	                                                  
+2305183	2305183	9113648	 BOOK IT FORUM SINTRA                    	                                                  
+2305191	2305191	9113697	 SPORTZONE FORUM SINTRA                  	                                                  
+2305209	2305209	9113465	 WORTEN FORUM SINTRA                     	                                                  
+2305217	2305217	9113424	 CONTINENTE TIRES                        	                                                  
+2305282	2305282	9113630	 BOM BOCADO FORUM SINTRA                 	                                                  
+2305332	0	9113697	 SPORTZONE MARINEDA CITY                 	                                                  
+2305340	0	9113697	 SPORTZONE FAJARDO                       	                                                  
+2305357	2305357	9113606	 FRM GULPILHARES                         	                                                  
+2305498	2305498	9113606	 FRM LOUREL                              	                                                  
+2305639	2305639	9113424	 CONTINENTE ICE RUA ALEGRIA              	                                                  
+2305738	0	9113697	 SPORTZONE MARBELLA                      	                                                  
+2305746	2305746	9113606	 FRM CONTINENTE CASCAIS                  	                                                  
+2306330	2306330	9113606	 QSQ CASCAIS                             	                                                  
+2306348	2306348	9113606	 QSQ VASCO DA GAMA                       	                                                  
+2306355	2306355	9113606	 QSQ RIO SUL - SEIXAL                    	                                                  
+2306363	0	9113606	 QSQ COLOMBO                             	                                                  
+2306579	2306579	9113606	 FRM FARO                                	                                                  
+2306587	2306587	9113606	 FRM OLHAO                               	                                                  
+2306603	2306603	9113697	 SPORTZONE HORTA                         	                                                  
+2306686	0	9113697	 SPORTZONE SIETE PALMAS                  	                                                  
+2307098	2307098	9113697	 SPORTZONE R.P. TORRES NOVAS             	                                                  
+2307155	0	9113697	 SPORTZONE CALLE TRIANA                  	                                                  
+2307163	0	9113697	 SPORTZONE ALCORCON                      	                                                  
+2307205	2307205	9113630	 BOM BOCADO HORTA - INSCO SA             	                                                  
+2307213	2307213	9113648	 BOOK IT HORTA                           	                                                  
+2307221	2307221	9113606	 FRM HORTA                               	                                                  
+2307544	2307544	9113630	 BOM BOCADO LAGOA - INSCO SA             	                                                  
+2307866	2307866	9113465	 WORTEN EVORA RETAIL                     	                                                  
+2308104	0	9113697	 SPORTZONE BENIDORME                     	                                                  
+2308229	0	9113606	 QSQ COLOMBO                             	                                                  
+2308237	2308237	9113606	 QSQ COLOMBO II                          	                                                  
+2308245	2308245	9113606	 QSQ MATOSINHOS                          	                                                  
+2308252	2308252	9113606	 QSQ CASCAIS II                          	                                                  
+2310753	2310753	9113465	 WORTEN SANTA MARIA FEIRA                	                                                  
+2310837	2310837	9113457	 CONTINENTE BOM DIA RAMALDE              	                                                  
+2310993	2310993	9113697	 SPORTZONE SANTA MARIA FEIRA             	                                                  
+2311223	0	9113697	 SPORTZONE MAJADAHONDA                   	                                                  
